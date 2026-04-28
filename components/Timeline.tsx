@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Person, Region, Relationship } from "@/lib/schema";
+import { buildChainsToAnchor, lineageOf } from "@/lib/lineage";
 
 const REGION_COLOR: Record<Region, string> = {
   palestine: "#8b1e2d",
@@ -32,10 +33,9 @@ type Props = { people: Person[]; relationships: Relationship[] };
 
 const YEAR_MIN = -10;
 const YEAR_MAX = 760;
-const PIXELS_PER_YEAR = 2.6;
-const ROW_HEIGHT = 24;
-const ROW_GAP = 4;
-const HEADER = 28;
+const ROW_HEIGHT = 16;
+const ROW_GAP = 2;
+const HEADER = 24;
 
 export default function Timeline({ people, relationships }: Props) {
   const [filterRegion, setFilterRegion] = useState<Region | "all">("all");
@@ -44,38 +44,69 @@ export default function Timeline({ people, relationships }: Props) {
   const [condensed, setCondensed] = useState(false);
   const [showAllEdges, setShowAllEdges] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  // The "active" person — locked takes priority over hover
+  // Pixels per year auto-fits to container width on mount
+  const [pxPerYear, setPxPerYear] = useState(1.6);
+  useEffect(() => {
+    const fit = () => {
+      const w = containerRef.current?.clientWidth ?? 1200;
+      setPxPerYear(Math.max(1.2, Math.min(3, (w - 24) / (YEAR_MAX - YEAR_MIN))));
+    };
+    fit();
+    window.addEventListener("resize", fit);
+    return () => window.removeEventListener("resize", fit);
+  }, []);
+
   const activeId = lockedId ?? hoverId;
+
+  // For locked: use full lineage (ancestors + descendants). For hover: just direct neighbors.
+  const chains = useMemo(() => buildChainsToAnchor(people, relationships), [people, relationships]);
+
+  const lockedLineage = useMemo(() => (lockedId ? lineageOf(lockedId, chains) : null), [lockedId, chains]);
+
+  const directNeighbors = useMemo(() => {
+    const set = new Set<string>();
+    if (!hoverId) return set;
+    set.add(hoverId);
+    for (const e of relationships) {
+      if (e.from === hoverId) set.add(e.to);
+      if (e.to === hoverId) set.add(e.from);
+    }
+    return set;
+  }, [hoverId, relationships]);
+
+  // The set of ids that should appear bright (not dimmed)
+  const highlight = useMemo(() => {
+    if (lockedLineage) return lockedLineage.all;
+    if (hoverId) return directNeighbors;
+    return null;
+  }, [lockedLineage, hoverId, directNeighbors]);
 
   const allEdges = useMemo(() => relationships, [relationships]);
   const activeEdges = useMemo(
     () => (activeId ? allEdges.filter((r) => r.from === activeId || r.to === activeId) : []),
     [allEdges, activeId]
   );
-  const activeNeighbors = useMemo(() => {
-    const set = new Set<string>();
-    if (!activeId) return set;
-    set.add(activeId);
-    for (const e of activeEdges) {
-      set.add(e.from);
-      set.add(e.to);
-    }
-    return set;
-  }, [activeEdges, activeId]);
 
-  // Visible people: filtered by region, then optionally condensed to chain only
+  // For locked mode, also compute the full chain edges (the path back to Jesus)
+  const lineageEdges = useMemo(() => {
+    if (!lockedId || !lockedLineage) return [];
+    return relationships.filter((r) => lockedLineage.all.has(r.from) && lockedLineage.all.has(r.to));
+  }, [lockedId, lockedLineage, relationships]);
+
+  // Visible people: filtered by region, then optionally condensed to lineage only
   const visible = useMemo(() => {
     let out = filterRegion === "all" ? people : people.filter((p) => p.region === filterRegion);
-    if (condensed && lockedId) {
-      out = out.filter((p) => activeNeighbors.has(p.id));
+    if (condensed && lockedLineage) {
+      out = out.filter((p) => lockedLineage.all.has(p.id));
     }
     return out;
-  }, [people, filterRegion, condensed, lockedId, activeNeighbors]);
+  }, [people, filterRegion, condensed, lockedLineage]);
 
   const visibleIds = useMemo(() => new Set(visible.map((p) => p.id)), [visible]);
 
-  // Greedy row packing
+  // Greedy row packing — labels only reserve space when shown (sig>=3 OR condensed)
   const layout = useMemo(() => {
     const sorted = [...visible].sort((a, b) => (a.born ?? 9999) - (b.born ?? 9999));
     const rows: { end: number }[] = [];
@@ -83,9 +114,10 @@ export default function Timeline({ people, relationships }: Props) {
     for (const p of sorted) {
       const born = p.born ?? (p.died ? p.died - 30 : 100);
       const died = p.died ?? born + 60;
-      const labelWidth = (p.name.length * 6.5) / PIXELS_PER_YEAR;
+      const showsLabel = condensed || p.significance >= 3;
+      const labelWidth = showsLabel ? (p.name.length * 5.5) / pxPerYear : 0;
       const start = born;
-      const endWithLabel = died + labelWidth + 8;
+      const endWithLabel = died + labelWidth + 4;
       let row = rows.findIndex((r) => r.end <= start - 2);
       if (row === -1) {
         row = rows.length;
@@ -96,19 +128,19 @@ export default function Timeline({ people, relationships }: Props) {
       placed.push({ person: p, row, x1: born, x2: died });
     }
     return { placed, rowCount: rows.length };
-  }, [visible]);
+  }, [visible, condensed, pxPerYear]);
 
   const positions = useMemo(() => {
     const m = new Map<string, { cx: number; y: number; x1: number; x2: number; row: number }>();
     for (const item of layout.placed) {
-      const left = (item.x1 - YEAR_MIN) * PIXELS_PER_YEAR;
-      const right = (item.x2 - YEAR_MIN) * PIXELS_PER_YEAR;
+      const left = (item.x1 - YEAR_MIN) * pxPerYear;
+      const right = (item.x2 - YEAR_MIN) * pxPerYear;
       const cx = (left + right) / 2;
-      const y = HEADER + item.row * (ROW_HEIGHT + ROW_GAP) + (ROW_HEIGHT - 6) / 2;
+      const y = HEADER + item.row * (ROW_HEIGHT + ROW_GAP) + (ROW_HEIGHT - 4) / 2;
       m.set(item.person.id, { cx, y, x1: left, x2: right, row: item.row });
     }
     return m;
-  }, [layout]);
+  }, [layout, pxPerYear]);
 
   const visibleEdges = useMemo(
     () =>
@@ -119,15 +151,18 @@ export default function Timeline({ people, relationships }: Props) {
   );
 
   const renderEdges = useMemo(() => {
-    if (!activeId) return [];
-    return visibleEdges.filter((r) => r.from === activeId || r.to === activeId);
-  }, [visibleEdges, activeId]);
+    if (lockedId && lockedLineage) {
+      return visibleEdges.filter((r) => lockedLineage.all.has(r.from) && lockedLineage.all.has(r.to));
+    }
+    if (hoverId) return visibleEdges.filter((r) => r.from === hoverId || r.to === hoverId);
+    return [];
+  }, [visibleEdges, lockedId, lockedLineage, hoverId]);
 
-  const totalWidth = (YEAR_MAX - YEAR_MIN) * PIXELS_PER_YEAR;
-  const totalHeight = layout.rowCount * (ROW_HEIGHT + ROW_GAP) + 60;
+  const totalWidth = (YEAR_MAX - YEAR_MIN) * pxPerYear;
+  const totalHeight = layout.rowCount * (ROW_HEIGHT + ROW_GAP) + 50;
 
   function yearToX(y: number) {
-    return (y - YEAR_MIN) * PIXELS_PER_YEAR;
+    return (y - YEAR_MIN) * pxPerYear;
   }
 
   const regionsPresent = useMemo(() => Array.from(new Set(people.map((p) => p.region))), [people]);
@@ -185,7 +220,7 @@ export default function Timeline({ people, relationships }: Props) {
   }
 
   return (
-    <div>
+    <div ref={containerRef}>
       <div className="flex flex-wrap items-center gap-2 mb-3 text-xs">
         <span className="text-ink/60 mr-1">Region:</span>
         <button
@@ -222,13 +257,12 @@ export default function Timeline({ people, relationships }: Props) {
         </label>
       </div>
 
-      {lockedId && (
+      {lockedId && lockedLineage && (
         <div className="flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/10 border border-accent/30 rounded text-sm">
-          <span className="font-serif text-base">
-            {peopleById.get(lockedId)?.name}
-          </span>
+          <span className="font-serif text-base">{peopleById.get(lockedId)?.name}</span>
           <span className="text-ink/60 text-xs">
-            locked · {activeEdges.length} connections highlighted
+            lineage · {lockedLineage.ancestors.size - 1} ancestors back to Jesus ·{" "}
+            {lockedLineage.descendants.size - 1} descendants
           </span>
           <button
             onClick={() => setCondensed((c) => !c)}
@@ -265,7 +299,7 @@ export default function Timeline({ people, relationships }: Props) {
               className="absolute top-0 bottom-0"
               style={{
                 left: yearToX(b.from),
-                width: (b.to - b.from) * PIXELS_PER_YEAR,
+                width: (b.to - b.from) * pxPerYear,
                 backgroundColor: b.color,
               }}
             >
@@ -312,13 +346,15 @@ export default function Timeline({ people, relationships }: Props) {
 
           {layout.placed.map(({ person, x1, x2, row }) => {
             const left = yearToX(x1);
-            const width = Math.max(8, (x2 - x1) * PIXELS_PER_YEAR);
+            const width = Math.max(8, (x2 - x1) * pxPerYear);
             const top = HEADER + row * (ROW_HEIGHT + ROW_GAP);
             const color = REGION_COLOR[person.region];
             const isActive = activeId === person.id;
             const isLocked = lockedId === person.id;
-            const isNeighbor = activeId && activeNeighbors.has(person.id) && !isActive;
-            const dimmed = activeId && !activeNeighbors.has(person.id);
+            const inHighlight = highlight?.has(person.id) ?? false;
+            const isNeighbor = highlight && inHighlight && !isActive;
+            const dimmed = highlight && !inHighlight;
+            const showsLabel = condensed || person.significance >= 3 || isLocked || isNeighbor;
             return (
               <a
                 key={person.id}
@@ -360,15 +396,17 @@ export default function Timeline({ people, relationships }: Props) {
                         : undefined,
                   }}
                 />
-                <span
-                  className="ml-2 text-[12px] whitespace-nowrap font-serif group-hover:text-accent"
-                  style={{
-                    color: "#1f1a13",
-                    fontWeight: isActive || isLocked ? 600 : isNeighbor ? 500 : 400,
-                  }}
-                >
-                  {person.name}
-                </span>
+                {showsLabel && (
+                  <span
+                    className="ml-1.5 text-[10px] whitespace-nowrap font-serif group-hover:text-accent"
+                    style={{
+                      color: "#1f1a13",
+                      fontWeight: isActive || isLocked ? 600 : isNeighbor ? 500 : 400,
+                    }}
+                  >
+                    {person.name}
+                  </span>
+                )}
               </a>
             );
           })}

@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import * as d3 from "d3";
 import Link from "next/link";
 import type { Person, Relationship, Region } from "@/lib/schema";
+import { buildChainsToAnchor, lineageOf } from "@/lib/lineage";
 
 const REGION_ORDER: Region[] = [
   "palestine",
@@ -47,20 +48,14 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
   const [condensed, setCondensed] = useState(false);
   const [hover, setHover] = useState<{ p: Person; x: number; y: number } | null>(null);
 
-  const lockedNeighbors = useMemo(() => {
-    const set = new Set<string>();
-    if (!lockedId) return set;
-    set.add(lockedId);
-    for (const r of relationships) {
-      if (r.from === lockedId) set.add(r.to);
-      if (r.to === lockedId) set.add(r.from);
-    }
-    return set;
-  }, [lockedId, relationships]);
+  const chains = useMemo(() => buildChainsToAnchor(allPeople, relationships), [allPeople, relationships]);
+  const lockedLineage = useMemo(() => (lockedId ? lineageOf(lockedId, chains) : null), [lockedId, chains]);
+  // Backwards-compat name kept; now means full lineage (ancestors + descendants).
+  const lockedNeighbors = useMemo(() => lockedLineage?.all ?? new Set<string>(), [lockedLineage]);
 
   const people = useMemo(
-    () => (condensed && lockedId ? allPeople.filter((p) => lockedNeighbors.has(p.id)) : allPeople),
-    [allPeople, condensed, lockedId, lockedNeighbors]
+    () => (condensed && lockedLineage ? allPeople.filter((p) => lockedLineage.all.has(p.id)) : allPeople),
+    [allPeople, condensed, lockedLineage]
   );
 
   const peopleById = useMemo(() => new Map(allPeople.map((p) => [p.id, p])), [allPeople]);
@@ -236,16 +231,16 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
         r.strength === "disputed" ? "#8b1e2d" : r.strength === "tradition" ? "#1f1a1370" : "#1f1a13"
       )
       .attr("stroke-width", (r) => {
-        const involved = lockedId && (r.from === lockedId || r.to === lockedId);
-        if (involved) return r.strength === "documented" ? 2 : 1.4;
+        const inLineage = lockedLineage && lockedLineage.all.has(r.from) && lockedLineage.all.has(r.to);
+        if (inLineage) return r.strength === "documented" ? 2 : 1.4;
         return r.strength === "documented" ? 1 : 0.7;
       })
       .attr("stroke-dasharray", (r) =>
         r.strength === "documented" ? null : r.strength === "tradition" ? "5,3" : "2,3"
       )
       .attr("opacity", (r) => {
-        if (!lockedId) return 0.45;
-        return r.from === lockedId || r.to === lockedId ? 0.95 : 0.06;
+        if (!lockedLineage) return 0.45;
+        return lockedLineage.all.has(r.from) && lockedLineage.all.has(r.to) ? 0.95 : 0.06;
       });
 
     const nodesG = g.append("g").attr("class", "nodes");
@@ -306,7 +301,7 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
       .attr("fill", (d) => (d.p.significance >= 4 ? "#1f1a13" : "#1f1a13cc"))
       .text((d) => d.p.name);
 
-  }, [people, relationships, positions, presentRegions, yScale, innerH, innerW, lockedId, lockedNeighbors]);
+  }, [people, relationships, positions, presentRegions, yScale, innerH, innerW, lockedId, lockedLineage]);
 
   const lockedEdges = useMemo(
     () => (lockedId ? relationships.filter((r) => r.from === lockedId || r.to === lockedId) : []),
@@ -333,11 +328,12 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
         </span>
       </div>
 
-      {lockedPerson && (
+      {lockedPerson && lockedLineage && (
         <div className="flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/10 border border-accent/30 rounded text-sm">
           <span className="font-serif text-base">{lockedPerson.name}</span>
           <span className="text-ink/60 text-xs">
-            locked · {lockedEdges.length} connections highlighted
+            lineage · {lockedLineage.ancestors.size - 1} ancestors back to Jesus ·{" "}
+            {lockedLineage.descendants.size - 1} descendants
           </span>
           <button
             onClick={() => setCondensed((c) => !c)}

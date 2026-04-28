@@ -83,3 +83,41 @@ export function chainTo(id: string, anchor = "jesus-of-nazareth"): { person: Per
   }
   return path; // anchor first → id last
 }
+
+/**
+ * The full "lineage view" of a person:
+ * - ancestors: everyone on the shortest path from this person back to Jesus (chain-to-Jesus).
+ * - descendants: everyone whose own chain-to-Jesus passes through this person.
+ * Returns the union as a set of person ids; the visualization highlights all of them.
+ */
+let _chainCache: Map<string, string[]> | null = null;
+function buildChainCache() {
+  if (_chainCache) return _chainCache;
+  _chainCache = new Map();
+  for (const p of getPeople()) {
+    const c = chainTo(p.id);
+    _chainCache.set(p.id, c ? c.map((s) => s.person.id) : [p.id]);
+  }
+  return _chainCache;
+}
+
+export function lineageOf(id: string, anchor = "jesus-of-nazareth"): {
+  ancestors: Set<string>;
+  descendants: Set<string>;
+  all: Set<string>;
+} {
+  const cache = buildChainCache();
+  const myChain = cache.get(id) ?? [id];
+  const ancestors = new Set(myChain); // includes Jesus + intermediaries + self
+
+  const descendants = new Set<string>([id]);
+  for (const [pid, chain] of cache) {
+    if (pid === id) continue;
+    if (chain.includes(id)) descendants.add(pid);
+  }
+  // self is in both — union
+  const all = new Set<string>([...ancestors, ...descendants]);
+  // Anchor is always ancestor
+  if (anchor) all.add(anchor);
+  return { ancestors, descendants, all };
+}

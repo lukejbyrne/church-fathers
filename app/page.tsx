@@ -36,8 +36,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto px-4 pb-12">
-        <HomeView people={people} relationships={relationships} />
+      <section className="px-4 pb-12">
+        <div className="max-w-[1800px] mx-auto">
+          <HomeView people={people} relationships={relationships} />
+        </div>
       </section>
 
       <div className="max-w-5xl mx-auto px-4 pt-10 border-t border-ink/10">
