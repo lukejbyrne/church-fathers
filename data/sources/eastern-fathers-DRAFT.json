@@ -1,0 +1,170 @@
+{
+  "era": "post-nicene",
+  "people": [
+    {
+      "id": "aphrahat",
+      "name": "Aphrahat",
+      "alt_names": ["Aphraates", "the Persian Sage", "Jacob the Persian Sage"],
+      "born": 270,
+      "born_circa": true,
+      "died": 345,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "syria",
+      "role": ["theologian", "monk"],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Syriac Christian author known as the 'Persian Sage', writing within the Sasanian Empire in the early 4th century. Composed twenty-three Demonstrations (Tahwyatha) between 337 and 345 covering faith, prayer, fasting, the relation of Christians to Jews, and eschatology. His works are independent of Greek theological developments and are among the earliest substantial witnesses to Syriac Christianity, predating most of Ephrem's writings.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Aphrahat",
+      "wikidata_id": "Q241957",
+      "citations": [
+        { "source": "Aphrahat, Demonstrations", "kind": "primary" },
+        { "source": "ODCC s.v. Aphraates", "kind": "secondary" },
+        { "source": "Sebastian Brock, The Luminous Eye: The Spiritual World Vision of Saint Ephrem the Syrian", "kind": "secondary" }
+      ]
+    },
+    {
+      "id": "isaac-of-nineveh",
+      "name": "Isaac of Nineveh",
+      "alt_names": ["Isaac the Syrian", "Isaac Syrus", "Mar Isaac"],
+      "born": 613,
+      "born_circa": true,
+      "died": 700,
+      "died_circa": true,
+      "birth_place": "Beth Qatraye",
+      "death_place": null,
+      "region": "syria",
+      "role": ["bishop", "monk", "theologian"],
+      "see": "Nineveh",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "East Syriac (Church of the East) ascetic and mystical writer. Briefly bishop of Nineveh before retiring to a monastic life of solitude. Author of the Ascetical Homilies (preserved in two main 'parts' in Syriac), addressing prayer, repentance, divine love, and the stages of the spiritual life. Despite belonging to the so-called 'Nestorian' church, his writings were translated into Greek in the 9th century and became deeply influential in later Byzantine and Slavic Orthodox spirituality.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Isaac_of_Nineveh",
+      "wikidata_id": "Q317834",
+      "citations": [
+        { "source": "Isaac of Nineveh, Ascetical Homilies (First Part)", "kind": "primary" },
+        { "source": "ODCC s.v. Isaac the Great (of Nineveh)", "kind": "secondary" },
+        { "source": "Sebastian Brock, ed. and trans., Isaac of Nineveh (Isaac the Syrian): The Second Part", "kind": "secondary" }
+      ]
+    },
+    {
+      "id": "severus-of-antioch",
+      "name": "Severus of Antioch",
+      "alt_names": ["Severus the Great", "Severos"],
+      "born": 465,
+      "born_circa": true,
+      "died": 538,
+      "died_circa": false,
+      "birth_place": "Sozopolis",
+      "death_place": "Egypt",
+      "region": "syria",
+      "role": ["bishop", "theologian"],
+      "see": "Antioch",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Greek-writing miaphysite theologian and Patriarch of Antioch from 512 to 518, after which he was deposed and fled to Egypt under the pro-Chalcedonian emperor Justin I. Rejected the Council of Chalcedon (451) and the Tome of Leo while condemning Eutychian extremism, articulating a one-incarnate-nature Christology in the line of Cyril of Alexandria. Hundreds of letters, homilies (Cathedral Homilies), and polemical treatises survive, mostly in Syriac translation. Considered a foundational figure of the Syriac Orthodox tradition.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Severus_of_Antioch",
+      "wikidata_id": "Q193048",
+      "citations": [
+        { "source": "Severus of Antioch, Cathedral Homilies", "kind": "primary" },
+        { "source": "Severus of Antioch, Select Letters (ed. E. W. Brooks)", "kind": "primary" },
+        { "source": "ODCC s.v. Severus", "kind": "secondary" }
+      ]
+    },
+    {
+      "id": "jacob-of-serugh",
+      "name": "Jacob of Serugh",
+      "alt_names": ["Mar Jacob", "Jacob of Sarug", "Yaqub of Serugh"],
+      "born": 451,
+      "born_circa": true,
+      "died": 521,
+      "died_circa": false,
+      "birth_place": "Curtam",
+      "death_place": "Batnae",
+      "region": "syria",
+      "role": ["bishop", "theologian"],
+      "see": "Batnae (Serugh)",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Syriac poet-theologian, ordained bishop of Batnae in the region of Serugh shortly before his death. Composed a vast corpus of verse homilies (memre) in twelve-syllable meter, traditionally numbered around 760, on biblical, doctrinal, and ascetical themes, alongside prose homilies and letters. With Ephrem and Narsai, one of the three great masters of Syriac poetry. Held a miaphysite Christology while corresponding across confessional boundaries.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jacob_of_Serugh",
+      "wikidata_id": "Q379700",
+      "citations": [
+        { "source": "Jacob of Serugh, Homiliae Selectae (ed. Bedjan)", "kind": "primary" },
+        { "source": "Jacob of Serugh, Letters", "kind": "primary" },
+        { "source": "ODCC s.v. James of Sarug", "kind": "secondary" },
+        { "source": "Sebastian Brock, A Brief Outline of Syriac Literature", "kind": "secondary" }
+      ]
+    },
+    {
+      "id": "romanos-the-melodist",
+      "name": "Romanos the Melodist",
+      "alt_names": ["Romanus Melodus", "Romanos the Hymnographer"],
+      "born": 490,
+      "born_circa": true,
+      "died": 556,
+      "died_circa": true,
+      "birth_place": "Emesa",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": ["deacon", "theologian"],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Greek hymnographer of Syrian origin who served as a deacon in Constantinople under the emperors Anastasius I and Justinian I. Composed kontakia, extended sung verse homilies of multiple stanzas linked by an acrostic and refrain, on biblical narratives and feasts of the liturgical year. Roughly sixty kontakia survive under his name. Reshaped Byzantine liturgical poetry and is venerated as the patron of Eastern Christian hymnography.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Romanos_the_Melodist",
+      "wikidata_id": "Q190905",
+      "citations": [
+        { "source": "Romanos the Melodist, Kontakia (Sancti Romani Melodi Cantica, ed. Maas and Trypanis)", "kind": "primary" },
+        { "source": "ODCC s.v. Romanus Melodus", "kind": "secondary" }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "aphrahat",
+      "to": "ephrem-the-syrian",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Aphrahat (writing 337-345 in Sasanian Persia) and Ephrem (in Roman Nisibis/Edessa) are the two great early Syriac authors and near-contemporaries. Direct contact is not attested in primary sources; the linkage is a scholarly/traditional pairing of the founders of Syriac theological literature.",
+      "citations": [
+        { "source": "Sebastian Brock, A Brief Outline of Syriac Literature", "kind": "secondary" },
+        { "source": "ODCC s.v. Aphraates", "kind": "secondary" }
+      ]
+    },
+    {
+      "from": "severus-of-antioch",
+      "to": "pope-leo-i",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Severus rejected the Tome of Leo and the Christological definition of Chalcedon (451), polemicising against Leo's two-natures formula across his letters and treatises (e.g. Contra impium Grammaticum, Philalethes).",
+      "citations": [
+        { "source": "Severus of Antioch, Liber contra impium Grammaticum", "kind": "primary" },
+        { "source": "Severus of Antioch, Philalethes", "kind": "primary" },
+        { "source": "ODCC s.v. Severus", "kind": "secondary" }
+      ]
+    },
+    {
+      "from": "jacob-of-serugh",
+      "to": "ephrem-the-syrian",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Jacob's verse homilies stand consciously within the Syriac poetic tradition shaped by Ephrem; modern scholarship treats him as Ephrem's principal successor in the memra form. Direct textual citation is limited; the dependence is formal and thematic.",
+      "citations": [
+        { "source": "Sebastian Brock, A Brief Outline of Syriac Literature", "kind": "secondary" },
+        { "source": "ODCC s.v. James of Sarug", "kind": "secondary" }
+      ]
+    },
+    {
+      "from": "jacob-of-serugh",
+      "to": "severus-of-antioch",
+      "type": "corresponded",
+      "strength": "tradition",
+      "notes": "A small corpus of letters attributed to Jacob includes correspondence with Severus's miaphysite circle; the authenticity of individual letters is debated but the broader correspondence is generally accepted.",
+      "citations": [
+        { "source": "Jacob of Serugh, Letters (ed. Olinder)", "kind": "primary" },
+        { "source": "ODCC s.v. James of Sarug", "kind": "secondary" }
+      ]
+    }
+  ]
+}

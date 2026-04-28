@@ -22,6 +22,7 @@ export function GET() {
   lines.push("");
   lines.push("## Core pages");
   lines.push(`- [Lineage home](${base}/): interactive timeline + network graph of all figures.`);
+  lines.push(`- [Map](${base}/map): geographic Mediterranean view with a year scrubber (AD 30–760) showing where figures were active across time.`);
   lines.push(`- [Start here](${base}/start-here): plain-English introduction to the Fathers, the eras, and the terminology.`);
   lines.push(`- [Directory](${base}/directory): searchable index of every figure.`);
   lines.push(`- [Methodology](${base}/about): how relationships are sourced and graded; explains apostolic-succession-vs-transmission distinction.`);
