@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { Person, Region, Relationship } from "@/lib/schema";
 import { buildChainsToAnchor, lineageOf } from "@/lib/lineage";
+import { dateRange } from "@/lib/dates";
 
 const REGION_COLOR: Record<Region, string> = {
   palestine: "#8b1e2d",
@@ -519,8 +520,8 @@ export default function Timeline({ people, relationships, lockedId, setLockedId 
               >
                 {active.name}
               </Link>
-              <span className="text-ink/60 text-xs">
-                {active.born ?? "?"} – {active.died ?? "?"}
+              <span className="text-ink/60 text-xs" title={dateRange(active).explanation || undefined}>
+                {dateRange(active).text}
                 {active.see ? ` · Bishop of ${active.see}` : ""}
               </span>
               <span className="ml-auto text-xs text-ink/60">

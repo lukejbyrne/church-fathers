@@ -87,16 +87,50 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ldGraph) }}
         />
         <header className="border-b border-ink/10 bg-parchment/80 backdrop-blur sticky top-0 z-20">
-          <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-6">
-            <Link href="/" className="font-serif text-xl tracking-tight">
+          <nav className="max-w-7xl mx-auto px-4 py-3 flex items-center gap-4 sm:gap-5">
+            <Link href="/" className="flex items-center gap-2 font-serif text-xl tracking-tight">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/icon.svg" alt="" width={24} height={24} className="shrink-0" />
               Patristic Lineage
             </Link>
+            <Link href="/start-here" className="text-sm hover:text-accent">Start here</Link>
             <Link href="/" className="text-sm hover:text-accent">Lineage</Link>
             <Link href="/map" className="text-sm hover:text-accent">Map</Link>
-            <Link href="/start-here" className="text-sm hover:text-accent">Start here</Link>
+            <details className="relative group">
+              <summary className="text-sm hover:text-accent cursor-pointer list-none select-none">
+                Eras <span className="text-ink/50">▾</span>
+              </summary>
+              <div className="absolute top-full left-0 mt-1 bg-parchment border border-ink/15 rounded shadow-lg py-1 min-w-[230px] z-30">
+                <Link href="/eras/apostolic" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Apostolic age <span className="text-ink/50">(5–100)</span>
+                </Link>
+                <Link href="/eras/apostolic-fathers" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Apostolic Fathers <span className="text-ink/50">(100–150)</span>
+                </Link>
+                <Link href="/eras/apologists" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Apologists <span className="text-ink/50">(130–200)</span>
+                </Link>
+                <Link href="/eras/ante-nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Ante-Nicene <span className="text-ink/50">(200–325)</span>
+                </Link>
+                <Link href="/eras/nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Nicene <span className="text-ink/50">(325–451)</span>
+                </Link>
+                <Link href="/eras/post-nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Post-Nicene <span className="text-ink/50">(451–600)</span>
+                </Link>
+                <Link href="/eras/early-medieval" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Early Medieval <span className="text-ink/50">(600–750)</span>
+                </Link>
+                <Link href="/eras/desert-fathers" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                  Desert Fathers <span className="text-ink/50">(250–500)</span>
+                </Link>
+              </div>
+            </details>
+            <Link href="/bishops" className="text-sm hover:text-accent">Bishops</Link>
             <Link href="/directory" className="text-sm hover:text-accent">Directory</Link>
             <Link href="/about" className="text-sm hover:text-accent">Methodology</Link>
-            <span className="ml-auto text-xs text-ink/50">AD 30 — 750</span>
+            <span className="ml-auto text-xs text-ink/50 hidden sm:inline">AD 30 — 750</span>
           </nav>
         </header>
         <main>{children}</main>

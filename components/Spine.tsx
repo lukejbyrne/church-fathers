@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import Link from "next/link";
 import type { Person, Relationship } from "@/lib/schema";
 import { buildChainsToAnchor } from "@/lib/lineage";
+import { dateRange } from "@/lib/dates";
 
 const DEFAULT_SPINE_IDS = [
   "jesus-of-nazareth",
@@ -139,8 +140,8 @@ export default function Spine({ people, relationships, lockedId }: Props) {
               <Link href={`/fathers/${person.id}`} className="group block">
                 <div className="flex items-baseline gap-3 flex-wrap">
                   <h3 className="font-serif text-2xl group-hover:text-accent">{person.name}</h3>
-                  <span className="text-sm text-ink/50">
-                    {person.born ?? "?"} – {person.died ?? "?"}
+                  <span className="text-sm text-ink/50" title={dateRange(person).explanation || undefined}>
+                    {dateRange(person).text}
                     {person.see ? ` · Bishop of ${person.see}` : ""}
                   </span>
                 </div>

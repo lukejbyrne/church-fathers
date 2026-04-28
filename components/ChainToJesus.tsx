@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { Person, Relationship } from "@/lib/schema";
 import type { ChainKind } from "@/lib/lineage";
+import { dateRange } from "@/lib/dates";
 
 const VALID_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
 
@@ -26,7 +27,7 @@ const KIND_DESCRIPTION: Record<ChainKind, string> = {
 };
 
 export type ChainStep = {
-  person: Pick<Person, "id" | "name" | "born" | "died" | "role" | "image_url">;
+  person: Pick<Person, "id" | "name" | "born" | "born_circa" | "died" | "died_circa" | "role" | "image_url">;
   edge: Pick<Relationship, "type" | "strength"> | null;
 };
 
@@ -134,6 +135,7 @@ export default function ChainToJesus({ id, chains }: Props) {
                             alt={person.name}
                             loading="lazy"
                             className="w-full h-full object-cover"
+                            style={{ objectPosition: "center 20%" }}
                           />
                         ) : (
                           <span className="w-full h-full flex items-center justify-center font-serif text-base text-ink/40">
@@ -149,8 +151,11 @@ export default function ChainToJesus({ id, chains }: Props) {
                         >
                           {person.name}
                         </span>
-                        <span className="text-[10px] text-ink/55 tabular-nums">
-                          {person.born ?? "?"}–{person.died ?? "?"}
+                        <span
+                          className="text-[10px] text-ink/55 tabular-nums"
+                          title={dateRange(person).explanation || undefined}
+                        >
+                          {dateRange(person).text}
                         </span>
                       </span>
                     </Link>

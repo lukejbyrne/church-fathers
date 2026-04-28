@@ -1,41 +1,5 @@
 [
   {
-    "id": "mary-mother-of-jesus",
-    "name": "Mary, mother of Jesus",
-    "alt_names": [
-      "Theotokos",
-      "Miriam"
-    ],
-    "born": -18,
-    "born_circa": true,
-    "died": 50,
-    "died_circa": true,
-    "birth_place": "Nazareth",
-    "region": "palestine",
-    "role": [
-      "layman"
-    ],
-    "tradition_status": "apostle",
-    "significance": 3,
-    "short_bio": "Mother of Jesus of Nazareth. Present at the crucifixion and entrusted to the disciple John; numbered among the disciples gathered before Pentecost.",
-    "wikipedia_url": "https://en.wikipedia.org/wiki/Mary,_mother_of_Jesus",
-    "wikidata_id": "Q345",
-    "citations": [
-      {
-        "source": "Gospel of Luke 1-2",
-        "kind": "primary"
-      },
-      {
-        "source": "Gospel of John 19:25-27",
-        "kind": "primary"
-      },
-      {
-        "source": "Acts of the Apostles 1:14",
-        "kind": "primary"
-      }
-    ]
-  },
-  {
     "id": "jesus-of-nazareth",
     "name": "Jesus of Nazareth",
     "alt_names": [
@@ -142,7 +106,7 @@
     "see": "Jerusalem",
     "tradition_status": "apostolic-father",
     "significance": 3,
-    "short_bio": "Brother of Jesus, leader of the Jerusalem church. Presided at the Apostolic Council (Acts 15); martyred c. 62 by stoning under high priest Ananus per Josephus and Hegesippus.",
+    "short_bio": "Called 'brother of the Lord' in the New Testament (Galatians 1:19; Mark 6:3) — Catholic and Orthodox tradition reads this as kinsman or step-brother through Joseph's prior marriage; most Protestants read it as a literal sibling. Either way, leader of the Jerusalem church for some thirty years. Presided at the Apostolic Council (Acts 15); martyred c. 62 by stoning under high priest Ananus per Josephus and Hegesippus.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/James,_brother_of_Jesus",
     "wikidata_id": "Q26925",
     "citations": [
@@ -5841,6 +5805,41 @@
       },
       {
         "source": "John of Damascus, Orationes de Imaginibus 1-3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "id": "mary-mother-of-jesus",
+    "name": "Mary, mother of Jesus",
+    "alt_names": [
+      "Theotokos",
+      "Miriam"
+    ],
+    "born_circa": true,
+    "died": 50,
+    "died_circa": true,
+    "birth_place": "Nazareth",
+    "region": "palestine",
+    "role": [
+      "layman"
+    ],
+    "tradition_status": "apostle",
+    "significance": 3,
+    "short_bio": "Mother of Jesus of Nazareth. Present at the crucifixion and entrusted to the disciple John; numbered among the disciples gathered before Pentecost.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Mary,_mother_of_Jesus",
+    "wikidata_id": "Q345",
+    "citations": [
+      {
+        "source": "Gospel of Luke 1-2",
+        "kind": "primary"
+      },
+      {
+        "source": "Gospel of John 19:25-27",
+        "kind": "primary"
+      },
+      {
+        "source": "Acts of the Apostles 1:14",
         "kind": "primary"
       }
     ]

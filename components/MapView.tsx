@@ -3,62 +3,59 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Person } from "@/lib/schema";
+import { dateRange } from "@/lib/dates";
 
 // --- Map projection ----------------------------------------------------------
-// Stylized parchment Mediterranean. We use a plain Mercator-ish projection
-// over the box (lon -10..45, lat 25..55) mapped into 1200×600. Hand-coded;
-// no external topojson required.
+// Equirectangular projection over the bounding box [lon -12..50, lat 25..60]
+// mapped into a 1200×600 SVG viewBox. Adequate for this latitude range and
+// avoids the visual oddities of a hand-coded coastline.
 const VIEW_W = 1200;
 const VIEW_H = 600;
-const LON_MIN = -11;
-const LON_MAX = 46;
-const LAT_MIN = 24;
-const LAT_MAX = 56;
+const LON_MIN = -12;
+const LON_MAX = 50;
+const LAT_MIN = 25;
+const LAT_MAX = 60;
 
 function project(lon: number, lat: number): [number, number] {
   const x = ((lon - LON_MIN) / (LON_MAX - LON_MIN)) * VIEW_W;
-  // simple Mercator y so high latitudes don't squash everything
-  const toMerc = (l: number) =>
-    Math.log(Math.tan(Math.PI / 4 + ((l * Math.PI) / 180) / 2));
-  const yMin = toMerc(LAT_MIN);
-  const yMax = toMerc(LAT_MAX);
-  const y = VIEW_H - ((toMerc(lat) - yMin) / (yMax - yMin)) * VIEW_H;
+  const y = VIEW_H - ((lat - LAT_MIN) / (LAT_MAX - LAT_MIN)) * VIEW_H;
   return [x, y];
 }
 
 // --- City lookup -------------------------------------------------------------
-// Hardcoded coords for the cities most patristic figures are tied to.
-// We match against birth_place / see / death_place by case-insensitive
-// substring containment, longest-key first (so "Caesarea Cappadocia" beats
-// plain "Caesarea").
+// Coordinates as [lon, lat] (note: lon first).
+// Matched against birth_place / see / death_place by case-insensitive
+// substring containment, longest-key first (so "Caesarea Cappadocia"
+// beats plain "Caesarea").
 const CITY_COORDS: Array<[string, [number, number]]> = [
-  ["Wearmouth-Jarrow", [-1.45, 54.91]],
-  ["Caesarea Cappadocia", [35.49, 38.72]],
-  ["Caesarea Mazaca", [35.49, 38.72]],
-  ["Caesarea Maritima", [34.89, 32.5]],
-  ["Caesarea Palestine", [34.89, 32.5]],
-  ["Caesarea (Palestine)", [34.89, 32.5]],
-  ["Caesarea (Cappadocia)", [35.49, 38.72]],
-  ["Constantinople", [28.98, 41.0]],
+  // Major cities (canonical, with explicit labels on the map)
+  ["Wearmouth-Jarrow", [-1.46, 54.99]],
+  ["Caesarea Cappadocia", [35.48, 38.72]],
+  ["Caesarea Mazaca", [35.48, 38.72]],
+  ["Caesarea Maritima", [34.9, 32.5]],
+  ["Caesarea Palestine", [34.9, 32.5]],
+  ["Caesarea (Palestine)", [34.9, 32.5]],
+  ["Caesarea (Cappadocia)", [35.48, 38.72]],
+  ["Constantinople", [28.95, 41.0]],
   ["Alexandria", [29.92, 31.2]],
   ["Antioch", [36.16, 36.2]],
-  ["Jerusalem", [35.23, 31.78]],
+  ["Jerusalem", [35.22, 31.78]],
   ["Bethlehem", [35.2, 31.7]],
-  ["Damascus", [36.29, 33.51]],
+  ["Damascus", [36.3, 33.51]],
   ["Edessa", [38.79, 37.16]],
   ["Nisibis", [41.21, 37.07]],
   ["Smyrna", [27.14, 38.42]],
-  ["Ephesus", [27.34, 37.94]],
-  ["Nazianzus", [34.29, 38.49]],
+  ["Ephesus", [27.34, 37.95]],
+  ["Nazianzus", [34.45, 38.42]],
   ["Nyssa", [34.74, 38.86]],
   ["Cappadocia", [35.0, 38.7]],
   ["Athens", [23.73, 37.98]],
   ["Corinth", [22.93, 37.94]],
   ["Thessalonica", [22.95, 40.64]],
   ["Carthage", [10.32, 36.85]],
-  ["Hippo Regius", [7.75, 36.9]],
-  ["Hippo", [7.75, 36.9]],
-  ["Tagaste", [7.95, 36.32]],
+  ["Hippo Regius", [7.77, 36.9]],
+  ["Hippo", [7.77, 36.9]],
+  ["Tagaste", [7.95, 36.28]],
   ["Cyrene", [21.86, 32.82]],
   ["Rome", [12.5, 41.9]],
   ["Milan", [9.19, 45.46]],
@@ -67,18 +64,20 @@ const CITY_COORDS: Array<[string, [number, number]]> = [
   ["Cassino", [13.83, 41.49]],
   ["Monte Cassino", [13.83, 41.49]],
   ["Nursia", [12.99, 42.79]],
-  ["Lyon", [4.83, 45.76]],
-  ["Lyons", [4.83, 45.76]],
-  ["Lugdunum", [4.83, 45.76]],
+  ["Lyon", [4.84, 45.76]],
+  ["Lyons", [4.84, 45.76]],
+  ["Lugdunum", [4.84, 45.76]],
   ["Marseille", [5.37, 43.3]],
+  ["Massilia", [5.37, 43.3]],
   ["Arles", [4.63, 43.68]],
   ["Tours", [0.69, 47.39]],
   ["Poitiers", [0.34, 46.58]],
   ["Vienne", [4.87, 45.52]],
-  ["Cordoba", [-4.78, 37.89]],
+  ["Cordoba", [-4.78, 37.88]],
   ["Hispalis", [-5.99, 37.39]],
   ["Seville", [-5.99, 37.39]],
-  ["Iona", [-6.42, 56.33]],
+  ["Lisbon", [-9.14, 38.72]],
+  ["Iona", [-6.39, 56.33]],
   ["Lindisfarne", [-1.8, 55.68]],
   ["Canterbury", [1.08, 51.28]],
   ["Toledo", [-4.02, 39.86]],
@@ -134,6 +133,7 @@ const CITY_COORDS: Array<[string, [number, number]]> = [
   ["Berytus", [35.5, 33.89]],
   ["Gaza", [34.46, 31.5]],
   ["Petra", [35.45, 30.32]],
+  ["Nazareth", [35.3, 32.7]],
   ["Memphis", [31.25, 29.85]],
   ["Thebes", [32.64, 25.7]],
   ["Nitria", [30.42, 30.85]],
@@ -187,8 +187,20 @@ function lookupCoords(s: string | undefined): [number, number] | null {
   return null;
 }
 
-function placeFor(p: Person): { coord: [number, number]; source: string } | null {
-  // Prefer birth_place; fall back to see, then death_place
+function lookupCityName(s: string | undefined): string | null {
+  if (!s) return null;
+  const lower = s.toLowerCase();
+  for (const [name] of CITY_TABLE) {
+    if (lower.includes(name.toLowerCase())) return name;
+  }
+  return null;
+}
+
+function placeFor(p: Person): {
+  coord: [number, number];
+  city: string;
+  source: string;
+} | null {
   const candidates: Array<[string | undefined, string]> = [
     [p.birth_place, "born"],
     [p.see, "see"],
@@ -196,7 +208,8 @@ function placeFor(p: Person): { coord: [number, number]; source: string } | null
   ];
   for (const [val, src] of candidates) {
     const c = lookupCoords(val);
-    if (c) return { coord: c, source: src };
+    const name = lookupCityName(val);
+    if (c && name) return { coord: c, city: name, source: src };
   }
   return null;
 }
@@ -214,159 +227,36 @@ function eraFor(year: number) {
   return ERAS.find((e) => year >= e.from && year < e.to) ?? ERAS[ERAS.length - 1];
 }
 
-// --- Stylized Mediterranean coastline ---------------------------------------
-// A hand-traced approximate outline. Each polygon is [lon, lat] vertices.
-const COASTLINES: Array<Array<[number, number]>> = [
-  // North coast: Iberia, Gaul, Italy, Balkans, Greece, Asia Minor, Levant
-  [
-    [-9, 36],
-    [-8, 37.2],
-    [-9, 38.7],
-    [-8.5, 41.2],
-    [-9, 43],
-    [-7, 43.7],
-    [-4, 43.5],
-    [-1.5, 43.4],
-    [0.5, 42.7],
-    [3, 42.5],
-    [3.2, 43.4],
-    [4.8, 43.3],
-    [7, 43.6],
-    [9, 44.1],
-    [10.2, 43.9],
-    [11.0, 42.5],
-    [12.5, 41.5],
-    [13.7, 40.7],
-    [15.5, 40.0],
-    [17.2, 40.4],
-    [18.5, 40.1],
-    [18.5, 41.5],
-    [16.3, 41.9],
-    [15.7, 43.0],
-    [14.5, 43.5],
-    [13.0, 45.5],
-    [13.6, 45.7],
-    [15.0, 44.3],
-    [16.5, 43.0],
-    [18.5, 42.6],
-    [19.5, 41.8],
-    [20.0, 39.5],
-    [21.0, 38.5],
-    [21.0, 37.0],
-    [22.5, 36.7],
-    [23.0, 37.6],
-    [23.7, 38.0],
-    [22.7, 38.5],
-    [22.5, 39.5],
-    [23.5, 40.3],
-    [24.5, 40.7],
-    [26.0, 40.5],
-    [26.6, 40.8],
-    [26.0, 41.5],
-    [27.5, 41.0],
-    [29.0, 41.0],
-    [30.0, 41.2],
-    [33.0, 42.0],
-    [36.0, 41.3],
-    [38.0, 41.0],
-    [41.0, 41.5],
-    [36.5, 36.6],
-    [35.7, 36.0],
-    [35.4, 35.0],
-    [35.0, 33.0],
-    [34.7, 31.6],
-    [34.3, 31.2],
-    [33.5, 31.1],
-    [32.0, 31.2],
-    [30.5, 31.4],
-    [29.0, 31.0],
-    [27.5, 31.3],
-    [25.0, 31.5],
-    [22.5, 32.7],
-    [20.0, 32.0],
-    [17.0, 31.0],
-    [15.0, 31.2],
-    [13.0, 32.7],
-    [11.5, 33.5],
-    [10.5, 34.5],
-    [10.5, 36.5],
-    [9.0, 37.3],
-    [7.5, 37.0],
-    [4.0, 36.5],
-    [0.5, 35.8],
-    [-2.0, 35.3],
-    [-5.0, 35.7],
-    [-5.5, 36.0],
-    [-9, 36],
-  ],
-  // British Isles (rough)
-  [
-    [-5.5, 50.0],
-    [-4.5, 51.7],
-    [-5.0, 53.5],
-    [-4.5, 54.8],
-    [-3.0, 55.8],
-    [-3.5, 58.5],
-    [-1.5, 58.5],
-    [-1.0, 56.5],
-    [0.5, 53.5],
-    [1.5, 52.5],
-    [0.5, 51.0],
-    [-1.5, 50.7],
-    [-3.5, 50.5],
-    [-5.5, 50.0],
-  ],
-  // Ireland
-  [
-    [-10.0, 51.5],
-    [-9.5, 53.5],
-    [-8.5, 55.0],
-    [-6.5, 55.2],
-    [-5.5, 54.5],
-    [-6.5, 52.2],
-    [-9.5, 51.5],
-    [-10.0, 51.5],
-  ],
-];
-
-function pathFromRing(ring: Array<[number, number]>): string {
-  return (
-    ring
-      .map(([lon, lat], i) => {
-        const [x, y] = project(lon, lat);
-        return `${i === 0 ? "M" : "L"}${x.toFixed(1)},${y.toFixed(1)}`;
-      })
-      .join(" ") + " Z"
-  );
-}
-
 // --- Component ---------------------------------------------------------------
 type Props = { people: Person[] };
 
 const YEAR_MIN = 30;
 const YEAR_MAX = 760;
 const PLAY_DURATION_MS = 30_000;
+const DEFAULT_YEAR = 50;
 
 export default function MapView({ people }: Props) {
   const router = useRouter();
-  const [year, setYear] = useState(200);
+  const [year, setYear] = useState(DEFAULT_YEAR);
   const [playing, setPlaying] = useState(false);
+  const [showAll, setShowAll] = useState(false);
   const [hoverId, setHoverId] = useState<string | null>(null);
+  const [hoverCity, setHoverCity] = useState<string | null>(null);
   const [tooltip, setTooltip] = useState<{ x: number; y: number } | null>(null);
   const playStart = useRef<number | null>(null);
   const rafId = useRef<number | null>(null);
 
-  // Pre-compute placements
-  const placed = useMemo(() => {
+  // Pre-compute placements for ALL people (we filter at render-time)
+  const placedAll = useMemo(() => {
     const out: Array<{
       person: Person;
       coord: [number, number];
+      city: string;
       x: number;
       y: number;
       bornEst: number;
       diedEst: number;
     }> = [];
-    // Jitter map: cluster figures at same city so they don't perfectly overlap.
     const buckets = new Map<string, number>();
     for (const p of people) {
       const place = placeFor(p);
@@ -376,13 +266,13 @@ export default function MapView({ people }: Props) {
       const key = `${place.coord[0].toFixed(2)},${place.coord[1].toFixed(2)}`;
       const idx = buckets.get(key) ?? 0;
       buckets.set(key, idx + 1);
-      // deterministic jitter ring
       const angle = (idx * 137.5 * Math.PI) / 180;
       const radius = idx === 0 ? 0 : 6 + Math.sqrt(idx) * 4;
       const [px, py] = project(place.coord[0], place.coord[1]);
       out.push({
         person: p,
         coord: place.coord,
+        city: place.city,
         x: px + Math.cos(angle) * radius,
         y: py + Math.sin(angle) * radius,
         bornEst: born,
@@ -391,6 +281,34 @@ export default function MapView({ people }: Props) {
     }
     return out;
   }, [people]);
+
+  // Apply significance filter
+  const placed = useMemo(
+    () => placedAll.filter((p) => showAll || p.person.significance >= 2),
+    [placedAll, showAll]
+  );
+
+  // Cities that have any plotted figure — these are the labels we render
+  const cityLabels = useMemo(() => {
+    const map = new Map<
+      string,
+      { name: string; lon: number; lat: number; count: number }
+    >();
+    for (const item of placed) {
+      const existing = map.get(item.city);
+      if (existing) {
+        existing.count += 1;
+      } else {
+        map.set(item.city, {
+          name: item.city,
+          lon: item.coord[0],
+          lat: item.coord[1],
+          count: 1,
+        });
+      }
+    }
+    return Array.from(map.values());
+  }, [placed]);
 
   // Auto-play loop
   useEffect(() => {
@@ -429,9 +347,10 @@ export default function MapView({ people }: Props) {
   const yearInt = Math.round(year);
   const era = eraFor(yearInt);
 
-  const coastlinePaths = useMemo(() => COASTLINES.map(pathFromRing), []);
-
   const hovered = hoverId ? placed.find((p) => p.person.id === hoverId) : null;
+  const hoveredCity = hoverCity
+    ? cityLabels.find((c) => c.name === hoverCity)
+    : null;
 
   function fillFor(p: Person) {
     if (p.role.includes("apostle")) return "#8b1e2d";
@@ -450,9 +369,7 @@ export default function MapView({ people }: Props) {
   return (
     <div className="bg-parchment">
       <div className="flex items-baseline gap-4 mb-4 flex-wrap">
-        <div className="font-serif text-5xl tracking-tight">
-          AD {yearInt}
-        </div>
+        <div className="font-serif text-5xl tracking-tight">AD {yearInt}</div>
         <div className="text-sm uppercase tracking-widest text-ink/55 font-serif">
           {era.label}
         </div>
@@ -466,7 +383,7 @@ export default function MapView({ people }: Props) {
           <button
             onClick={() => {
               setPlaying(false);
-              setYear(YEAR_MIN);
+              setYear(DEFAULT_YEAR);
             }}
             className="px-3 py-1.5 rounded border border-ink/20 hover:border-ink/40 text-xs"
           >
@@ -489,10 +406,26 @@ export default function MapView({ people }: Props) {
         aria-label="Year scrubber"
       />
 
-      <div className="flex justify-between text-[10px] text-ink/45 mb-4 -mt-2 font-mono">
+      <div className="flex justify-between text-[10px] text-ink/45 mb-3 -mt-2 font-mono">
         {[30, 100, 200, 300, 400, 500, 600, 700, 760].map((y) => (
           <span key={y}>{y}</span>
         ))}
+      </div>
+
+      <div className="flex flex-wrap items-center gap-x-6 gap-y-2 mb-4 text-xs text-ink/65">
+        <label className="flex items-center gap-1.5 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={showAll}
+            onChange={(e) => setShowAll(e.target.checked)}
+            className="accent-accent"
+          />
+          Show all figures (including minor)
+        </label>
+        <span className="text-ink/50 italic">
+          Drag to set year. Press Play for a 30-second sweep. Hover any figure
+          for details, click to open their page.
+        </span>
       </div>
 
       <div className="relative border border-ink/15 rounded overflow-hidden">
@@ -503,6 +436,7 @@ export default function MapView({ people }: Props) {
           style={{ background: "#ece3cc" }}
           onMouseLeave={() => {
             setHoverId(null);
+            setHoverCity(null);
             setTooltip(null);
           }}
         >
@@ -520,10 +454,10 @@ export default function MapView({ people }: Props) {
             </filter>
           </defs>
 
-          {/* Sea/background */}
+          {/* Parchment background */}
           <rect width={VIEW_W} height={VIEW_H} fill="url(#parchmentBg)" />
 
-          {/* Lat/lon grid (subtle) */}
+          {/* Faint lat/lon grid */}
           {[-10, 0, 10, 20, 30, 40].map((lon) => {
             const [x] = project(lon, 0);
             return (
@@ -555,31 +489,17 @@ export default function MapView({ people }: Props) {
             );
           })}
 
-          {/* Land */}
-          {coastlinePaths.map((d, i) => (
-            <path
-              key={i}
-              d={d}
-              fill="#f5efe1"
-              stroke="#1f1a13"
-              strokeOpacity={0.55}
-              strokeWidth={1.1}
-              strokeLinejoin="round"
-            />
-          ))}
-
-          {/* Region labels */}
+          {/* Region labels (very faint, just orientation) */}
           {[
-            { label: "GAUL", lon: 3, lat: 47 },
-            { label: "ITALIA", lon: 13.5, lat: 43.5 },
+            { label: "GAUL", lon: 3, lat: 47.5 },
+            { label: "ITALIA", lon: 13.5, lat: 43 },
             { label: "GRAECIA", lon: 22, lat: 39.7 },
             { label: "ASIA MINOR", lon: 32, lat: 39 },
             { label: "SYRIA", lon: 38, lat: 35.3 },
-            { label: "PALESTINA", lon: 35.5, lat: 32.0 },
-            { label: "AEGYPTUS", lon: 29.5, lat: 28.5 },
-            { label: "AFRICA", lon: 10, lat: 34.0 },
+            { label: "AEGYPTUS", lon: 29.5, lat: 27.5 },
+            { label: "AFRICA", lon: 10, lat: 33.5 },
             { label: "HISPANIA", lon: -4, lat: 40 },
-            { label: "BRITANNIA", lon: -2, lat: 53.5 },
+            { label: "BRITANNIA", lon: -2.5, lat: 53.5 },
           ].map((r) => {
             const [x, y] = project(r.lon, r.lat);
             return (
@@ -587,15 +507,69 @@ export default function MapView({ people }: Props) {
                 key={r.label}
                 x={x}
                 y={y}
-                fontSize={11}
+                fontSize={13}
                 fontFamily="Cormorant Garamond, Georgia, serif"
                 fill="#1f1a13"
-                opacity={0.35}
+                opacity={0.18}
                 textAnchor="middle"
-                style={{ letterSpacing: "0.15em" }}
+                style={{ letterSpacing: "0.2em" }}
               >
                 {r.label}
               </text>
+            );
+          })}
+
+          {/* City labels — these ARE the geography */}
+          {cityLabels.map((c) => {
+            const [x, y] = project(c.lon, c.lat);
+            const isHover = hoverCity === c.name;
+            return (
+              <g
+                key={c.name}
+                style={{ cursor: "default" }}
+                onMouseEnter={(e) => {
+                  setHoverCity(c.name);
+                  setHoverId(null);
+                  const svg = (
+                    e.currentTarget.ownerSVGElement as SVGSVGElement
+                  ).getBoundingClientRect();
+                  const ratio = VIEW_W / svg.width;
+                  setTooltip({ x: x / ratio, y: y / ratio });
+                }}
+                onMouseLeave={() => {
+                  setHoverCity(null);
+                  setTooltip(null);
+                }}
+              >
+                {/* tiny tick at the actual coord */}
+                <circle
+                  cx={x}
+                  cy={y}
+                  r={1.6}
+                  fill="#1f1a13"
+                  opacity={0.55}
+                />
+                <text
+                  x={x + 5}
+                  y={y - 5}
+                  fontSize={11}
+                  fontFamily="Cormorant Garamond, Georgia, serif"
+                  fontStyle="italic"
+                  fill="#1f1a13"
+                  opacity={isHover ? 0.95 : 0.55}
+                  style={{ pointerEvents: "none" }}
+                >
+                  {c.name}
+                </text>
+                {/* invisible larger hit-target */}
+                <rect
+                  x={x - 6}
+                  y={y - 16}
+                  width={Math.max(80, c.name.length * 6.5)}
+                  height={22}
+                  fill="transparent"
+                />
+              </g>
             );
           })}
 
@@ -609,12 +583,14 @@ export default function MapView({ people }: Props) {
               <g
                 key={person.id}
                 style={{
-                  cursor: "pointer",
+                  cursor: active ? "pointer" : "default",
                   transition: "opacity 240ms",
                   opacity: active ? 1 : 0.08,
+                  pointerEvents: active ? "auto" : "none",
                 }}
                 onMouseEnter={(e) => {
                   setHoverId(person.id);
+                  setHoverCity(null);
                   const svg = (
                     e.currentTarget.ownerSVGElement as SVGSVGElement
                   ).getBoundingClientRect();
@@ -677,7 +653,7 @@ export default function MapView({ people }: Props) {
           >
             <div className="font-serif text-sm">{hovered.person.name}</div>
             <div className="text-parchment/70 text-[10px]">
-              {hovered.person.born ?? "?"} – {hovered.person.died ?? "?"}
+              {dateRange(hovered.person).text}
               {hovered.person.see ? ` · Bishop of ${hovered.person.see}` : ""}
             </div>
             {hovered.person.birth_place && (
@@ -685,6 +661,22 @@ export default function MapView({ people }: Props) {
                 b. {hovered.person.birth_place}
               </div>
             )}
+          </div>
+        )}
+
+        {hoveredCity && tooltip && !hovered && (
+          <div
+            className="absolute pointer-events-none bg-ink text-parchment text-xs px-2 py-1.5 rounded shadow-lg"
+            style={{
+              left: `calc(${(tooltip.x / VIEW_W) * 100}% + 12px)`,
+              top: `calc(${(tooltip.y / VIEW_H) * 100}% + 12px)`,
+              zIndex: 10,
+            }}
+          >
+            <div className="font-serif text-sm">{hoveredCity.name}</div>
+            <div className="text-parchment/70 text-[10px]">
+              {hoveredCity.count} figure{hoveredCity.count === 1 ? "" : "s"}
+            </div>
           </div>
         )}
       </div>
@@ -715,6 +707,9 @@ export default function MapView({ people }: Props) {
         <span className="ml-auto text-ink/45 italic">
           {placed.filter((p) => yearInt >= p.bornEst && yearInt <= p.diedEst).length}{" "}
           alive in AD {yearInt} of {placed.length} mapped
+          {!showAll && placedAll.length > placed.length
+            ? ` (${placedAll.length - placed.length} minor hidden)`
+            : ""}
         </span>
       </div>
     </div>

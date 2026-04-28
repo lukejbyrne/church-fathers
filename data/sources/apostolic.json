@@ -45,7 +45,7 @@
         "Theotokos",
         "Miriam"
       ],
-      "born": -18,
+      "born": null,
       "born_circa": true,
       "died": 50,
       "died_circa": true,
@@ -613,7 +613,7 @@
       "see": "Jerusalem",
       "tradition_status": "apostolic-father",
       "significance": 3,
-      "short_bio": "Brother of Jesus, leader of the Jerusalem church. Presided at the Apostolic Council (Acts 15); martyred c. 62 by stoning under high priest Ananus per Josephus and Hegesippus.",
+      "short_bio": "Called 'brother of the Lord' in the New Testament (Galatians 1:19; Mark 6:3) — Catholic and Orthodox tradition reads this as kinsman or step-brother through Joseph's prior marriage; most Protestants read it as a literal sibling. Either way, leader of the Jerusalem church for some thirty years. Presided at the Apostolic Council (Acts 15); martyred c. 62 by stoning under high priest Ananus per Josephus and Hegesippus.",
       "wikipedia_url": "https://en.wikipedia.org/wiki/James,_brother_of_Jesus",
       "wikidata_id": "Q26925",
       "citations": [

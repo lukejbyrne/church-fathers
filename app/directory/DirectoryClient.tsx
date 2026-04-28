@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import Link from "next/link";
 import Fuse from "fuse.js";
 import type { Person } from "@/lib/schema";
+import { dateRange } from "@/lib/dates";
 
 export default function DirectoryClient({ people }: { people: Person[] }) {
   const [q, setQ] = useState("");
@@ -45,8 +46,8 @@ export default function DirectoryClient({ people }: { people: Person[] }) {
                   {p.name}
                 </Link>
               </td>
-              <td className="py-2 text-ink/70">
-                {p.born ?? "?"} – {p.died ?? "?"}
+              <td className="py-2 text-ink/70" title={dateRange(p).explanation || undefined}>
+                {dateRange(p).text}
               </td>
               <td className="py-2 text-ink/70">{p.see ?? p.region}</td>
               <td className="py-2 text-ink/70">{p.role.join(", ")}</td>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getPerson } from "@/lib/data";
+import { dateRange } from "@/lib/dates";
 
 const ANCHORS = [
   { id: "jesus-of-nazareth", era: "Apostolic" },
@@ -69,6 +70,7 @@ export default function HeroChain() {
                         alt={person.name}
                         loading={i < 4 ? "eager" : "lazy"}
                         className="w-full h-full object-cover"
+                        style={{ objectPosition: "center 18%" }}
                       />
                     ) : (
                       <span className="w-full h-full flex items-center justify-center font-serif text-2xl text-ink/40">
@@ -79,8 +81,11 @@ export default function HeroChain() {
                   <span className="font-serif text-sm sm:text-base mt-2 leading-tight group-hover:text-accent">
                     {person.name.split(" of ")[0]}
                   </span>
-                  <span className="text-[10px] sm:text-xs text-ink/55 tabular-nums mt-0.5">
-                    {person.born ?? "?"}–{person.died ?? "?"}
+                  <span
+                    className="text-[10px] sm:text-xs text-ink/55 tabular-nums mt-0.5"
+                    title={dateRange(person).explanation || undefined}
+                  >
+                    {dateRange(person).text}
                   </span>
                   {era && (
                     <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.15em] text-ink/45 mt-1.5 italic">

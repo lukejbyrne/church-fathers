@@ -7,6 +7,7 @@ import type { ChainKind } from "@/lib/lineage";
 import type { Metadata } from "next";
 import { amazonUrl } from "@/lib/affiliate";
 import ChainToJesus, { type ChainStep } from "@/components/ChainToJesus";
+import { dateRange, bornDisplay, diedDisplay } from "@/lib/dates";
 
 const ALL_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
 
@@ -20,7 +21,9 @@ function buildChainsFor(id: string): Partial<Record<ChainKind, ChainStep[] | nul
             id: person.id,
             name: person.name,
             born: person.born,
+            born_circa: person.born_circa,
             died: person.died,
+            died_circa: person.died_circa,
             role: person.role,
             image_url: person.image_url,
           },
@@ -198,10 +201,18 @@ export default async function FatherPage({
         <div className="flex-1 min-w-0">
           <h1 className="font-serif text-5xl mb-2 leading-tight">{person.name}</h1>
           <div className="text-ink/60">
-            {person.born ?? "?"} – {person.died ?? "?"}
+            <span title={dateRange(person).explanation || undefined}>
+              {dateRange(person).text}
+            </span>
             {person.birth_place ? ` · b. ${person.birth_place}` : ""}
             {person.see ? ` · Bishop of ${person.see}` : ""}
           </div>
+          {(bornDisplay(person).isEstimate || diedDisplay(person).isEstimate) && (
+            <p className="text-[11px] text-ink/45 italic mt-1">
+              * Date marked with an asterisk is a placeholder estimate (lifespan
+              heuristic), not a sourced claim. Hover for the derivation.
+            </p>
+          )}
         </div>
       </div>
       <div className="flex flex-wrap gap-1 mb-6">

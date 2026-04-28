@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { Person, Relationship, Region } from "@/lib/schema";
 import { buildChainsToAnchor, lineageOf } from "@/lib/lineage";
+import { dateRange } from "@/lib/dates";
 
 const REGION_ORDER: Region[] = [
   "palestine",
@@ -467,7 +468,7 @@ export default function LineageGraph({ people: allPeople, relationships, lockedI
         >
           <div className="font-serif text-sm">{hover.p.name}</div>
           <div className="text-parchment/70">
-            {hover.p.born ?? "?"} – {hover.p.died ?? "?"}
+            {dateRange(hover.p).text}
             {hover.p.see ? ` · Bishop of ${hover.p.see}` : ""}
           </div>
         </div>
