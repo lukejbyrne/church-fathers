@@ -96,37 +96,47 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/start-here" className="text-sm hover:text-accent">Start here</Link>
             <Link href="/" className="text-sm hover:text-accent">Lineage</Link>
             <Link href="/map" className="text-sm hover:text-accent">Map</Link>
-            <details className="relative group">
-              <summary className="text-sm hover:text-accent cursor-pointer list-none select-none">
-                Eras <span className="text-ink/50">▾</span>
-              </summary>
-              <div className="absolute top-full left-0 mt-1 bg-parchment border border-ink/15 rounded shadow-lg py-1 min-w-[230px] z-30">
-                <Link href="/eras/apostolic" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Apostolic age <span className="text-ink/50">(5–100)</span>
-                </Link>
-                <Link href="/eras/apostolic-fathers" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Apostolic Fathers <span className="text-ink/50">(100–150)</span>
-                </Link>
-                <Link href="/eras/apologists" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Apologists <span className="text-ink/50">(130–200)</span>
-                </Link>
-                <Link href="/eras/ante-nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Ante-Nicene <span className="text-ink/50">(200–325)</span>
-                </Link>
-                <Link href="/eras/nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Nicene <span className="text-ink/50">(325–451)</span>
-                </Link>
-                <Link href="/eras/post-nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Post-Nicene <span className="text-ink/50">(451–600)</span>
-                </Link>
-                <Link href="/eras/early-medieval" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Early Medieval <span className="text-ink/50">(600–750)</span>
-                </Link>
-                <Link href="/eras/desert-fathers" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
-                  Desert Fathers <span className="text-ink/50">(250–500)</span>
-                </Link>
+            <div className="relative group">
+              <Link
+                href="/eras"
+                className="text-sm hover:text-accent cursor-pointer select-none inline-flex items-center"
+              >
+                Eras <span className="text-ink/50 ml-0.5">▾</span>
+              </Link>
+              <div className="absolute top-full left-0 pt-1 hidden group-hover:block group-focus-within:block z-30">
+                <div className="bg-parchment border border-ink/15 rounded shadow-lg py-1 min-w-[230px]">
+                  <Link href="/eras/apostolic" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Apostolic age <span className="text-ink/50">(5–100)</span>
+                  </Link>
+                  <Link href="/eras/apostolic-fathers" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Apostolic Fathers <span className="text-ink/50">(100–150)</span>
+                  </Link>
+                  <Link href="/eras/apologists" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Apologists <span className="text-ink/50">(130–200)</span>
+                  </Link>
+                  <Link href="/eras/ante-nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Ante-Nicene <span className="text-ink/50">(200–325)</span>
+                  </Link>
+                  <Link href="/eras/desert-fathers" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Desert Fathers <span className="text-ink/50">(250–500)</span>
+                  </Link>
+                  <Link href="/eras/nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Nicene <span className="text-ink/50">(325–451)</span>
+                  </Link>
+                  <Link href="/eras/post-nicene" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Post-Nicene <span className="text-ink/50">(451–600)</span>
+                  </Link>
+                  <Link href="/eras/early-medieval" className="block px-3 py-1.5 text-sm hover:bg-ink/5">
+                    Early Medieval <span className="text-ink/50">(600–750)</span>
+                  </Link>
+                  <div className="border-t border-ink/10 mt-1 pt-1">
+                    <Link href="/eras" className="block px-3 py-1.5 text-xs text-ink/60 hover:bg-ink/5 italic">
+                      All eras overview →
+                    </Link>
+                  </div>
+                </div>
               </div>
-            </details>
+            </div>
             <Link href="/bishops" className="text-sm hover:text-accent">Bishops</Link>
             <Link href="/directory" className="text-sm hover:text-accent">Directory</Link>
             <Link href="/about" className="text-sm hover:text-accent">Methodology</Link>

@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/`, priority: 1 },
     { url: `${base}/start-here`, priority: 0.9 },
     { url: `${base}/map`, priority: 0.9 },
+    { url: `${base}/eras`, priority: 0.9 },
     { url: `${base}/bishops`, priority: 0.8 },
     { url: `${base}/directory`, priority: 0.8 },
     { url: `${base}/about`, priority: 0.6 },

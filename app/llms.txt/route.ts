@@ -29,6 +29,7 @@ export function GET() {
   lines.push(`- [Methodology](${base}/about): how relationships are sourced and graded; explains apostolic-succession-vs-transmission distinction.`);
   lines.push("");
   lines.push("## Eras");
+  lines.push(`- [All eras overview](${base}/eras): summary card and visual timeline for every era.`);
   lines.push(`- [Apostolic age (5–100)](${base}/eras/apostolic): Jesus, the Twelve, Paul; the New Testament being written.`);
   lines.push(`- [Apostolic Fathers (100–150)](${base}/eras/apostolic-fathers): the generation that personally knew the apostles or their immediate students.`);
   lines.push(`- [Apologists (130–200)](${base}/eras/apologists): Christians defending the faith in writing to pagans and heretics.`);
