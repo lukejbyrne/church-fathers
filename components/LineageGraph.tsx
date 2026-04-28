@@ -33,15 +33,38 @@ type Props = { people: Person[]; relationships: Relationship[] };
 
 function midYear(p: Person): number {
   if (p.born != null && p.died != null) return (p.born + p.died) / 2;
-  if (p.died != null) return p.died - 30;
+  // If only died is known, place at the death year (latest known position)
+  // rather than estimating backwards — prevents short-lived figures like
+  // Judas (died ~30, born unknown) appearing earlier than Jesus.
+  if (p.died != null) return p.died;
   if (p.born != null) return p.born + 30;
   return 100;
 }
 
-export default function LineageGraph({ people, relationships }: Props) {
+export default function LineageGraph({ people: allPeople, relationships }: Props) {
   const svgRef = useRef<SVGSVGElement | null>(null);
-  const [selected, setSelected] = useState<Person | null>(null);
+  const [lockedId, setLockedId] = useState<string | null>(null);
+  const [condensed, setCondensed] = useState(false);
   const [hover, setHover] = useState<{ p: Person; x: number; y: number } | null>(null);
+
+  const lockedNeighbors = useMemo(() => {
+    const set = new Set<string>();
+    if (!lockedId) return set;
+    set.add(lockedId);
+    for (const r of relationships) {
+      if (r.from === lockedId) set.add(r.to);
+      if (r.to === lockedId) set.add(r.from);
+    }
+    return set;
+  }, [lockedId, relationships]);
+
+  const people = useMemo(
+    () => (condensed && lockedId ? allPeople.filter((p) => lockedNeighbors.has(p.id)) : allPeople),
+    [allPeople, condensed, lockedId, lockedNeighbors]
+  );
+
+  const peopleById = useMemo(() => new Map(allPeople.map((p) => [p.id, p])), [allPeople]);
+  const lockedPerson = lockedId ? peopleById.get(lockedId) : null;
 
   const width = 1280;
   const height = 2400;
@@ -142,8 +165,6 @@ export default function LineageGraph({ people, relationships }: Props) {
     return map;
   }, [people, xScale, yScale]);
 
-  const peopleById = useMemo(() => new Map(people.map((p) => [p.id, p])), [people]);
-
   useEffect(() => {
     const svg = d3.select(svgRef.current!);
     svg.selectAll("*").remove();
@@ -214,11 +235,18 @@ export default function LineageGraph({ people, relationships }: Props) {
       .attr("stroke", (r) =>
         r.strength === "disputed" ? "#8b1e2d" : r.strength === "tradition" ? "#1f1a1370" : "#1f1a13"
       )
-      .attr("stroke-width", (r) => (r.strength === "documented" ? 1 : 0.7))
+      .attr("stroke-width", (r) => {
+        const involved = lockedId && (r.from === lockedId || r.to === lockedId);
+        if (involved) return r.strength === "documented" ? 2 : 1.4;
+        return r.strength === "documented" ? 1 : 0.7;
+      })
       .attr("stroke-dasharray", (r) =>
         r.strength === "documented" ? null : r.strength === "tradition" ? "5,3" : "2,3"
       )
-      .attr("opacity", 0.45);
+      .attr("opacity", (r) => {
+        if (!lockedId) return 0.45;
+        return r.from === lockedId || r.to === lockedId ? 0.95 : 0.06;
+      });
 
     const nodesG = g.append("g").attr("class", "nodes");
     const nodes = nodesG
@@ -230,6 +258,10 @@ export default function LineageGraph({ people, relationships }: Props) {
         const pos = positions.get(p.id)!;
         return `translate(${pos.x},${pos.y})`;
       })
+      .attr("opacity", (p) => {
+        if (!lockedId) return 1;
+        return lockedNeighbors.has(p.id) ? 1 : 0.15;
+      })
       .style("cursor", "pointer")
       .on("mouseenter", (event, p) => {
         const rect = svgRef.current!.getBoundingClientRect();
@@ -238,17 +270,23 @@ export default function LineageGraph({ people, relationships }: Props) {
       .on("mouseleave", () => setHover(null))
       .on("click", (event, p) => {
         event.stopPropagation();
-        setSelected(p);
+        setLockedId((cur) => (cur === p.id ? null : p.id));
       });
 
     nodes
       .append("circle")
-      .attr("r", (p) => 2.5 + p.significance * 1.5)
+      .attr("r", (p) => {
+        const base = 2.5 + p.significance * 1.5;
+        return p.id === lockedId ? base + 3 : base;
+      })
       .attr("fill", (p) =>
         p.role.includes("apostle") ? "#8b1e2d" : p.role.includes("emperor") ? "#5b3b8a" : "#1f1a13"
       )
-      .attr("stroke", (p) => (p.role.includes("bishop") ? "#d4a017" : "none"))
-      .attr("stroke-width", 1.5);
+      .attr("stroke", (p) => {
+        if (p.id === lockedId) return "#8b1e2d";
+        return p.role.includes("bishop") ? "#d4a017" : "none";
+      })
+      .attr("stroke-width", (p) => (p.id === lockedId ? 3 : 1.5));
 
     // Label placement: use simple anti-overlap by dy offset for clusters
     const labelData = people
@@ -268,7 +306,12 @@ export default function LineageGraph({ people, relationships }: Props) {
       .attr("fill", (d) => (d.p.significance >= 4 ? "#1f1a13" : "#1f1a13cc"))
       .text((d) => d.p.name);
 
-  }, [people, relationships, positions, presentRegions, yScale, innerH, innerW]);
+  }, [people, relationships, positions, presentRegions, yScale, innerH, innerW, lockedId, lockedNeighbors]);
+
+  const lockedEdges = useMemo(
+    () => (lockedId ? relationships.filter((r) => r.from === lockedId || r.to === lockedId) : []),
+    [relationships, lockedId]
+  );
 
   return (
     <div className="relative">
@@ -289,10 +332,39 @@ export default function LineageGraph({ people, relationships }: Props) {
           <span className="inline-block w-3 h-3 rounded-full bg-accent align-middle mr-1" /> apostle
         </span>
       </div>
-      <svg
-        ref={svgRef}
-        className="w-full h-auto bg-parchment border border-ink/10 rounded"
-      />
+
+      {lockedPerson && (
+        <div className="flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/10 border border-accent/30 rounded text-sm">
+          <span className="font-serif text-base">{lockedPerson.name}</span>
+          <span className="text-ink/60 text-xs">
+            locked · {lockedEdges.length} connections highlighted
+          </span>
+          <button
+            onClick={() => setCondensed((c) => !c)}
+            className="ml-auto px-2 py-1 rounded border border-ink/20 hover:border-accent text-xs"
+          >
+            {condensed ? "Show full graph" : "Condense to chain only"}
+          </button>
+          <Link
+            href={`/fathers/${lockedPerson.id}`}
+            className="px-2 py-1 rounded bg-ink text-parchment hover:bg-accent text-xs"
+          >
+            Open page →
+          </Link>
+          <button
+            onClick={() => {
+              setLockedId(null);
+              setCondensed(false);
+            }}
+            className="px-2 py-1 rounded border border-ink/20 hover:border-accent text-xs"
+          >
+            Clear
+          </button>
+        </div>
+      )}
+
+      <svg ref={svgRef} className="w-full h-auto bg-parchment border border-ink/10 rounded" />
+
       {hover && (
         <div
           className="absolute pointer-events-none bg-ink text-parchment text-xs px-2 py-1 rounded shadow-lg z-10"
@@ -305,79 +377,40 @@ export default function LineageGraph({ people, relationships }: Props) {
           </div>
         </div>
       )}
-      {selected && (
-        <PersonPanel
-          person={selected}
-          relationships={relationships.filter((r) => r.from === selected.id || r.to === selected.id)}
-          peopleById={peopleById}
-          onClose={() => setSelected(null)}
-        />
+
+      {lockedPerson && (
+        <div className="mt-3 p-3 bg-ink/5 border border-ink/10 rounded text-sm">
+          <p className="text-ink/75 mb-2">{lockedPerson.short_bio}</p>
+          <ul className="text-xs text-ink/65 flex flex-wrap gap-x-3 gap-y-1">
+            {lockedEdges.slice(0, 12).map((e, i) => {
+              const otherId = e.from === lockedPerson.id ? e.to : e.from;
+              const other = peopleById.get(otherId);
+              const verb = e.from === lockedPerson.id ? e.type : `${e.type} (from)`;
+              return (
+                <li key={i}>
+                  <span className="text-ink/50">{verb.replace(/_/g, " ")}</span>{" "}
+                  <span className="font-medium">{other?.name ?? otherId}</span>
+                  <span
+                    className={`ml-1 text-[10px] uppercase ${
+                      e.strength === "disputed" ? "text-accent" : "text-ink/40"
+                    }`}
+                  >
+                    {e.strength}
+                  </span>
+                </li>
+              );
+            })}
+            {lockedEdges.length > 12 && (
+              <li className="text-ink/40">+ {lockedEdges.length - 12} more</li>
+            )}
+          </ul>
+        </div>
       )}
     </div>
   );
 }
 
-function PersonPanel({
-  person,
-  relationships,
-  peopleById,
-  onClose,
-}: {
-  person: Person;
-  relationships: Relationship[];
-  peopleById: Map<string, Person>;
-  onClose: () => void;
-}) {
-  return (
-    <div className="fixed top-0 right-0 h-full w-[420px] max-w-[90vw] bg-parchment border-l border-ink/15 shadow-2xl overflow-y-auto z-30 p-6">
-      <button onClick={onClose} className="absolute top-3 right-4 text-ink/50 hover:text-accent text-lg">
-        ×
-      </button>
-      <h2 className="font-serif text-3xl mb-1">{person.name}</h2>
-      <div className="text-sm text-ink/60 mb-4">
-        {person.born ?? "?"} – {person.died ?? "?"}
-        {person.see ? ` · Bishop of ${person.see}` : ""}
-      </div>
-      <p className="text-sm leading-relaxed mb-4">{person.short_bio}</p>
-      <div className="flex flex-wrap gap-1 mb-4">
-        {person.role.map((r) => (
-          <span key={r} className="text-[10px] uppercase tracking-wide bg-ink/10 px-2 py-0.5 rounded">
-            {r}
-          </span>
-        ))}
-      </div>
-      <Link href={`/fathers/${person.id}`} className="inline-block text-sm text-accent hover:underline mb-6">
-        Full page →
-      </Link>
-      <h3 className="font-serif text-lg mt-4 mb-2">Connections ({relationships.length})</h3>
-      <ul className="space-y-3 text-sm">
-        {relationships.map((r, i) => {
-          const otherId = r.from === person.id ? r.to : r.from;
-          const other = peopleById.get(otherId);
-          const direction = r.from === person.id ? r.type : `${r.type} (from)`;
-          return (
-            <li key={i} className="border-l-2 border-ink/15 pl-3">
-              <div>
-                <span className="text-ink/60">{direction.replace(/_/g, " ")}</span>{" "}
-                <Link href={`/fathers/${otherId}`} className="font-medium hover:text-accent">
-                  {other?.name ?? otherId}
-                </Link>{" "}
-                <span
-                  className={`text-[10px] uppercase ml-1 ${
-                    r.strength === "disputed" ? "text-accent" : "text-ink/50"
-                  }`}
-                >
-                  {r.strength}
-                </span>
-              </div>
-              {r.notes && <div className="text-ink/60 text-xs mt-0.5">{r.notes}</div>}
-              <div className="text-[11px] text-ink/50 mt-0.5">
-                {r.citations.map((c) => c.source).join(" · ")}
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-    </div>
-  );
+// (PersonPanel removed — now handled inline as the lock bar)
+function _unused() {
+  return null;
 }

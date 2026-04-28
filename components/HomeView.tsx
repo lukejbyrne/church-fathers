@@ -22,8 +22,8 @@ export default function HomeView({
         <h2 className="font-serif text-3xl mb-2">The full lineage</h2>
         <p className="text-ink/70 mb-4">
           {view === "timeline"
-            ? "All 192 figures as a horizontal timeline. Each bar spans a person's lifespan, colored by region. Bishops have a gold border. Scroll right to walk through the centuries; hover to read the bio."
-            : "All 192 figures as a network graph. Time flows downward; region columns left-to-right. Solid edges are documented in primary sources; dashed are traditional. Click a dot for the bio."}
+            ? "All 192 figures as a horizontal timeline. Each bar spans a lifespan, colored by region. Hover to highlight connections. Click any bar to lock the chain — then scroll to trace it across the centuries, or condense to just the chain."
+            : "All 192 figures as a network graph. Time flows downward; region columns left-to-right. Hover for the name; click to lock and highlight the chain. Solid edges are documented in primary sources; dashed are traditional."}
         </p>
         <div className="inline-flex border border-ink/20 rounded overflow-hidden text-sm">
           <button

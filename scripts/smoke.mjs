@@ -28,10 +28,21 @@ const nodeCount = await page.locator("svg g.node").count();
 console.log(`  nodes rendered: ${nodeCount}`);
 const edgeCount = await page.locator("svg g.edges path").count();
 console.log(`  edges rendered: ${edgeCount}`);
-if (nodeCount > 0) {
-  await page.locator("svg g.node").first().click();
-  await page.waitForTimeout(300);
-  await page.screenshot({ path: `${OUT}/02-clicked.png`, fullPage: false });
+// Click a timeline bar to lock chain
+const bar = page.locator('a[href*="/fathers/"]').nth(20);
+if (await bar.count()) {
+  await bar.click();
+  await page.waitForTimeout(400);
+  await page.screenshot({ path: `${OUT}/02-locked.png`, fullPage: false });
+  // Should still be on home page (locked, not navigated)
+  console.log(`  url after click: ${page.url()}`);
+  // Try condense
+  const cond = page.locator('button:has-text("Condense")');
+  if (await cond.count()) {
+    await cond.click();
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: `${OUT}/03-condensed.png`, fullPage: false });
+  }
 }
 
 await shot("http://localhost:3000/directory", "03-directory");

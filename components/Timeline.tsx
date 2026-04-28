@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import type { Person, Region, Relationship } from "@/lib/schema";
 
@@ -40,12 +40,38 @@ const HEADER = 28;
 export default function Timeline({ people, relationships }: Props) {
   const [filterRegion, setFilterRegion] = useState<Region | "all">("all");
   const [hoverId, setHoverId] = useState<string | null>(null);
+  const [lockedId, setLockedId] = useState<string | null>(null);
+  const [condensed, setCondensed] = useState(false);
   const [showAllEdges, setShowAllEdges] = useState(false);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
-  const visible = useMemo(
-    () => (filterRegion === "all" ? people : people.filter((p) => p.region === filterRegion)),
-    [people, filterRegion]
+  // The "active" person — locked takes priority over hover
+  const activeId = lockedId ?? hoverId;
+
+  const allEdges = useMemo(() => relationships, [relationships]);
+  const activeEdges = useMemo(
+    () => (activeId ? allEdges.filter((r) => r.from === activeId || r.to === activeId) : []),
+    [allEdges, activeId]
   );
+  const activeNeighbors = useMemo(() => {
+    const set = new Set<string>();
+    if (!activeId) return set;
+    set.add(activeId);
+    for (const e of activeEdges) {
+      set.add(e.from);
+      set.add(e.to);
+    }
+    return set;
+  }, [activeEdges, activeId]);
+
+  // Visible people: filtered by region, then optionally condensed to chain only
+  const visible = useMemo(() => {
+    let out = filterRegion === "all" ? people : people.filter((p) => p.region === filterRegion);
+    if (condensed && lockedId) {
+      out = out.filter((p) => activeNeighbors.has(p.id));
+    }
+    return out;
+  }, [people, filterRegion, condensed, lockedId, activeNeighbors]);
 
   const visibleIds = useMemo(() => new Set(visible.map((p) => p.id)), [visible]);
 
@@ -55,7 +81,7 @@ export default function Timeline({ people, relationships }: Props) {
     const rows: { end: number }[] = [];
     const placed: { person: Person; row: number; x1: number; x2: number }[] = [];
     for (const p of sorted) {
-      const born = p.born ?? (p.died ? p.died - 60 : 100);
+      const born = p.born ?? (p.died ? p.died - 30 : 100);
       const died = p.died ?? born + 60;
       const labelWidth = (p.name.length * 6.5) / PIXELS_PER_YEAR;
       const start = born;
@@ -84,30 +110,18 @@ export default function Timeline({ people, relationships }: Props) {
     return m;
   }, [layout]);
 
-  // Edges relevant to render
   const visibleEdges = useMemo(
     () =>
-      relationships.filter(
+      allEdges.filter(
         (r) => visibleIds.has(r.from) && visibleIds.has(r.to) && positions.has(r.from) && positions.has(r.to)
       ),
-    [relationships, visibleIds, positions]
+    [allEdges, visibleIds, positions]
   );
 
-  const hoverEdges = useMemo(() => {
-    if (!hoverId) return [];
-    return visibleEdges.filter((r) => r.from === hoverId || r.to === hoverId);
-  }, [visibleEdges, hoverId]);
-
-  const hoverNeighbors = useMemo(() => {
-    const set = new Set<string>();
-    if (!hoverId) return set;
-    set.add(hoverId);
-    for (const e of hoverEdges) {
-      set.add(e.from);
-      set.add(e.to);
-    }
-    return set;
-  }, [hoverEdges, hoverId]);
+  const renderEdges = useMemo(() => {
+    if (!activeId) return [];
+    return visibleEdges.filter((r) => r.from === activeId || r.to === activeId);
+  }, [visibleEdges, activeId]);
 
   const totalWidth = (YEAR_MAX - YEAR_MIN) * PIXELS_PER_YEAR;
   const totalHeight = layout.rowCount * (ROW_HEIGHT + ROW_GAP) + 60;
@@ -116,10 +130,7 @@ export default function Timeline({ people, relationships }: Props) {
     return (y - YEAR_MIN) * PIXELS_PER_YEAR;
   }
 
-  const regionsPresent = useMemo(() => {
-    const set = new Set(people.map((p) => p.region));
-    return Array.from(set);
-  }, [people]);
+  const regionsPresent = useMemo(() => Array.from(new Set(people.map((p) => p.region))), [people]);
 
   const eraBands = [
     { label: "Apostolic", from: 5, to: 100, color: "#8b1e2d10" },
@@ -131,28 +142,31 @@ export default function Timeline({ people, relationships }: Props) {
   ];
 
   const peopleById = useMemo(() => new Map(people.map((p) => [p.id, p])), [people]);
-  const hovered = hoverId ? peopleById.get(hoverId) : null;
+  const active = activeId ? peopleById.get(activeId) : null;
+
+  // When a person gets locked, scroll their bar into view
+  useEffect(() => {
+    if (!lockedId || !scrollRef.current) return;
+    const pos = positions.get(lockedId);
+    if (!pos) return;
+    const container = scrollRef.current;
+    const target = pos.x1 - container.clientWidth / 4;
+    container.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
+  }, [lockedId, positions]);
 
   function edgePath(from: string, to: string): string {
     const a = positions.get(from)!;
     const b = positions.get(to)!;
-    const x1 = a.cx;
-    const y1 = a.y;
-    const x2 = b.cx;
-    const y2 = b.y;
-    const dx = Math.abs(x2 - x1);
-    const dy = Math.abs(y2 - y1);
-    // If same row, draw a low arc above; otherwise quadratic bezier with vertical bend
     if (a.row === b.row) {
+      const dx = Math.abs(b.cx - a.cx);
       const lift = Math.max(15, Math.min(60, dx * 0.3));
-      const mx = (x1 + x2) / 2;
-      return `M${x1},${y1 - 4} Q${mx},${y1 - lift} ${x2},${y2 - 4}`;
+      const mx = (a.cx + b.cx) / 2;
+      return `M${a.cx},${a.y - 4} Q${mx},${a.y - lift} ${b.cx},${b.y - 4}`;
     }
-    const midY = (y1 + y2) / 2;
-    const bend = dx * 0.15 + 10;
-    return `M${x1},${y1} C${x1},${midY - bend / 2} ${x2},${midY + bend / 2} ${x2},${y2}`;
+    const midY = (a.y + b.y) / 2;
+    const bend = Math.abs(b.cx - a.cx) * 0.15 + 10;
+    return `M${a.cx},${a.y} C${a.cx},${midY - bend / 2} ${b.cx},${midY + bend / 2} ${b.cx},${b.y}`;
   }
-
   function strokeFor(s: Relationship["strength"]) {
     return s === "disputed" ? "#8b1e2d" : s === "tradition" ? "#1f1a1380" : "#1f1a13";
   }
@@ -160,10 +174,20 @@ export default function Timeline({ people, relationships }: Props) {
     return s === "documented" ? undefined : s === "tradition" ? "5,3" : "2,3";
   }
 
+  function handleBarClick(e: React.MouseEvent, id: string) {
+    e.preventDefault();
+    if (lockedId === id) {
+      setLockedId(null);
+      setCondensed(false);
+    } else {
+      setLockedId(id);
+    }
+  }
+
   return (
     <div>
-      <div className="flex flex-wrap items-center gap-2 mb-4 text-xs">
-        <span className="text-ink/60 mr-1">Filter region:</span>
+      <div className="flex flex-wrap items-center gap-2 mb-3 text-xs">
+        <span className="text-ink/60 mr-1">Region:</span>
         <button
           onClick={() => setFilterRegion("all")}
           className={`px-2 py-1 rounded border ${
@@ -174,15 +198,15 @@ export default function Timeline({ people, relationships }: Props) {
         </button>
         {regionsPresent.map((r) => {
           const count = people.filter((p) => p.region === r).length;
-          const active = filterRegion === r;
+          const isActive = filterRegion === r;
           return (
             <button
               key={r}
               onClick={() => setFilterRegion(r)}
               className={`px-2 py-1 rounded border ${
-                active ? "text-parchment border-transparent" : "border-ink/20 hover:border-ink/40"
+                isActive ? "text-parchment border-transparent" : "border-ink/20 hover:border-ink/40"
               }`}
-              style={active ? { backgroundColor: REGION_COLOR[r] } : { color: REGION_COLOR[r] }}
+              style={isActive ? { backgroundColor: REGION_COLOR[r] } : { color: REGION_COLOR[r] }}
             >
               <span
                 className="inline-block w-2 h-2 rounded-sm align-middle mr-1"
@@ -193,16 +217,47 @@ export default function Timeline({ people, relationships }: Props) {
           );
         })}
         <label className="ml-auto flex items-center gap-1.5 text-ink/60">
-          <input
-            type="checkbox"
-            checked={showAllEdges}
-            onChange={(e) => setShowAllEdges(e.target.checked)}
-          />
+          <input type="checkbox" checked={showAllEdges} onChange={(e) => setShowAllEdges(e.target.checked)} />
           Show all connections
         </label>
       </div>
 
-      <div className="relative overflow-x-auto border border-ink/10 rounded bg-parchment">
+      {lockedId && (
+        <div className="flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/10 border border-accent/30 rounded text-sm">
+          <span className="font-serif text-base">
+            {peopleById.get(lockedId)?.name}
+          </span>
+          <span className="text-ink/60 text-xs">
+            locked · {activeEdges.length} connections highlighted
+          </span>
+          <button
+            onClick={() => setCondensed((c) => !c)}
+            className="ml-auto px-2 py-1 rounded border border-ink/20 hover:border-accent text-xs"
+          >
+            {condensed ? "Show full timeline" : "Condense to chain only"}
+          </button>
+          <Link
+            href={`/fathers/${lockedId}`}
+            className="px-2 py-1 rounded bg-ink text-parchment hover:bg-accent text-xs"
+          >
+            Open page →
+          </Link>
+          <button
+            onClick={() => {
+              setLockedId(null);
+              setCondensed(false);
+            }}
+            className="px-2 py-1 rounded border border-ink/20 hover:border-accent text-xs"
+          >
+            Clear
+          </button>
+        </div>
+      )}
+
+      <div
+        ref={scrollRef}
+        className="relative overflow-x-auto border border-ink/10 rounded bg-parchment"
+      >
         <div className="relative" style={{ width: totalWidth, height: totalHeight }}>
           {eraBands.map((b) => (
             <div
@@ -214,33 +269,23 @@ export default function Timeline({ people, relationships }: Props) {
                 backgroundColor: b.color,
               }}
             >
-              <div className="text-[10px] uppercase tracking-wider text-ink/50 px-2 pt-1">
+              <div className="text-[10px] uppercase tracking-wider text-ink/55 px-2 pt-1">
                 {b.label}
               </div>
             </div>
           ))}
 
           {[0, 100, 200, 300, 400, 500, 600, 700].map((y) => (
-            <div
-              key={y}
-              className="absolute top-0 bottom-0 border-l border-ink/15"
-              style={{ left: yearToX(y) }}
-            >
-              <div className="text-[10px] text-ink/50 absolute bottom-1 left-1 bg-parchment px-1 rounded">
+            <div key={y} className="absolute top-0 bottom-0 border-l border-ink/15" style={{ left: yearToX(y) }}>
+              <div className="text-[10px] text-ink/55 absolute bottom-1 left-1 bg-parchment px-1 rounded">
                 AD {y}
               </div>
             </div>
           ))}
 
-          {/* SVG edge layer */}
-          <svg
-            className="absolute inset-0 pointer-events-none"
-            width={totalWidth}
-            height={totalHeight}
-            style={{ zIndex: 2 }}
-          >
+          <svg className="absolute inset-0 pointer-events-none" width={totalWidth} height={totalHeight} style={{ zIndex: 2 }}>
             {showAllEdges &&
-              !hoverId &&
+              !activeId &&
               visibleEdges.map((r, i) => (
                 <path
                   key={`all-${i}`}
@@ -252,7 +297,7 @@ export default function Timeline({ people, relationships }: Props) {
                   opacity={0.18}
                 />
               ))}
-            {hoverEdges.map((r, i) => (
+            {renderEdges.map((r, i) => (
               <path
                 key={`h-${i}`}
                 d={edgePath(r.from, r.to)}
@@ -265,19 +310,20 @@ export default function Timeline({ people, relationships }: Props) {
             ))}
           </svg>
 
-          {/* Person bars */}
           {layout.placed.map(({ person, x1, x2, row }) => {
             const left = yearToX(x1);
             const width = Math.max(8, (x2 - x1) * PIXELS_PER_YEAR);
             const top = HEADER + row * (ROW_HEIGHT + ROW_GAP);
             const color = REGION_COLOR[person.region];
-            const isHover = hoverId === person.id;
-            const isNeighbor = hoverId && hoverNeighbors.has(person.id) && !isHover;
-            const dimmed = hoverId && !hoverNeighbors.has(person.id);
+            const isActive = activeId === person.id;
+            const isLocked = lockedId === person.id;
+            const isNeighbor = activeId && activeNeighbors.has(person.id) && !isActive;
+            const dimmed = activeId && !activeNeighbors.has(person.id);
             return (
-              <Link
+              <a
                 key={person.id}
                 href={`/fathers/${person.id}`}
+                onClick={(e) => handleBarClick(e, person.id)}
                 onMouseEnter={() => setHoverId(person.id)}
                 onMouseLeave={() => setHoverId(null)}
                 className="absolute flex items-center group cursor-pointer"
@@ -285,10 +331,11 @@ export default function Timeline({ people, relationships }: Props) {
                   left,
                   top,
                   height: ROW_HEIGHT,
-                  zIndex: isHover ? 5 : isNeighbor ? 4 : 3,
+                  zIndex: isActive ? 5 : isNeighbor ? 4 : 3,
                   opacity: dimmed ? 0.18 : 1,
                   transition: "opacity 120ms",
                 }}
+                title="Click to lock chain · double-click bar text or use 'Open page' to view full bio"
               >
                 <span
                   className="rounded-sm"
@@ -297,51 +344,57 @@ export default function Timeline({ people, relationships }: Props) {
                     height: ROW_HEIGHT - 6,
                     backgroundColor: color,
                     opacity: person.role.includes("apostle") ? 1 : 0.88,
-                    border: isHover
-                      ? "2px solid #1f1a13"
-                      : isNeighbor
-                        ? "1.5px solid #1f1a13"
-                        : person.role.includes("bishop")
-                          ? "1.5px solid #d4a017"
-                          : "none",
-                    boxShadow: isHover ? "0 0 0 2px rgba(139,30,45,0.3)" : undefined,
+                    border: isLocked
+                      ? "2px solid #8b1e2d"
+                      : isActive
+                        ? "2px solid #1f1a13"
+                        : isNeighbor
+                          ? "1.5px solid #1f1a13"
+                          : person.role.includes("bishop")
+                            ? "1.5px solid #d4a017"
+                            : "none",
+                    boxShadow: isLocked
+                      ? "0 0 0 2px rgba(139,30,45,0.3)"
+                      : isActive
+                        ? "0 0 0 2px rgba(31,26,19,0.2)"
+                        : undefined,
                   }}
                 />
                 <span
                   className="ml-2 text-[12px] whitespace-nowrap font-serif group-hover:text-accent"
                   style={{
                     color: "#1f1a13",
-                    fontWeight: isHover ? 600 : isNeighbor ? 500 : 400,
+                    fontWeight: isActive || isLocked ? 600 : isNeighbor ? 500 : 400,
                   }}
                 >
                   {person.name}
                 </span>
-              </Link>
+              </a>
             );
           })}
         </div>
       </div>
 
       <div className="mt-3 min-h-[80px]">
-        {hovered ? (
+        {active ? (
           <div className="p-3 bg-ink/5 border border-ink/10 rounded text-sm">
             <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-              <strong className="font-serif text-base">{hovered.name}</strong>
+              <strong className="font-serif text-base">{active.name}</strong>
               <span className="text-ink/60 text-xs">
-                {hovered.born ?? "?"} – {hovered.died ?? "?"}
-                {hovered.see ? ` · Bishop of ${hovered.see}` : ""}
+                {active.born ?? "?"} – {active.died ?? "?"}
+                {active.see ? ` · Bishop of ${active.see}` : ""}
               </span>
               <span className="ml-auto text-xs text-ink/60">
-                {hoverEdges.length} connection{hoverEdges.length === 1 ? "" : "s"}
+                {activeEdges.length} connection{activeEdges.length === 1 ? "" : "s"}
               </span>
             </div>
-            <p className="text-ink/75 mb-2">{hovered.short_bio}</p>
-            {hoverEdges.length > 0 && (
+            <p className="text-ink/75 mb-2">{active.short_bio}</p>
+            {activeEdges.length > 0 && (
               <ul className="text-xs text-ink/65 flex flex-wrap gap-x-3 gap-y-1">
-                {hoverEdges.slice(0, 8).map((e, i) => {
-                  const otherId = e.from === hovered.id ? e.to : e.from;
+                {activeEdges.slice(0, 12).map((e, i) => {
+                  const otherId = e.from === active.id ? e.to : e.from;
                   const other = peopleById.get(otherId);
-                  const verb = e.from === hovered.id ? e.type : `${e.type} (from)`;
+                  const verb = e.from === active.id ? e.type : `${e.type} (from)`;
                   return (
                     <li key={i}>
                       <span className="text-ink/50">{verb.replace(/_/g, " ")}</span>{" "}
@@ -356,8 +409,8 @@ export default function Timeline({ people, relationships }: Props) {
                     </li>
                   );
                 })}
-                {hoverEdges.length > 8 && (
-                  <li className="text-ink/40">+ {hoverEdges.length - 8} more</li>
+                {activeEdges.length > 12 && (
+                  <li className="text-ink/40">+ {activeEdges.length - 12} more</li>
                 )}
               </ul>
             )}
@@ -365,7 +418,8 @@ export default function Timeline({ people, relationships }: Props) {
         ) : (
           <p className="text-xs text-ink/50">
             Each bar spans birth to death. Color = region. Gold border = bishop.{" "}
-            <strong>Hover any bar</strong> to highlight everyone they knew. Click to open the full bio.
+            <strong>Hover</strong> to highlight connections temporarily.{" "}
+            <strong>Click</strong> to lock and scroll horizontally to trace the chain.
           </p>
         )}
       </div>
