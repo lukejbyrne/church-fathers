@@ -51,7 +51,9 @@ export default function Timeline({ people, relationships }: Props) {
   useEffect(() => {
     const fit = () => {
       const w = containerRef.current?.clientWidth ?? 1200;
-      setPxPerYear(Math.max(1.2, Math.min(3, (w - 24) / (YEAR_MAX - YEAR_MIN))));
+      // Fill container width on desktop. Floor at 1.2 so mobile/narrow screens
+      // still pack legibly (and scroll horizontally past the floor).
+      setPxPerYear(Math.max(1.2, (w - 24) / (YEAR_MAX - YEAR_MIN)));
     };
     fit();
     window.addEventListener("resize", fit);
