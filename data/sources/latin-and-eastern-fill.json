@@ -1,0 +1,71 @@
+{
+  "era": "post-nicene",
+  "people": [
+    {
+      "id": "apollinaris-of-laodicea",
+      "name": "Apollinaris of Laodicea",
+      "alt_names": ["Apollinarius of Laodicea", "Apollinaris the Younger"],
+      "born": 310,
+      "born_circa": true,
+      "died": 390,
+      "died_circa": true,
+      "birth_place": "Laodicea in Syria",
+      "death_place": "Laodicea in Syria",
+      "region": "syria",
+      "role": ["bishop", "theologian"],
+      "see": "Laodicea in Syria",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Laodicea in Syria from c. 360, an able exegete and grammarian and originally a staunch ally of Athanasius against the Arians. From the 360s he developed a Christology in which the divine Logos took the place of the rational human soul (nous) in Christ, denying Christ a complete human mind. The position, intended to safeguard Christ's unity, was condemned by synods at Rome (377) and Alexandria, and definitively at the Council of Constantinople in 381. Most of his works survive only in fragments or under other names; his disciples developed varieties of monophysite Christology.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Apollinaris_of_Laodicea",
+      "citations": [
+        { "source": "Gregory of Nazianzus, Epistulae 101 and 102 (Ad Cledonium)", "kind": "primary" },
+        { "source": "Epiphanius, Panarion 77", "kind": "primary" },
+        { "source": "Theodoret, Haereticarum Fabularum Compendium 4.8", "kind": "primary" },
+        { "source": "ODCC s.v. Apollinarius of Laodicea", "kind": "secondary" }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "gregory-of-nazianzus",
+      "to": "apollinaris-of-laodicea",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Gregory's two letters to Cledonius (Ep. 101, 102) are the classic Cappadocian refutation of Apollinarian Christology, with the famous formula 'what has not been assumed has not been healed.'",
+      "citations": [
+        { "source": "Gregory of Nazianzus, Epistulae 101, 102", "kind": "primary" }
+      ]
+    },
+    {
+      "from": "gregory-of-nyssa",
+      "to": "apollinaris-of-laodicea",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Gregory of Nyssa wrote the Antirrheticus adversus Apollinarem, a sustained refutation of Apollinaris's treatise on the Incarnation.",
+      "citations": [
+        { "source": "Gregory of Nyssa, Antirrheticus adversus Apollinarem", "kind": "primary" }
+      ]
+    },
+    {
+      "from": "epiphanius-of-salamis",
+      "to": "apollinaris-of-laodicea",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Epiphanius devotes Panarion 77 to refuting the Apollinarians.",
+      "citations": [
+        { "source": "Epiphanius, Panarion 77", "kind": "primary" }
+      ]
+    },
+    {
+      "from": "theodoret-of-cyrus",
+      "to": "apollinaris-of-laodicea",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Theodoret treats Apollinarianism in his heresiological compendium and elsewhere as a Christological error denying Christ's full humanity.",
+      "citations": [
+        { "source": "Theodoret, Haereticarum Fabularum Compendium 4.8", "kind": "primary" }
+      ]
+    }
+  ]
+}

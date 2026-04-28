@@ -1,0 +1,136 @@
+{
+  "era": "post-nicene",
+  "people": [
+    {
+      "id": "macarius-of-alexandria",
+      "name": "Macarius of Alexandria",
+      "alt_names": ["Macarius the Citizen", "Macarius the Younger"],
+      "born": 295,
+      "born_circa": true,
+      "died": 395,
+      "died_circa": true,
+      "birth_place": "Alexandria",
+      "death_place": "Kellia",
+      "region": "egypt",
+      "role": ["monk", "presbyter"],
+      "tradition_status": "desert-father",
+      "significance": 2,
+      "short_bio": "Egyptian ascetic, distinct from his older contemporary Macarius the Great of Egypt, with whom he is often confused. A former merchant, he became a monk in the Nitrian desert and later at Kellia, where he was ordained presbyter. Palladius, who lived under him, describes his extreme ascetic feats and visits to the major desert centres including Tabennesi. His sayings are preserved among the Apophthegmata Patrum.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Macarius_of_Alexandria",
+      "citations": [
+        { "source": "Palladius, Historia Lausiaca 18", "kind": "primary" },
+        { "source": "Apophthegmata Patrum, alphabetical collection s.v. Makarios the Citizen", "kind": "primary" },
+        { "source": "ODCC s.v. Macarius of Alexandria, St", "kind": "secondary" }
+      ]
+    },
+    {
+      "id": "pambo-of-nitria",
+      "name": "Pambo of Nitria",
+      "alt_names": ["Abba Pambo"],
+      "born": 303,
+      "born_circa": true,
+      "died": 375,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Nitria",
+      "region": "egypt",
+      "role": ["monk", "presbyter"],
+      "tradition_status": "desert-father",
+      "significance": 2,
+      "short_bio": "One of the founding generation of monks at Nitria in Lower Egypt, ordained presbyter and remembered as a teacher of silence and discernment. According to Palladius and the Apophthegmata he taught the Tall Brothers and received a visit from Melania the Elder shortly before his death. His sayings on guarding the tongue and on holy reading were widely transmitted in the desert literature.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pambo",
+      "citations": [
+        { "source": "Palladius, Historia Lausiaca 10", "kind": "primary" },
+        { "source": "Apophthegmata Patrum, alphabetical collection s.v. Pambo", "kind": "primary" },
+        { "source": "Socrates, Hist. Eccl. 4.23", "kind": "primary" }
+      ]
+    },
+    {
+      "id": "shenoute-of-atripe",
+      "name": "Shenoute of Atripe",
+      "alt_names": ["Shenoute the Great", "Shenouda", "Sinuthius"],
+      "born": 348,
+      "born_circa": true,
+      "died": 466,
+      "died_circa": true,
+      "birth_place": "Shenalolet",
+      "death_place": "White Monastery, Atripe",
+      "region": "egypt",
+      "role": ["monk", "presbyter", "theologian"],
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Coptic abbot of the White Monastery near Atripe (Sohag) in Upper Egypt for some eight decades, the most prolific writer in the Coptic language and arguably the most important figure of native Egyptian Christianity in late antiquity. He authored a vast corpus of sermons, letters, and rules (the Canons), reformed cenobitic discipline beyond the Pachomian model, attacked surviving paganism in the Thebaid, and accompanied Cyril of Alexandria to the Council of Ephesus in 431. Largely absent from Greek and Latin patrologies, his Coptic Sahidic corpus is now central to the study of late-antique monasticism.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Shenoute",
+      "citations": [
+        { "source": "Besa, Vita Sinuthii", "kind": "primary" },
+        { "source": "Shenoute, Canons (Coptic)", "kind": "primary" },
+        { "source": "Shenoute, Discourses (Coptic)", "kind": "primary" },
+        { "source": "ODCC s.v. Shenoute (Shenute, Sinuthius), St", "kind": "secondary" }
+      ]
+    },
+    {
+      "id": "sisoes-the-great",
+      "name": "Sisoes the Great",
+      "alt_names": ["Abba Sisoes"],
+      "born": null,
+      "born_circa": true,
+      "died": 429,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Mount Colzim",
+      "region": "egypt",
+      "role": ["monk"],
+      "tradition_status": "desert-father",
+      "significance": 2,
+      "short_bio": "Egyptian solitary who, after the death of Antony the Great, withdrew to Antony's mountain (Mount Colzim near the Red Sea) and lived there for some seventy years. He is one of the most quoted abbas in the Apophthegmata Patrum, with around fifty sayings preserved under his name in the alphabetical collection, mostly on humility, mourning for sin, and refusal to teach. Often cited in later Byzantine and Slavonic spiritual literature.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sisoes_the_Great",
+      "citations": [
+        { "source": "Apophthegmata Patrum, alphabetical collection s.v. Sisoes", "kind": "primary" },
+        { "source": "ODCC s.v. Sisoes, St", "kind": "secondary" }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "macarius-of-alexandria",
+      "to": "anthony-the-great",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Palladius reports Macarius of Alexandria as a disciple of Antony; the relationship is preserved in the desert-father tradition rather than in a contemporary document.",
+      "citations": [
+        { "source": "Palladius, Historia Lausiaca 18", "kind": "primary" }
+      ]
+    },
+    {
+      "from": "pambo-of-nitria",
+      "to": "melania-the-elder",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Palladius records Melania the Elder visiting Pambo at Nitria shortly before his death and Pambo dying in her presence.",
+      "citations": [
+        { "source": "Palladius, Historia Lausiaca 10, 46", "kind": "primary" }
+      ]
+    },
+    {
+      "from": "sisoes-the-great",
+      "to": "anthony-the-great",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Sisoes settled on Antony's mountain (Mount Colzim) after Antony's death; this is a hagiographic succession of place rather than an episcopal see, but is the standard tradition. Use with caution.",
+      "citations": [
+        { "source": "Apophthegmata Patrum, alphabetical collection s.v. Sisoes 1, 28", "kind": "primary" }
+      ]
+    },
+    {
+      "from": "shenoute-of-atripe",
+      "to": "cyril-of-alexandria",
+      "type": "met",
+      "strength": "tradition",
+      "notes": "Besa's Vita Sinuthii reports Shenoute accompanying Cyril to the Council of Ephesus in 431; this is attested in the hagiographic tradition rather than in conciliar acta.",
+      "citations": [
+        { "source": "Besa, Vita Sinuthii", "kind": "primary" },
+        { "source": "ODCC s.v. Shenoute", "kind": "secondary" }
+      ]
+    }
+  ]
+}

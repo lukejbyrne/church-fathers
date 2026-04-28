@@ -1,6 +1,7 @@
 import { getPeople, getRelationships } from "@/lib/data";
 import HomeView from "@/components/HomeView";
 import HeroChain from "@/components/HeroChain";
+import SubscribeForm from "@/components/SubscribeForm";
 
 export default function Home() {
   const people = getPeople();
@@ -21,6 +22,12 @@ export default function Home() {
     <>
       <HeroChain />
       <HomeView people={people} relationships={relationships} />
+      <section className="max-w-3xl mx-auto px-4 py-10 border-t border-ink/10 mt-10">
+        <p className="text-center text-sm text-ink/60 mb-3">
+          One Father in your inbox each morning. Optional, free, unsubscribe whenever.
+        </p>
+        <SubscribeForm variant="compact" />
+      </section>
     </>
   );
 }

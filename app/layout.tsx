@@ -103,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="absolute top-full right-0 mt-1 bg-parchment border border-ink/15 rounded shadow-lg py-2 min-w-[240px] max-h-[80vh] overflow-y-auto z-30">
                   <Link href="/start-here" className="block px-4 py-2 text-sm hover:bg-ink/5">Start here</Link>
                   <Link href="/" className="block px-4 py-2 text-sm hover:bg-ink/5">Lineage</Link>
+                  <Link href="/today" className="block px-4 py-2 text-sm hover:bg-ink/5">Today</Link>
                   <Link href="/map" className="block px-4 py-2 text-sm hover:bg-ink/5">Map</Link>
                   <Link href="/eras" className="block px-4 py-2 text-sm hover:bg-ink/5">
                     Eras <span className="text-ink/50">overview</span>
@@ -118,6 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Link href="/eras/early-medieval" className="block px-4 py-1.5 text-[13px] text-ink/75 hover:bg-ink/5">Early Medieval <span className="text-ink/45">(600–750)</span></Link>
                   </div>
                   <Link href="/bishops" className="block px-4 py-2 text-sm hover:bg-ink/5">Bishops</Link>
+                  <Link href="/schisms" className="block px-4 py-2 text-sm hover:bg-ink/5">Schisms</Link>
                   <Link href="/directory" className="block px-4 py-2 text-sm hover:bg-ink/5">Directory</Link>
                   <Link href="/about" className="block px-4 py-2 text-sm hover:bg-ink/5">Methodology</Link>
                 </div>
@@ -133,6 +135,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </Link>
               <Link href="/start-here" className="text-sm hover:text-accent">Start here</Link>
               <Link href="/" className="text-sm hover:text-accent">Lineage</Link>
+              <Link href="/today" className="text-sm hover:text-accent">Today</Link>
               <Link href="/map" className="text-sm hover:text-accent">Map</Link>
               <div className="relative group">
                 <Link
@@ -176,6 +179,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </div>
               </div>
               <Link href="/bishops" className="text-sm hover:text-accent">Bishops</Link>
+              <Link href="/schisms" className="text-sm hover:text-accent">Schisms</Link>
               <Link href="/directory" className="text-sm hover:text-accent">Directory</Link>
               <Link href="/about" className="text-sm hover:text-accent">Methodology</Link>
               <span className="ml-auto text-xs text-ink/50">AD 30 — 750</span>

@@ -3920,6 +3920,14 @@
       {
         "source": "Jacob of Serugh, Memra on Ephrem",
         "kind": "primary"
+      },
+      {
+        "source": "Sebastian Brock, A Brief Outline of Syriac Literature",
+        "kind": "secondary"
+      },
+      {
+        "source": "ODCC s.v. James of Sarug",
+        "kind": "secondary"
       }
     ]
   },
@@ -4229,6 +4237,341 @@
       {
         "source": "Louth, Maximus the Confessor (Routledge 1996), pp. 35-37",
         "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "macarius-of-alexandria",
+    "to": "anthony-the-great",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Palladius reports Macarius of Alexandria as a disciple of Antony; the relationship is preserved in the desert-father tradition rather than in a contemporary document.",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 18",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pambo-of-nitria",
+    "to": "melania-the-elder",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Palladius records Melania the Elder visiting Pambo at Nitria shortly before his death and Pambo dying in her presence.",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 10, 46",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "sisoes-the-great",
+    "to": "anthony-the-great",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Sisoes settled on Antony's mountain (Mount Colzim) after Antony's death; this is a hagiographic succession of place rather than an episcopal see, but is the standard tradition. Use with caution.",
+    "citations": [
+      {
+        "source": "Apophthegmata Patrum, alphabetical collection s.v. Sisoes 1, 28",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "shenoute-of-atripe",
+    "to": "cyril-of-alexandria",
+    "type": "met",
+    "strength": "tradition",
+    "notes": "Besa's Vita Sinuthii reports Shenoute accompanying Cyril to the Council of Ephesus in 431; this is attested in the hagiographic tradition rather than in conciliar acta.",
+    "citations": [
+      {
+        "source": "Besa, Vita Sinuthii",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Shenoute",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "aphrahat",
+    "to": "ephrem-the-syrian",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Aphrahat (writing 337-345 in Sasanian Persia) and Ephrem (in Roman Nisibis/Edessa) are the two great early Syriac authors and near-contemporaries. Direct contact is not attested in primary sources; the linkage is a scholarly/traditional pairing of the founders of Syriac theological literature.",
+    "citations": [
+      {
+        "source": "Sebastian Brock, A Brief Outline of Syriac Literature",
+        "kind": "secondary"
+      },
+      {
+        "source": "ODCC s.v. Aphraates",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "severus-of-antioch",
+    "to": "pope-leo-i",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Severus rejected the Tome of Leo and the Christological definition of Chalcedon (451), polemicising against Leo's two-natures formula across his letters and treatises (e.g. Contra impium Grammaticum, Philalethes).",
+    "citations": [
+      {
+        "source": "Severus of Antioch, Liber contra impium Grammaticum",
+        "kind": "primary"
+      },
+      {
+        "source": "Severus of Antioch, Philalethes",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Severus",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "jacob-of-serugh",
+    "to": "severus-of-antioch",
+    "type": "corresponded",
+    "strength": "tradition",
+    "notes": "A small corpus of letters attributed to Jacob includes correspondence with Severus's miaphysite circle; the authenticity of individual letters is debated but the broader correspondence is generally accepted.",
+    "citations": [
+      {
+        "source": "Jacob of Serugh, Letters (ed. Olinder)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. James of Sarug",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-nazianzus",
+    "to": "apollinaris-of-laodicea",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Gregory's two letters to Cledonius (Ep. 101, 102) are the classic Cappadocian refutation of Apollinarian Christology, with the famous formula 'what has not been assumed has not been healed.'",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Epistulae 101, 102",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-nyssa",
+    "to": "apollinaris-of-laodicea",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Gregory of Nyssa wrote the Antirrheticus adversus Apollinarem, a sustained refutation of Apollinaris's treatise on the Incarnation.",
+    "citations": [
+      {
+        "source": "Gregory of Nyssa, Antirrheticus adversus Apollinarem",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "epiphanius-of-salamis",
+    "to": "apollinaris-of-laodicea",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Epiphanius devotes Panarion 77 to refuting the Apollinarians.",
+    "citations": [
+      {
+        "source": "Epiphanius, Panarion 77",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "theodoret-of-cyrus",
+    "to": "apollinaris-of-laodicea",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Theodoret treats Apollinarianism in his heresiological compendium and elsewhere as a Christological error denying Christ's full humanity.",
+    "citations": [
+      {
+        "source": "Theodoret, Haereticarum Fabularum Compendium 4.8",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "perpetua-of-carthage",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Augustine preached three surviving sermons (280-282) on the feast of Perpetua and Felicity at Carthage and Hippo.",
+    "citations": [
+      {
+        "source": "Augustine, Sermons 280, 281, 282",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "felicity-of-carthage",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Augustine's sermons 280-282 commemorate Felicity jointly with Perpetua.",
+    "citations": [
+      {
+        "source": "Augustine, Sermons 280, 281, 282",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paula-of-rome",
+    "to": "jerome-of-stridon",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Paula and Eustochium are joint addressees of numerous Hieronymian letters and prefaces; Jerome composed her epitaph.",
+    "citations": [
+      {
+        "source": "Jerome, Epistulae 30, 39, 46, 108",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paula-of-rome",
+    "to": "epiphanius-of-salamis",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Jerome's epitaph for Paula recounts her hosting Epiphanius in Rome and visiting him at Salamis on her journey east.",
+    "citations": [
+      {
+        "source": "Jerome, Epistula 108.6-7",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eustochium",
+    "to": "paula-of-rome",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Daughter of Paula; raised in her mother's ascetic household and succeeded her as head of the Bethlehem women's monastery.",
+    "citations": [
+      {
+        "source": "Jerome, Epistula 108",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eustochium",
+    "to": "jerome-of-stridon",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Recipient of Jerome's Letter 22 (Ad Eustochium) and dedicatee of multiple biblical commentaries.",
+    "citations": [
+      {
+        "source": "Jerome, Epistula 22",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, prefaces to commentaries on Isaiah, Ezekiel and the Minor Prophets",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "melania-the-elder",
+    "to": "evagrius-ponticus",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Palladius records Melania the Elder as a patron and correspondent of Evagrius at Kellia.",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 38, 46",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "melania-the-elder",
+    "to": "rufinus-of-aquileia",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Co-founders of the double monastery on the Mount of Olives c. 374-378.",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 46",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Epistula 4 (to Rufinus)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "melania-the-younger",
+    "to": "augustine-of-hippo",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Gerontius's Vita records Melania and Pinianus residing near Hippo c. 410-417 and meeting Augustine and Alypius; Augustine's Letter 124 is addressed to them.",
+    "citations": [
+      {
+        "source": "Gerontius, Vita Melaniae Iunioris 20-21",
+        "kind": "primary"
+      },
+      {
+        "source": "Augustine, Epistula 124",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "melania-the-younger",
+    "to": "cyril-of-alexandria",
+    "type": "met",
+    "strength": "tradition",
+    "notes": "Vita Melaniae reports a visit to Alexandria where she received Cyril; primary attestation rests on the Vita alone.",
+    "citations": [
+      {
+        "source": "Gerontius, Vita Melaniae Iunioris 34",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "melania-the-younger",
+    "to": "melania-the-elder",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Granddaughter; the Vita stresses Melania the Elder's ascetic example as decisive for the younger Melania's vocation.",
+    "citations": [
+      {
+        "source": "Gerontius, Vita Melaniae Iunioris 1, 6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "olympias-the-deaconess",
+    "to": "john-chrysostom",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Seventeen letters from Chrysostom to Olympias survive, written largely from his exile.",
+    "citations": [
+      {
+        "source": "John Chrysostom, Epistulae ad Olympiadem",
+        "kind": "primary"
+      },
+      {
+        "source": "Palladius, Dialogus de Vita Iohannis Chrysostomi 16-17",
+        "kind": "primary"
       }
     ]
   }

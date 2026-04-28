@@ -1479,6 +1479,43 @@
     ]
   },
   {
+    "id": "perpetua-of-carthage",
+    "name": "Perpetua of Carthage",
+    "alt_names": [
+      "Vibia Perpetua",
+      "Perpetua"
+    ],
+    "born": 181,
+    "born_circa": true,
+    "died": 203,
+    "died_circa": false,
+    "birth_place": "Carthage",
+    "death_place": "Carthage",
+    "region": "africa",
+    "role": [
+      "layman",
+      "martyr"
+    ],
+    "tradition_status": "ante-nicene",
+    "significance": 2,
+    "short_bio": "Young noblewoman of Carthage, c. 22 years old and a nursing mother, martyred in the amphitheatre during the persecution under Septimius Severus. The Passio Perpetuae et Felicitatis preserves what is presented as her own first-person prison diary together with that of her companion Saturus and an editor's narrative of their deaths. It is one of the very few first-person texts attributed to a woman from Christian antiquity and a foundational document of Latin martyr literature.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Perpetua_and_Felicity",
+    "citations": [
+      {
+        "source": "Passio Perpetuae et Felicitatis",
+        "kind": "primary"
+      },
+      {
+        "source": "Augustine, Sermons 280-282",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Perpetua and Felicitas, SS.",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
     "id": "origen-of-alexandria",
     "name": "Origen of Alexandria",
     "alt_names": [
@@ -2442,7 +2479,8 @@
     "name": "Aphrahat",
     "alt_names": [
       "Aphraates",
-      "the Persian Sage"
+      "the Persian Sage",
+      "Jacob the Persian Sage"
     ],
     "born": 270,
     "born_circa": true,
@@ -2462,6 +2500,14 @@
       {
         "source": "Aphrahat, Demonstrations",
         "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Aphraates",
+        "kind": "secondary"
+      },
+      {
+        "source": "Sebastian Brock, The Luminous Eye: The Spiritual World Vision of Saint Ephrem the Syrian",
+        "kind": "secondary"
       }
     ]
   },
@@ -2637,6 +2683,43 @@
     ]
   },
   {
+    "id": "macarius-of-alexandria",
+    "name": "Macarius of Alexandria",
+    "alt_names": [
+      "Macarius the Citizen",
+      "Macarius the Younger"
+    ],
+    "born": 295,
+    "born_circa": true,
+    "died": 395,
+    "died_circa": true,
+    "birth_place": "Alexandria",
+    "death_place": "Kellia",
+    "region": "egypt",
+    "role": [
+      "monk",
+      "presbyter"
+    ],
+    "tradition_status": "desert-father",
+    "significance": 2,
+    "short_bio": "Egyptian ascetic, distinct from his older contemporary Macarius the Great of Egypt, with whom he is often confused. A former merchant, he became a monk in the Nitrian desert and later at Kellia, where he was ordained presbyter. Palladius, who lived under him, describes his extreme ascetic feats and visits to the major desert centres including Tabennesi. His sayings are preserved among the Apophthegmata Patrum.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Macarius_of_Alexandria",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 18",
+        "kind": "primary"
+      },
+      {
+        "source": "Apophthegmata Patrum, alphabetical collection s.v. Makarios the Citizen",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Macarius of Alexandria, St",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
     "id": "athanasius-of-alexandria",
     "name": "Athanasius of Alexandria",
     "alt_names": [
@@ -2707,6 +2790,41 @@
       },
       {
         "source": "Palladius, Historia Lausiaca 17",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "id": "pambo-of-nitria",
+    "name": "Pambo of Nitria",
+    "alt_names": [
+      "Abba Pambo"
+    ],
+    "born": 303,
+    "born_circa": true,
+    "died": 375,
+    "died_circa": true,
+    "death_place": "Nitria",
+    "region": "egypt",
+    "role": [
+      "monk",
+      "presbyter"
+    ],
+    "tradition_status": "desert-father",
+    "significance": 2,
+    "short_bio": "One of the founding generation of monks at Nitria in Lower Egypt, ordained presbyter and remembered as a teacher of silence and discernment. According to Palladius and the Apophthegmata he taught the Tall Brothers and received a visit from Melania the Elder shortly before his death. His sayings on guarding the tongue and on holy reading were widely transmitted in the desert literature.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Pambo",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 10",
+        "kind": "primary"
+      },
+      {
+        "source": "Apophthegmata Patrum, alphabetical collection s.v. Pambo",
+        "kind": "primary"
+      },
+      {
+        "source": "Socrates, Hist. Eccl. 4.23",
         "kind": "primary"
       }
     ]
@@ -2854,6 +2972,48 @@
       {
         "source": "Socrates Scholasticus, Hist. Eccl. 6.10-14",
         "kind": "primary"
+      }
+    ]
+  },
+  {
+    "id": "apollinaris-of-laodicea",
+    "name": "Apollinaris of Laodicea",
+    "alt_names": [
+      "Apollinarius of Laodicea",
+      "Apollinaris the Younger"
+    ],
+    "born": 310,
+    "born_circa": true,
+    "died": 390,
+    "died_circa": true,
+    "birth_place": "Laodicea in Syria",
+    "death_place": "Laodicea in Syria",
+    "region": "syria",
+    "role": [
+      "bishop",
+      "theologian"
+    ],
+    "see": "Laodicea in Syria",
+    "tradition_status": "nicene",
+    "significance": 2,
+    "short_bio": "Bishop of Laodicea in Syria from c. 360, an able exegete and grammarian and originally a staunch ally of Athanasius against the Arians. From the 360s he developed a Christology in which the divine Logos took the place of the rational human soul (nous) in Christ, denying Christ a complete human mind. The position, intended to safeguard Christ's unity, was condemned by synods at Rome (377) and Alexandria, and definitively at the Council of Constantinople in 381. Most of his works survive only in fragments or under other names; his disciples developed varieties of monophysite Christology.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Apollinaris_of_Laodicea",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Epistulae 101 and 102 (Ad Cledonium)",
+        "kind": "primary"
+      },
+      {
+        "source": "Epiphanius, Panarion 77",
+        "kind": "primary"
+      },
+      {
+        "source": "Theodoret, Haereticarum Fabularum Compendium 4.8",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Apollinarius of Laodicea",
+        "kind": "secondary"
       }
     ]
   },
@@ -3419,6 +3579,86 @@
     ]
   },
   {
+    "id": "paula-of-rome",
+    "name": "Paula of Rome",
+    "alt_names": [
+      "Paula the Elder",
+      "St Paula"
+    ],
+    "born": 347,
+    "born_circa": false,
+    "died": 404,
+    "died_circa": false,
+    "birth_place": "Rome",
+    "death_place": "Bethlehem",
+    "region": "west",
+    "role": [
+      "layman",
+      "monk"
+    ],
+    "tradition_status": "post-nicene",
+    "significance": 2,
+    "short_bio": "Roman aristocrat, widow, and ascetic who became Jerome's closest patron and collaborator. After meeting Jerome in Rome in 382 she followed him to the East, settling at Bethlehem in 386 where she founded and led a women's monastery alongside Jerome's men's house, financed his scholarly work on the Vulgate, and learned Hebrew and Greek to assist his exegesis. She was buried in Bethlehem; Jerome wrote her epitaph and a long obituary letter (Ep. 108) to her daughter Eustochium.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Paula_of_Rome",
+    "citations": [
+      {
+        "source": "Jerome, Epistula 108 (Epitaphium Paulae)",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Epistulae 30, 39, 46",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Paula, St",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "id": "shenoute-of-atripe",
+    "name": "Shenoute of Atripe",
+    "alt_names": [
+      "Shenoute the Great",
+      "Shenouda",
+      "Sinuthius"
+    ],
+    "born": 348,
+    "born_circa": true,
+    "died": 466,
+    "died_circa": true,
+    "birth_place": "Shenalolet",
+    "death_place": "White Monastery, Atripe",
+    "region": "egypt",
+    "role": [
+      "monk",
+      "presbyter",
+      "theologian"
+    ],
+    "tradition_status": "post-nicene",
+    "significance": 3,
+    "short_bio": "Coptic abbot of the White Monastery near Atripe (Sohag) in Upper Egypt for some eight decades, the most prolific writer in the Coptic language and arguably the most important figure of native Egyptian Christianity in late antiquity. He authored a vast corpus of sermons, letters, and rules (the Canons), reformed cenobitic discipline beyond the Pachomian model, attacked surviving paganism in the Thebaid, and accompanied Cyril of Alexandria to the Council of Ephesus in 431. Largely absent from Greek and Latin patrologies, his Coptic Sahidic corpus is now central to the study of late-antique monasticism.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Shenoute",
+    "citations": [
+      {
+        "source": "Besa, Vita Sinuthii",
+        "kind": "primary"
+      },
+      {
+        "source": "Shenoute, Canons (Coptic)",
+        "kind": "primary"
+      },
+      {
+        "source": "Shenoute, Discourses (Coptic)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Shenoute (Shenute, Sinuthius), St",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
     "id": "john-chrysostom",
     "name": "John Chrysostom",
     "alt_names": [
@@ -3486,6 +3726,42 @@
       {
         "source": "Socrates Scholasticus, Hist. Eccl. 6.3",
         "kind": "primary"
+      }
+    ]
+  },
+  {
+    "id": "melania-the-elder",
+    "name": "Melania the Elder",
+    "alt_names": [
+      "Melania Maior"
+    ],
+    "born": 350,
+    "born_circa": true,
+    "died": 410,
+    "died_circa": true,
+    "birth_place": "Rome",
+    "death_place": "Jerusalem",
+    "region": "west",
+    "role": [
+      "layman",
+      "monk"
+    ],
+    "tradition_status": "post-nicene",
+    "significance": 2,
+    "short_bio": "Roman noblewoman of Spanish origin who, after the early death of her husband, embraced asceticism, travelled to Egypt to visit the desert fathers, and around 374 founded a double monastery on the Mount of Olives in Jerusalem together with Rufinus of Aquileia. She was an important patron of Evagrius Ponticus and a key node in the late 4th-century network linking Roman asceticism, Origenist theology, and Egyptian monasticism. Grandmother of Melania the Younger.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Melania_the_Elder",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 46, 54",
+        "kind": "primary"
+      },
+      {
+        "source": "Paulinus of Nola, Epistulae 29, 31, 45",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Melania the Elder, St",
+        "kind": "secondary"
       }
     ]
   },
@@ -3805,6 +4081,84 @@
     ]
   },
   {
+    "id": "eustochium",
+    "name": "Eustochium",
+    "alt_names": [
+      "Julia Eustochium",
+      "Eustochium of Rome"
+    ],
+    "born": 368,
+    "born_circa": true,
+    "died": 419,
+    "died_circa": true,
+    "birth_place": "Rome",
+    "death_place": "Bethlehem",
+    "region": "west",
+    "role": [
+      "layman",
+      "monk"
+    ],
+    "tradition_status": "post-nicene",
+    "significance": 2,
+    "short_bio": "Daughter of Paula of Rome and a leading figure of the Roman ascetic circle around Jerome. She took a vow of virginity as a young woman; Jerome's Letter 22 to her, on the preservation of virginity, is one of his most influential and controversial works. She accompanied her mother to Bethlehem in 386 and after Paula's death in 404 directed the women's monastery there until her own death. Jerome dedicated several biblical commentaries to her and to Paula.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Eustochium",
+    "citations": [
+      {
+        "source": "Jerome, Epistula 22 (Ad Eustochium)",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Epistula 108 (Epitaphium Paulae)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Eustochium, St",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "id": "olympias-the-deaconess",
+    "name": "Olympias the Deaconess",
+    "alt_names": [
+      "Olympias of Constantinople",
+      "St Olympias"
+    ],
+    "born": 368,
+    "born_circa": true,
+    "died": 408,
+    "died_circa": true,
+    "birth_place": "Constantinople",
+    "death_place": "Nicomedia",
+    "region": "east",
+    "role": [
+      "deacon",
+      "layman"
+    ],
+    "tradition_status": "post-nicene",
+    "significance": 2,
+    "short_bio": "Wealthy Constantinopolitan noblewoman who, widowed young, refused remarriage and was ordained a deaconess (the Roles enum lacks 'deaconess'; she is recorded as deaconess of the Great Church) by Patriarch Nectarius. She founded a community of consecrated women adjacent to Hagia Sophia and used her fortune to support clergy, hospitals, and the poor. A close friend and supporter of John Chrysostom, she shared his exile after 404; his seventeen surviving Letters to Olympias are an important pastoral and theological correspondence.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Olympias_(deaconess)",
+    "citations": [
+      {
+        "source": "John Chrysostom, Epistulae ad Olympiadem",
+        "kind": "primary"
+      },
+      {
+        "source": "Vita Olympiadis (anonymous)",
+        "kind": "primary"
+      },
+      {
+        "source": "Palladius, Dialogus de Vita Iohannis Chrysostomi",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Olympias, St",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
     "id": "possidius-of-calama",
     "name": "Possidius of Calama",
     "alt_names": [
@@ -3994,6 +4348,42 @@
       {
         "source": "Theodoret, Eranistes",
         "kind": "primary"
+      }
+    ]
+  },
+  {
+    "id": "melania-the-younger",
+    "name": "Melania the Younger",
+    "alt_names": [
+      "Melania Iunior"
+    ],
+    "born": 383,
+    "born_circa": true,
+    "died": 439,
+    "died_circa": false,
+    "birth_place": "Rome",
+    "death_place": "Jerusalem",
+    "region": "west",
+    "role": [
+      "layman",
+      "monk"
+    ],
+    "tradition_status": "post-nicene",
+    "significance": 2,
+    "short_bio": "Granddaughter of Melania the Elder. Together with her husband Pinianus she renounced one of the largest fortunes in the late Roman world, freeing thousands of slaves and endowing monasteries across the Mediterranean. After residing in North Africa during the Vandal advance, where she met Augustine and Alypius, she settled in Jerusalem and founded monasteries on the Mount of Olives. Her Greek and Latin Vita, by her chaplain Gerontius, is a major source for early 5th-century asceticism and aristocratic Christianity.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Melania_the_Younger",
+    "citations": [
+      {
+        "source": "Gerontius, Vita Sanctae Melaniae Iunioris",
+        "kind": "primary"
+      },
+      {
+        "source": "Palladius, Historia Lausiaca 61",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Melania the Younger, St",
+        "kind": "secondary"
       }
     ]
   },
@@ -4340,7 +4730,9 @@
     "id": "jacob-of-serugh",
     "name": "Jacob of Serugh",
     "alt_names": [
-      "Mar Jacob"
+      "Mar Jacob",
+      "Jacob of Sarug",
+      "Yaqub of Serugh"
     ],
     "born": 451,
     "born_circa": true,
@@ -4367,13 +4759,28 @@
       {
         "source": "Jacob of Serugh, Letters",
         "kind": "primary"
+      },
+      {
+        "source": "Jacob of Serugh, Homiliae Selectae (ed. Bedjan)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. James of Sarug",
+        "kind": "secondary"
+      },
+      {
+        "source": "Sebastian Brock, A Brief Outline of Syriac Literature",
+        "kind": "secondary"
       }
     ]
   },
   {
     "id": "severus-of-antioch",
     "name": "Severus of Antioch",
-    "alt_names": [],
+    "alt_names": [
+      "Severus the Great",
+      "Severos"
+    ],
     "born": 465,
     "born_circa": true,
     "died": 538,
@@ -4403,6 +4810,14 @@
       {
         "source": "Zachariah Rhetor, Vita Severi",
         "kind": "primary"
+      },
+      {
+        "source": "Severus of Antioch, Select Letters (ed. E. W. Brooks)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Severus",
+        "kind": "secondary"
       }
     ]
   },
@@ -4667,7 +5082,9 @@
     "id": "romanos-the-melodist",
     "name": "Romanos the Melodist",
     "alt_names": [
-      "Romanos Melodos"
+      "Romanos Melodos",
+      "Romanus Melodus",
+      "Romanos the Hymnographer"
     ],
     "born": 490,
     "born_circa": true,
@@ -4689,6 +5106,14 @@
       {
         "source": "Romanos, Cantica",
         "kind": "primary"
+      },
+      {
+        "source": "Romanos the Melodist, Kontakia (Sancti Romani Melodi Cantica, ed. Maas and Trypanis)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Romanus Melodus",
+        "kind": "secondary"
       }
     ]
   },
@@ -5361,6 +5786,46 @@
       {
         "source": "Leo II, Epistula ad Constantinum imperatorem",
         "kind": "primary"
+      }
+    ]
+  },
+  {
+    "id": "isaac-of-nineveh",
+    "name": "Isaac of Nineveh",
+    "alt_names": [
+      "Isaac the Syrian",
+      "Isaac Syrus",
+      "Mar Isaac"
+    ],
+    "born": 613,
+    "born_circa": true,
+    "died": 700,
+    "died_circa": true,
+    "birth_place": "Beth Qatraye",
+    "region": "syria",
+    "role": [
+      "bishop",
+      "monk",
+      "theologian"
+    ],
+    "see": "Nineveh",
+    "tradition_status": "post-nicene",
+    "significance": 2,
+    "short_bio": "East Syriac (Church of the East) ascetic and mystical writer. Briefly bishop of Nineveh before retiring to a monastic life of solitude. Author of the Ascetical Homilies (preserved in two main 'parts' in Syriac), addressing prayer, repentance, divine love, and the stages of the spiritual life. Despite belonging to the so-called 'Nestorian' church, his writings were translated into Greek in the 9th century and became deeply influential in later Byzantine and Slavic Orthodox spirituality.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Isaac_of_Nineveh",
+    "wikidata_id": "Q317834",
+    "citations": [
+      {
+        "source": "Isaac of Nineveh, Ascetical Homilies (First Part)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Isaac the Great (of Nineveh)",
+        "kind": "secondary"
+      },
+      {
+        "source": "Sebastian Brock, ed. and trans., Isaac of Nineveh (Isaac the Syrian): The Second Part",
+        "kind": "secondary"
       }
     ]
   },
@@ -6530,6 +6995,103 @@
       },
       {
         "source": "ODCC s.v. Dionysius (5)",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "id": "sisoes-the-great",
+    "name": "Sisoes the Great",
+    "alt_names": [
+      "Abba Sisoes"
+    ],
+    "born_circa": true,
+    "died": 429,
+    "died_circa": true,
+    "death_place": "Mount Colzim",
+    "region": "egypt",
+    "role": [
+      "monk"
+    ],
+    "tradition_status": "desert-father",
+    "significance": 2,
+    "short_bio": "Egyptian solitary who, after the death of Antony the Great, withdrew to Antony's mountain (Mount Colzim near the Red Sea) and lived there for some seventy years. He is one of the most quoted abbas in the Apophthegmata Patrum, with around fifty sayings preserved under his name in the alphabetical collection, mostly on humility, mourning for sin, and refusal to teach. Often cited in later Byzantine and Slavonic spiritual literature.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Sisoes_the_Great",
+    "citations": [
+      {
+        "source": "Apophthegmata Patrum, alphabetical collection s.v. Sisoes",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Sisoes, St",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "id": "egeria",
+    "name": "Egeria",
+    "alt_names": [
+      "Etheria",
+      "Aetheria",
+      "Egeria the Pilgrim"
+    ],
+    "born_circa": true,
+    "died_circa": true,
+    "region": "west",
+    "role": [
+      "layman"
+    ],
+    "tradition_status": "post-nicene",
+    "significance": 2,
+    "short_bio": "Late 4th-century Christian woman, probably from Gaul or the Iberian peninsula, who undertook a long pilgrimage to the Holy Land, Sinai, Egypt, and Constantinople c. 381-384. Her surviving Latin travel diary, the Itinerarium Egeriae (also called Peregrinatio Aetheriae), addressed to a circle of women back home, is the most important early source for late-antique liturgical practice in Jerusalem, including the Holy Week and Easter rites. The text was rediscovered in 1884 in a manuscript at Arezzo.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Egeria_(pilgrim)",
+    "citations": [
+      {
+        "source": "Egeria, Itinerarium Egeriae (Peregrinatio Aetheriae)",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Egeria",
+        "kind": "secondary"
+      },
+      {
+        "source": "Quasten, Patrology vol. 4 (Di Berardino), on Egeria",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "id": "felicity-of-carthage",
+    "name": "Felicity of Carthage",
+    "alt_names": [
+      "Felicitas"
+    ],
+    "born_circa": true,
+    "died": 203,
+    "died_circa": false,
+    "birth_place": "Carthage",
+    "death_place": "Carthage",
+    "region": "africa",
+    "role": [
+      "layman",
+      "martyr"
+    ],
+    "tradition_status": "ante-nicene",
+    "significance": 2,
+    "short_bio": "Slave woman of Carthage and companion of Perpetua, martyred with her in the amphitheatre c. 203 under Septimius Severus. According to the Passio Perpetuae et Felicitatis she gave birth in prison shortly before her execution and was thrown to a wild heifer alongside Perpetua. Commemorated jointly with Perpetua in the Roman canon and venerated across both Western and Eastern traditions.",
+    "wikipedia_url": "https://en.wikipedia.org/wiki/Perpetua_and_Felicity",
+    "citations": [
+      {
+        "source": "Passio Perpetuae et Felicitatis",
+        "kind": "primary"
+      },
+      {
+        "source": "Augustine, Sermons 280-282",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Perpetua and Felicitas, SS.",
         "kind": "secondary"
       }
     ]

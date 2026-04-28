@@ -22,8 +22,10 @@ export function GET() {
   lines.push("");
   lines.push("## Core pages");
   lines.push(`- [Lineage home](${base}/): interactive timeline + network graph of all figures.`);
+  lines.push(`- [Father of the Day](${base}/today): a daily-rotating featured figure with a full reading card and newsletter signup. Deterministic by date — same date always returns the same figure. JSON at ${base}/api/today.`);
   lines.push(`- [Map](${base}/map): geographic Mediterranean view with a year scrubber (AD 30–760) showing where figures were active across time.`);
   lines.push(`- [Bishops](${base}/bishops): bishops grouped by their see (Rome, Antioch, Alexandria, Jerusalem, Constantinople, etc.), ordered chronologically — the apostolic-succession-proper view of the dataset.`);
+  lines.push(`- [Schisms](${base}/schisms): every major split of the patristic age (Judaizers through 1054), with the question, what was decided, and who was involved — color-coded by whether the schism was resolved, lingered, or remains in effect.`);
   lines.push(`- [Start here](${base}/start-here): plain-English introduction to the Fathers, the eras, and the terminology.`);
   lines.push(`- [Directory](${base}/directory): searchable index of every figure.`);
   lines.push(`- [Methodology](${base}/about): how relationships are sourced and graded; explains apostolic-succession-vs-transmission distinction.`);

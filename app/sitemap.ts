@@ -17,9 +17,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: `${base}/`, priority: 1 },
     { url: `${base}/start-here`, priority: 0.9 },
+    { url: `${base}/today`, priority: 0.95 },
     { url: `${base}/map`, priority: 0.9 },
     { url: `${base}/eras`, priority: 0.9 },
     { url: `${base}/bishops`, priority: 0.8 },
+    { url: `${base}/schisms`, priority: 0.8 },
     { url: `${base}/directory`, priority: 0.8 },
     { url: `${base}/about`, priority: 0.6 },
     ...eras.map((e) => ({ url: `${base}/eras/${e}`, priority: 0.7 })),

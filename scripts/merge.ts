@@ -5,7 +5,19 @@ import { EraFile, Person, Relationship, relationshipId } from "../lib/schema";
 const SOURCES = path.join(process.cwd(), "data", "sources");
 const OUT_DIR = path.join(process.cwd(), "data");
 
-const eras = ["apostolic", "ante-nicene", "nicene", "post-nicene"] as const;
+// Discover source files: any *.json in data/sources/ except those with DRAFT
+// in the name (those are staging files awaiting review before merge).
+const allFiles = fs
+  .readdirSync(SOURCES)
+  .filter((f) => f.endsWith(".json") && !f.includes("DRAFT"))
+  .map((f) => f.replace(/\.json$/, ""));
+
+// Stable ordering: canonical eras first, then any extras alphabetically.
+const CANONICAL = ["apostolic", "ante-nicene", "nicene", "post-nicene"];
+const eras = [
+  ...CANONICAL.filter((e) => allFiles.includes(e)),
+  ...allFiles.filter((f) => !CANONICAL.includes(f)).sort(),
+];
 
 // Cross-era slug aliases — agents sometimes used short forms.
 // Maps non-canonical → canonical id.
@@ -28,6 +40,7 @@ const relsById = new Map<string, Relationship>();
 
 for (const era of eras) {
   const file = path.join(SOURCES, `${era}.json`);
+  console.log(`[merge] reading ${era}.json`);
   if (!fs.existsSync(file)) {
     console.warn(`[merge] missing ${file}, skipping`);
     continue;
