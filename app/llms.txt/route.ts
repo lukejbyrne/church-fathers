@@ -22,8 +22,9 @@ export function GET() {
   lines.push("");
   lines.push("## Core pages");
   lines.push(`- [Lineage home](${base}/): interactive timeline + network graph of all figures.`);
+  lines.push(`- [Start here](${base}/start-here): plain-English introduction to the Fathers, the eras, and the terminology.`);
   lines.push(`- [Directory](${base}/directory): searchable index of every figure.`);
-  lines.push(`- [Methodology](${base}/about): how relationships are sourced and graded.`);
+  lines.push(`- [Methodology](${base}/about): how relationships are sourced and graded; explains apostolic-succession-vs-transmission distinction.`);
   lines.push("");
   lines.push("## Data");
   lines.push(`- [People (JSON)](${base}/api/people.json): full structured data for all ${people.length} figures.`);

@@ -92,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               Patristic Lineage
             </Link>
             <Link href="/" className="text-sm hover:text-accent">Lineage</Link>
+            <Link href="/start-here" className="text-sm hover:text-accent">Start here</Link>
             <Link href="/directory" className="text-sm hover:text-accent">Directory</Link>
             <Link href="/about" className="text-sm hover:text-accent">Methodology</Link>
             <span className="ml-auto text-xs text-ink/50">AD 30 — 750</span>
