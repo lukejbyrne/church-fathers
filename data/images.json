@@ -1,0 +1,832 @@
+{
+  "mary-mother-of-jesus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Madonna_Advocata.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "jesus-of-nazareth": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3b/Spas_vsederzhitel_sinay_%28cropped1%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "peter-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Saint_Peter-Sinai_%286th_Century%29_Crop.jpg/3840px-Saint_Peter-Sinai_%286th_Century%29_Crop.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "james-the-just": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/37/James%2C_brother_of_Jesus_Emmanuel_Tzanes.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "luke-the-evangelist": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Luke_by_roslin.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "paul-of-tarsus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Fresco_of_Saint_Paul_at_Ephesus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "mark-the-evangelist": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Frans_Hals_085.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "john-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Rubens_apostel_johannes_grt.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "clement-of-rome": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Clemens_Romanus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "ignatius-of-antioch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bf/Hosios_Loukas_%28south_west_chapel%2C_south_side%29_-_Ignatios.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "papias-of-hierapolis": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Papias.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "hermas-of-rome": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Codex_Tchacos_p33.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "polycarp-of-smyrna": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f1/Polycarp_of_Smyrna2.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "marcion-of-sinope": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/Apostle_John_and_Marcion_of_Sinope%2C_from_JPM_LIbrary_MS_748%2C_11th_c.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "justin-martyr": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-anicetus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2d/Wolnzach%2C_St_Laurentius_017.JPG",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "melito-of-sardis": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Melito_bisschop_van_Sardis%2C_onderwysende_inde_Cristelyke_godsdienst%2C_objectnr_A_47730.tif/lossy-page1-1920px-Melito_bisschop_van_Sardis%2C_onderwysende_inde_Cristelyke_godsdienst%2C_objectnr_A_47730.tif.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-soter": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/22/San_Sotero_Papa.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "theophilus-of-antioch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Theophilus_Antiochenus.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pantaenus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Burghers-Pantaenus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-eleutherius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Maestro_di_staffolo%2C_sant%27eleuterio%2C_1483%2C_Q274.JPG",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "irenaeus-of-lyons": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/38/Saint_irenee_saint_irenee.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-victor-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Pfarrkirche_Semmering_Glasfenster.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "demetrius-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Pope_Demetrius_of_Alexandria.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "athenagoras-of-athens": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/62/Greek_Icon_of_Saint_Athenagoras_of_Athens.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "serapion-of-antioch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/ca/San_Serapi%C3%B3n_de_Antioqu%C3%ADa_%28cropped%29.JPG",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "clement-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Clement_alexandrin.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-zephyrinus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Fresco_of_Pope_Zephyrinus_-_Basilica_of_Saint_Paul_Outside_the_Walls_%28Before_1823%29.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "asclepiades-of-antioch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7d/ASKLEPIADES01.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "tertullian": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Tertullian2.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-callixtus-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Fresco_of_Pope_Callixtus_I_-_Basilica_of_Saint_Paul_Outside_the_Walls_%28Before_1823%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "hippolytus-of-rome": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Statue_of_Saint_.Hippolytus_%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-urban-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Sala_di_costantino%2C_papa_urbano_I_tra_la_giustizia_e_la_carit%C3%A0.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-pontian": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Spinello_Aretino_008.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-anterus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Pietro_Perugino_%E2%80%93_Anterus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "heraclas-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Martyr_Eraclus_of_Antioch.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "babylas-of-antioch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/San_Babila_e_i_tre_piccoli_martiri%2C_Museo_del_Duomo_di_Milano_07.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "origen-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/20/Origen.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "dionysius-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/32/Dionisii_alek.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "cyprian-of-carthage": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Cyprian_von_Karthago2.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-fabian": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Saint_Fabian1.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-cornelius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Pope_Cornelius_%E2%80%93_Santa_Maria_in_Trastevere.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-lucius-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Fresco_of_Pope_Lucius_I_-_Basilica_of_Saint_Paul_Outside_the_Walls_%28Before_1823%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-stephen-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7c/Head_of_Pope_Saint_Stephen_I_-_Speyer_Cathedral_-_Speyer_-_Germany_2017.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-sixtus-ii": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Sandro_Botticelli_%E2%80%93_Sixtus_II.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-dionysius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Pope_Dionysius.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "paul-of-samosata": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/PaulusVanSamosataLuyken.jpg/3840px-PaulusVanSamosataLuyken.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "gregory-thaumaturgus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Grigorii_chudotvoretz.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-felix-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a5/PopeFelixI.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-eutychian": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/66/Sarzana-cattedrale-facciata3.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pamphilus-of-caesarea": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Pamphilus_of_Caesarea.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "helena-of-constantinople": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Elena_Colosseo_Rome_Italy.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "lactantius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Lactantius.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "methodius-of-olympus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Methodius_of_Olympus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-marcellinus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Martyrdom_of_pope_Marcellinus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "alexander-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Veljusa_Monastery_St._Alexander_of_Alexandria.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "anthony-the-great": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Saint_Anthony_%28Damaskinos%29.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "arnobius-of-sicca": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/%D0%90%D1%80%D0%BD%D0%BE%D0%B1%D0%B8%D0%B9_%D0%A1%D1%82%D0%B0%D1%80%D1%88%D0%B8%D0%B9_-Arnobius_of_Sicca.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "arius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/02/Arius_p%C3%BCsp%C3%B6k.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "gregory-the-illuminator": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Gregory_the_Illuminator_Aghtamar_bas_relief.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "eusebius-of-caesarea": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/70/Eusebius_of_Caesarea_Rabbula_Gospels_Icon.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "aphrahat": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9d/Les_Vies_des_P%C3%A8res_des_d%C3%A9serts_d%27Orient_-_leur_doctrine_spirituelle_et_leur_discipline_monastique_%281886%29_%2814590545527%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "constantine-the-great": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Statua_di_Costantino_ai_musei_capitolini.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "gregory-thaumaturgus-elder": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Gregory_the_Elder_and_Gregory_of_Nazianzus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pachomius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/39/StPakhom.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "athanasius-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Hosios_Loukas_Crypt_%28south_east_groin-vault%29_-_Athanasios.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "macarius-the-great": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Saint_Macarius_the_Egyptian.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-damasus-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Pope_Damasus_-_Biblia_Sancti_Martialis_Lemovicensis%2C_Folio_4v.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "ephrem-the-syrian": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Ephrem_the_Syrian_%28mosaic_in_Nea_Moni%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "hilary-of-poitiers": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Hilaryofpoitiers.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "epiphanius-of-salamis": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Epiphanius-Kosovo.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "cyril-of-jerusalem": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/69/Saint_Cyril_of_Jerusalem.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "didymus-the-blind": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Didymus_the_blind.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "martin-of-tours": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/ce/Simone_Martini_040.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "macrina-the-younger": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Macrina_the_Younger.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "gregory-of-nazianzus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5d/Gregor-Chora_%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "basil-of-caesarea": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/04/Basil_of_Caesarea.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "diodore-of-tarsus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Jerusalem_Holy-Sepulchre_Jesus-Detail-01.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "monica-of-hippo": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Monica_of_Hippo_by_Gozzoli.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "gregory-of-nyssa": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Gregory_of_Nyssa.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "ambrose-of-milan": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/74/AmbroseOfMilan_%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "amphilochius-of-iconium": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Amphilochius_of_Iconium_%28Menologion_of_Basil_II%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "rufinus-of-aquileia": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/10/Rufinus_Aquileiensis.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "evagrius-ponticus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/94/Evagrius.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "chromatius-of-aquileia": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Th%C3%BCr_St._Johannes_16.JPG",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "jerome-of-stridon": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5f/MatthiasStom-SaintJerome-Nantes.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "john-chrysostom": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/cf/Johnchrysostom.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "theodore-of-mopsuestia": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Jerusalem_Holy-Sepulchre_Jesus-Detail-01.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "augustine-of-hippo": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Saint_Augustine_by_Philippe_de_Champaigne.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pelagius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Pelagius.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "paulinus-of-nola": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Linzer_Dom_-_Fenster_-_Paulinus_von_Nola.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "john-cassian": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/John_Cassian.jpeg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "alypius-of-thagaste": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b6/TolleLege.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-innocent-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Fresco_of_Pope_Innocent_I_-_Basilica_of_Saint_Paul_Outside_the_Walls_%28Before_1823%29.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "mesrop-mashtots": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/9b/Mesrop_Mashtots_1882_painting.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "cyril-of-alexandria": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Chora-Kirche_2013-03-21zh_%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-celestine-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Dundalk_Saint_Patrick%27s_Pro-Cathedral_West_Aisle_Window_06_Lower_Lights_2013_09_23%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "eutyches": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Portret_van_Eutyches._NL-HlmNHA_53008820.JPG",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "patrick-of-ireland": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Saint_Patrick_Catholic_Church_%28Junction_City%2C_Ohio%29_-_stained_glass%2C_Saint_Patrick_-_detail.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "nestorius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Nestorius_Hooghe_1688.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "prosper-of-aquitaine": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Aquit%C3%A1niai_Szent_Prosper.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "flavian-of-constantinople": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Flavian_the_Confessor_the_Patriarch_of_Constantinople.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "theodoret-of-cyrus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Theodoret_of_Cyr_%28in_A._Thevet1584%29.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-leo-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Pope_St._Leo_I_the_Great.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "vincent-of-lerins": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Icon_of_St_Vincent_of_Lerins_by_Bojan_Teodosijevi%C4%87.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "jacob-of-serugh": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Ancient_syriac_manuscript_jacob_of_serugh.webp",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "severus-of-antioch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ef/Severus_of_Antioch_%28Coptic_icon%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "fulgentius-of-ruspe": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Fulgentius_von_Ruspe_17Jh.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "caesarius-of-arles": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/Arles%2CSt_C%C3%A9saire27%2Cchoeur7%2CSt_C%C3%A9saire_%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "boethius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0b/Boethius.jpeg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "benedict-of-nursia": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Memling%2C_Trittico_di_Benedetto_Portinari%2C_San_Benedetto.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "scholastica": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/63/Kleinmariazell_-_Altar_Scholastica_2.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "justinian-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Mosaic_of_Justinianus_I_-_Basilica_San_Vitale_%28Ravenna%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "cassiodorus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a0/Gesta_Theodorici_-_Flavius_Magnus_Aurelius_Cassiodorus_%28c_485_-_c_580%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "romanos-the-melodist": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2e/1649._%D0%9F%D0%B0%D0%BA%D1%80%D0%BE%D1%9E.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "eutychius-of-constantinople": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Eutychius_of_Constantinople.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "columba": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Columba_at_Bridei%27s_fort.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "venantius-fortunatus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/AlmaTadema-VenantiusFortunatus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "augustine-of-canterbury": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4f/LeningradBedeHiRes.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "leander-of-seville": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0c/San_Leandro.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "gregory-of-tours": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/75/Gregory_of_Tours_cour_Napoleon_Louvre.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "gregory-the-great": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Gregory_the_Great_with_the_Holy_Spirit.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "columbanus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/San_Colombano.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "isidore-of-seville": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/79/Isidor_von_Sevilla.jpeg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "sophronius-of-jerusalem": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Athonite_Fresco_Icon_of_Saint_Sophronios_of_Jerusalem.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "heraclius": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Heraclius_solidus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-agatho": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Pope_Agatho_%28Menologion_of_Basil_II%29_-_cropped.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "john-climacus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/46/Lestvichnik.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "maximus-the-confessor": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Athonite_Fresco_Icon_of_Saint_Maximos_the_Confessor_2.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pope-martin-i": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/11/14_Chiesa_di_Santa_Maria_della_Consolazione_%28Todi%29%2C_el_papa_Mart%C3%AD_I%2C_de_Carlo_Laurenti.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "braulio-of-saragossa": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Braulio_de_Zaragoza_e_Isidoro_de_Sevilla.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "ildefonsus-of-toledo": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Ildefonso_de_Toledo_%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "anastasius-of-sinai": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/St._Anastasius_Sinaita_%28Church_of_Panagia_Theotokos_-_Vouliagmenis_Avenue%29%2C_8-15-2023.jpg/3840px-St._Anastasius_Sinaita_%28Church_of_Panagia_Theotokos_-_Vouliagmenis_Avenue%29%2C_8-15-2023.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "constans-ii": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/84/Solidus_Constans_II_%28obverse%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "germanus-of-constantinople": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/Patriarch_Germanus_I_of_Constantinople.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "cuthbert-of-lindisfarne": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Cuthbert_discovers_piece_of_timber_-_Life_of_St._Cuthbert_%28late_12th_C%29%2C_f.45v_-_BL_Yates_Thompson_MS_26.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "aldhelm": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Aldhelm.malmesbury.arp.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "jacob-of-edessa": {
+    "url": "https://upload.wikimedia.org/wikipedia/en/d/da/Jacob_-_James_of_Edessa%2C_Yaqub_d-_Urhoy%2C_Syriac_Orthodox_Bishop.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "constantine-iv": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Constantine_IV_mosaic.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "andrew-of-crete": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b9/Andrew_of_Crete_%28fresco%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "bede-the-venerable": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/E-codices_bke-0047_001v_medium_%28cropped%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "boniface": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/16/Saint_Boniface_by_Cornelis_Bloemaert.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "john-of-damascus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Athonite_Fresco_Icon_of_Saint_John_of_Damascus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "leo-iii-isaurian": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Solidus_of_Leo_III_sb1504.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "mary-magdalene": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/8/87/TINTORETTO_-_Magdalena_penitente_%28Musei_Capitolini%2C_Roma%2C_1598-1602%29_-_copia.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "andrew-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Rubens_apostel_andreas_grt.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "james-son-of-zebedee": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/e5/Peter_Paul_Rubens_-_St_James_the_Apostle_-_WGA20192.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "philip-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/52/Rubens_apostel_philippus.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "bartholomew-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Rubens_apostel_bartolomeus_grt.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "matthew-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/f/f3/Rubens_apostel_mattheus_grt.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "thomas-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Thomas_the_Apostle._Detail_of_the_mosaic_in_the_Basilica_of_San_Vitale._Ravena%2C_Italy.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "james-son-of-alphaeus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Rubens_apostel_jakobus_mindere_grt.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "jude-thaddaeus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Anthonis_van_Dyck%2C_Kunsthistorisches_Museum_Wien%2C_Gem%C3%A4ldegalerie_-_Apostel_Judas_Thadd%C3%A4us_-_GG_6809_-_Kunsthistorisches_Museum.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "simon-the-zealot": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/bb/Rubens_apostel_simon.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "judas-iscariot": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d1/Almeida_J%C3%BAnior_-_Remorso_de_Judas%2C_1880.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "matthias-the-apostle": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Rubens_apostle_Matthias_grt.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "titus-of-crete": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/dc/Fresco_of_Saint_Titos.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "onesimus": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/27/Onesimus_and_Philemon.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "linus-of-rome": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Menologion_of_Basil_II_-_Patrobulus%2C_Hermas%2C_Linus%2C_Caius%2C_Philologus_of_70_disciples_%28Portrait_of_Linus%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "anacletus-of-rome": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Interior_of_Chiesa_dei_Gesuiti_%28Venice%29_-_sacristy_-_Papa_Cleto_-_1592-1593_-_by_Palma_il_Giovane.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "evodius-of-antioch": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Italian_School%2C_Saint_Evodius_of_Antioch%2C_17th_Century.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "didache-author": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Didache.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pseudo-barnabas": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/4/49/Codex_Tchacos_p33.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "quadratus-of-athens": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/2a/Quadratus_of_Athens_%28Menologion_of_Basil_II%29.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "aristides-of-athens": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/2/23/Saint-Aristides-mural-painting-in-a-Greek-Orthodox-church.png",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  },
+  "pseudo-dionysius-the-areopagite": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Plotin.jpg",
+    "credit": "via Wikipedia",
+    "source": "wikipedia"
+  }
+}

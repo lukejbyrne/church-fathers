@@ -1,0 +1,408 @@
+{
+  "augustine-of-hippo": [
+    {
+      "title": "Confessions",
+      "year": 400,
+      "description": "Spiritual autobiography in thirteen books — the founding text of introspective Christian writing.",
+      "amazon_query": "Augustine Confessions Pine-Coffin Penguin Classics"
+    },
+    {
+      "title": "City of God",
+      "year": 426,
+      "description": "Twenty-two books defending Christianity after the sack of Rome and articulating the two-cities theology of history.",
+      "amazon_query": "Augustine City of God Bettenson Penguin Classics"
+    },
+    {
+      "title": "On Christian Doctrine",
+      "year": 397,
+      "description": "Manual of biblical interpretation and Christian rhetoric, foundational for medieval education.",
+      "amazon_query": "Augustine Teaching Christianity Hill New City Press"
+    },
+    {
+      "title": "On the Trinity",
+      "year": 419,
+      "description": "Fifteen-book systematic treatment of the Triune God, framing Western Trinitarian theology for a millennium.",
+      "amazon_query": "Augustine Trinity Hill New City Press"
+    }
+  ],
+  "irenaeus-of-lyons": [
+    {
+      "title": "Against Heresies",
+      "year": 180,
+      "description": "Five-book refutation of Gnosticism — the earliest large-scale defense of apostolic Christianity.",
+      "amazon_query": "Irenaeus Against Heresies Unger Ancient Christian Writers Paulist"
+    }
+  ],
+  "justin-martyr": [
+    {
+      "title": "First and Second Apology",
+      "year": 155,
+      "description": "Public defenses of Christianity addressed to Antoninus Pius, the earliest sustained Christian apologetics.",
+      "amazon_query": "Justin Martyr First and Second Apologies Barnard Ancient Christian Writers"
+    },
+    {
+      "title": "Dialogue with Trypho",
+      "year": 160,
+      "description": "Long imagined dialogue with a Jewish interlocutor, arguing Christ from the Hebrew scriptures.",
+      "amazon_query": "Justin Martyr Dialogue with Trypho Falls Selections Fathers Church"
+    }
+  ],
+  "clement-of-rome": [
+    {
+      "title": "1 Clement (Letter to the Corinthians)",
+      "year": 96,
+      "description": "Earliest surviving non-canonical Christian writing — a letter from Rome calling Corinth back to order.",
+      "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
+    }
+  ],
+  "ignatius-of-antioch": [
+    {
+      "title": "Seven Letters",
+      "year": 107,
+      "description": "Letters written en route to martyrdom in Rome, the earliest evidence for monoepiscopacy.",
+      "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
+    }
+  ],
+  "polycarp-of-smyrna": [
+    {
+      "title": "Letter to the Philippians",
+      "year": 110,
+      "description": "Pastoral letter and the bridge between the apostolic age and the Apostolic Fathers.",
+      "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
+    },
+    {
+      "title": "Martyrdom of Polycarp",
+      "year": 156,
+      "description": "Earliest account of a Christian martyrdom outside the New Testament.",
+      "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
+    }
+  ],
+  "tertullian": [
+    {
+      "title": "Apology",
+      "year": 197,
+      "description": "Public defense of Christianity to Roman governors — a masterpiece of early Christian rhetoric.",
+      "amazon_query": "Tertullian Apology De Spectaculis Loeb Classical Library"
+    },
+    {
+      "title": "Against Marcion",
+      "year": 207,
+      "description": "Five-book refutation of Marcion's two-god theology, foundational for canon and Old Testament theology.",
+      "amazon_query": "Tertullian Against Marcion Evans Oxford Early Christian Texts"
+    }
+  ],
+  "clement-of-alexandria": [
+    {
+      "title": "Stromata (Miscellanies)",
+      "year": 200,
+      "description": "Eight books weaving Greek philosophy and Christian doctrine — an early Christian intellectual synthesis.",
+      "amazon_query": "Clement of Alexandria Stromata Fathers Church"
+    },
+    {
+      "title": "Paedagogus (The Tutor)",
+      "year": 198,
+      "description": "Practical Christian formation manual addressing daily life and ethics.",
+      "amazon_query": "Clement Alexandria Christ Educator Fathers Church"
+    }
+  ],
+  "origen-of-alexandria": [
+    {
+      "title": "On First Principles (De Principiis)",
+      "year": 230,
+      "description": "First systematic Christian theology — controversial but enduringly influential.",
+      "amazon_query": "Origen On First Principles Behr Oxford Early Christian Texts"
+    },
+    {
+      "title": "Contra Celsum",
+      "year": 248,
+      "description": "Eight-book reply to the philosopher Celsus, the most important early Christian apologetic work.",
+      "amazon_query": "Origen Contra Celsum Chadwick Cambridge"
+    }
+  ],
+  "hippolytus-of-rome": [
+    {
+      "title": "Apostolic Tradition",
+      "year": 215,
+      "description": "Earliest surviving liturgical and church-order document of the Roman church.",
+      "amazon_query": "Hippolytus Apostolic Tradition Bradshaw Hermeneia Fortress"
+    }
+  ],
+  "cyprian-of-carthage": [
+    {
+      "title": "On the Unity of the Catholic Church",
+      "year": 251,
+      "description": "Classic argument for episcopal unity during the Decian persecution.",
+      "amazon_query": "Cyprian Unity Church Bevenot Ancient Christian Writers Paulist"
+    },
+    {
+      "title": "Letters",
+      "year": 253,
+      "description": "Eighty-one letters documenting persecution, schism, and the lapsed controversy.",
+      "amazon_query": "Cyprian Carthage Letters Clarke Ancient Christian Writers Paulist"
+    }
+  ],
+  "athanasius-of-alexandria": [
+    {
+      "title": "On the Incarnation",
+      "year": 318,
+      "description": "Concise classic on why God became man — paired with C.S. Lewis's famous introduction in modern editions.",
+      "amazon_query": "Athanasius Incarnation Behr Popular Patristics SVS"
+    },
+    {
+      "title": "Life of Antony",
+      "year": 360,
+      "description": "Hagiography of the desert father Antony — the founding text of monastic literature.",
+      "amazon_query": "Athanasius Life of Antony Gregg Classics Western Spirituality Paulist"
+    }
+  ],
+  "anthony-the-great": [
+    {
+      "title": "Sayings of the Desert Fathers",
+      "year": 300,
+      "description": "Collected sayings of Antony and the Egyptian desert fathers.",
+      "amazon_query": "Sayings of the Desert Fathers Benedicta Ward Cistercian"
+    }
+  ],
+  "eusebius-of-caesarea": [
+    {
+      "title": "Ecclesiastical History",
+      "year": 325,
+      "description": "Ten-book history of the Church from the apostles to Constantine — our principal source for early Christianity.",
+      "amazon_query": "Eusebius Church History Williamson Penguin Classics"
+    }
+  ],
+  "basil-of-caesarea": [
+    {
+      "title": "On the Holy Spirit",
+      "year": 375,
+      "description": "Foundational defense of the Spirit's divinity in the lead-up to Constantinople 381.",
+      "amazon_query": "Basil On the Holy Spirit Hildebrand Popular Patristics SVS"
+    },
+    {
+      "title": "Hexaemeron (Homilies on the Six Days of Creation)",
+      "year": 378,
+      "description": "Nine homilies on Genesis — a model for medieval natural theology.",
+      "amazon_query": "Basil Hexaemeron Letters Fathers Church"
+    }
+  ],
+  "gregory-of-nazianzus": [
+    {
+      "title": "Five Theological Orations",
+      "year": 380,
+      "description": "Constantinople sermons that earned him the title 'the Theologian' — defining Trinitarian orthodoxy.",
+      "amazon_query": "Gregory Nazianzus Five Theological Orations Beeley Popular Patristics SVS"
+    }
+  ],
+  "gregory-of-nyssa": [
+    {
+      "title": "The Life of Moses",
+      "year": 390,
+      "description": "Allegorical reading of Moses as the model of Christian spiritual progress.",
+      "amazon_query": "Gregory Nyssa Life of Moses Malherbe Classics Western Spirituality Paulist"
+    },
+    {
+      "title": "Catechetical Oration",
+      "year": 385,
+      "description": "Comprehensive catechism of Christian faith for instructing pagans and heretics.",
+      "amazon_query": "Gregory Nyssa Catechetical Oration Srawley"
+    }
+  ],
+  "hilary-of-poitiers": [
+    {
+      "title": "On the Trinity",
+      "year": 360,
+      "description": "Twelve-book Latin defense of Nicene orthodoxy against Arianism — Augustine called him 'the illustrious teacher of the Churches.'",
+      "amazon_query": "Hilary Poitiers Trinity McKenna Fathers Church"
+    }
+  ],
+  "ambrose-of-milan": [
+    {
+      "title": "On the Mysteries / On the Sacraments",
+      "year": 390,
+      "description": "Mystagogical catechesis on baptism, confirmation, and Eucharist — primary source for early Latin liturgy.",
+      "amazon_query": "Ambrose Milan Mysteries Sacraments Yarnold"
+    },
+    {
+      "title": "On the Duties of the Clergy",
+      "year": 391,
+      "description": "Christian adaptation of Cicero's De Officiis, foundational for Western pastoral ethics.",
+      "amazon_query": "Ambrose Duties Clergy De Officiis Davidson Oxford"
+    }
+  ],
+  "jerome-of-stridon": [
+    {
+      "title": "Letters",
+      "year": 405,
+      "description": "Voluminous correspondence covering scripture, monasticism, controversy, and spiritual direction.",
+      "amazon_query": "Jerome Letters Wright Loeb Classical Library"
+    },
+    {
+      "title": "On Illustrious Men (De Viris Illustribus)",
+      "year": 393,
+      "description": "Brief biographies of Christian writers — the first Christian literary history.",
+      "amazon_query": "Jerome On Illustrious Men Halton Fathers Church"
+    }
+  ],
+  "john-chrysostom": [
+    {
+      "title": "Homilies on the Gospel of Matthew",
+      "year": 390,
+      "description": "Ninety homilies that became the standard patristic commentary on Matthew.",
+      "amazon_query": "Chrysostom Homilies Matthew Nicene Post-Nicene Fathers"
+    },
+    {
+      "title": "On Wealth and Poverty",
+      "year": 388,
+      "description": "Seven sermons on Lazarus and the rich man — sharp social and economic preaching.",
+      "amazon_query": "John Chrysostom Wealth Poverty Roth Popular Patristics SVS"
+    }
+  ],
+  "evagrius-ponticus": [
+    {
+      "title": "Praktikos and Chapters on Prayer",
+      "year": 390,
+      "description": "Foundational texts of Christian contemplative theology — the seedbed of the Seven Deadly Sins.",
+      "amazon_query": "Evagrius Ponticus Praktikos Bamberger Cistercian"
+    }
+  ],
+  "john-cassian": [
+    {
+      "title": "Conferences",
+      "year": 425,
+      "description": "Twenty-four conferences with Egyptian desert masters — Benedict required them in the Rule.",
+      "amazon_query": "John Cassian Conferences Ramsey Ancient Christian Writers Paulist"
+    },
+    {
+      "title": "Institutes",
+      "year": 425,
+      "description": "Twelve books on monastic life and the eight principal vices — bridge between Egypt and Western monasticism.",
+      "amazon_query": "John Cassian Institutes Ramsey Ancient Christian Writers Paulist"
+    }
+  ],
+  "cyril-of-alexandria": [
+    {
+      "title": "On the Unity of Christ",
+      "year": 438,
+      "description": "Cyril's mature Christology defending the single subject of the incarnate Word.",
+      "amazon_query": "Cyril Alexandria Unity of Christ McGuckin Popular Patristics SVS"
+    }
+  ],
+  "patrick-of-ireland": [
+    {
+      "title": "Confession (Confessio)",
+      "year": 460,
+      "description": "Patrick's spiritual autobiography and apologia — earliest substantial document from Christian Ireland.",
+      "amazon_query": "Saint Patrick Confessio Letter Coroticus O'Loughlin"
+    }
+  ],
+  "pope-leo-i": [
+    {
+      "title": "Tome (Letter to Flavian)",
+      "year": 449,
+      "description": "Christological letter that decisively shaped the Council of Chalcedon (451).",
+      "amazon_query": "Leo Great Letters Hunt Fathers Church"
+    },
+    {
+      "title": "Sermons",
+      "year": 450,
+      "description": "Ninety-six sermons — concise, classical Latin preaching by a master pastor.",
+      "amazon_query": "Leo Great Sermons Freeland Conway Fathers Church"
+    }
+  ],
+  "boethius": [
+    {
+      "title": "The Consolation of Philosophy",
+      "year": 524,
+      "description": "Prison dialogue with Lady Philosophy — the most-read book of the Middle Ages outside the Bible.",
+      "amazon_query": "Boethius Consolation of Philosophy Watts Penguin Classics"
+    }
+  ],
+  "benedict-of-nursia": [
+    {
+      "title": "The Rule of Saint Benedict",
+      "year": 540,
+      "description": "Seventy-three chapters that organized Western monasticism for fifteen centuries.",
+      "amazon_query": "Rule Saint Benedict Fry Liturgical Press"
+    }
+  ],
+  "gregory-the-great": [
+    {
+      "title": "Pastoral Care (Liber Regulae Pastoralis)",
+      "year": 591,
+      "description": "Manual for bishops — the standard handbook for medieval prelates.",
+      "amazon_query": "Gregory Great Pastoral Care Davis Ancient Christian Writers Paulist"
+    },
+    {
+      "title": "Dialogues",
+      "year": 593,
+      "description": "Four books of saints' lives, including the principal life of Benedict.",
+      "amazon_query": "Gregory Great Dialogues Zimmerman Fathers Church"
+    },
+    {
+      "title": "Moralia in Job",
+      "year": 595,
+      "description": "Massive thirty-five-book moral and allegorical commentary on Job.",
+      "amazon_query": "Gregory Great Morals on Job Library Fathers"
+    }
+  ],
+  "isidore-of-seville": [
+    {
+      "title": "Etymologies",
+      "year": 627,
+      "description": "Twenty-book encyclopedia preserving classical learning — patron of the internet was named for a reason.",
+      "amazon_query": "Isidore Seville Etymologies Barney Cambridge"
+    }
+  ],
+  "maximus-the-confessor": [
+    {
+      "title": "Ambigua",
+      "year": 634,
+      "description": "Difficulties from Gregory of Nazianzus and Pseudo-Dionysius — the apex of Byzantine theological synthesis.",
+      "amazon_query": "Maximus Confessor Ambigua Constas Dumbarton Oaks"
+    },
+    {
+      "title": "Centuries on Charity",
+      "year": 626,
+      "description": "Four centuries of contemplative aphorisms widely read in the Philokalia tradition.",
+      "amazon_query": "Maximus Confessor Selected Writings Berthold Classics Western Spirituality Paulist"
+    }
+  ],
+  "bede-the-venerable": [
+    {
+      "title": "Ecclesiastical History of the English People",
+      "year": 731,
+      "description": "Foundational history of England's Christianization — five books from Gregory's mission to Bede's day.",
+      "amazon_query": "Bede Ecclesiastical History English People Sherley-Price Penguin Classics"
+    }
+  ],
+  "john-of-damascus": [
+    {
+      "title": "An Exact Exposition of the Orthodox Faith",
+      "year": 743,
+      "description": "Third book of the Fount of Knowledge — the great systematic theology of the Christian East.",
+      "amazon_query": "John Damascus Orthodox Faith Chase Fathers Church"
+    },
+    {
+      "title": "Three Treatises on the Divine Images",
+      "year": 730,
+      "description": "Defense of icons during iconoclasm — set Eastern Christian aesthetics for a millennium.",
+      "amazon_query": "John Damascus Three Treatises Divine Images Louth Popular Patristics SVS"
+    }
+  ],
+  "pseudo-dionysius-the-areopagite": [
+    {
+      "title": "The Complete Works",
+      "year": 500,
+      "description": "Mystical Theology, Divine Names, Celestial and Ecclesiastical Hierarchies — the most influential mystical corpus in Christian history.",
+      "amazon_query": "Pseudo-Dionysius Complete Works Luibheid Classics Western Spirituality Paulist"
+    }
+  ],
+  "ephrem-the-syrian": [
+    {
+      "title": "Hymns on Paradise",
+      "year": 370,
+      "description": "Theological poetry — the high water mark of Syriac Christianity.",
+      "amazon_query": "Ephrem Syrian Hymns Paradise Brock Popular Patristics SVS"
+    }
+  ]
+}

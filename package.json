@@ -10,7 +10,8 @@
     "merge": "tsx scripts/merge.ts",
     "validate": "tsx scripts/validate.ts",
     "enrich": "tsx scripts/enrich.ts",
-    "cross-check": "tsx scripts/cross-check.ts",
+    "fetch-images": "tsx scripts/fetch-images.ts",
+    "wikidata-edits": "tsx scripts/wikidata-edit-list.ts",
     "data": "pnpm merge && pnpm validate"
   },
   "dependencies": {

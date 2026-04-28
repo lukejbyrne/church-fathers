@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Person, Region, Relationship } from "@/lib/schema";
 import { buildChainsToAnchor, lineageOf } from "@/lib/lineage";
 
@@ -29,7 +30,12 @@ const REGION_LABEL: Record<Region, string> = {
   other: "Other",
 };
 
-type Props = { people: Person[]; relationships: Relationship[] };
+type Props = {
+  people: Person[];
+  relationships: Relationship[];
+  lockedId: string | null;
+  setLockedId: (id: string | null) => void;
+};
 
 const YEAR_MIN = -10;
 const YEAR_MAX = 760;
@@ -37,10 +43,10 @@ const ROW_HEIGHT = 16;
 const ROW_GAP = 2;
 const HEADER = 24;
 
-export default function Timeline({ people, relationships }: Props) {
+export default function Timeline({ people, relationships, lockedId, setLockedId }: Props) {
+  const router = useRouter();
   const [filterRegion, setFilterRegion] = useState<Region | "all">("all");
   const [hoverId, setHoverId] = useState<string | null>(null);
-  const [lockedId, setLockedId] = useState<string | null>(null);
   const [condensed, setCondensed] = useState(false);
   const [showAllEdges, setShowAllEdges] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
@@ -299,8 +305,13 @@ export default function Timeline({ people, relationships }: Props) {
       </div>
 
       {lockedId && lockedLineage && (
-        <div className="flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/10 border border-accent/30 rounded text-sm">
-          <span className="font-serif text-base">{peopleById.get(lockedId)?.name}</span>
+        <div className="sticky top-14 z-10 flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/15 backdrop-blur border border-accent/40 rounded text-sm shadow-sm">
+          <Link
+            href={`/fathers/${lockedId}`}
+            className="font-serif text-base hover:text-accent underline decoration-ink/20 hover:decoration-accent underline-offset-2"
+          >
+            {peopleById.get(lockedId)?.name}
+          </Link>
           <span className="text-ink/60 text-xs">
             lineage · {lockedLineage.ancestors.size - 1} ancestors back to Jesus ·{" "}
             {lockedLineage.descendants.size - 1} descendants
@@ -441,6 +452,10 @@ export default function Timeline({ people, relationships }: Props) {
                 key={person.id}
                 href={`/fathers/${person.id}`}
                 onClick={(e) => handleBarClick(e, person.id)}
+                onDoubleClick={(e) => {
+                  e.preventDefault();
+                  router.push(`/fathers/${person.id}`);
+                }}
                 onMouseEnter={() => setHoverDelayed(person.id)}
                 onMouseLeave={() => setHoverDelayed(null)}
                 className="absolute flex items-center group cursor-pointer"
@@ -452,7 +467,7 @@ export default function Timeline({ people, relationships }: Props) {
                   opacity: dimmed ? 0.18 : 1,
                   transition: "opacity 120ms",
                 }}
-                title="Click to lock chain · double-click bar text or use 'Open page' to view full bio"
+                title="Click to lock chain · double-click to open page"
               >
                 <span
                   className="rounded-sm"
@@ -498,7 +513,12 @@ export default function Timeline({ people, relationships }: Props) {
         {active ? (
           <div className="p-3 bg-ink/5 border border-ink/10 rounded text-sm">
             <div className="flex items-baseline gap-2 mb-1 flex-wrap">
-              <strong className="font-serif text-base">{active.name}</strong>
+              <Link
+                href={`/fathers/${active.id}`}
+                className="font-serif text-base font-semibold hover:text-accent underline decoration-ink/20 hover:decoration-accent underline-offset-2"
+              >
+                {active.name}
+              </Link>
               <span className="text-ink/60 text-xs">
                 {active.born ?? "?"} – {active.died ?? "?"}
                 {active.see ? ` · Bishop of ${active.see}` : ""}
@@ -517,7 +537,12 @@ export default function Timeline({ people, relationships }: Props) {
                   return (
                     <li key={i}>
                       <span className="text-ink/50">{verb.replace(/_/g, " ")}</span>{" "}
-                      <span className="font-medium">{other?.name ?? otherId}</span>
+                      <Link
+                        href={`/fathers/${otherId}`}
+                        className="font-medium hover:text-accent underline decoration-ink/15 hover:decoration-accent underline-offset-2"
+                      >
+                        {other?.name ?? otherId}
+                      </Link>
                       <span
                         className={`ml-1 text-[10px] uppercase ${
                           e.strength === "disputed" ? "text-accent" : "text-ink/40"

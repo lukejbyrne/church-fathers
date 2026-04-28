@@ -1,17 +1,48 @@
 import fs from "node:fs";
 import path from "node:path";
-import { Person, Relationship } from "./schema";
+import { Person, Relationship, Work } from "./schema";
+import { strongestPath, type ChainKind } from "./lineage";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
 let _people: Person[] | null = null;
 let _rels: Relationship[] | null = null;
 
+type ImageEntry = { url: string; credit?: string; license?: string };
+
+function readJsonIfExists<T>(file: string): T | null {
+  if (!fs.existsSync(file)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8")) as T;
+  } catch {
+    return null;
+  }
+}
+
 export function getPeople(): Person[] {
   if (_people) return _people;
   const file = path.join(DATA_DIR, "people.json");
   if (!fs.existsSync(file)) return (_people = []);
-  _people = JSON.parse(fs.readFileSync(file, "utf8"));
+  const base = JSON.parse(fs.readFileSync(file, "utf8")) as Person[];
+
+  // Sidecar overlays — survive `pnpm merge` because they live alongside, not inside, sources.
+  const images = readJsonIfExists<Record<string, ImageEntry>>(path.join(DATA_DIR, "images.json")) ?? {};
+  const works = readJsonIfExists<Record<string, Work[]>>(path.join(DATA_DIR, "works.json")) ?? {};
+  const whyMatters = readJsonIfExists<Record<string, string>>(path.join(DATA_DIR, "why-matters.json")) ?? {};
+
+  _people = base.map((p) => {
+    const img = images[p.id];
+    const w = works[p.id];
+    const wm = whyMatters[p.id];
+    return {
+      ...p,
+      image_url: p.image_url ?? img?.url,
+      image_credit: p.image_credit ?? img?.credit,
+      image_license: p.image_license ?? img?.license,
+      works: p.works ?? w,
+      why_matters: p.why_matters ?? wm,
+    };
+  });
   return _people!;
 }
 
@@ -44,44 +75,44 @@ function getAdj() {
 }
 
 /**
- * Shortest path from `id` back to Jesus (or any anchor). Returns the chain
- * as a list of {person, edge} pairs starting at `id` and ending at the anchor.
- * Returns null if no path exists.
+ * Strongest-evidence path from `anchor` to `id`. Returns the chain as a list
+ * of {person, edge} pairs, anchor first → id last. Edge on first entry is null.
+ * Weighted by relationship type (taught/succeeded > corresponded > met > cited)
+ * and strength (documented < tradition < disputed). `kind` filters which edges
+ * count: "all" (default), "pedagogical" (taught only), "episcopal" (sees only),
+ * "documented_only".
  */
-export function chainTo(id: string, anchor = "jesus-of-nazareth"): { person: Person; edge: Relationship | null }[] | null {
+export function chainTo(
+  id: string,
+  anchor = "jesus-of-nazareth",
+  kind: ChainKind = "all"
+): { person: Person; edge: Relationship | null }[] | null {
   if (id === anchor) {
     const p = getPerson(anchor);
     return p ? [{ person: p, edge: null }] : null;
   }
-  const adj = getAdj();
-  const prev = new Map<string, { from: string; edge: Relationship } | null>([[id, null]]);
-  const queue: string[] = [id];
-  let found = false;
-  while (queue.length) {
-    const cur = queue.shift()!;
-    if (cur === anchor) {
-      found = true;
-      break;
-    }
-    for (const { to, rel } of adj.get(cur) ?? []) {
-      if (!prev.has(to)) {
-        prev.set(to, { from: cur, edge: rel });
-        queue.push(to);
-      }
-    }
-  }
-  if (!found) return null;
+  const path = strongestPath(id, anchor, getPeople(), getRelationships(), kind);
+  if (!path) return null;
+  // path is start → anchor. We want anchor → start (anchor first).
+  const ordered = path.slice().reverse();
 
-  const path: { person: Person; edge: Relationship | null }[] = [];
-  let cur: string | null = anchor;
-  while (cur) {
-    const p = getPerson(cur);
+  // Re-derive the edge between each consecutive pair for rendering.
+  const result: { person: Person; edge: Relationship | null }[] = [];
+  for (let i = 0; i < ordered.length; i++) {
+    const p = getPerson(ordered[i]);
     if (!p) return null;
-    const step = prev.get(cur);
-    path.push({ person: p, edge: step?.edge ?? null });
-    cur = step?.from ?? null;
+    let edge: Relationship | null = null;
+    if (i > 0) {
+      const a = ordered[i - 1];
+      const b = ordered[i];
+      edge = getRelationships().find(
+        (r) =>
+          (r.from === a && r.to === b) || (r.from === b && r.to === a)
+      ) ?? null;
+    }
+    result.push({ person: p, edge });
   }
-  return path; // anchor first → id last
+  return result;
 }
 
 /**

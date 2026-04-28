@@ -68,6 +68,16 @@ export const Citation = z.object({
 });
 export type Citation = z.infer<typeof Citation>;
 
+export const Work = z.object({
+  title: z.string().min(1),
+  year: z.number().int().nullish().transform((v) => v ?? undefined),
+  description: optStr,
+  amazon_asin: optStr,
+  amazon_query: optStr,
+  ccel_url: optUrl,
+});
+export type Work = z.infer<typeof Work>;
+
 export const Person = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/, "must be kebab-case slug"),
   name: z.string().min(1),
@@ -88,6 +98,11 @@ export const Person = z.object({
   wikidata_id: optStr,
   ccel_url: optUrl,
   citations: z.array(Citation).min(1),
+  image_url: optUrl,
+  image_credit: optStr,
+  image_license: optStr,
+  works: z.array(Work).nullish().transform((v) => v ?? undefined),
+  why_matters: optStr,
 });
 export type Person = z.infer<typeof Person>;
 

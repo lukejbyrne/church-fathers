@@ -1,7 +1,108 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { Suspense } from "react";
 import { getPeople, getPerson, getRelationshipsFor, chainTo } from "@/lib/data";
+import type { Person, Relationship } from "@/lib/schema";
+import type { ChainKind } from "@/lib/lineage";
 import type { Metadata } from "next";
+import { amazonUrl } from "@/lib/affiliate";
+import ChainToJesus, { type ChainStep } from "@/components/ChainToJesus";
+
+const ALL_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
+
+function buildChainsFor(id: string): Partial<Record<ChainKind, ChainStep[] | null>> {
+  const result: Partial<Record<ChainKind, ChainStep[] | null>> = {};
+  for (const k of ALL_KINDS) {
+    const c = chainTo(id, "jesus-of-nazareth", k);
+    result[k] = c
+      ? c.map(({ person, edge }) => ({
+          person: {
+            id: person.id,
+            name: person.name,
+            born: person.born,
+            died: person.died,
+            role: person.role,
+            image_url: person.image_url,
+          },
+          edge: edge ? { type: edge.type, strength: edge.strength } : null,
+        }))
+      : null;
+  }
+  return result;
+}
+
+type Token = { kind: "text"; value: string } | { kind: "person"; id: string; name: string };
+type FaqEntry = { q: string; tokens: Token[]; plain: string };
+
+function buildFaq(person: Person, rels: Relationship[]): FaqEntry[] {
+  const nameOf = (id: string) => getPerson(id)?.name ?? id;
+  const tokensFromIds = (ids: string[], suffix = "."): { tokens: Token[]; plain: string } => {
+    const tokens: Token[] = [];
+    ids.forEach((id, i) => {
+      if (i > 0) {
+        const sep = i === ids.length - 1 ? (ids.length === 2 ? " and " : ", and ") : ", ";
+        tokens.push({ kind: "text", value: sep });
+      }
+      tokens.push({ kind: "person", id, name: nameOf(id) });
+    });
+    if (suffix) tokens.push({ kind: "text", value: suffix });
+    const plain = tokens
+      .map((t) => (t.kind === "text" ? t.value : t.name))
+      .join("");
+    return { tokens, plain };
+  };
+  const others = (filter: (r: Relationship) => boolean, side: "from" | "to" | "other") => {
+    const ids = new Set<string>();
+    for (const r of rels) {
+      if (!filter(r)) continue;
+      const id = side === "from" ? r.from : side === "to" ? r.to : r.from === person.id ? r.to : r.from;
+      if (id !== person.id) ids.add(id);
+    }
+    return Array.from(ids);
+  };
+
+  const teachers = others(
+    (r) => (r.from === person.id && r.type === "taught_by") || (r.to === person.id && r.type === "taught"),
+    "other"
+  );
+  const students = others(
+    (r) => (r.from === person.id && r.type === "taught") || (r.to === person.id && r.type === "taught_by"),
+    "other"
+  );
+  const correspondents = others((r) => r.type === "corresponded", "other");
+  const met = others((r) => r.type === "met", "other");
+  const opponents = others((r) => r.type === "opposed", "other");
+  const baptizer = others((r) => r.from === person.id && r.type === "baptized_by", "to");
+  const ordainer = others((r) => r.from === person.id && r.type === "ordained_by", "to");
+  const succeededWho = others((r) => r.from === person.id && r.type === "succeeded_in_see", "to");
+  const successors = others((r) => r.to === person.id && r.type === "succeeded_in_see", "from");
+
+  const dates = `${person.born ?? "?"}–${person.died ?? "?"}`;
+  const faq: FaqEntry[] = [];
+
+  const intro = `${person.name} (${dates}) — ${person.short_bio}`;
+  faq.push({ q: `Who was ${person.name}?`, tokens: [{ kind: "text", value: intro }], plain: intro });
+
+  const push = (q: string, ids: string[]) => {
+    if (!ids.length) return;
+    const { tokens, plain } = tokensFromIds(ids);
+    faq.push({ q, tokens, plain });
+  };
+
+  push(`Who taught ${person.name}?`, teachers);
+  push(`Who did ${person.name} teach?`, students);
+  push(`Who did ${person.name} correspond with?`, correspondents);
+  push(`Who did ${person.name} meet?`, met);
+  push(`Who did ${person.name} oppose?`, opponents);
+  push(`Who baptized ${person.name}?`, baptizer);
+  push(`Who ordained ${person.name}?`, ordainer);
+  if (person.see) {
+    push(`Who did ${person.name} succeed as bishop of ${person.see}?`, succeededWho);
+    push(`Who succeeded ${person.name} as bishop of ${person.see}?`, successors);
+  }
+
+  return faq.slice(0, 8);
+}
 
 export function generateStaticParams() {
   return getPeople().map((p) => ({ slug: p.id }));
@@ -17,10 +118,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function FatherPage({ params }: { params: Promise<{ slug: string }> }) {
+export default async function FatherPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const person = getPerson(slug);
   if (!person) notFound();
+  const chains = buildChainsFor(person.id);
 
   const rels = getRelationshipsFor(person.id);
   const grouped = {
@@ -29,14 +135,74 @@ export default async function FatherPage({ params }: { params: Promise<{ slug: s
     disputed: rels.filter((r) => r.strength === "disputed"),
   };
 
+  const sameAs = [person.wikipedia_url, person.wikidata_id ? `https://www.wikidata.org/wiki/${person.wikidata_id}` : null, person.ccel_url].filter(Boolean) as string[];
+  const ldPerson = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `#${person.id}`,
+    name: person.name,
+    alternateName: person.alt_names?.length ? person.alt_names : undefined,
+    description: person.short_bio,
+    birthDate: person.born != null ? String(person.born) : undefined,
+    deathDate: person.died != null ? String(person.died) : undefined,
+    birthPlace: person.birth_place || undefined,
+    deathPlace: person.death_place || undefined,
+    jobTitle: person.role,
+    sameAs: sameAs.length ? sameAs : undefined,
+    citation: person.citations.map((c) => c.source),
+  };
+
+  const faq = buildFaq(person, rels);
+  const ldFaq = faq.length > 1 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.plain },
+    })),
+  } : null;
+
   return (
     <div className="max-w-3xl mx-auto px-4 py-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldPerson) }}
+      />
+      {ldFaq && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ldFaq) }}
+        />
+      )}
       <Link href="/" className="text-sm text-ink/60 hover:text-accent">← Lineage</Link>
-      <h1 className="font-serif text-5xl mt-4 mb-2">{person.name}</h1>
-      <div className="text-ink/60 mb-6">
-        {person.born ?? "?"} – {person.died ?? "?"}
-        {person.birth_place ? ` · b. ${person.birth_place}` : ""}
-        {person.see ? ` · Bishop of ${person.see}` : ""}
+      <div className="flex gap-6 mt-4 mb-6 items-start flex-wrap sm:flex-nowrap">
+        {person.image_url && (
+          <figure className="shrink-0 w-32 sm:w-44">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={person.image_url}
+              alt={`Portrait of ${person.name}`}
+              loading="lazy"
+              className="w-full h-auto rounded border border-ink/15 bg-ink/5 object-cover"
+            />
+            {(person.image_credit || person.image_license) && (
+              <figcaption className="text-[10px] text-ink/50 mt-1 leading-tight">
+                {person.image_credit}
+                {person.image_credit && person.image_license ? " · " : ""}
+                {person.image_license}
+              </figcaption>
+            )}
+          </figure>
+        )}
+        <div className="flex-1 min-w-0">
+          <h1 className="font-serif text-5xl mb-2 leading-tight">{person.name}</h1>
+          <div className="text-ink/60">
+            {person.born ?? "?"} – {person.died ?? "?"}
+            {person.birth_place ? ` · b. ${person.birth_place}` : ""}
+            {person.see ? ` · Bishop of ${person.see}` : ""}
+          </div>
+        </div>
       </div>
       <div className="flex flex-wrap gap-1 mb-6">
         {person.role.map((r) => (
@@ -48,7 +214,104 @@ export default async function FatherPage({ params }: { params: Promise<{ slug: s
 
       <p className="text-lg leading-relaxed mb-8">{person.short_bio}</p>
 
-      <ChainToJesus id={person.id} />
+      {person.why_matters && (
+        <section className="mb-10 max-w-prose">
+          <h2 className="font-serif text-2xl mb-3">Why {person.name.split(" of ")[0]} matters</h2>
+          {person.why_matters.split(/\n\n+/).map((para, i) => (
+            <p key={i} className="text-ink/85 leading-relaxed mb-3 text-[17px]">
+              {para}
+            </p>
+          ))}
+        </section>
+      )}
+
+      <Suspense
+        fallback={
+          <section className="mb-10 -mx-4 px-4 py-6 bg-ink/5 border-y border-ink/10">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="font-serif text-2xl mb-2">Chain to Jesus</h2>
+              <p className="text-sm text-ink/50">Loading…</p>
+            </div>
+          </section>
+        }
+      >
+        <ChainToJesus id={person.id} chains={chains} />
+      </Suspense>
+
+      {faq.length > 1 && (
+        <section className="mb-10">
+          <h2 className="font-serif text-2xl mb-3">Common questions</h2>
+          <dl className="space-y-3">
+            {faq.map((f, i) => (
+              <div key={i}>
+                <dt className="font-medium text-ink/85">{f.q}</dt>
+                <dd className="text-ink/70 text-[15px] mt-0.5">
+                  {f.tokens.map((t, j) =>
+                    t.kind === "person" ? (
+                      <Link
+                        key={j}
+                        href={`/fathers/${t.id}`}
+                        className="font-medium text-ink hover:text-accent underline decoration-ink/30 hover:decoration-accent underline-offset-2"
+                      >
+                        {t.name}
+                      </Link>
+                    ) : (
+                      <span key={j}>{t.value}</span>
+                    )
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
+      {person.works && person.works.length > 0 && (
+        <section className="mb-10">
+          <h2 className="font-serif text-2xl mb-3">Works</h2>
+          <ul className="space-y-3">
+            {person.works.map((w, i) => {
+              const azUrl =
+                amazonUrl({ asin: w.amazon_asin }) ??
+                amazonUrl({ query: w.amazon_query ?? `${w.title} ${person.name}` });
+              return (
+                <li key={i} className="border-l-2 border-ink/15 pl-4">
+                  <div className="flex items-baseline gap-2 flex-wrap">
+                    <span className="font-serif text-lg">{w.title}</span>
+                    {w.year != null && <span className="text-xs text-ink/50">c. {w.year}</span>}
+                  </div>
+                  {w.description && <p className="text-sm text-ink/70 mt-1">{w.description}</p>}
+                  <div className="flex flex-wrap gap-3 text-xs mt-1.5">
+                    {azUrl && (
+                      <a
+                        href={azUrl}
+                        target="_blank"
+                        rel="noopener sponsored"
+                        className="text-accent hover:underline"
+                      >
+                        Buy on Amazon →
+                      </a>
+                    )}
+                    {w.ccel_url && (
+                      <a
+                        href={w.ccel_url}
+                        target="_blank"
+                        rel="noopener"
+                        className="text-ink/60 hover:text-accent underline"
+                      >
+                        Read free on CCEL
+                      </a>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+          <p className="text-[10px] text-ink/40 mt-3 italic">
+            As an Amazon Associate we earn from qualifying purchases.
+          </p>
+        </section>
+      )}
 
 
       {person.citations.length > 0 && (
@@ -139,50 +402,3 @@ export default async function FatherPage({ params }: { params: Promise<{ slug: s
   );
 }
 
-function ChainToJesus({ id }: { id: string }) {
-  const chain = chainTo(id);
-  if (!chain || chain.length <= 1) return null;
-  // chain comes anchor-first; we want anchor → id reading order
-  return (
-    <section className="mb-10 -mx-4 px-4 py-5 bg-ink/5 border-y border-ink/10">
-      <h2 className="font-serif text-2xl mb-1">Chain to Jesus</h2>
-      <p className="text-xs text-ink/50 mb-4">
-        Shortest path through documented + traditional relationships ({chain.length - 1} step{chain.length === 2 ? "" : "s"})
-      </p>
-      <ol className="flex flex-wrap items-center gap-x-1 gap-y-2 text-sm">
-        {chain.map(({ person, edge }, i) => (
-          <li key={person.id} className="flex items-center gap-1">
-            {i > 0 && (
-              <span
-                className={`text-[10px] uppercase mx-1 ${
-                  edge?.strength === "documented"
-                    ? "text-ink/60"
-                    : edge?.strength === "tradition"
-                      ? "text-ink/40 italic"
-                      : "text-accent"
-                }`}
-              >
-                — {edge?.type.replace(/_/g, " ")} →
-              </span>
-            )}
-            <Link
-              href={`/fathers/${person.id}`}
-              className={`px-2 py-1 rounded border ${
-                person.id === id
-                  ? "bg-accent text-parchment border-accent"
-                  : person.id === "jesus-of-nazareth"
-                    ? "bg-ink text-parchment border-ink"
-                    : "bg-parchment border-ink/20 hover:border-accent"
-              }`}
-            >
-              <span className="font-medium">{person.name}</span>
-              <span className="text-[10px] opacity-70 ml-1">
-                {person.born ?? "?"}–{person.died ?? "?"}
-              </span>
-            </Link>
-          </li>
-        ))}
-      </ol>
-    </section>
-  );
-}

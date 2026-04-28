@@ -1,8 +1,11 @@
-import Link from "next/link";
-import { getPerson, getRelationships } from "@/lib/data";
-import type { Relationship } from "@/lib/schema";
+"use client";
 
-const SPINE_IDS = [
+import { useMemo } from "react";
+import Link from "next/link";
+import type { Person, Relationship } from "@/lib/schema";
+import { buildChainsToAnchor } from "@/lib/lineage";
+
+const DEFAULT_SPINE_IDS = [
   "jesus-of-nazareth",
   "john-the-apostle",
   "polycarp-of-smyrna",
@@ -35,24 +38,64 @@ function findEdge(rels: Relationship[], a: string, b: string): Relationship | nu
   return matches[0] ?? null;
 }
 
-export default function Spine() {
-  const rels = getRelationships();
-  const steps = SPINE_IDS.map((id, i) => {
-    const person = getPerson(id);
-    if (!person) return null;
-    const prevId = i > 0 ? SPINE_IDS[i - 1] : null;
-    const edge = prevId ? findEdge(rels, prevId, id) : null;
-    return { person, edge };
-  }).filter(Boolean) as { person: NonNullable<ReturnType<typeof getPerson>>; edge: Relationship | null }[];
+type Props = {
+  people: Person[];
+  relationships: Relationship[];
+  lockedId: string | null;
+};
+
+export default function Spine({ people, relationships, lockedId }: Props) {
+  const peopleById = useMemo(() => new Map(people.map((p) => [p.id, p])), [people]);
+
+  const chains = useMemo(
+    () => (lockedId ? buildChainsToAnchor(people, relationships) : null),
+    [people, relationships, lockedId]
+  );
+
+  const isLocked = !!(lockedId && peopleById.has(lockedId));
+  const lockedPerson = isLocked ? peopleById.get(lockedId!)! : null;
+
+  // chain comes anchor-first (jesus → person), which is the reading order we want
+  const stepIds = useMemo(() => {
+    if (isLocked && chains) {
+      const path = chains.get(lockedId!);
+      if (path && path.length > 0) return path;
+    }
+    return DEFAULT_SPINE_IDS;
+  }, [isLocked, chains, lockedId]);
+
+  const steps = stepIds
+    .map((id, i) => {
+      const person = peopleById.get(id);
+      if (!person) return null;
+      const prevId = i > 0 ? stepIds[i - 1] : null;
+      const edge = prevId ? findEdge(relationships, prevId, id) : null;
+      return { person, edge };
+    })
+    .filter(Boolean) as { person: Person; edge: Relationship | null }[];
+
+  const heading = isLocked
+    ? `Chain to ${lockedPerson!.name}`
+    : "The chain, told plainly";
+
+  const subtitle = isLocked
+    ? `Shortest path from Jesus to ${lockedPerson!.name} — ${stepIds.length - 1} step${stepIds.length === 2 ? "" : "s"} through documented and traditional links. Click any name for the full bio.`
+    : "Ten people, almost seven hundred years. Each link below rests on a cited primary source — the kind a librarian would accept. Click any name for the full bio and every connection.";
+
+  const totalCount = people.length;
 
   return (
     <section className="mb-16">
       <div className="max-w-3xl mx-auto">
-        <h2 className="font-serif text-3xl mb-2">The chain, told plainly</h2>
-        <p className="text-ink/70 mb-8 max-w-2xl">
-          Ten people, almost seven hundred years. Each link below rests on a cited primary source —
-          the kind a librarian would accept. Click any name for the full bio and every connection.
-        </p>
+        <div className="flex items-baseline gap-3 mb-2 flex-wrap">
+          <h2 className="font-serif text-3xl">{heading}</h2>
+          {isLocked && (
+            <span className="text-xs uppercase tracking-wider text-accent">
+              following your selection
+            </span>
+          )}
+        </div>
+        <p className="text-ink/70 mb-8 max-w-2xl">{subtitle}</p>
 
         <ol className="relative">
           {steps.map(({ person, edge }, i) => (
@@ -87,6 +130,9 @@ export default function Spine() {
                   {edge.strength === "tradition" && (
                     <span className="ml-2 italic text-ink/40 normal-case">— attested by tradition</span>
                   )}
+                  {edge.strength === "disputed" && (
+                    <span className="ml-2 italic text-accent normal-case">— disputed</span>
+                  )}
                 </div>
               )}
 
@@ -101,7 +147,7 @@ export default function Spine() {
                 <p className="text-ink/80 mt-1 max-w-2xl text-[15px] leading-relaxed">{person.short_bio}</p>
               </Link>
 
-              {ERA_NOTES[person.id] && (
+              {!isLocked && ERA_NOTES[person.id] && (
                 <p className="mt-3 text-xs text-ink/55 italic max-w-xl border-l-2 border-ink/15 pl-3">
                   {ERA_NOTES[person.id]}
                 </p>
@@ -110,13 +156,15 @@ export default function Spine() {
           ))}
         </ol>
 
-        <div className="mt-10 pl-12">
-          <p className="text-sm text-ink/60">
-            These are ten of the {getRelationships().length > 0 ? "192" : ""} figures we track. The full
-            lineage — every Apologist, Cappadocian, desert father, and pope through John of
-            Damascus — is mapped below.
-          </p>
-        </div>
+        {!isLocked && (
+          <div className="mt-10 pl-12">
+            <p className="text-sm text-ink/60">
+              These are ten of the {totalCount} figures we track. The full lineage — every Apologist,
+              Cappadocian, desert father, and pope through John of Damascus — is mapped above. Click
+              anyone there to retrace the chain through them.
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );

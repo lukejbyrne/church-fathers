@@ -46,6 +46,31 @@ export default function About() {
         </li>
       </ul>
 
+      <h2 className="font-serif text-2xl mt-8 mb-3 text-ink">A note on "lineage" and "chain to Jesus"</h2>
+      <p className="mb-3">
+        The phrase <em>chain to Jesus</em> does theological work, and the work isn't all the same kind.
+        For Polycarp, "taught by John" is a real apostolic-succession claim. For Bede, the chain runs
+        through citation — Bede cited Augustine, who was baptised by Ambrose, who corresponded with
+        Basil, who cited Origen, who is <em>traditionally</em> linked to Hippolytus, who is{" "}
+        <em>traditionally</em> taught by Irenaeus, who heard Polycarp, who heard John. That's not one
+        thing. It's a transmission graph — pedagogical, epistolary, citational, sometimes sacramental.
+      </p>
+      <p className="mb-6">
+        Catholic and Orthodox readers will read "chain to Jesus" as <em>apostolic succession</em>{" "}
+        (bishop-to-bishop laying on of hands). What we show by default is closer to{" "}
+        <em>transmission</em>. The two overlap but aren't the same. Each figure page now lets you
+        switch the view: <strong>All transmission</strong> (default — the strongest path through any
+        relationship), <strong>Pedagogical</strong> (only teacher → student), <strong>Episcopal
+        succession</strong> (only bishop-to-bishop, the Catholic/Orthodox sense), and{" "}
+        <strong>Documented only</strong> (any type, but never tradition or disputed). Many figures
+        will return no chain in episcopal mode because they were not bishops; that's the point.
+      </p>
+      <p className="mb-6 text-sm text-ink/60 italic">
+        We also weight chains by evidence: a four-hop path entirely through "taught" is shown in
+        preference to a two-hop path that includes a "met (tradition)" link. So the chain you see is
+        not always the <em>shortest</em>; it's the <em>strongest</em>.
+      </p>
+
       <h2 className="font-serif text-2xl mt-8 mb-3 text-ink">What's in, what's out</h2>
       <ul className="list-disc pl-6 space-y-2 mb-6">
         <li>Coverage: AD 0 – ~750. Ends with John of Damascus, the traditional final Father.</li>

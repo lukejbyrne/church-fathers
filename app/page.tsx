@@ -1,7 +1,6 @@
-import Link from "next/link";
 import { getPeople, getRelationships } from "@/lib/data";
-import Spine from "@/components/Spine";
 import HomeView from "@/components/HomeView";
+import HeroChain from "@/components/HeroChain";
 
 export default function Home() {
   const people = getPeople();
@@ -20,29 +19,8 @@ export default function Home() {
 
   return (
     <>
-      <section className="max-w-4xl mx-auto px-4 pt-10 pb-6 text-center">
-        <h1 className="font-serif text-5xl mb-3 leading-tight">From Jesus to the Fathers</h1>
-        <p className="text-base text-ink/75 max-w-2xl mx-auto leading-relaxed">
-          A visual chain of who knew whom — apostles, bishops, theologians, martyrs — from
-          AD&nbsp;30 to&nbsp;750. Every link is sourced. Click any bar to lock a person and trace their connections.
-        </p>
-        <div className="flex justify-center gap-3 mt-4 text-sm">
-          <Link href="/directory" className="px-3 py-1.5 bg-ink text-parchment rounded hover:bg-accent transition-colors">
-            Browse all 192
-          </Link>
-          <Link href="/about" className="px-3 py-1.5 border border-ink/30 rounded hover:border-accent">
-            Methodology
-          </Link>
-        </div>
-      </section>
-
-      <section className="px-4 pb-12">
-        <HomeView people={people} relationships={relationships} />
-      </section>
-
-      <div className="max-w-5xl mx-auto px-4 pt-10 border-t border-ink/10">
-        <Spine />
-      </div>
+      <HeroChain />
+      <HomeView people={people} relationships={relationships} />
     </>
   );
 }

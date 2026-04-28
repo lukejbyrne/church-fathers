@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import * as d3 from "d3";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import type { Person, Relationship, Region } from "@/lib/schema";
 import { buildChainsToAnchor, lineageOf } from "@/lib/lineage";
 
@@ -30,7 +31,12 @@ const REGION_LABEL: Record<Region, string> = {
   other: "Other",
 };
 
-type Props = { people: Person[]; relationships: Relationship[] };
+type Props = {
+  people: Person[];
+  relationships: Relationship[];
+  lockedId: string | null;
+  setLockedId: (id: string | null) => void;
+};
 
 function midYear(p: Person): number {
   if (p.born != null && p.died != null) return (p.born + p.died) / 2;
@@ -42,11 +48,14 @@ function midYear(p: Person): number {
   return 100;
 }
 
-export default function LineageGraph({ people: allPeople, relationships }: Props) {
+export default function LineageGraph({ people: allPeople, relationships, lockedId, setLockedId }: Props) {
+  const router = useRouter();
   const svgRef = useRef<SVGSVGElement | null>(null);
-  const [lockedId, setLockedId] = useState<string | null>(null);
+  const zoomRef = useRef<d3.ZoomBehavior<SVGSVGElement, unknown> | null>(null);
+  const transformRef = useRef<d3.ZoomTransform>(d3.zoomIdentity);
   const [condensed, setCondensed] = useState(false);
   const [hover, setHover] = useState<{ p: Person; x: number; y: number } | null>(null);
+  const [scale, setScale] = useState(1);
 
   const chains = useMemo(() => buildChainsToAnchor(allPeople, relationships), [allPeople, relationships]);
   const lockedLineage = useMemo(() => (lockedId ? lineageOf(lockedId, chains) : null), [lockedId, chains]);
@@ -83,8 +92,13 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
   const xScale = useMemo(() => {
     const counts = Object.fromEntries(presentRegions.map((r) => [r, 0])) as Record<Region, number>;
     people.forEach((p) => (counts[p.region] += 1));
-    const max = Math.max(...Object.values(counts));
-    const weights = presentRegions.map((r) => 0.5 + (counts[r] / max) * 1);
+    // Direct proportionality: a column's width = its share of total people,
+    // with a floor so a region with 1 person still shows a readable label.
+    // Mix: 80% proportional + 20% even, prevents the smallest from vanishing
+    // while keeping dense regions visibly dominant.
+    const totalPeople = Math.max(1, people.length);
+    const evenShare = 1 / presentRegions.length;
+    const weights = presentRegions.map((r) => 0.8 * (counts[r] / totalPeople) + 0.2 * evenShare);
     const total = weights.reduce((a, b) => a + b, 0);
     let cursor = 0;
     const ranges = new Map<Region, [number, number]>();
@@ -166,9 +180,38 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
 
     svg
       .attr("viewBox", `0 0 ${width} ${height}`)
-      .style("user-select", "none");
+      .style("user-select", "none")
+      .style("cursor", "grab");
 
-    const g = svg.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+    const zoomRoot = svg.append("g").attr("class", "zoom-root");
+    const g = zoomRoot.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
+
+    const zoom = d3
+      .zoom<SVGSVGElement, unknown>()
+      .scaleExtent([0.25, 5])
+      .filter((event) => {
+        // Wheel-zoom only with cmd/ctrl held — plain scroll moves the page.
+        if (event.type === "wheel") return event.ctrlKey || event.metaKey;
+        // Ignore drags that start on a node (click → lock instead of pan).
+        const target = event.target as Element;
+        return !target.closest("g.node");
+      })
+      .on("start", () => svg.style("cursor", "grabbing"))
+      .on("zoom", (event) => {
+        zoomRoot.attr("transform", event.transform.toString());
+        transformRef.current = event.transform;
+        setScale(event.transform.k);
+      })
+      .on("end", () => svg.style("cursor", "grab"));
+
+    zoomRef.current = zoom;
+    svg.call(zoom);
+    // Disable d3-zoom's default double-click-to-zoom; we use dblclick to open the person's page.
+    svg.on("dblclick.zoom", null);
+    // restore previous transform across re-renders (e.g. when user condenses)
+    if (transformRef.current !== d3.zoomIdentity) {
+      svg.call(zoom.transform, transformRef.current);
+    }
 
     const yAxis = d3
       .axisLeft(yScale)
@@ -265,7 +308,12 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
       .on("mouseleave", () => setHover(null))
       .on("click", (event, p) => {
         event.stopPropagation();
-        setLockedId((cur) => (cur === p.id ? null : p.id));
+        setLockedId(lockedId === p.id ? null : p.id);
+      })
+      .on("dblclick", (event, p) => {
+        event.stopPropagation();
+        event.preventDefault();
+        router.push(`/fathers/${p.id}`);
       });
 
     nodes
@@ -301,7 +349,7 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
       .attr("fill", (d) => (d.p.significance >= 4 ? "#1f1a13" : "#1f1a13cc"))
       .text((d) => d.p.name);
 
-  }, [people, relationships, positions, presentRegions, yScale, innerH, innerW, lockedId, lockedLineage]);
+  }, [people, relationships, positions, presentRegions, yScale, innerH, innerW, lockedId, lockedLineage, router, setLockedId]);
 
   const lockedEdges = useMemo(
     () => (lockedId ? relationships.filter((r) => r.from === lockedId || r.to === lockedId) : []),
@@ -329,8 +377,13 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
       </div>
 
       {lockedPerson && lockedLineage && (
-        <div className="flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/10 border border-accent/30 rounded text-sm">
-          <span className="font-serif text-base">{lockedPerson.name}</span>
+        <div className="sticky top-14 z-10 flex flex-wrap items-center gap-2 mb-3 px-3 py-2 bg-accent/15 backdrop-blur border border-accent/40 rounded text-sm shadow-sm">
+          <Link
+            href={`/fathers/${lockedPerson.id}`}
+            className="font-serif text-base hover:text-accent underline decoration-ink/20 hover:decoration-accent underline-offset-2"
+          >
+            {lockedPerson.name}
+          </Link>
           <span className="text-ink/60 text-xs">
             lineage · {lockedLineage.ancestors.size - 1} ancestors back to Jesus ·{" "}
             {lockedLineage.descendants.size - 1} descendants
@@ -359,7 +412,53 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
         </div>
       )}
 
-      <svg ref={svgRef} className="w-full h-auto bg-parchment border border-ink/10 rounded" />
+      <div className="relative">
+        <svg ref={svgRef} className="w-full h-auto bg-parchment border border-ink/10 rounded" />
+        <div className="absolute top-2 right-2 flex flex-col gap-1 bg-parchment/90 backdrop-blur border border-ink/15 rounded shadow-sm text-xs">
+          <button
+            onClick={() => {
+              if (!svgRef.current || !zoomRef.current) return;
+              d3.select(svgRef.current).transition().duration(220).call(zoomRef.current.scaleBy, 1.4);
+            }}
+            className="w-8 h-8 flex items-center justify-center hover:bg-ink/5 border-b border-ink/10"
+            title="Zoom in"
+            aria-label="Zoom in"
+          >
+            +
+          </button>
+          <button
+            onClick={() => {
+              if (!svgRef.current || !zoomRef.current) return;
+              d3.select(svgRef.current).transition().duration(220).call(zoomRef.current.scaleBy, 0.7);
+            }}
+            className="w-8 h-8 flex items-center justify-center hover:bg-ink/5 border-b border-ink/10"
+            title="Zoom out"
+            aria-label="Zoom out"
+          >
+            −
+          </button>
+          <button
+            onClick={() => {
+              if (!svgRef.current || !zoomRef.current) return;
+              d3.select(svgRef.current)
+                .transition()
+                .duration(320)
+                .call(zoomRef.current.transform, d3.zoomIdentity);
+            }}
+            className="w-8 h-8 flex items-center justify-center hover:bg-ink/5 border-b border-ink/10 text-[10px] uppercase tracking-wider"
+            title="Fit to view"
+            aria-label="Fit to view"
+          >
+            Fit
+          </button>
+          <div className="w-8 h-6 flex items-center justify-center text-[10px] text-ink/55 tabular-nums">
+            {Math.round(scale * 100)}%
+          </div>
+        </div>
+        <div className="absolute bottom-2 left-2 text-[10px] text-ink/50 bg-parchment/80 px-2 py-1 rounded pointer-events-none">
+          ⌘/Ctrl + scroll to zoom · drag to pan
+        </div>
+      </div>
 
       {hover && (
         <div
@@ -385,7 +484,12 @@ export default function LineageGraph({ people: allPeople, relationships }: Props
               return (
                 <li key={i}>
                   <span className="text-ink/50">{verb.replace(/_/g, " ")}</span>{" "}
-                  <span className="font-medium">{other?.name ?? otherId}</span>
+                  <Link
+                    href={`/fathers/${otherId}`}
+                    className="font-medium hover:text-accent underline decoration-ink/15 hover:decoration-accent underline-offset-2"
+                  >
+                    {other?.name ?? otherId}
+                  </Link>
                   <span
                     className={`ml-1 text-[10px] uppercase ${
                       e.strength === "disputed" ? "text-accent" : "text-ink/40"
