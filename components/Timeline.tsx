@@ -45,6 +45,19 @@ export default function Timeline({ people, relationships }: Props) {
   const [showAllEdges, setShowAllEdges] = useState(false);
   const scrollRef = useRef<HTMLDivElement | null>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
+  const clearTimer = useRef<number | null>(null);
+
+  function setHoverDelayed(id: string | null) {
+    if (clearTimer.current) {
+      window.clearTimeout(clearTimer.current);
+      clearTimer.current = null;
+    }
+    if (id === null) {
+      clearTimer.current = window.setTimeout(() => setHoverId(null), 180);
+    } else {
+      setHoverId(id);
+    }
+  }
 
   // Pixels per year auto-fits to container width on mount
   const [pxPerYear, setPxPerYear] = useState(1.6);
@@ -61,29 +74,17 @@ export default function Timeline({ people, relationships }: Props) {
   }, []);
 
   const activeId = lockedId ?? hoverId;
+  const [hoveredEdge, setHoveredEdge] = useState<{ rel: Relationship; x: number; y: number } | null>(null);
 
-  // For locked: use full lineage (ancestors + descendants). For hover: just direct neighbors.
+  // Both hover and lock now use the full lineage (ancestors + descendants).
   const chains = useMemo(() => buildChainsToAnchor(people, relationships), [people, relationships]);
-
   const lockedLineage = useMemo(() => (lockedId ? lineageOf(lockedId, chains) : null), [lockedId, chains]);
-
-  const directNeighbors = useMemo(() => {
-    const set = new Set<string>();
-    if (!hoverId) return set;
-    set.add(hoverId);
-    for (const e of relationships) {
-      if (e.from === hoverId) set.add(e.to);
-      if (e.to === hoverId) set.add(e.from);
-    }
-    return set;
-  }, [hoverId, relationships]);
-
-  // The set of ids that should appear bright (not dimmed)
-  const highlight = useMemo(() => {
-    if (lockedLineage) return lockedLineage.all;
-    if (hoverId) return directNeighbors;
-    return null;
-  }, [lockedLineage, hoverId, directNeighbors]);
+  const hoverLineage = useMemo(
+    () => (hoverId && hoverId !== lockedId ? lineageOf(hoverId, chains) : null),
+    [hoverId, lockedId, chains]
+  );
+  const activeLineage = lockedLineage ?? hoverLineage;
+  const highlight = activeLineage?.all ?? null;
 
   const allEdges = useMemo(() => relationships, [relationships]);
   const activeEdges = useMemo(
@@ -153,12 +154,47 @@ export default function Timeline({ people, relationships }: Props) {
   );
 
   const renderEdges = useMemo(() => {
-    if (lockedId && lockedLineage) {
-      return visibleEdges.filter((r) => lockedLineage.all.has(r.from) && lockedLineage.all.has(r.to));
+    if (!activeLineage) return [];
+    return visibleEdges.filter((r) => activeLineage.all.has(r.from) && activeLineage.all.has(r.to));
+  }, [visibleEdges, activeLineage]);
+
+  // Per-person sequential anchor offsets — each connection exits a different
+  // point along the bar, sorted by chronology of the connected person, so
+  // edges don't overlap on a single midpoint.
+  const peopleByIdLocal = useMemo(() => new Map(people.map((p) => [p.id, p])), [people]);
+  const anchorMap = useMemo(() => {
+    const personEdges = new Map<string, Relationship[]>();
+    const ensure = (id: string) => {
+      if (!personEdges.has(id)) personEdges.set(id, []);
+      return personEdges.get(id)!;
+    };
+    for (const e of visibleEdges) {
+      ensure(e.from).push(e);
+      ensure(e.to).push(e);
     }
-    if (hoverId) return visibleEdges.filter((r) => r.from === hoverId || r.to === hoverId);
-    return [];
-  }, [visibleEdges, lockedId, lockedLineage, hoverId]);
+    for (const [pid, edges] of personEdges) {
+      edges.sort((a, b) => {
+        const ao = a.from === pid ? a.to : a.from;
+        const bo = b.from === pid ? b.to : b.from;
+        const ay = peopleByIdLocal.get(ao)?.born ?? peopleByIdLocal.get(ao)?.died ?? 9999;
+        const by = peopleByIdLocal.get(bo)?.born ?? peopleByIdLocal.get(bo)?.died ?? 9999;
+        return ay - by;
+      });
+    }
+    const m = new Map<string, { fromFrac: number; toFrac: number }>();
+    for (const e of visibleEdges) {
+      const key = `${e.from}__${e.type}__${e.to}`;
+      const fl = personEdges.get(e.from)!;
+      const tl = personEdges.get(e.to)!;
+      const fi = fl.indexOf(e);
+      const ti = tl.indexOf(e);
+      m.set(key, {
+        fromFrac: (fi + 1) / (fl.length + 1),
+        toFrac: (ti + 1) / (tl.length + 1),
+      });
+    }
+    return m;
+  }, [visibleEdges, peopleByIdLocal]);
 
   const totalWidth = (YEAR_MAX - YEAR_MIN) * pxPerYear;
   const totalHeight = layout.rowCount * (ROW_HEIGHT + ROW_GAP) + 50;
@@ -191,18 +227,21 @@ export default function Timeline({ people, relationships }: Props) {
     container.scrollTo({ left: Math.max(0, target), behavior: "smooth" });
   }, [lockedId, positions]);
 
-  function edgePath(from: string, to: string): string {
-    const a = positions.get(from)!;
-    const b = positions.get(to)!;
+  function edgePath(rel: Relationship): string {
+    const a = positions.get(rel.from)!;
+    const b = positions.get(rel.to)!;
+    const anchors = anchorMap.get(`${rel.from}__${rel.type}__${rel.to}`) ?? { fromFrac: 0.5, toFrac: 0.5 };
+    const ax = a.x1 + anchors.fromFrac * (a.x2 - a.x1);
+    const bx = b.x1 + anchors.toFrac * (b.x2 - b.x1);
     if (a.row === b.row) {
-      const dx = Math.abs(b.cx - a.cx);
+      const dx = Math.abs(bx - ax);
       const lift = Math.max(15, Math.min(60, dx * 0.3));
-      const mx = (a.cx + b.cx) / 2;
-      return `M${a.cx},${a.y - 4} Q${mx},${a.y - lift} ${b.cx},${b.y - 4}`;
+      const mx = (ax + bx) / 2;
+      return `M${ax},${a.y - 4} Q${mx},${a.y - lift} ${bx},${b.y - 4}`;
     }
     const midY = (a.y + b.y) / 2;
-    const bend = Math.abs(b.cx - a.cx) * 0.15 + 10;
-    return `M${a.cx},${a.y} C${a.cx},${midY - bend / 2} ${b.cx},${midY + bend / 2} ${b.cx},${b.y}`;
+    const bend = Math.abs(bx - ax) * 0.15 + 10;
+    return `M${ax},${a.y} C${ax},${midY - bend / 2} ${bx},${midY + bend / 2} ${bx},${b.y}`;
   }
   function strokeFor(s: Relationship["strength"]) {
     return s === "disputed" ? "#8b1e2d" : s === "tradition" ? "#1f1a1380" : "#1f1a13";
@@ -319,13 +358,13 @@ export default function Timeline({ people, relationships }: Props) {
             </div>
           ))}
 
-          <svg className="absolute inset-0 pointer-events-none" width={totalWidth} height={totalHeight} style={{ zIndex: 2 }}>
+          <svg className="absolute inset-0" width={totalWidth} height={totalHeight} style={{ zIndex: 2, pointerEvents: "none" }}>
             {showAllEdges &&
               !activeId &&
               visibleEdges.map((r, i) => (
                 <path
                   key={`all-${i}`}
-                  d={edgePath(r.from, r.to)}
+                  d={edgePath(r)}
                   fill="none"
                   stroke={strokeFor(r.strength)}
                   strokeWidth={r.strength === "documented" ? 0.6 : 0.4}
@@ -334,17 +373,57 @@ export default function Timeline({ people, relationships }: Props) {
                 />
               ))}
             {renderEdges.map((r, i) => (
-              <path
-                key={`h-${i}`}
-                d={edgePath(r.from, r.to)}
-                fill="none"
-                stroke={strokeFor(r.strength)}
-                strokeWidth={r.strength === "documented" ? 1.6 : 1.1}
-                strokeDasharray={dashFor(r.strength)}
-                opacity={0.85}
-              />
+              <g key={`h-${i}`} style={{ pointerEvents: "auto" }}>
+                {/* Wide invisible hit area for easy hover */}
+                <path
+                  d={edgePath(r)}
+                  fill="none"
+                  stroke="transparent"
+                  strokeWidth={10}
+                  onMouseMove={(e) => {
+                    if (clearTimer.current) {
+                      window.clearTimeout(clearTimer.current);
+                      clearTimer.current = null;
+                    }
+                    const svg = (e.currentTarget.ownerSVGElement as SVGSVGElement).getBoundingClientRect();
+                    setHoveredEdge({ rel: r, x: e.clientX - svg.left, y: e.clientY - svg.top });
+                  }}
+                  onMouseLeave={() => setHoveredEdge(null)}
+                  style={{ cursor: "help" }}
+                />
+                <path
+                  d={edgePath(r)}
+                  fill="none"
+                  stroke={strokeFor(r.strength)}
+                  strokeWidth={hoveredEdge?.rel === r ? (r.strength === "documented" ? 2.6 : 2) : r.strength === "documented" ? 1.6 : 1.1}
+                  strokeDasharray={dashFor(r.strength)}
+                  opacity={0.85}
+                  style={{ pointerEvents: "none" }}
+                />
+              </g>
             ))}
           </svg>
+          {hoveredEdge && (
+            <div
+              className="absolute pointer-events-none bg-ink text-parchment text-xs px-2 py-1.5 rounded shadow-lg max-w-xs"
+              style={{ left: hoveredEdge.x + 12, top: hoveredEdge.y + 12, zIndex: 10 }}
+            >
+              <div className="font-medium">
+                {peopleByIdLocal.get(hoveredEdge.rel.from)?.name}
+                <span className="text-parchment/60 mx-1">— {hoveredEdge.rel.type.replace(/_/g, " ")} →</span>
+                {peopleByIdLocal.get(hoveredEdge.rel.to)?.name}
+              </div>
+              <div className="text-[10px] uppercase tracking-wide text-parchment/60 mt-0.5">
+                {hoveredEdge.rel.strength}
+              </div>
+              {hoveredEdge.rel.notes && (
+                <div className="text-parchment/85 mt-1 italic">{hoveredEdge.rel.notes}</div>
+              )}
+              <div className="text-parchment/60 mt-1 text-[10px]">
+                {hoveredEdge.rel.citations.map((c) => c.source).join(" · ")}
+              </div>
+            </div>
+          )}
 
           {layout.placed.map(({ person, x1, x2, row }) => {
             const left = yearToX(x1);
@@ -362,8 +441,8 @@ export default function Timeline({ people, relationships }: Props) {
                 key={person.id}
                 href={`/fathers/${person.id}`}
                 onClick={(e) => handleBarClick(e, person.id)}
-                onMouseEnter={() => setHoverId(person.id)}
-                onMouseLeave={() => setHoverId(null)}
+                onMouseEnter={() => setHoverDelayed(person.id)}
+                onMouseLeave={() => setHoverDelayed(null)}
                 className="absolute flex items-center group cursor-pointer"
                 style={{
                   left,
