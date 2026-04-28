@@ -1,0 +1,4235 @@
+[
+  {
+    "from": "peter-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Peter is called by Jesus and named chief of the Twelve in all four Gospels.",
+    "citations": [
+      {
+        "source": "Gospel of Mark 1:16-18",
+        "kind": "primary"
+      },
+      {
+        "source": "Gospel of Matthew 16:13-19",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "andrew-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of John 1:35-42",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "james-son-of-zebedee",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Mark 1:19-20",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Mark 1:19-20",
+        "kind": "primary"
+      },
+      {
+        "source": "Gospel of John 21:20-24",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "philip-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of John 1:43-48",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "bartholomew-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Matthew 10:3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "matthew-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Matthew 9:9",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "thomas-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of John 20:24-29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "james-son-of-alphaeus",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Mark 3:18",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jude-thaddaeus",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Luke 6:16",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "simon-the-zealot",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Luke 6:15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "judas-iscariot",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "One of the Twelve who later betrayed Jesus.",
+    "citations": [
+      {
+        "source": "Gospel of Mark 3:19",
+        "kind": "primary"
+      },
+      {
+        "source": "Gospel of Matthew 26:14-16",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "matthias-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Acts 1:21-22 specifies Matthias had accompanied Jesus 'beginning from the baptism of John' though he was not one of the original Twelve.",
+    "citations": [
+      {
+        "source": "Acts of the Apostles 1:21-22",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "mary-magdalene",
+    "to": "jesus-of-nazareth",
+    "type": "taught_by",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Gospel of Luke 8:1-3",
+        "kind": "primary"
+      },
+      {
+        "source": "Gospel of John 20:1-18",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "james-the-just",
+    "to": "jesus-of-nazareth",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Brother of Jesus per Mark 6:3 and Galatians 1:19; received a resurrection appearance per 1 Cor 15:7.",
+    "citations": [
+      {
+        "source": "Gospel of Mark 6:3",
+        "kind": "primary"
+      },
+      {
+        "source": "1 Corinthians 15:7",
+        "kind": "primary"
+      },
+      {
+        "source": "Galatians 1:19",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "jesus-of-nazareth",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Paul claims a resurrection appearance and direct revelation (Galatians 1:11-17, 1 Cor 15:8). Not a pre-Easter disciple.",
+    "citations": [
+      {
+        "source": "1 Corinthians 15:8",
+        "kind": "primary"
+      },
+      {
+        "source": "Galatians 1:11-17",
+        "kind": "primary"
+      },
+      {
+        "source": "Acts 9:1-19",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "peter-the-apostle",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Paul visited Cephas in Jerusalem for fifteen days c. AD 36 (Gal 1:18). They later met at the Apostolic Council (Gal 2 / Acts 15).",
+    "citations": [
+      {
+        "source": "Galatians 1:18; 2:1-10",
+        "kind": "primary"
+      },
+      {
+        "source": "Acts of the Apostles 15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "peter-the-apostle",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "The Antioch incident: Paul publicly rebuked Peter for withdrawing from Gentile table fellowship under pressure from 'men from James' (Gal 2:11-14).",
+    "citations": [
+      {
+        "source": "Galatians 2:11-14",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "james-the-just",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Paul met James in Jerusalem (Gal 1:19) and again at the Apostolic Council (Gal 2:9 / Acts 15).",
+    "citations": [
+      {
+        "source": "Galatians 1:19; 2:9",
+        "kind": "primary"
+      },
+      {
+        "source": "Acts 15:13; 21:18",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "james-the-just",
+    "type": "opposed",
+    "strength": "tradition",
+    "notes": "Paul was opposed not by James personally but by 'certain men from James' whose intervention triggered the Antioch incident (Gal 2:12). The direct opposition between Paul and James himself is inferred and disputed by scholars.",
+    "citations": [
+      {
+        "source": "Galatians 2:12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "timothy-of-ephesus",
+    "type": "taught",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Acts 16:1-3",
+        "kind": "primary"
+      },
+      {
+        "source": "1 Timothy 1:2",
+        "kind": "primary"
+      },
+      {
+        "source": "Philippians 2:19-22",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "titus-of-crete",
+    "type": "taught",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Galatians 2:1-3",
+        "kind": "primary"
+      },
+      {
+        "source": "Titus 1:4-5",
+        "kind": "primary"
+      },
+      {
+        "source": "2 Corinthians 7:6-15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "luke-the-evangelist",
+    "type": "taught",
+    "strength": "documented",
+    "notes": "Luke is named as Paul's companion in Colossians 4:14, Philemon 24, 2 Timothy 4:11; Irenaeus calls him 'a follower of Paul'.",
+    "citations": [
+      {
+        "source": "Colossians 4:14",
+        "kind": "primary"
+      },
+      {
+        "source": "2 Timothy 4:11",
+        "kind": "primary"
+      },
+      {
+        "source": "Irenaeus, Adv. Haer. 3.1.1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "mark-the-evangelist",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Mark accompanied Paul and Barnabas, then split (Acts 13:13; 15:37-39). Later reconciled (Col 4:10; 2 Tim 4:11).",
+    "citations": [
+      {
+        "source": "Acts 13:13; 15:37-39",
+        "kind": "primary"
+      },
+      {
+        "source": "Colossians 4:10",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-tarsus",
+    "to": "onesimus",
+    "type": "taught",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Philemon 10-16",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "mark-the-evangelist",
+    "to": "peter-the-apostle",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Papias (c. 110-130) reports Mark was Peter's interpreter and recorded Peter's preaching as the Gospel of Mark — but Papias' testimony itself survives only via Eusebius. 1 Peter 5:13 mentions 'Mark my son' but does not establish discipleship.",
+    "citations": [
+      {
+        "source": "Papias in Eusebius HE 3.39.15",
+        "kind": "primary"
+      },
+      {
+        "source": "1 Peter 5:13",
+        "kind": "primary"
+      },
+      {
+        "source": "Irenaeus, Adv. Haer. 3.1.1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "polycarp-of-smyrna",
+    "to": "john-the-apostle",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Irenaeus, who personally heard Polycarp in his youth, states in Adv. Haer. 3.3.4 and his Letter to Florinus (Eus. HE 5.20) that Polycarp was instructed by John and 'others who had seen the Lord'. This is a near-contemporary chain (Irenaeus -> Polycarp -> John), so 'documented'.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 3.3.4",
+        "kind": "primary"
+      },
+      {
+        "source": "Irenaeus, Letter to Florinus, in Eusebius HE 5.20.4-8",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ignatius-of-antioch",
+    "to": "john-the-apostle",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Later tradition (e.g. the Martyrium Ignatii and John Chrysostom) makes Ignatius a disciple of John alongside Polycarp; not attested by Ignatius himself or by Irenaeus.",
+    "citations": [
+      {
+        "source": "Martyrium Ignatii (later acta)",
+        "kind": "primary"
+      },
+      {
+        "source": "Chrysostom, Hom. on Ignatius",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "papias-of-hierapolis",
+    "to": "john-the-apostle",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Irenaeus calls Papias 'a hearer of John' (Adv. Haer. 5.33.4), but Eusebius (HE 3.39.5-7), reading Papias' own preface, argues Papias heard 'the elder John', a different figure. Borderline — flagged for review.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 5.33.4",
+        "kind": "primary"
+      },
+      {
+        "source": "Papias, Preface, in Eusebius HE 3.39.3-7",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "papias-of-hierapolis",
+    "to": "john-the-apostle",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Whether or not Papias heard John the Apostle directly, his preface explicitly reports gathering sayings of John (the Lord's disciple) via the elders.",
+    "citations": [
+      {
+        "source": "Papias, Preface in Eusebius HE 3.39.3-4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "polycarp-of-smyrna",
+    "to": "irenaeus-of-lyons",
+    "type": "taught",
+    "strength": "documented",
+    "notes": "Forward edge into the next era. Irenaeus in his Letter to Florinus describes hearing Polycarp preach in his youth at Smyrna.",
+    "citations": [
+      {
+        "source": "Irenaeus, Letter to Florinus in Eusebius HE 5.20.4-8",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "linus-of-rome",
+    "to": "peter-the-apostle",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Irenaeus' succession list names Linus as the man to whom 'the apostles' (Peter and Paul) committed the Roman episcopate. Episcopal succession lists for 1st-c Rome were reconstructed by Irenaeus c. 180 (Adv. Haer. 3.3); not contemporaneously attested.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 3.3.3",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 3.2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "anacletus-of-rome",
+    "to": "linus-of-rome",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Roman succession list reconstructed by Irenaeus c. 180; no contemporaneous attestation.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 3.3.3",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 3.13",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "clement-of-rome",
+    "to": "anacletus-of-rome",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Roman succession list reconstructed by Irenaeus c. 180; the order Linus-Anacletus-Clement is not contemporaneously attested.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 3.3.3",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 3.15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "evodius-of-antioch",
+    "to": "peter-the-apostle",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Eusebius lists Evodius as first bishop of Antioch after Peter. Peter's actual episcopal tenure at Antioch is traditional rather than narrated in scripture.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 3.22",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ignatius-of-antioch",
+    "to": "evodius-of-antioch",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Antiochene episcopal succession is preserved only by Eusebius writing c. 320; no 1st-c Antiochene source survives to confirm.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 3.22, 3.36",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "clement-of-rome",
+    "to": "peter-the-apostle",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Tertullian (De Praesc. 32) says Clement was ordained by Peter. Origen and others identify him with the Clement of Phil 4:3. No first-person testimony survives — marked tradition per the brief.",
+    "citations": [
+      {
+        "source": "Tertullian, De Praescriptione 32",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, De Viris Illustribus 15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "clement-of-rome",
+    "to": "paul-of-tarsus",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "1 Clement 5 speaks vividly of Paul's martyrdom in the first person plural ('our generation'); patristic tradition (Origen, Eusebius, Jerome) identifies Clement with the fellow worker of Phil 4:3.",
+    "citations": [
+      {
+        "source": "1 Clement 5",
+        "kind": "primary"
+      },
+      {
+        "source": "Philippians 4:3",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 3.15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ignatius-of-antioch",
+    "to": "polycarp-of-smyrna",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Ignatius wrote a personal letter to Polycarp en route to Rome; Polycarp in turn forwarded the corpus of Ignatian letters to the Philippians (Phil 13).",
+    "citations": [
+      {
+        "source": "Ignatius, To Polycarp",
+        "kind": "primary"
+      },
+      {
+        "source": "Polycarp, To the Philippians 13",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ignatius-of-antioch",
+    "to": "onesimus",
+    "type": "corresponded",
+    "strength": "tradition",
+    "notes": "Ignatius greets a Bishop Onesimus of Ephesus in his Letter to the Ephesians; the identification with Paul's freed slave Onesimus is traditional and not certain.",
+    "citations": [
+      {
+        "source": "Ignatius, To the Ephesians 1.3, 6.2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "polycarp-of-smyrna",
+    "to": "ignatius-of-antioch",
+    "type": "corresponded",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Polycarp, To the Philippians 9, 13",
+        "kind": "primary"
+      },
+      {
+        "source": "Ignatius, To Polycarp",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "polycarp-of-smyrna",
+    "to": "papias-of-hierapolis",
+    "type": "met",
+    "strength": "tradition",
+    "notes": "Irenaeus (Adv. Haer. 5.33.4) calls Papias 'a companion of Polycarp'. No surviving first-person source.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 5.33.4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "matthias-the-apostle",
+    "to": "judas-iscariot",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Strictly an apostolic succession (not episcopal) — Matthias chosen by lot to replace Judas among the Twelve.",
+    "citations": [
+      {
+        "source": "Acts 1:15-26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "peter-the-apostle",
+    "to": "jesus-of-nazareth",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Roman Catholic tradition treats Peter as Christ's vicar / successor in pastoral leadership of the Church (Matt 16:18-19); not framed as episcopal succession in the New Testament itself.",
+    "citations": [
+      {
+        "source": "Gospel of Matthew 16:18-19",
+        "kind": "primary"
+      },
+      {
+        "source": "Gospel of John 21:15-17",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "papias-of-hierapolis",
+    "to": "mark-the-evangelist",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Papias preserves the earliest tradition about Mark's authorship and method.",
+    "citations": [
+      {
+        "source": "Papias in Eusebius HE 3.39.15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "papias-of-hierapolis",
+    "to": "matthew-the-apostle",
+    "type": "knew_of",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Papias in Eusebius HE 3.39.16",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "quadratus-of-athens",
+    "to": "jesus-of-nazareth",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Quadratus' surviving fragment claims firsthand testimony was still alive in his day from those healed or raised by Jesus.",
+    "citations": [
+      {
+        "source": "Quadratus, Apology fragment in Eusebius HE 4.3.2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "aristides-of-athens",
+    "to": "jesus-of-nazareth",
+    "type": "knew_of",
+    "strength": "documented",
+    "citations": [
+      {
+        "source": "Aristides, Apology 2, 15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "hermas-of-rome",
+    "to": "clement-of-rome",
+    "type": "met",
+    "strength": "tradition",
+    "notes": "The Shepherd (Vis. 2.4.3) instructs Hermas to give a copy of the book to 'Clement', who will send it abroad. The identification with Clement of Rome is plausible but traditional, and the Muratorian Fragment dates Hermas under Pius I (mid-2nd c.) which would post-date Clement.",
+    "citations": [
+      {
+        "source": "Shepherd of Hermas, Vision 2.4.3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "polycarp-of-smyrna",
+    "to": "paul-of-tarsus",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Polycarp's Letter to the Philippians quotes or alludes to most of the Pauline corpus extensively.",
+    "citations": [
+      {
+        "source": "Polycarp, To the Philippians (passim, esp. 3.2, 11.2-3)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ignatius-of-antioch",
+    "to": "paul-of-tarsus",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Ignatius alludes repeatedly to Pauline letters (esp. 1 Cor, Eph) and explicitly praises Paul (Eph. 12.2; Rom. 4.3).",
+    "citations": [
+      {
+        "source": "Ignatius, To the Ephesians 12.2",
+        "kind": "primary"
+      },
+      {
+        "source": "Ignatius, To the Romans 4.3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "didache-author",
+    "to": "jesus-of-nazareth",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "The Didache cites the Lord's Prayer and dominical sayings 'as the Lord commanded in his Gospel'.",
+    "citations": [
+      {
+        "source": "Didache 8, 9, 11, 15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "mary-mother-of-jesus",
+    "to": "jesus-of-nazareth",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Mary is the mother of Jesus per the infancy narratives of Matthew and Luke; present at the wedding at Cana, the crucifixion, and with the disciples before Pentecost.",
+    "citations": [
+      {
+        "source": "Gospel of Luke 1:26-2:52",
+        "kind": "primary"
+      },
+      {
+        "source": "Gospel of John 2:1-12; 19:25-27",
+        "kind": "primary"
+      },
+      {
+        "source": "Acts of the Apostles 1:14",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "mary-mother-of-jesus",
+    "to": "john-the-apostle",
+    "type": "met",
+    "strength": "documented",
+    "notes": "From the cross Jesus entrusted his mother to the Beloved Disciple, who took her into his own home (John 19:26-27).",
+    "citations": [
+      {
+        "source": "Gospel of John 19:26-27",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "clement-of-alexandria",
+    "to": "pseudo-barnabas",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Clement of Alexandria quotes the Epistle of Barnabas as scripture in the Stromata, attributing it to the apostolic Barnabas. Marked tradition because Pseudo-Barnabas himself is anonymous; Clement is citing the text under a pseudepigraphic attribution.",
+    "citations": [
+      {
+        "source": "Clement of Alexandria, Stromata 2.6, 2.7, 5.10",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "origen-of-alexandria",
+    "to": "pseudo-barnabas",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Origen quotes the Epistle of Barnabas as a 'catholic epistle' (Contra Celsum 1.63). Marked tradition because Pseudo-Barnabas is anonymous and Origen attributes the text to the apostolic Barnabas.",
+    "citations": [
+      {
+        "source": "Origen, Contra Celsum 1.63",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "pseudo-barnabas",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Eusebius discusses the Epistle of Barnabas among the disputed/spurious writings (HE 3.25, 6.14). Marked tradition because the author is anonymous.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 3.25, 6.14",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "irenaeus-of-lyons",
+    "to": "polycarp-of-smyrna",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Irenaeus describes in his Letter to Florinus hearing Polycarp preach in his youth in Smyrna and remembering his testimony about John the Apostle. This is direct first-person testimony.",
+    "citations": [
+      {
+        "source": "Irenaeus, Letter to Florinus (in Eusebius HE 5.20)",
+        "kind": "primary"
+      },
+      {
+        "source": "Irenaeus, Adv. Haer. 3.3.4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "tatian-the-assyrian",
+    "to": "justin-martyr",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Tatian was a disciple of Justin in Rome and only fell into heterodoxy after Justin's martyrdom.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 1.28.1",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 4.29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "clement-of-alexandria",
+    "to": "pantaenus",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Clement names Pantaenus as the 'true Sicilian bee' from whom he received instruction.",
+    "citations": [
+      {
+        "source": "Clement, Stromateis 1.1.11",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 5.11, 6.6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "clement-of-alexandria",
+    "to": "pantaenus",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Clement succeeded Pantaenus as head of the Catechetical School of Alexandria. Eusebius (HE 6.6) is the source; Clement's own writings name Pantaenus as teacher but not as predecessor in office.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "origen-of-alexandria",
+    "to": "clement-of-alexandria",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Eusebius implies Origen heard Clement at the Catechetical School; some scholars treat this as inferred rather than firmly attested.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.6",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Origen",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "origen-of-alexandria",
+    "to": "clement-of-alexandria",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Origen succeeded Clement as head of the Catechetical School c. 203 after Clement fled persecution. Source is Eusebius HE 6.3, 6.6; Origen himself does not narrate the succession.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.3, 6.6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-thaumaturgus",
+    "to": "origen-of-alexandria",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Gregory studied under Origen at Caesarea for several years and wrote a famous panegyric upon leaving.",
+    "citations": [
+      {
+        "source": "Gregory Thaumaturgus, Panegyric to Origen",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 6.30",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "dionysius-of-alexandria",
+    "to": "origen-of-alexandria",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Dionysius was a pupil of Origen at Alexandria and later headed the Catechetical School.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "heraclas-of-alexandria",
+    "to": "origen-of-alexandria",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Heraclas studied alongside, then under, Origen and shared in teaching the catechumens.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.3, 6.15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "heraclas-of-alexandria",
+    "to": "origen-of-alexandria",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Heraclas succeeded Origen as head of the Catechetical School after Origen's departure to Caesarea.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.15, 6.26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "dionysius-of-alexandria",
+    "to": "heraclas-of-alexandria",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Dionysius succeeded Heraclas as bishop of Alexandria in 247.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.35",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "demetrius-of-alexandria",
+    "to": "origen-of-alexandria",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Demetrius initially appointed Origen but later condemned him in synods after his ordination at Caesarea, expelling him from Alexandria.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.8, 6.19, 6.26",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, De Viris Illustribus 54",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "heraclas-of-alexandria",
+    "to": "demetrius-of-alexandria",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Heraclas became 13th bishop of Alexandria in 231 succeeding Demetrius.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyprian-of-carthage",
+    "to": "tertullian",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Jerome (late 4th c., De Vir. Ill. 53) reports that Cyprian read Tertullian daily, asking 'Da magistrum'. Cyprian himself never names Tertullian; the link is Jerome's anecdote 130+ years later.",
+    "citations": [
+      {
+        "source": "Jerome, De Viris Illustribus 53",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "lactantius",
+    "to": "arnobius-of-sicca",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Jerome (De Vir. Ill. 80, c. 393) states Lactantius was a pupil of Arnobius at Sicca; no contemporary attestation, and Lactantius himself does not name Arnobius.",
+    "citations": [
+      {
+        "source": "Jerome, De Viris Illustribus 80",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Chronicon ad ann. 327",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "irenaeus-of-lyons",
+    "to": "valentinus",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "The bulk of Adversus Haereses is directed against the Valentinian system.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 1.1-9, 2 passim",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "irenaeus-of-lyons",
+    "to": "marcion-of-sinope",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Irenaeus refutes Marcion's truncated canon and dualism.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 1.27, 3.3.4, 4.6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "irenaeus-of-lyons",
+    "to": "basilides",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Irenaeus refutes the system of Basilides.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 1.24",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "tertullian",
+    "to": "marcion-of-sinope",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Tertullian's five books Adversus Marcionem are the most extensive ancient refutation.",
+    "citations": [
+      {
+        "source": "Tertullian, Adversus Marcionem",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "tertullian",
+    "to": "valentinus",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Tertullian's Adversus Valentinianos refutes the Valentinian school.",
+    "citations": [
+      {
+        "source": "Tertullian, Adversus Valentinianos",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "hippolytus-of-rome",
+    "to": "valentinus",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Hippolytus' Refutatio devotes considerable space to refuting Valentinian and other Gnostic systems.",
+    "citations": [
+      {
+        "source": "Hippolytus, Refutatio Omnium Haeresium 6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "hippolytus-of-rome",
+    "to": "basilides",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Hippolytus gives an extended refutation of Basilides in Refutatio book 7.",
+    "citations": [
+      {
+        "source": "Hippolytus, Refutatio 7.20-27",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "hippolytus-of-rome",
+    "to": "irenaeus-of-lyons",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Photius and later sources describe Hippolytus as a hearer of Irenaeus; some modern scholars treat the link as plausible but not directly attested.",
+    "citations": [
+      {
+        "source": "Photius, Bibliotheca cod. 121",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Hippolytus",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "hippolytus-of-rome",
+    "to": "pope-zephyrinus",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Hippolytus accuses Zephyrinus of doctrinal weakness and Callixtus of innovation in penance.",
+    "citations": [
+      {
+        "source": "Hippolytus, Refutatio 9.6-12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "hippolytus-of-rome",
+    "to": "pope-callixtus-i",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Hippolytus rejected Callixtus' election and his lenient discipline; tradition makes him an antipope of this period.",
+    "citations": [
+      {
+        "source": "Hippolytus, Refutatio 9.11-12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "tertullian",
+    "to": "pope-callixtus-i",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Tertullian's De Pudicitia attacks the unnamed bishop (commonly identified as Callixtus) for absolving adultery.",
+    "citations": [
+      {
+        "source": "Tertullian, De Pudicitia 1, 21",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-anicetus",
+    "to": "polycarp-of-smyrna",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Polycarp visited Anicetus in Rome; they discussed the Quartodeciman question and parted in peace.",
+    "citations": [
+      {
+        "source": "Irenaeus, Letter to Victor in Eusebius HE 5.24",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-victor-i",
+    "to": "polycrates-of-ephesus",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Victor I attempted to excommunicate the Asian churches led by Polycrates over the Quartodeciman Easter; rebuked by Irenaeus.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 5.23-25",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "irenaeus-of-lyons",
+    "to": "pope-victor-i",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Irenaeus wrote urging Victor not to break communion with the Asian churches over Easter dating.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 5.24",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyprian-of-carthage",
+    "to": "pope-stephen-i",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Cyprian and the African bishops insisted on rebaptising those baptised by heretics; Stephen I forbade the practice. The dispute remained unresolved at their deaths.",
+    "citations": [
+      {
+        "source": "Cyprian, Ep. 71-75",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 7.3-5",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyprian-of-carthage",
+    "to": "pope-cornelius",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Cyprian and Cornelius exchanged numerous letters, especially over the lapsed and the Novatianist schism.",
+    "citations": [
+      {
+        "source": "Cyprian, Ep. 44-55",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyprian-of-carthage",
+    "to": "novatian",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Cyprian sided with Cornelius against the rigorist Novatian and refused communion with the Novatianist party.",
+    "citations": [
+      {
+        "source": "Cyprian, Ep. 44, 55",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 6.43-45",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "novatian",
+    "to": "pope-cornelius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Novatian had himself consecrated bishop of Rome in opposition to Cornelius over the treatment of the lapsed.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.43",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-soter",
+    "to": "pope-anicetus",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Roman episcopal succession; preserved only by Eusebius drawing on Hegesippus and the Liberian list, with no contemporary 2nd-c attestation.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 4.19",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-eleutherius",
+    "to": "pope-soter",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Roman episcopal succession; only attested by Eusebius and the later Liberian list, no contemporary 2nd-c documentation.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 5.preface",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-victor-i",
+    "to": "pope-eleutherius",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Roman episcopal succession c. 189; preserved by Eusebius via Hegesippus and the Liberian list rather than contemporary documents.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 5.22",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-zephyrinus",
+    "to": "pope-victor-i",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Roman episcopal succession c. 199; only attested by Eusebius writing a century later.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 5.28, 6.21",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-callixtus-i",
+    "to": "pope-zephyrinus",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 217.",
+    "citations": [
+      {
+        "source": "Hippolytus, Refutatio 9.11",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 6.21",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-urban-i",
+    "to": "pope-callixtus-i",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 222.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.23",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-pontian",
+    "to": "pope-urban-i",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 230.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.23",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-anterus",
+    "to": "pope-pontian",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 235.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-fabian",
+    "to": "pope-anterus",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 236.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-cornelius",
+    "to": "pope-fabian",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession after Fabian's martyrdom; the see was vacant for over a year before Cornelius' election.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.39, 6.43",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-lucius-i",
+    "to": "pope-cornelius",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 253.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-stephen-i",
+    "to": "pope-lucius-i",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 254.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-sixtus-ii",
+    "to": "pope-stephen-i",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 257.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.5",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-dionysius",
+    "to": "pope-sixtus-ii",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 259, after a vacancy following Sixtus II's martyrdom.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.27, 7.30",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-felix-i",
+    "to": "pope-dionysius",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 269.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.30, 7.32",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-eutychian",
+    "to": "pope-felix-i",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 275.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.32",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-caius",
+    "to": "pope-eutychian",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 283.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.32",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-marcellinus",
+    "to": "pope-caius",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Roman episcopal succession in 296.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.32",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-dionysius",
+    "to": "dionysius-of-alexandria",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "The two Dionysii corresponded over Trinitarian language; Dionysius of Rome rebuked apparent subordinationism, Dionysius of Alexandria clarified his position.",
+    "citations": [
+      {
+        "source": "Athanasius, De Sententia Dionysii",
+        "kind": "primary"
+      },
+      {
+        "source": "Eusebius, Hist. Eccl. 7.7-9",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "serapion-of-antioch",
+    "to": "theophilus-of-antioch",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Antiochene episcopal succession; Maximinus and Serapion followed Theophilus as bishops of Antioch. Late-2nd-c succession preserved only by Eusebius writing c. 320.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 4.24, 5.19, 6.12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "asclepiades-of-antioch",
+    "to": "serapion-of-antioch",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Antiochene episcopal succession c. 211; only attested by Eusebius writing a century later.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.11, 6.21",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "babylas-of-antioch",
+    "to": "asclepiades-of-antioch",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Antiochene episcopal succession via the brief intervening bishops Philetus and Zebinus reported only by Eusebius; no contemporary attestation.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.21, 6.29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "demetrian-of-antioch",
+    "to": "babylas-of-antioch",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Antiochene episcopal succession after Babylas' martyrdom; preserved only by Eusebius without contemporary documentation.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.39, 7.5",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paul-of-samosata",
+    "to": "demetrian-of-antioch",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Paul of Samosata succeeded Demetrian as bishop of Antioch c. 260; preserved by Eusebius (HE 7.27) without contemporaneous Antiochene attestation.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.27",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "dionysius-of-alexandria",
+    "to": "paul-of-samosata",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Dionysius of Alexandria wrote against Paul's adoptionist Christology; later synods at Antioch deposed Paul.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.27-30",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "methodius-of-olympus",
+    "to": "origen-of-alexandria",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Methodius wrote against Origen's doctrines of pre-existence of souls and the resurrection body in his Aglaophon (On the Resurrection).",
+    "citations": [
+      {
+        "source": "Methodius, On the Resurrection (in Photius, Bibl. cod. 234)",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, De Viris Illustribus 83",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "pamphilus-of-caesarea",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Eusebius styled himself 'Pamphili' in tribute to his master Pamphilus, with whom he co-authored the Apology for Origen.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.32, 7.32",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, De Viris Illustribus 75, 81",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pamphilus-of-caesarea",
+    "to": "origen-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Pamphilus copied, collected and defended Origen's works; co-author of an Apology for Origen.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6.32",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, De Viris Illustribus 75",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "origen-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Book 6 of the Historia Ecclesiastica is largely devoted to Origen, drawing on his letters and works.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 6 passim",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "lactantius",
+    "to": "minucius-felix",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Lactantius praises Minucius Felix's Octavius in his survey of Latin apologists.",
+    "citations": [
+      {
+        "source": "Lactantius, Divinae Institutiones 5.1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "athenagoras-of-athens",
+    "to": "justin-martyr",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Athenagoras' Legatio shares apologetic strategy with Justin; direct dependence is debated but plausible.",
+    "citations": [
+      {
+        "source": "Quasten, Patrology vol. 1, pp. 229-236",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "irenaeus-of-lyons",
+    "to": "pope-eleutherius",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Irenaeus carried a letter from the Gallic confessors to Eleutherius during the Montanist controversy.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 5.4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "origen-of-alexandria",
+    "to": "hippolytus-of-rome",
+    "type": "met",
+    "strength": "tradition",
+    "notes": "Jerome reports that Origen heard Hippolytus preach during a visit to Rome c. 212.",
+    "citations": [
+      {
+        "source": "Jerome, De Viris Illustribus 61",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-stephen-i",
+    "to": "dionysius-of-alexandria",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Dionysius wrote to Stephen urging moderation in the rebaptism dispute.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 7.5",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "irenaeus-of-lyons",
+    "to": "justin-martyr",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Irenaeus quotes Justin's lost work Against Marcion by name and follows Justin's anti-heretical scheme.",
+    "citations": [
+      {
+        "source": "Irenaeus, Adv. Haer. 4.6.2",
+        "kind": "primary"
+      },
+      {
+        "source": "Irenaeus, Adv. Haer. 5.26.2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "justin-martyr",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Eusebius devotes substantial space to Justin's life, works, and martyrdom in HE 4.16-18, quoting from his apologies and Dialogue with Trypho.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 4.16-18",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "melito-of-sardis",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Eusebius preserves substantial fragments of Melito (including the canon list and the Apology to Marcus Aurelius) in HE 4.26.",
+    "citations": [
+      {
+        "source": "Eusebius, Hist. Eccl. 4.26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "polycrates-of-ephesus",
+    "to": "melito-of-sardis",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "In his letter to Pope Victor preserved by Eusebius, Polycrates names Melito of Sardis among the 'great luminaries' of Asia who kept the Quartodeciman Pascha.",
+    "citations": [
+      {
+        "source": "Polycrates, Letter to Victor, in Eusebius Hist. Eccl. 5.24.5",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "athenagoras-of-athens",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Athenagoras is mentioned by Methodius and Philip of Side rather than by Eusebius's HE proper; the link is via the later patrologists who preserved his works.",
+    "citations": [
+      {
+        "source": "Philip of Side, Hist. Christ. fragm. (in Dodwell)",
+        "kind": "primary"
+      },
+      {
+        "source": "Methodius, On the Resurrection (cited in Photius, Bibl. cod. 234)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "lactantius",
+    "to": "constantine-the-great",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Jerome reports that in his old age Lactantius was tutor in Latin to Crispus, son of Constantine, in Gaul. Lactantius dedicated De Mortibus Persecutorum within Constantine's circle.",
+    "citations": [
+      {
+        "source": "Jerome, De Viris Illustribus 80",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Chronicon ad ann. 318",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "constantine-the-great",
+    "to": "eusebius-of-caesarea",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Eusebius preserves multiple letters from Constantine and delivered an oration in his presence.",
+    "citations": [
+      {
+        "source": "Eusebius, Vita Constantini 2.46, 3.60-63, 4.35-36",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "constantine-the-great",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Eusebius wrote the Vita Constantini and the Tricennial Oration in his honour.",
+    "citations": [
+      {
+        "source": "Eusebius, Vita Constantini 1-4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "constantine-the-great",
+    "to": "eusebius-of-nicomedia",
+    "type": "baptized_by",
+    "strength": "documented",
+    "notes": "Constantine received baptism from Eusebius of Nicomedia on his deathbed in 337.",
+    "citations": [
+      {
+        "source": "Eusebius, Vita Constantini 4.61-62",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Chronicon (s.a. 337)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "helena-of-constantinople",
+    "to": "constantine-the-great",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Helena was the mother of Constantine.",
+    "citations": [
+      {
+        "source": "Eusebius, Vita Constantini 3.42-47",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "athanasius-of-alexandria",
+    "to": "alexander-of-alexandria",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Athanasius served as deacon and secretary to Alexander, accompanying him to Nicaea.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 1.8, 1.15",
+        "kind": "primary"
+      },
+      {
+        "source": "Theodoret, Hist. Eccl. 1.26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "athanasius-of-alexandria",
+    "to": "alexander-of-alexandria",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Athanasius succeeded Alexander as bishop of Alexandria in 328.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 1.15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "alexander-of-alexandria",
+    "to": "arius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Alexander first condemned Arius and excommunicated him c. 318.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 1.5-6",
+        "kind": "primary"
+      },
+      {
+        "source": "Theodoret, Hist. Eccl. 1.3-4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "athanasius-of-alexandria",
+    "to": "arius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Athanasius's life work was the refutation of Arianism.",
+    "citations": [
+      {
+        "source": "Athanasius, Orationes contra Arianos",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-nicomedia",
+    "to": "arius",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Eusebius of Nicomedia was Arius's chief patron and protector after his condemnation.",
+    "citations": [
+      {
+        "source": "Theodoret, Hist. Eccl. 1.5",
+        "kind": "primary"
+      },
+      {
+        "source": "Sozomen, Hist. Eccl. 1.15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "athanasius-of-alexandria",
+    "to": "anthony-the-great",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Athanasius wrote the Vita Antonii and reports having served Anthony personally.",
+    "citations": [
+      {
+        "source": "Athanasius, Vita Antonii (preface)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "anthony-the-great",
+    "to": "athanasius-of-alexandria",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Anthony visited Alexandria in support of Athanasius against the Arians (338).",
+    "citations": [
+      {
+        "source": "Athanasius, Vita Antonii 69-71",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "basil-of-caesarea",
+    "to": "macrina-the-younger",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Macrina spiritually shaped her younger brother Basil after his return from Athens.",
+    "citations": [
+      {
+        "source": "Gregory of Nyssa, Vita Macrinae 6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-nyssa",
+    "to": "macrina-the-younger",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Gregory portrays Macrina as his teacher in De Anima et Resurrectione.",
+    "citations": [
+      {
+        "source": "Gregory of Nyssa, De Anima et Resurrectione (preface)",
+        "kind": "primary"
+      },
+      {
+        "source": "Gregory of Nyssa, Vita Macrinae",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-nyssa",
+    "to": "basil-of-caesarea",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Gregory describes Basil as his teacher and elder brother.",
+    "citations": [
+      {
+        "source": "Gregory of Nyssa, Contra Eunomium 1.1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "peter-of-sebaste",
+    "to": "macrina-the-younger",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Macrina raised the youngest brother Peter herself.",
+    "citations": [
+      {
+        "source": "Gregory of Nyssa, Vita Macrinae 12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "basil-of-caesarea",
+    "to": "gregory-of-nazianzus",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Basil and Gregory were close friends from their student days at Athens.",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Oratio 43.14-24",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-nazianzus",
+    "to": "basil-of-caesarea",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Surviving correspondence and the joint Philocalia of Origen.",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Epistulae 1-19, 40-58",
+        "kind": "primary"
+      },
+      {
+        "source": "Basil, Epistulae 2, 14, 71",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "basil-of-caesarea",
+    "to": "origen-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Basil and Gregory of Nazianzus compiled the Philocalia, an anthology of Origen.",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Epistula 115",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-nazianzus",
+    "to": "origen-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Co-compiler with Basil of the Philocalia of Origen.",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Epistula 115",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "amphilochius-of-iconium",
+    "to": "basil-of-caesarea",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Basil's De Spiritu Sancto is dedicated to Amphilochius.",
+    "citations": [
+      {
+        "source": "Basil, De Spiritu Sancto (preface)",
+        "kind": "primary"
+      },
+      {
+        "source": "Basil, Epistulae 161, 188, 199",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "amphilochius-of-iconium",
+    "to": "gregory-of-nazianzus",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Amphilochius was a cousin of Gregory of Nazianzus.",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Epistulae 9, 13, 25-26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-nazianzus",
+    "to": "gregory-thaumaturgus-elder",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Gregory the Theologian was raised and ordained presbyter by his father.",
+    "citations": [
+      {
+        "source": "Gregory of Nazianzus, Oratio 18",
+        "kind": "primary"
+      },
+      {
+        "source": "Gregory of Nazianzus, De Vita Sua",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "evagrius-ponticus",
+    "to": "gregory-of-nazianzus",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Gregory ordained Evagrius deacon and trained him at Constantinople.",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 38",
+        "kind": "primary"
+      },
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 4.23",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "evagrius-ponticus",
+    "to": "macarius-the-great",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Evagrius sat at the feet of Macarius the Great and Macarius the Alexandrian in the desert (Palladius, contemporary).",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 38",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-cassian",
+    "to": "evagrius-ponticus",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Cassian's Conferences transmit Evagrian monastic doctrine, though Cassian never names him.",
+    "citations": [
+      {
+        "source": "Cassian, Collationes (passim)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-cassian",
+    "to": "john-chrysostom",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Cassian was ordained deacon by Chrysostom and travelled to Rome to plead his cause.",
+    "citations": [
+      {
+        "source": "Cassian, De Incarnatione 7.31",
+        "kind": "primary"
+      },
+      {
+        "source": "Palladius, Dialogus 3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pachomius",
+    "to": "anthony-the-great",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Pachomius is depicted as familiar with the Antonian model though they did not directly meet.",
+    "citations": [
+      {
+        "source": "Vita Prima Pachomii 120",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-chrysostom",
+    "to": "diodore-of-tarsus",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Chrysostom was a pupil of Diodore at Antioch.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 6.3",
+        "kind": "primary"
+      },
+      {
+        "source": "Sozomen, Hist. Eccl. 8.2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "theodore-of-mopsuestia",
+    "to": "diodore-of-tarsus",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Theodore studied alongside Chrysostom under Diodore.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 6.3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "nestorius",
+    "to": "theodore-of-mopsuestia",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Nestorius is traditionally counted as a pupil of Theodore at Antioch.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 7.29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "theodoret-of-cyrus",
+    "to": "theodore-of-mopsuestia",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Theodoret defended Theodore's writings.",
+    "citations": [
+      {
+        "source": "Theodoret, Eranistes",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "ambrose-of-milan",
+    "type": "baptized_by",
+    "strength": "documented",
+    "notes": "Ambrose baptized Augustine and Alypius at Milan during the Easter Vigil of 387.",
+    "citations": [
+      {
+        "source": "Augustine, Confessions 9.6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "ambrose-of-milan",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Augustine attended Ambrose's preaching at Milan and credits him with his conversion.",
+    "citations": [
+      {
+        "source": "Augustine, Confessions 5.13-14, 6.3-4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "alypius-of-thagaste",
+    "to": "ambrose-of-milan",
+    "type": "baptized_by",
+    "strength": "documented",
+    "notes": "Baptized together with Augustine in 387.",
+    "citations": [
+      {
+        "source": "Augustine, Confessions 9.6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "monica-of-hippo",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Augustine credits his mother Monica with persistent influence toward his conversion.",
+    "citations": [
+      {
+        "source": "Augustine, Confessions 3.11-12, 9.8-13",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "alypius-of-thagaste",
+    "to": "augustine-of-hippo",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Lifelong friendship from Thagaste through Carthage, Rome, Milan and back to Africa.",
+    "citations": [
+      {
+        "source": "Augustine, Confessions 6.7-10, 8.6, 9.6",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "possidius-of-calama",
+    "to": "augustine-of-hippo",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Possidius lived in Augustine's monastic community at Hippo and wrote his Vita.",
+    "citations": [
+      {
+        "source": "Possidius, Vita Augustini (preface)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "marius-victorinus",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Augustine was deeply moved by hearing of the conversion of Marius Victorinus.",
+    "citations": [
+      {
+        "source": "Augustine, Confessions 8.2-5",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "jerome-of-stridon",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Extensive (often acrimonious) correspondence over Galatians and the Hebrew text of the OT.",
+    "citations": [
+      {
+        "source": "Augustine, Epistulae 28, 40, 71, 82",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Epistulae 102, 105, 112, 115",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jerome-of-stridon",
+    "to": "rufinus-of-aquileia",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Friends from youth in Aquileia who became bitter opponents over Origenism.",
+    "citations": [
+      {
+        "source": "Jerome, Apologia contra Rufinum",
+        "kind": "primary"
+      },
+      {
+        "source": "Rufinus, Apologia contra Hieronymum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jerome-of-stridon",
+    "to": "rufinus-of-aquileia",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "The Origenist controversy split the two former friends c. 393-402.",
+    "citations": [
+      {
+        "source": "Jerome, Epistula 84",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Apologia contra Rufinum 1-3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jerome-of-stridon",
+    "to": "pope-damasus-i",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Damasus commissioned Jerome's revision of the Latin Bible.",
+    "citations": [
+      {
+        "source": "Jerome, Epistulae 15, 18, 35-36",
+        "kind": "primary"
+      },
+      {
+        "source": "Jerome, Praefatio in Evangelia (ad Damasum)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jerome-of-stridon",
+    "to": "epiphanius-of-salamis",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Jerome and Epiphanius were close allies in the Origenist controversy.",
+    "citations": [
+      {
+        "source": "Jerome, Epistulae 51, 57, 82",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "rufinus-of-aquileia",
+    "to": "origen-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Rufinus translated Origen's De Principiis and many homilies into Latin.",
+    "citations": [
+      {
+        "source": "Rufinus, Praefatio in De Principiis",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "rufinus-of-aquileia",
+    "to": "eusebius-of-caesarea",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Rufinus translated and continued Eusebius's HE.",
+    "citations": [
+      {
+        "source": "Rufinus, Hist. Eccl. (preface)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "pelagius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "The Pelagian controversy occupied Augustine's last two decades.",
+    "citations": [
+      {
+        "source": "Augustine, De Gestis Pelagii",
+        "kind": "primary"
+      },
+      {
+        "source": "Augustine, De Natura et Gratia",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "julian-of-eclanum",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Augustine wrote six books Contra Julianum and the unfinished Opus Imperfectum.",
+    "citations": [
+      {
+        "source": "Augustine, Contra Julianum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "caelestius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Augustine wrote against Caelestius alongside Pelagius.",
+    "citations": [
+      {
+        "source": "Augustine, De Gratia Christi et de Peccato Originali",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "caelestius",
+    "to": "pelagius",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Caelestius was Pelagius's chief disciple and propagator.",
+    "citations": [
+      {
+        "source": "Augustine, De Gestis Pelagii",
+        "kind": "primary"
+      },
+      {
+        "source": "Marius Mercator, Commonitorium",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jerome-of-stridon",
+    "to": "pelagius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Jerome wrote a Dialogus contra Pelagianos.",
+    "citations": [
+      {
+        "source": "Jerome, Dialogus contra Pelagianos",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyril-of-alexandria",
+    "to": "nestorius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Cyril led the condemnation of Nestorius at the Council of Ephesus (431).",
+    "citations": [
+      {
+        "source": "Cyril, Epistulae 4, 17",
+        "kind": "primary"
+      },
+      {
+        "source": "Acta Concilii Ephesini (431)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "theodoret-of-cyrus",
+    "to": "cyril-of-alexandria",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Theodoret wrote a refutation of Cyril's Twelve Anathemas.",
+    "citations": [
+      {
+        "source": "Theodoret, Reprehensio XII Capitum Cyrilli",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-celestine-i",
+    "to": "cyril-of-alexandria",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Celestine commissioned Cyril to act on his behalf against Nestorius.",
+    "citations": [
+      {
+        "source": "Acta Concilii Ephesini (431); letters of Celestine to Cyril",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-leo-i",
+    "to": "flavian-of-constantinople",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Leo's Tome (Ep. 28) was addressed to Flavian.",
+    "citations": [
+      {
+        "source": "Leo, Epistula 28 (Tomus ad Flavianum)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "flavian-of-constantinople",
+    "to": "eutyches",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Flavian condemned Eutyches at the Home Synod of 448.",
+    "citations": [
+      {
+        "source": "Acta Concilii Chalcedonensis Session 1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-leo-i",
+    "to": "eutyches",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Leo condemned Eutyches's monophysitism in his Tome.",
+    "citations": [
+      {
+        "source": "Leo, Epistula 28",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "dioscorus-of-alexandria",
+    "to": "cyril-of-alexandria",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Dioscorus succeeded Cyril as patriarch of Alexandria in 444.",
+    "citations": [
+      {
+        "source": "Liberatus, Breviarium 12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "dioscorus-of-alexandria",
+    "to": "flavian-of-constantinople",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Dioscorus presided over Flavian's deposition at the Robber Council of Ephesus (449).",
+    "citations": [
+      {
+        "source": "Acta Concilii Chalcedonensis Session 1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyril-of-alexandria",
+    "to": "athanasius-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Cyril repeatedly invokes Athanasius as the standard of orthodoxy.",
+    "citations": [
+      {
+        "source": "Cyril, Epistulae 1, 39",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ambrose-of-milan",
+    "to": "basil-of-caesarea",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Ambrose's De Spiritu Sancto draws heavily on Basil; correspondence between Eastern and Western Nicenes.",
+    "citations": [
+      {
+        "source": "Ambrose, De Spiritu Sancto (passim)",
+        "kind": "primary"
+      },
+      {
+        "source": "Basil, Epistulae 197",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ambrose-of-milan",
+    "to": "basil-of-caesarea",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Ambrose's De Spiritu Sancto adapts Basil's work of the same title.",
+    "citations": [
+      {
+        "source": "Ambrose, De Spiritu Sancto",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paulinus-of-nola",
+    "to": "augustine-of-hippo",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Lengthy correspondence preserved on both sides.",
+    "citations": [
+      {
+        "source": "Augustine, Epistulae 24-27, 30-32",
+        "kind": "primary"
+      },
+      {
+        "source": "Paulinus of Nola, Epistulae 4, 6, 45-50",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paulinus-of-nola",
+    "to": "jerome-of-stridon",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Paulinus exchanged letters with Jerome on biblical study.",
+    "citations": [
+      {
+        "source": "Jerome, Epistulae 53, 58, 85",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paulinus-of-nola",
+    "to": "ambrose-of-milan",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Ambrose ordained Paulinus presbyter at Nola.",
+    "citations": [
+      {
+        "source": "Paulinus of Nola, Epistula 3.4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "paulinus-of-nola",
+    "to": "sulpicius-severus",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Lifelong correspondence between fellow Aquitanian aristocrat-ascetics.",
+    "citations": [
+      {
+        "source": "Paulinus of Nola, Epistulae 1, 5, 11, 17, 22-24, 27-32",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "sulpicius-severus",
+    "to": "martin-of-tours",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Sulpicius personally visited Martin and wrote his Vita.",
+    "citations": [
+      {
+        "source": "Sulpicius Severus, Vita Martini 25-27",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "martin-of-tours",
+    "to": "hilary-of-poitiers",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Hilary received Martin and ordained him exorcist; Martin founded Ligugé under Hilary's patronage. Sole source is Sulpicius Severus' Vita Martini, a hagiography written ~397 with strong panegyric framing.",
+    "citations": [
+      {
+        "source": "Sulpicius Severus, Vita Martini 5-7",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "prosper-of-aquitaine",
+    "to": "augustine-of-hippo",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Prosper consulted Augustine on the rise of semi-Pelagianism in southern Gaul.",
+    "citations": [
+      {
+        "source": "Augustine, Epistula 225 (Prosper to Augustine)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "prosper-of-aquitaine",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Prosper systematically defended Augustine's doctrine of grace.",
+    "citations": [
+      {
+        "source": "Prosper, Pro Augustino Responsiones; Contra Collatorem",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "prosper-of-aquitaine",
+    "to": "john-cassian",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Prosper's Contra Collatorem refutes Cassian's Conference 13.",
+    "citations": [
+      {
+        "source": "Prosper, Contra Collatorem",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "vincent-of-lerins",
+    "to": "augustine-of-hippo",
+    "type": "opposed",
+    "strength": "disputed",
+    "notes": "Vincent's Commonitorium is widely (though disputedly) read as a critique of Augustinian predestinarianism.",
+    "citations": [
+      {
+        "source": "Vincent, Commonitorium 26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "didymus-the-blind",
+    "to": "origen-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Didymus's exegesis is heavily Origenist; he was condemned with Origen at Constantinople II (553).",
+    "citations": [
+      {
+        "source": "Jerome, De Viris Illustribus 109",
+        "kind": "primary"
+      },
+      {
+        "source": "Rufinus, Hist. Eccl. 11.7",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jerome-of-stridon",
+    "to": "didymus-the-blind",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Jerome studied with Didymus at Alexandria c. 386.",
+    "citations": [
+      {
+        "source": "Jerome, De Viris Illustribus 109, 135",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "rufinus-of-aquileia",
+    "to": "didymus-the-blind",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Rufinus also studied under Didymus at Alexandria.",
+    "citations": [
+      {
+        "source": "Rufinus, Apologia 2.12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "epiphanius-of-salamis",
+    "to": "origen-of-alexandria",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Epiphanius led the late-fourth-century campaign against Origenism.",
+    "citations": [
+      {
+        "source": "Epiphanius, Panarion 64",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-chrysostom",
+    "to": "epiphanius-of-salamis",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Chrysostom and Epiphanius clashed over Origenism at Constantinople in 403.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 6.10-14",
+        "kind": "primary"
+      },
+      {
+        "source": "Sozomen, Hist. Eccl. 8.14-15",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "palladius-of-galatia",
+    "to": "evagrius-ponticus",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Palladius lived with Evagrius for nine years in the desert.",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 23, 38",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "palladius-of-galatia",
+    "to": "john-chrysostom",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Palladius wrote the Dialogus on Chrysostom's life.",
+    "citations": [
+      {
+        "source": "Palladius, Dialogus de Vita Joannis Chrysostomi",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "socrates-scholasticus",
+    "to": "eusebius-of-caesarea",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Socrates' Hist. Eccl. begins where Eusebius left off.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 1 (preface)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "sozomen",
+    "to": "socrates-scholasticus",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Sozomen drew heavily on Socrates.",
+    "citations": [
+      {
+        "source": "Sozomen, Hist. Eccl. (preface)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "theodoret-of-cyrus",
+    "to": "eusebius-of-caesarea",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Theodoret continues Eusebius in his Hist. Eccl.",
+    "citations": [
+      {
+        "source": "Theodoret, Hist. Eccl. 1.1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "mesrop-mashtots",
+    "to": "gregory-the-illuminator",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Mesrop worked under the catholicate descended from Gregory's line; tradition links them.",
+    "citations": [
+      {
+        "source": "Koriun, Life of Mashtots 6-9",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "patrick-of-ireland",
+    "to": "pope-celestine-i",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Patrick's mission is traditionally connected to Celestine's earlier sending of Palladius.",
+    "citations": [
+      {
+        "source": "Prosper of Aquitaine, Chronicon (s.a. 431)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "chromatius-of-aquileia",
+    "to": "jerome-of-stridon",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Chromatius supported Jerome's biblical work financially and by patronage.",
+    "citations": [
+      {
+        "source": "Jerome, Epistulae 7, 8",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "chromatius-of-aquileia",
+    "to": "rufinus-of-aquileia",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Chromatius was Rufinus's bishop and friend.",
+    "citations": [
+      {
+        "source": "Rufinus, Apologia 1.1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-leo-i",
+    "to": "pope-celestine-i",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Leo became Bishop of Rome (440) following Sixtus III, who succeeded Celestine. Not a direct succession; relationship compresses an intervening pontificate. Source is the Liber Pontificalis, redacted in the 6th c.",
+    "citations": [
+      {
+        "source": "Liber Pontificalis 45-47",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-celestine-i",
+    "to": "pope-innocent-i",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Celestine became Bishop of Rome (422) following Boniface, who succeeded Zosimus, who succeeded Innocent — not a direct succession. Source is the Liber Pontificalis, redacted in the 6th c.",
+    "citations": [
+      {
+        "source": "Liber Pontificalis 42-45",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-innocent-i",
+    "to": "pope-damasus-i",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Innocent became Bishop of Rome (401) following Anastasius, Siricius, and Damasus — three intervening bishops. Source is the Liber Pontificalis.",
+    "citations": [
+      {
+        "source": "Liber Pontificalis 39-42",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-chrysostom",
+    "to": "pope-innocent-i",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Chrysostom appealed to Innocent after his deposition.",
+    "citations": [
+      {
+        "source": "Palladius, Dialogus 2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "nestorius",
+    "to": "john-chrysostom",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Nestorius became Archbishop of Constantinople (428) some years after Chrysostom (d. 407), via intervening bishops Arsacius, Atticus, and Sisinnius — not a direct succession.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 7.29",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "flavian-of-constantinople",
+    "to": "nestorius",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Flavian became Archbishop of Constantinople (446) several bishops after Nestorius (Maximian, Proclus); not a direct succession.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 7.40-48",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyril-of-alexandria",
+    "to": "athanasius-of-alexandria",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Cyril became Patriarch of Alexandria (412) several bishops after Athanasius (d. 373) — Peter II, Timothy, Theophilus all intervened. Not a direct succession.",
+    "citations": [
+      {
+        "source": "Socrates Scholasticus, Hist. Eccl. 7.7",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "marcellus-of-ancyra",
+    "to": "athanasius-of-alexandria",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Marcellus and Athanasius were exiled to Rome together c. 339-343.",
+    "citations": [
+      {
+        "source": "Athanasius, Apologia contra Arianos 47-50",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eusebius-of-caesarea",
+    "to": "marcellus-of-ancyra",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Eusebius wrote Contra Marcellum and De Ecclesiastica Theologia against him.",
+    "citations": [
+      {
+        "source": "Eusebius, Contra Marcellum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ambrose-of-milan",
+    "to": "augustine-of-hippo",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Ambrose received Monica's commendation regarding Augustine.",
+    "citations": [
+      {
+        "source": "Augustine, Confessions 6.1-2",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "hilary-of-poitiers",
+    "to": "athanasius-of-alexandria",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Hilary cited Athanasius and the Nicene cause; took up Athanasius's role in the West.",
+    "citations": [
+      {
+        "source": "Hilary, De Synodis",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "basil-of-caesarea",
+    "to": "athanasius-of-alexandria",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Basil wrote to Athanasius seeking unity with Rome.",
+    "citations": [
+      {
+        "source": "Basil, Epistulae 66, 69, 80, 82",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "evagrius-ponticus",
+    "to": "basil-of-caesarea",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Basil ordained Evagrius lector at Caesarea.",
+    "citations": [
+      {
+        "source": "Palladius, Historia Lausiaca 38",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ephrem-the-syrian",
+    "to": "basil-of-caesarea",
+    "type": "met",
+    "strength": "tradition",
+    "notes": "Late tradition reports a visit between Ephrem and Basil at Caesarea.",
+    "citations": [
+      {
+        "source": "Sozomen, Hist. Eccl. 3.16",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-hippo",
+    "to": "cyril-of-alexandria",
+    "type": "corresponded",
+    "strength": "tradition",
+    "notes": "Cyril sent Augustine documents on the Nestorian controversy shortly before Augustine's death.",
+    "citations": [
+      {
+        "source": "Augustine, Epistula 4* (Divjak)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyril-of-jerusalem",
+    "to": "gregory-of-nazianzus",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Both attended the First Council of Constantinople in 381; Cyril is listed among the 150 fathers and Gregory presided briefly over the council.",
+    "citations": [
+      {
+        "source": "Acta of the First Council of Constantinople (381)",
+        "kind": "primary"
+      },
+      {
+        "source": "Theodoret, Hist. Eccl. 5.8-9",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cyril-of-jerusalem",
+    "to": "arius",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Cyril's Catechetical Lectures defend the Nicene faith and oppose Arian subordinationism, and he subscribed the Nicene-Constantinopolitan creed at the council of 381.",
+    "citations": [
+      {
+        "source": "Cyril of Jerusalem, Catecheses 4.7; 11; 15",
+        "kind": "primary"
+      },
+      {
+        "source": "Theodoret, Hist. Eccl. 2.26",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ephrem-the-syrian",
+    "to": "aphrahat",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Ephrem and Aphrahat are the two principal 4th-century Syriac Fathers and share the same theological idiom (typological exegesis, anti-Jewish polemic, ascetic ideals). Direct citation is not preserved; the link is the shared Syriac milieu and parallel content noted by modern scholarship.",
+    "citations": [
+      {
+        "source": "Murray, Symbols of Church and Kingdom (CUP 1975), pp. 29-38",
+        "kind": "secondary"
+      },
+      {
+        "source": "Brock, The Luminous Eye (Cistercian 1992), ch. 1",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-the-illuminator",
+    "to": "constantine-the-great",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Agathangelos's History of the Armenians records a journey of King Trdat and Gregory to Rome to meet Constantine; the historicity is debated but the tradition links them as contemporary Christian rulers/founders.",
+    "citations": [
+      {
+        "source": "Agathangelos, History of the Armenians 877-895",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "mesrop-mashtots",
+    "to": "john-chrysostom",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "The 5th-century Armenian translation school founded by Mesrop and Sahak rendered Chrysostom's homilies into Armenian; Koriun describes the translation programme.",
+    "citations": [
+      {
+        "source": "Koriun, Life of Mashtots 11-19",
+        "kind": "primary"
+      },
+      {
+        "source": "Thomson, A Bibliography of Classical Armenian Literature to 1500 AD (Brepols 1995), s.v. John Chrysostom",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "augustine-of-canterbury",
+    "to": "gregory-the-great",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Gregory commissioned Augustine to lead the mission to the Anglo-Saxons in 596 and exchanged letters with him giving instruction.",
+    "citations": [
+      {
+        "source": "Bede, Hist. Eccl. 1.23-1.32",
+        "kind": "primary"
+      },
+      {
+        "source": "Gregory the Great, Registrum Epistolarum 6.51, 11.36",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-the-great",
+    "to": "augustine-of-canterbury",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Surviving letters of Gregory to Augustine on missionary practice and church organization (the 'Libellus Responsionum').",
+    "citations": [
+      {
+        "source": "Gregory the Great, Registrum 11.56a",
+        "kind": "primary"
+      },
+      {
+        "source": "Bede, Hist. Eccl. 1.27",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-the-great",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Gregory draws constantly on Augustine's exegesis and theology in the Moralia and Regula Pastoralis.",
+    "citations": [
+      {
+        "source": "Gregory the Great, Moralia in Job, passim",
+        "kind": "primary"
+      },
+      {
+        "source": "Markus, Gregory the Great and his World, ch. 3",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-the-great",
+    "to": "leander-of-seville",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Gregory met Leander in Constantinople when both were on diplomatic/ecclesial business; the Moralia in Job is dedicated to Leander.",
+    "citations": [
+      {
+        "source": "Gregory the Great, Moralia in Job, Epistula ad Leandrum",
+        "kind": "primary"
+      },
+      {
+        "source": "Gregory the Great, Registrum 1.41, 5.53",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-the-great",
+    "to": "leander-of-seville",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Letters survive between the two.",
+    "citations": [
+      {
+        "source": "Gregory the Great, Registrum 1.41, 5.53, 9.121",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-the-great",
+    "to": "benedict-of-nursia",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Gregory wrote the principal biography of Benedict in Dialogues Book 2 within ~50 years of Benedict's death, drawing on disciples' testimony.",
+    "citations": [
+      {
+        "source": "Gregory the Great, Dialogues 2, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "isidore-of-seville",
+    "to": "leander-of-seville",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Isidore was raised and educated by his elder brother Leander, whom he succeeded in the see of Seville.",
+    "citations": [
+      {
+        "source": "Isidore, De Viris Illustribus 41",
+        "kind": "primary"
+      },
+      {
+        "source": "Braulio, Renotatio",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "isidore-of-seville",
+    "to": "leander-of-seville",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Isidore became Archbishop of Seville on Leander's death c. 600.",
+    "citations": [
+      {
+        "source": "Isidore, De Viris Illustribus 41",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "braulio-of-saragossa",
+    "to": "isidore-of-seville",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Braulio was Isidore's pupil; he edited the Etymologiae and wrote the Renotatio of his master's works.",
+    "citations": [
+      {
+        "source": "Braulio, Epistolae 2-4 (to Isidore)",
+        "kind": "primary"
+      },
+      {
+        "source": "Braulio, Renotatio Librorum Domini Isidori",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "ildefonsus-of-toledo",
+    "to": "isidore-of-seville",
+    "type": "taught_by",
+    "strength": "tradition",
+    "notes": "Ildefonsus is traditionally said to have studied under Isidore at Seville; the connection is plausible but rests on later sources.",
+    "citations": [
+      {
+        "source": "Cixila, Vita Hildefonsi",
+        "kind": "primary"
+      },
+      {
+        "source": "ODCC s.v. Ildefonsus",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "fulgentius-of-ruspe",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Fulgentius is the most thorough sixth-century Augustinian, citing him constantly in De Fide and the anti-Arian/anti-Pelagian works.",
+    "citations": [
+      {
+        "source": "Fulgentius, De Fide ad Petrum",
+        "kind": "primary"
+      },
+      {
+        "source": "Fulgentius, Contra Fabianum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "caesarius-of-arles",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "The Council of Orange (529) under Caesarius drew its canons largely from Augustinian florilegia compiled by Prosper.",
+    "citations": [
+      {
+        "source": "Council of Orange (529), Canones",
+        "kind": "primary"
+      },
+      {
+        "source": "Caesarius, Sermones",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "maximus-the-confessor",
+    "to": "pseudo-dionysius-the-areopagite",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Maximus wrote scholia on the Dionysian corpus (transmitted with John of Scythopolis' scholia) and integrated Dionysian theology into his own.",
+    "citations": [
+      {
+        "source": "Maximus, Ambigua ad Iohannem",
+        "kind": "primary"
+      },
+      {
+        "source": "Scholia in Corpus Areopagiticum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "maximus-the-confessor",
+    "to": "pope-martin-i",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Maximus collaborated with Martin in preparing and defending the Lateran Council of 649; both were arrested by Constans II.",
+    "citations": [
+      {
+        "source": "Acta Concilii Lateranensis (649)",
+        "kind": "primary"
+      },
+      {
+        "source": "Relatio Motionis",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "maximus-the-confessor",
+    "to": "sophronius-of-jerusalem",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Maximus revered Sophronius as his spiritual master and mentor in opposing Monothelitism.",
+    "citations": [
+      {
+        "source": "Maximus, Opusc. 12 (PG 91, 142)",
+        "kind": "primary"
+      },
+      {
+        "source": "Maximus, Epistola 13",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "maximus-the-confessor",
+    "to": "constans-ii",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Maximus refused to accept the Typos and was tried, mutilated, and exiled by Constans II.",
+    "citations": [
+      {
+        "source": "Relatio Motionis",
+        "kind": "primary"
+      },
+      {
+        "source": "Disputatio Bizyae",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-martin-i",
+    "to": "constans-ii",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Martin convened the Lateran Council of 649 against the Typos; Constans had him arrested, tried in Constantinople, and exiled to Cherson.",
+    "citations": [
+      {
+        "source": "Liber Pontificalis 76",
+        "kind": "primary"
+      },
+      {
+        "source": "Commemoratio (Narratio de exilio)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "sophronius-of-jerusalem",
+    "to": "john-moschus",
+    "type": "taught_by",
+    "strength": "documented",
+    "notes": "Sophronius was the long-time disciple and travel companion of John Moschus; Moschus dedicated the Pratum Spirituale to him.",
+    "citations": [
+      {
+        "source": "John Moschus, Pratum Spirituale, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-agatho",
+    "to": "constantine-iv",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Agatho's dogmatic letter to Emperor Constantine IV was read at the Third Council of Constantinople and accepted as the standard of dyothelite faith.",
+    "citations": [
+      {
+        "source": "Acta of the Third Council of Constantinople (681), Session 4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-leo-ii",
+    "to": "pope-agatho",
+    "type": "succeeded_in_see",
+    "strength": "documented",
+    "notes": "Leo II succeeded Agatho as Bishop of Rome in 682.",
+    "citations": [
+      {
+        "source": "Liber Pontificalis 82",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-leo-ii",
+    "to": "constantine-iv",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Leo II ratified the acts of the Third Council of Constantinople in correspondence with Constantine IV.",
+    "citations": [
+      {
+        "source": "Leo II, Epistula ad Constantinum imperatorem",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-of-damascus",
+    "to": "maximus-the-confessor",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "John of Damascus' Christology in De Fide Orthodoxa depends heavily on Maximus' formulations.",
+    "citations": [
+      {
+        "source": "John of Damascus, De Fide Orthodoxa 3",
+        "kind": "primary"
+      },
+      {
+        "source": "Louth, St John Damascene, Oxford 2002, ch. 6",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "john-of-damascus",
+    "to": "pseudo-dionysius-the-areopagite",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "John quotes Pseudo-Dionysius extensively in De Fide Orthodoxa, especially in discussions of the divine names and apophatic theology.",
+    "citations": [
+      {
+        "source": "John of Damascus, De Fide Orthodoxa 1.4, 1.12",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-of-damascus",
+    "to": "basil-of-caesarea",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "John cites the Cappadocians (Basil, Gregory of Nazianzus, Gregory of Nyssa) throughout the Fount of Knowledge.",
+    "citations": [
+      {
+        "source": "John of Damascus, De Fide Orthodoxa, passim",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-of-damascus",
+    "to": "gregory-of-nazianzus",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "John drew especially on Gregory of Nazianzus' Theological Orations.",
+    "citations": [
+      {
+        "source": "John of Damascus, De Fide Orthodoxa, passim",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-of-damascus",
+    "to": "leo-iii-isaurian",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "John composed the three Orations Against Those Who Attack the Holy Images in response to the iconoclast policy of Leo III, writing safely from outside the empire under Umayyad rule.",
+    "citations": [
+      {
+        "source": "John of Damascus, Orationes de Imaginibus 1-3",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "germanus-of-constantinople",
+    "to": "leo-iii-isaurian",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Germanus refused to subscribe to Leo III's iconoclast edict and was forced to abdicate the patriarchate in 730.",
+    "citations": [
+      {
+        "source": "Theophanes, Chronographia AM 6221-6222",
+        "kind": "primary"
+      },
+      {
+        "source": "Germanus, Epistolae (in Mansi)",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "bede-the-venerable",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Bede draws on Augustine throughout his commentaries; his exegetical method is fundamentally Augustinian.",
+    "citations": [
+      {
+        "source": "Bede, In Genesim, In Lucam, etc.",
+        "kind": "primary"
+      },
+      {
+        "source": "Bede, Retractatio in Acta Apostolorum, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "bede-the-venerable",
+    "to": "jerome-of-stridon",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Bede uses Jerome's commentaries and the Vulgate extensively.",
+    "citations": [
+      {
+        "source": "Bede, In Marcum, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "bede-the-venerable",
+    "to": "gregory-the-great",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Bede cites Gregory's Moralia, Pastoral Rule, and Homilies pervasively, and gives him the most affectionate treatment in the Historia Ecclesiastica.",
+    "citations": [
+      {
+        "source": "Bede, Hist. Eccl. 2.1",
+        "kind": "primary"
+      },
+      {
+        "source": "Bede, In Cantica Canticorum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "bede-the-venerable",
+    "to": "ambrose-of-milan",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Bede cites Ambrose among his standard Latin Fathers in his commentaries.",
+    "citations": [
+      {
+        "source": "Bede, In Lucam, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "boethius",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Boethius cites Augustine as authority in De Trinitate and follows Augustinian Trinitarian formulations.",
+    "citations": [
+      {
+        "source": "Boethius, De Trinitate, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "scholastica",
+    "to": "benedict-of-nursia",
+    "type": "met",
+    "strength": "tradition",
+    "notes": "Gregory's Dialogues describe annual visits between Benedict and his sister Scholastica; she is consecrated to God from infancy in his account.",
+    "citations": [
+      {
+        "source": "Gregory the Great, Dialogues 2.33-2.34",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "severus-of-antioch",
+    "to": "leontius-of-byzantium",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Severus' miaphysite Christology was the principal target of Chalcedonian neo-Chalcedonian theologians like Leontius.",
+    "citations": [
+      {
+        "source": "Leontius of Byzantium, Contra Nestorianos et Eutychianos",
+        "kind": "primary"
+      },
+      {
+        "source": "Severus, Liber contra impium Grammaticum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "severus-of-antioch",
+    "to": "cyril-of-alexandria",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Severus appealed to Cyril's mia physis formula as the basis of his Christology.",
+    "citations": [
+      {
+        "source": "Severus, Liber contra impium Grammaticum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "justinian-i",
+    "to": "eutychius-of-constantinople",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Justinian deposed Eutychius in 565 over the aphthartodocetic question.",
+    "citations": [
+      {
+        "source": "Evagrius Scholasticus, Hist. Eccl. 4.38",
+        "kind": "primary"
+      },
+      {
+        "source": "Eustratius, Vita Eutychii",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "eutychius-of-constantinople",
+    "to": "gregory-the-great",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "While Gregory was apocrisarius in Constantinople he disputed publicly with Eutychius over the corporeality of the resurrection body.",
+    "citations": [
+      {
+        "source": "Gregory the Great, Moralia in Job 14.72-74",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jacob-of-serugh",
+    "to": "ephrem-the-syrian",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Jacob writes in the metrical-homiletic Syriac tradition pioneered by Ephrem and explicitly invokes him.",
+    "citations": [
+      {
+        "source": "Jacob of Serugh, Memra on Ephrem",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "jacob-of-edessa",
+    "to": "jacob-of-serugh",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Jacob of Edessa works within the Syriac Orthodox literary tradition shaped by Jacob of Serugh; explicit citations are scattered.",
+    "citations": [
+      {
+        "source": "Jacob of Edessa, Letters",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "columba",
+    "to": "patrick-of-ireland",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Columba stands in the Irish monastic tradition that traces back to Patrick; direct lineage is hagiographic.",
+    "citations": [
+      {
+        "source": "Adomnán, Vita Columbae, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "columbanus",
+    "to": "gregory-the-great",
+    "type": "corresponded",
+    "strength": "documented",
+    "notes": "Columbanus wrote to Pope Gregory I on the date of Easter (Epistola 1).",
+    "citations": [
+      {
+        "source": "Columbanus, Epistola 1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "venantius-fortunatus",
+    "to": "gregory-of-tours",
+    "type": "met",
+    "strength": "documented",
+    "notes": "Fortunatus was a close friend of Gregory of Tours; Gregory mentions him repeatedly and Fortunatus dedicated poems to him.",
+    "citations": [
+      {
+        "source": "Gregory of Tours, Hist. Franc. 5.8; 9.39",
+        "kind": "primary"
+      },
+      {
+        "source": "Venantius Fortunatus, Carmina 5.8a",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "theodore-of-tarsus",
+    "to": "augustine-of-canterbury",
+    "type": "succeeded_in_see",
+    "strength": "tradition",
+    "notes": "Theodore was the seventh (not direct) Archbishop of Canterbury after Augustine, sent by Pope Vitalian. The compressed succession is reported by Bede ~70 years later.",
+    "citations": [
+      {
+        "source": "Bede, Hist. Eccl. 4.1",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "wilfrid",
+    "to": "theodore-of-tarsus",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Theodore divided Wilfrid's Northumbrian diocese without his consent, leading to Wilfrid's appeals to Rome. Stephen of Ripon's Vita Wilfridi is the principal source.",
+    "citations": [
+      {
+        "source": "Stephen of Ripon, Vita Wilfridi 24-30",
+        "kind": "primary"
+      },
+      {
+        "source": "Bede, Hist. Eccl. 4.12-13",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cuthbert-of-lindisfarne",
+    "to": "bede-the-venerable",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Bede wrote both prose and verse Lives of Cuthbert based on Lindisfarne testimony; he revered him as a saint of his own region.",
+    "citations": [
+      {
+        "source": "Bede, Vita Cuthberti, prologue",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "boniface",
+    "to": "aldhelm",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Boniface, formed in the West Saxon school, knew and used Aldhelm's writings and praised him.",
+    "citations": [
+      {
+        "source": "Boniface, Epistolae 33",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "boniface",
+    "to": "gregory-the-great",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Boniface modelled his missionary methods on Gregory's instructions to Augustine of Canterbury and corresponded with Gregory's papal successors.",
+    "citations": [
+      {
+        "source": "Boniface, Epistolae",
+        "kind": "primary"
+      },
+      {
+        "source": "Willibald, Vita Bonifatii",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "andrew-of-crete",
+    "to": "john-of-damascus",
+    "type": "knew_of",
+    "strength": "tradition",
+    "notes": "Andrew and John are roughly contemporary Damascene-trained hymnographers; later tradition links them but no direct contact is documented.",
+    "citations": [
+      {
+        "source": "Synaxarion Constantinopolitanum",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "anastasius-of-sinai",
+    "to": "severus-of-antioch",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Anastasius' Hodegos is a sustained refutation of Severan miaphysite Christology.",
+    "citations": [
+      {
+        "source": "Anastasius of Sinai, Viae Dux",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cassiodorus",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Cassiodorus' Expositio Psalmorum is built on Augustine's Enarrationes in Psalmos.",
+    "citations": [
+      {
+        "source": "Cassiodorus, Expositio Psalmorum, praefatio",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "cassiodorus",
+    "to": "boethius",
+    "type": "knew_of",
+    "strength": "documented",
+    "notes": "Cassiodorus and Boethius served together at the Ostrogothic court of Theodoric; Cassiodorus' Variae include letters drafted for Boethius.",
+    "citations": [
+      {
+        "source": "Cassiodorus, Variae 1.45",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "romanos-the-melodist",
+    "to": "ephrem-the-syrian",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Romanos, a Syrian-born deacon writing in Greek at Constantinople under Anastasius and Justinian, draws heavily on Ephrem's Syriac madrashe and memre in form and theology. Direct quotation is not preserved; the dependence is the modern scholarly consensus.",
+    "citations": [
+      {
+        "source": "Petersen, The Diatessaron and Ephrem Syrus as Sources of Romanos the Melodist (CSCO 475, 1985)",
+        "kind": "secondary"
+      },
+      {
+        "source": "Brock, From Ephrem to Romanos (Variorum 1999)",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "venantius-fortunatus",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Fortunatus draws on Augustinian theology and language across his hymns and prose Lives; the dependence is acknowledged by modern editors though no explicit citation formula appears.",
+    "citations": [
+      {
+        "source": "George, Venantius Fortunatus: A Latin Poet in Merovingian Gaul (Oxford 1992), pp. 105-125",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-tours",
+    "to": "sulpicius-severus",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Gregory uses Sulpicius's Vita Martini extensively as the source for his own four books of miracles of Saint Martin and cites it explicitly.",
+    "citations": [
+      {
+        "source": "Gregory of Tours, Libri de virtutibus sancti Martini, prologue and 1.2",
+        "kind": "primary"
+      },
+      {
+        "source": "Gregory of Tours, Hist. Franc. 1.36; 1.39; 10.31",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "gregory-of-tours",
+    "to": "augustine-of-hippo",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Gregory cites Augustine's De civitate Dei and Augustine's exegesis at several points in his Histories and miracle books.",
+    "citations": [
+      {
+        "source": "Gregory of Tours, Hist. Franc. 1 prologue",
+        "kind": "primary"
+      },
+      {
+        "source": "Heinzelmann, Gregory of Tours: History and Society in the Sixth Century (CUP 2001), pp. 110-114",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "heraclius",
+    "to": "sophronius-of-jerusalem",
+    "type": "opposed",
+    "strength": "documented",
+    "notes": "Heraclius promoted Monoenergism/Monothelitism via the Ekthesis (638) and Patriarch Sergius's Psephos; Sophronius led ecclesial opposition culminating in his synodical letter of 634.",
+    "citations": [
+      {
+        "source": "Sophronius, Synodical Letter (634), in ACO ser. II vol. 2",
+        "kind": "primary"
+      },
+      {
+        "source": "Theophanes, Chronographia AM 6121",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "pope-agatho",
+    "to": "pope-leo-i",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "Agatho's dogmatic letter (Tomus Agathonis) read at the Third Council of Constantinople (681) explicitly invokes and incorporates the Tome of Leo as the standard of Chalcedonian dyothelite Christology.",
+    "citations": [
+      {
+        "source": "Agatho, Epistula ad Constantinum imperatorem, in ACO ser. II vol. 2.1, pp. 52-122",
+        "kind": "primary"
+      },
+      {
+        "source": "Acta of the Third Council of Constantinople (681), Session 4",
+        "kind": "primary"
+      }
+    ]
+  },
+  {
+    "from": "john-climacus",
+    "to": "evagrius-ponticus",
+    "type": "cited",
+    "strength": "documented",
+    "notes": "The Ladder of Divine Ascent depends pervasively on Evagrian ascetic psychology (the eight logismoi, apatheia) though it carefully avoids Evagrius's name; the dependence is uncontroversial in scholarship.",
+    "citations": [
+      {
+        "source": "John Climacus, Ladder of Divine Ascent, steps 13-15, 26",
+        "kind": "primary"
+      },
+      {
+        "source": "Chryssavgis, John Climacus: From the Egyptian Desert to the Sinaite Mountain (Ashgate 2004), ch. 4",
+        "kind": "secondary"
+      }
+    ]
+  },
+  {
+    "from": "maximus-the-confessor",
+    "to": "john-climacus",
+    "type": "cited",
+    "strength": "tradition",
+    "notes": "Maximus (d. 662) draws on Sinaitic ascetic literature; Climacus (d. c. 649) is older. Direct quotation is not formal but Maximus's spiritual anthropology shares Climacus's framework.",
+    "citations": [
+      {
+        "source": "Louth, Maximus the Confessor (Routledge 1996), pp. 35-37",
+        "kind": "secondary"
+      }
+    ]
+  }
+]

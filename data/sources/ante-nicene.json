@@ -1,0 +1,2798 @@
+{
+  "era": "ante-nicene",
+  "people": [
+    {
+      "id": "justin-martyr",
+      "name": "Justin Martyr",
+      "alt_names": [
+        "Justin the Philosopher",
+        "Justinus"
+      ],
+      "born": 100,
+      "born_circa": true,
+      "died": 165,
+      "died_circa": true,
+      "birth_place": "Flavia Neapolis, Samaria",
+      "death_place": "Rome",
+      "region": "palestine",
+      "role": [
+        "apologist",
+        "martyr",
+        "layman"
+      ],
+      "tradition_status": "apologist",
+      "significance": 3,
+      "short_bio": "Greek philosopher converted to Christianity who wrote two Apologies and the Dialogue with Trypho. Taught in Rome and was martyred under Marcus Aurelius c. 165.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Martyr",
+      "wikidata_id": "Q185117",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf01.viii.html",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.16-18",
+          "kind": "primary"
+        },
+        {
+          "source": "Justin, First Apology",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts of Justin and Companions",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tatian-the-assyrian",
+      "name": "Tatian the Assyrian",
+      "alt_names": [
+        "Tatian"
+      ],
+      "born": 120,
+      "born_circa": true,
+      "died": 180,
+      "died_circa": true,
+      "birth_place": "Assyria",
+      "death_place": null,
+      "region": "syria",
+      "role": [
+        "apologist",
+        "theologian"
+      ],
+      "tradition_status": "apologist",
+      "significance": 2,
+      "short_bio": "Disciple of Justin Martyr in Rome; author of the Diatessaron (Gospel harmony) and the Oratio ad Graecos. Later associated with the Encratite movement.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Tatian",
+      "wikidata_id": "Q272087",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.28.1",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 4.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "athenagoras-of-athens",
+      "name": "Athenagoras of Athens",
+      "alt_names": [
+        "Athenagoras"
+      ],
+      "born": 133,
+      "born_circa": true,
+      "died": 190,
+      "died_circa": true,
+      "birth_place": "Athens",
+      "death_place": null,
+      "region": "east",
+      "role": [
+        "apologist",
+        "theologian"
+      ],
+      "tradition_status": "apologist",
+      "significance": 2,
+      "short_bio": "Athenian Christian philosopher; addressed his Plea for the Christians (Legatio) to Marcus Aurelius and Commodus, and wrote On the Resurrection of the Dead.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Athenagoras_of_Athens",
+      "wikidata_id": "Q309772",
+      "citations": [
+        {
+          "source": "Athenagoras, Legatio pro Christianis",
+          "kind": "primary"
+        },
+        {
+          "source": "Methodius, On the Resurrection (citing Athenagoras)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "theophilus-of-antioch",
+      "name": "Theophilus of Antioch",
+      "alt_names": [
+        "Theophilus"
+      ],
+      "born": 120,
+      "born_circa": true,
+      "died": 184,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Antioch",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "apologist"
+      ],
+      "see": "Antioch",
+      "tradition_status": "apologist",
+      "significance": 2,
+      "short_bio": "Sixth bishop of Antioch; author of the three books Ad Autolycum, the earliest Christian work to use the term 'Trinity' (trias).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Theophilus_of_Antioch",
+      "wikidata_id": "Q220787",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.20, 4.24",
+          "kind": "primary"
+        },
+        {
+          "source": "Theophilus, Ad Autolycum 2.15",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 25",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "melito-of-sardis",
+      "name": "Melito of Sardis",
+      "alt_names": [
+        "Melito"
+      ],
+      "born": 110,
+      "born_circa": true,
+      "died": 180,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Sardis",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "apologist",
+        "theologian"
+      ],
+      "see": "Sardis",
+      "tradition_status": "apologist",
+      "significance": 2,
+      "short_bio": "Bishop of Sardis, author of Peri Pascha (On the Pascha) and an Apology to Marcus Aurelius. Quartodeciman in his Easter observance.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Melito_of_Sardis",
+      "wikidata_id": "Q359945",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.26, 5.24",
+          "kind": "primary"
+        },
+        {
+          "source": "Melito, Peri Pascha",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "irenaeus-of-lyons",
+      "name": "Irenaeus of Lyons",
+      "alt_names": [
+        "Irenaeus",
+        "Eirenaios"
+      ],
+      "born": 130,
+      "born_circa": true,
+      "died": 202,
+      "died_circa": true,
+      "birth_place": "Smyrna",
+      "death_place": "Lugdunum (Lyons)",
+      "region": "gaul",
+      "role": [
+        "bishop",
+        "theologian",
+        "martyr"
+      ],
+      "see": "Lyons",
+      "tradition_status": "ante-nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Lyons, disciple of Polycarp, and author of Against Heresies, the foundational anti-Gnostic work. Bridge between apostolic and ante-Nicene eras.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Irenaeus",
+      "wikidata_id": "Q182123",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf01.ix.html",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.4",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 5.4-8, 5.20",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "hippolytus-of-rome",
+      "name": "Hippolytus of Rome",
+      "alt_names": [
+        "Hippolytus"
+      ],
+      "born": 170,
+      "born_circa": true,
+      "died": 235,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Sardinia",
+      "region": "west",
+      "role": [
+        "presbyter",
+        "bishop",
+        "theologian",
+        "martyr"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 3,
+      "short_bio": "Roman presbyter (and possibly antipope) who wrote the Refutation of All Heresies and the Apostolic Tradition. Exiled to Sardinia under Maximinus Thrax. Some scholars split this figure into two; tradition treats him as one.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Hippolytus_of_Rome",
+      "wikidata_id": "Q207113",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.20, 6.22",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 61",
+          "kind": "primary"
+        },
+        {
+          "source": "Hippolytus, Refutatio Omnium Haeresium",
+          "kind": "primary"
+        },
+        {
+          "source": "ODCC s.v. Hippolytus",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "pantaenus",
+      "name": "Pantaenus of Alexandria",
+      "alt_names": [
+        "Pantaenus"
+      ],
+      "born": 120,
+      "born_circa": true,
+      "died": 200,
+      "died_circa": true,
+      "birth_place": "Sicily",
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "theologian",
+        "presbyter"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "First named head of the Catechetical School of Alexandria. Stoic philosopher converted to Christianity; reportedly missionary to 'India.' Teacher of Clement of Alexandria.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pantaenus",
+      "wikidata_id": "Q461067",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.10-11",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 36",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "clement-of-alexandria",
+      "name": "Clement of Alexandria",
+      "alt_names": [
+        "Titus Flavius Clemens",
+        "Clement"
+      ],
+      "born": 150,
+      "born_circa": true,
+      "died": 215,
+      "died_circa": true,
+      "birth_place": "Athens",
+      "death_place": "Cappadocia",
+      "region": "egypt",
+      "role": [
+        "theologian",
+        "presbyter"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 3,
+      "short_bio": "Successor to Pantaenus at the Catechetical School of Alexandria. Author of Protrepticus, Paedagogus, and Stromateis. Teacher of Origen.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Clement_of_Alexandria",
+      "wikidata_id": "Q188883",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf02.html",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.11, 6.6, 6.13-14",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 38",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "origen-of-alexandria",
+      "name": "Origen of Alexandria",
+      "alt_names": [
+        "Origen",
+        "Origenes Adamantius"
+      ],
+      "born": 185,
+      "born_circa": true,
+      "died": 254,
+      "died_circa": true,
+      "birth_place": "Alexandria",
+      "death_place": "Tyre",
+      "region": "egypt",
+      "role": [
+        "theologian",
+        "presbyter"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 3,
+      "short_bio": "Towering Alexandrian biblical scholar and theologian; produced the Hexapla, On First Principles, Against Celsus, and vast commentaries. Tortured under Decius and died from injuries.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Origen",
+      "wikidata_id": "Q170472",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf04.html",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.1-39",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 54",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory Thaumaturgus, Panegyric to Origen",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dionysius-of-alexandria",
+      "name": "Dionysius of Alexandria",
+      "alt_names": [
+        "Dionysius the Great"
+      ],
+      "born": 190,
+      "born_circa": true,
+      "died": 265,
+      "died_circa": true,
+      "birth_place": "Alexandria",
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Pupil of Origen, head of the Catechetical School, then 14th bishop of Alexandria (247-265). Wrote against Sabellianism and on the authorship of Revelation.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Dionysius_of_Alexandria",
+      "wikidata_id": "Q328736",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.40-7.28",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 69",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gregory-thaumaturgus",
+      "name": "Gregory Thaumaturgus",
+      "alt_names": [
+        "Gregory the Wonderworker",
+        "Gregory of Neocaesarea"
+      ],
+      "born": 213,
+      "born_circa": true,
+      "died": 270,
+      "died_circa": true,
+      "birth_place": "Neocaesarea, Pontus",
+      "death_place": "Neocaesarea",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Neocaesarea",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Pupil of Origen at Caesarea; bishop of Neocaesarea in Pontus. Wrote a Panegyric on Origen and a creed; renowned for miracles.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_Thaumaturgus",
+      "wikidata_id": "Q337537",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.30, 7.14, 7.28",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nyssa, Life of Gregory Thaumaturgus",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 65",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "tertullian",
+      "name": "Tertullian",
+      "alt_names": [
+        "Quintus Septimius Florens Tertullianus"
+      ],
+      "born": 155,
+      "born_circa": true,
+      "died": 220,
+      "died_circa": true,
+      "birth_place": "Carthage",
+      "death_place": "Carthage",
+      "region": "africa",
+      "role": [
+        "theologian",
+        "apologist",
+        "presbyter"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 3,
+      "short_bio": "First major Latin Christian author; coined much of Western theological vocabulary (trinitas, persona, substantia). Apologeticus, Adv. Marcionem, De Praescriptione. Later joined the New Prophecy (Montanism).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Tertullian",
+      "wikidata_id": "Q174929",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf03.html",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 53",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 2.2, 2.25",
+          "kind": "primary"
+        },
+        {
+          "source": "Tertullian, Apologeticus",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "cyprian-of-carthage",
+      "name": "Cyprian of Carthage",
+      "alt_names": [
+        "Thascius Caecilius Cyprianus",
+        "Cyprian"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 258,
+      "died_circa": false,
+      "birth_place": "Carthage",
+      "death_place": "Carthage",
+      "region": "africa",
+      "role": [
+        "bishop",
+        "theologian",
+        "martyr"
+      ],
+      "see": "Carthage",
+      "tradition_status": "ante-nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Carthage from 248/9; led the African church through the Decian and Valerianic persecutions. Wrote De Unitate Ecclesiae and 81 letters. Martyred 14 September 258.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cyprian",
+      "wikidata_id": "Q190240",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf05.html",
+      "citations": [
+        {
+          "source": "Pontius, Vita Cypriani",
+          "kind": "primary"
+        },
+        {
+          "source": "Cyprian, Epistulae",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 67",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "minucius-felix",
+      "name": "Minucius Felix",
+      "alt_names": [
+        "Marcus Minucius Felix"
+      ],
+      "born": 150,
+      "born_circa": true,
+      "died": 250,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Rome",
+      "region": "africa",
+      "role": [
+        "apologist",
+        "layman"
+      ],
+      "tradition_status": "apologist",
+      "significance": 2,
+      "short_bio": "Latin Christian apologist; author of the dialogue Octavius, an early Latin defence of Christianity against pagan philosophy.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Marcus_Minucius_Felix",
+      "wikidata_id": "Q319423",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 58",
+          "kind": "primary"
+        },
+        {
+          "source": "Lactantius, Divinae Institutiones 5.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "lactantius",
+      "name": "Lactantius",
+      "alt_names": [
+        "Lucius Caecilius Firmianus Lactantius"
+      ],
+      "born": 250,
+      "born_circa": true,
+      "died": 325,
+      "died_circa": true,
+      "birth_place": "Africa Proconsularis",
+      "death_place": "Trier",
+      "region": "africa",
+      "role": [
+        "apologist",
+        "theologian",
+        "layman"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Latin rhetorician and apologist, called the 'Christian Cicero.' Author of Divinae Institutiones and De Mortibus Persecutorum. Tutor to Constantine's son Crispus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Lactantius",
+      "wikidata_id": "Q209102",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 80",
+          "kind": "primary"
+        },
+        {
+          "source": "Lactantius, De Mortibus Persecutorum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "arnobius-of-sicca",
+      "name": "Arnobius of Sicca",
+      "alt_names": [
+        "Arnobius the Elder"
+      ],
+      "born": 255,
+      "born_circa": true,
+      "died": 330,
+      "died_circa": true,
+      "birth_place": "Sicca Veneria, Numidia",
+      "death_place": "Sicca Veneria",
+      "region": "africa",
+      "role": [
+        "apologist",
+        "layman"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Latin apologist and rhetorician at Sicca; teacher of Lactantius. Wrote the seven-book Adversus Nationes against pagan religion.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Arnobius",
+      "wikidata_id": "Q342416",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 79",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Chronicon ad ann. 327",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "methodius-of-olympus",
+      "name": "Methodius of Olympus",
+      "alt_names": [
+        "Methodius"
+      ],
+      "born": 250,
+      "born_circa": true,
+      "died": 311,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Chalcis",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "theologian",
+        "martyr"
+      ],
+      "see": "Olympus",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Olympus in Lycia; critic of Origen's doctrine of the resurrection and pre-existence of souls. Author of the Symposium (Banquet of the Ten Virgins). Reportedly martyred under Diocletian.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Methodius_of_Olympus",
+      "wikidata_id": "Q518300",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 83",
+          "kind": "primary"
+        },
+        {
+          "source": "Methodius, Symposium",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "eusebius-of-caesarea",
+      "name": "Eusebius of Caesarea",
+      "alt_names": [
+        "Eusebius Pamphili"
+      ],
+      "born": 263,
+      "born_circa": true,
+      "died": 339,
+      "died_circa": true,
+      "birth_place": "Caesarea Maritima",
+      "death_place": "Caesarea Maritima",
+      "region": "palestine",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Caesarea",
+      "tradition_status": "ante-nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Caesarea; the 'Father of Church History,' author of Historia Ecclesiastica, Praeparatio Evangelica, Demonstratio Evangelica, and the Life of Constantine. Pupil of Pamphilus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Eusebius",
+      "wikidata_id": "Q142999",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. (passim)",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 81",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates, Hist. Eccl. 1.8",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pamphilus-of-caesarea",
+      "name": "Pamphilus of Caesarea",
+      "alt_names": [
+        "Pamphilus"
+      ],
+      "born": 240,
+      "born_circa": true,
+      "died": 309,
+      "died_circa": false,
+      "birth_place": "Berytus",
+      "death_place": "Caesarea Maritima",
+      "region": "palestine",
+      "role": [
+        "presbyter",
+        "martyr"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Presbyter of Caesarea; founder of the great library there. Devoted disciple of Origen's legacy and teacher of Eusebius. Martyred 16 February 309 under Maximinus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pamphilus_of_Caesarea",
+      "wikidata_id": "Q1855156",
+      "citations": [
+        {
+          "source": "Eusebius, Martyrs of Palestine 11",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 75",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "anthony-the-great",
+      "name": "Anthony the Great",
+      "alt_names": [
+        "Antony of Egypt",
+        "Antonius"
+      ],
+      "born": 251,
+      "born_circa": true,
+      "died": 356,
+      "died_circa": false,
+      "birth_place": "Coma, Egypt",
+      "death_place": "Mount Colzim",
+      "region": "egypt",
+      "role": [
+        "monk"
+      ],
+      "tradition_status": "desert-father",
+      "significance": 3,
+      "short_bio": "Father of Christian monasticism; Egyptian hermit whose life was written by Athanasius. Withdrew to the desert c. 285 and helped pattern the eremitic life.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_the_Great",
+      "wikidata_id": "Q170547",
+      "citations": [
+        {
+          "source": "Athanasius, Vita Antonii",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 88",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "marcion-of-sinope",
+      "name": "Marcion of Sinope",
+      "alt_names": [
+        "Marcion"
+      ],
+      "born": 85,
+      "born_circa": true,
+      "died": 160,
+      "died_circa": true,
+      "birth_place": "Sinope, Pontus",
+      "death_place": null,
+      "region": "asia-minor",
+      "role": [
+        "theologian"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Heterodox teacher (regarded as a heresiarch) who rejected the Old Testament and proposed a truncated canon. Excommunicated at Rome c. 144. Refuted by Justin, Irenaeus, Tertullian.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Marcion_of_Sinope",
+      "wikidata_id": "Q201346",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.27",
+          "kind": "primary"
+        },
+        {
+          "source": "Tertullian, Adversus Marcionem",
+          "kind": "primary"
+        },
+        {
+          "source": "Justin, First Apology 26, 58",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "valentinus",
+      "name": "Valentinus",
+      "alt_names": [
+        "Valentinos"
+      ],
+      "born": 100,
+      "born_circa": true,
+      "died": 160,
+      "died_circa": true,
+      "birth_place": "Phrebonis, Egypt",
+      "death_place": "Cyprus",
+      "region": "egypt",
+      "role": [
+        "theologian"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Influential Gnostic teacher active in Rome c. 136-160; founder of the Valentinian school. Considered heterodox; refuted at length by Irenaeus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Valentinus_(Gnostic)",
+      "wikidata_id": "Q309864",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.1-9",
+          "kind": "primary"
+        },
+        {
+          "source": "Tertullian, Adversus Valentinianos",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "basilides",
+      "name": "Basilides",
+      "alt_names": [],
+      "born": 85,
+      "born_circa": true,
+      "died": 145,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "theologian"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Alexandrian Gnostic teacher of the early 2nd century; considered heterodox. Known mainly through refutations by Irenaeus and Hippolytus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Basilides",
+      "wikidata_id": "Q345277",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.24",
+          "kind": "primary"
+        },
+        {
+          "source": "Hippolytus, Refutatio 7.20-27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "polycrates-of-ephesus",
+      "name": "Polycrates of Ephesus",
+      "alt_names": [
+        "Polycrates"
+      ],
+      "born": 130,
+      "born_circa": true,
+      "died": 196,
+      "died_circa": true,
+      "birth_place": "Ephesus",
+      "death_place": "Ephesus",
+      "region": "asia-minor",
+      "role": [
+        "bishop"
+      ],
+      "see": "Ephesus",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Ephesus; led the Asian churches in defending the Quartodeciman Easter against Pope Victor I c. 190.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Polycrates_of_Ephesus",
+      "wikidata_id": "Q943719",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.24",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 45",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-anicetus",
+      "name": "Pope Anicetus",
+      "alt_names": [
+        "Anicetus"
+      ],
+      "born": 100,
+      "born_circa": true,
+      "died": 168,
+      "died_circa": true,
+      "birth_place": "Emesa, Syria",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome c. 157-168. Hosted Polycarp of Smyrna in Rome during the Easter dating dispute; they parted in peace though disagreeing.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Anicetus",
+      "wikidata_id": "Q546590",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.11, 5.24",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-soter",
+      "name": "Pope Soter",
+      "alt_names": [
+        "Soter"
+      ],
+      "born": 110,
+      "born_circa": true,
+      "died": 174,
+      "died_circa": true,
+      "birth_place": "Fondi, Campania",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome c. 168-174. Corresponded with Dionysius of Corinth and sent aid to other churches.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Soter",
+      "wikidata_id": "Q101280",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.23",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-eleutherius",
+      "name": "Pope Eleutherius",
+      "alt_names": [
+        "Eleutherus"
+      ],
+      "born": 120,
+      "born_circa": true,
+      "died": 189,
+      "died_circa": true,
+      "birth_place": "Nicopolis, Epirus",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome c. 174-189. Received Irenaeus as envoy from the Gallic confessors during the Montanist crisis.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Eleutherius",
+      "wikidata_id": "Q101090",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-victor-i",
+      "name": "Pope Victor I",
+      "alt_names": [
+        "Victor"
+      ],
+      "born": 130,
+      "born_circa": true,
+      "died": 199,
+      "died_circa": true,
+      "birth_place": "Africa",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "First Latin-speaking bishop of Rome (c. 189-199). Excommunicated the Asian churches over the Quartodeciman controversy; rebuked by Irenaeus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Victor_I",
+      "wikidata_id": "Q127989",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.23-25",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 34",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-zephyrinus",
+      "name": "Pope Zephyrinus",
+      "alt_names": [
+        "Zephyrinus"
+      ],
+      "born": 150,
+      "born_circa": true,
+      "died": 217,
+      "died_circa": true,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 199-217. Criticised by Hippolytus as theologically weak in the modalist controversy.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Zephyrinus",
+      "wikidata_id": "Q101306",
+      "citations": [
+        {
+          "source": "Hippolytus, Refutatio 9.6-12",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 6.21",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-callixtus-i",
+      "name": "Pope Callixtus I",
+      "alt_names": [
+        "Callistus"
+      ],
+      "born": 155,
+      "born_circa": true,
+      "died": 222,
+      "died_circa": true,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 217-222. Former slave; relaxed penitential discipline, drawing fire from Hippolytus and Tertullian. Tradition records him as a martyr.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Callixtus_I",
+      "wikidata_id": "Q122376",
+      "citations": [
+        {
+          "source": "Hippolytus, Refutatio 9.11-12",
+          "kind": "primary"
+        },
+        {
+          "source": "Tertullian, De Pudicitia 1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-urban-i",
+      "name": "Pope Urban I",
+      "alt_names": [
+        "Urban"
+      ],
+      "born": 175,
+      "born_circa": true,
+      "died": 230,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 222-230. Successor of Callixtus I; little reliable detail survives.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Urban_I",
+      "wikidata_id": "Q125631",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.23",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 18",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-pontian",
+      "name": "Pope Pontian",
+      "alt_names": [
+        "Pontianus"
+      ],
+      "born": 180,
+      "born_circa": true,
+      "died": 235,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Sardinia",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 230-235. Exiled with Hippolytus to Sardinia under Maximinus Thrax; resigned the see and died there.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Pontian",
+      "wikidata_id": "Q132113",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.23, 6.29",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-anterus",
+      "name": "Pope Anterus",
+      "alt_names": [
+        "Anteros"
+      ],
+      "born": 180,
+      "born_circa": true,
+      "died": 236,
+      "died_circa": false,
+      "birth_place": "Petelia, Calabria",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome for about 40 days, November 235 to January 236.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Anterus",
+      "wikidata_id": "Q132100",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.29",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 20",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-fabian",
+      "name": "Pope Fabian",
+      "alt_names": [
+        "Fabianus"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 250,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 236-250. Organised the Roman titular churches; martyred 20 January 250 in the Decian persecution.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Fabian",
+      "wikidata_id": "Q131159",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.29, 6.39",
+          "kind": "primary"
+        },
+        {
+          "source": "Cyprian, Ep. 9",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-cornelius",
+      "name": "Pope Cornelius",
+      "alt_names": [
+        "Cornelius"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 253,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Centumcellae",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 251-253; opposed by the rigorist Novatian. Cyprian of Carthage backed his legitimacy. Died in exile under Gallus, counted as martyr.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Cornelius",
+      "wikidata_id": "Q54798",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.43-46",
+          "kind": "primary"
+        },
+        {
+          "source": "Cyprian, Ep. 44-55",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-lucius-i",
+      "name": "Pope Lucius I",
+      "alt_names": [
+        "Lucius"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 254,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 253-254. Briefly exiled, then returned; supported Cyprian's lenient stance toward the lapsed.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Lucius_I",
+      "wikidata_id": "Q132793",
+      "citations": [
+        {
+          "source": "Cyprian, Ep. 61",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 7.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-stephen-i",
+      "name": "Pope Stephen I",
+      "alt_names": [
+        "Stephen"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 257,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 254-257. Disputed bitterly with Cyprian and the African church over the rebaptism of those baptised by heretics, insisting Roman tradition not require it.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Stephen_I",
+      "wikidata_id": "Q134666",
+      "citations": [
+        {
+          "source": "Cyprian, Ep. 71-75",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 7.2-5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-sixtus-ii",
+      "name": "Pope Sixtus II",
+      "alt_names": [
+        "Xystus II"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 258,
+      "died_circa": false,
+      "birth_place": null,
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 257-258. Healed the breach with the African church over rebaptism. Beheaded at the cemetery of Praetextatus 6 August 258 under Valerian.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Sixtus_II",
+      "wikidata_id": "Q127385",
+      "citations": [
+        {
+          "source": "Cyprian, Ep. 80",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 7.5, 7.27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-dionysius",
+      "name": "Pope Dionysius",
+      "alt_names": [
+        "Dionysius of Rome"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 268,
+      "died_circa": false,
+      "birth_place": null,
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 259-268. Clarified Trinitarian language in correspondence with Dionysius of Alexandria over Sabellian and Subordinationist concerns.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Dionysius",
+      "wikidata_id": "Q131162",
+      "citations": [
+        {
+          "source": "Athanasius, De Sententia Dionysii",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 7.7-9",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-felix-i",
+      "name": "Pope Felix I",
+      "alt_names": [
+        "Felix"
+      ],
+      "born": 220,
+      "born_circa": true,
+      "died": 274,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 269-274. Active during the deposition of Paul of Samosata at Antioch.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Felix_I",
+      "wikidata_id": "Q134687",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.30",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-eutychian",
+      "name": "Pope Eutychian",
+      "alt_names": [
+        "Eutychianus"
+      ],
+      "born": 230,
+      "born_circa": true,
+      "died": 283,
+      "died_circa": false,
+      "birth_place": "Luni",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 275-283; little of substance is preserved beyond the Liber Pontificalis notice.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Eutychian",
+      "wikidata_id": "Q162972",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.32",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 28",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-caius",
+      "name": "Pope Caius",
+      "alt_names": [
+        "Gaius"
+      ],
+      "born": 240,
+      "born_circa": true,
+      "died": 296,
+      "died_circa": false,
+      "birth_place": "Salona, Dalmatia",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 283-296. Reign saw the lull before the Diocletianic persecution.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Caius",
+      "wikidata_id": "Q160882",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.32",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-marcellinus",
+      "name": "Pope Marcellinus",
+      "alt_names": [
+        "Marcellinus"
+      ],
+      "born": 250,
+      "born_circa": true,
+      "died": 304,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Rome 296-304. Reign covered the outbreak of the Diocletianic persecution; his conduct during it was later disputed by the Donatists.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Marcellinus",
+      "wikidata_id": "Q160373",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.32",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, De Unico Baptismo 16.27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "demetrius-of-alexandria",
+      "name": "Demetrius of Alexandria",
+      "alt_names": [
+        "Demetrius"
+      ],
+      "born": 130,
+      "born_circa": true,
+      "died": 231,
+      "died_circa": false,
+      "birth_place": null,
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "bishop"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "11th bishop of Alexandria (189-231). Appointed Origen head of the Catechetical School, then later opposed and condemned him after his ordination outside Alexandria.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Demetrius_I_of_Alexandria",
+      "wikidata_id": "Q559194",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.2-3, 6.8, 6.19, 6.26",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 54",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "heraclas-of-alexandria",
+      "name": "Heraclas of Alexandria",
+      "alt_names": [
+        "Heraclas"
+      ],
+      "born": 180,
+      "born_circa": true,
+      "died": 247,
+      "died_circa": false,
+      "birth_place": null,
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "bishop"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "13th bishop of Alexandria (231-247); pupil of Origen and his successor at the Catechetical School before becoming patriarch.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Heraclas_of_Alexandria",
+      "wikidata_id": "Q738738",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.3, 6.15, 6.26, 6.29, 6.35",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "serapion-of-antioch",
+      "name": "Serapion of Antioch",
+      "alt_names": [
+        "Serapion"
+      ],
+      "born": 140,
+      "born_circa": true,
+      "died": 211,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Antioch",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Antioch",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Eighth bishop of Antioch (c. 191-211). Wrote against the use of the Gospel of Peter at Rhossus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Serapion_of_Antioch",
+      "wikidata_id": "Q1277383",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.12",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 41",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "asclepiades-of-antioch",
+      "name": "Asclepiades of Antioch",
+      "alt_names": [
+        "Asclepiades"
+      ],
+      "born": 150,
+      "born_circa": true,
+      "died": 220,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Antioch",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Antioch",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Ninth bishop of Antioch, succeeding Serapion c. 211; counted among the confessors of his day.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Asclepiades_of_Antioch",
+      "wikidata_id": "Q731764",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.11, 6.21",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "babylas-of-antioch",
+      "name": "Babylas of Antioch",
+      "alt_names": [
+        "Babylas"
+      ],
+      "born": 180,
+      "born_circa": true,
+      "died": 253,
+      "died_circa": false,
+      "birth_place": null,
+      "death_place": "Antioch",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Antioch",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Antioch (c. 237-253); died in prison during the Decian persecution. Famous in tradition for barring Emperor Philip the Arab from the Easter liturgy.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Babylas_of_Antioch",
+      "wikidata_id": "Q797915",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.29, 6.34, 6.39",
+          "kind": "primary"
+        },
+        {
+          "source": "John Chrysostom, On Saint Babylas",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "demetrian-of-antioch",
+      "name": "Demetrian of Antioch",
+      "alt_names": [
+        "Demetrianus"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 260,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "syria",
+      "role": [
+        "bishop"
+      ],
+      "see": "Antioch",
+      "tradition_status": "ante-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Antioch c. 253-260, succeeding Babylas; succeeded by Paul of Samosata.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Demetrian_of_Antioch",
+      "wikidata_id": null,
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.5, 7.14, 7.27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "paul-of-samosata",
+      "name": "Paul of Samosata",
+      "alt_names": [
+        "Paul"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 275,
+      "died_circa": true,
+      "birth_place": "Samosata",
+      "death_place": null,
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Antioch",
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Antioch c. 260-268; deposed by a synod for adoptionist Christology. Considered heterodox; an important precursor case for Nicene-era Christological debates.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Paul_of_Samosata",
+      "wikidata_id": "Q357771",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.27-30",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 71",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "novatian",
+      "name": "Novatian",
+      "alt_names": [
+        "Novatianus"
+      ],
+      "born": 200,
+      "born_circa": true,
+      "died": 258,
+      "died_circa": true,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "theologian",
+        "presbyter"
+      ],
+      "tradition_status": "ante-nicene",
+      "significance": 2,
+      "short_bio": "Roman presbyter, rigorist rival to Pope Cornelius and first significant antipope. Author of De Trinitate, a major Latin Trinitarian text.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Novatian",
+      "wikidata_id": "Q222890",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.43-46",
+          "kind": "primary"
+        },
+        {
+          "source": "Cyprian, Ep. 44-55",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 70",
+          "kind": "primary"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "irenaeus-of-lyons",
+      "to": "polycarp-of-smyrna",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Irenaeus describes in his Letter to Florinus hearing Polycarp preach in his youth in Smyrna and remembering his testimony about John the Apostle. This is direct first-person testimony.",
+      "citations": [
+        {
+          "source": "Irenaeus, Letter to Florinus (in Eusebius HE 5.20)",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "tatian-the-assyrian",
+      "to": "justin-martyr",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Tatian was a disciple of Justin in Rome and only fell into heterodoxy after Justin's martyrdom.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.28.1",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 4.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "clement-of-alexandria",
+      "to": "pantaenus",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Clement names Pantaenus as the 'true Sicilian bee' from whom he received instruction.",
+      "citations": [
+        {
+          "source": "Clement, Stromateis 1.1.11",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 5.11, 6.6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "clement-of-alexandria",
+      "to": "pantaenus",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Clement succeeded Pantaenus as head of the Catechetical School of Alexandria. Eusebius (HE 6.6) is the source; Clement's own writings name Pantaenus as teacher but not as predecessor in office.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "origen-of-alexandria",
+      "to": "clement-of-alexandria",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Eusebius implies Origen heard Clement at the Catechetical School; some scholars treat this as inferred rather than firmly attested.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.6",
+          "kind": "primary"
+        },
+        {
+          "source": "ODCC s.v. Origen",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "origen-of-alexandria",
+      "to": "clement-of-alexandria",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Origen succeeded Clement as head of the Catechetical School c. 203 after Clement fled persecution. Source is Eusebius HE 6.3, 6.6; Origen himself does not narrate the succession.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.3, 6.6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-thaumaturgus",
+      "to": "origen-of-alexandria",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Gregory studied under Origen at Caesarea for several years and wrote a famous panegyric upon leaving.",
+      "citations": [
+        {
+          "source": "Gregory Thaumaturgus, Panegyric to Origen",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 6.30",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "dionysius-of-alexandria",
+      "to": "origen-of-alexandria",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Dionysius was a pupil of Origen at Alexandria and later headed the Catechetical School.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "heraclas-of-alexandria",
+      "to": "origen-of-alexandria",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Heraclas studied alongside, then under, Origen and shared in teaching the catechumens.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.3, 6.15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "heraclas-of-alexandria",
+      "to": "origen-of-alexandria",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Heraclas succeeded Origen as head of the Catechetical School after Origen's departure to Caesarea.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.15, 6.26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "dionysius-of-alexandria",
+      "to": "heraclas-of-alexandria",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Dionysius succeeded Heraclas as bishop of Alexandria in 247.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.35",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "demetrius-of-alexandria",
+      "to": "origen-of-alexandria",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Demetrius initially appointed Origen but later condemned him in synods after his ordination at Caesarea, expelling him from Alexandria.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.8, 6.19, 6.26",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 54",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "heraclas-of-alexandria",
+      "to": "demetrius-of-alexandria",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Heraclas became 13th bishop of Alexandria in 231 succeeding Demetrius.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyprian-of-carthage",
+      "to": "tertullian",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Jerome (late 4th c., De Vir. Ill. 53) reports that Cyprian read Tertullian daily, asking 'Da magistrum'. Cyprian himself never names Tertullian; the link is Jerome's anecdote 130+ years later.",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 53",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "lactantius",
+      "to": "arnobius-of-sicca",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Jerome (De Vir. Ill. 80, c. 393) states Lactantius was a pupil of Arnobius at Sicca; no contemporary attestation, and Lactantius himself does not name Arnobius.",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 80",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Chronicon ad ann. 327",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "irenaeus-of-lyons",
+      "to": "valentinus",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "The bulk of Adversus Haereses is directed against the Valentinian system.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.1-9, 2 passim",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "irenaeus-of-lyons",
+      "to": "marcion-of-sinope",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Irenaeus refutes Marcion's truncated canon and dualism.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.27, 3.3.4, 4.6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "irenaeus-of-lyons",
+      "to": "basilides",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Irenaeus refutes the system of Basilides.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 1.24",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "tertullian",
+      "to": "marcion-of-sinope",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Tertullian's five books Adversus Marcionem are the most extensive ancient refutation.",
+      "citations": [
+        {
+          "source": "Tertullian, Adversus Marcionem",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "tertullian",
+      "to": "valentinus",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Tertullian's Adversus Valentinianos refutes the Valentinian school.",
+      "citations": [
+        {
+          "source": "Tertullian, Adversus Valentinianos",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "hippolytus-of-rome",
+      "to": "valentinus",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Hippolytus' Refutatio devotes considerable space to refuting Valentinian and other Gnostic systems.",
+      "citations": [
+        {
+          "source": "Hippolytus, Refutatio Omnium Haeresium 6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "hippolytus-of-rome",
+      "to": "basilides",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Hippolytus gives an extended refutation of Basilides in Refutatio book 7.",
+      "citations": [
+        {
+          "source": "Hippolytus, Refutatio 7.20-27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "hippolytus-of-rome",
+      "to": "irenaeus-of-lyons",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Photius and later sources describe Hippolytus as a hearer of Irenaeus; some modern scholars treat the link as plausible but not directly attested.",
+      "citations": [
+        {
+          "source": "Photius, Bibliotheca cod. 121",
+          "kind": "primary"
+        },
+        {
+          "source": "ODCC s.v. Hippolytus",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "hippolytus-of-rome",
+      "to": "pope-zephyrinus",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Hippolytus accuses Zephyrinus of doctrinal weakness and Callixtus of innovation in penance.",
+      "citations": [
+        {
+          "source": "Hippolytus, Refutatio 9.6-12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "hippolytus-of-rome",
+      "to": "pope-callixtus-i",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Hippolytus rejected Callixtus' election and his lenient discipline; tradition makes him an antipope of this period.",
+      "citations": [
+        {
+          "source": "Hippolytus, Refutatio 9.11-12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "tertullian",
+      "to": "pope-callixtus-i",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Tertullian's De Pudicitia attacks the unnamed bishop (commonly identified as Callixtus) for absolving adultery.",
+      "citations": [
+        {
+          "source": "Tertullian, De Pudicitia 1, 21",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-anicetus",
+      "to": "polycarp-of-smyrna",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Polycarp visited Anicetus in Rome; they discussed the Quartodeciman question and parted in peace.",
+      "citations": [
+        {
+          "source": "Irenaeus, Letter to Victor in Eusebius HE 5.24",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-victor-i",
+      "to": "polycrates-of-ephesus",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Victor I attempted to excommunicate the Asian churches led by Polycrates over the Quartodeciman Easter; rebuked by Irenaeus.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.23-25",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "irenaeus-of-lyons",
+      "to": "pope-victor-i",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Irenaeus wrote urging Victor not to break communion with the Asian churches over Easter dating.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.24",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyprian-of-carthage",
+      "to": "pope-stephen-i",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Cyprian and the African bishops insisted on rebaptising those baptised by heretics; Stephen I forbade the practice. The dispute remained unresolved at their deaths.",
+      "citations": [
+        {
+          "source": "Cyprian, Ep. 71-75",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 7.3-5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyprian-of-carthage",
+      "to": "pope-cornelius",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Cyprian and Cornelius exchanged numerous letters, especially over the lapsed and the Novatianist schism.",
+      "citations": [
+        {
+          "source": "Cyprian, Ep. 44-55",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyprian-of-carthage",
+      "to": "novatian",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Cyprian sided with Cornelius against the rigorist Novatian and refused communion with the Novatianist party.",
+      "citations": [
+        {
+          "source": "Cyprian, Ep. 44, 55",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 6.43-45",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "novatian",
+      "to": "pope-cornelius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Novatian had himself consecrated bishop of Rome in opposition to Cornelius over the treatment of the lapsed.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.43",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-soter",
+      "to": "pope-anicetus",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Roman episcopal succession; preserved only by Eusebius drawing on Hegesippus and the Liberian list, with no contemporary 2nd-c attestation.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-eleutherius",
+      "to": "pope-soter",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Roman episcopal succession; only attested by Eusebius and the later Liberian list, no contemporary 2nd-c documentation.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.preface",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-victor-i",
+      "to": "pope-eleutherius",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Roman episcopal succession c. 189; preserved by Eusebius via Hegesippus and the Liberian list rather than contemporary documents.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.22",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-zephyrinus",
+      "to": "pope-victor-i",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Roman episcopal succession c. 199; only attested by Eusebius writing a century later.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.28, 6.21",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-callixtus-i",
+      "to": "pope-zephyrinus",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 217.",
+      "citations": [
+        {
+          "source": "Hippolytus, Refutatio 9.11",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 6.21",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-urban-i",
+      "to": "pope-callixtus-i",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 222.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.23",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-pontian",
+      "to": "pope-urban-i",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 230.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.23",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-anterus",
+      "to": "pope-pontian",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 235.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-fabian",
+      "to": "pope-anterus",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 236.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-cornelius",
+      "to": "pope-fabian",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession after Fabian's martyrdom; the see was vacant for over a year before Cornelius' election.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.39, 6.43",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-lucius-i",
+      "to": "pope-cornelius",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 253.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-stephen-i",
+      "to": "pope-lucius-i",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 254.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-sixtus-ii",
+      "to": "pope-stephen-i",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 257.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-dionysius",
+      "to": "pope-sixtus-ii",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 259, after a vacancy following Sixtus II's martyrdom.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.27, 7.30",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-felix-i",
+      "to": "pope-dionysius",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 269.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.30, 7.32",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-eutychian",
+      "to": "pope-felix-i",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 275.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.32",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-caius",
+      "to": "pope-eutychian",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 283.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.32",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-marcellinus",
+      "to": "pope-caius",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Roman episcopal succession in 296.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.32",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-dionysius",
+      "to": "dionysius-of-alexandria",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "The two Dionysii corresponded over Trinitarian language; Dionysius of Rome rebuked apparent subordinationism, Dionysius of Alexandria clarified his position.",
+      "citations": [
+        {
+          "source": "Athanasius, De Sententia Dionysii",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 7.7-9",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "serapion-of-antioch",
+      "to": "theophilus-of-antioch",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Antiochene episcopal succession; Maximinus and Serapion followed Theophilus as bishops of Antioch. Late-2nd-c succession preserved only by Eusebius writing c. 320.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.24, 5.19, 6.12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "asclepiades-of-antioch",
+      "to": "serapion-of-antioch",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Antiochene episcopal succession c. 211; only attested by Eusebius writing a century later.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.11, 6.21",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "babylas-of-antioch",
+      "to": "asclepiades-of-antioch",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Antiochene episcopal succession via the brief intervening bishops Philetus and Zebinus reported only by Eusebius; no contemporary attestation.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.21, 6.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "demetrian-of-antioch",
+      "to": "babylas-of-antioch",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Antiochene episcopal succession after Babylas' martyrdom; preserved only by Eusebius without contemporary documentation.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.39, 7.5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-samosata",
+      "to": "demetrian-of-antioch",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Paul of Samosata succeeded Demetrian as bishop of Antioch c. 260; preserved by Eusebius (HE 7.27) without contemporaneous Antiochene attestation.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "dionysius-of-alexandria",
+      "to": "paul-of-samosata",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Dionysius of Alexandria wrote against Paul's adoptionist Christology; later synods at Antioch deposed Paul.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.27-30",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "methodius-of-olympus",
+      "to": "origen-of-alexandria",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Methodius wrote against Origen's doctrines of pre-existence of souls and the resurrection body in his Aglaophon (On the Resurrection).",
+      "citations": [
+        {
+          "source": "Methodius, On the Resurrection (in Photius, Bibl. cod. 234)",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 83",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "pamphilus-of-caesarea",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Eusebius styled himself 'Pamphili' in tribute to his master Pamphilus, with whom he co-authored the Apology for Origen.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.32, 7.32",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 75, 81",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pamphilus-of-caesarea",
+      "to": "origen-of-alexandria",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Pamphilus copied, collected and defended Origen's works; co-author of an Apology for Origen.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6.32",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 75",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "origen-of-alexandria",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Book 6 of the Historia Ecclesiastica is largely devoted to Origen, drawing on his letters and works.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 6 passim",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "lactantius",
+      "to": "minucius-felix",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Lactantius praises Minucius Felix's Octavius in his survey of Latin apologists.",
+      "citations": [
+        {
+          "source": "Lactantius, Divinae Institutiones 5.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "athenagoras-of-athens",
+      "to": "justin-martyr",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Athenagoras' Legatio shares apologetic strategy with Justin; direct dependence is debated but plausible.",
+      "citations": [
+        {
+          "source": "Quasten, Patrology vol. 1, pp. 229-236",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "irenaeus-of-lyons",
+      "to": "pope-eleutherius",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Irenaeus carried a letter from the Gallic confessors to Eleutherius during the Montanist controversy.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 5.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "origen-of-alexandria",
+      "to": "hippolytus-of-rome",
+      "type": "met",
+      "strength": "tradition",
+      "notes": "Jerome reports that Origen heard Hippolytus preach during a visit to Rome c. 212.",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 61",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-stephen-i",
+      "to": "dionysius-of-alexandria",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Dionysius wrote to Stephen urging moderation in the rebaptism dispute.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 7.5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "irenaeus-of-lyons",
+      "to": "justin-martyr",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Irenaeus quotes Justin's lost work Against Marcion by name and follows Justin's anti-heretical scheme.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 4.6.2",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 5.26.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "justin-martyr",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Eusebius devotes substantial space to Justin's life, works, and martyrdom in HE 4.16-18, quoting from his apologies and Dialogue with Trypho.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.16-18",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "melito-of-sardis",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Eusebius preserves substantial fragments of Melito (including the canon list and the Apology to Marcus Aurelius) in HE 4.26.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "polycrates-of-ephesus",
+      "to": "melito-of-sardis",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "In his letter to Pope Victor preserved by Eusebius, Polycrates names Melito of Sardis among the 'great luminaries' of Asia who kept the Quartodeciman Pascha.",
+      "citations": [
+        {
+          "source": "Polycrates, Letter to Victor, in Eusebius Hist. Eccl. 5.24.5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "athenagoras-of-athens",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Athenagoras is mentioned by Methodius and Philip of Side rather than by Eusebius's HE proper; the link is via the later patrologists who preserved his works.",
+      "citations": [
+        {
+          "source": "Philip of Side, Hist. Christ. fragm. (in Dodwell)",
+          "kind": "primary"
+        },
+        {
+          "source": "Methodius, On the Resurrection (cited in Photius, Bibl. cod. 234)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "lactantius",
+      "to": "constantine-the-great",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Jerome reports that in his old age Lactantius was tutor in Latin to Crispus, son of Constantine, in Gaul. Lactantius dedicated De Mortibus Persecutorum within Constantine's circle.",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 80",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Chronicon ad ann. 318",
+          "kind": "primary"
+        }
+      ]
+    }
+  ]
+}

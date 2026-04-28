@@ -1,0 +1,2433 @@
+{
+  "era": "post-nicene",
+  "people": [
+    {
+      "id": "pseudo-dionysius-the-areopagite",
+      "name": "Pseudo-Dionysius the Areopagite",
+      "alt_names": [
+        "Dionysius the Areopagite",
+        "Denys",
+        "Pseudo-Denys"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 530,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "syria",
+      "role": [
+        "theologian",
+        "monk"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Anonymous late 5th/early 6th-century Syrian Christian Neoplatonist who wrote under the pseudonym of Dionysius the Areopagite (Acts 17:34). Author of the Corpus Areopagiticum: Divine Names, Mystical Theology, Celestial Hierarchy, Ecclesiastical Hierarchy, and Letters. Hugely influential on later mystical and scholastic theology. NOT Paul's Athenian convert; identity disputed.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pseudo-Dionysius_the_Areopagite",
+      "wikidata_id": "Q312816",
+      "citations": [
+        {
+          "source": "Pseudo-Dionysius, De Divinis Nominibus",
+          "kind": "primary"
+        },
+        {
+          "source": "Pseudo-Dionysius, De Mystica Theologia",
+          "kind": "primary"
+        },
+        {
+          "source": "ODCC s.v. Dionysius (5)",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "id": "boethius",
+      "name": "Boethius",
+      "alt_names": [
+        "Anicius Manlius Severinus Boethius"
+      ],
+      "born": 477,
+      "born_circa": true,
+      "died": 524,
+      "died_circa": true,
+      "birth_place": "Rome",
+      "death_place": "Pavia",
+      "region": "west",
+      "role": [
+        "theologian",
+        "layman",
+        "martyr"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Roman Christian senator, philosopher, and theologian. Wrote the Consolation of Philosophy in prison and the theological Opuscula Sacra (Tractates) defending Chalcedonian Christology and Trinitarian doctrine. Executed under Theodoric. Bridges classical philosophy and medieval scholasticism.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Boethius",
+      "wikidata_id": "Q102851",
+      "citations": [
+        {
+          "source": "Boethius, De Consolatione Philosophiae",
+          "kind": "primary"
+        },
+        {
+          "source": "Boethius, Opuscula Sacra (Contra Eutychen et Nestorium, De Trinitate)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "cassiodorus",
+      "name": "Cassiodorus",
+      "alt_names": [
+        "Flavius Magnus Aurelius Cassiodorus Senator"
+      ],
+      "born": 485,
+      "born_circa": true,
+      "died": 585,
+      "died_circa": true,
+      "birth_place": "Scylletium",
+      "death_place": "Vivarium",
+      "region": "west",
+      "role": [
+        "theologian",
+        "monk",
+        "layman"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Roman statesman who founded the monastery of Vivarium in Calabria. His Institutiones preserved classical and Christian learning; wrote a commentary on the Psalms and the Historia Ecclesiastica Tripartita.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cassiodorus",
+      "wikidata_id": "Q192365",
+      "citations": [
+        {
+          "source": "Cassiodorus, Institutiones Divinarum et Saecularium Litterarum",
+          "kind": "primary"
+        },
+        {
+          "source": "Cassiodorus, Expositio Psalmorum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "benedict-of-nursia",
+      "name": "Benedict of Nursia",
+      "alt_names": [
+        "St Benedict"
+      ],
+      "born": 480,
+      "born_circa": true,
+      "died": 547,
+      "died_circa": true,
+      "birth_place": "Nursia",
+      "death_place": "Monte Cassino",
+      "region": "west",
+      "role": [
+        "monk"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Founder of Western monasticism. Established Monte Cassino c. 529 and authored the Rule of St Benedict, which became the foundational rule for Western cenobitic life. Known almost entirely through Gregory the Great's Dialogues Book 2.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Benedict_of_Nursia",
+      "wikidata_id": "Q44265",
+      "citations": [
+        {
+          "source": "Benedict, Regula",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory the Great, Dialogues 2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "scholastica",
+      "name": "Scholastica",
+      "alt_names": [],
+      "born": 480,
+      "born_circa": true,
+      "died": 543,
+      "died_circa": true,
+      "birth_place": "Nursia",
+      "death_place": "Plombariola",
+      "region": "west",
+      "role": [
+        "monk"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Sister (traditionally twin) of Benedict of Nursia. Founded a women's monastic community near Monte Cassino. Known from Gregory the Great's Dialogues.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Scholastica",
+      "wikidata_id": "Q231300",
+      "citations": [
+        {
+          "source": "Gregory the Great, Dialogues 2.33-34",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gregory-the-great",
+      "name": "Pope Gregory I (the Great)",
+      "alt_names": [
+        "Gregory the Great",
+        "Gregorius Magnus"
+      ],
+      "born": 540,
+      "born_circa": true,
+      "died": 604,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian",
+        "monk"
+      ],
+      "see": "Rome",
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Pope from 590-604 and one of the four traditional Latin Doctors of the Church. Wrote the Moralia in Job, Pastoral Rule, Dialogues, and ~850 letters. Sent the Gregorian mission under Augustine to convert the Anglo-Saxons. Reformed liturgy and chant; deeply indebted to Augustine.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Gregory_I",
+      "wikidata_id": "Q42827",
+      "citations": [
+        {
+          "source": "Gregory the Great, Moralia in Job",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory the Great, Regula Pastoralis",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory the Great, Registrum Epistolarum",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Hist. Eccl. 2.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "augustine-of-canterbury",
+      "name": "Augustine of Canterbury",
+      "alt_names": [
+        "Austin of Canterbury"
+      ],
+      "born": 534,
+      "born_circa": true,
+      "died": 604,
+      "died_circa": true,
+      "birth_place": "Rome",
+      "death_place": "Canterbury",
+      "region": "west",
+      "role": [
+        "bishop",
+        "monk"
+      ],
+      "see": "Canterbury",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "First Archbishop of Canterbury. Sent by Pope Gregory the Great in 596 to evangelize the Anglo-Saxons; baptized King Æthelberht of Kent. Founder of the English church hierarchy.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Augustine_of_Canterbury",
+      "wikidata_id": "Q32520",
+      "citations": [
+        {
+          "source": "Bede, Hist. Eccl. 1.23-2.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory the Great, Registrum Epistolarum 6.51, 8.29, 11.36",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "isidore-of-seville",
+      "name": "Isidore of Seville",
+      "alt_names": [
+        "Isidorus Hispalensis"
+      ],
+      "born": 560,
+      "born_circa": true,
+      "died": 636,
+      "died_circa": false,
+      "birth_place": "Cartagena",
+      "death_place": "Seville",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Seville",
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Archbishop of Seville and last of the Latin Fathers. Encyclopedist whose Etymologiae preserved classical learning for the Middle Ages. Presided at the Fourth Council of Toledo (633).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Isidore_of_Seville",
+      "wikidata_id": "Q166876",
+      "citations": [
+        {
+          "source": "Isidore, Etymologiae",
+          "kind": "primary"
+        },
+        {
+          "source": "Isidore, De Viris Illustribus",
+          "kind": "primary"
+        },
+        {
+          "source": "Braulio of Saragossa, Renotatio Librorum Isidori",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "leander-of-seville",
+      "name": "Leander of Seville",
+      "alt_names": [],
+      "born": 534,
+      "born_circa": true,
+      "died": 600,
+      "died_circa": true,
+      "birth_place": "Cartagena",
+      "death_place": "Seville",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Seville",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Archbishop of Seville and elder brother of Isidore. Friend of Gregory the Great (met in Constantinople). Instrumental in the conversion of the Visigothic kings from Arianism to Catholic Christianity at the Third Council of Toledo (589).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Leander_of_Seville",
+      "wikidata_id": "Q577125",
+      "citations": [
+        {
+          "source": "Isidore, De Viris Illustribus 41",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory the Great, Registrum Epistolarum 1.41, 5.53, 9.121",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "fulgentius-of-ruspe",
+      "name": "Fulgentius of Ruspe",
+      "alt_names": [],
+      "born": 467,
+      "born_circa": true,
+      "died": 533,
+      "died_circa": true,
+      "birth_place": "Telepte",
+      "death_place": "Ruspe",
+      "region": "africa",
+      "role": [
+        "bishop",
+        "theologian",
+        "monk"
+      ],
+      "see": "Ruspe",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "African bishop and major defender of Augustinian theology against Arianism and semi-Pelagianism. Exiled to Sardinia by the Vandal king Thrasamund. Wrote De Fide ad Petrum and works against Arians.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Fulgentius_of_Ruspe",
+      "wikidata_id": "Q380089",
+      "citations": [
+        {
+          "source": "Fulgentius, De Fide ad Petrum",
+          "kind": "primary"
+        },
+        {
+          "source": "Ferrandus, Vita Fulgentii",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "caesarius-of-arles",
+      "name": "Caesarius of Arles",
+      "alt_names": [],
+      "born": 470,
+      "born_circa": true,
+      "died": 542,
+      "died_circa": false,
+      "birth_place": "Chalon-sur-Saône",
+      "death_place": "Arles",
+      "region": "gaul",
+      "role": [
+        "bishop",
+        "monk"
+      ],
+      "see": "Arles",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Arles and prolific preacher. Presided at the Council of Orange (529) which condemned semi-Pelagianism and affirmed Augustinian grace. Author of monastic rules and ~250 surviving sermons.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Caesarius_of_Arles",
+      "wikidata_id": "Q304832",
+      "citations": [
+        {
+          "source": "Caesarius of Arles, Sermones",
+          "kind": "primary"
+        },
+        {
+          "source": "Council of Orange (529), Canones",
+          "kind": "primary"
+        },
+        {
+          "source": "Vita Caesarii",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "maximus-the-confessor",
+      "name": "Maximus the Confessor",
+      "alt_names": [
+        "Maximus Confessor",
+        "Maximos"
+      ],
+      "born": 580,
+      "born_circa": true,
+      "died": 662,
+      "died_circa": false,
+      "birth_place": "Constantinople",
+      "death_place": "Lazica",
+      "region": "east",
+      "role": [
+        "monk",
+        "theologian",
+        "martyr"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Greek monk and the principal theological opponent of Monothelitism. Defended two wills (divine and human) in Christ. Tried, mutilated (tongue and right hand cut off), and exiled by Constans II. Major systematizer of Greek patristic theology; deep influence on John of Damascus and later Byzantine theology.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Maximus_the_Confessor",
+      "wikidata_id": "Q206842",
+      "citations": [
+        {
+          "source": "Maximus, Opuscula Theologica et Polemica",
+          "kind": "primary"
+        },
+        {
+          "source": "Maximus, Ambigua",
+          "kind": "primary"
+        },
+        {
+          "source": "Maximus, Mystagogia",
+          "kind": "primary"
+        },
+        {
+          "source": "Relatio Motionis (Trial of Maximus)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "john-climacus",
+      "name": "John Climacus",
+      "alt_names": [
+        "John of the Ladder",
+        "John Scholasticus of Sinai"
+      ],
+      "born": 579,
+      "born_circa": true,
+      "died": 649,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Mount Sinai",
+      "region": "palestine",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Abbot of the monastery on Mount Sinai. Author of the Ladder of Divine Ascent (Klimax), a foundational text of Eastern Christian ascetical and mystical theology.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Climacus",
+      "wikidata_id": "Q317072",
+      "citations": [
+        {
+          "source": "John Climacus, Scala Paradisi",
+          "kind": "primary"
+        },
+        {
+          "source": "Daniel of Raithu, Vita Iohannis",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "sophronius-of-jerusalem",
+      "name": "Sophronius of Jerusalem",
+      "alt_names": [],
+      "born": 560,
+      "born_circa": true,
+      "died": 638,
+      "died_circa": false,
+      "birth_place": "Damascus",
+      "death_place": "Jerusalem",
+      "region": "palestine",
+      "role": [
+        "bishop",
+        "monk",
+        "theologian"
+      ],
+      "see": "Jerusalem",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Patriarch of Jerusalem (634-638). Surrendered the city to Caliph Umar in 637/638. First major opponent of Monothelitism; his Synodical Letter was a key dyothelite document. Friend of John Moschus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sophronius_of_Jerusalem",
+      "wikidata_id": "Q317773",
+      "citations": [
+        {
+          "source": "Sophronius, Epistula Synodica",
+          "kind": "primary"
+        },
+        {
+          "source": "Sophronius, Anacreontica",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "anastasius-of-sinai",
+      "name": "Anastasius of Sinai",
+      "alt_names": [
+        "Anastasius Sinaita"
+      ],
+      "born": 630,
+      "born_circa": true,
+      "died": 700,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Mount Sinai",
+      "region": "palestine",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Greek monk of Mount Sinai. Author of the Hodegos (Viae Dux) against Monophysites/Monothelites and Quaestiones et Responsiones. Important witness to Chalcedonian theology in the early Islamic period.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Anastasius_Sinaita",
+      "wikidata_id": "Q473291",
+      "citations": [
+        {
+          "source": "Anastasius of Sinai, Viae Dux (Hodegos)",
+          "kind": "primary"
+        },
+        {
+          "source": "Anastasius of Sinai, Quaestiones et Responsiones",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-martin-i",
+      "name": "Pope Martin I",
+      "alt_names": [],
+      "born": 590,
+      "born_circa": true,
+      "died": 655,
+      "died_circa": false,
+      "birth_place": "Todi",
+      "death_place": "Cherson",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Pope (649-655) who convened the Lateran Council of 649 condemning Monothelitism. Arrested by Constans II, tried in Constantinople, and exiled to Cherson where he died. Last pope venerated as a martyr.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Martin_I",
+      "wikidata_id": "Q172390",
+      "citations": [
+        {
+          "source": "Acta Concilii Lateranensis (649)",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 76",
+          "kind": "primary"
+        },
+        {
+          "source": "Commemoratio (Narratio de exilio sancti papae Martini)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-agatho",
+      "name": "Pope Agatho",
+      "alt_names": [],
+      "born": 577,
+      "born_circa": true,
+      "died": 681,
+      "died_circa": false,
+      "birth_place": "Sicily",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Pope (678-681) whose dogmatic letter to the Third Council of Constantinople (680-681) was accepted as a definitive statement of dyothelite Christology, condemning Monothelitism.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Agatho",
+      "wikidata_id": "Q104467",
+      "citations": [
+        {
+          "source": "Acta of the Third Council of Constantinople (681)",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 81",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-leo-ii",
+      "name": "Pope Leo II",
+      "alt_names": [],
+      "born": 611,
+      "born_circa": true,
+      "died": 683,
+      "died_circa": false,
+      "birth_place": "Sicily",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Pope (682-683) who confirmed the decrees of the Third Council of Constantinople, ratifying the condemnation of Monothelitism (and of his predecessor Honorius for negligence).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Leo_II",
+      "wikidata_id": "Q103328",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 82",
+          "kind": "primary"
+        },
+        {
+          "source": "Leo II, Epistula ad Constantinum imperatorem",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "bede-the-venerable",
+      "name": "Bede the Venerable",
+      "alt_names": [
+        "Venerable Bede",
+        "Beda Venerabilis"
+      ],
+      "born": 673,
+      "born_circa": true,
+      "died": 735,
+      "died_circa": false,
+      "birth_place": "Northumbria",
+      "death_place": "Jarrow",
+      "region": "west",
+      "role": [
+        "monk",
+        "theologian",
+        "presbyter"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Anglo-Saxon Benedictine monk at Jarrow. Author of Historia Ecclesiastica Gentis Anglorum, the principal source for early English Christianity. Wrote extensive biblical commentaries drawing on Augustine, Jerome, Ambrose, and Gregory the Great. Declared Doctor of the Church.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Bede",
+      "wikidata_id": "Q154938",
+      "citations": [
+        {
+          "source": "Bede, Historia Ecclesiastica Gentis Anglorum",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, De Temporum Ratione",
+          "kind": "primary"
+        },
+        {
+          "source": "Cuthbert, Epistola de obitu Bedae",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "aldhelm",
+      "name": "Aldhelm of Sherborne",
+      "alt_names": [
+        "Aldhelm"
+      ],
+      "born": 639,
+      "born_circa": true,
+      "died": 709,
+      "died_circa": false,
+      "birth_place": "Wessex",
+      "death_place": "Doulting",
+      "region": "west",
+      "role": [
+        "bishop",
+        "monk"
+      ],
+      "see": "Sherborne",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "First bishop of Sherborne and abbot of Malmesbury. Influential Anglo-Latin author of De Virginitate and treatises on metrics. Important figure in early English ecclesiastical culture.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Aldhelm",
+      "wikidata_id": "Q709718",
+      "citations": [
+        {
+          "source": "Aldhelm, De Virginitate",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Hist. Eccl. 5.18",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "boniface",
+      "name": "Boniface",
+      "alt_names": [
+        "Winfrid",
+        "Apostle of the Germans"
+      ],
+      "born": 675,
+      "born_circa": true,
+      "died": 754,
+      "died_circa": false,
+      "birth_place": "Wessex",
+      "death_place": "Dokkum",
+      "region": "west",
+      "role": [
+        "bishop",
+        "monk",
+        "martyr"
+      ],
+      "see": "Mainz",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Anglo-Saxon missionary and Archbishop of Mainz. Evangelized Frisia and Germany; martyred at Dokkum. Reorganized the Frankish church under papal authority. Extensive correspondence survives.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Boniface",
+      "wikidata_id": "Q160445",
+      "citations": [
+        {
+          "source": "Willibald, Vita Bonifatii",
+          "kind": "primary"
+        },
+        {
+          "source": "Boniface, Epistolae",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "john-of-damascus",
+      "name": "John of Damascus",
+      "alt_names": [
+        "Johannes Damascenus",
+        "Yuhanna ibn Mansur"
+      ],
+      "born": 675,
+      "born_circa": true,
+      "died": 749,
+      "died_circa": true,
+      "birth_place": "Damascus",
+      "death_place": "Mar Saba",
+      "region": "palestine",
+      "role": [
+        "monk",
+        "theologian",
+        "presbyter"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 3,
+      "short_bio": "Greek monk at Mar Saba and the traditional last of the Greek Fathers. Author of the Fount of Knowledge (including Dialectica, On Heresies, and De Fide Orthodoxa) — the great synthesis of Greek patristic theology. Wrote three Orations Against Those Who Attack the Holy Images defending icons during the iconoclast controversy.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/John_of_Damascus",
+      "wikidata_id": "Q51884",
+      "citations": [
+        {
+          "source": "John of Damascus, Expositio Fidei (De Fide Orthodoxa)",
+          "kind": "primary"
+        },
+        {
+          "source": "John of Damascus, Orationes de Imaginibus",
+          "kind": "primary"
+        },
+        {
+          "source": "John of Damascus, De Haeresibus",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "andrew-of-crete",
+      "name": "Andrew of Crete",
+      "alt_names": [],
+      "born": 660,
+      "born_circa": true,
+      "died": 740,
+      "died_circa": true,
+      "birth_place": "Damascus",
+      "death_place": "Lesbos",
+      "region": "east",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Gortyn (Crete)",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Archbishop of Crete and major Byzantine hymnographer. Author of the Great Canon, a penitential canon still used in Orthodox Lenten liturgy. Preached extensively in defense of icons.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Andrew_of_Crete",
+      "wikidata_id": "Q372688",
+      "citations": [
+        {
+          "source": "Andrew of Crete, Magnus Canon",
+          "kind": "primary"
+        },
+        {
+          "source": "Andrew of Crete, Homiliae",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "germanus-of-constantinople",
+      "name": "Germanus I of Constantinople",
+      "alt_names": [],
+      "born": 634,
+      "born_circa": true,
+      "died": 740,
+      "died_circa": true,
+      "birth_place": "Constantinople",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Constantinople",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Patriarch of Constantinople (715-730). Resigned rather than accept the iconoclast policy of Emperor Leo III. Author of liturgical commentaries (Historia Ecclesiastica) and letters defending the veneration of images.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Germanus_I_of_Constantinople",
+      "wikidata_id": "Q441464",
+      "citations": [
+        {
+          "source": "Germanus, Epistolae (in Mansi, Concilia)",
+          "kind": "primary"
+        },
+        {
+          "source": "Germanus, Historia Ecclesiastica et Mystica Contemplatio",
+          "kind": "primary"
+        },
+        {
+          "source": "Theophanes, Chronographia AM 6221-6222",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "romanos-the-melodist",
+      "name": "Romanos the Melodist",
+      "alt_names": [
+        "Romanos Melodos"
+      ],
+      "born": 490,
+      "born_circa": true,
+      "died": 556,
+      "died_circa": true,
+      "birth_place": "Emesa",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "deacon",
+        "theologian"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Greek hymnographer of Syrian origin. Composed dozens of kontakia for the Constantinopolitan liturgy under Justinian I. Considered the greatest of the Byzantine hymnographers.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Romanos_the_Melodist",
+      "wikidata_id": "Q221059",
+      "citations": [
+        {
+          "source": "Romanos, Cantica",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "severus-of-antioch",
+      "name": "Severus of Antioch",
+      "alt_names": [],
+      "born": 465,
+      "born_circa": true,
+      "died": 538,
+      "died_circa": false,
+      "birth_place": "Sozopolis",
+      "death_place": "Egypt",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Antioch",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Patriarch of Antioch (512-518) and the most important systematic theologian of miaphysite (non-Chalcedonian) Christianity. Deposed under Justin I; lived in exile in Egypt. Considered heterodox by Chalcedonians but a saint in Oriental Orthodox churches.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Severus_of_Antioch",
+      "wikidata_id": "Q729105",
+      "citations": [
+        {
+          "source": "Severus of Antioch, Liber contra impium Grammaticum",
+          "kind": "primary"
+        },
+        {
+          "source": "Severus of Antioch, Cathedral Homilies",
+          "kind": "primary"
+        },
+        {
+          "source": "Zachariah Rhetor, Vita Severi",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "jacob-of-serugh",
+      "name": "Jacob of Serugh",
+      "alt_names": [
+        "Mar Jacob"
+      ],
+      "born": 451,
+      "born_circa": true,
+      "died": 521,
+      "died_circa": false,
+      "birth_place": "Kurtam",
+      "death_place": "Serugh",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Batnae of Serugh",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Batnae in Serugh and prolific Syriac poet-theologian. Author of hundreds of metrical homilies (memre). Generally regarded as miaphysite-leaning though irenic; venerated by Syriac Orthodox and Maronites.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jacob_of_Serugh",
+      "wikidata_id": "Q947711",
+      "citations": [
+        {
+          "source": "Jacob of Serugh, Memre (Homiliae Metricae)",
+          "kind": "primary"
+        },
+        {
+          "source": "Jacob of Serugh, Letters",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "jacob-of-edessa",
+      "name": "Jacob of Edessa",
+      "alt_names": [],
+      "born": 640,
+      "born_circa": true,
+      "died": 708,
+      "died_circa": false,
+      "birth_place": "Antioch region",
+      "death_place": "Tell ʿAda",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Edessa",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Syriac Orthodox bishop of Edessa, scholar, grammarian, translator, and chronicler. Revised the Syriac Old Testament and wrote a continuation of Eusebius' Chronicle. Major figure of the Syriac renaissance.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jacob_of_Edessa",
+      "wikidata_id": "Q929541",
+      "citations": [
+        {
+          "source": "Jacob of Edessa, Chronicle",
+          "kind": "primary"
+        },
+        {
+          "source": "Jacob of Edessa, Hexaemeron",
+          "kind": "primary"
+        },
+        {
+          "source": "Jacob of Edessa, Letters",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "columba",
+      "name": "Columba",
+      "alt_names": [
+        "Colum Cille"
+      ],
+      "born": 521,
+      "born_circa": true,
+      "died": 597,
+      "died_circa": false,
+      "birth_place": "Gartan, Donegal",
+      "death_place": "Iona",
+      "region": "west",
+      "role": [
+        "monk",
+        "presbyter"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Irish monk who founded the monastery of Iona (563), launching point for the Christianization of Pictish and Northumbrian Britain. Known through Adomnán's Vita Columbae.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Columba",
+      "wikidata_id": "Q236326",
+      "citations": [
+        {
+          "source": "Adomnán, Vita Columbae",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Hist. Eccl. 3.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "columbanus",
+      "name": "Columbanus",
+      "alt_names": [
+        "Columban"
+      ],
+      "born": 543,
+      "born_circa": true,
+      "died": 615,
+      "died_circa": false,
+      "birth_place": "Leinster",
+      "death_place": "Bobbio",
+      "region": "west",
+      "role": [
+        "monk"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Irish missionary to Frankish Gaul and northern Italy. Founded the monasteries of Luxeuil, Annegray, and Bobbio. Wrote the Regula Columbani and letters to Pope Boniface IV defending the Irish Easter computus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Columbanus",
+      "wikidata_id": "Q319653",
+      "citations": [
+        {
+          "source": "Columbanus, Epistolae",
+          "kind": "primary"
+        },
+        {
+          "source": "Columbanus, Regula Monachorum",
+          "kind": "primary"
+        },
+        {
+          "source": "Jonas of Bobbio, Vita Columbani",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gregory-of-tours",
+      "name": "Gregory of Tours",
+      "alt_names": [
+        "Georgius Florentius Gregorius"
+      ],
+      "born": 538,
+      "born_circa": true,
+      "died": 594,
+      "died_circa": false,
+      "birth_place": "Clermont",
+      "death_place": "Tours",
+      "region": "gaul",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Tours",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Tours and principal historian of the Merovingian Franks. Author of the Decem Libri Historiarum (History of the Franks) and hagiographic works including the Glory of the Martyrs and Glory of the Confessors.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_of_Tours",
+      "wikidata_id": "Q67841",
+      "citations": [
+        {
+          "source": "Gregory of Tours, Decem Libri Historiarum",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Tours, Liber in Gloria Martyrum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "justinian-i",
+      "name": "Justinian I",
+      "alt_names": [
+        "Justinian the Great"
+      ],
+      "born": 482,
+      "born_circa": true,
+      "died": 565,
+      "died_circa": false,
+      "birth_place": "Tauresium",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "emperor",
+        "theologian"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Eastern Roman emperor (527-565). Convened the Second Council of Constantinople (553) condemning the Three Chapters. Wrote theological edicts and the hymn Ho Monogenes. Built Hagia Sophia and codified Roman law.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Justinian_I",
+      "wikidata_id": "Q41866",
+      "citations": [
+        {
+          "source": "Acta Concilii Constantinopolitani II (553)",
+          "kind": "primary"
+        },
+        {
+          "source": "Justinian, Edictum de recta fide",
+          "kind": "primary"
+        },
+        {
+          "source": "Procopius, De Bellis; Anecdota",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "heraclius",
+      "name": "Heraclius",
+      "alt_names": [],
+      "born": 575,
+      "born_circa": true,
+      "died": 641,
+      "died_circa": false,
+      "birth_place": "Cappadocia",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "emperor"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Byzantine emperor (610-641). Promulgated the Ekthesis (638) endorsing Monothelitism in an attempt to reconcile miaphysites and Chalcedonians. Recovered the True Cross from Persia (630).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Heraclius",
+      "wikidata_id": "Q41852",
+      "citations": [
+        {
+          "source": "Heraclius, Ekthesis (638)",
+          "kind": "primary"
+        },
+        {
+          "source": "Theophanes, Chronographia AM 6121-6131",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "constans-ii",
+      "name": "Constans II",
+      "alt_names": [
+        "Constans II Pogonatus"
+      ],
+      "born": 630,
+      "born_circa": false,
+      "died": 668,
+      "died_circa": false,
+      "birth_place": "Constantinople",
+      "death_place": "Syracuse",
+      "region": "east",
+      "role": [
+        "emperor"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Byzantine emperor (641-668) who issued the Typos (648) forbidding discussion of the wills in Christ. Persecuted Pope Martin I and Maximus the Confessor for resisting Monothelitism.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Constans_II",
+      "wikidata_id": "Q41613",
+      "citations": [
+        {
+          "source": "Constans II, Typos (648)",
+          "kind": "primary"
+        },
+        {
+          "source": "Theophanes, Chronographia AM 6141-6160",
+          "kind": "primary"
+        },
+        {
+          "source": "Liber Pontificalis 76",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "constantine-iv",
+      "name": "Constantine IV",
+      "alt_names": [],
+      "born": 652,
+      "born_circa": true,
+      "died": 685,
+      "died_circa": false,
+      "birth_place": "Constantinople",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "emperor"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Byzantine emperor (668-685). Convened the Third Council of Constantinople (680-681), the Sixth Ecumenical Council, which condemned Monothelitism and affirmed two wills in Christ.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Constantine_IV",
+      "wikidata_id": "Q41605",
+      "citations": [
+        {
+          "source": "Acta of the Third Council of Constantinople (681)",
+          "kind": "primary"
+        },
+        {
+          "source": "Theophanes, Chronographia AM 6160-6177",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "leo-iii-isaurian",
+      "name": "Leo III the Isaurian",
+      "alt_names": [
+        "Leo III"
+      ],
+      "born": 685,
+      "born_circa": true,
+      "died": 741,
+      "died_circa": false,
+      "birth_place": "Germanikeia",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "emperor"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Byzantine emperor (717-741). Initiated the first phase of iconoclasm c. 726-730, deposed Patriarch Germanus, and was opposed in writing by John of Damascus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Leo_III_the_Isaurian",
+      "wikidata_id": "Q31755",
+      "citations": [
+        {
+          "source": "Theophanes, Chronographia AM 6217-6233",
+          "kind": "primary"
+        },
+        {
+          "source": "John of Damascus, Orationes de Imaginibus 1-3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "john-moschus",
+      "name": "John Moschus",
+      "alt_names": [],
+      "born": 550,
+      "born_circa": true,
+      "died": 619,
+      "died_circa": true,
+      "birth_place": "Damascus",
+      "death_place": "Rome",
+      "region": "palestine",
+      "role": [
+        "monk"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Byzantine monk and friend of Sophronius of Jerusalem. Author of the Pratum Spirituale (Spiritual Meadow), a collection of edifying tales from monasteries of Palestine, Egypt, and Sinai.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Moschus",
+      "wikidata_id": "Q739920",
+      "citations": [
+        {
+          "source": "John Moschus, Pratum Spirituale",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "leontius-of-byzantium",
+      "name": "Leontius of Byzantium",
+      "alt_names": [],
+      "born": 485,
+      "born_circa": true,
+      "died": 543,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "east",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Greek monk and Chalcedonian theologian active in Constantinople. Developed the Christological concept of enhypostasis. Works include Contra Nestorianos et Eutychianos.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Leontius_of_Byzantium",
+      "wikidata_id": "Q601998",
+      "citations": [
+        {
+          "source": "Leontius of Byzantium, Contra Nestorianos et Eutychianos",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "venantius-fortunatus",
+      "name": "Venantius Fortunatus",
+      "alt_names": [],
+      "born": 530,
+      "born_circa": true,
+      "died": 610,
+      "died_circa": true,
+      "birth_place": "Treviso",
+      "death_place": "Poitiers",
+      "region": "gaul",
+      "role": [
+        "bishop",
+        "presbyter"
+      ],
+      "see": "Poitiers",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Italian-born poet and bishop of Poitiers. Composed the great passion hymns Vexilla Regis and Pange Lingua Gloriosi. Friend of Radegund and Gregory of Tours.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Venantius_Fortunatus",
+      "wikidata_id": "Q44934",
+      "citations": [
+        {
+          "source": "Venantius Fortunatus, Carmina",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Tours, Hist. Franc. 5.8; 9.39",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "ildefonsus-of-toledo",
+      "name": "Ildefonsus of Toledo",
+      "alt_names": [],
+      "born": 607,
+      "born_circa": true,
+      "died": 667,
+      "died_circa": false,
+      "birth_place": "Toledo",
+      "death_place": "Toledo",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Toledo",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Archbishop of Toledo (657-667). Disciple of Isidore. Wrote De Virginitate Sanctae Mariae and continued Isidore's De Viris Illustribus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ildefonsus_of_Toledo",
+      "wikidata_id": "Q456069",
+      "citations": [
+        {
+          "source": "Ildefonsus, De Virginitate Perpetua Sanctae Mariae",
+          "kind": "primary"
+        },
+        {
+          "source": "Ildefonsus, De Viris Illustribus",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "braulio-of-saragossa",
+      "name": "Braulio of Saragossa",
+      "alt_names": [],
+      "born": 590,
+      "born_circa": true,
+      "died": 651,
+      "died_circa": false,
+      "birth_place": null,
+      "death_place": "Saragossa",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Saragossa",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Saragossa and disciple of Isidore of Seville. Edited Isidore's Etymologiae and wrote the Renotatio Librorum Domini Isidori. Significant epistolary corpus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Braulio_of_Zaragoza",
+      "wikidata_id": "Q849117",
+      "citations": [
+        {
+          "source": "Braulio, Epistolae",
+          "kind": "primary"
+        },
+        {
+          "source": "Braulio, Renotatio Librorum Domini Isidori",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "theodore-of-tarsus",
+      "name": "Theodore of Tarsus",
+      "alt_names": [
+        "Theodore of Canterbury"
+      ],
+      "born": 602,
+      "born_circa": true,
+      "died": 690,
+      "died_circa": false,
+      "birth_place": "Tarsus",
+      "death_place": "Canterbury",
+      "region": "west",
+      "role": [
+        "bishop",
+        "monk"
+      ],
+      "see": "Canterbury",
+      "tradition_status": "post-nicene",
+      "significance": 2,
+      "short_bio": "Greek monk from Tarsus appointed Archbishop of Canterbury (668-690) by Pope Vitalian. Reorganized the English church and, with Hadrian, founded the Canterbury school of Greek and Latin learning.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Theodore_of_Tarsus",
+      "wikidata_id": "Q504529",
+      "citations": [
+        {
+          "source": "Bede, Hist. Eccl. 4.1-2",
+          "kind": "primary"
+        },
+        {
+          "source": "Penitentiale Theodori",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "wilfrid",
+      "name": "Wilfrid",
+      "alt_names": [],
+      "born": 633,
+      "born_circa": true,
+      "died": 709,
+      "died_circa": false,
+      "birth_place": "Northumbria",
+      "death_place": "Oundle",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "York",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Northumbrian bishop and champion of Roman over Celtic Christian usages at the Synod of Whitby (664). Founded monasteries at Ripon and Hexham.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Wilfrid",
+      "wikidata_id": "Q719721",
+      "citations": [
+        {
+          "source": "Stephen of Ripon, Vita Sancti Wilfridi",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Hist. Eccl. 3.25; 5.19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "cuthbert-of-lindisfarne",
+      "name": "Cuthbert of Lindisfarne",
+      "alt_names": [],
+      "born": 634,
+      "born_circa": true,
+      "died": 687,
+      "died_circa": false,
+      "birth_place": "Northumbria",
+      "death_place": "Inner Farne",
+      "region": "west",
+      "role": [
+        "bishop",
+        "monk"
+      ],
+      "see": "Lindisfarne",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Northumbrian monk and bishop of Lindisfarne. Patron saint of northern England; venerated through the prose and verse Vitae by Bede.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cuthbert",
+      "wikidata_id": "Q504518",
+      "citations": [
+        {
+          "source": "Bede, Vita Sancti Cuthberti (prosaica et metrica)",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Hist. Eccl. 4.27-32",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "eutychius-of-constantinople",
+      "name": "Eutychius of Constantinople",
+      "alt_names": [],
+      "born": 512,
+      "born_circa": true,
+      "died": 582,
+      "died_circa": false,
+      "birth_place": "Phrygia",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "bishop"
+      ],
+      "see": "Constantinople",
+      "tradition_status": "post-nicene",
+      "significance": 1,
+      "short_bio": "Patriarch of Constantinople (552-565, 577-582). Presided at the Second Council of Constantinople (553). Deposed by Justinian over the aphthartodocetic dispute and restored under Justin II.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Eutychius_of_Constantinople",
+      "wikidata_id": "Q1266046",
+      "citations": [
+        {
+          "source": "Eustratius, Vita Eutychii",
+          "kind": "primary"
+        },
+        {
+          "source": "Acta Concilii Constantinopolitani II (553)",
+          "kind": "primary"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "augustine-of-canterbury",
+      "to": "gregory-the-great",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Gregory commissioned Augustine to lead the mission to the Anglo-Saxons in 596 and exchanged letters with him giving instruction.",
+      "citations": [
+        {
+          "source": "Bede, Hist. Eccl. 1.23-1.32",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory the Great, Registrum Epistolarum 6.51, 11.36",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-the-great",
+      "to": "augustine-of-canterbury",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Surviving letters of Gregory to Augustine on missionary practice and church organization (the 'Libellus Responsionum').",
+      "citations": [
+        {
+          "source": "Gregory the Great, Registrum 11.56a",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Hist. Eccl. 1.27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-the-great",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Gregory draws constantly on Augustine's exegesis and theology in the Moralia and Regula Pastoralis.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Moralia in Job, passim",
+          "kind": "primary"
+        },
+        {
+          "source": "Markus, Gregory the Great and his World, ch. 3",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-the-great",
+      "to": "leander-of-seville",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Gregory met Leander in Constantinople when both were on diplomatic/ecclesial business; the Moralia in Job is dedicated to Leander.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Moralia in Job, Epistula ad Leandrum",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory the Great, Registrum 1.41, 5.53",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-the-great",
+      "to": "leander-of-seville",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Letters survive between the two.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Registrum 1.41, 5.53, 9.121",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-the-great",
+      "to": "benedict-of-nursia",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Gregory wrote the principal biography of Benedict in Dialogues Book 2 within ~50 years of Benedict's death, drawing on disciples' testimony.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Dialogues 2, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "isidore-of-seville",
+      "to": "leander-of-seville",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Isidore was raised and educated by his elder brother Leander, whom he succeeded in the see of Seville.",
+      "citations": [
+        {
+          "source": "Isidore, De Viris Illustribus 41",
+          "kind": "primary"
+        },
+        {
+          "source": "Braulio, Renotatio",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "isidore-of-seville",
+      "to": "leander-of-seville",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Isidore became Archbishop of Seville on Leander's death c. 600.",
+      "citations": [
+        {
+          "source": "Isidore, De Viris Illustribus 41",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "braulio-of-saragossa",
+      "to": "isidore-of-seville",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Braulio was Isidore's pupil; he edited the Etymologiae and wrote the Renotatio of his master's works.",
+      "citations": [
+        {
+          "source": "Braulio, Epistolae 2-4 (to Isidore)",
+          "kind": "primary"
+        },
+        {
+          "source": "Braulio, Renotatio Librorum Domini Isidori",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ildefonsus-of-toledo",
+      "to": "isidore-of-seville",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Ildefonsus is traditionally said to have studied under Isidore at Seville; the connection is plausible but rests on later sources.",
+      "citations": [
+        {
+          "source": "Cixila, Vita Hildefonsi",
+          "kind": "primary"
+        },
+        {
+          "source": "ODCC s.v. Ildefonsus",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "fulgentius-of-ruspe",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Fulgentius is the most thorough sixth-century Augustinian, citing him constantly in De Fide and the anti-Arian/anti-Pelagian works.",
+      "citations": [
+        {
+          "source": "Fulgentius, De Fide ad Petrum",
+          "kind": "primary"
+        },
+        {
+          "source": "Fulgentius, Contra Fabianum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "caesarius-of-arles",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "The Council of Orange (529) under Caesarius drew its canons largely from Augustinian florilegia compiled by Prosper.",
+      "citations": [
+        {
+          "source": "Council of Orange (529), Canones",
+          "kind": "primary"
+        },
+        {
+          "source": "Caesarius, Sermones",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "maximus-the-confessor",
+      "to": "pseudo-dionysius-the-areopagite",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Maximus wrote scholia on the Dionysian corpus (transmitted with John of Scythopolis' scholia) and integrated Dionysian theology into his own.",
+      "citations": [
+        {
+          "source": "Maximus, Ambigua ad Iohannem",
+          "kind": "primary"
+        },
+        {
+          "source": "Scholia in Corpus Areopagiticum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "maximus-the-confessor",
+      "to": "pope-martin-i",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Maximus collaborated with Martin in preparing and defending the Lateran Council of 649; both were arrested by Constans II.",
+      "citations": [
+        {
+          "source": "Acta Concilii Lateranensis (649)",
+          "kind": "primary"
+        },
+        {
+          "source": "Relatio Motionis",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "maximus-the-confessor",
+      "to": "sophronius-of-jerusalem",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Maximus revered Sophronius as his spiritual master and mentor in opposing Monothelitism.",
+      "citations": [
+        {
+          "source": "Maximus, Opusc. 12 (PG 91, 142)",
+          "kind": "primary"
+        },
+        {
+          "source": "Maximus, Epistola 13",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "maximus-the-confessor",
+      "to": "constans-ii",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Maximus refused to accept the Typos and was tried, mutilated, and exiled by Constans II.",
+      "citations": [
+        {
+          "source": "Relatio Motionis",
+          "kind": "primary"
+        },
+        {
+          "source": "Disputatio Bizyae",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-martin-i",
+      "to": "constans-ii",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Martin convened the Lateran Council of 649 against the Typos; Constans had him arrested, tried in Constantinople, and exiled to Cherson.",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 76",
+          "kind": "primary"
+        },
+        {
+          "source": "Commemoratio (Narratio de exilio)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "sophronius-of-jerusalem",
+      "to": "john-moschus",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Sophronius was the long-time disciple and travel companion of John Moschus; Moschus dedicated the Pratum Spirituale to him.",
+      "citations": [
+        {
+          "source": "John Moschus, Pratum Spirituale, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-agatho",
+      "to": "constantine-iv",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Agatho's dogmatic letter to Emperor Constantine IV was read at the Third Council of Constantinople and accepted as the standard of dyothelite faith.",
+      "citations": [
+        {
+          "source": "Acta of the Third Council of Constantinople (681), Session 4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-leo-ii",
+      "to": "pope-agatho",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Leo II succeeded Agatho as Bishop of Rome in 682.",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 82",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-leo-ii",
+      "to": "constantine-iv",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Leo II ratified the acts of the Third Council of Constantinople in correspondence with Constantine IV.",
+      "citations": [
+        {
+          "source": "Leo II, Epistula ad Constantinum imperatorem",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-of-damascus",
+      "to": "maximus-the-confessor",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "John of Damascus' Christology in De Fide Orthodoxa depends heavily on Maximus' formulations.",
+      "citations": [
+        {
+          "source": "John of Damascus, De Fide Orthodoxa 3",
+          "kind": "primary"
+        },
+        {
+          "source": "Louth, St John Damascene, Oxford 2002, ch. 6",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "john-of-damascus",
+      "to": "pseudo-dionysius-the-areopagite",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "John quotes Pseudo-Dionysius extensively in De Fide Orthodoxa, especially in discussions of the divine names and apophatic theology.",
+      "citations": [
+        {
+          "source": "John of Damascus, De Fide Orthodoxa 1.4, 1.12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-of-damascus",
+      "to": "basil-of-caesarea",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "John cites the Cappadocians (Basil, Gregory of Nazianzus, Gregory of Nyssa) throughout the Fount of Knowledge.",
+      "citations": [
+        {
+          "source": "John of Damascus, De Fide Orthodoxa, passim",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-of-damascus",
+      "to": "gregory-of-nazianzus",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "John drew especially on Gregory of Nazianzus' Theological Orations.",
+      "citations": [
+        {
+          "source": "John of Damascus, De Fide Orthodoxa, passim",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-of-damascus",
+      "to": "leo-iii-isaurian",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "John composed the three Orations Against Those Who Attack the Holy Images in response to the iconoclast policy of Leo III, writing safely from outside the empire under Umayyad rule.",
+      "citations": [
+        {
+          "source": "John of Damascus, Orationes de Imaginibus 1-3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "germanus-of-constantinople",
+      "to": "leo-iii-isaurian",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Germanus refused to subscribe to Leo III's iconoclast edict and was forced to abdicate the patriarchate in 730.",
+      "citations": [
+        {
+          "source": "Theophanes, Chronographia AM 6221-6222",
+          "kind": "primary"
+        },
+        {
+          "source": "Germanus, Epistolae (in Mansi)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "bede-the-venerable",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Bede draws on Augustine throughout his commentaries; his exegetical method is fundamentally Augustinian.",
+      "citations": [
+        {
+          "source": "Bede, In Genesim, In Lucam, etc.",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Retractatio in Acta Apostolorum, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "bede-the-venerable",
+      "to": "jerome",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Bede uses Jerome's commentaries and the Vulgate extensively.",
+      "citations": [
+        {
+          "source": "Bede, In Marcum, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "bede-the-venerable",
+      "to": "gregory-the-great",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Bede cites Gregory's Moralia, Pastoral Rule, and Homilies pervasively, and gives him the most affectionate treatment in the Historia Ecclesiastica.",
+      "citations": [
+        {
+          "source": "Bede, Hist. Eccl. 2.1",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, In Cantica Canticorum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "bede-the-venerable",
+      "to": "ambrose",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Bede cites Ambrose among his standard Latin Fathers in his commentaries.",
+      "citations": [
+        {
+          "source": "Bede, In Lucam, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "boethius",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Boethius cites Augustine as authority in De Trinitate and follows Augustinian Trinitarian formulations.",
+      "citations": [
+        {
+          "source": "Boethius, De Trinitate, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "benedict-of-nursia",
+      "to": "maurus",
+      "type": "taught",
+      "strength": "tradition",
+      "notes": "Maurus and Placidus are presented as Benedict's most famous disciples in Gregory's Dialogues; the historicity of their roles is hagiographic.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Dialogues 2.3-2.7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "benedict-of-nursia",
+      "to": "placidus",
+      "type": "taught",
+      "strength": "tradition",
+      "notes": "Placidus is named alongside Maurus as a child oblate trained by Benedict.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Dialogues 2.3-2.7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "scholastica",
+      "to": "benedict-of-nursia",
+      "type": "met",
+      "strength": "tradition",
+      "notes": "Gregory's Dialogues describe annual visits between Benedict and his sister Scholastica; she is consecrated to God from infancy in his account.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Dialogues 2.33-2.34",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "severus-of-antioch",
+      "to": "leontius-of-byzantium",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Severus' miaphysite Christology was the principal target of Chalcedonian neo-Chalcedonian theologians like Leontius.",
+      "citations": [
+        {
+          "source": "Leontius of Byzantium, Contra Nestorianos et Eutychianos",
+          "kind": "primary"
+        },
+        {
+          "source": "Severus, Liber contra impium Grammaticum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "severus-of-antioch",
+      "to": "cyril-of-alexandria",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Severus appealed to Cyril's mia physis formula as the basis of his Christology.",
+      "citations": [
+        {
+          "source": "Severus, Liber contra impium Grammaticum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "justinian-i",
+      "to": "eutychius-of-constantinople",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Justinian deposed Eutychius in 565 over the aphthartodocetic question.",
+      "citations": [
+        {
+          "source": "Evagrius Scholasticus, Hist. Eccl. 4.38",
+          "kind": "primary"
+        },
+        {
+          "source": "Eustratius, Vita Eutychii",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eutychius-of-constantinople",
+      "to": "gregory-the-great",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "While Gregory was apocrisarius in Constantinople he disputed publicly with Eutychius over the corporeality of the resurrection body.",
+      "citations": [
+        {
+          "source": "Gregory the Great, Moralia in Job 14.72-74",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jacob-of-serugh",
+      "to": "ephrem-the-syrian",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Jacob writes in the metrical-homiletic Syriac tradition pioneered by Ephrem and explicitly invokes him.",
+      "citations": [
+        {
+          "source": "Jacob of Serugh, Memra on Ephrem",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jacob-of-edessa",
+      "to": "jacob-of-serugh",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Jacob of Edessa works within the Syriac Orthodox literary tradition shaped by Jacob of Serugh; explicit citations are scattered.",
+      "citations": [
+        {
+          "source": "Jacob of Edessa, Letters",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "columba",
+      "to": "patrick-of-ireland",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Columba stands in the Irish monastic tradition that traces back to Patrick; direct lineage is hagiographic.",
+      "citations": [
+        {
+          "source": "Adomnán, Vita Columbae, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "columbanus",
+      "to": "gregory-the-great",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Columbanus wrote to Pope Gregory I on the date of Easter (Epistola 1).",
+      "citations": [
+        {
+          "source": "Columbanus, Epistola 1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "venantius-fortunatus",
+      "to": "gregory-of-tours",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Fortunatus was a close friend of Gregory of Tours; Gregory mentions him repeatedly and Fortunatus dedicated poems to him.",
+      "citations": [
+        {
+          "source": "Gregory of Tours, Hist. Franc. 5.8; 9.39",
+          "kind": "primary"
+        },
+        {
+          "source": "Venantius Fortunatus, Carmina 5.8a",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "theodore-of-tarsus",
+      "to": "augustine-of-canterbury",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Theodore was the seventh (not direct) Archbishop of Canterbury after Augustine, sent by Pope Vitalian. The compressed succession is reported by Bede ~70 years later.",
+      "citations": [
+        {
+          "source": "Bede, Hist. Eccl. 4.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "wilfrid",
+      "to": "theodore-of-tarsus",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Theodore divided Wilfrid's Northumbrian diocese without his consent, leading to Wilfrid's appeals to Rome. Stephen of Ripon's Vita Wilfridi is the principal source.",
+      "citations": [
+        {
+          "source": "Stephen of Ripon, Vita Wilfridi 24-30",
+          "kind": "primary"
+        },
+        {
+          "source": "Bede, Hist. Eccl. 4.12-13",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cuthbert-of-lindisfarne",
+      "to": "bede-the-venerable",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Bede wrote both prose and verse Lives of Cuthbert based on Lindisfarne testimony; he revered him as a saint of his own region.",
+      "citations": [
+        {
+          "source": "Bede, Vita Cuthberti, prologue",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "boniface",
+      "to": "aldhelm",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Boniface, formed in the West Saxon school, knew and used Aldhelm's writings and praised him.",
+      "citations": [
+        {
+          "source": "Boniface, Epistolae 33",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "boniface",
+      "to": "gregory-the-great",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Boniface modelled his missionary methods on Gregory's instructions to Augustine of Canterbury and corresponded with Gregory's papal successors.",
+      "citations": [
+        {
+          "source": "Boniface, Epistolae",
+          "kind": "primary"
+        },
+        {
+          "source": "Willibald, Vita Bonifatii",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "andrew-of-crete",
+      "to": "john-of-damascus",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Andrew and John are roughly contemporary Damascene-trained hymnographers; later tradition links them but no direct contact is documented.",
+      "citations": [
+        {
+          "source": "Synaxarion Constantinopolitanum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "anastasius-of-sinai",
+      "to": "severus-of-antioch",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Anastasius' Hodegos is a sustained refutation of Severan miaphysite Christology.",
+      "citations": [
+        {
+          "source": "Anastasius of Sinai, Viae Dux",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cassiodorus",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Cassiodorus' Expositio Psalmorum is built on Augustine's Enarrationes in Psalmos.",
+      "citations": [
+        {
+          "source": "Cassiodorus, Expositio Psalmorum, praefatio",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cassiodorus",
+      "to": "boethius",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Cassiodorus and Boethius served together at the Ostrogothic court of Theodoric; Cassiodorus' Variae include letters drafted for Boethius.",
+      "citations": [
+        {
+          "source": "Cassiodorus, Variae 1.45",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "romanos-the-melodist",
+      "to": "ephrem-the-syrian",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Romanos, a Syrian-born deacon writing in Greek at Constantinople under Anastasius and Justinian, draws heavily on Ephrem's Syriac madrashe and memre in form and theology. Direct quotation is not preserved; the dependence is the modern scholarly consensus.",
+      "citations": [
+        {
+          "source": "Petersen, The Diatessaron and Ephrem Syrus as Sources of Romanos the Melodist (CSCO 475, 1985)",
+          "kind": "secondary"
+        },
+        {
+          "source": "Brock, From Ephrem to Romanos (Variorum 1999)",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "venantius-fortunatus",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Fortunatus draws on Augustinian theology and language across his hymns and prose Lives; the dependence is acknowledged by modern editors though no explicit citation formula appears.",
+      "citations": [
+        {
+          "source": "George, Venantius Fortunatus: A Latin Poet in Merovingian Gaul (Oxford 1992), pp. 105-125",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-of-tours",
+      "to": "sulpicius-severus",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Gregory uses Sulpicius's Vita Martini extensively as the source for his own four books of miracles of Saint Martin and cites it explicitly.",
+      "citations": [
+        {
+          "source": "Gregory of Tours, Libri de virtutibus sancti Martini, prologue and 1.2",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Tours, Hist. Franc. 1.36; 1.39; 10.31",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-of-tours",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Gregory cites Augustine's De civitate Dei and Augustine's exegesis at several points in his Histories and miracle books.",
+      "citations": [
+        {
+          "source": "Gregory of Tours, Hist. Franc. 1 prologue",
+          "kind": "primary"
+        },
+        {
+          "source": "Heinzelmann, Gregory of Tours: History and Society in the Sixth Century (CUP 2001), pp. 110-114",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "heraclius",
+      "to": "sophronius-of-jerusalem",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Heraclius promoted Monoenergism/Monothelitism via the Ekthesis (638) and Patriarch Sergius's Psephos; Sophronius led ecclesial opposition culminating in his synodical letter of 634.",
+      "citations": [
+        {
+          "source": "Sophronius, Synodical Letter (634), in ACO ser. II vol. 2",
+          "kind": "primary"
+        },
+        {
+          "source": "Theophanes, Chronographia AM 6121",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-agatho",
+      "to": "pope-leo-i",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Agatho's dogmatic letter (Tomus Agathonis) read at the Third Council of Constantinople (681) explicitly invokes and incorporates the Tome of Leo as the standard of Chalcedonian dyothelite Christology.",
+      "citations": [
+        {
+          "source": "Agatho, Epistula ad Constantinum imperatorem, in ACO ser. II vol. 2.1, pp. 52-122",
+          "kind": "primary"
+        },
+        {
+          "source": "Acta of the Third Council of Constantinople (681), Session 4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-climacus",
+      "to": "evagrius-ponticus",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "The Ladder of Divine Ascent depends pervasively on Evagrian ascetic psychology (the eight logismoi, apatheia) though it carefully avoids Evagrius's name; the dependence is uncontroversial in scholarship.",
+      "citations": [
+        {
+          "source": "John Climacus, Ladder of Divine Ascent, steps 13-15, 26",
+          "kind": "primary"
+        },
+        {
+          "source": "Chryssavgis, John Climacus: From the Egyptian Desert to the Sinaite Mountain (Ashgate 2004), ch. 4",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "maximus-the-confessor",
+      "to": "john-climacus",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Maximus (d. 662) draws on Sinaitic ascetic literature; Climacus (d. c. 649) is older. Direct quotation is not formal but Maximus's spiritual anthropology shares Climacus's framework.",
+      "citations": [
+        {
+          "source": "Louth, Maximus the Confessor (Routledge 1996), pp. 35-37",
+          "kind": "secondary"
+        }
+      ]
+    }
+  ]
+}

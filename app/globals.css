@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+body {
+  @apply bg-parchment text-ink font-sans antialiased;
+}
+
+h1, h2, h3 {
+  @apply font-serif tracking-tight;
+}

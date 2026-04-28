@@ -1,0 +1,3627 @@
+{
+  "era": "nicene",
+  "people": [
+    {
+      "id": "constantine-the-great",
+      "name": "Constantine the Great",
+      "alt_names": [
+        "Constantine I",
+        "Flavius Valerius Constantinus"
+      ],
+      "born": 272,
+      "born_circa": true,
+      "died": 337,
+      "died_circa": false,
+      "birth_place": "Naissus",
+      "death_place": "Nicomedia",
+      "region": "east",
+      "role": [
+        "emperor"
+      ],
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "First Christian Roman emperor. Issued the Edict of Milan (313), convened the Council of Nicaea (325), and was baptized on his deathbed by Eusebius of Nicomedia.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Constantine_the_Great",
+      "wikidata_id": "Q8413",
+      "citations": [
+        {
+          "source": "Eusebius, Vita Constantini 1-4",
+          "kind": "primary"
+        },
+        {
+          "source": "Lactantius, De Mortibus Persecutorum 44-48",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.1-1.39",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "eusebius-of-caesarea",
+      "name": "Eusebius of Caesarea",
+      "alt_names": [
+        "Eusebius Pamphili"
+      ],
+      "born": 263,
+      "born_circa": true,
+      "died": 339,
+      "died_circa": true,
+      "birth_place": "Caesarea Maritima",
+      "death_place": "Caesarea Maritima",
+      "region": "palestine",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Caesarea Maritima",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Father of Church History. Bishop of Caesarea, biographer of Constantine, and author of the Ecclesiastical History, the chief source for the first three centuries of Christianity.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Eusebius",
+      "wikidata_id": "Q142999",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. (passim, autobiographical references)",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 81",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.8",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "athanasius-of-alexandria",
+      "name": "Athanasius of Alexandria",
+      "alt_names": [
+        "Athanasius the Great"
+      ],
+      "born": 296,
+      "born_circa": true,
+      "died": 373,
+      "died_circa": false,
+      "birth_place": "Alexandria",
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Alexandria and chief defender of Nicene orthodoxy against Arianism. Five times exiled. Wrote On the Incarnation and the Vita Antonii.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Athanasius_of_Alexandria",
+      "wikidata_id": "Q44024",
+      "citations": [
+        {
+          "source": "Athanasius, Apologia contra Arianos",
+          "kind": "primary"
+        },
+        {
+          "source": "Athanasius, Vita Antonii",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1-2",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 87",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "arius",
+      "name": "Arius",
+      "alt_names": [],
+      "born": 256,
+      "born_circa": true,
+      "died": 336,
+      "died_circa": false,
+      "birth_place": "Libya",
+      "death_place": "Constantinople",
+      "region": "egypt",
+      "role": [
+        "presbyter"
+      ],
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Alexandrian presbyter whose teaching that the Son was a created being sparked the Arian controversy. Condemned at Nicaea (325). Heretic.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Arius",
+      "wikidata_id": "Q106026",
+      "citations": [
+        {
+          "source": "Athanasius, De Synodis 15-16",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.5-1.9",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Hist. Eccl. 1.2-1.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "eusebius-of-nicomedia",
+      "name": "Eusebius of Nicomedia",
+      "alt_names": [],
+      "born": 270,
+      "born_circa": true,
+      "died": 341,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "bishop"
+      ],
+      "see": "Constantinople",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Nicomedia, then of Constantinople. Leader of the Arian party at and after Nicaea. Baptized Constantine on his deathbed.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Eusebius_of_Nicomedia",
+      "wikidata_id": "Q321639",
+      "citations": [
+        {
+          "source": "Theodoret, Hist. Eccl. 1.5",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.6, 1.23",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Vita Constantini 4.61-62",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "hilary-of-poitiers",
+      "name": "Hilary of Poitiers",
+      "alt_names": [
+        "Hilarius Pictaviensis"
+      ],
+      "born": 310,
+      "born_circa": true,
+      "died": 367,
+      "died_circa": false,
+      "birth_place": "Poitiers",
+      "death_place": "Poitiers",
+      "region": "gaul",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Poitiers",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Poitiers and 'Athanasius of the West.' Defender of Nicene Trinitarianism in Latin; wrote De Trinitate while exiled in Phrygia.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Hilary_of_Poitiers",
+      "wikidata_id": "Q44344",
+      "citations": [
+        {
+          "source": "Hilary, De Trinitate",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 100",
+          "kind": "primary"
+        },
+        {
+          "source": "Sulpicius Severus, Chronica 2.39-45",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "marius-victorinus",
+      "name": "Marius Victorinus",
+      "alt_names": [
+        "Gaius Marius Victorinus"
+      ],
+      "born": 290,
+      "born_circa": true,
+      "died": 364,
+      "died_circa": true,
+      "birth_place": "Africa",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "theologian",
+        "layman"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "African rhetorician at Rome, Neoplatonist, who converted to Christianity in old age. Wrote anti-Arian Trinitarian treatises and a famous influence on Augustine.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Marius_Victorinus",
+      "wikidata_id": "Q708247",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 8.2",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 101",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "cyril-of-jerusalem",
+      "name": "Cyril of Jerusalem",
+      "alt_names": [],
+      "born": 313,
+      "born_circa": true,
+      "died": 386,
+      "died_circa": false,
+      "birth_place": "Jerusalem",
+      "death_place": "Jerusalem",
+      "region": "palestine",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Jerusalem",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Jerusalem. His Catechetical Lectures are a primary witness to fourth-century baptismal preparation and liturgy.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cyril_of_Jerusalem",
+      "wikidata_id": "Q298654",
+      "citations": [
+        {
+          "source": "Cyril, Catecheses",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 112",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 2.38, 5.8",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "ephrem-the-syrian",
+      "name": "Ephrem the Syrian",
+      "alt_names": [
+        "Ephraem",
+        "Mar Ephrem"
+      ],
+      "born": 306,
+      "born_circa": true,
+      "died": 373,
+      "died_circa": false,
+      "birth_place": "Nisibis",
+      "death_place": "Edessa",
+      "region": "syria",
+      "role": [
+        "deacon",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Syriac deacon, hymnographer and poet-theologian of Nisibis and Edessa. Author of the Hymns on Faith and Hymns on Paradise.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ephrem_the_Syrian",
+      "wikidata_id": "Q200608",
+      "citations": [
+        {
+          "source": "Ephrem, Hymns on Faith",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 115",
+          "kind": "primary"
+        },
+        {
+          "source": "Sozomen, Hist. Eccl. 3.16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "aphrahat",
+      "name": "Aphrahat",
+      "alt_names": [
+        "Aphraates",
+        "the Persian Sage"
+      ],
+      "born": 270,
+      "born_circa": true,
+      "died": 345,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "syria",
+      "role": [
+        "theologian",
+        "monk"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Persian Christian sage who wrote 23 Demonstrations in Syriac (337-345), among the earliest surviving Syriac Christian theological works.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Aphrahat",
+      "wikidata_id": "Q434222",
+      "citations": [
+        {
+          "source": "Aphrahat, Demonstrations",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "basil-of-caesarea",
+      "name": "Basil of Caesarea",
+      "alt_names": [
+        "Basil the Great"
+      ],
+      "born": 330,
+      "born_circa": false,
+      "died": 379,
+      "died_circa": false,
+      "birth_place": "Caesarea Mazaca",
+      "death_place": "Caesarea Mazaca",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "theologian",
+        "monk"
+      ],
+      "see": "Caesarea Mazaca",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Caesarea in Cappadocia, founder of cenobitic monastic rules in the East, author of On the Holy Spirit. One of the three Cappadocian Fathers.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Basil_of_Caesarea",
+      "wikidata_id": "Q44258",
+      "citations": [
+        {
+          "source": "Basil, Epistulae",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nazianzus, Oratio 43 (Funeral oration on Basil)",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 116",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gregory-of-nazianzus",
+      "name": "Gregory of Nazianzus",
+      "alt_names": [
+        "Gregory the Theologian"
+      ],
+      "born": 329,
+      "born_circa": true,
+      "died": 390,
+      "died_circa": false,
+      "birth_place": "Arianzus",
+      "death_place": "Arianzus",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Constantinople",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Cappadocian Father, briefly Archbishop of Constantinople (380-381) and presider over the First Council of Constantinople. Known as 'the Theologian' for his Five Theological Orations.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_of_Nazianzus",
+      "wikidata_id": "Q44011",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Orationes 27-31 (Theological Orations)",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nazianzus, De Vita Sua",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 117",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gregory-of-nyssa",
+      "name": "Gregory of Nyssa",
+      "alt_names": [],
+      "born": 335,
+      "born_circa": true,
+      "died": 395,
+      "died_circa": true,
+      "birth_place": "Caesarea Mazaca",
+      "death_place": null,
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Nyssa",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Younger brother of Basil and the third Cappadocian Father. Author of the Life of Moses, Catechetical Oration, and Life of Macrina.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_of_Nyssa",
+      "wikidata_id": "Q191734",
+      "citations": [
+        {
+          "source": "Gregory of Nyssa, Vita Macrinae",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nyssa, Contra Eunomium",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 128",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "macrina-the-younger",
+      "name": "Macrina the Younger",
+      "alt_names": [
+        "Macrina"
+      ],
+      "born": 327,
+      "born_circa": true,
+      "died": 379,
+      "died_circa": false,
+      "birth_place": "Caesarea Mazaca",
+      "death_place": "Annisa",
+      "region": "asia-minor",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Eldest sister of Basil and Gregory of Nyssa. Ascetic teacher who established a monastic community on the family estate at Annisa; subject of Gregory of Nyssa's Vita.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Macrina_the_Younger",
+      "wikidata_id": "Q239081",
+      "citations": [
+        {
+          "source": "Gregory of Nyssa, Vita Macrinae",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nyssa, De Anima et Resurrectione",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "peter-of-sebaste",
+      "name": "Peter of Sebaste",
+      "alt_names": [],
+      "born": 340,
+      "born_circa": true,
+      "died": 391,
+      "died_circa": true,
+      "birth_place": "Caesarea Mazaca",
+      "death_place": "Sebaste",
+      "region": "asia-minor",
+      "role": [
+        "bishop"
+      ],
+      "see": "Sebaste",
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Youngest brother of Basil, Gregory of Nyssa and Macrina. Bishop of Sebaste from c. 380.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Peter_of_Sebaste",
+      "wikidata_id": "Q1246057",
+      "citations": [
+        {
+          "source": "Gregory of Nyssa, Vita Macrinae",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nyssa, Contra Eunomium (preface)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "didymus-the-blind",
+      "name": "Didymus the Blind",
+      "alt_names": [],
+      "born": 313,
+      "born_circa": true,
+      "died": 398,
+      "died_circa": false,
+      "birth_place": "Alexandria",
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "theologian",
+        "layman"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Blind from childhood; head of the Alexandrian catechetical school. Wrote on the Holy Spirit and on the Trinity. Posthumously condemned for Origenism.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Didymus_the_Blind",
+      "wikidata_id": "Q188232",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 109",
+          "kind": "primary"
+        },
+        {
+          "source": "Rufinus, Hist. Eccl. 11.7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "evagrius-ponticus",
+      "name": "Evagrius Ponticus",
+      "alt_names": [
+        "Evagrius the Solitary"
+      ],
+      "born": 345,
+      "born_circa": false,
+      "died": 399,
+      "died_circa": false,
+      "birth_place": "Ibora",
+      "death_place": "Kellia",
+      "region": "egypt",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "desert-father",
+      "significance": 3,
+      "short_bio": "Pontic monk in the Egyptian desert. Pioneer of systematic monastic theology (Praktikos, Chapters on Prayer); originated the eight 'logismoi' that became the seven deadly sins.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Evagrius_Ponticus",
+      "wikidata_id": "Q437869",
+      "citations": [
+        {
+          "source": "Evagrius, Praktikos",
+          "kind": "primary"
+        },
+        {
+          "source": "Palladius, Historia Lausiaca 38",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 4.23",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "john-cassian",
+      "name": "John Cassian",
+      "alt_names": [
+        "Joannes Cassianus"
+      ],
+      "born": 360,
+      "born_circa": true,
+      "died": 435,
+      "died_circa": true,
+      "birth_place": "Scythia Minor",
+      "death_place": "Marseilles",
+      "region": "gaul",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Brought Egyptian monastic spirituality to the Latin West. Author of the Institutes and Conferences; founded monasteries at Marseilles.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Cassian",
+      "wikidata_id": "Q313795",
+      "citations": [
+        {
+          "source": "Cassian, Collationes",
+          "kind": "primary"
+        },
+        {
+          "source": "Cassian, De Institutis Coenobiorum",
+          "kind": "primary"
+        },
+        {
+          "source": "Gennadius, De Viris Illustribus 62",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "anthony-the-great",
+      "name": "Anthony the Great",
+      "alt_names": [
+        "Antony of Egypt",
+        "Anthony the Abbot"
+      ],
+      "born": 251,
+      "born_circa": true,
+      "died": 356,
+      "died_circa": false,
+      "birth_place": "Coma",
+      "death_place": "Mount Colzim",
+      "region": "egypt",
+      "role": [
+        "monk"
+      ],
+      "tradition_status": "desert-father",
+      "significance": 3,
+      "short_bio": "Father of Christian monasticism. Egyptian hermit whose Vita by Athanasius shaped Christian asceticism East and West.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_the_Great",
+      "wikidata_id": "Q170547",
+      "citations": [
+        {
+          "source": "Athanasius, Vita Antonii",
+          "kind": "primary"
+        },
+        {
+          "source": "Apophthegmata Patrum (Anthony)",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 88",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pachomius",
+      "name": "Pachomius the Great",
+      "alt_names": [
+        "Pachomius"
+      ],
+      "born": 292,
+      "born_circa": true,
+      "died": 348,
+      "died_circa": false,
+      "birth_place": "Thebaid",
+      "death_place": "Tabennisi",
+      "region": "egypt",
+      "role": [
+        "monk"
+      ],
+      "tradition_status": "desert-father",
+      "significance": 3,
+      "short_bio": "Founder of cenobitic (communal) monasticism in Egypt. Established the monastery at Tabennisi and wrote the first monastic rule.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pachomius_the_Great",
+      "wikidata_id": "Q298698",
+      "citations": [
+        {
+          "source": "Vita Prima Pachomii",
+          "kind": "primary"
+        },
+        {
+          "source": "Palladius, Historia Lausiaca 32",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Praefatio in Regulam Pachomii",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "macarius-the-great",
+      "name": "Macarius the Great",
+      "alt_names": [
+        "Macarius of Egypt"
+      ],
+      "born": 300,
+      "born_circa": true,
+      "died": 391,
+      "died_circa": true,
+      "birth_place": "Shabsheer",
+      "death_place": "Scetis",
+      "region": "egypt",
+      "role": [
+        "monk",
+        "presbyter"
+      ],
+      "tradition_status": "desert-father",
+      "significance": 2,
+      "short_bio": "Egyptian desert father, founder of the monastic settlement of Scetis. Subject of many sayings in the Apophthegmata Patrum.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Macarius_of_Egypt",
+      "wikidata_id": "Q43920",
+      "citations": [
+        {
+          "source": "Apophthegmata Patrum (Macarius the Great)",
+          "kind": "primary"
+        },
+        {
+          "source": "Palladius, Historia Lausiaca 17",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "john-chrysostom",
+      "name": "John Chrysostom",
+      "alt_names": [
+        "John of Antioch",
+        "Chrysostomos"
+      ],
+      "born": 349,
+      "born_circa": true,
+      "died": 407,
+      "died_circa": false,
+      "birth_place": "Antioch",
+      "death_place": "Comana",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Constantinople",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Archbishop of Constantinople, called 'Golden-Mouth' for his preaching. Greatest preacher of the Greek Fathers; deposed and exiled at the Synod of the Oak (403).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/John_Chrysostom",
+      "wikidata_id": "Q43706",
+      "citations": [
+        {
+          "source": "Palladius, Dialogus de Vita Joannis Chrysostomi",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 6",
+          "kind": "primary"
+        },
+        {
+          "source": "Sozomen, Hist. Eccl. 8",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "theodore-of-mopsuestia",
+      "name": "Theodore of Mopsuestia",
+      "alt_names": [],
+      "born": 350,
+      "born_circa": true,
+      "died": 428,
+      "died_circa": false,
+      "birth_place": "Antioch",
+      "death_place": "Mopsuestia",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Mopsuestia",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Mopsuestia, leading Antiochene exegete and teacher of Nestorius. Posthumously condemned at the Second Council of Constantinople (553).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Theodore_of_Mopsuestia",
+      "wikidata_id": "Q355664",
+      "citations": [
+        {
+          "source": "Theodore of Mopsuestia, Catechetical Homilies",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 6.3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "diodore-of-tarsus",
+      "name": "Diodore of Tarsus",
+      "alt_names": [],
+      "born": 330,
+      "born_circa": true,
+      "died": 390,
+      "died_circa": true,
+      "birth_place": "Antioch",
+      "death_place": "Tarsus",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Tarsus",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Tarsus, founder of the Antiochene exegetical school in its mature form. Teacher of John Chrysostom and Theodore of Mopsuestia.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Diodorus_of_Tarsus",
+      "wikidata_id": "Q729492",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 6.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Hist. Eccl. 5.40",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 119",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "ambrose-of-milan",
+      "name": "Ambrose of Milan",
+      "alt_names": [
+        "Aurelius Ambrosius"
+      ],
+      "born": 339,
+      "born_circa": true,
+      "died": 397,
+      "died_circa": false,
+      "birth_place": "Trier",
+      "death_place": "Milan",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Milan",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Milan and one of the four Latin Doctors. Confronted emperors Theodosius and Valentinian; baptized Augustine in 387.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ambrose",
+      "wikidata_id": "Q43689",
+      "citations": [
+        {
+          "source": "Paulinus of Milan, Vita Ambrosii",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Confessions 5-6",
+          "kind": "primary"
+        },
+        {
+          "source": "Ambrose, Epistulae",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "jerome",
+      "name": "Jerome",
+      "alt_names": [
+        "Eusebius Sophronius Hieronymus",
+        "Hieronymus"
+      ],
+      "born": 347,
+      "born_circa": true,
+      "died": 420,
+      "died_circa": false,
+      "birth_place": "Stridon",
+      "death_place": "Bethlehem",
+      "region": "palestine",
+      "role": [
+        "presbyter",
+        "theologian",
+        "monk"
+      ],
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Translator of the Latin Vulgate Bible; biblical scholar and prolific letter-writer. Settled in Bethlehem from 386.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jerome",
+      "wikidata_id": "Q44248",
+      "citations": [
+        {
+          "source": "Jerome, Epistulae",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 135",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Epistulae 28, 71, 75",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "augustine-of-hippo",
+      "name": "Augustine of Hippo",
+      "alt_names": [
+        "Aurelius Augustinus",
+        "Saint Augustine"
+      ],
+      "born": 354,
+      "born_circa": false,
+      "died": 430,
+      "died_circa": false,
+      "birth_place": "Thagaste",
+      "death_place": "Hippo Regius",
+      "region": "africa",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Hippo Regius",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Hippo and the most influential Latin Father. Author of Confessions, City of God, On the Trinity, and the anti-Pelagian works.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Augustine_of_Hippo",
+      "wikidata_id": "Q8018",
+      "citations": [
+        {
+          "source": "Augustine, Confessiones",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Retractationes",
+          "kind": "primary"
+        },
+        {
+          "source": "Possidius, Vita Augustini",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "alypius-of-thagaste",
+      "name": "Alypius of Thagaste",
+      "alt_names": [
+        "Alypius"
+      ],
+      "born": 360,
+      "born_circa": true,
+      "died": 430,
+      "died_circa": true,
+      "birth_place": "Thagaste",
+      "death_place": "Thagaste",
+      "region": "africa",
+      "role": [
+        "bishop"
+      ],
+      "see": "Thagaste",
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Lifelong friend of Augustine, with whom he was baptized by Ambrose in 387. Bishop of Thagaste from 394.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Alypius_of_Thagaste",
+      "wikidata_id": "Q2840668",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 6.7-10, 9.6",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Epistulae 22, 27, 125",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "possidius-of-calama",
+      "name": "Possidius of Calama",
+      "alt_names": [
+        "Possidius"
+      ],
+      "born": 370,
+      "born_circa": true,
+      "died": 440,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "africa",
+      "role": [
+        "bishop"
+      ],
+      "see": "Calama",
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Calama and disciple of Augustine. Wrote the Vita Augustini and compiled an Indiculus of Augustine's works.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Possidius",
+      "wikidata_id": "Q718003",
+      "citations": [
+        {
+          "source": "Possidius, Vita Augustini",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "monica-of-hippo",
+      "name": "Monica",
+      "alt_names": [
+        "Monica of Hippo"
+      ],
+      "born": 332,
+      "born_circa": true,
+      "died": 387,
+      "died_circa": false,
+      "birth_place": "Thagaste",
+      "death_place": "Ostia",
+      "region": "africa",
+      "role": [
+        "layman"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Mother of Augustine of Hippo. Devout Christian whose persistent prayers Augustine credits with his conversion.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Monica_of_Hippo",
+      "wikidata_id": "Q234689",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 3, 6, 9",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pelagius",
+      "name": "Pelagius",
+      "alt_names": [],
+      "born": 354,
+      "born_circa": true,
+      "died": 420,
+      "died_circa": true,
+      "birth_place": "Britannia",
+      "death_place": null,
+      "region": "west",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "British ascetic teacher at Rome whose denial of original sin and emphasis on free will sparked the Pelagian controversy. Condemned at Carthage (418) and Ephesus (431). Heretic.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pelagius",
+      "wikidata_id": "Q162593",
+      "citations": [
+        {
+          "source": "Augustine, De Gestis Pelagii",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, De Natura et Gratia",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Dialogus contra Pelagianos",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "caelestius",
+      "name": "Caelestius",
+      "alt_names": [
+        "Celestius"
+      ],
+      "born": 380,
+      "born_circa": true,
+      "died": 432,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "west",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Disciple and chief associate of Pelagius. Condemned at Carthage (411 and 418).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Caelestius",
+      "wikidata_id": "Q1025379",
+      "citations": [
+        {
+          "source": "Augustine, De Gratia Christi et de Peccato Originali",
+          "kind": "primary"
+        },
+        {
+          "source": "Marius Mercator, Commonitorium",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "julian-of-eclanum",
+      "name": "Julian of Eclanum",
+      "alt_names": [],
+      "born": 386,
+      "born_circa": true,
+      "died": 455,
+      "died_circa": true,
+      "birth_place": "Apulia",
+      "death_place": "Sicily",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Eclanum",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Eclanum, intellectually most formidable Pelagian theologian. Deposed for refusing to sign the Tractoria of Pope Zosimus; opposed by Augustine in Contra Julianum.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Julian_of_Eclanum",
+      "wikidata_id": "Q1662957",
+      "citations": [
+        {
+          "source": "Augustine, Contra Julianum",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Opus Imperfectum contra Julianum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "cyril-of-alexandria",
+      "name": "Cyril of Alexandria",
+      "alt_names": [],
+      "born": 376,
+      "born_circa": true,
+      "died": 444,
+      "died_circa": false,
+      "birth_place": "Theodosiou",
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Patriarch of Alexandria. Chief architect of Christological orthodoxy; presided over the Council of Ephesus (431) which condemned Nestorius.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Cyril_of_Alexandria",
+      "wikidata_id": "Q44079",
+      "citations": [
+        {
+          "source": "Cyril, Epistulae (esp. 4, 17, 39)",
+          "kind": "primary"
+        },
+        {
+          "source": "Acta Concilii Ephesini (431)",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "nestorius",
+      "name": "Nestorius",
+      "alt_names": [],
+      "born": 386,
+      "born_circa": true,
+      "died": 451,
+      "died_circa": true,
+      "birth_place": "Germanicia",
+      "death_place": "Egypt",
+      "region": "east",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Constantinople",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Archbishop of Constantinople (428-431). Condemned at Ephesus (431) for distinguishing two persons in Christ and denying the title Theotokos. Heretic.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Nestorius",
+      "wikidata_id": "Q185073",
+      "citations": [
+        {
+          "source": "Nestorius, Liber Heraclidis (Bazaar of Heracleides)",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 7.29-7.34",
+          "kind": "primary"
+        },
+        {
+          "source": "Acta Concilii Ephesini (431)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "theodoret-of-cyrus",
+      "name": "Theodoret of Cyrus",
+      "alt_names": [
+        "Theodoret of Cyrrhus"
+      ],
+      "born": 393,
+      "born_circa": false,
+      "died": 460,
+      "died_circa": true,
+      "birth_place": "Antioch",
+      "death_place": "Cyrrhus",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Cyrrhus",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Cyrrhus, Antiochene exegete and historian. Author of an Ecclesiastical History; defended Nestorius then accepted Chalcedon (451).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Theodoret",
+      "wikidata_id": "Q317029",
+      "citations": [
+        {
+          "source": "Theodoret, Hist. Eccl.",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Eranistes",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Epistulae",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-damasus-i",
+      "name": "Pope Damasus I",
+      "alt_names": [
+        "Damasus"
+      ],
+      "born": 305,
+      "born_circa": true,
+      "died": 384,
+      "died_circa": false,
+      "birth_place": "Rome",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 366-384. Patron of Jerome who commissioned the Vulgate. Established the canon of Scripture at the Roman Synod (382).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Damasus_I",
+      "wikidata_id": "Q130997",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 39",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Epistulae 15, 18, 35-36",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-innocent-i",
+      "name": "Pope Innocent I",
+      "alt_names": [
+        "Innocentius"
+      ],
+      "born": 360,
+      "born_circa": true,
+      "died": 417,
+      "died_circa": false,
+      "birth_place": "Albano",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 401-417. Defended John Chrysostom and confirmed the African councils' condemnation of Pelagianism (417).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Innocent_I",
+      "wikidata_id": "Q134694",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 42",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Epistulae 175-177, 181-183",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-celestine-i",
+      "name": "Pope Celestine I",
+      "alt_names": [
+        "Caelestinus"
+      ],
+      "born": 376,
+      "born_circa": true,
+      "died": 432,
+      "died_circa": false,
+      "birth_place": "Campania",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Rome",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Bishop of Rome 422-432. Backed Cyril of Alexandria against Nestorius and sent legates to Ephesus (431); reportedly sent Palladius to Ireland (431).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Celestine_I",
+      "wikidata_id": "Q160922",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 45",
+          "kind": "primary"
+        },
+        {
+          "source": "Prosper of Aquitaine, Chronicon (s.a. 431)",
+          "kind": "primary"
+        },
+        {
+          "source": "Acta Concilii Ephesini (431)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pope-leo-i",
+      "name": "Pope Leo I",
+      "alt_names": [
+        "Leo the Great",
+        "Leo Magnus"
+      ],
+      "born": 400,
+      "born_circa": true,
+      "died": 461,
+      "died_circa": false,
+      "birth_place": "Tuscany",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Rome",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Rome 440-461. His Tome (Epistula 28) was acclaimed at the Council of Chalcedon (451). Negotiated with Attila in 452.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Leo_I",
+      "wikidata_id": "Q43954",
+      "citations": [
+        {
+          "source": "Leo, Tomus ad Flavianum (Ep. 28)",
+          "kind": "primary"
+        },
+        {
+          "source": "Leo, Sermones",
+          "kind": "primary"
+        },
+        {
+          "source": "Acta Concilii Chalcedonensis (451)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "vincent-of-lerins",
+      "name": "Vincent of Lérins",
+      "alt_names": [
+        "Vincentius Lirinensis"
+      ],
+      "born": 400,
+      "born_circa": true,
+      "died": 445,
+      "died_circa": true,
+      "birth_place": "Gaul",
+      "death_place": "Lérins",
+      "region": "gaul",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Monk of Lérins. Author of the Commonitorium, which formulated the canon of catholic tradition: 'what has been believed everywhere, always, by all.'",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Vincent_of_L%C3%A9rins",
+      "wikidata_id": "Q644057",
+      "citations": [
+        {
+          "source": "Vincent, Commonitorium",
+          "kind": "primary"
+        },
+        {
+          "source": "Gennadius, De Viris Illustribus 65",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "prosper-of-aquitaine",
+      "name": "Prosper of Aquitaine",
+      "alt_names": [
+        "Prosper Tiro"
+      ],
+      "born": 390,
+      "born_circa": true,
+      "died": 455,
+      "died_circa": true,
+      "birth_place": "Aquitaine",
+      "death_place": "Rome",
+      "region": "gaul",
+      "role": [
+        "monk",
+        "theologian",
+        "layman"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Lay theologian and chronicler. Disciple and defender of Augustine against semi-Pelagians; corresponded with him; continued Jerome's Chronicon.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Prosper_of_Aquitaine",
+      "wikidata_id": "Q454652",
+      "citations": [
+        {
+          "source": "Prosper, Chronicon",
+          "kind": "primary"
+        },
+        {
+          "source": "Prosper, Contra Collatorem",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Epistula 225 (from Prosper)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "sulpicius-severus",
+      "name": "Sulpicius Severus",
+      "alt_names": [],
+      "born": 363,
+      "born_circa": true,
+      "died": 425,
+      "died_circa": true,
+      "birth_place": "Aquitaine",
+      "death_place": "Gaul",
+      "region": "gaul",
+      "role": [
+        "monk",
+        "layman"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Aquitanian aristocrat turned ascetic. Wrote the Vita Martini (life of Martin of Tours) and a Chronicle covering biblical and church history to 400.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sulpicius_Severus",
+      "wikidata_id": "Q336704",
+      "citations": [
+        {
+          "source": "Sulpicius Severus, Vita Martini",
+          "kind": "primary"
+        },
+        {
+          "source": "Sulpicius Severus, Chronica",
+          "kind": "primary"
+        },
+        {
+          "source": "Gennadius, De Viris Illustribus 19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "rufinus-of-aquileia",
+      "name": "Rufinus of Aquileia",
+      "alt_names": [
+        "Tyrannius Rufinus"
+      ],
+      "born": 344,
+      "born_circa": true,
+      "died": 411,
+      "died_circa": false,
+      "birth_place": "Concordia",
+      "death_place": "Sicily",
+      "region": "west",
+      "role": [
+        "monk",
+        "presbyter",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Latin translator and historian. Translated Origen, Eusebius (continuing the HE to 395), and the Sentences of Sextus. Friend turned bitter opponent of Jerome over Origenism.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Rufinus_of_Aquileia",
+      "wikidata_id": "Q365835",
+      "citations": [
+        {
+          "source": "Rufinus, Hist. Eccl. 10-11",
+          "kind": "primary"
+        },
+        {
+          "source": "Rufinus, Apologia contra Hieronymum",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Epistula 84; Apologia contra Rufinum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "epiphanius-of-salamis",
+      "name": "Epiphanius of Salamis",
+      "alt_names": [],
+      "born": 310,
+      "born_circa": true,
+      "died": 403,
+      "died_circa": false,
+      "birth_place": "Eleutheropolis",
+      "death_place": "at sea",
+      "region": "palestine",
+      "role": [
+        "bishop",
+        "theologian",
+        "monk"
+      ],
+      "see": "Salamis (Cyprus)",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Bishop of Salamis on Cyprus. Heresiologist; author of the Panarion ('Medicine Chest') against 80 heresies. Vigorous opponent of Origenism.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Epiphanius_of_Salamis",
+      "wikidata_id": "Q313922",
+      "citations": [
+        {
+          "source": "Epiphanius, Panarion",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 114",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 6.10-14",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "paulinus-of-nola",
+      "name": "Paulinus of Nola",
+      "alt_names": [
+        "Pontius Meropius Anicius Paulinus"
+      ],
+      "born": 354,
+      "born_circa": false,
+      "died": 431,
+      "died_circa": false,
+      "birth_place": "Bordeaux",
+      "death_place": "Nola",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Nola",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Aquitanian aristocrat and poet who renounced wealth for asceticism. Bishop of Nola from c. 409. Correspondent of Augustine, Jerome, Sulpicius Severus, and Ambrose.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Paulinus_of_Nola",
+      "wikidata_id": "Q132473",
+      "citations": [
+        {
+          "source": "Paulinus of Nola, Carmina",
+          "kind": "primary"
+        },
+        {
+          "source": "Paulinus of Nola, Epistulae",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, Epistulae 24-27, 30-32",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gregory-the-illuminator",
+      "name": "Gregory the Illuminator",
+      "alt_names": [
+        "Grigor Lusavorich"
+      ],
+      "born": 257,
+      "born_circa": true,
+      "died": 331,
+      "died_circa": true,
+      "birth_place": "Armenia",
+      "death_place": "Armenia",
+      "region": "east",
+      "role": [
+        "bishop"
+      ],
+      "see": "Armenia",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Apostle and patron saint of Armenia. Converted King Tiridates III, leading to Armenia's adoption of Christianity (c. 301).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_the_Illuminator",
+      "wikidata_id": "Q309953",
+      "citations": [
+        {
+          "source": "Agathangelos, History of the Armenians",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "mesrop-mashtots",
+      "name": "Mesrop Mashtots",
+      "alt_names": [
+        "Mesrob"
+      ],
+      "born": 362,
+      "born_circa": true,
+      "died": 440,
+      "died_circa": false,
+      "birth_place": "Hatsekats",
+      "death_place": "Vagharshapat",
+      "region": "east",
+      "role": [
+        "monk",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Inventor of the Armenian alphabet (c. 405) and translator of the Bible into Armenian. Also credited with Georgian and Caucasian Albanian scripts.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mesrop_Mashtots",
+      "wikidata_id": "Q104804",
+      "citations": [
+        {
+          "source": "Koriun, Life of Mashtots",
+          "kind": "primary"
+        },
+        {
+          "source": "Movses Khorenatsi, History of Armenia 3.47-54",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "patrick-of-ireland",
+      "name": "Patrick of Ireland",
+      "alt_names": [
+        "Saint Patrick",
+        "Patricius"
+      ],
+      "born": 385,
+      "born_circa": true,
+      "died": 461,
+      "died_circa": true,
+      "birth_place": "Britannia",
+      "death_place": "Ireland",
+      "region": "west",
+      "role": [
+        "bishop"
+      ],
+      "see": "Armagh",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "British missionary bishop who evangelized Ireland in the fifth century. Wrote the Confessio and the Letter to Coroticus, the only sure primary documents.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Saint_Patrick",
+      "wikidata_id": "Q165479",
+      "citations": [
+        {
+          "source": "Patrick, Confessio",
+          "kind": "primary"
+        },
+        {
+          "source": "Patrick, Epistola ad Coroticum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "alexander-of-alexandria",
+      "name": "Alexander of Alexandria",
+      "alt_names": [],
+      "born": 250,
+      "born_circa": true,
+      "died": 326,
+      "died_circa": false,
+      "birth_place": "Alexandria",
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "bishop"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Patriarch of Alexandria 313-326. First to condemn Arius locally (c. 318); led the orthodox party at Nicaea; mentor of Athanasius.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Alexander_I_of_Alexandria",
+      "wikidata_id": "Q44794",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.5-1.9",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Hist. Eccl. 1.3-4",
+          "kind": "primary"
+        },
+        {
+          "source": "Athanasius, De Decretis",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "marcellus-of-ancyra",
+      "name": "Marcellus of Ancyra",
+      "alt_names": [],
+      "born": 285,
+      "born_circa": true,
+      "died": 374,
+      "died_circa": true,
+      "birth_place": "Ancyra",
+      "death_place": "Ancyra",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Ancyra",
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Ancyra. Strong anti-Arian at Nicaea but accused of Sabellianism. Friend of Athanasius; suspected by the Eusebian party.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Marcellus_of_Ancyra",
+      "wikidata_id": "Q519513",
+      "citations": [
+        {
+          "source": "Eusebius, Contra Marcellum",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.36, 2.20",
+          "kind": "primary"
+        },
+        {
+          "source": "Epiphanius, Panarion 72",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "martin-of-tours",
+      "name": "Martin of Tours",
+      "alt_names": [
+        "Martinus Turonensis"
+      ],
+      "born": 316,
+      "born_circa": true,
+      "died": 397,
+      "died_circa": false,
+      "birth_place": "Savaria",
+      "death_place": "Candes",
+      "region": "gaul",
+      "role": [
+        "bishop",
+        "monk"
+      ],
+      "see": "Tours",
+      "tradition_status": "nicene",
+      "significance": 3,
+      "short_bio": "Soldier turned monk and bishop of Tours. Pioneer of Western monasticism; subject of Sulpicius Severus's Vita Martini.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Martin_of_Tours",
+      "wikidata_id": "Q133704",
+      "citations": [
+        {
+          "source": "Sulpicius Severus, Vita Martini",
+          "kind": "primary"
+        },
+        {
+          "source": "Sulpicius Severus, Dialogi",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Tours, Hist. Franc. 1.36-48",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "socrates-scholasticus",
+      "name": "Socrates Scholasticus",
+      "alt_names": [
+        "Socrates of Constantinople"
+      ],
+      "born": 380,
+      "born_circa": true,
+      "died": 440,
+      "died_circa": true,
+      "birth_place": "Constantinople",
+      "death_place": "Constantinople",
+      "region": "east",
+      "role": [
+        "layman",
+        "theologian"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Lay historian. His Ecclesiastical History (305-439) continues Eusebius and is a primary source for the fourth and early fifth centuries.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Socrates_of_Constantinople",
+      "wikidata_id": "Q336198",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. (preface and passim)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "sozomen",
+      "name": "Sozomen",
+      "alt_names": [
+        "Salminius Hermias Sozomenus"
+      ],
+      "born": 400,
+      "born_circa": true,
+      "died": 450,
+      "died_circa": true,
+      "birth_place": "Bethelia",
+      "death_place": "Constantinople",
+      "region": "palestine",
+      "role": [
+        "layman"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Lawyer at Constantinople and ecclesiastical historian. His HE covers 323-425, paralleling Socrates Scholasticus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Sozomen",
+      "wikidata_id": "Q354350",
+      "citations": [
+        {
+          "source": "Sozomen, Hist. Eccl. (preface and passim)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "palladius-of-galatia",
+      "name": "Palladius of Galatia",
+      "alt_names": [
+        "Palladius of Helenopolis"
+      ],
+      "born": 363,
+      "born_circa": true,
+      "died": 430,
+      "died_circa": true,
+      "birth_place": "Galatia",
+      "death_place": "Aspuna",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "monk"
+      ],
+      "see": "Helenopolis",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Disciple of Evagrius Ponticus and bishop of Helenopolis. Author of the Lausiac History on Egyptian monasticism and the Dialogue on the life of John Chrysostom.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Palladius_of_Galatia",
+      "wikidata_id": "Q2047944",
+      "citations": [
+        {
+          "source": "Palladius, Historia Lausiaca",
+          "kind": "primary"
+        },
+        {
+          "source": "Palladius, Dialogus de Vita Joannis Chrysostomi",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "gregory-thaumaturgus-elder",
+      "name": "Gregory the Elder of Nazianzus",
+      "alt_names": [
+        "Gregory of Nazianzus the Elder"
+      ],
+      "born": 276,
+      "born_circa": true,
+      "died": 374,
+      "died_circa": false,
+      "birth_place": "Nazianzus",
+      "death_place": "Nazianzus",
+      "region": "asia-minor",
+      "role": [
+        "bishop"
+      ],
+      "see": "Nazianzus",
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Nazianzus and father of Gregory the Theologian. Converted from the Hypsistarii sect; ordained his son presbyter.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_of_Nazianzus_the_Elder",
+      "wikidata_id": "Q935447",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Oratio 18 (funeral oration on his father)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "amphilochius-of-iconium",
+      "name": "Amphilochius of Iconium",
+      "alt_names": [],
+      "born": 340,
+      "born_circa": true,
+      "died": 403,
+      "died_circa": true,
+      "birth_place": "Diocaesarea",
+      "death_place": "Iconium",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Iconium",
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Cousin of Gregory of Nazianzus and close friend of Basil. Bishop of Iconium; sometimes counted among the Cappadocians.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Amphilochius_of_Iconium",
+      "wikidata_id": "Q474872",
+      "citations": [
+        {
+          "source": "Basil, Epistulae 161, 188, 199, 217",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 133",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "flavian-of-constantinople",
+      "name": "Flavian of Constantinople",
+      "alt_names": [],
+      "born": 390,
+      "born_circa": true,
+      "died": 449,
+      "died_circa": false,
+      "birth_place": null,
+      "death_place": "Hypaepa",
+      "region": "east",
+      "role": [
+        "bishop"
+      ],
+      "see": "Constantinople",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Archbishop of Constantinople 446-449. Recipient of Leo's Tome; condemned Eutyches at the Home Synod (448); deposed and beaten at the 'Robber Council' of Ephesus (449).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Flavian_of_Constantinople",
+      "wikidata_id": "Q509569",
+      "citations": [
+        {
+          "source": "Acta Concilii Chalcedonensis (Sessions 1-2)",
+          "kind": "primary"
+        },
+        {
+          "source": "Leo, Epistula 28 (Tomus ad Flavianum)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "eutyches",
+      "name": "Eutyches",
+      "alt_names": [],
+      "born": 380,
+      "born_circa": true,
+      "died": 456,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "east",
+      "role": [
+        "monk",
+        "presbyter"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Archimandrite at Constantinople whose monophysite teaching ('one nature after the union') was condemned at the Home Synod (448) and at Chalcedon (451). Heretic.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Eutyches",
+      "wikidata_id": "Q372763",
+      "citations": [
+        {
+          "source": "Acta Concilii Chalcedonensis (Sessions 1-2)",
+          "kind": "primary"
+        },
+        {
+          "source": "Leo, Epistula 28",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Eranistes",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "dioscorus-of-alexandria",
+      "name": "Dioscorus of Alexandria",
+      "alt_names": [],
+      "born": 390,
+      "born_circa": true,
+      "died": 454,
+      "died_circa": false,
+      "birth_place": "Alexandria",
+      "death_place": "Gangra",
+      "region": "egypt",
+      "role": [
+        "bishop"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Patriarch of Alexandria 444-451. Successor of Cyril; presided over the 'Robber Synod' of Ephesus (449); deposed at Chalcedon (451).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Dioscorus_I_of_Alexandria",
+      "wikidata_id": "Q467835",
+      "citations": [
+        {
+          "source": "Acta Concilii Chalcedonensis (Session 3)",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Epistulae 86, 113",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "chromatius-of-aquileia",
+      "name": "Chromatius of Aquileia",
+      "alt_names": [],
+      "born": 345,
+      "born_circa": true,
+      "died": 407,
+      "died_circa": false,
+      "birth_place": "Aquileia",
+      "death_place": "Aquileia",
+      "region": "west",
+      "role": [
+        "bishop",
+        "theologian"
+      ],
+      "see": "Aquileia",
+      "tradition_status": "nicene",
+      "significance": 1,
+      "short_bio": "Bishop of Aquileia from 388. Patron of both Jerome and Rufinus; commissioned biblical translations and exegetical works.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Chromatius_of_Aquileia",
+      "wikidata_id": "Q774567",
+      "citations": [
+        {
+          "source": "Jerome, Epistulae 7, 8",
+          "kind": "primary"
+        },
+        {
+          "source": "Rufinus, Apologia 1.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "helena-of-constantinople",
+      "name": "Helena",
+      "alt_names": [
+        "Helena Augusta",
+        "Saint Helena"
+      ],
+      "born": 248,
+      "born_circa": true,
+      "died": 330,
+      "died_circa": true,
+      "birth_place": "Drepanum",
+      "death_place": null,
+      "region": "east",
+      "role": [
+        "layman"
+      ],
+      "tradition_status": "nicene",
+      "significance": 2,
+      "short_bio": "Mother of Constantine the Great. Pilgrim to the Holy Land (c. 326-328); traditionally credited with discovering the True Cross and founding churches at Bethlehem and the Mount of Olives.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Helena,_mother_of_Constantine_I",
+      "wikidata_id": "Q170164",
+      "citations": [
+        {
+          "source": "Eusebius, Vita Constantini 3.42-47",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.17",
+          "kind": "primary"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "constantine-the-great",
+      "to": "eusebius-of-caesarea",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Eusebius preserves multiple letters from Constantine and delivered an oration in his presence.",
+      "citations": [
+        {
+          "source": "Eusebius, Vita Constantini 2.46, 3.60-63, 4.35-36",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "constantine-the-great",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Eusebius wrote the Vita Constantini and the Tricennial Oration in his honour.",
+      "citations": [
+        {
+          "source": "Eusebius, Vita Constantini 1-4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "constantine-the-great",
+      "to": "eusebius-of-nicomedia",
+      "type": "baptized_by",
+      "strength": "documented",
+      "notes": "Constantine received baptism from Eusebius of Nicomedia on his deathbed in 337.",
+      "citations": [
+        {
+          "source": "Eusebius, Vita Constantini 4.61-62",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Chronicon (s.a. 337)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "helena-of-constantinople",
+      "to": "constantine-the-great",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Helena was the mother of Constantine.",
+      "citations": [
+        {
+          "source": "Eusebius, Vita Constantini 3.42-47",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "athanasius-of-alexandria",
+      "to": "alexander-of-alexandria",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Athanasius served as deacon and secretary to Alexander, accompanying him to Nicaea.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.8, 1.15",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Hist. Eccl. 1.26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "athanasius-of-alexandria",
+      "to": "alexander-of-alexandria",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Athanasius succeeded Alexander as bishop of Alexandria in 328.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "alexander-of-alexandria",
+      "to": "arius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Alexander first condemned Arius and excommunicated him c. 318.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1.5-6",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Hist. Eccl. 1.3-4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "athanasius-of-alexandria",
+      "to": "arius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Athanasius's life work was the refutation of Arianism.",
+      "citations": [
+        {
+          "source": "Athanasius, Orationes contra Arianos",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-nicomedia",
+      "to": "arius",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Eusebius of Nicomedia was Arius's chief patron and protector after his condemnation.",
+      "citations": [
+        {
+          "source": "Theodoret, Hist. Eccl. 1.5",
+          "kind": "primary"
+        },
+        {
+          "source": "Sozomen, Hist. Eccl. 1.15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "athanasius-of-alexandria",
+      "to": "anthony-the-great",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Athanasius wrote the Vita Antonii and reports having served Anthony personally.",
+      "citations": [
+        {
+          "source": "Athanasius, Vita Antonii (preface)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "anthony-the-great",
+      "to": "athanasius-of-alexandria",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Anthony visited Alexandria in support of Athanasius against the Arians (338).",
+      "citations": [
+        {
+          "source": "Athanasius, Vita Antonii 69-71",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "basil-of-caesarea",
+      "to": "macrina-the-younger",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Macrina spiritually shaped her younger brother Basil after his return from Athens.",
+      "citations": [
+        {
+          "source": "Gregory of Nyssa, Vita Macrinae 6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-of-nyssa",
+      "to": "macrina-the-younger",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Gregory portrays Macrina as his teacher in De Anima et Resurrectione.",
+      "citations": [
+        {
+          "source": "Gregory of Nyssa, De Anima et Resurrectione (preface)",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nyssa, Vita Macrinae",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-of-nyssa",
+      "to": "basil-of-caesarea",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Gregory describes Basil as his teacher and elder brother.",
+      "citations": [
+        {
+          "source": "Gregory of Nyssa, Contra Eunomium 1.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "peter-of-sebaste",
+      "to": "macrina-the-younger",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Macrina raised the youngest brother Peter herself.",
+      "citations": [
+        {
+          "source": "Gregory of Nyssa, Vita Macrinae 12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "basil-of-caesarea",
+      "to": "gregory-of-nazianzus",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Basil and Gregory were close friends from their student days at Athens.",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Oratio 43.14-24",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-of-nazianzus",
+      "to": "basil-of-caesarea",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Surviving correspondence and the joint Philocalia of Origen.",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Epistulae 1-19, 40-58",
+          "kind": "primary"
+        },
+        {
+          "source": "Basil, Epistulae 2, 14, 71",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "basil-of-caesarea",
+      "to": "origen",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Basil and Gregory of Nazianzus compiled the Philocalia, an anthology of Origen.",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Epistula 115",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-of-nazianzus",
+      "to": "origen",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Co-compiler with Basil of the Philocalia of Origen.",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Epistula 115",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "amphilochius-of-iconium",
+      "to": "basil-of-caesarea",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Basil's De Spiritu Sancto is dedicated to Amphilochius.",
+      "citations": [
+        {
+          "source": "Basil, De Spiritu Sancto (preface)",
+          "kind": "primary"
+        },
+        {
+          "source": "Basil, Epistulae 161, 188, 199",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "amphilochius-of-iconium",
+      "to": "gregory-of-nazianzus",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Amphilochius was a cousin of Gregory of Nazianzus.",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Epistulae 9, 13, 25-26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-of-nazianzus",
+      "to": "gregory-thaumaturgus-elder",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Gregory the Theologian was raised and ordained presbyter by his father.",
+      "citations": [
+        {
+          "source": "Gregory of Nazianzus, Oratio 18",
+          "kind": "primary"
+        },
+        {
+          "source": "Gregory of Nazianzus, De Vita Sua",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "evagrius-ponticus",
+      "to": "gregory-of-nazianzus",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Gregory ordained Evagrius deacon and trained him at Constantinople.",
+      "citations": [
+        {
+          "source": "Palladius, Historia Lausiaca 38",
+          "kind": "primary"
+        },
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 4.23",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "evagrius-ponticus",
+      "to": "macarius-the-great",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Evagrius sat at the feet of Macarius the Great and Macarius the Alexandrian in the desert (Palladius, contemporary).",
+      "citations": [
+        {
+          "source": "Palladius, Historia Lausiaca 38",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-cassian",
+      "to": "evagrius-ponticus",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Cassian's Conferences transmit Evagrian monastic doctrine, though Cassian never names him.",
+      "citations": [
+        {
+          "source": "Cassian, Collationes (passim)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-cassian",
+      "to": "john-chrysostom",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Cassian was ordained deacon by Chrysostom and travelled to Rome to plead his cause.",
+      "citations": [
+        {
+          "source": "Cassian, De Incarnatione 7.31",
+          "kind": "primary"
+        },
+        {
+          "source": "Palladius, Dialogus 3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pachomius",
+      "to": "anthony-the-great",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Pachomius is depicted as familiar with the Antonian model though they did not directly meet.",
+      "citations": [
+        {
+          "source": "Vita Prima Pachomii 120",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-chrysostom",
+      "to": "diodore-of-tarsus",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Chrysostom was a pupil of Diodore at Antioch.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 6.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Sozomen, Hist. Eccl. 8.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "theodore-of-mopsuestia",
+      "to": "diodore-of-tarsus",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Theodore studied alongside Chrysostom under Diodore.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 6.3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "nestorius",
+      "to": "theodore-of-mopsuestia",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Nestorius is traditionally counted as a pupil of Theodore at Antioch.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 7.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "theodoret-of-cyrus",
+      "to": "theodore-of-mopsuestia",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Theodoret defended Theodore's writings.",
+      "citations": [
+        {
+          "source": "Theodoret, Eranistes",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "ambrose-of-milan",
+      "type": "baptized_by",
+      "strength": "documented",
+      "notes": "Ambrose baptized Augustine and Alypius at Milan during the Easter Vigil of 387.",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 9.6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "ambrose-of-milan",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Augustine attended Ambrose's preaching at Milan and credits him with his conversion.",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 5.13-14, 6.3-4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "alypius-of-thagaste",
+      "to": "ambrose-of-milan",
+      "type": "baptized_by",
+      "strength": "documented",
+      "notes": "Baptized together with Augustine in 387.",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 9.6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "monica-of-hippo",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Augustine credits his mother Monica with persistent influence toward his conversion.",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 3.11-12, 9.8-13",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "alypius-of-thagaste",
+      "to": "augustine-of-hippo",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Lifelong friendship from Thagaste through Carthage, Rome, Milan and back to Africa.",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 6.7-10, 8.6, 9.6",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "possidius-of-calama",
+      "to": "augustine-of-hippo",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Possidius lived in Augustine's monastic community at Hippo and wrote his Vita.",
+      "citations": [
+        {
+          "source": "Possidius, Vita Augustini (preface)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "marius-victorinus",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Augustine was deeply moved by hearing of the conversion of Marius Victorinus.",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 8.2-5",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "jerome",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Extensive (often acrimonious) correspondence over Galatians and the Hebrew text of the OT.",
+      "citations": [
+        {
+          "source": "Augustine, Epistulae 28, 40, 71, 82",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Epistulae 102, 105, 112, 115",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jerome",
+      "to": "rufinus-of-aquileia",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Friends from youth in Aquileia who became bitter opponents over Origenism.",
+      "citations": [
+        {
+          "source": "Jerome, Apologia contra Rufinum",
+          "kind": "primary"
+        },
+        {
+          "source": "Rufinus, Apologia contra Hieronymum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jerome",
+      "to": "rufinus-of-aquileia",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "The Origenist controversy split the two former friends c. 393-402.",
+      "citations": [
+        {
+          "source": "Jerome, Epistula 84",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Apologia contra Rufinum 1-3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jerome",
+      "to": "pope-damasus-i",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Damasus commissioned Jerome's revision of the Latin Bible.",
+      "citations": [
+        {
+          "source": "Jerome, Epistulae 15, 18, 35-36",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, Praefatio in Evangelia (ad Damasum)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jerome",
+      "to": "epiphanius-of-salamis",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Jerome and Epiphanius were close allies in the Origenist controversy.",
+      "citations": [
+        {
+          "source": "Jerome, Epistulae 51, 57, 82",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "rufinus-of-aquileia",
+      "to": "origen",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Rufinus translated Origen's De Principiis and many homilies into Latin.",
+      "citations": [
+        {
+          "source": "Rufinus, Praefatio in De Principiis",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "rufinus-of-aquileia",
+      "to": "eusebius-of-caesarea",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Rufinus translated and continued Eusebius's HE.",
+      "citations": [
+        {
+          "source": "Rufinus, Hist. Eccl. (preface)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "pelagius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "The Pelagian controversy occupied Augustine's last two decades.",
+      "citations": [
+        {
+          "source": "Augustine, De Gestis Pelagii",
+          "kind": "primary"
+        },
+        {
+          "source": "Augustine, De Natura et Gratia",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "julian-of-eclanum",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Augustine wrote six books Contra Julianum and the unfinished Opus Imperfectum.",
+      "citations": [
+        {
+          "source": "Augustine, Contra Julianum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "caelestius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Augustine wrote against Caelestius alongside Pelagius.",
+      "citations": [
+        {
+          "source": "Augustine, De Gratia Christi et de Peccato Originali",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "caelestius",
+      "to": "pelagius",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Caelestius was Pelagius's chief disciple and propagator.",
+      "citations": [
+        {
+          "source": "Augustine, De Gestis Pelagii",
+          "kind": "primary"
+        },
+        {
+          "source": "Marius Mercator, Commonitorium",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jerome",
+      "to": "pelagius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Jerome wrote a Dialogus contra Pelagianos.",
+      "citations": [
+        {
+          "source": "Jerome, Dialogus contra Pelagianos",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyril-of-alexandria",
+      "to": "nestorius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Cyril led the condemnation of Nestorius at the Council of Ephesus (431).",
+      "citations": [
+        {
+          "source": "Cyril, Epistulae 4, 17",
+          "kind": "primary"
+        },
+        {
+          "source": "Acta Concilii Ephesini (431)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "theodoret-of-cyrus",
+      "to": "cyril-of-alexandria",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Theodoret wrote a refutation of Cyril's Twelve Anathemas.",
+      "citations": [
+        {
+          "source": "Theodoret, Reprehensio XII Capitum Cyrilli",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-celestine-i",
+      "to": "cyril-of-alexandria",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Celestine commissioned Cyril to act on his behalf against Nestorius.",
+      "citations": [
+        {
+          "source": "Acta Concilii Ephesini (431); letters of Celestine to Cyril",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-leo-i",
+      "to": "flavian-of-constantinople",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Leo's Tome (Ep. 28) was addressed to Flavian.",
+      "citations": [
+        {
+          "source": "Leo, Epistula 28 (Tomus ad Flavianum)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "flavian-of-constantinople",
+      "to": "eutyches",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Flavian condemned Eutyches at the Home Synod of 448.",
+      "citations": [
+        {
+          "source": "Acta Concilii Chalcedonensis Session 1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-leo-i",
+      "to": "eutyches",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Leo condemned Eutyches's monophysitism in his Tome.",
+      "citations": [
+        {
+          "source": "Leo, Epistula 28",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "dioscorus-of-alexandria",
+      "to": "cyril-of-alexandria",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Dioscorus succeeded Cyril as patriarch of Alexandria in 444.",
+      "citations": [
+        {
+          "source": "Liberatus, Breviarium 12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "dioscorus-of-alexandria",
+      "to": "flavian-of-constantinople",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Dioscorus presided over Flavian's deposition at the Robber Council of Ephesus (449).",
+      "citations": [
+        {
+          "source": "Acta Concilii Chalcedonensis Session 1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyril-of-alexandria",
+      "to": "athanasius-of-alexandria",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Cyril repeatedly invokes Athanasius as the standard of orthodoxy.",
+      "citations": [
+        {
+          "source": "Cyril, Epistulae 1, 39",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ambrose-of-milan",
+      "to": "basil-of-caesarea",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Ambrose's De Spiritu Sancto draws heavily on Basil; correspondence between Eastern and Western Nicenes.",
+      "citations": [
+        {
+          "source": "Ambrose, De Spiritu Sancto (passim)",
+          "kind": "primary"
+        },
+        {
+          "source": "Basil, Epistulae 197",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ambrose-of-milan",
+      "to": "basil-of-caesarea",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Ambrose's De Spiritu Sancto adapts Basil's work of the same title.",
+      "citations": [
+        {
+          "source": "Ambrose, De Spiritu Sancto",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paulinus-of-nola",
+      "to": "augustine-of-hippo",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Lengthy correspondence preserved on both sides.",
+      "citations": [
+        {
+          "source": "Augustine, Epistulae 24-27, 30-32",
+          "kind": "primary"
+        },
+        {
+          "source": "Paulinus of Nola, Epistulae 4, 6, 45-50",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paulinus-of-nola",
+      "to": "jerome",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Paulinus exchanged letters with Jerome on biblical study.",
+      "citations": [
+        {
+          "source": "Jerome, Epistulae 53, 58, 85",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paulinus-of-nola",
+      "to": "ambrose-of-milan",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Ambrose ordained Paulinus presbyter at Nola.",
+      "citations": [
+        {
+          "source": "Paulinus of Nola, Epistula 3.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paulinus-of-nola",
+      "to": "sulpicius-severus",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Lifelong correspondence between fellow Aquitanian aristocrat-ascetics.",
+      "citations": [
+        {
+          "source": "Paulinus of Nola, Epistulae 1, 5, 11, 17, 22-24, 27-32",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "sulpicius-severus",
+      "to": "martin-of-tours",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Sulpicius personally visited Martin and wrote his Vita.",
+      "citations": [
+        {
+          "source": "Sulpicius Severus, Vita Martini 25-27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "martin-of-tours",
+      "to": "hilary-of-poitiers",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Hilary received Martin and ordained him exorcist; Martin founded Ligugé under Hilary's patronage. Sole source is Sulpicius Severus' Vita Martini, a hagiography written ~397 with strong panegyric framing.",
+      "citations": [
+        {
+          "source": "Sulpicius Severus, Vita Martini 5-7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "prosper-of-aquitaine",
+      "to": "augustine-of-hippo",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Prosper consulted Augustine on the rise of semi-Pelagianism in southern Gaul.",
+      "citations": [
+        {
+          "source": "Augustine, Epistula 225 (Prosper to Augustine)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "prosper-of-aquitaine",
+      "to": "augustine-of-hippo",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Prosper systematically defended Augustine's doctrine of grace.",
+      "citations": [
+        {
+          "source": "Prosper, Pro Augustino Responsiones; Contra Collatorem",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "prosper-of-aquitaine",
+      "to": "john-cassian",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Prosper's Contra Collatorem refutes Cassian's Conference 13.",
+      "citations": [
+        {
+          "source": "Prosper, Contra Collatorem",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "vincent-of-lerins",
+      "to": "augustine-of-hippo",
+      "type": "opposed",
+      "strength": "disputed",
+      "notes": "Vincent's Commonitorium is widely (though disputedly) read as a critique of Augustinian predestinarianism.",
+      "citations": [
+        {
+          "source": "Vincent, Commonitorium 26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "didymus-the-blind",
+      "to": "origen",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Didymus's exegesis is heavily Origenist; he was condemned with Origen at Constantinople II (553).",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 109",
+          "kind": "primary"
+        },
+        {
+          "source": "Rufinus, Hist. Eccl. 11.7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jerome",
+      "to": "didymus-the-blind",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Jerome studied with Didymus at Alexandria c. 386.",
+      "citations": [
+        {
+          "source": "Jerome, De Viris Illustribus 109, 135",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "rufinus-of-aquileia",
+      "to": "didymus-the-blind",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Rufinus also studied under Didymus at Alexandria.",
+      "citations": [
+        {
+          "source": "Rufinus, Apologia 2.12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "epiphanius-of-salamis",
+      "to": "origen",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Epiphanius led the late-fourth-century campaign against Origenism.",
+      "citations": [
+        {
+          "source": "Epiphanius, Panarion 64",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-chrysostom",
+      "to": "epiphanius-of-salamis",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Chrysostom and Epiphanius clashed over Origenism at Constantinople in 403.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 6.10-14",
+          "kind": "primary"
+        },
+        {
+          "source": "Sozomen, Hist. Eccl. 8.14-15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "palladius-of-galatia",
+      "to": "evagrius-ponticus",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Palladius lived with Evagrius for nine years in the desert.",
+      "citations": [
+        {
+          "source": "Palladius, Historia Lausiaca 23, 38",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "palladius-of-galatia",
+      "to": "john-chrysostom",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Palladius wrote the Dialogus on Chrysostom's life.",
+      "citations": [
+        {
+          "source": "Palladius, Dialogus de Vita Joannis Chrysostomi",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "socrates-scholasticus",
+      "to": "eusebius-of-caesarea",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Socrates' Hist. Eccl. begins where Eusebius left off.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 1 (preface)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "sozomen",
+      "to": "socrates-scholasticus",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Sozomen drew heavily on Socrates.",
+      "citations": [
+        {
+          "source": "Sozomen, Hist. Eccl. (preface)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "theodoret-of-cyrus",
+      "to": "eusebius-of-caesarea",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Theodoret continues Eusebius in his Hist. Eccl.",
+      "citations": [
+        {
+          "source": "Theodoret, Hist. Eccl. 1.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "mesrop-mashtots",
+      "to": "gregory-the-illuminator",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Mesrop worked under the catholicate descended from Gregory's line; tradition links them.",
+      "citations": [
+        {
+          "source": "Koriun, Life of Mashtots 6-9",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "patrick-of-ireland",
+      "to": "pope-celestine-i",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Patrick's mission is traditionally connected to Celestine's earlier sending of Palladius.",
+      "citations": [
+        {
+          "source": "Prosper of Aquitaine, Chronicon (s.a. 431)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "chromatius-of-aquileia",
+      "to": "jerome",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Chromatius supported Jerome's biblical work financially and by patronage.",
+      "citations": [
+        {
+          "source": "Jerome, Epistulae 7, 8",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "chromatius-of-aquileia",
+      "to": "rufinus-of-aquileia",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Chromatius was Rufinus's bishop and friend.",
+      "citations": [
+        {
+          "source": "Rufinus, Apologia 1.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-leo-i",
+      "to": "pope-celestine-i",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Leo became Bishop of Rome (440) following Sixtus III, who succeeded Celestine. Not a direct succession; relationship compresses an intervening pontificate. Source is the Liber Pontificalis, redacted in the 6th c.",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 45-47",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-celestine-i",
+      "to": "pope-innocent-i",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Celestine became Bishop of Rome (422) following Boniface, who succeeded Zosimus, who succeeded Innocent — not a direct succession. Source is the Liber Pontificalis, redacted in the 6th c.",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 42-45",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "pope-innocent-i",
+      "to": "pope-damasus-i",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Innocent became Bishop of Rome (401) following Anastasius, Siricius, and Damasus — three intervening bishops. Source is the Liber Pontificalis.",
+      "citations": [
+        {
+          "source": "Liber Pontificalis 39-42",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-chrysostom",
+      "to": "pope-innocent-i",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Chrysostom appealed to Innocent after his deposition.",
+      "citations": [
+        {
+          "source": "Palladius, Dialogus 2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "nestorius",
+      "to": "john-chrysostom",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Nestorius became Archbishop of Constantinople (428) some years after Chrysostom (d. 407), via intervening bishops Arsacius, Atticus, and Sisinnius — not a direct succession.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 7.29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "flavian-of-constantinople",
+      "to": "nestorius",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Flavian became Archbishop of Constantinople (446) several bishops after Nestorius (Maximian, Proclus); not a direct succession.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 7.40-48",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyril-of-alexandria",
+      "to": "athanasius-of-alexandria",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Cyril became Patriarch of Alexandria (412) several bishops after Athanasius (d. 373) — Peter II, Timothy, Theophilus all intervened. Not a direct succession.",
+      "citations": [
+        {
+          "source": "Socrates Scholasticus, Hist. Eccl. 7.7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "marcellus-of-ancyra",
+      "to": "athanasius-of-alexandria",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Marcellus and Athanasius were exiled to Rome together c. 339-343.",
+      "citations": [
+        {
+          "source": "Athanasius, Apologia contra Arianos 47-50",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "marcellus-of-ancyra",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Eusebius wrote Contra Marcellum and De Ecclesiastica Theologia against him.",
+      "citations": [
+        {
+          "source": "Eusebius, Contra Marcellum",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ambrose-of-milan",
+      "to": "augustine-of-hippo",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Ambrose received Monica's commendation regarding Augustine.",
+      "citations": [
+        {
+          "source": "Augustine, Confessions 6.1-2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "hilary-of-poitiers",
+      "to": "athanasius-of-alexandria",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Hilary cited Athanasius and the Nicene cause; took up Athanasius's role in the West.",
+      "citations": [
+        {
+          "source": "Hilary, De Synodis",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "basil-of-caesarea",
+      "to": "athanasius-of-alexandria",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Basil wrote to Athanasius seeking unity with Rome.",
+      "citations": [
+        {
+          "source": "Basil, Epistulae 66, 69, 80, 82",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "evagrius-ponticus",
+      "to": "basil-of-caesarea",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Basil ordained Evagrius lector at Caesarea.",
+      "citations": [
+        {
+          "source": "Palladius, Historia Lausiaca 38",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ephrem-the-syrian",
+      "to": "basil-of-caesarea",
+      "type": "met",
+      "strength": "tradition",
+      "notes": "Late tradition reports a visit between Ephrem and Basil at Caesarea.",
+      "citations": [
+        {
+          "source": "Sozomen, Hist. Eccl. 3.16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "augustine-of-hippo",
+      "to": "cyril-of-alexandria",
+      "type": "corresponded",
+      "strength": "tradition",
+      "notes": "Cyril sent Augustine documents on the Nestorian controversy shortly before Augustine's death.",
+      "citations": [
+        {
+          "source": "Augustine, Epistula 4* (Divjak)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyril-of-jerusalem",
+      "to": "gregory-of-nazianzus",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Both attended the First Council of Constantinople in 381; Cyril is listed among the 150 fathers and Gregory presided briefly over the council.",
+      "citations": [
+        {
+          "source": "Acta of the First Council of Constantinople (381)",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Hist. Eccl. 5.8-9",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "cyril-of-jerusalem",
+      "to": "arius",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "Cyril's Catechetical Lectures defend the Nicene faith and oppose Arian subordinationism, and he subscribed the Nicene-Constantinopolitan creed at the council of 381.",
+      "citations": [
+        {
+          "source": "Cyril of Jerusalem, Catecheses 4.7; 11; 15",
+          "kind": "primary"
+        },
+        {
+          "source": "Theodoret, Hist. Eccl. 2.26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ephrem-the-syrian",
+      "to": "aphrahat",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Ephrem and Aphrahat are the two principal 4th-century Syriac Fathers and share the same theological idiom (typological exegesis, anti-Jewish polemic, ascetic ideals). Direct citation is not preserved; the link is the shared Syriac milieu and parallel content noted by modern scholarship.",
+      "citations": [
+        {
+          "source": "Murray, Symbols of Church and Kingdom (CUP 1975), pp. 29-38",
+          "kind": "secondary"
+        },
+        {
+          "source": "Brock, The Luminous Eye (Cistercian 1992), ch. 1",
+          "kind": "secondary"
+        }
+      ]
+    },
+    {
+      "from": "gregory-the-illuminator",
+      "to": "constantine-the-great",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Agathangelos's History of the Armenians records a journey of King Trdat and Gregory to Rome to meet Constantine; the historicity is debated but the tradition links them as contemporary Christian rulers/founders.",
+      "citations": [
+        {
+          "source": "Agathangelos, History of the Armenians 877-895",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "mesrop-mashtots",
+      "to": "john-chrysostom",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "The 5th-century Armenian translation school founded by Mesrop and Sahak rendered Chrysostom's homilies into Armenian; Koriun describes the translation programme.",
+      "citations": [
+        {
+          "source": "Koriun, Life of Mashtots 11-19",
+          "kind": "primary"
+        },
+        {
+          "source": "Thomson, A Bibliography of Classical Armenian Literature to 1500 AD (Brepols 1995), s.v. John Chrysostom",
+          "kind": "secondary"
+        }
+      ]
+    }
+  ]
+}

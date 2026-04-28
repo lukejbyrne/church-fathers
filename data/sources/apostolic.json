@@ -1,0 +1,2134 @@
+{
+  "era": "apostolic",
+  "people": [
+    {
+      "id": "jesus-of-nazareth",
+      "name": "Jesus of Nazareth",
+      "alt_names": [
+        "Jesus Christ",
+        "Yeshua"
+      ],
+      "born": -4,
+      "born_circa": true,
+      "died": 30,
+      "died_circa": true,
+      "birth_place": "Bethlehem",
+      "death_place": "Jerusalem",
+      "region": "palestine",
+      "role": [
+        "theologian"
+      ],
+      "tradition_status": "apostle",
+      "significance": 4,
+      "short_bio": "Central figure of Christianity. Jewish teacher from Nazareth, crucified under Pontius Pilate c. AD 30; confessed by Christians as the Messiah and Son of God. Called and taught the Twelve Apostles.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jesus",
+      "wikidata_id": "Q302",
+      "citations": [
+        {
+          "source": "Gospel of Mark 1-16",
+          "kind": "primary"
+        },
+        {
+          "source": "Tacitus, Annals 15.44",
+          "kind": "primary"
+        },
+        {
+          "source": "Josephus, Antiquities 18.3.3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "mary-mother-of-jesus",
+      "name": "Mary, mother of Jesus",
+      "alt_names": [
+        "Theotokos",
+        "Miriam"
+      ],
+      "born": -18,
+      "born_circa": true,
+      "died": 50,
+      "died_circa": true,
+      "birth_place": "Nazareth",
+      "death_place": null,
+      "region": "palestine",
+      "role": [
+        "layman"
+      ],
+      "tradition_status": "apostle",
+      "significance": 3,
+      "short_bio": "Mother of Jesus of Nazareth. Present at the crucifixion and entrusted to the disciple John; numbered among the disciples gathered before Pentecost.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mary,_mother_of_Jesus",
+      "wikidata_id": "Q345",
+      "citations": [
+        {
+          "source": "Gospel of Luke 1-2",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of John 19:25-27",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts of the Apostles 1:14",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "mary-magdalene",
+      "name": "Mary Magdalene",
+      "alt_names": [
+        "Mary of Magdala"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": null,
+      "died_circa": true,
+      "birth_place": "Magdala",
+      "death_place": null,
+      "region": "palestine",
+      "role": [
+        "layman"
+      ],
+      "tradition_status": "apostle",
+      "significance": 3,
+      "short_bio": "Disciple of Jesus from Magdala in Galilee; first witness of the resurrection in all four Gospels. Called 'apostle to the apostles' by later tradition.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mary_Magdalene",
+      "wikidata_id": "Q63070",
+      "citations": [
+        {
+          "source": "Gospel of John 20:1-18",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of Luke 8:2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "peter-the-apostle",
+      "name": "Peter",
+      "alt_names": [
+        "Simon Peter",
+        "Cephas",
+        "Simon bar Jonah"
+      ],
+      "born": 1,
+      "born_circa": true,
+      "died": 64,
+      "died_circa": true,
+      "birth_place": "Bethsaida",
+      "death_place": "Rome",
+      "region": "palestine",
+      "role": [
+        "apostle",
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "apostle",
+      "significance": 4,
+      "short_bio": "Chief of the Twelve Apostles. Fisherman from Bethsaida; preached at Pentecost, traveled widely, and traditionally martyred in Rome under Nero. Counted by Roman tradition as first bishop of Rome.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Saint_Peter",
+      "wikidata_id": "Q33923",
+      "citations": [
+        {
+          "source": "Gospel of Matthew 16:13-19",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts of the Apostles 1-15",
+          "kind": "primary"
+        },
+        {
+          "source": "1 Peter 1:1",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 2.25",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "andrew-the-apostle",
+      "name": "Andrew",
+      "alt_names": [
+        "Andrew the Apostle"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 60,
+      "died_circa": true,
+      "birth_place": "Bethsaida",
+      "death_place": "Patras",
+      "region": "palestine",
+      "role": [
+        "apostle",
+        "martyr"
+      ],
+      "tradition_status": "apostle",
+      "significance": 3,
+      "short_bio": "Brother of Peter, fisherman from Bethsaida, one of the Twelve. Traditionally evangelized Scythia and Achaea and was crucified at Patras.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Andrew_the_Apostle",
+      "wikidata_id": "Q43399",
+      "citations": [
+        {
+          "source": "Gospel of John 1:40-42",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "james-son-of-zebedee",
+      "name": "James, son of Zebedee",
+      "alt_names": [
+        "James the Greater"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 44,
+      "died_circa": true,
+      "birth_place": "Galilee",
+      "death_place": "Jerusalem",
+      "region": "palestine",
+      "role": [
+        "apostle",
+        "martyr"
+      ],
+      "tradition_status": "apostle",
+      "significance": 3,
+      "short_bio": "Brother of John, son of Zebedee, one of the Twelve and of the inner three. Beheaded by Herod Agrippa I c. AD 44 — the first apostle martyred.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/James,_son_of_Zebedee",
+      "wikidata_id": "Q43999",
+      "citations": [
+        {
+          "source": "Acts of the Apostles 12:1-2",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of Mark 3:17",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "john-the-apostle",
+      "name": "John the Apostle",
+      "alt_names": [
+        "John son of Zebedee",
+        "the Beloved Disciple"
+      ],
+      "born": 6,
+      "born_circa": true,
+      "died": 100,
+      "died_circa": true,
+      "birth_place": "Galilee",
+      "death_place": "Ephesus",
+      "region": "asia-minor",
+      "role": [
+        "apostle",
+        "bishop"
+      ],
+      "see": "Ephesus",
+      "tradition_status": "apostle",
+      "significance": 4,
+      "short_bio": "Son of Zebedee, brother of James, one of the Twelve and of the inner three. By tradition resided in Ephesus, taught Polycarp and Papias, and lived to the reign of Trajan.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/John_the_Apostle",
+      "wikidata_id": "Q44015",
+      "citations": [
+        {
+          "source": "Gospel of John 21:20-24",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 2.22.5; 3.3.4",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.23, 3.39",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "philip-the-apostle",
+      "name": "Philip the Apostle",
+      "alt_names": [
+        "Philip"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 80,
+      "died_circa": true,
+      "birth_place": "Bethsaida",
+      "death_place": "Hierapolis",
+      "region": "palestine",
+      "role": [
+        "apostle",
+        "martyr"
+      ],
+      "tradition_status": "apostle",
+      "significance": 2,
+      "short_bio": "One of the Twelve, from Bethsaida. Tradition (via Polycrates of Ephesus in Eusebius) places his later life and burial at Hierapolis in Phrygia.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Philip_the_Apostle",
+      "wikidata_id": "Q43675",
+      "citations": [
+        {
+          "source": "Gospel of John 1:43-48",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.31 (citing Polycrates)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "bartholomew-the-apostle",
+      "name": "Bartholomew",
+      "alt_names": [
+        "Nathanael"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 70,
+      "died_circa": true,
+      "birth_place": "Cana",
+      "death_place": "Armenia",
+      "region": "palestine",
+      "role": [
+        "apostle",
+        "martyr"
+      ],
+      "tradition_status": "apostle",
+      "significance": 2,
+      "short_bio": "One of the Twelve, often identified with Nathanael. Tradition reports preaching in India and Armenia and martyrdom by flaying.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Bartholomew_the_Apostle",
+      "wikidata_id": "Q43982",
+      "citations": [
+        {
+          "source": "Gospel of Matthew 10:3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 5.10",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "matthew-the-apostle",
+      "name": "Matthew the Apostle",
+      "alt_names": [
+        "Levi",
+        "Matthew the Evangelist"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 80,
+      "died_circa": true,
+      "birth_place": "Galilee",
+      "death_place": null,
+      "region": "palestine",
+      "role": [
+        "apostle"
+      ],
+      "tradition_status": "apostle",
+      "significance": 3,
+      "short_bio": "Tax collector called by Jesus, one of the Twelve, traditionally the author of the Gospel of Matthew (originally in 'the Hebrew dialect' per Papias).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Matthew_the_Apostle",
+      "wikidata_id": "Q43600",
+      "citations": [
+        {
+          "source": "Gospel of Matthew 9:9",
+          "kind": "primary"
+        },
+        {
+          "source": "Papias, Fragment in Eusebius HE 3.39.16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "thomas-the-apostle",
+      "name": "Thomas the Apostle",
+      "alt_names": [
+        "Didymus",
+        "Doubting Thomas"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 72,
+      "died_circa": true,
+      "birth_place": "Galilee",
+      "death_place": "Mylapore",
+      "region": "palestine",
+      "role": [
+        "apostle",
+        "martyr"
+      ],
+      "tradition_status": "apostle",
+      "significance": 2,
+      "short_bio": "One of the Twelve. Confessed the risen Christ as 'My Lord and my God' (John 20). Traditionally evangelized Parthia and India.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Thomas_the_Apostle",
+      "wikidata_id": "Q43669",
+      "citations": [
+        {
+          "source": "Gospel of John 20:24-29",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "james-son-of-alphaeus",
+      "name": "James, son of Alphaeus",
+      "alt_names": [
+        "James the Less"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": null,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "palestine",
+      "role": [
+        "apostle"
+      ],
+      "tradition_status": "apostle",
+      "significance": 1,
+      "short_bio": "One of the Twelve, distinguished from James son of Zebedee. Often (and disputedly) identified with James the Less or James the Just.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/James,_son_of_Alphaeus",
+      "wikidata_id": "Q44047",
+      "citations": [
+        {
+          "source": "Gospel of Mark 3:18",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "jude-thaddaeus",
+      "name": "Jude Thaddaeus",
+      "alt_names": [
+        "Thaddaeus",
+        "Jude of James",
+        "Lebbaeus"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 65,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "palestine",
+      "role": [
+        "apostle",
+        "martyr"
+      ],
+      "tradition_status": "apostle",
+      "significance": 2,
+      "short_bio": "One of the Twelve, called Thaddaeus in Matthew/Mark and 'Jude of James' in Luke. Traditional author of the Epistle of Jude in some attributions.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Jude_the_Apostle",
+      "wikidata_id": "Q43945",
+      "citations": [
+        {
+          "source": "Gospel of Luke 6:16",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of Matthew 10:3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "simon-the-zealot",
+      "name": "Simon the Zealot",
+      "alt_names": [
+        "Simon the Cananean"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": null,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "palestine",
+      "role": [
+        "apostle"
+      ],
+      "tradition_status": "apostle",
+      "significance": 1,
+      "short_bio": "One of the Twelve, called the Zealot or Cananean. Few details survive; later traditions place his mission in Persia or Britain.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Simon_the_Zealot",
+      "wikidata_id": "Q12871",
+      "citations": [
+        {
+          "source": "Gospel of Luke 6:15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "judas-iscariot",
+      "name": "Judas Iscariot",
+      "alt_names": [
+        "Judas"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 30,
+      "died_circa": true,
+      "birth_place": "Kerioth",
+      "death_place": "Jerusalem",
+      "region": "palestine",
+      "role": [
+        "apostle"
+      ],
+      "tradition_status": "apostle",
+      "significance": 2,
+      "short_bio": "One of the Twelve who betrayed Jesus to the Sanhedrin for thirty pieces of silver. Died shortly thereafter (by hanging in Matthew; by falling in Acts).",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Judas_Iscariot",
+      "wikidata_id": "Q81018",
+      "citations": [
+        {
+          "source": "Gospel of Matthew 27:3-10",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts of the Apostles 1:16-20",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "matthias-the-apostle",
+      "name": "Matthias",
+      "alt_names": [
+        "Matthias the Apostle"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 80,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "palestine",
+      "role": [
+        "apostle"
+      ],
+      "tradition_status": "apostle",
+      "significance": 2,
+      "short_bio": "Chosen by lot to replace Judas Iscariot among the Twelve (Acts 1). Tradition reports later mission to Cappadocia or Ethiopia.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Saint_Matthias",
+      "wikidata_id": "Q44020",
+      "citations": [
+        {
+          "source": "Acts of the Apostles 1:21-26",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 1.12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "paul-of-tarsus",
+      "name": "Paul of Tarsus",
+      "alt_names": [
+        "Saul of Tarsus",
+        "the Apostle Paul"
+      ],
+      "born": 5,
+      "born_circa": true,
+      "died": 65,
+      "died_circa": true,
+      "birth_place": "Tarsus",
+      "death_place": "Rome",
+      "region": "asia-minor",
+      "role": [
+        "apostle",
+        "martyr",
+        "theologian"
+      ],
+      "tradition_status": "apostle",
+      "significance": 4,
+      "short_bio": "Pharisee turned apostle to the Gentiles after his Damascus-road encounter. Author of at least seven undisputed letters in the New Testament; martyred in Rome under Nero.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Paul_the_Apostle",
+      "wikidata_id": "Q9200",
+      "citations": [
+        {
+          "source": "Acts of the Apostles 9, 13-28",
+          "kind": "primary"
+        },
+        {
+          "source": "Galatians 1-2",
+          "kind": "primary"
+        },
+        {
+          "source": "1 Clement 5",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 2.22, 2.25",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "james-the-just",
+      "name": "James the Just",
+      "alt_names": [
+        "James, brother of the Lord",
+        "James of Jerusalem"
+      ],
+      "born": 1,
+      "born_circa": true,
+      "died": 62,
+      "died_circa": true,
+      "birth_place": "Nazareth",
+      "death_place": "Jerusalem",
+      "region": "palestine",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Jerusalem",
+      "tradition_status": "apostolic-father",
+      "significance": 3,
+      "short_bio": "Brother of Jesus, leader of the Jerusalem church. Presided at the Apostolic Council (Acts 15); martyred c. 62 by stoning under high priest Ananus per Josephus and Hegesippus.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/James,_brother_of_Jesus",
+      "wikidata_id": "Q26925",
+      "citations": [
+        {
+          "source": "Galatians 1:19; 2:9",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts of the Apostles 15",
+          "kind": "primary"
+        },
+        {
+          "source": "Josephus, Antiquities 20.9.1",
+          "kind": "primary"
+        },
+        {
+          "source": "Hegesippus in Eusebius HE 2.23",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "mark-the-evangelist",
+      "name": "Mark the Evangelist",
+      "alt_names": [
+        "John Mark"
+      ],
+      "born": 5,
+      "born_circa": true,
+      "died": 68,
+      "died_circa": true,
+      "birth_place": "Cyrene",
+      "death_place": "Alexandria",
+      "region": "egypt",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Alexandria",
+      "tradition_status": "apostolic-father",
+      "significance": 3,
+      "short_bio": "Companion of Paul and Barnabas, then 'interpreter' of Peter at Rome (per Papias). Traditional author of the Gospel of Mark and founder of the church of Alexandria.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Mark_the_Evangelist",
+      "wikidata_id": "Q31966",
+      "citations": [
+        {
+          "source": "1 Peter 5:13",
+          "kind": "primary"
+        },
+        {
+          "source": "Papias in Eusebius HE 3.39.15",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 2.16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "luke-the-evangelist",
+      "name": "Luke the Evangelist",
+      "alt_names": [
+        "Luke the Physician"
+      ],
+      "born": 1,
+      "born_circa": true,
+      "died": 84,
+      "died_circa": true,
+      "birth_place": "Antioch",
+      "death_place": null,
+      "region": "syria",
+      "role": [
+        "theologian"
+      ],
+      "tradition_status": "apostolic-father",
+      "significance": 3,
+      "short_bio": "Physician and companion of Paul, traditional author of the Gospel of Luke and Acts of the Apostles. Identified by Irenaeus as 'a follower of Paul'.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Luke_the_Evangelist",
+      "wikidata_id": "Q128538",
+      "citations": [
+        {
+          "source": "Colossians 4:14",
+          "kind": "primary"
+        },
+        {
+          "source": "2 Timothy 4:11",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.1.1; 3.14.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "timothy-of-ephesus",
+      "name": "Timothy",
+      "alt_names": [
+        "Timothy of Ephesus"
+      ],
+      "born": 17,
+      "born_circa": true,
+      "died": 97,
+      "died_circa": true,
+      "birth_place": "Lystra",
+      "death_place": "Ephesus",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Ephesus",
+      "tradition_status": "apostolic-father",
+      "significance": 2,
+      "short_bio": "Companion and disciple of Paul, addressee of 1-2 Timothy. Traditionally first bishop of Ephesus; martyred under Nerva or Trajan per later acta.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Timothy",
+      "wikidata_id": "Q9087719",
+      "citations": [
+        {
+          "source": "Acts of the Apostles 16:1-3",
+          "kind": "primary"
+        },
+        {
+          "source": "1 Timothy 1:2",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "titus-of-crete",
+      "name": "Titus",
+      "alt_names": [
+        "Titus of Crete"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 96,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Crete",
+      "region": "other",
+      "role": [
+        "bishop"
+      ],
+      "see": "Gortyna",
+      "tradition_status": "apostolic-father",
+      "significance": 2,
+      "short_bio": "Greek companion of Paul, addressee of the Epistle to Titus. Left in Crete to organize the church; traditionally first bishop of Gortyna.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Titus_(biblical)",
+      "wikidata_id": "Q320136",
+      "citations": [
+        {
+          "source": "Galatians 2:1-3",
+          "kind": "primary"
+        },
+        {
+          "source": "Titus 1:5",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "onesimus",
+      "name": "Onesimus",
+      "alt_names": [
+        "Onesimus of Byzantium"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 109,
+      "died_circa": true,
+      "birth_place": "Colossae",
+      "death_place": null,
+      "region": "asia-minor",
+      "role": [
+        "bishop"
+      ],
+      "see": "Ephesus",
+      "tradition_status": "apostolic-father",
+      "significance": 1,
+      "short_bio": "Slave of Philemon converted by Paul (Philem. 10). Often identified with the bishop Onesimus of Ephesus greeted by Ignatius in his letter to the Ephesians.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Onesimus",
+      "wikidata_id": "Q319568",
+      "citations": [
+        {
+          "source": "Philemon 10-16",
+          "kind": "primary"
+        },
+        {
+          "source": "Ignatius, To the Ephesians 1.3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "linus-of-rome",
+      "name": "Linus of Rome",
+      "alt_names": [
+        "Pope Linus"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 76,
+      "died_circa": true,
+      "birth_place": "Tuscany",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "apostolic-father",
+      "significance": 1,
+      "short_bio": "Listed by Irenaeus and Eusebius as the first bishop of Rome after Peter and Paul. Often identified with the Linus greeted in 2 Timothy 4:21.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Linus",
+      "wikidata_id": "Q47144",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.2, 3.13",
+          "kind": "primary"
+        },
+        {
+          "source": "2 Timothy 4:21",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "anacletus-of-rome",
+      "name": "Anacletus of Rome",
+      "alt_names": [
+        "Cletus",
+        "Anencletus"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 92,
+      "died_circa": true,
+      "birth_place": "Athens",
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "apostolic-father",
+      "significance": 1,
+      "short_bio": "Second successor of Peter at Rome per Irenaeus' list. Almost no biographical detail survives beyond the succession lists.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Anacletus",
+      "wikidata_id": "Q80450",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.13, 3.15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "clement-of-rome",
+      "name": "Clement of Rome",
+      "alt_names": [
+        "Pope Clement I"
+      ],
+      "born": 35,
+      "born_circa": true,
+      "died": 99,
+      "died_circa": true,
+      "birth_place": "Rome",
+      "death_place": "Crimea",
+      "region": "west",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Rome",
+      "tradition_status": "apostolic-father",
+      "significance": 3,
+      "short_bio": "Bishop of Rome late in the 1st century. Author of 1 Clement to the Corinthian church c. AD 96 — the earliest surviving Christian document outside the New Testament.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Clement_I",
+      "wikidata_id": "Q42887",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf01.ii.ii.html",
+      "citations": [
+        {
+          "source": "1 Clement (entire)",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.4, 3.15-16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "evodius-of-antioch",
+      "name": "Evodius of Antioch",
+      "alt_names": [
+        "Euodius"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 67,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Antioch",
+      "region": "syria",
+      "role": [
+        "bishop"
+      ],
+      "see": "Antioch",
+      "tradition_status": "apostolic-father",
+      "significance": 1,
+      "short_bio": "First bishop of Antioch after Peter per Eusebius and Origen. Said to have coined the term 'Christian' in some later traditions.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Evodius",
+      "wikidata_id": "Q709251",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 3.22",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "ignatius-of-antioch",
+      "name": "Ignatius of Antioch",
+      "alt_names": [
+        "Theophorus"
+      ],
+      "born": 35,
+      "born_circa": true,
+      "died": 108,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Rome",
+      "region": "syria",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Antioch",
+      "tradition_status": "apostolic-father",
+      "significance": 3,
+      "short_bio": "Bishop of Antioch, arrested and sent to Rome under Trajan c. 107-110, writing seven letters en route to the churches and to Polycarp. Martyred in Rome.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Ignatius_of_Antioch",
+      "wikidata_id": "Q44170",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf01.v.html",
+      "citations": [
+        {
+          "source": "Ignatius, Letters (Ephesians, Magnesians, Trallians, Romans, Philadelphians, Smyrnaeans, To Polycarp)",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.22, 3.36",
+          "kind": "primary"
+        },
+        {
+          "source": "Polycarp, Phil. 9, 13",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "polycarp-of-smyrna",
+      "name": "Polycarp of Smyrna",
+      "alt_names": [
+        "Polycarp"
+      ],
+      "born": 69,
+      "born_circa": true,
+      "died": 155,
+      "died_circa": true,
+      "birth_place": "Smyrna",
+      "death_place": "Smyrna",
+      "region": "asia-minor",
+      "role": [
+        "bishop",
+        "martyr"
+      ],
+      "see": "Smyrna",
+      "tradition_status": "apostolic-father",
+      "significance": 3,
+      "short_bio": "Bishop of Smyrna and (per Irenaeus) disciple of John the Apostle. Wrote to the Philippians; martyred by burning c. 155-156. Teacher of Irenaeus of Lyons.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Polycarp",
+      "wikidata_id": "Q192371",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf01.iv.ii.html",
+      "citations": [
+        {
+          "source": "Polycarp, To the Philippians",
+          "kind": "primary"
+        },
+        {
+          "source": "Martyrdom of Polycarp",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.4",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Letter to Florinus (in Eusebius HE 5.20)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "papias-of-hierapolis",
+      "name": "Papias of Hierapolis",
+      "alt_names": [
+        "Papias"
+      ],
+      "born": 60,
+      "born_circa": true,
+      "died": 130,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Hierapolis",
+      "region": "asia-minor",
+      "role": [
+        "bishop"
+      ],
+      "see": "Hierapolis",
+      "tradition_status": "apostolic-father",
+      "significance": 2,
+      "short_bio": "Bishop of Hierapolis in Phrygia. Author of the lost five-book 'Exposition of the Sayings of the Lord'; preserves the earliest testimony about the composition of Matthew and Mark.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Papias_of_Hierapolis",
+      "wikidata_id": "Q273053",
+      "citations": [
+        {
+          "source": "Papias, Fragments in Eusebius HE 3.39",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 5.33.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "hermas-of-rome",
+      "name": "Hermas",
+      "alt_names": [
+        "Hermas of Rome",
+        "the Shepherd"
+      ],
+      "born": 60,
+      "born_circa": true,
+      "died": 140,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Rome",
+      "region": "west",
+      "role": [
+        "layman"
+      ],
+      "tradition_status": "apostolic-father",
+      "significance": 2,
+      "short_bio": "Roman Christian, brother of Pope Pius I per the Muratorian Fragment. Author of 'The Shepherd of Hermas', a widely read apocalyptic-paraenetic work of the early 2nd century.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/The_Shepherd_of_Hermas",
+      "wikidata_id": "Q898808",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf02.iii.html",
+      "citations": [
+        {
+          "source": "Shepherd of Hermas (entire)",
+          "kind": "primary"
+        },
+        {
+          "source": "Muratorian Fragment, lines 73-80",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 4.20.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "didache-author",
+      "name": "Author of the Didache",
+      "alt_names": [
+        "Didachist"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": null,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "syria",
+      "role": [
+        "theologian"
+      ],
+      "tradition_status": "apostolic-father",
+      "significance": 2,
+      "short_bio": "Anonymous compiler of the 'Teaching of the Twelve Apostles' (Didache), an early church manual on ethics, baptism, eucharist, and ministry. Likely Syrian, late 1st or early 2nd century.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Didache",
+      "wikidata_id": "Q210752",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf07.ii.iv.html",
+      "citations": [
+        {
+          "source": "Didache (entire)",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.25",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "pseudo-barnabas",
+      "name": "Pseudo-Barnabas",
+      "alt_names": [
+        "Author of the Epistle of Barnabas"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": null,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": null,
+      "region": "egypt",
+      "role": [
+        "theologian"
+      ],
+      "tradition_status": "apostolic-father",
+      "significance": 2,
+      "short_bio": "Anonymous early-2nd-century author of the Epistle of Barnabas, an allegorical-typological treatise on the Old Testament. Probably Alexandrian; not in fact the apostolic Barnabas.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Epistle_of_Barnabas",
+      "wikidata_id": "Q262557",
+      "ccel_url": "https://ccel.org/ccel/schaff/anf01.iii.html",
+      "citations": [
+        {
+          "source": "Epistle of Barnabas (entire)",
+          "kind": "primary"
+        },
+        {
+          "source": "Clement of Alexandria, Stromata 2.6-7",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.25, 6.14",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "quadratus-of-athens",
+      "name": "Quadratus of Athens",
+      "alt_names": [
+        "Quadratus the Apologist"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 129,
+      "died_circa": true,
+      "birth_place": null,
+      "death_place": "Athens",
+      "region": "east",
+      "role": [
+        "bishop",
+        "apologist"
+      ],
+      "see": "Athens",
+      "tradition_status": "apostolic-father",
+      "significance": 1,
+      "short_bio": "Earliest known Christian apologist, who addressed an apology to Hadrian c. 124-129. Eusebius preserves a single fragment claiming some healed by Christ survived 'into our own times'.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Quadratus_of_Athens",
+      "wikidata_id": "Q445029",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 4.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "id": "aristides-of-athens",
+      "name": "Aristides of Athens",
+      "alt_names": [
+        "Marcianus Aristides"
+      ],
+      "born": null,
+      "born_circa": true,
+      "died": 134,
+      "died_circa": true,
+      "birth_place": "Athens",
+      "death_place": "Athens",
+      "region": "east",
+      "role": [
+        "apologist"
+      ],
+      "tradition_status": "apostolic-father",
+      "significance": 2,
+      "short_bio": "Athenian philosopher and Christian apologist who addressed an Apology to Hadrian (or Antoninus Pius). His Apology survives in Syriac, Greek (in Barlaam and Josaphat), and Armenian.",
+      "wikipedia_url": "https://en.wikipedia.org/wiki/Aristides_of_Athens",
+      "wikidata_id": "Q349916",
+      "citations": [
+        {
+          "source": "Aristides, Apology",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 4.3.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 20",
+          "kind": "primary"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "from": "peter-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Peter is called by Jesus and named chief of the Twelve in all four Gospels.",
+      "citations": [
+        {
+          "source": "Gospel of Mark 1:16-18",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of Matthew 16:13-19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "andrew-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of John 1:35-42",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "james-son-of-zebedee",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Mark 1:19-20",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "john-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Mark 1:19-20",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of John 21:20-24",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "philip-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of John 1:43-48",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "bartholomew-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Matthew 10:3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "matthew-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Matthew 9:9",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "thomas-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of John 20:24-29",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "james-son-of-alphaeus",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Mark 3:18",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "jude-thaddaeus",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Luke 6:16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "simon-the-zealot",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Luke 6:15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "judas-iscariot",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "One of the Twelve who later betrayed Jesus.",
+      "citations": [
+        {
+          "source": "Gospel of Mark 3:19",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of Matthew 26:14-16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "matthias-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Acts 1:21-22 specifies Matthias had accompanied Jesus 'beginning from the baptism of John' though he was not one of the original Twelve.",
+      "citations": [
+        {
+          "source": "Acts of the Apostles 1:21-22",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "mary-magdalene",
+      "to": "jesus-of-nazareth",
+      "type": "taught_by",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Gospel of Luke 8:1-3",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of John 20:1-18",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "james-the-just",
+      "to": "jesus-of-nazareth",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Brother of Jesus per Mark 6:3 and Galatians 1:19; received a resurrection appearance per 1 Cor 15:7.",
+      "citations": [
+        {
+          "source": "Gospel of Mark 6:3",
+          "kind": "primary"
+        },
+        {
+          "source": "1 Corinthians 15:7",
+          "kind": "primary"
+        },
+        {
+          "source": "Galatians 1:19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "jesus-of-nazareth",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Paul claims a resurrection appearance and direct revelation (Galatians 1:11-17, 1 Cor 15:8). Not a pre-Easter disciple.",
+      "citations": [
+        {
+          "source": "1 Corinthians 15:8",
+          "kind": "primary"
+        },
+        {
+          "source": "Galatians 1:11-17",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts 9:1-19",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "peter-the-apostle",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Paul visited Cephas in Jerusalem for fifteen days c. AD 36 (Gal 1:18). They later met at the Apostolic Council (Gal 2 / Acts 15).",
+      "citations": [
+        {
+          "source": "Galatians 1:18; 2:1-10",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts of the Apostles 15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "peter-the-apostle",
+      "type": "opposed",
+      "strength": "documented",
+      "notes": "The Antioch incident: Paul publicly rebuked Peter for withdrawing from Gentile table fellowship under pressure from 'men from James' (Gal 2:11-14).",
+      "citations": [
+        {
+          "source": "Galatians 2:11-14",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "james-the-just",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Paul met James in Jerusalem (Gal 1:19) and again at the Apostolic Council (Gal 2:9 / Acts 15).",
+      "citations": [
+        {
+          "source": "Galatians 1:19; 2:9",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts 15:13; 21:18",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "james-the-just",
+      "type": "opposed",
+      "strength": "tradition",
+      "notes": "Paul was opposed not by James personally but by 'certain men from James' whose intervention triggered the Antioch incident (Gal 2:12). The direct opposition between Paul and James himself is inferred and disputed by scholars.",
+      "citations": [
+        {
+          "source": "Galatians 2:12",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "timothy-of-ephesus",
+      "type": "taught",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Acts 16:1-3",
+          "kind": "primary"
+        },
+        {
+          "source": "1 Timothy 1:2",
+          "kind": "primary"
+        },
+        {
+          "source": "Philippians 2:19-22",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "titus-of-crete",
+      "type": "taught",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Galatians 2:1-3",
+          "kind": "primary"
+        },
+        {
+          "source": "Titus 1:4-5",
+          "kind": "primary"
+        },
+        {
+          "source": "2 Corinthians 7:6-15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "luke-the-evangelist",
+      "type": "taught",
+      "strength": "documented",
+      "notes": "Luke is named as Paul's companion in Colossians 4:14, Philemon 24, 2 Timothy 4:11; Irenaeus calls him 'a follower of Paul'.",
+      "citations": [
+        {
+          "source": "Colossians 4:14",
+          "kind": "primary"
+        },
+        {
+          "source": "2 Timothy 4:11",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.1.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "mark-the-evangelist",
+      "type": "met",
+      "strength": "documented",
+      "notes": "Mark accompanied Paul and Barnabas, then split (Acts 13:13; 15:37-39). Later reconciled (Col 4:10; 2 Tim 4:11).",
+      "citations": [
+        {
+          "source": "Acts 13:13; 15:37-39",
+          "kind": "primary"
+        },
+        {
+          "source": "Colossians 4:10",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "paul-of-tarsus",
+      "to": "onesimus",
+      "type": "taught",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Philemon 10-16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "mark-the-evangelist",
+      "to": "peter-the-apostle",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Papias (c. 110-130) reports Mark was Peter's interpreter and recorded Peter's preaching as the Gospel of Mark — but Papias' testimony itself survives only via Eusebius. 1 Peter 5:13 mentions 'Mark my son' but does not establish discipleship.",
+      "citations": [
+        {
+          "source": "Papias in Eusebius HE 3.39.15",
+          "kind": "primary"
+        },
+        {
+          "source": "1 Peter 5:13",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Adv. Haer. 3.1.1",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "polycarp-of-smyrna",
+      "to": "john-the-apostle",
+      "type": "taught_by",
+      "strength": "documented",
+      "notes": "Irenaeus, who personally heard Polycarp in his youth, states in Adv. Haer. 3.3.4 and his Letter to Florinus (Eus. HE 5.20) that Polycarp was instructed by John and 'others who had seen the Lord'. This is a near-contemporary chain (Irenaeus -> Polycarp -> John), so 'documented'.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.4",
+          "kind": "primary"
+        },
+        {
+          "source": "Irenaeus, Letter to Florinus, in Eusebius HE 5.20.4-8",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ignatius-of-antioch",
+      "to": "john-the-apostle",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Later tradition (e.g. the Martyrium Ignatii and John Chrysostom) makes Ignatius a disciple of John alongside Polycarp; not attested by Ignatius himself or by Irenaeus.",
+      "citations": [
+        {
+          "source": "Martyrium Ignatii (later acta)",
+          "kind": "primary"
+        },
+        {
+          "source": "Chrysostom, Hom. on Ignatius",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "papias-of-hierapolis",
+      "to": "john-the-apostle",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Irenaeus calls Papias 'a hearer of John' (Adv. Haer. 5.33.4), but Eusebius (HE 3.39.5-7), reading Papias' own preface, argues Papias heard 'the elder John', a different figure. Borderline — flagged for review.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 5.33.4",
+          "kind": "primary"
+        },
+        {
+          "source": "Papias, Preface, in Eusebius HE 3.39.3-7",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "papias-of-hierapolis",
+      "to": "john-the-apostle",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Whether or not Papias heard John the Apostle directly, his preface explicitly reports gathering sayings of John (the Lord's disciple) via the elders.",
+      "citations": [
+        {
+          "source": "Papias, Preface in Eusebius HE 3.39.3-4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "polycarp-of-smyrna",
+      "to": "irenaeus-of-lyons",
+      "type": "taught",
+      "strength": "documented",
+      "notes": "Forward edge into the next era. Irenaeus in his Letter to Florinus describes hearing Polycarp preach in his youth at Smyrna.",
+      "citations": [
+        {
+          "source": "Irenaeus, Letter to Florinus in Eusebius HE 5.20.4-8",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "linus-of-rome",
+      "to": "peter-the-apostle",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Irenaeus' succession list names Linus as the man to whom 'the apostles' (Peter and Paul) committed the Roman episcopate. Episcopal succession lists for 1st-c Rome were reconstructed by Irenaeus c. 180 (Adv. Haer. 3.3); not contemporaneously attested.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "anacletus-of-rome",
+      "to": "linus-of-rome",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Roman succession list reconstructed by Irenaeus c. 180; no contemporaneous attestation.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.13",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "clement-of-rome",
+      "to": "anacletus-of-rome",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Roman succession list reconstructed by Irenaeus c. 180; the order Linus-Anacletus-Clement is not contemporaneously attested.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 3.3.3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "evodius-of-antioch",
+      "to": "peter-the-apostle",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Eusebius lists Evodius as first bishop of Antioch after Peter. Peter's actual episcopal tenure at Antioch is traditional rather than narrated in scripture.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 3.22",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ignatius-of-antioch",
+      "to": "evodius-of-antioch",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Antiochene episcopal succession is preserved only by Eusebius writing c. 320; no 1st-c Antiochene source survives to confirm.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 3.22, 3.36",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "clement-of-rome",
+      "to": "peter-the-apostle",
+      "type": "taught_by",
+      "strength": "tradition",
+      "notes": "Tertullian (De Praesc. 32) says Clement was ordained by Peter. Origen and others identify him with the Clement of Phil 4:3. No first-person testimony survives — marked tradition per the brief.",
+      "citations": [
+        {
+          "source": "Tertullian, De Praescriptione 32",
+          "kind": "primary"
+        },
+        {
+          "source": "Jerome, De Viris Illustribus 15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "clement-of-rome",
+      "to": "paul-of-tarsus",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "1 Clement 5 speaks vividly of Paul's martyrdom in the first person plural ('our generation'); patristic tradition (Origen, Eusebius, Jerome) identifies Clement with the fellow worker of Phil 4:3.",
+      "citations": [
+        {
+          "source": "1 Clement 5",
+          "kind": "primary"
+        },
+        {
+          "source": "Philippians 4:3",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "clement-of-rome",
+      "to": "corinthian-church",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Cross-reference target is a church not a person; included per brief. 1 Clement is addressed from the church in Rome to the church in Corinth c. AD 96 to settle a leadership dispute.",
+      "citations": [
+        {
+          "source": "1 Clement (salutation and entire)",
+          "kind": "primary"
+        },
+        {
+          "source": "Eusebius, Hist. Eccl. 3.16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ignatius-of-antioch",
+      "to": "polycarp-of-smyrna",
+      "type": "corresponded",
+      "strength": "documented",
+      "notes": "Ignatius wrote a personal letter to Polycarp en route to Rome; Polycarp in turn forwarded the corpus of Ignatian letters to the Philippians (Phil 13).",
+      "citations": [
+        {
+          "source": "Ignatius, To Polycarp",
+          "kind": "primary"
+        },
+        {
+          "source": "Polycarp, To the Philippians 13",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ignatius-of-antioch",
+      "to": "onesimus",
+      "type": "corresponded",
+      "strength": "tradition",
+      "notes": "Ignatius greets a Bishop Onesimus of Ephesus in his Letter to the Ephesians; the identification with Paul's freed slave Onesimus is traditional and not certain.",
+      "citations": [
+        {
+          "source": "Ignatius, To the Ephesians 1.3, 6.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "polycarp-of-smyrna",
+      "to": "ignatius-of-antioch",
+      "type": "corresponded",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Polycarp, To the Philippians 9, 13",
+          "kind": "primary"
+        },
+        {
+          "source": "Ignatius, To Polycarp",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "polycarp-of-smyrna",
+      "to": "papias-of-hierapolis",
+      "type": "met",
+      "strength": "tradition",
+      "notes": "Irenaeus (Adv. Haer. 5.33.4) calls Papias 'a companion of Polycarp'. No surviving first-person source.",
+      "citations": [
+        {
+          "source": "Irenaeus, Adv. Haer. 5.33.4",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "matthias-the-apostle",
+      "to": "judas-iscariot",
+      "type": "succeeded_in_see",
+      "strength": "documented",
+      "notes": "Strictly an apostolic succession (not episcopal) — Matthias chosen by lot to replace Judas among the Twelve.",
+      "citations": [
+        {
+          "source": "Acts 1:15-26",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "peter-the-apostle",
+      "to": "jesus-of-nazareth",
+      "type": "succeeded_in_see",
+      "strength": "tradition",
+      "notes": "Roman Catholic tradition treats Peter as Christ's vicar / successor in pastoral leadership of the Church (Matt 16:18-19); not framed as episcopal succession in the New Testament itself.",
+      "citations": [
+        {
+          "source": "Gospel of Matthew 16:18-19",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of John 21:15-17",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "papias-of-hierapolis",
+      "to": "mark-the-evangelist",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Papias preserves the earliest tradition about Mark's authorship and method.",
+      "citations": [
+        {
+          "source": "Papias in Eusebius HE 3.39.15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "papias-of-hierapolis",
+      "to": "matthew-the-apostle",
+      "type": "knew_of",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Papias in Eusebius HE 3.39.16",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "quadratus-of-athens",
+      "to": "jesus-of-nazareth",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Quadratus' surviving fragment claims firsthand testimony was still alive in his day from those healed or raised by Jesus.",
+      "citations": [
+        {
+          "source": "Quadratus, Apology fragment in Eusebius HE 4.3.2",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "aristides-of-athens",
+      "to": "jesus-of-nazareth",
+      "type": "knew_of",
+      "strength": "documented",
+      "citations": [
+        {
+          "source": "Aristides, Apology 2, 15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "hermas-of-rome",
+      "to": "clement-of-rome",
+      "type": "met",
+      "strength": "tradition",
+      "notes": "The Shepherd (Vis. 2.4.3) instructs Hermas to give a copy of the book to 'Clement', who will send it abroad. The identification with Clement of Rome is plausible but traditional, and the Muratorian Fragment dates Hermas under Pius I (mid-2nd c.) which would post-date Clement.",
+      "citations": [
+        {
+          "source": "Shepherd of Hermas, Vision 2.4.3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "polycarp-of-smyrna",
+      "to": "paul-of-tarsus",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Polycarp's Letter to the Philippians quotes or alludes to most of the Pauline corpus extensively.",
+      "citations": [
+        {
+          "source": "Polycarp, To the Philippians (passim, esp. 3.2, 11.2-3)",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "ignatius-of-antioch",
+      "to": "paul-of-tarsus",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "Ignatius alludes repeatedly to Pauline letters (esp. 1 Cor, Eph) and explicitly praises Paul (Eph. 12.2; Rom. 4.3).",
+      "citations": [
+        {
+          "source": "Ignatius, To the Ephesians 12.2",
+          "kind": "primary"
+        },
+        {
+          "source": "Ignatius, To the Romans 4.3",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "didache-author",
+      "to": "jesus-of-nazareth",
+      "type": "cited",
+      "strength": "documented",
+      "notes": "The Didache cites the Lord's Prayer and dominical sayings 'as the Lord commanded in his Gospel'.",
+      "citations": [
+        {
+          "source": "Didache 8, 9, 11, 15",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "mary-mother-of-jesus",
+      "to": "jesus-of-nazareth",
+      "type": "knew_of",
+      "strength": "documented",
+      "notes": "Mary is the mother of Jesus per the infancy narratives of Matthew and Luke; present at the wedding at Cana, the crucifixion, and with the disciples before Pentecost.",
+      "citations": [
+        {
+          "source": "Gospel of Luke 1:26-2:52",
+          "kind": "primary"
+        },
+        {
+          "source": "Gospel of John 2:1-12; 19:25-27",
+          "kind": "primary"
+        },
+        {
+          "source": "Acts of the Apostles 1:14",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "mary-mother-of-jesus",
+      "to": "john-the-apostle",
+      "type": "met",
+      "strength": "documented",
+      "notes": "From the cross Jesus entrusted his mother to the Beloved Disciple, who took her into his own home (John 19:26-27).",
+      "citations": [
+        {
+          "source": "Gospel of John 19:26-27",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "clement-of-alexandria",
+      "to": "pseudo-barnabas",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Clement of Alexandria quotes the Epistle of Barnabas as scripture in the Stromata, attributing it to the apostolic Barnabas. Marked tradition because Pseudo-Barnabas himself is anonymous; Clement is citing the text under a pseudepigraphic attribution.",
+      "citations": [
+        {
+          "source": "Clement of Alexandria, Stromata 2.6, 2.7, 5.10",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "origen-of-alexandria",
+      "to": "pseudo-barnabas",
+      "type": "cited",
+      "strength": "tradition",
+      "notes": "Origen quotes the Epistle of Barnabas as a 'catholic epistle' (Contra Celsum 1.63). Marked tradition because Pseudo-Barnabas is anonymous and Origen attributes the text to the apostolic Barnabas.",
+      "citations": [
+        {
+          "source": "Origen, Contra Celsum 1.63",
+          "kind": "primary"
+        }
+      ]
+    },
+    {
+      "from": "eusebius-of-caesarea",
+      "to": "pseudo-barnabas",
+      "type": "knew_of",
+      "strength": "tradition",
+      "notes": "Eusebius discusses the Epistle of Barnabas among the disputed/spurious writings (HE 3.25, 6.14). Marked tradition because the author is anonymous.",
+      "citations": [
+        {
+          "source": "Eusebius, Hist. Eccl. 3.25, 6.14",
+          "kind": "primary"
+        }
+      ]
+    }
+  ]
+}
