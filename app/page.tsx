@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { getPeople, getRelationships } from "@/lib/data";
-import LineageGraph from "@/components/LineageGraph";
 import Spine from "@/components/Spine";
+import HomeView from "@/components/HomeView";
 
 export default function Home() {
   const people = getPeople();
@@ -41,15 +41,7 @@ export default function Home() {
       </div>
 
       <section className="max-w-7xl mx-auto px-4 pt-8 pb-16 border-t border-ink/10">
-        <header className="mb-6 max-w-3xl">
-          <h2 className="font-serif text-3xl mb-2">The full lineage</h2>
-          <p className="text-ink/70">
-            All 192 figures plotted by year (vertical) and region (horizontal). Solid lines are
-            documented in primary sources; dashed are traditional attestations; dotted red are
-            disputed. Hover for dates, click for the full bio. Bishops have a gold ring.
-          </p>
-        </header>
-        <LineageGraph people={people} relationships={relationships} />
+        <HomeView people={people} relationships={relationships} />
       </section>
     </>
   );
