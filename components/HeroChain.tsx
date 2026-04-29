@@ -77,7 +77,8 @@ export default function HeroChain() {
                         src={person.image_url}
                         alt={person.name}
                         loading={i < 4 ? "eager" : "lazy"}
-                        className="w-full h-full object-contain bg-parchment p-0.5"
+                        className="w-full h-full object-cover"
+                        style={{ objectPosition: "center top" }}
                       />
                     ) : (
                       <span className="w-full h-full flex items-center justify-center font-serif text-2xl text-ink/40">
