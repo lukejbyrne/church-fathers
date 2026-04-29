@@ -22,7 +22,7 @@ export default function HeroChain() {
 
   return (
     <section className="relative max-w-7xl mx-auto px-4 pt-12 pb-10">
-      <div className="text-center mb-10">
+      <div className="text-center mb-16 sm:mb-20">
         <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50 mb-3 font-serif italic">
           Anno Domini xxx — dccl
         </p>
@@ -34,7 +34,7 @@ export default function HeroChain() {
           bishops, theologians, martyrs. Every link sourced from primary texts.
         </p>
 
-        <div className="mt-6 max-w-xl mx-auto">
+        <div className="mt-8 max-w-xl mx-auto">
           <SubscribeForm variant="compact" />
           <p className="text-[12px] text-ink/55 mt-2">
             Daily Patristic Wisdom — one Father, council, schism, or quote each morning. Free.
@@ -43,7 +43,7 @@ export default function HeroChain() {
       </div>
 
       {/* Portrait strip */}
-      <div className="relative -mx-4 sm:mx-0 overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="relative -mx-4 sm:mx-0 overflow-x-auto pt-2 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         <div className="flex items-start gap-2 sm:gap-3 px-4 sm:justify-between min-w-[640px] sm:min-w-0">
           {figures.map(({ person, era }, i) => {
             if (!person) return null;
@@ -77,8 +77,7 @@ export default function HeroChain() {
                         src={person.image_url}
                         alt={person.name}
                         loading={i < 4 ? "eager" : "lazy"}
-                        className="w-full h-full object-cover"
-                        style={{ objectPosition: "center top" }}
+                        className="w-full h-full object-contain bg-parchment p-0.5"
                       />
                     ) : (
                       <span className="w-full h-full flex items-center justify-center font-serif text-2xl text-ink/40">
