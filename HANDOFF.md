@@ -47,24 +47,35 @@ Same date always returns the same figure (deterministic by `dayIndex = floor(Dat
 
 ## Things you need to do tomorrow
 
-### 1. Newsletter is now wired end-to-end on Netlify + Resend (free)
+### 1. Newsletter is wired on Netlify + MailerLite (free)
 
-Both `app/api/subscribe/route.ts` and `netlify/functions/daily-email.ts` are live in this commit. Stack is **Netlify Scheduled Functions + Resend** — your call, both on free tiers (Resend free up to 3k emails/mo + 100 subscribers; Netlify Scheduled Functions free up to 125k invocations/mo). To go live:
+Stack swapped from Resend to **MailerLite free tier** because Resend's free tier only allows one verified sending domain and Luke is already using it for another site. MailerLite free allows multiple domains, plus 1,000 subscribers and 12,000 emails/month.
 
-1. **Sign up at resend.com** (5 min). Verify your sending domain — for `patristic.io`:
-   - Add `MX`, `TXT (SPF)`, and `DKIM` records they give you to your DNS (Netlify DNS or registrar).
-   - Wait for them to verify (usually <30 min).
-2. **Create an audience** in the Resend dashboard. Copy its ID.
-3. **Set Netlify env vars** (Site settings → Environment variables):
+Files: `app/api/subscribe/route.ts` (push contact) and `netlify/functions/daily-email.ts` (daily campaign create + send), both using the shared `lib/email-template.ts`.
+
+To go live:
+
+1. **Sign up at mailerlite.com** (free). Verify your sending domain — for `patristic.io`:
+   - MailerLite → Account → Domains → Add domain → paste `patristic.io`.
+   - They give you SPF + DKIM TXT records. Add them via Netlify DNS (Site settings → Domains → DNS panel).
+   - Wait for verification (usually <30 min).
+2. **Create a group** in the dashboard for the newsletter audience. Settings → Groups → Create. Copy its ID from the URL or via API.
+3. **Generate an API token**. Integrations → API → Generate new token. Copy it.
+4. **Set Netlify env vars** (Site settings → Environment variables):
    ```
-   RESEND_API_KEY=re_xxx           # from resend.com/api-keys
-   RESEND_AUDIENCE_ID=aud_xxx      # the audience id from step 2
-   RESEND_FROM_ADDRESS=Patristic Lineage <newsletter@patristic.io>
+   MAILERLITE_API_TOKEN=eyJ0eXA...           # from MailerLite → Integrations → API
+   MAILERLITE_GROUP_ID=12345678              # the group id from step 2
+   NEWSLETTER_FROM_EMAIL=newsletter@patristic.io
+   NEWSLETTER_FROM_NAME=Patristic Lineage
    ```
-4. **Trigger a redeploy** so the function picks up the env. The schedule is `0 13 * * *` (13:00 UTC daily) — change in `netlify/functions/daily-email.ts` if you want a different send time.
-5. **Test the function once** before letting it run on schedule. Netlify dashboard → Functions → `daily-email` → "Trigger" button. Watch the logs. If it returns `{ ok: true }`, you're live.
+5. **Trigger a redeploy** so the function picks up env vars. Schedule is `0 13 * * *` (13:00 UTC daily) — edit `netlify/functions/daily-email.ts` to change.
+6. **Test the function once** before letting it auto-run. Netlify dashboard → Functions → `daily-email` → Trigger. Watch the logs; success returns `{ ok: true, campaign_id, date, figure }`.
 
-If env isn't set, the subscribe form still works (logs to server console) and the daily function returns 500 silently — nothing breaks, you just don't send.
+If env isn't set, the subscribe form still returns success (logs to server console) and the daily function returns 500 — nothing user-facing breaks during setup.
+
+### Preview the email before sending
+
+Visit **`/email-preview`** on the deployed site (or `localhost:3000/email-preview` in dev) to see exactly what subscribers will receive in their inbox. Add `?d=2026-05-15` for any future date or `?id=augustine-of-hippo` for a specific figure. The page is not linked from public nav — internal review tool only.
 
 ### 2. Set Amazon Associates UK live
 Earlier in this session you set `lukebyrne07-20` as your US tag with OneLink earn-globally enabled. That covers UK traffic via Amazon's redirect. Done.

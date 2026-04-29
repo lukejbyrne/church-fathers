@@ -1,16 +1,18 @@
-// Subscribe endpoint — pushes new emails into the Resend audience that the
-// daily Netlify function uses for sends.
+// Subscribe endpoint — pushes new emails into the MailerLite group that the
+// daily Netlify function broadcasts to.
 //
-// Required env (Netlify → Site settings → Environment variables):
-//   RESEND_API_KEY        — your Resend API key (re_xxx)
-//   RESEND_AUDIENCE_ID    — the audience the daily-email function broadcasts to
+// REQUIRED ENV:
+//   MAILERLITE_API_TOKEN   Bearer token (MailerLite → Integrations → API)
+//   MAILERLITE_GROUP_ID    ID of the newsletter group/audience
 //
 // If env is missing, the endpoint logs the email to the server console and
-// returns ok: true so the form still feels successful (and you can backfill
-// later from the logs). This avoids breaking signups during setup.
+// returns ok: true so the form still feels successful (graceful degradation
+// during setup — you can backfill later from logs).
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+const MAILERLITE_API = "https://connect.mailerlite.com/api";
 
 export async function POST(req: Request) {
   let payload: { email?: string };
@@ -25,30 +27,38 @@ export async function POST(req: Request) {
     return Response.json({ ok: false, error: "Invalid email" }, { status: 400 });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  const token = process.env.MAILERLITE_API_TOKEN;
+  const groupId = process.env.MAILERLITE_GROUP_ID;
 
-  if (!apiKey || !audienceId) {
-    console.log("[subscribe] no Resend env yet — logging email:", email);
+  if (!token || !groupId) {
+    console.log("[subscribe] no MailerLite env yet — logging email:", email);
     return Response.json({ ok: true, queued: true });
   }
 
-  const r = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+  // POST /subscribers — adds (or updates) a contact and assigns them to the group.
+  // https://developers.mailerlite.com/docs/subscribers.html
+  const r = await fetch(`${MAILERLITE_API}/subscribers`, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
-    body: JSON.stringify({ email, unsubscribed: false }),
+    body: JSON.stringify({
+      email,
+      groups: [groupId],
+      status: "active",
+    }),
   });
 
   if (!r.ok) {
     const text = await r.text();
-    // Resend returns 422 if the contact already exists — treat that as success.
-    if (r.status === 422 && /already exists/i.test(text)) {
+    // 422 = validation; 200/201 = created/updated. Treat anything 4xx with
+    // "already" or "exists" or "subscribed" as a soft success — they're already on the list.
+    if (r.status === 422 && /already|exist|subscrib/i.test(text)) {
       return Response.json({ ok: true, already_subscribed: true });
     }
-    console.error(`[subscribe] Resend ${r.status}:`, text);
+    console.error(`[subscribe] MailerLite ${r.status}:`, text);
     return Response.json({ ok: false, error: "Provider error" }, { status: 502 });
   }
 

@@ -1,135 +1,45 @@
-// Daily "Father of the Day" newsletter — runs on a Netlify schedule, fetches
-// the day's figure from our own /api/today endpoint, and sends a broadcast via
-// Resend to the configured audience.
+// Daily "Father of the Day" newsletter — Netlify scheduled function.
 //
-// Required env vars (set in Netlify → Site settings → Environment variables):
-//   RESEND_API_KEY        — your Resend API key (re_xxx)
-//   RESEND_AUDIENCE_ID    — id of the audience this newsletter sends to
-//   RESEND_FROM_ADDRESS   — verified sender, e.g. "Patristic Lineage <newsletter@patristic.io>"
-//   NEWSLETTER_BASE_URL   — optional override for fetching /api/today (default: https://patristic.io)
+// Stack: MailerLite free tier (campaigns API). Triggered daily at 13:00 UTC.
+// 1. Fetches today's figure from /api/today (deterministic by date).
+// 2. Renders the HTML using the shared template at lib/email-template.ts.
+// 3. Creates a MailerLite campaign + schedules an instant send to the configured group.
 //
-// Schedule: see `export const config` at the bottom — daily at 13:00 UTC (≈ 7am ET / 8am CT / 9am ET DST / 1pm UK BST).
+// REQUIRED ENV (Netlify → Site settings → Environment variables):
+//   MAILERLITE_API_TOKEN     Bearer token (MailerLite → Integrations → API)
+//   MAILERLITE_GROUP_ID      ID of the group/audience the campaign sends to
+//   NEWSLETTER_FROM_EMAIL    Verified sender, e.g. newsletter@patristic.io
+//   NEWSLETTER_FROM_NAME     Display name, e.g. "Patristic Lineage"
+//   NEWSLETTER_BASE_URL      (Optional) override for fetch — defaults to https://patristic.io
 
 import type { Config } from "@netlify/functions";
+import { renderEmail, type EmailFigure } from "../../lib/email-template";
 
-type ApiTodayResponse = {
-  date: string;
-  person: {
-    id: string;
-    name: string;
-    url: string;
-    image_url?: string;
-    born?: number | null;
-    died?: number | null;
-    see?: string;
-    short_bio: string;
-    why_matters?: string;
-    primary_citation?: string;
-  };
-  next_date: string;
-};
+const MAILERLITE_API = "https://connect.mailerlite.com/api";
 
-const RESEND_API = "https://api.resend.com";
-
-function escapeHtml(s: string): string {
-  return s
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;");
-}
-
-function renderEmail(data: ApiTodayResponse, siteUrl: string): { subject: string; html: string } {
-  const p = data.person;
-  const dateLine = `${p.born ?? "?"} – ${p.died ?? "?"}`;
-  const subject = `Today's Father: ${p.name}`;
-  const body = p.why_matters || p.short_bio;
-  const cite = p.primary_citation
-    ? `<blockquote style="border-left:3px solid #8b1e2d33;padding:0 16px;margin:24px 0;color:#1f1a13aa;font-style:italic;font-family:Georgia,serif;">${escapeHtml(p.primary_citation)}</blockquote>`
-    : "";
-  const img = p.image_url
-    ? `<img src="${escapeHtml(p.image_url)}" alt="${escapeHtml(p.name)}" width="120" height="120" style="border-radius:50%;object-fit:cover;object-position:center 18%;border:1px solid #1f1a1322;display:block;margin:0 auto 16px;" />`
-    : "";
-
-  // Inline-styled HTML for maximum email client compatibility.
-  const html = `<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>${escapeHtml(subject)}</title>
-</head>
-<body style="margin:0;padding:0;background:#f5efe0;font-family:Georgia,serif;color:#1f1a13;line-height:1.55;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f5efe0;">
-    <tr>
-      <td align="center" style="padding:32px 16px;">
-        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#fffaf0;border:1px solid #1f1a1320;border-radius:8px;">
-          <tr>
-            <td style="padding:32px 32px 16px;">
-              <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:#1f1a1380;">
-                Patristic Lineage · ${escapeHtml(data.date)}
-              </p>
-              ${img}
-              <h1 style="margin:0 0 4px;font-family:Georgia,serif;font-size:28px;font-weight:normal;color:#1f1a13;text-align:center;">
-                ${escapeHtml(p.name)}
-              </h1>
-              <p style="margin:0 0 24px;text-align:center;font-size:13px;color:#1f1a13aa;">
-                ${escapeHtml(dateLine)}${p.see ? ` · Bishop of ${escapeHtml(p.see)}` : ""}
-              </p>
-              <div style="font-size:16px;color:#1f1a13e0;">
-                ${escapeHtml(body).split(/\n\n+/).map((para) => `<p style="margin:0 0 16px;">${para}</p>`).join("")}
-              </div>
-              ${cite}
-              <div style="text-align:center;margin:32px 0 8px;">
-                <a href="${escapeHtml(p.url)}" style="display:inline-block;padding:10px 20px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;">
-                  Read the full chain to Jesus →
-                </a>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:16px 32px 24px;border-top:1px solid #1f1a1318;">
-              <p style="margin:0;font-size:12px;color:#1f1a1380;">
-                This is one of 206 figures we track from Jesus to John of Damascus, AD 30–750.
-                Tomorrow: another. Browse the full lineage at
-                <a href="${escapeHtml(siteUrl)}" style="color:#8b1e2d;">${escapeHtml(siteUrl.replace(/^https?:\/\//, ""))}</a>.
-              </p>
-              <p style="margin:12px 0 0;font-size:11px;color:#1f1a1360;">
-                You're getting this because you signed up at ${escapeHtml(siteUrl)}/today.
-                Unsubscribe anytime via the link in the email footer.
-              </p>
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-  </table>
-</body>
-</html>`;
-
-  return { subject, html };
-}
-
-export default async (req: Request) => {
-  const apiKey = process.env.RESEND_API_KEY;
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
-  const from = process.env.RESEND_FROM_ADDRESS;
+export default async () => {
+  const token = process.env.MAILERLITE_API_TOKEN;
+  const groupId = process.env.MAILERLITE_GROUP_ID;
+  const fromEmail = process.env.NEWSLETTER_FROM_EMAIL;
+  const fromName = process.env.NEWSLETTER_FROM_NAME ?? "Patristic Lineage";
   const siteUrl = process.env.NEWSLETTER_BASE_URL ?? "https://patristic.io";
 
-  if (!apiKey || !audienceId || !from) {
-    console.error("[daily-email] missing env: RESEND_API_KEY / RESEND_AUDIENCE_ID / RESEND_FROM_ADDRESS");
+  if (!token || !groupId || !fromEmail) {
+    console.error(
+      "[daily-email] missing env: MAILERLITE_API_TOKEN / MAILERLITE_GROUP_ID / NEWSLETTER_FROM_EMAIL"
+    );
     return new Response(
       JSON.stringify({ ok: false, error: "Newsletter env not configured" }),
       { status: 500, headers: { "content-type": "application/json" } }
     );
   }
 
-  // Fetch today's figure from our own API.
-  let figure: ApiTodayResponse;
+  // Step 1: fetch today's figure from our own API (uses lib/featured.ts).
+  let figure: EmailFigure;
   try {
     const res = await fetch(`${siteUrl}/api/today`);
     if (!res.ok) throw new Error(`api/today returned ${res.status}`);
-    figure = (await res.json()) as ApiTodayResponse;
+    figure = (await res.json()) as EmailFigure;
   } catch (e) {
     console.error("[daily-email] failed to fetch /api/today:", e);
     return new Response(
@@ -138,61 +48,87 @@ export default async (req: Request) => {
     );
   }
 
-  const { subject, html } = renderEmail(figure, siteUrl);
+  const { subject, html, plain } = renderEmail(figure, siteUrl);
+  const campaignName = `Father of the Day — ${figure.date} — ${figure.person.name}`;
 
-  // Step 1: create the broadcast.
-  const createRes = await fetch(`${RESEND_API}/broadcasts`, {
+  // Step 2: create a MailerLite campaign.
+  // POST /campaigns — see https://developers.mailerlite.com/docs/campaigns.html
+  const createRes = await fetch(`${MAILERLITE_API}/campaigns`, {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${apiKey}`,
+      Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
-      audience_id: audienceId,
-      from,
-      subject,
-      html,
-      name: `Father of the Day — ${figure.date} — ${figure.person.name}`,
+      name: campaignName,
+      type: "regular",
+      groups: [groupId],
+      emails: [
+        {
+          subject,
+          from: fromEmail,
+          from_name: fromName,
+          content: html,
+          plain,
+        },
+      ],
     }),
   });
 
   if (!createRes.ok) {
     const text = await createRes.text();
-    console.error(`[daily-email] Resend create failed (${createRes.status}):`, text);
+    console.error(`[daily-email] MailerLite create failed (${createRes.status}):`, text);
     return new Response(
-      JSON.stringify({ ok: false, error: `Resend create: ${createRes.status}`, body: text }),
+      JSON.stringify({ ok: false, step: "create", status: createRes.status, body: text }),
       { status: 502, headers: { "content-type": "application/json" } }
     );
   }
 
-  const created: { id: string } = await createRes.json();
+  const created: { data?: { id: string } } = await createRes.json();
+  const campaignId = created.data?.id;
+  if (!campaignId) {
+    return new Response(
+      JSON.stringify({ ok: false, error: "MailerLite returned no campaign id", body: created }),
+      { status: 502, headers: { "content-type": "application/json" } }
+    );
+  }
 
-  // Step 2: send the broadcast immediately.
-  const sendRes = await fetch(`${RESEND_API}/broadcasts/${created.id}/send`, {
+  // Step 3: schedule the campaign for instant send.
+  // POST /campaigns/{id}/schedule with delivery: "instant"
+  const sendRes = await fetch(`${MAILERLITE_API}/campaigns/${campaignId}/schedule`, {
     method: "POST",
-    headers: { Authorization: `Bearer ${apiKey}` },
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({ delivery: "instant" }),
   });
 
   if (!sendRes.ok) {
     const text = await sendRes.text();
-    console.error(`[daily-email] Resend send failed (${sendRes.status}):`, text);
+    console.error(`[daily-email] MailerLite schedule failed (${sendRes.status}):`, text);
     return new Response(
       JSON.stringify({
         ok: false,
-        error: `Resend send: ${sendRes.status}`,
+        step: "schedule",
+        campaign_id: campaignId,
+        status: sendRes.status,
         body: text,
-        broadcast_id: created.id,
       }),
       { status: 502, headers: { "content-type": "application/json" } }
     );
   }
 
-  console.log(`[daily-email] sent broadcast ${created.id} for ${figure.date} (${figure.person.name})`);
+  console.log(
+    `[daily-email] scheduled campaign ${campaignId} for ${figure.date} (${figure.person.name})`
+  );
 
   return new Response(
     JSON.stringify({
       ok: true,
-      broadcast_id: created.id,
+      campaign_id: campaignId,
       date: figure.date,
       figure: figure.person.name,
     }),
@@ -200,10 +136,7 @@ export default async (req: Request) => {
   );
 };
 
-// Schedule: daily at 13:00 UTC. Works out to 9am ET (winter), 8am ET (summer DST),
-// 1pm UK winter, 2pm UK summer. Adjust if you want a different send time.
-//
-// Cron format: minute hour day month dow
+// Daily at 13:00 UTC (≈ 9am ET winter, 1pm UK winter / 2pm BST).
 export const config: Config = {
   schedule: "0 13 * * *",
 };
