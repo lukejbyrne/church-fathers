@@ -104,6 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/start-here" className="block px-4 py-2 text-sm hover:bg-ink/5">Start here</Link>
                   <Link href="/" className="block px-4 py-2 text-sm hover:bg-ink/5">Lineage</Link>
                   <Link href="/today" className="block px-4 py-2 text-sm hover:bg-ink/5">Today</Link>
+                  <Link href="/calendar" className="block px-4 py-2 text-sm hover:bg-ink/5">Calendar</Link>
                   <Link href="/map" className="block px-4 py-2 text-sm hover:bg-ink/5">Map</Link>
                   <Link href="/eras" className="block px-4 py-2 text-sm hover:bg-ink/5">
                     Eras <span className="text-ink/50">overview</span>
@@ -136,6 +137,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <Link href="/start-here" className="text-sm hover:text-accent">Start here</Link>
               <Link href="/" className="text-sm hover:text-accent">Lineage</Link>
               <Link href="/today" className="text-sm hover:text-accent">Today</Link>
+              <Link href="/calendar" className="text-sm hover:text-accent">Calendar</Link>
               <Link href="/map" className="text-sm hover:text-accent">Map</Link>
               <div className="relative group">
                 <Link

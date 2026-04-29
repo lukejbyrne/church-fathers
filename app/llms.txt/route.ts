@@ -23,6 +23,7 @@ export function GET() {
   lines.push("## Core pages");
   lines.push(`- [Lineage home](${base}/): interactive timeline + network graph of all figures.`);
   lines.push(`- [Today](${base}/today): the daily Patristic spotlight — Father on a feast day, Council/Schism on its anniversary, era spotlight on Mondays, primary-source quote otherwise. Deterministic by date. JSON at ${base}/api/today.`);
+  lines.push(`- [Calendar](${base}/calendar): a 12-month wall calendar showing what fires each day across the patristic year — feast days, council/schism anniversaries, era spotlights, and quote rotations. Click any day to read it.`);
   lines.push(`- [Past issues](${base}/sent): the archive of every newsletter we've sent — date, type, and the figure or council featured.`);
   lines.push(`- [Map](${base}/map): geographic Mediterranean view with a year scrubber (AD 30–760) showing where figures were active across time.`);
   lines.push(`- [Bishops](${base}/bishops): bishops grouped by their see (Rome, Antioch, Alexandria, Jerusalem, Constantinople, etc.), ordered chronologically — the apostolic-succession-proper view of the dataset.`);
