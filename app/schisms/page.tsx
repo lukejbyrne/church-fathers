@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getPeople } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
+import ShareBar from "@/components/ShareBar";
 
 export const metadata: Metadata = {
   title: "Schisms",
@@ -591,6 +592,13 @@ export default function SchismsPage() {
         >
           Start here
         </Link>
+      </div>
+
+      <div className="mt-10">
+        <ShareBar
+          path="/schisms"
+          title="Schisms of the Patristic Age — Patristic Lineage"
+        />
       </div>
     </article>
   );

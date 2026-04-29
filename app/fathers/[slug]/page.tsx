@@ -7,6 +7,7 @@ import type { ChainKind } from "@/lib/lineage";
 import type { Metadata } from "next";
 import { amazonUrl } from "@/lib/affiliate";
 import ChainToJesus, { type ChainStep } from "@/components/ChainToJesus";
+import ShareBar from "@/components/ShareBar";
 import { dateRange, bornDisplay, diedDisplay } from "@/lib/dates";
 
 const ALL_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
@@ -178,7 +179,14 @@ export default async function FatherPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ldFaq) }}
         />
       )}
-      <Link href="/" className="text-sm text-ink/60 hover:text-accent">← Lineage</Link>
+      <div className="flex items-center justify-between gap-4 flex-wrap">
+        <Link href="/" className="text-sm text-ink/60 hover:text-accent">← Lineage</Link>
+        <ShareBar
+          path={`/fathers/${person.id}`}
+          title={`${person.name} — Patristic Lineage`}
+          compact
+        />
+      </div>
       <div className="flex gap-6 mt-4 mb-6 items-start flex-wrap sm:flex-nowrap">
         {person.image_url && (
           <figure className="shrink-0 w-32 sm:w-44">
@@ -550,6 +558,13 @@ export default async function FatherPage({
           </div>
         </section>
       )}
+
+      <div className="mt-12">
+        <ShareBar
+          path={`/fathers/${person.id}`}
+          title={`${person.name} — Patristic Lineage`}
+        />
+      </div>
     </div>
   );
 }

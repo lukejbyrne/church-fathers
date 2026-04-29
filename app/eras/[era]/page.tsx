@@ -5,6 +5,7 @@ import { getPeople } from "@/lib/data";
 import type { Person } from "@/lib/schema";
 import { dateRange } from "@/lib/dates";
 import { ERAS_DATA, type EraSlug, type EraDef, inEra, sortKey } from "@/lib/eras";
+import ShareBar from "@/components/ShareBar";
 
 
 export const dynamic = "force-static";
@@ -191,6 +192,13 @@ export default async function EraPage({
         >
           Browse all figures
         </Link>
+      </div>
+
+      <div className="mt-10">
+        <ShareBar
+          path={`/eras/${era.slug}`}
+          title={`${era.label} (${era.yearLabel}) — Patristic Lineage`}
+        />
       </div>
     </article>
   );

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { pickContent, parseIsoDate, isoDate, addDays } from "@/lib/picker";
 import { dateRange } from "@/lib/dates";
 import SubscribeForm from "@/components/SubscribeForm";
+import ShareBar from "@/components/ShareBar";
 
 export const dynamic = "force-dynamic";
 
@@ -131,7 +132,14 @@ export default async function TodayPage({
         </Link>
       </div>
 
-      <SubscribeForm />
+      <ShareBar
+        path={`/today?d=${isoDate(date)}`}
+        title={`${eyebrow} · ${formatLongDate(date)} — Patristic Lineage`}
+      />
+
+      <div className="mt-8">
+        <SubscribeForm />
+      </div>
     </article>
   );
 }
