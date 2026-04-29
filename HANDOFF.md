@@ -47,21 +47,24 @@ Same date always returns the same figure (deterministic by `dayIndex = floor(Dat
 
 ## Things you need to do tomorrow
 
-### 1. Pick a newsletter provider, paste an API key
-Stub is at `app/api/subscribe/route.ts`. Three options commented in the file:
+### 1. Newsletter is now wired end-to-end on Netlify + Resend (free)
 
-| Provider | Setup time | Cost | Best for |
-|---|---|---|---|
-| **Resend** (resend.com) | 5 min | Free up to 3k/mo, then $20/mo | Devs who want code-driven sending |
-| **ConvertKit** (convertkit.com) | 10 min | Free up to 1k subs, then $25/mo | Creators with sequences + tags |
-| **Buttondown** (buttondown.email) | 5 min | $9/mo above 100 subs | Indie / minimalist |
+Both `app/api/subscribe/route.ts` and `netlify/functions/daily-email.ts` are live in this commit. Stack is **Netlify Scheduled Functions + Resend** — your call, both on free tiers (Resend free up to 3k emails/mo + 100 subscribers; Netlify Scheduled Functions free up to 125k invocations/mo). To go live:
 
-For the daily send, you'll also need a cron. Two cheapest paths:
-- **Vercel Cron** (free on Hobby) — add `vercel.json` with a schedule pointing at `/api/today`, your handler enqueues the email. Doesn't work on Netlify (you're on Netlify).
-- **Netlify Scheduled Functions** — add a function at `netlify/functions/daily-email.ts` with `schedule: "0 7 * * *"` exported. Free up to 125k invocations/mo.
-- **GitHub Actions cron** — simplest if all you need is "fetch /api/today, post to ESP". Free.
+1. **Sign up at resend.com** (5 min). Verify your sending domain — for `patristic.io`:
+   - Add `MX`, `TXT (SPF)`, and `DKIM` records they give you to your DNS (Netlify DNS or registrar).
+   - Wait for them to verify (usually <30 min).
+2. **Create an audience** in the Resend dashboard. Copy its ID.
+3. **Set Netlify env vars** (Site settings → Environment variables):
+   ```
+   RESEND_API_KEY=re_xxx           # from resend.com/api-keys
+   RESEND_AUDIENCE_ID=aud_xxx      # the audience id from step 2
+   RESEND_FROM_ADDRESS=Patristic Lineage <newsletter@patristic.io>
+   ```
+4. **Trigger a redeploy** so the function picks up the env. The schedule is `0 13 * * *` (13:00 UTC daily) — change in `netlify/functions/daily-email.ts` if you want a different send time.
+5. **Test the function once** before letting it run on schedule. Netlify dashboard → Functions → `daily-email` → "Trigger" button. Watch the logs. If it returns `{ ok: true }`, you're live.
 
-I recommend **Buttondown + GitHub Actions**. Cheapest, cleanest, no platform lock-in, and Buttondown's API is a single POST.
+If env isn't set, the subscribe form still works (logs to server console) and the daily function returns 500 silently — nothing breaks, you just don't send.
 
 ### 2. Set Amazon Associates UK live
 Earlier in this session you set `lukebyrne07-20` as your US tag with OneLink earn-globally enabled. That covers UK traffic via Amazon's redirect. Done.

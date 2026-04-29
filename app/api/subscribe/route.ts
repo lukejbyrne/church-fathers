@@ -1,13 +1,13 @@
-// SUBSCRIBE STUB
-// To go live, set NEWSLETTER_PROVIDER and the matching credentials in env, then
-// uncomment the relevant block below:
+// Subscribe endpoint — pushes new emails into the Resend audience that the
+// daily Netlify function uses for sends.
 //
-// 1. Resend       (https://resend.com)        — set RESEND_API_KEY + RESEND_AUDIENCE_ID
-// 2. ConvertKit   (https://convertkit.com)    — set CONVERTKIT_API_KEY + CONVERTKIT_FORM_ID
-// 3. Buttondown   (https://buttondown.email)  — set BUTTONDOWN_API_KEY
+// Required env (Netlify → Site settings → Environment variables):
+//   RESEND_API_KEY        — your Resend API key (re_xxx)
+//   RESEND_AUDIENCE_ID    — the audience the daily-email function broadcasts to
 //
-// All three have simple HTTP APIs; the patterns below show the request shape.
-// No external SDK is added as a dependency — keep this stub-able.
+// If env is missing, the endpoint logs the email to the server console and
+// returns ok: true so the form still feels successful (and you can backfill
+// later from the logs). This avoids breaking signups during setup.
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -25,38 +25,32 @@ export async function POST(req: Request) {
     return Response.json({ ok: false, error: "Invalid email" }, { status: 400 });
   }
 
-  // TODO: provider integration. For now, just log to server.
-  console.log("[subscribe] new email:", email);
+  const apiKey = process.env.RESEND_API_KEY;
+  const audienceId = process.env.RESEND_AUDIENCE_ID;
 
-  // --- 1. Resend (uncomment when RESEND_API_KEY + RESEND_AUDIENCE_ID are set) ---
-  // const r = await fetch(`https://api.resend.com/audiences/${process.env.RESEND_AUDIENCE_ID}/contacts`, {
-  //   method: "POST",
-  //   headers: {
-  //     "Authorization": `Bearer ${process.env.RESEND_API_KEY}`,
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({ email, unsubscribed: false }),
-  // });
-  // if (!r.ok) return Response.json({ ok: false, error: "Provider error" }, { status: 502 });
+  if (!apiKey || !audienceId) {
+    console.log("[subscribe] no Resend env yet — logging email:", email);
+    return Response.json({ ok: true, queued: true });
+  }
 
-  // --- 2. ConvertKit (uncomment when CONVERTKIT_API_KEY + CONVERTKIT_FORM_ID are set) ---
-  // const r = await fetch(`https://api.convertkit.com/v3/forms/${process.env.CONVERTKIT_FORM_ID}/subscribe`, {
-  //   method: "POST",
-  //   headers: { "Content-Type": "application/json" },
-  //   body: JSON.stringify({ api_key: process.env.CONVERTKIT_API_KEY, email }),
-  // });
-  // if (!r.ok) return Response.json({ ok: false, error: "Provider error" }, { status: 502 });
+  const r = await fetch(`https://api.resend.com/audiences/${audienceId}/contacts`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, unsubscribed: false }),
+  });
 
-  // --- 3. Buttondown (uncomment when BUTTONDOWN_API_KEY is set) ---
-  // const r = await fetch("https://api.buttondown.email/v1/subscribers", {
-  //   method: "POST",
-  //   headers: {
-  //     "Authorization": `Token ${process.env.BUTTONDOWN_API_KEY}`,
-  //     "Content-Type": "application/json",
-  //   },
-  //   body: JSON.stringify({ email_address: email }),
-  // });
-  // if (!r.ok) return Response.json({ ok: false, error: "Provider error" }, { status: 502 });
+  if (!r.ok) {
+    const text = await r.text();
+    // Resend returns 422 if the contact already exists — treat that as success.
+    if (r.status === 422 && /already exists/i.test(text)) {
+      return Response.json({ ok: true, already_subscribed: true });
+    }
+    console.error(`[subscribe] Resend ${r.status}:`, text);
+    return Response.json({ ok: false, error: "Provider error" }, { status: 502 });
+  }
 
   return Response.json({ ok: true });
 }
