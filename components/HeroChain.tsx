@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getPerson } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
+import SubscribeForm from "@/components/SubscribeForm";
 
 const ANCHORS = [
   { id: "jesus-of-nazareth", era: "Apostolic" },
@@ -32,6 +33,13 @@ export default function HeroChain() {
           The human chain that carried the faith for seven centuries — apostles,
           bishops, theologians, martyrs. Every link sourced from primary texts.
         </p>
+
+        <div className="mt-6 max-w-xl mx-auto">
+          <SubscribeForm variant="compact" />
+          <p className="text-[12px] text-ink/55 mt-2">
+            Daily Patristic Wisdom — one Father, council, schism, or quote each morning. Free.
+          </p>
+        </div>
       </div>
 
       {/* Portrait strip */}
@@ -70,7 +78,7 @@ export default function HeroChain() {
                         alt={person.name}
                         loading={i < 4 ? "eager" : "lazy"}
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: "center 8%" }}
+                        style={{ objectPosition: "center top" }}
                       />
                     ) : (
                       <span className="w-full h-full flex items-center justify-center font-serif text-2xl text-ink/40">

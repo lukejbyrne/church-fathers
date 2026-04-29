@@ -48,7 +48,7 @@ export default function SubscribeForm({
       <form
         onSubmit={onSubmit}
         className="max-w-xl mx-auto flex flex-col sm:flex-row gap-2 items-stretch"
-        aria-label="Subscribe to Father of the Day"
+        aria-label="Subscribe to Daily Patristic Wisdom"
       >
         <input
           type="email"
@@ -64,7 +64,7 @@ export default function SubscribeForm({
           disabled={state === "loading"}
           className="px-4 py-2 text-sm bg-ink text-parchment rounded hover:bg-accent transition-colors disabled:opacity-60"
         >
-          {state === "loading" ? "Sending…" : "One Father a day"}
+          {state === "loading" ? "Sending…" : "Subscribe"}
         </button>
         {message && (
           <p
@@ -83,11 +83,11 @@ export default function SubscribeForm({
   return (
     <section className="max-w-xl mx-auto bg-ink/5 border border-ink/10 rounded-lg p-6">
       <h2 className="font-serif text-2xl text-ink mb-2">
-        {heading ?? "One Father a day, in your inbox."}
+        {heading ?? "Daily Patristic Wisdom — in your inbox."}
       </h2>
       <p className="text-ink/70 text-sm mb-4">
         {blurb ??
-          "A different figure each morning — who they were, why they matter, and the chain back to Jesus. Free. Unsubscribe whenever."}
+          "A Father, council, schism, or quote each morning — sourced, annotated, and tied back to the chain. Free. Unsubscribe whenever."}
       </p>
       <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-2">
         <input

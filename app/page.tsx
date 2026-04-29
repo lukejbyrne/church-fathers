@@ -24,7 +24,7 @@ export default function Home() {
       <HomeView people={people} relationships={relationships} />
       <section className="max-w-3xl mx-auto px-4 py-10 border-t border-ink/10 mt-10">
         <p className="text-center text-sm text-ink/60 mb-3">
-          One Father in your inbox each morning. Optional, free, unsubscribe whenever.
+          Daily Patristic Wisdom in your inbox — Fathers, councils, schisms, quotes. Free, unsubscribe anytime.
         </p>
         <SubscribeForm variant="compact" />
       </section>
