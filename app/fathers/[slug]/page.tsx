@@ -223,6 +223,74 @@ export default async function FatherPage({
         ))}
       </div>
 
+      {/* Quick facts — biographical details broken out so they're easy to scan */}
+      <section className="mb-8 border border-ink/10 rounded-md bg-ink/5 px-5 py-4">
+        <h2 className="font-serif text-base text-ink/80 mb-3 uppercase tracking-wider text-[11px]">
+          Quick facts
+        </h2>
+        <dl className="grid sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+          <div className="flex gap-2">
+            <dt className="text-ink/55 w-24 shrink-0">Born</dt>
+            <dd
+              className="text-ink/85"
+              title={bornDisplay(person).explanation || undefined}
+            >
+              {bornDisplay(person).text}
+              {person.birth_place ? `, ${person.birth_place}` : ""}
+            </dd>
+          </div>
+          <div className="flex gap-2">
+            <dt className="text-ink/55 w-24 shrink-0">Died</dt>
+            <dd
+              className="text-ink/85"
+              title={diedDisplay(person).explanation || undefined}
+            >
+              {diedDisplay(person).text}
+              {person.death_place ? `, ${person.death_place}` : ""}
+            </dd>
+          </div>
+          {person.see && (
+            <div className="flex gap-2">
+              <dt className="text-ink/55 w-24 shrink-0">See</dt>
+              <dd className="text-ink/85">{person.see}</dd>
+            </div>
+          )}
+          <div className="flex gap-2">
+            <dt className="text-ink/55 w-24 shrink-0">Region</dt>
+            <dd className="text-ink/85 capitalize">
+              {person.region.replace(/-/g, " ")}
+            </dd>
+          </div>
+          <div className="flex gap-2">
+            <dt className="text-ink/55 w-24 shrink-0">Era</dt>
+            <dd className="text-ink/85 capitalize">
+              {person.tradition_status.replace(/-/g, " ")}
+            </dd>
+          </div>
+          <div className="flex gap-2">
+            <dt className="text-ink/55 w-24 shrink-0">Significance</dt>
+            <dd className="text-ink/85">
+              {person.significance === 4
+                ? "Apostolic / Christ"
+                : person.significance === 3
+                  ? "Major Father"
+                  : person.significance === 2
+                    ? "Notable"
+                    : "Minor"}
+              <span className="text-ink/40 ml-1">
+                ({person.significance}/4)
+              </span>
+            </dd>
+          </div>
+          {person.alt_names && person.alt_names.length > 0 && (
+            <div className="flex gap-2 sm:col-span-2">
+              <dt className="text-ink/55 w-24 shrink-0">Also known as</dt>
+              <dd className="text-ink/85">{person.alt_names.join(" · ")}</dd>
+            </div>
+          )}
+        </dl>
+      </section>
+
       <p className="text-lg leading-relaxed mb-8">{person.short_bio}</p>
 
       {person.why_matters && (
@@ -388,25 +456,98 @@ export default async function FatherPage({
         )
       )}
 
-      {(person.wikipedia_url || person.ccel_url) && (
-        <section className="mb-8 text-sm">
-          <h2 className="font-serif text-2xl mb-2">Read more</h2>
-          <ul className="space-y-1">
+      {(person.wikipedia_url || person.ccel_url || person.wikidata_id) && (
+        <section className="mb-8">
+          <h2 className="font-serif text-2xl mb-3">External resources</h2>
+          <div className="grid sm:grid-cols-2 gap-3">
             {person.wikipedia_url && (
-              <li>
-                <a href={person.wikipedia_url} target="_blank" rel="noopener" className="hover:text-accent underline">
-                  Wikipedia
-                </a>
-              </li>
+              <a
+                href={person.wikipedia_url}
+                target="_blank"
+                rel="noopener"
+                className="flex items-start gap-3 p-3 border border-ink/10 rounded hover:border-accent transition-colors group"
+              >
+                <span className="text-2xl shrink-0">📖</span>
+                <span className="min-w-0">
+                  <span className="block font-medium text-ink group-hover:text-accent">
+                    Wikipedia
+                  </span>
+                  <span className="block text-xs text-ink/60">
+                    Full encyclopedic biography with footnotes and further reading.
+                  </span>
+                </span>
+              </a>
             )}
             {person.ccel_url && (
-              <li>
-                <a href={person.ccel_url} target="_blank" rel="noopener" className="hover:text-accent underline">
-                  Primary text on CCEL
-                </a>
-              </li>
+              <a
+                href={person.ccel_url}
+                target="_blank"
+                rel="noopener"
+                className="flex items-start gap-3 p-3 border border-ink/10 rounded hover:border-accent transition-colors group"
+              >
+                <span className="text-2xl shrink-0">📜</span>
+                <span className="min-w-0">
+                  <span className="block font-medium text-ink group-hover:text-accent">
+                    Primary text on CCEL
+                  </span>
+                  <span className="block text-xs text-ink/60">
+                    Christian Classics Ethereal Library — full text in English, free.
+                  </span>
+                </span>
+              </a>
             )}
-          </ul>
+            {person.wikidata_id && (
+              <a
+                href={`https://www.wikidata.org/wiki/${person.wikidata_id}`}
+                target="_blank"
+                rel="noopener"
+                className="flex items-start gap-3 p-3 border border-ink/10 rounded hover:border-accent transition-colors group"
+              >
+                <span className="text-2xl shrink-0">🔗</span>
+                <span className="min-w-0">
+                  <span className="block font-medium text-ink group-hover:text-accent">
+                    Wikidata
+                  </span>
+                  <span className="block text-xs text-ink/60">
+                    Structured data hub linking to library catalogues, archives, and
+                    academic sources worldwide.
+                  </span>
+                </span>
+              </a>
+            )}
+            <a
+              href={`https://en.wikisource.org/wiki/Special:Search?search=${encodeURIComponent(person.name)}&go=Go`}
+              target="_blank"
+              rel="noopener"
+              className="flex items-start gap-3 p-3 border border-ink/10 rounded hover:border-accent transition-colors group"
+            >
+              <span className="text-2xl shrink-0">🏛️</span>
+              <span className="min-w-0">
+                <span className="block font-medium text-ink group-hover:text-accent">
+                  Wikisource
+                </span>
+                <span className="block text-xs text-ink/60">
+                  Public-domain primary texts and translations (search).
+                </span>
+              </span>
+            </a>
+            <a
+              href={`https://newadvent.org/cathen/index.html`}
+              target="_blank"
+              rel="noopener"
+              className="flex items-start gap-3 p-3 border border-ink/10 rounded hover:border-accent transition-colors group"
+            >
+              <span className="text-2xl shrink-0">⛪</span>
+              <span className="min-w-0">
+                <span className="block font-medium text-ink group-hover:text-accent">
+                  Catholic Encyclopedia
+                </span>
+                <span className="block text-xs text-ink/60">
+                  1913 reference — long entries, useful for less-known figures (search for {person.name}).
+                </span>
+              </span>
+            </a>
+          </div>
         </section>
       )}
     </div>

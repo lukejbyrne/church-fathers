@@ -23,6 +23,24 @@
       "year": 419,
       "description": "Fifteen-book systematic treatment of the Triune God, framing Western Trinitarian theology for a millennium.",
       "amazon_query": "Augustine Trinity Hill New City Press"
+    },
+    {
+      "title": "Enchiridion",
+      "year": 421,
+      "description": "Concise summary of Christian doctrine framed around faith, hope, and love; medieval theology textbook.",
+      "amazon_query": "Augustine Enchiridion Faith Hope Love New City Press"
+    },
+    {
+      "title": "Sermons",
+      "year": 400,
+      "description": "About 500 sermons survive; primary source for late antique African Christianity.",
+      "amazon_query": "Augustine Sermons Hill New City Press"
+    },
+    {
+      "title": "Retractations",
+      "year": 427,
+      "description": "Late-life review of his own writings, correcting errors; rare patristic act of self-criticism.",
+      "amazon_query": "Augustine Retractations Bogan Fathers Church"
     }
   ],
   "irenaeus-of-lyons": [
@@ -51,16 +69,52 @@
     {
       "title": "1 Clement (Letter to the Corinthians)",
       "year": 96,
-      "description": "Earliest surviving non-canonical Christian writing — a letter from Rome calling Corinth back to order.",
+      "description": "Earliest surviving non-canonical Christian writing — a letter from Rome calling Corinth back to order amid factional strife, and the first witness to Roman intervention in another church's affairs.",
       "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
     }
   ],
   "ignatius-of-antioch": [
     {
-      "title": "Seven Letters",
+      "title": "Letter to the Ephesians",
       "year": 107,
-      "description": "Letters written en route to martyrdom in Rome, the earliest evidence for monoepiscopacy.",
-      "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
+      "description": "His longest letter; lays out the bishop-as-symbol-of-God-the-Father model that became universal.",
+      "amazon_query": "Ignatius Antioch Letter to Ephesians Apostolic Fathers Holmes"
+    },
+    {
+      "title": "Letter to the Magnesians",
+      "year": 107,
+      "description": "Argues Christians have moved beyond Sabbath observance to the Lord's Day.",
+      "amazon_query": "Ignatius Antioch Letter to Magnesians Apostolic Fathers Holmes"
+    },
+    {
+      "title": "Letter to the Trallians",
+      "year": 107,
+      "description": "Brief; warns against docetism — Christ truly suffered.",
+      "amazon_query": "Ignatius Antioch Letter to Trallians Apostolic Fathers Holmes"
+    },
+    {
+      "title": "Letter to the Romans",
+      "year": 107,
+      "description": "The most personal — begs the Romans not to intervene to save him from martyrdom.",
+      "amazon_query": "Ignatius Antioch Letter to Romans Apostolic Fathers Holmes"
+    },
+    {
+      "title": "Letter to the Philadelphians",
+      "year": 107,
+      "description": "Polemic against Judaizers; the bishop is the centre of unity.",
+      "amazon_query": "Ignatius Antioch Letter to Philadelphians Apostolic Fathers Holmes"
+    },
+    {
+      "title": "Letter to the Smyrnaeans",
+      "year": 107,
+      "description": "Earliest use of the term 'Catholic Church' (8.2) — meaning universal, not denominational.",
+      "amazon_query": "Ignatius Antioch Letter to Smyrnaeans Apostolic Fathers Holmes"
+    },
+    {
+      "title": "Letter to Polycarp",
+      "year": 107,
+      "description": "Personal letter to Polycarp of Smyrna with pastoral advice for a young bishop.",
+      "amazon_query": "Ignatius Antioch Letter to Polycarp Apostolic Fathers Holmes"
     }
   ],
   "polycarp-of-smyrna": [
@@ -68,13 +122,13 @@
       "title": "Letter to the Philippians",
       "year": 110,
       "description": "Pastoral letter and the bridge between the apostolic age and the Apostolic Fathers.",
-      "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
+      "amazon_query": "Apostolic Fathers Holmes Baker Academic"
     },
     {
       "title": "Martyrdom of Polycarp",
       "year": 156,
       "description": "Earliest account of a Christian martyrdom outside the New Testament.",
-      "amazon_query": "Apostolic Fathers Greek Texts Holmes Baker Academic"
+      "amazon_query": "Apostolic Fathers Holmes Baker Academic"
     }
   ],
   "tertullian": [
@@ -89,6 +143,24 @@
       "year": 207,
       "description": "Five-book refutation of Marcion's two-god theology, foundational for canon and Old Testament theology.",
       "amazon_query": "Tertullian Against Marcion Evans Oxford Early Christian Texts"
+    },
+    {
+      "title": "On Prescription Against Heretics",
+      "year": 200,
+      "description": "Argues heretics have no right to argue from scripture; only the church has true apostolic succession.",
+      "amazon_query": "Tertullian Prescription Heretics Ante-Nicene Fathers"
+    },
+    {
+      "title": "On Baptism",
+      "year": 200,
+      "description": "Earliest surviving Christian treatise on the sacrament; argues for adult baptism + against women's authority to baptize.",
+      "amazon_query": "Tertullian On Baptism Ante-Nicene Fathers"
+    },
+    {
+      "title": "Against Praxeas",
+      "year": 213,
+      "description": "Coined 'Trinity' (trinitas) in Latin; defends three persons in one substance.",
+      "amazon_query": "Tertullian Against Praxeas Evans"
     }
   ],
   "clement-of-alexandria": [
@@ -103,6 +175,12 @@
       "year": 198,
       "description": "Practical Christian formation manual addressing daily life and ethics.",
       "amazon_query": "Clement Alexandria Christ Educator Fathers Church"
+    },
+    {
+      "title": "Protrepticus (Exhortation to the Greeks)",
+      "year": 195,
+      "description": "Apologetic introduction to Christianity for educated pagans.",
+      "amazon_query": "Clement Alexandria Exhortation Greeks Loeb Classical Library"
     }
   ],
   "origen-of-alexandria": [
@@ -117,6 +195,24 @@
       "year": 248,
       "description": "Eight-book reply to the philosopher Celsus, the most important early Christian apologetic work.",
       "amazon_query": "Origen Contra Celsum Chadwick Cambridge"
+    },
+    {
+      "title": "Hexapla",
+      "year": 240,
+      "description": "Six parallel columns of OT versions: Hebrew, transliteration, Aquila, Symmachus, LXX, Theodotion. Mostly lost.",
+      "amazon_query": "Origen Hexapla Old Testament"
+    },
+    {
+      "title": "Commentary on John",
+      "year": 235,
+      "description": "Earliest substantial Christian gospel commentary; ten of original 32 books survive.",
+      "amazon_query": "Origen Commentary on John Heine Fathers Church"
+    },
+    {
+      "title": "Homilies on the Hexateuch",
+      "year": 245,
+      "description": "Allegorical homilies on Genesis through Joshua; model for medieval lectio divina.",
+      "amazon_query": "Origen Homilies Genesis Exodus Heine Fathers Church"
     }
   ],
   "hippolytus-of-rome": [
@@ -139,6 +235,18 @@
       "year": 253,
       "description": "Eighty-one letters documenting persecution, schism, and the lapsed controversy.",
       "amazon_query": "Cyprian Carthage Letters Clarke Ancient Christian Writers Paulist"
+    },
+    {
+      "title": "On the Lord's Prayer",
+      "year": 251,
+      "description": "Earliest substantial Latin commentary on the Our Father; framed as catechetical instruction.",
+      "amazon_query": "Cyprian Lord's Prayer De Dominica Oratione Fathers Church"
+    },
+    {
+      "title": "On the Lapsed",
+      "year": 251,
+      "description": "On Christians who had compromised under the Decian persecution; argued for measured readmission.",
+      "amazon_query": "Cyprian On the Lapsed De Lapsis Bevenot Ancient Christian Writers"
     }
   ],
   "athanasius-of-alexandria": [
@@ -153,6 +261,18 @@
       "year": 360,
       "description": "Hagiography of the desert father Antony — the founding text of monastic literature.",
       "amazon_query": "Athanasius Life of Antony Gregg Classics Western Spirituality Paulist"
+    },
+    {
+      "title": "Apology Against the Arians",
+      "year": 350,
+      "description": "Defense of his actions during exile; primary source for the post-Nicene Arian crisis.",
+      "amazon_query": "Athanasius Apology Against Arians Nicene Post-Nicene Fathers"
+    },
+    {
+      "title": "Letters to Serapion on the Holy Spirit",
+      "year": 360,
+      "description": "First sustained patristic argument for the Spirit's full divinity; preceded Basil.",
+      "amazon_query": "Athanasius Letters Serapion Holy Spirit DelCogliano Popular Patristics"
     }
   ],
   "anthony-the-great": [
@@ -169,6 +289,24 @@
       "year": 325,
       "description": "Ten-book history of the Church from the apostles to Constantine — our principal source for early Christianity.",
       "amazon_query": "Eusebius Church History Williamson Penguin Classics"
+    },
+    {
+      "title": "Life of Constantine",
+      "year": 337,
+      "description": "Hagiographic biography of the first Christian emperor; primary source for Constantinian-era church-state relations.",
+      "amazon_query": "Eusebius Life of Constantine Cameron Hall Oxford"
+    },
+    {
+      "title": "Preparation for the Gospel + Demonstration of the Gospel",
+      "year": 313,
+      "description": "30 books defending Christianity to pagans + Jews; preserves many lost classical texts.",
+      "amazon_query": "Eusebius Preparation for the Gospel Gifford"
+    },
+    {
+      "title": "Onomasticon",
+      "year": 320,
+      "description": "Geographic gazetteer of biblical place names; foundational for biblical archaeology.",
+      "amazon_query": "Eusebius Onomasticon Notley Safrai"
     }
   ],
   "basil-of-caesarea": [
@@ -183,6 +321,18 @@
       "year": 378,
       "description": "Nine homilies on Genesis — a model for medieval natural theology.",
       "amazon_query": "Basil Hexaemeron Letters Fathers Church"
+    },
+    {
+      "title": "Long Rules and Short Rules",
+      "year": 370,
+      "description": "Question-and-answer monastic rule that organised Eastern monasticism for fifteen centuries.",
+      "amazon_query": "Basil Ascetical Works Long Rules Short Rules Fathers Church"
+    },
+    {
+      "title": "Letters",
+      "year": 370,
+      "description": "Over 360 letters covering theological controversy, pastoral care, and imperial politics.",
+      "amazon_query": "Basil Caesarea Letters Deferrari Loeb Classical Library"
     }
   ],
   "gregory-of-nazianzus": [
@@ -191,6 +341,24 @@
       "year": 380,
       "description": "Constantinople sermons that earned him the title 'the Theologian' — defining Trinitarian orthodoxy.",
       "amazon_query": "Gregory Nazianzus Five Theological Orations Beeley Popular Patristics SVS"
+    },
+    {
+      "title": "Orations",
+      "year": 380,
+      "description": "45 surviving sermons; sets the standard for patristic homiletics.",
+      "amazon_query": "Gregory Nazianzus Select Orations Vinson Fathers Church"
+    },
+    {
+      "title": "Autobiographical Poem (De Vita Sua)",
+      "year": 382,
+      "description": "Verse autobiography in 1949 lines; rare patristic genre.",
+      "amazon_query": "Gregory Nazianzus De Vita Sua Autobiographical Poems White"
+    },
+    {
+      "title": "Letters",
+      "year": 380,
+      "description": "249 letters preserved; conventional epistolary collection in classical style.",
+      "amazon_query": "Gregory Nazianzus Letters Storin"
     }
   ],
   "gregory-of-nyssa": [
@@ -205,6 +373,18 @@
       "year": 385,
       "description": "Comprehensive catechism of Christian faith for instructing pagans and heretics.",
       "amazon_query": "Gregory Nyssa Catechetical Oration Srawley"
+    },
+    {
+      "title": "Against Eunomius",
+      "year": 380,
+      "description": "Three-book reply to the radical Arian; the most sustained Trinitarian argument of the era.",
+      "amazon_query": "Gregory Nyssa Against Eunomius Hall"
+    },
+    {
+      "title": "On the Soul and Resurrection",
+      "year": 380,
+      "description": "Dialogue with his dying sister Macrina; Christianised the Phaedo.",
+      "amazon_query": "Gregory Nyssa On the Soul and Resurrection Roth Popular Patristics SVS"
     }
   ],
   "hilary-of-poitiers": [
@@ -227,6 +407,18 @@
       "year": 391,
       "description": "Christian adaptation of Cicero's De Officiis, foundational for Western pastoral ethics.",
       "amazon_query": "Ambrose Duties Clergy De Officiis Davidson Oxford"
+    },
+    {
+      "title": "Hexaemeron",
+      "year": 387,
+      "description": "Six-day-creation homilies modeled on Basil's; foundational for Latin Genesis interpretation.",
+      "amazon_query": "Ambrose Hexameron Paradise Cain Abel Fathers Church"
+    },
+    {
+      "title": "Hymns",
+      "year": 380,
+      "description": "The four undoubtedly authentic hymns; the meter became standard for Latin office hymns.",
+      "amazon_query": "Ambrose Milan Hymns Walsh"
     }
   ],
   "jerome-of-stridon": [
@@ -241,6 +433,24 @@
       "year": 393,
       "description": "Brief biographies of Christian writers — the first Christian literary history.",
       "amazon_query": "Jerome On Illustrious Men Halton Fathers Church"
+    },
+    {
+      "title": "Vulgate (Latin Bible translation)",
+      "year": 405,
+      "description": "His translation from Hebrew + Greek originals; the standard Western Bible for 1,000 years.",
+      "amazon_query": "Biblia Sacra Vulgata Jerome Latin Bible"
+    },
+    {
+      "title": "Commentary on Daniel",
+      "year": 407,
+      "description": "Defended Daniel's authenticity against Porphyry; standard Western reading for centuries.",
+      "amazon_query": "Jerome Commentary on Daniel Archer"
+    },
+    {
+      "title": "Apology Against Rufinus",
+      "year": 402,
+      "description": "Polemic on Origen's orthodoxy; the breakdown of a major scholarly friendship.",
+      "amazon_query": "Jerome Apology Against Rufinus Hritzu Fathers Church"
     }
   ],
   "john-chrysostom": [
@@ -255,6 +465,24 @@
       "year": 388,
       "description": "Seven sermons on Lazarus and the rich man — sharp social and economic preaching.",
       "amazon_query": "John Chrysostom Wealth Poverty Roth Popular Patristics SVS"
+    },
+    {
+      "title": "On the Priesthood (De Sacerdotio)",
+      "year": 386,
+      "description": "Six-book dialogue on the duties + dangers of pastoral office; foundational Eastern + Western treatise.",
+      "amazon_query": "John Chrysostom On the Priesthood Neville Popular Patristics SVS"
+    },
+    {
+      "title": "Homilies on Genesis",
+      "year": 388,
+      "description": "67 homilies; the model of Antiochene literal exegesis.",
+      "amazon_query": "John Chrysostom Homilies Genesis Hill Fathers Church"
+    },
+    {
+      "title": "Letters to Olympias",
+      "year": 405,
+      "description": "17 letters from exile to the Constantinople deaconess; one of the few intimate epistolary collections from a Father.",
+      "amazon_query": "John Chrysostom Letters to Olympias Popular Patristics"
     }
   ],
   "evagrius-ponticus": [
@@ -293,6 +521,12 @@
       "year": 460,
       "description": "Patrick's spiritual autobiography and apologia — earliest substantial document from Christian Ireland.",
       "amazon_query": "Saint Patrick Confessio Letter Coroticus O'Loughlin"
+    },
+    {
+      "title": "Letter to the Soldiers of Coroticus",
+      "year": 460,
+      "description": "Public letter denouncing British soldiers who enslaved Patrick's Irish converts; one of two undisputed primary documents.",
+      "amazon_query": "Saint Patrick Letter Coroticus Epistola O'Loughlin"
     }
   ],
   "pope-leo-i": [
@@ -387,6 +621,18 @@
       "year": 730,
       "description": "Defense of icons during iconoclasm — set Eastern Christian aesthetics for a millennium.",
       "amazon_query": "John Damascus Three Treatises Divine Images Louth Popular Patristics SVS"
+    },
+    {
+      "title": "Sacra Parallela",
+      "year": 740,
+      "description": "Vast catena of patristic + biblical excerpts; preserved many otherwise-lost passages.",
+      "amazon_query": "John Damascus Sacra Parallela"
+    },
+    {
+      "title": "Hymns and Liturgical Poetry",
+      "year": 730,
+      "description": "Composed canons still sung in Eastern liturgy (e.g. the Easter canon).",
+      "amazon_query": "John Damascus Hymns Liturgical Poetry Easter Canon"
     }
   ],
   "pseudo-dionysius-the-areopagite": [
