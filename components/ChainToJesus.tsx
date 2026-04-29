@@ -135,7 +135,7 @@ export default function ChainToJesus({ id, chains }: Props) {
                             alt={person.name}
                             loading="lazy"
                             className="w-full h-full object-cover"
-                            style={{ objectPosition: "center 20%" }}
+                            style={{ objectPosition: "center 8%" }}
                           />
                         ) : (
                           <span className="w-full h-full flex items-center justify-center font-serif text-base text-ink/40">

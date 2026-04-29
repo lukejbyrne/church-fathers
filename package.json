@@ -12,9 +12,10 @@
     "enrich": "tsx scripts/enrich.ts",
     "fetch-images": "tsx scripts/fetch-images.ts",
     "fetch-feast-days": "tsx scripts/fetch-feast-days.ts",
+    "cache-portraits": "tsx scripts/cache-portraits.ts",
     "wikidata-edits": "tsx scripts/wikidata-edit-list.ts",
     "preview-email": "tsx scripts/preview-email.ts",
-    "data": "pnpm merge && pnpm validate"
+    "data": "pnpm merge && pnpm validate && pnpm cache-portraits"
   },
   "dependencies": {
     "@netlify/blobs": "^10.7.4",

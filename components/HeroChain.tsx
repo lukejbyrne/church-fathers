@@ -70,7 +70,7 @@ export default function HeroChain() {
                         alt={person.name}
                         loading={i < 4 ? "eager" : "lazy"}
                         className="w-full h-full object-cover"
-                        style={{ objectPosition: "center 18%" }}
+                        style={{ objectPosition: "center 8%" }}
                       />
                     ) : (
                       <span className="w-full h-full flex items-center justify-center font-serif text-2xl text-ink/40">

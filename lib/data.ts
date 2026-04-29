@@ -32,6 +32,7 @@ export function getPeople(): Person[] {
 
   // Sidecar overlays — survive `pnpm merge` because they live alongside, not inside, sources.
   const images = readJsonIfExists<Record<string, ImageEntry>>(path.join(DATA_DIR, "images.json")) ?? {};
+  const portraits = readJsonIfExists<Record<string, string>>(path.join(DATA_DIR, "portrait-manifest.json")) ?? {};
   const works = readJsonIfExists<Record<string, Work[]>>(path.join(DATA_DIR, "works.json")) ?? {};
   const whyMatters = readJsonIfExists<Record<string, string>>(path.join(DATA_DIR, "why-matters.json")) ?? {};
   const feastDays = readJsonIfExists<Record<string, FeastEntry>>(path.join(DATA_DIR, "feast-days.json")) ?? {};
@@ -41,9 +42,11 @@ export function getPeople(): Person[] {
     const w = works[p.id];
     const wm = whyMatters[p.id];
     const fd = feastDays[p.id];
+    // Prefer locally-cached portrait (no third-party cookies, faster).
+    const localPortrait = portraits[p.id];
     return {
       ...p,
-      image_url: p.image_url ?? img?.url,
+      image_url: localPortrait ?? p.image_url ?? img?.url,
       image_credit: p.image_credit ?? img?.credit,
       image_license: p.image_license ?? img?.license,
       works: p.works ?? w,

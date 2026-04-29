@@ -167,7 +167,7 @@ export default function BishopsPage() {
                           width={40}
                           height={40}
                           className="w-10 h-10 rounded-full object-cover shrink-0 mt-1"
-                          style={{ objectPosition: "center 18%" }}
+                          style={{ objectPosition: "center 8%" }}
                         />
                       ) : (
                         <div className="w-10 h-10 rounded-full bg-ink/10 shrink-0 mt-1" aria-hidden />

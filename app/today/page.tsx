@@ -182,7 +182,7 @@ function FatherView({
       {person.image_url ? (
         <div className="mb-8 overflow-hidden rounded-lg border border-ink/10 bg-ink/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={person.image_url} alt={person.name} className="w-full h-[420px] object-cover" style={{ objectPosition: "center 18%" }} />
+          <img src={person.image_url} alt={person.name} className="w-full h-[420px] object-cover" style={{ objectPosition: "center 8%" }} />
           {person.image_credit ? <div className="px-3 py-1.5 text-[11px] text-ink/50">{person.image_credit}</div> : null}
         </div>
       ) : null}
@@ -264,7 +264,7 @@ function HereticView({
       {person.image_url ? (
         <div className="mb-8 overflow-hidden rounded-lg border border-ink/10 bg-ink/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={person.image_url} alt={person.name} className="w-full h-[360px] object-cover" style={{ objectPosition: "center 18%" }} />
+          <img src={person.image_url} alt={person.name} className="w-full h-[360px] object-cover" style={{ objectPosition: "center 8%" }} />
         </div>
       ) : null}
       <p className="text-lg mb-8 leading-relaxed">{blurb}</p>
@@ -294,7 +294,7 @@ function EraView({
           <Link key={p.id} href={`/fathers/${p.id}`} className="flex gap-4 p-4 border border-ink/15 rounded hover:border-accent transition-colors">
             {p.image_url ? (
               // eslint-disable-next-line @next/next/no-img-element
-              <img src={p.image_url} alt={p.name} className="w-16 h-16 rounded-full object-cover shrink-0" style={{ objectPosition: "center 18%" }} />
+              <img src={p.image_url} alt={p.name} className="w-16 h-16 rounded-full object-cover shrink-0" style={{ objectPosition: "center 8%" }} />
             ) : (
               <div className="w-16 h-16 rounded-full bg-ink/10 shrink-0 flex items-center justify-center font-serif text-xl text-ink/50">{p.name.charAt(0)}</div>
             )}

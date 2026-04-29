@@ -496,11 +496,38 @@ Unsubscribe: {$unsubscribe}`;
 
 // ── Public entry point ──
 
+function absoluteUrl(url: string | null | undefined, siteUrl: string): string | null {
+  if (!url) return null;
+  if (url.startsWith("/")) return siteUrl.replace(/\/$/, "") + url;
+  return url;
+}
+
+function withAbsoluteImages(content: Content, siteUrl: string): Content {
+  // Email clients can't resolve site-relative paths — absolutize before render.
+  if (content.type === "father" || content.type === "heretic" || content.type === "quote") {
+    return {
+      ...content,
+      person: { ...content.person, image_url: absoluteUrl(content.person.image_url, siteUrl) ?? undefined },
+    };
+  }
+  if (content.type === "era") {
+    return {
+      ...content,
+      figures: content.figures.map((p) => ({
+        ...p,
+        image_url: absoluteUrl(p.image_url, siteUrl) ?? undefined,
+      })),
+    };
+  }
+  return content;
+}
+
 export function renderEmail(
-  content: Content,
+  rawContent: Content,
   siteUrl = "https://patristic.io",
   extras: EmailExtras = {}
 ): { subject: string; html: string; plain: string } {
+  const content = withAbsoluteImages(rawContent, siteUrl);
   const subject = subjectFor(content);
   const eyebrow = eyebrowLabel(content);
 

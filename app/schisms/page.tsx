@@ -532,7 +532,7 @@ export default function SchismsPage() {
                               alt={p.name}
                               loading="lazy"
                               className="w-full h-full object-cover"
-                              style={{ objectPosition: "center 18%" }}
+                              style={{ objectPosition: "center 8%" }}
                             />
                           ) : (
                             <span className="w-full h-full flex items-center justify-center font-serif text-xs text-ink/40">

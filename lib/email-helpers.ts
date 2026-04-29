@@ -7,6 +7,13 @@ import { amazonUrl } from "./affiliate";
 import type { EmailExtras, EmailChainStep, RelatedFigure } from "./email-template";
 import type { Person } from "./schema";
 
+// Email clients can't resolve site-relative URLs; always emit absolute.
+function absoluteImage(url: string | null | undefined, siteUrl: string): string | null {
+  if (!url) return null;
+  if (url.startsWith("/")) return siteUrl.replace(/\/$/, "") + url;
+  return url;
+}
+
 export function buildExtras(content: Content, siteUrl: string): EmailExtras {
   const extras: EmailExtras = {};
 
@@ -35,7 +42,7 @@ export function fatherExtras(person: Person, siteUrl: string) {
     name: p.name,
     born: p.born ?? null,
     died: p.died ?? null,
-    image_url: p.image_url ?? null,
+    image_url: absoluteImage(p.image_url, siteUrl),
     role: p.role,
     short_bio: p.short_bio,
     see: p.see ?? null,
@@ -74,7 +81,7 @@ function anniversaryRelated(
       id: p.id,
       name: p.name,
       url: `${siteUrl}/fathers/${p.id}`,
-      image_url: p.image_url ?? null,
+      image_url: absoluteImage(p.image_url, siteUrl),
       born: p.born ?? null,
       died: p.died ?? null,
       short_bio: p.short_bio,
