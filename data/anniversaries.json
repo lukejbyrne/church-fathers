@@ -1,0 +1,228 @@
+[
+  {
+    "id": "council-of-nicaea-i",
+    "kind": "council",
+    "date": "06-19",
+    "year": 325,
+    "title": "First Council of Nicaea",
+    "blurb": "The first ecumenical council, summoned by Constantine, defined the Son as homoousios — of the same essence as the Father — against Arius. The Nicene Creed dates from this gathering.",
+    "related_person_ids": ["constantine-the-great", "athanasius-of-alexandria", "arius"],
+    "citation": "Eusebius, Vita Constantini 3.6–14"
+  },
+  {
+    "id": "council-of-constantinople-i",
+    "kind": "council",
+    "date": "07-09",
+    "year": 381,
+    "title": "First Council of Constantinople",
+    "blurb": "Reaffirmed Nicaea, condemned Macedonianism (denial of the Spirit's divinity), and gave the creed its final shape — the Nicene-Constantinopolitan Creed Christians still recite.",
+    "related_person_ids": ["gregory-of-nazianzus", "gregory-of-nyssa"]
+  },
+  {
+    "id": "council-of-ephesus",
+    "kind": "council",
+    "date": "06-22",
+    "year": 431,
+    "title": "Council of Ephesus",
+    "blurb": "Condemned Nestorius for separating the divine and human in Christ, and affirmed Mary as Theotokos — God-bearer. Cyril of Alexandria carried the day.",
+    "related_person_ids": ["cyril-of-alexandria", "nestorius"]
+  },
+  {
+    "id": "council-of-chalcedon",
+    "kind": "council",
+    "date": "10-08",
+    "year": 451,
+    "title": "Council of Chalcedon",
+    "blurb": "Defined Christ as one person in two natures — divine and human, unconfused, unchanged, undivided, unseparated. Pope Leo's Tome was read aloud and accepted.",
+    "related_person_ids": ["pope-leo-i", "eutyches"]
+  },
+  {
+    "id": "council-of-constantinople-ii",
+    "kind": "council",
+    "date": "05-05",
+    "year": 553,
+    "title": "Second Council of Constantinople",
+    "blurb": "Condemned the Three Chapters and posthumously censured Origen, attempting to reconcile the Eastern miaphysites without conceding Chalcedon.",
+    "related_person_ids": ["origen-of-alexandria"]
+  },
+  {
+    "id": "council-of-constantinople-iii",
+    "kind": "council",
+    "date": "11-07",
+    "year": 680,
+    "title": "Third Council of Constantinople",
+    "blurb": "Condemned Monothelitism and affirmed two wills in Christ, divine and human — vindicating Maximus the Confessor, who had died for the doctrine eighteen years earlier.",
+    "related_person_ids": ["maximus-the-confessor"]
+  },
+  {
+    "id": "council-of-nicaea-ii",
+    "kind": "council",
+    "date": "09-24",
+    "year": 787,
+    "title": "Second Council of Nicaea",
+    "blurb": "Restored the veneration of icons after the first iconoclast crisis, distinguishing veneration (proskynesis) from worship (latreia). The last council both East and West accept as ecumenical.",
+    "related_person_ids": ["john-of-damascus"]
+  },
+  {
+    "id": "council-of-carthage-397",
+    "kind": "council",
+    "date": "08-28",
+    "year": 397,
+    "title": "Council of Carthage",
+    "blurb": "Confirmed the canon of Scripture for the Latin West — the same 73-book canon Augustine defended and Jerome reluctantly translated.",
+    "related_person_ids": ["augustine-of-hippo", "jerome-of-stridon"]
+  },
+  {
+    "id": "council-of-orange",
+    "kind": "council",
+    "date": "07-03",
+    "year": 529,
+    "title": "Second Council of Orange",
+    "blurb": "Settled the Semi-Pelagian controversy, affirming Augustine's doctrine of grace: faith itself is a gift, not a human initiative God then assists.",
+    "related_person_ids": ["augustine-of-hippo", "john-cassian"]
+  },
+  {
+    "id": "condemnation-of-arius",
+    "kind": "heresy-condemnation",
+    "date": "06-19",
+    "year": 325,
+    "title": "Arius condemned at Nicaea",
+    "blurb": "The council's anathemas drew the line: anyone teaching that the Son was created, or that there was when he was not, is outside the Church.",
+    "related_person_ids": ["arius"]
+  },
+  {
+    "id": "condemnation-of-nestorius",
+    "kind": "heresy-condemnation",
+    "date": "06-22",
+    "year": 431,
+    "title": "Nestorius condemned at Ephesus",
+    "blurb": "Nestorius's refusal to call Mary Theotokos cost him his see. Cyril's twelve anathemas became the test of orthodoxy in the East.",
+    "related_person_ids": ["nestorius", "cyril-of-alexandria"]
+  },
+  {
+    "id": "condemnation-of-pelagius",
+    "kind": "heresy-condemnation",
+    "date": "05-01",
+    "year": 418,
+    "title": "Pelagius condemned at Carthage",
+    "blurb": "The African council, with Augustine's pen behind it, ruled that grace is necessary not only for choosing good but for knowing it — the formal end of Pelagian optimism.",
+    "related_person_ids": ["pelagius", "augustine-of-hippo"]
+  },
+  {
+    "id": "condemnation-of-eutyches",
+    "kind": "heresy-condemnation",
+    "date": "10-08",
+    "year": 451,
+    "title": "Eutyches condemned at Chalcedon",
+    "blurb": "His claim that Christ's humanity was absorbed into his divinity — one nature after the union — was rejected as a denial of true incarnation.",
+    "related_person_ids": ["eutyches"]
+  },
+  {
+    "id": "condemnation-of-origen",
+    "kind": "heresy-condemnation",
+    "date": "05-05",
+    "year": 553,
+    "title": "Origen condemned at Constantinople II",
+    "blurb": "Three centuries after his death, Origen's speculations on pre-existent souls and universal restoration were anathematized — a closing of the door his admirers had kept ajar.",
+    "related_person_ids": ["origen-of-alexandria"]
+  },
+  {
+    "id": "acacian-schism-onset",
+    "kind": "schism",
+    "date": "07-28",
+    "year": 484,
+    "title": "Acacian Schism begins",
+    "blurb": "Pope Felix III excommunicated Acacius of Constantinople over the Henotikon. The first formal break between Rome and Constantinople; healed in 519, but the pattern was set.",
+    "related_person_ids": []
+  },
+  {
+    "id": "three-chapters-controversy",
+    "kind": "schism",
+    "date": "06-02",
+    "year": 553,
+    "title": "Three Chapters controversy",
+    "blurb": "Justinian's posthumous condemnation of three Antiochene theologians split the West — North Africa and Aquileia broke communion with Rome over the imperial overreach.",
+    "related_person_ids": []
+  },
+  {
+    "id": "iconoclasm-onset",
+    "kind": "schism",
+    "date": "01-17",
+    "year": 730,
+    "title": "Iconoclasm imposed in the East",
+    "blurb": "Emperor Leo III ordered the destruction of icons. The West refused; John of Damascus, safe under Muslim rule, wrote three orations defending images.",
+    "related_person_ids": ["john-of-damascus"]
+  },
+  {
+    "id": "donatist-schism",
+    "kind": "schism",
+    "date": "04-15",
+    "year": 311,
+    "title": "Donatist schism opens in Africa",
+    "blurb": "Donatus refused communion with bishops who had handed over scriptures during persecution. Augustine spent decades arguing them down, with mixed results.",
+    "related_person_ids": ["augustine-of-hippo"]
+  },
+  {
+    "id": "novatian-schism",
+    "kind": "schism",
+    "date": "03-04",
+    "year": 251,
+    "title": "Novatian schism in Rome",
+    "blurb": "Novatian rejected Cornelius's leniency toward Christians who had lapsed under Decius. The first major split over discipline rather than doctrine.",
+    "related_person_ids": ["cyprian-of-carthage"]
+  },
+  {
+    "id": "death-of-john-of-damascus",
+    "kind": "council",
+    "date": "12-04",
+    "year": 749,
+    "title": "Death of John of Damascus — patristic age closes",
+    "blurb": "The last of the Greek Fathers dies at Mar Saba. With him, the patristic age proper ends; what comes next is medieval theology, working from his synthesis.",
+    "related_person_ids": ["john-of-damascus"]
+  },
+  {
+    "id": "council-of-jerusalem",
+    "kind": "council",
+    "date": "10-18",
+    "year": 50,
+    "title": "Council of Jerusalem",
+    "blurb": "Peter, Paul, and James settled the question of Gentile circumcision. The first conciliar decision in Christian history; recorded in Acts 15.",
+    "related_person_ids": ["peter-the-apostle", "paul-of-tarsus", "james-the-just"]
+  },
+  {
+    "id": "edict-of-milan",
+    "kind": "council",
+    "date": "02-13",
+    "year": 313,
+    "title": "Edict of Milan",
+    "blurb": "Constantine and Licinius granted toleration to Christians across the empire. The persecution era ended; the institutional church began.",
+    "related_person_ids": ["constantine-the-great"]
+  },
+  {
+    "id": "fall-of-rome",
+    "kind": "schism",
+    "date": "08-24",
+    "year": 410,
+    "title": "Sack of Rome by Alaric",
+    "blurb": "Pagans blamed Christianity for the city's fall. Augustine's reply, the City of God, recast history itself: two cities, two loves, only one eternal.",
+    "related_person_ids": ["augustine-of-hippo"]
+  },
+  {
+    "id": "council-of-toledo-iii",
+    "kind": "council",
+    "date": "05-08",
+    "year": 589,
+    "title": "Third Council of Toledo",
+    "blurb": "Visigothic Spain converted from Arianism to Catholic Christianity. The filioque — the Spirit proceeds from the Father and the Son — first appears in conciliar form here.",
+    "related_person_ids": ["isidore-of-seville"]
+  },
+  {
+    "id": "synod-of-whitby",
+    "kind": "council",
+    "date": "09-25",
+    "year": 664,
+    "title": "Synod of Whitby",
+    "blurb": "Northumbria chose Roman over Celtic Christianity — the dating of Easter, the shape of the tonsure, the line of authority. Bede tells the story with characteristic care.",
+    "related_person_ids": ["bede-the-venerable"]
+  }
+]

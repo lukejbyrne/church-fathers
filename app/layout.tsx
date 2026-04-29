@@ -191,6 +191,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div>
             Sourced from primary patristic texts. Cross-referenced against Quasten, ODCC, and CCEL.
             {" · "}
+            <a href="/sent" className="hover:text-accent">Past issues</a>
+            {" · "}
             <a href="/api/people.json" className="hover:text-accent">people.json</a>
             {" · "}
             <a href="/api/relationships.json" className="hover:text-accent">relationships.json</a>

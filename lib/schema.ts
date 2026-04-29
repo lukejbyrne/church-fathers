@@ -103,8 +103,30 @@ export const Person = z.object({
   image_license: optStr,
   works: z.array(Work).nullish().transform((v) => v ?? undefined),
   why_matters: optStr,
+  feast_day_catholic: optStr,
+  feast_day_orthodox: optStr,
 });
 export type Person = z.infer<typeof Person>;
+
+export const Anniversary = z.object({
+  id: z.string(),
+  kind: z.enum(["council", "schism", "heresy-condemnation"]),
+  date: z.string().regex(/^\d{2}-\d{2}$/, "must be MM-DD"),
+  year: z.number().int(),
+  title: z.string().min(1),
+  blurb: z.string().min(1),
+  related_person_ids: z.array(z.string()).optional(),
+  citation: z.string().optional(),
+});
+export type Anniversary = z.infer<typeof Anniversary>;
+
+export const Quote = z.object({
+  person_id: z.string(),
+  text: z.string().min(1),
+  source: z.string().min(1),
+  translation: z.string().optional(),
+});
+export type Quote = z.infer<typeof Quote>;
 
 export const Relationship = z.object({
   from: z.string(),

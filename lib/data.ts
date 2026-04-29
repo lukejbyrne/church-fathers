@@ -1,14 +1,19 @@
 import fs from "node:fs";
 import path from "node:path";
-import { Person, Relationship, Work } from "./schema";
+import { Person, Relationship, Work, type Anniversary, type Quote } from "./schema";
 import { strongestPath, type ChainKind } from "./lineage";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
 let _people: Person[] | null = null;
 let _rels: Relationship[] | null = null;
+let _anniv: Anniversary[] | null = null;
+let _quotes: Quote[] | null = null;
+let _heretics: Set<string> | null = null;
+let _overrides: Record<string, string> | null = null;
 
 type ImageEntry = { url: string; credit?: string; license?: string };
+type FeastEntry = { catholic?: string; orthodox?: string };
 
 function readJsonIfExists<T>(file: string): T | null {
   if (!fs.existsSync(file)) return null;
@@ -29,11 +34,13 @@ export function getPeople(): Person[] {
   const images = readJsonIfExists<Record<string, ImageEntry>>(path.join(DATA_DIR, "images.json")) ?? {};
   const works = readJsonIfExists<Record<string, Work[]>>(path.join(DATA_DIR, "works.json")) ?? {};
   const whyMatters = readJsonIfExists<Record<string, string>>(path.join(DATA_DIR, "why-matters.json")) ?? {};
+  const feastDays = readJsonIfExists<Record<string, FeastEntry>>(path.join(DATA_DIR, "feast-days.json")) ?? {};
 
   _people = base.map((p) => {
     const img = images[p.id];
     const w = works[p.id];
     const wm = whyMatters[p.id];
+    const fd = feastDays[p.id];
     return {
       ...p,
       image_url: p.image_url ?? img?.url,
@@ -41,9 +48,36 @@ export function getPeople(): Person[] {
       image_license: p.image_license ?? img?.license,
       works: p.works ?? w,
       why_matters: p.why_matters ?? wm,
+      feast_day_catholic: p.feast_day_catholic ?? fd?.catholic,
+      feast_day_orthodox: p.feast_day_orthodox ?? fd?.orthodox,
     };
   });
   return _people!;
+}
+
+export function getAnniversaries(): Anniversary[] {
+  if (_anniv) return _anniv;
+  _anniv = readJsonIfExists<Anniversary[]>(path.join(DATA_DIR, "anniversaries.json")) ?? [];
+  return _anniv;
+}
+
+export function getQuotes(): Quote[] {
+  if (_quotes) return _quotes;
+  _quotes = readJsonIfExists<Quote[]>(path.join(DATA_DIR, "quotes.json")) ?? [];
+  return _quotes;
+}
+
+export function getHereticIds(): Set<string> {
+  if (_heretics) return _heretics;
+  const ids = readJsonIfExists<string[]>(path.join(DATA_DIR, "heretics.json")) ?? [];
+  _heretics = new Set(ids);
+  return _heretics;
+}
+
+export function getOverrides(): Record<string, string> {
+  if (_overrides) return _overrides;
+  _overrides = readJsonIfExists<Record<string, string>>(path.join(DATA_DIR, "send-overrides.json")) ?? {};
+  return _overrides;
 }
 
 export function getRelationships(): Relationship[] {

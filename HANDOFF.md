@@ -53,6 +53,30 @@ Stack swapped from Resend to **MailerLite free tier** because Resend's free tier
 
 Files: `app/api/subscribe/route.ts` (push contact) and `netlify/functions/daily-email.ts` (daily campaign create + send), both using the shared `lib/email-template.ts`.
 
+#### Picker priority chain (lib/picker.ts)
+
+`pickContent(date)` returns a discriminated `Content` union, picked in this order:
+
+1. **Manual override** — `data/send-overrides.json[YYYY-MM-DD] = "<person-id>"` always wins.
+2. **Feast day** — Catholic calendar first (Catholic primary), then Orthodox. Tiebreak by `significance`.
+3. **Anniversary** — `data/anniversaries.json` keyed by `MM-DD`. Council / schism / heresy-condemnation.
+4. **Era spotlight** — Mondays only, weekly rotation across the 7 `tradition_status` values.
+5. **Quote rotation** — `data/quotes.json`, deterministic by day index.
+
+#### Send log + idempotency (lib/send-log.ts)
+
+The daily function checks Netlify Blobs (`sends` store) for today's date before contacting MailerLite. If a `sent` record exists, it returns `{ ok: true, skipped: true }`. On success it writes the record; on failure it writes a `failed` record so the next retry can re-attempt. The public archive at `/sent` reads `listSends(60)`.
+
+`@netlify/blobs` is auto-available inside Netlify Functions via `NETLIFY_SITE_ID` + `NETLIFY_AUTH_TOKEN`. Locally (CLI scripts, dev), the wrapper no-ops.
+
+#### Adding content
+
+- **Override a date:** edit `data/send-overrides.json`, e.g. `{ "2026-12-25": "jesus-of-nazareth" }`. Push, redeploy.
+- **Add a feast day:** edit `data/feast-days.json` keyed by person id: `{ "calendar": "MM-DD" }`.
+- **Add an anniversary:** edit `data/anniversaries.json`, schema is `{ id, kind, date: "MM-DD", year, title, blurb, related_person_ids?, citation? }`.
+- **Add a quote:** edit `data/quotes.json`, schema is `{ person_id, text, source, translation? }`.
+- **Refresh feast days from Wikidata:** `pnpm fetch-feast-days` (uses property P841, polite 120ms delay, idempotent).
+
 To go live:
 
 1. **Sign up at mailerlite.com** (free). Verify your sending domain — for `patristic.io`:

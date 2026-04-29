@@ -11,10 +11,13 @@
     "validate": "tsx scripts/validate.ts",
     "enrich": "tsx scripts/enrich.ts",
     "fetch-images": "tsx scripts/fetch-images.ts",
+    "fetch-feast-days": "tsx scripts/fetch-feast-days.ts",
     "wikidata-edits": "tsx scripts/wikidata-edit-list.ts",
+    "preview-email": "tsx scripts/preview-email.ts",
     "data": "pnpm merge && pnpm validate"
   },
   "dependencies": {
+    "@netlify/blobs": "^10.7.4",
     "clsx": "^2.1.1",
     "d3": "^7.9.0",
     "fuse.js": "^7.0.0",
