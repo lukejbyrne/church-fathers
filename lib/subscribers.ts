@@ -14,18 +14,18 @@ export type Subscriber = {
 
 const STORE_NAME = "subscribers";
 
-function blobsAvailable(): boolean {
-  return !!(process.env.NETLIFY_SITE_ID && process.env.NETLIFY_AUTH_TOKEN);
-}
-
 function store(): Store | null {
-  if (!blobsAvailable()) return null;
+  // Inside Netlify (Functions or Next.js runtime) getStore() auto-detects
+  // the site context — no auth args needed. Outside Netlify (local dev),
+  // we fall back to explicit creds if present, otherwise no-op.
   try {
-    return getStore({
-      name: STORE_NAME,
-      siteID: process.env.NETLIFY_SITE_ID!,
-      token: process.env.NETLIFY_AUTH_TOKEN!,
-    });
+    return getStore(STORE_NAME);
+  } catch {}
+  const siteID = process.env.NETLIFY_SITE_ID;
+  const token = process.env.NETLIFY_AUTH_TOKEN;
+  if (!siteID || !token) return null;
+  try {
+    return getStore({ name: STORE_NAME, siteID, token });
   } catch {
     return null;
   }
