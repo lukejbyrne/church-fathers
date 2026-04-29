@@ -21,6 +21,8 @@ export function GET(req: Request) {
     name: p.name,
     born: p.born ?? null,
     died: p.died ?? null,
+    image_url: p.image_url ?? null,
+    role: p.role,
     edge_type: edge?.type ?? null,
     edge_strength: edge?.strength ?? null,
   }));

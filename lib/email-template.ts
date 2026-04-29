@@ -10,8 +10,22 @@ export type EmailChainStep = {
   name: string;
   born?: number | null;
   died?: number | null;
+  image_url?: string | null;
+  role?: string[];
   edge_type?: string | null;
   edge_strength?: string | null;
+};
+
+const REGION_LABEL: Record<string, string> = {
+  palestine: "Palestine",
+  syria: "Syria",
+  "asia-minor": "Asia Minor",
+  egypt: "Egypt",
+  west: "Roman West",
+  gaul: "Gaul",
+  africa: "North Africa",
+  east: "Eastern empire",
+  other: "Other",
 };
 
 export type EmailFigure = {
@@ -88,50 +102,118 @@ function renderQuickFacts(p: EmailFigure["person"]): string {
 function renderChain(chain: EmailChainStep[] | undefined, siteUrl: string, targetId: string): string {
   if (!chain || chain.length <= 1) return "";
 
-  // chain is anchor-first (Jesus → ... → target).
-  // Render as a vertical list with arrows, each name a link, edge type as muted line.
-  const items = chain
+  // The API returns chain anchor-first (Jesus → ... → target).
+  // For the email we render TARGET AT TOP descending to Jesus, so the reader's
+  // figure leads, then traces backwards. Reverse the array and each step's
+  // edge label still describes the relationship to the PREVIOUS person in the
+  // walking order, which now means the person beneath them.
+  const targetFirst = chain.slice().reverse();
+
+  const items = targetFirst
     .map((step, i) => {
-      const isFirst = i === 0;
-      const isLast = step.id === targetId;
+      const isTarget = step.id === targetId; // i === 0
+      const isJesus = step.id === "jesus-of-nazareth"; // typically last
       const dates = formatLifeRange(step.born, step.died);
       const url = `${siteUrl}/fathers/${step.id}`;
-      const edgeLabel = i > 0 && step.edge_type
+
+      // Visual styling for the medallion
+      const ringColor = isTarget
+        ? "#8b1e2d"
+        : step.role?.includes("apostle")
+          ? "#8b1e2d"
+          : step.role?.includes("bishop")
+            ? "#d4a017"
+            : "#1f1a1340";
+
+      const portrait = step.image_url
+        ? `<img src="${escapeHtml(step.image_url)}" alt="${escapeHtml(step.name)}" width="56" height="56" style="display:block;border-radius:50%;object-fit:cover;object-position:center 18%;border:2px solid ${ringColor};background:#1f1a1310;" />`
+        : `<div style="width:56px;height:56px;border-radius:50%;background:${isJesus ? "#1f1a13" : isTarget ? "#8b1e2d" : "#1f1a1310"};color:${isJesus || isTarget ? "#fffaf0" : "#1f1a1380"};line-height:56px;text-align:center;font-family:Georgia,serif;font-size:22px;border:2px solid ${ringColor};">${escapeHtml(step.name.charAt(0))}</div>`;
+
+      // Edge label below this medallion (between this person and the next-down,
+      // who in walking order is "the previous step"). Show only if there's a step
+      // beneath us.
+      const hasNext = i < targetFirst.length - 1;
+      const nextStep = hasNext ? targetFirst[i + 1] : null;
+      const edgeColor =
+        step.edge_strength === "documented" ? "#1f1a1380" : step.edge_strength === "tradition" ? "#1f1a1350" : "#8b1e2d80";
+      const edgeStyle = step.edge_strength === "tradition" ? "italic" : "normal";
+
+      // The edge stored on `step` describes step→previousInOriginalOrder.
+      // After reversal: step.edge describes step→nextInTargetFirstOrder (the one beneath).
+      // But this isn't how chainTo works. Original: chain[i].edge describes chain[i] ↔ chain[i-1].
+      // After reverse: targetFirst[i].edge originally was chain[len-1-i].edge which described
+      // chain[len-1-i] ↔ chain[len-2-i] = targetFirst[i+1]. So step.edge IS the relationship
+      // to the medallion beneath us in targetFirst order. Render it accordingly when there's
+      // a next step.
+
+      const edgeText = hasNext && step.edge_type
+        ? `<span style="display:inline-block;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:${edgeColor};font-style:${edgeStyle};">
+             ${escapeHtml(step.edge_type.replace(/_/g, " "))}${step.edge_strength && step.edge_strength !== "documented" ? ` <span style="opacity:0.6;">· ${escapeHtml(step.edge_strength)}</span>` : ""}
+           </span>`
+        : "";
+
+      const connector = hasNext
         ? `<tr><td style="padding:0;text-align:center;">
-             <div style="display:inline-block;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:${step.edge_strength === "documented" ? "#1f1a1370" : "#1f1a1340"};font-style:${step.edge_strength === "tradition" ? "italic" : "normal"};margin:2px 0;">
-               ${escapeHtml(step.edge_type.replace(/_/g, " "))}${step.edge_strength && step.edge_strength !== "documented" ? ` <span style="opacity:0.7;">(${escapeHtml(step.edge_strength)})</span>` : ""}
-             </div>
-             <div style="font-size:14px;color:#1f1a1330;line-height:1;">↓</div>
+             ${edgeText ? `<div style="margin:6px 0 4px;">${edgeText}</div>` : `<div style="height:6px;"></div>`}
+             <div style="display:inline-block;width:2px;height:18px;background:#1f1a1330;border-radius:1px;"></div>
            </td></tr>`
         : "";
 
-      const dotColor = isFirst
-        ? "#1f1a13"
-        : isLast
-          ? "#8b1e2d"
-          : "#1f1a1380";
-      const bgColor = isFirst ? "#1f1a13" : isLast ? "#8b1e2d" : "#fffaf0";
-      const fgColor = isFirst || isLast ? "#fffaf0" : "#1f1a13";
-
-      return `${edgeLabel}<tr><td style="padding:4px 0;text-align:center;">
-        <a href="${escapeHtml(url)}" style="display:inline-block;text-decoration:none;padding:7px 14px;background:${bgColor};color:${fgColor};border-radius:18px;border:1px solid ${dotColor};font-family:Georgia,serif;font-size:13px;${isLast ? "font-weight:bold;" : ""}">
-          ${escapeHtml(step.name)}<span style="opacity:0.65;font-size:11px;margin-left:6px;">${escapeHtml(dates)}</span>
-        </a>
-      </td></tr>`;
+      return `<tr><td style="padding:6px 0;text-align:center;">
+          <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin:0 auto;">
+            <tr>
+              <td style="padding-right:12px;vertical-align:middle;">${portrait}</td>
+              <td style="vertical-align:middle;text-align:left;">
+                <a href="${escapeHtml(url)}" style="text-decoration:none;color:#1f1a13;display:block;line-height:1.2;">
+                  <span style="font-family:Georgia,serif;font-size:${isTarget ? "16px" : "14px"};${isTarget ? "font-weight:bold;" : ""}color:#1f1a13;display:block;">${escapeHtml(step.name)}</span>
+                  <span style="font-size:11px;color:#1f1a1380;display:block;margin-top:2px;">${escapeHtml(dates)}</span>
+                </a>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
+        ${connector}`;
     })
     .join("");
 
-  return `<div style="margin:32px 0 24px;">
+  return `<div style="margin:32px 0 24px;padding:20px 16px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;">
     <h2 style="margin:0 0 6px;font-family:Georgia,serif;font-size:18px;color:#1f1a13;text-align:center;font-weight:normal;">
       Chain to Jesus
     </h2>
-    <p style="margin:0 0 16px;text-align:center;font-size:12px;color:#1f1a1380;font-style:italic;">
-      ${chain.length - 1} step${chain.length === 2 ? "" : "s"} through documented and traditional links
+    <p style="margin:0 0 18px;text-align:center;font-size:12px;color:#1f1a1380;font-style:italic;">
+      ${targetFirst.length - 1} step${targetFirst.length === 2 ? "" : "s"} through documented and traditional links · top to bottom: ${escapeHtml(targetFirst[0].name.split(" of ")[0])} → Jesus
     </p>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
       ${items}
     </table>
   </div>`;
+}
+
+function renderLocationCard(p: EmailFigure["person"], siteUrl: string): string {
+  const place = p.birth_place || p.see;
+  if (!place) return "";
+  const regionLabel = p.region ? REGION_LABEL[p.region] ?? p.region : "";
+
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;">
+    <tr>
+      <td style="padding:14px 16px;background:#1f1a1308;border:1px solid #1f1a1318;border-radius:6px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="40" style="vertical-align:top;padding-right:12px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:#8b1e2d;color:#fffaf0;line-height:36px;text-align:center;font-size:18px;">📍</div>
+            </td>
+            <td style="vertical-align:middle;">
+              <div style="font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:2px;">From</div>
+              <div style="font-family:Georgia,serif;font-size:17px;color:#1f1a13;">${escapeHtml(place)}${regionLabel ? `<span style="font-size:13px;color:#1f1a1380;font-style:italic;"> · ${escapeHtml(regionLabel)}</span>` : ""}</div>
+              <div style="margin-top:6px;">
+                <a href="${escapeHtml(siteUrl)}/map" style="font-size:12px;color:#8b1e2d;text-decoration:none;border-bottom:1px solid #8b1e2d44;">See on the map →</a>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>`;
 }
 
 function renderCitation(citation?: string): string {
@@ -232,6 +314,13 @@ export function renderEmail(
               <p style="margin:0 0 24px;text-align:center;font-size:13px;color:#1f1a13aa;">
                 ${dateLine}
               </p>
+            </td>
+          </tr>
+
+          <!-- Location card -->
+          <tr>
+            <td style="padding:0 32px;">
+              ${renderLocationCard(p, siteUrl)}
             </td>
           </tr>
 
