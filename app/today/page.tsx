@@ -152,8 +152,11 @@ function FatherView({
   reason: "override" | "feast-catholic" | "feast-orthodox" | "rotation";
 }) {
   const dr = dateRange(person);
-  const primary = person.citations?.find((c) => c.kind === "primary");
+  const primaries = person.citations?.filter((c) => c.kind === "primary") ?? [];
+  // Show why_matters if present; otherwise fall back to short_bio. When both
+  // exist and differ, we already lean on why_matters as the longer piece.
   const body = person.why_matters ?? person.short_bio;
+  const showShortAsLede = !!person.why_matters && person.short_bio && person.short_bio !== person.why_matters;
   const cat = formatMonthDay(person.feast_day_catholic);
   const orth = formatMonthDay(person.feast_day_orthodox);
   const feast =
@@ -176,6 +179,9 @@ function FatherView({
           {person.see ? <> · Bishop of {person.see}</> : null}
           {!person.see && person.birth_place ? <> · {person.birth_place}</> : null}
         </p>
+        {person.alt_names && person.alt_names.length > 0 ? (
+          <p className="mt-1 text-sm text-ink/55">Also known as {person.alt_names.join(" · ")}</p>
+        ) : null}
         {feast ? <p className="mt-1 text-sm text-accent/80">{feast}</p> : null}
       </header>
 
@@ -187,21 +193,59 @@ function FatherView({
         </div>
       ) : null}
 
+      {showShortAsLede ? (
+        <p className="text-xl text-ink/75 mb-6 leading-snug">{person.short_bio}</p>
+      ) : null}
+
       <div className="prose-like text-lg mb-8">
         {body.split(/\n\n+/).map((para, i) => <p key={i} className="mb-4">{para}</p>)}
       </div>
 
-      {primary ? (
-        <blockquote className="border-l-4 border-accent/60 bg-ink/5 pl-5 py-3 my-8 italic text-ink/80">
-          <p className="mb-1">Primary source for this figure.</p>
-          <cite className="not-italic text-sm text-ink/60">— {primary.source}</cite>
-        </blockquote>
+      {person.works && person.works.length > 0 ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Notable works</h2>
+          <ul className="space-y-1 text-ink/80">
+            {person.works.slice(0, 6).map((w, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="text-ink/40">·</span>
+                <span>
+                  <span className="italic">{w.title}</span>
+                  {w.year ? <span className="text-ink/55"> · {w.year}</span> : null}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {primaries.length > 0 ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Primary sources</h2>
+          <ul className="space-y-1 text-ink/80 text-sm">
+            {primaries.map((c, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="text-ink/40">·</span>
+                <span>{c.source}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
       ) : null}
 
       <div className="flex flex-wrap gap-3 mt-10">
         <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm">
-          See the full chain to Jesus →
+          Open {person.name}&rsquo;s full page →
         </Link>
+        {person.wikipedia_url ? (
+          <a
+            href={person.wikipedia_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors text-sm"
+          >
+            Wikipedia ↗
+          </a>
+        ) : null}
       </div>
     </>
   );

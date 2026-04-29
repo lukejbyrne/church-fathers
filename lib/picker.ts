@@ -19,6 +19,41 @@ import {
 } from "./data";
 import type { Person, Anniversary, Quote, TraditionStatus } from "./schema";
 
+// Reorder quotes so the same author never appears in two adjacent slots
+// (which is what makes the calendar show e.g. "Benedict, Benedict" on
+// consecutive days). Greedy: at each step pick the author with the most
+// remaining quotes that isn't the previous author. Stable across runs.
+let _spreadQuotes: Quote[] | null = null;
+function getSpreadQuotes(): Quote[] {
+  if (_spreadQuotes) return _spreadQuotes;
+  const quotes = getQuotes();
+  if (quotes.length <= 1) return (_spreadQuotes = quotes.slice());
+
+  const buckets = new Map<string, Quote[]>();
+  for (const q of quotes) {
+    if (!buckets.has(q.person_id)) buckets.set(q.person_id, []);
+    buckets.get(q.person_id)!.push(q);
+  }
+  for (const arr of buckets.values()) {
+    arr.sort((a, b) => (a.source ?? "").localeCompare(b.source ?? "") || a.text.localeCompare(b.text));
+  }
+
+  const out: Quote[] = [];
+  let prev = "";
+  while (out.length < quotes.length) {
+    const candidates = [...buckets.entries()].filter(([id, arr]) => arr.length > 0 && id !== prev);
+    const pool = candidates.length > 0
+      ? candidates
+      : [...buckets.entries()].filter(([, arr]) => arr.length > 0);
+    pool.sort((a, b) => b[1].length - a[1].length || a[0].localeCompare(b[0]));
+    const [id, arr] = pool[0];
+    out.push(arr.shift()!);
+    prev = id;
+  }
+  _spreadQuotes = out;
+  return out;
+}
+
 export type Content =
   | {
       type: "father";
@@ -190,8 +225,9 @@ export function pickContent(date: Date = new Date()): Content {
     }
   }
 
-  // 5. Quote rotation — deterministic by day.
-  const quotes = getQuotes();
+  // 5. Quote rotation — deterministic by day, with author-spread ordering
+  // so consecutive days don't show the same author.
+  const quotes = getSpreadQuotes();
   if (quotes.length > 0) {
     const idx = ((dayIndex(date) % quotes.length) + quotes.length) % quotes.length;
     const q = quotes[idx];
