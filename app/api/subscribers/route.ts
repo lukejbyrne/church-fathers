@@ -2,7 +2,7 @@
 //   GET /api/subscribers?token=...           -> JSON
 //   GET /api/subscribers?token=...&format=csv -> CSV download
 
-import { listSubscribers } from "@/lib/subscribers";
+import { listSubscribers, removeSubscriber } from "@/lib/subscribers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -31,4 +31,19 @@ export async function GET(req: Request) {
   }
 
   return Response.json({ ok: true, count: subs.length, subscribers: subs });
+}
+
+export async function DELETE(req: Request) {
+  const url = new URL(req.url);
+  const token = url.searchParams.get("token");
+  const expected = process.env.ADMIN_TOKEN;
+  if (!expected || token !== expected) {
+    return Response.json({ ok: false, error: "Unauthorized" }, { status: 401 });
+  }
+  const email = url.searchParams.get("email");
+  if (!email) {
+    return Response.json({ ok: false, error: "Missing email" }, { status: 400 });
+  }
+  const removed = await removeSubscriber(email);
+  return Response.json({ ok: true, removed });
 }

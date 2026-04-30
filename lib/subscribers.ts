@@ -55,6 +55,15 @@ export async function addSubscriber(
   return { ok: true, persisted: true };
 }
 
+export async function removeSubscriber(email: string): Promise<boolean> {
+  const s = store();
+  if (!s) return false;
+  const key = keyFor(email);
+  const existed = !!(await s.get(key, { type: "json" }).catch(() => null));
+  await s.delete(key);
+  return existed;
+}
+
 export async function listSubscribers(): Promise<Subscriber[]> {
   const s = store();
   if (!s) return [];

@@ -198,7 +198,7 @@ export default async () => {
   );
 };
 
-// Daily at 13:00 UTC (≈ 9am ET winter, 1pm UK winter / 2pm BST).
+// Daily at 06:00 UTC = 7am BST (summer) / 6am GMT (winter).
 export const config: Config = {
-  schedule: "0 13 * * *",
+  schedule: "0 6 * * *",
 };
