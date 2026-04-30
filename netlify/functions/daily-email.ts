@@ -104,7 +104,7 @@ export default async () => {
   // Step 2: pick today's content.
   const content = pickContent(date);
   const extras = buildExtras(content, siteUrl);
-  const { subject, html, plain } = renderEmail(content, siteUrl, extras);
+  const { subject, html } = renderEmail(content, siteUrl, extras);
   const campaignName = `Patristic — ${iso} — ${content.type} — ${titleOf(content)}`;
 
   const baseRecord: Omit<SendRecord, "status"> = {
@@ -130,7 +130,7 @@ export default async () => {
       type: "regular",
       language_id: "4",
       groups: [groupId],
-      emails: [{ subject, from: fromEmail, from_name: fromName, content: html, plain }],
+      emails: [{ subject, from: fromEmail, from_name: fromName, content: html }],
     }),
   });
 
