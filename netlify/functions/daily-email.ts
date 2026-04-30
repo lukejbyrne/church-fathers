@@ -128,6 +128,7 @@ export default async () => {
     body: JSON.stringify({
       name: campaignName,
       type: "regular",
+      language_id: "4",
       groups: [groupId],
       emails: [{ subject, from: fromEmail, from_name: fromName, content: html, plain }],
     }),
