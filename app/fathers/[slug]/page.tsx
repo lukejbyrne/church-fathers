@@ -9,6 +9,8 @@ import { amazonUrl } from "@/lib/affiliate";
 import ChainToJesus, { type ChainStep } from "@/components/ChainToJesus";
 import ShareBar from "@/components/ShareBar";
 import { dateRange, bornDisplay, diedDisplay } from "@/lib/dates";
+import BookShelf from "@/components/BookShelf";
+import { getBookForPerson } from "@/lib/books";
 
 const ALL_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
 
@@ -131,6 +133,8 @@ export default async function FatherPage({
   const person = getPerson(slug);
   if (!person) notFound();
   const chains = buildChainsFor(person.id);
+  const recommendedBook = getBookForPerson(person, new Date(Date.UTC(2026, 0, 1)));
+  const recommendedBooks = recommendedBook ? [recommendedBook] : [];
 
   const rels = getRelationshipsFor(person.id);
   const grouped = {
@@ -311,6 +315,13 @@ export default async function FatherPage({
           ))}
         </section>
       )}
+
+      <BookShelf
+        books={recommendedBooks}
+        title={`Recommended reading near ${person.name.split(" of ")[0]}`}
+        blurb="A cover-visible starting point chosen from the curated reading path, either by this figure or by their era."
+        moreHref="/books"
+      />
 
       <Suspense
         fallback={
@@ -568,4 +579,3 @@ export default async function FatherPage({
     </div>
   );
 }
-

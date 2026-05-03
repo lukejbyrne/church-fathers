@@ -1,4 +1,5 @@
 import { getPeople, getRelationships } from "@/lib/data";
+import { questionPages } from "@/lib/questions";
 
 export const dynamic = "force-static";
 
@@ -28,6 +29,8 @@ export function GET() {
   lines.push(`- [Map](${base}/map): geographic Mediterranean view with a year scrubber (AD 30–760) showing where figures were active across time.`);
   lines.push(`- [Bishops](${base}/bishops): bishops grouped by their see (Rome, Antioch, Alexandria, Jerusalem, Constantinople, etc.), ordered chronologically — the apostolic-succession-proper view of the dataset.`);
   lines.push(`- [Schisms](${base}/schisms): every major split of the patristic age (Judaizers through 1054), with the question, what was decided, and who was involved — color-coded by whether the schism was resolved, lingered, or remains in effect.`);
+  lines.push(`- [Questions](${base}/questions): guided, sourced answers to common early Church searches, each tied back to figures and relationships in the dataset.`);
+  lines.push(`- [Books](${base}/books): recommended reading path through the Fathers, grouped by first reads, era, and controversy.`);
   lines.push(`- [Start here](${base}/start-here): plain-English introduction to the Fathers, the eras, and the terminology.`);
   lines.push(`- [Directory](${base}/directory): searchable index of every figure.`);
   lines.push(`- [Methodology](${base}/about): how relationships are sourced and graded; explains apostolic-succession-vs-transmission distinction.`);
@@ -42,6 +45,11 @@ export function GET() {
   lines.push(`- [Post-Nicene (451–600)](${base}/eras/post-nicene): Christology aftermath, monasticism, Augustine's legacy in the Latin west.`);
   lines.push(`- [Early Medieval (600–750)](${base}/eras/early-medieval): patristic learning carried by monasteries; closes with John of Damascus.`);
   lines.push(`- [Desert Fathers (250–500)](${base}/eras/desert-fathers): Egyptian and Syrian ascetic movement; overlaps Ante-Nicene through Post-Nicene.`);
+  lines.push("");
+  lines.push("## Guided questions");
+  for (const page of questionPages) {
+    lines.push(`- [${page.title}](${base}/questions/${page.slug}): ${page.description}`);
+  }
   lines.push("");
   lines.push("## Data");
   lines.push(`- [People (JSON)](${base}/api/people.json): full structured data for all ${people.length} figures.`);

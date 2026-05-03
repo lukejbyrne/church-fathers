@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getPeople } from "@/lib/data";
+import { questionPages } from "@/lib/questions";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patristic.io";
@@ -24,9 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/eras`, priority: 0.9 },
     { url: `${base}/bishops`, priority: 0.8 },
     { url: `${base}/schisms`, priority: 0.8 },
+    { url: `${base}/questions`, priority: 0.9 },
+    { url: `${base}/books`, priority: 0.85 },
     { url: `${base}/directory`, priority: 0.8 },
     { url: `${base}/about`, priority: 0.6 },
     ...eras.map((e) => ({ url: `${base}/eras/${e}`, priority: 0.7 })),
+    ...questionPages.map((page) => ({ url: `${base}/questions/${page.slug}`, priority: 0.75 })),
     ...people.map((p) => ({ url: `${base}/fathers/${p.id}`, priority: 0.5 })),
   ];
 }

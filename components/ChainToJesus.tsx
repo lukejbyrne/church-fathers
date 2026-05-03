@@ -46,7 +46,7 @@ export default function ChainToJesus({ id, chains }: Props) {
   const chain = chains[kind];
 
   return (
-    <section className="mb-10 -mx-4 px-4 py-6 bg-ink/5 border-y border-ink/10">
+    <section id="chain-to-jesus" className="mb-10 -mx-4 px-4 py-6 bg-ink/5 border-y border-ink/10">
       <div className="max-w-3xl mx-auto">
         <h2 className="font-serif text-2xl mb-1">Chain to Jesus</h2>
         <p className="text-xs text-ink/55 mb-3 max-w-prose">{KIND_DESCRIPTION[kind]}</p>

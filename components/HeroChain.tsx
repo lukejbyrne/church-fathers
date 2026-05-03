@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPerson } from "@/lib/data";
+import { getPeople, getPerson } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
 import SubscribeForm from "@/components/SubscribeForm";
 
@@ -15,6 +15,7 @@ const ANCHORS = [
 ];
 
 export default function HeroChain() {
+  const totalPeople = getPeople().length;
   const figures = ANCHORS.map((a) => ({
     person: getPerson(a.id),
     era: a.era,
@@ -26,18 +27,55 @@ export default function HeroChain() {
         <p className="text-[11px] uppercase tracking-[0.3em] text-ink/50 mb-3 font-serif italic">
           Anno Domini xxx — dccl
         </p>
-        <h1 className="font-serif text-5xl sm:text-6xl mb-4 leading-[1.05]">
-          From Jesus to the Fathers
+        <h1 className="font-serif text-4xl sm:text-6xl mb-4 leading-[1.05]">
+          From Jesus to the Church Fathers
         </h1>
         <p className="text-base sm:text-lg text-ink/70 max-w-2xl mx-auto leading-relaxed">
-          The human chain that carried the faith for seven centuries — apostles,
-          bishops, theologians, martyrs. Every link sourced from primary texts.
+          Trace how Christianity was handed down through a sourced graph of
+          apostles, bishops, theologians, and martyrs. Every link is tagged
+          documented, tradition, or disputed.
         </p>
+
+        <div className="mt-8 grid sm:grid-cols-3 gap-3 max-w-4xl mx-auto text-left">
+          <Link
+            href="/start-here"
+            className="group rounded-md border border-ink/15 bg-ink/[0.025] px-4 py-3 hover:border-accent transition-colors"
+          >
+            <span className="block text-[11px] uppercase tracking-wider text-ink/45 mb-1">
+              Beginner
+            </span>
+            <span className="block font-serif text-xl leading-tight group-hover:text-accent">
+              I'm new to Church history
+            </span>
+          </Link>
+          <Link
+            href="/fathers/polycarp-of-smyrna#chain-to-jesus"
+            className="group rounded-md border border-ink/15 bg-ink/[0.025] px-4 py-3 hover:border-accent transition-colors"
+          >
+            <span className="block text-[11px] uppercase tracking-wider text-ink/45 mb-1">
+              Closest chain
+            </span>
+            <span className="block font-serif text-xl leading-tight group-hover:text-accent">
+              Show Jesus to Polycarp
+            </span>
+          </Link>
+          <Link
+            href="/questions/apostolic-succession-explained-simply"
+            className="group rounded-md border border-ink/15 bg-ink/[0.025] px-4 py-3 hover:border-accent transition-colors"
+          >
+            <span className="block text-[11px] uppercase tracking-wider text-ink/45 mb-1">
+              Explain
+            </span>
+            <span className="block font-serif text-xl leading-tight group-hover:text-accent">
+              Apostolic succession
+            </span>
+          </Link>
+        </div>
 
         <div className="mt-8 max-w-xl mx-auto">
           <SubscribeForm variant="compact" />
           <p className="text-[12px] text-ink/55 mt-2">
-            Daily Patristic Wisdom — one Father, council, schism, or quote each morning. Free.
+            Get one early Church quote each morning, with historical context in plain English.
           </p>
         </div>
       </div>
@@ -112,7 +150,13 @@ export default function HeroChain() {
           href="/directory"
           className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors"
         >
-          Browse all 192
+          Browse all {totalPeople}
+        </Link>
+        <Link
+          href="/questions"
+          className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors"
+        >
+          Guided questions
         </Link>
         <Link
           href="/about"

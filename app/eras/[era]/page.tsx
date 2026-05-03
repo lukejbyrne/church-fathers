@@ -6,7 +6,8 @@ import type { Person } from "@/lib/schema";
 import { dateRange } from "@/lib/dates";
 import { ERAS_DATA, type EraSlug, type EraDef, inEra, sortKey } from "@/lib/eras";
 import ShareBar from "@/components/ShareBar";
-
+import BookShelf from "@/components/BookShelf";
+import { getRecommendedBooks } from "@/lib/books";
 
 export const dynamic = "force-static";
 
@@ -83,9 +84,8 @@ export default async function EraPage({
       return sortKey(a) - sortKey(b);
     });
 
-  // For grid: top by significance. For "read further": works of top figures.
   const headline = figures.slice(0, 12);
-  const withWorks = figures.filter((p) => (p.works?.length ?? 0) > 0).slice(0, 2);
+  const recommendedBooks = getRecommendedBooks({ eraSlug: era.slug, limit: 3 });
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
@@ -95,7 +95,7 @@ export default async function EraPage({
       <h1 className="font-serif text-5xl mt-4 mb-1 text-ink">{era.label}</h1>
       <p className="text-ink/55 italic mb-8">{era.yearLabel}</p>
 
-      <div className="grid lg:grid-cols-[1fr,260px] gap-10 mb-12">
+      <div className="grid lg:grid-cols-[1fr_260px] gap-10 mb-12">
         <section>
           {era.intro.map((para, i) => (
             <p key={i} className="mb-4">
@@ -150,28 +150,12 @@ export default async function EraPage({
         </ul>
       </section>
 
-      {withWorks.length > 0 && (
-        <section className="mb-12">
-          <h2 className="font-serif text-2xl text-ink mb-3">Read further</h2>
-          <ul className="space-y-3 text-ink/80">
-            {withWorks.map((p) => {
-              const w = p.works![0];
-              return (
-                <li key={p.id}>
-                  <Link href={`/fathers/${p.id}`} className="font-serif text-lg hover:text-accent">
-                    {p.name}
-                  </Link>
-                  <span className="text-ink/55"> — </span>
-                  <em>{w.title}</em>
-                  {w.description ? (
-                    <span className="text-ink/65">. {w.description}</span>
-                  ) : null}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-      )}
+      <BookShelf
+        books={recommendedBooks}
+        title={`Recommended books for ${era.label}`}
+        blurb="A short reading shelf for this era, chosen from the works already attached to figure pages."
+        moreHref={`/books#era-${era.slug}`}
+      />
 
       <div className="flex flex-wrap gap-3 mt-12 pt-8 border-t border-ink/10">
         <Link

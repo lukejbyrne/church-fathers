@@ -91,7 +91,7 @@ export default function SubscribeForm({
   return (
     <section className="max-w-xl mx-auto bg-ink/5 border border-ink/10 rounded-lg p-6">
       <h2 className="font-serif text-2xl text-ink mb-2">
-        {heading ?? "Daily Patristic Wisdom — in your inbox."}
+        {heading ?? "Daily Patristic Wisdom in your inbox"}
       </h2>
       {state === "ok" ? (
         <p className="text-accent text-sm" role="status">
@@ -101,7 +101,7 @@ export default function SubscribeForm({
         <>
           <p className="text-ink/70 text-sm mb-4">
             {blurb ??
-              "A Father, council, schism, or quote each morning — sourced, annotated, and tied back to the chain. Free. Unsubscribe whenever."}
+              "Get one early Church quote each morning, with historical context in plain English. Free. Unsubscribe whenever."}
           </p>
           <form onSubmit={onSubmit} className="flex flex-col sm:flex-row gap-2">
             <input

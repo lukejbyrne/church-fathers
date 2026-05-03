@@ -4,7 +4,8 @@
 import { chainTo, getPerson, getPeople } from "./data";
 import { pickContent, isoDate, type Content } from "./picker";
 import { amazonUrl } from "./affiliate";
-import type { EmailExtras, EmailChainStep, RelatedFigure } from "./email-template";
+import { bookDisplayTitle, getBookForContent, type ResolvedBookRecommendation } from "./books";
+import type { EmailBook, EmailExtras, EmailChainStep, RelatedFigure } from "./email-template";
 import type { Person } from "./schema";
 
 // Email clients can't resolve site-relative URLs; always emit absolute.
@@ -16,6 +17,10 @@ function absoluteImage(url: string | null | undefined, siteUrl: string): string 
 
 export function buildExtras(content: Content, siteUrl: string): EmailExtras {
   const extras: EmailExtras = {};
+  const date = new Date(`${content.date}T00:00:00Z`);
+  const book = getBookForContent(content, date);
+
+  extras.book = book ? emailBook(book, siteUrl) : null;
 
   if (content.type === "father") {
     const p = content.person;
@@ -32,6 +37,23 @@ export function buildExtras(content: Content, siteUrl: string): EmailExtras {
     extras.father = fatherExtras(content.person, siteUrl);
   }
   return extras;
+}
+
+function emailBook(book: ResolvedBookRecommendation, siteUrl: string): EmailBook {
+  const title = bookDisplayTitle(book);
+  return {
+    title,
+    author: book.person.name,
+    reason: book.reason,
+    audience: book.audience,
+    cover_image_url: absoluteImage(book.coverImageUrl, siteUrl),
+    cover_alt: book.coverAlt ?? `Cover of ${title}`,
+    amazon_url:
+      amazonUrl({ asin: book.work.amazon_asin }) ??
+      amazonUrl({ query: book.work.amazon_query ?? `${title} ${book.person.name}` }),
+    read_url: book.work.ccel_url ?? null,
+    person_url: `${siteUrl}/fathers/${book.person.id}`,
+  };
 }
 
 export function fatherExtras(person: Person, siteUrl: string) {

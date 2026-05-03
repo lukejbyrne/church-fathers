@@ -63,6 +63,15 @@ export default async function EmailPreview({
           <span className="text-ink/45">·</span>
           <span className="text-ink/55">Date:</span>
           <code className="bg-ink/5 px-2 py-1 rounded text-ink/90 font-mono text-xs">{content.date}</code>
+          {extras.book ? (
+            <>
+              <span className="text-ink/45">·</span>
+              <span className="text-ink/55">Book:</span>
+              <Link href={extras.book.person_url.replace(SITE_URL, "")} className="font-medium hover:text-accent">
+                {extras.book.title}
+              </Link>
+            </>
+          ) : null}
         </div>
         <div className="flex flex-wrap gap-2 mt-3 text-xs">
           <a href={`/email-preview?d=${isoDate(new Date(dateInput.getTime() - 86400000))}`} className="px-2.5 py-1 border border-ink/20 rounded hover:border-accent">← Yesterday</a>

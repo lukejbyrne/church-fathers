@@ -4,6 +4,8 @@ import { pickContent, parseIsoDate, isoDate, addDays } from "@/lib/picker";
 import { dateRange } from "@/lib/dates";
 import SubscribeForm from "@/components/SubscribeForm";
 import ShareBar from "@/components/ShareBar";
+import BookFeature from "@/components/BookFeature";
+import { getBookForContent } from "@/lib/books";
 
 export const dynamic = "force-dynamic";
 
@@ -83,6 +85,7 @@ export default async function TodayPage({
   const isToday = isoDate(date) === isoDate(today);
 
   const content = pickContent(date);
+  const bookOfDay = getBookForContent(content, date);
   const yesterday = addDays(date, -1);
   const tomorrow = addDays(date, 1);
 
@@ -119,6 +122,13 @@ export default async function TodayPage({
       ) : null}
       {content.type === "era" ? <EraView era={content.era} figures={content.figures} /> : null}
       {content.type === "quote" ? <QuoteView quote={content.quote} person={content.person} /> : null}
+
+      <BookFeature
+        book={bookOfDay}
+        eyebrow="Daily reading"
+        title="Book of the day"
+        className="px-0 mt-10"
+      />
 
       <div className="flex flex-wrap gap-3 mt-10 mb-6">
         <Link href={`/today?d=${isoDate(yesterday)}`} className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors text-sm">

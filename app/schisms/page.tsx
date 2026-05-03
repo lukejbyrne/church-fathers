@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { getPeople } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
 import ShareBar from "@/components/ShareBar";
+import BookShelf from "@/components/BookShelf";
+import { getRecommendedBooks } from "@/lib/books";
 
 export const metadata: Metadata = {
   title: "Schisms",
@@ -319,6 +321,7 @@ export default function SchismsPage() {
   const ordered = [...SCHISMS].sort(
     (a, b) => a.yearRange[0] - b.yearRange[0]
   );
+  const schismBooks = getRecommendedBooks({ eventSlug: "schisms", limit: 3 });
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
@@ -362,6 +365,13 @@ export default function SchismsPage() {
           ended and a different story has begun.
         </p>
       </section>
+
+      <BookShelf
+        books={schismBooks}
+        title="Books for the arguments"
+        blurb="A short shelf for the controversies behind this page: Gnosticism, Nicaea, Christology, and icons."
+        moreHref="/books"
+      />
 
       {/* Visual timeline */}
       <section className="mb-16">

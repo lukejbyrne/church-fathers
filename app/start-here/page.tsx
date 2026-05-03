@@ -1,280 +1,451 @@
 import Link from "next/link";
+import { getPeople, getPerson, getRelationships } from "@/lib/data";
+import { dateRange } from "@/lib/dates";
 
 export const metadata = {
-  title: "Start here — Patristic Lineage",
+  title: "Start here",
   description:
-    "What is this site, who are the Church Fathers, and what do all the terms mean. Plain English for beginners.",
+    "A visual beginner guide to Patristic Lineage: the relay from Jesus to the Church Fathers, evidence labels, eras, and first routes to click.",
 };
 
+const RELAY = [
+  {
+    id: "jesus-of-nazareth",
+    display: "Jesus",
+    label: "Source",
+    note: "Jesus and the apostles",
+  },
+  {
+    id: "john-the-apostle",
+    display: "John",
+    label: "Apostle",
+    note: "Witness and teacher",
+  },
+  {
+    id: "polycarp-of-smyrna",
+    display: "Polycarp",
+    label: "Bridge",
+    note: "John to Irenaeus",
+  },
+  {
+    id: "irenaeus-of-lyons",
+    display: "Irenaeus",
+    label: "Tradition",
+    note: "Public chain argument",
+  },
+  {
+    id: "athanasius-of-alexandria",
+    display: "Athanasius",
+    label: "Nicaea",
+    note: "Defends Christ's divinity",
+  },
+  {
+    id: "augustine-of-hippo",
+    display: "Augustine",
+    label: "West",
+    note: "Grace, memory, desire",
+  },
+  {
+    id: "john-of-damascus",
+    display: "John of Damascus",
+    label: "End point",
+    note: "Late patristic synthesis",
+  },
+];
+
+const ROUTES = [
+  {
+    eyebrow: "I want the big picture",
+    title: "See the whole relay",
+    body: "Start with the timeline. Click a name and watch the chain light up.",
+    href: "/",
+  },
+  {
+    eyebrow: "I want proof",
+    title: "Jesus to Irenaeus",
+    body: "The clearest short chain: Jesus, John, Polycarp, Irenaeus.",
+    href: "/questions/shortest-chain-from-jesus-to-irenaeus",
+  },
+  {
+    eyebrow: "I have a question",
+    title: "Guided answers",
+    body: "Nicaea, succession, bishops, heresies, first Fathers to read.",
+    href: "/questions",
+  },
+  {
+    eyebrow: "I want the strict version",
+    title: "Bishop succession",
+    body: "Only bishops, grouped by see, ordered by date.",
+    href: "/bishops",
+  },
+];
+
+const EVIDENCE = [
+  {
+    label: "Documented",
+    className: "border-green-900/25 bg-green-900/10 text-green-950",
+    body: "Ancient source directly attests the link.",
+  },
+  {
+    label: "Tradition",
+    className: "border-yellow-900/25 bg-yellow-900/10 text-yellow-950",
+    body: "Later ancient or medieval source preserves it.",
+  },
+  {
+    label: "Disputed",
+    className: "border-accent/25 bg-accent/10 text-accent",
+    body: "The claim exists, but scholarship contests it.",
+  },
+];
+
+const ERAS = [
+  {
+    href: "/eras/apostolic",
+    years: "AD 30-100",
+    title: "Apostolic age",
+    body: "Jesus, the Twelve, Paul. The New Testament is written.",
+  },
+  {
+    href: "/eras/apostolic-fathers",
+    years: "100-150",
+    title: "Apostolic Fathers",
+    body: "Clement, Ignatius, Polycarp. The generation just after the apostles.",
+  },
+  {
+    href: "/eras/ante-nicene",
+    years: "150-325",
+    title: "Before Nicaea",
+    body: "Apologists, martyrs, bishops, heresy fights, and persecution.",
+  },
+  {
+    href: "/eras/nicene",
+    years: "325-451",
+    title: "Council age",
+    body: "Nicaea, Constantinople, Ephesus, Chalcedon. Trinity and Christology.",
+  },
+  {
+    href: "/eras/post-nicene",
+    years: "451-600",
+    title: "After Chalcedon",
+    body: "Augustine's legacy, monastic learning, Christology aftermath.",
+  },
+  {
+    href: "/eras/early-medieval",
+    years: "600-750",
+    title: "Early medieval",
+    body: "Bede, Maximus, John of Damascus. The patristic age closes.",
+  },
+];
+
+const TERMS = [
+  {
+    term: "Father",
+    meaning: "An early Christian teacher, bishop, or writer whose work shaped doctrine.",
+  },
+  {
+    term: "See",
+    meaning: "The city a bishop serves. Rome, Antioch, Alexandria, Carthage.",
+  },
+  {
+    term: "Transmission",
+    meaning: "Any link that passes teaching along: taught, cited, wrote, met, ordained.",
+  },
+  {
+    term: "Succession",
+    meaning: "The stricter bishop-to-bishop chain, especially in Catholic and Orthodox usage.",
+  },
+  {
+    term: "Heresy",
+    meaning: "A teaching the church eventually rejected during a controversy.",
+  },
+  {
+    term: "Council",
+    meaning: "A formal meeting of bishops that defines, clarifies, or condemns doctrine.",
+  },
+];
+
+const FIRST_STEPS = [
+  "Click Polycarp and look for the Chain to Jesus block.",
+  "Switch the chain to documented only.",
+  "Open the Nicaea question page.",
+  "Browse one era instead of all 206 people.",
+];
+
+const READ_FIRST = [
+  {
+    title: "Earliest voices",
+    href: "/questions/what-did-the-apostolic-fathers-believe",
+    body: "Clement, Ignatius, Polycarp, the Didache.",
+  },
+  {
+    title: "Best first book",
+    href: "/fathers/athanasius-of-alexandria",
+    body: "Athanasius, On the Incarnation.",
+  },
+  {
+    title: "Most personal",
+    href: "/fathers/augustine-of-hippo",
+    body: "Augustine, Confessions.",
+  },
+];
+
 export default function StartHere() {
+  const totalPeople = getPeople().length;
+  const totalRelationships = getRelationships().length;
+  const relayPeople = RELAY.map((step) => ({
+    ...step,
+    person: getPerson(step.id),
+  })).filter((step) => step.person);
+
   return (
-    <article className="max-w-3xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
-      <Link href="/" className="text-sm text-ink/60 hover:text-accent">← Lineage</Link>
-      <h1 className="font-serif text-5xl mt-4 mb-3 text-ink">Start here</h1>
-      <p className="text-ink/60 italic mb-8">
-        New to all this? Read this once, then go play with the timeline.
-      </p>
+    <article className="max-w-6xl mx-auto px-4 py-12 text-ink/85">
+      <Link href="/" className="text-sm text-ink/60 hover:text-accent">
+        ← Lineage
+      </Link>
 
-      <section className="mb-10">
-        <h2 className="font-serif text-2xl mb-3 text-ink">What is this site?</h2>
-        <p className="mb-3">
-          A map of the human chain that carried Christianity from Jesus to the early Middle Ages —
-          AD 30 to 750. Each person on the timeline is a real historical figure. Each line between
-          them is a relationship — they taught each other, wrote letters, were ordained by, met,
-          opposed each other. Every claim is sourced.
-        </p>
-        <p className="mb-3">
-          The point is to make a thing that's usually presented as a list of names feel like what it
-          actually was: a relay race. People who knew each other, taught each other, argued with
-          each other, sometimes died for what the previous person handed down.
-        </p>
-      </section>
+      <header className="grid lg:grid-cols-[1fr_360px] gap-8 items-end mt-4 mb-12">
+        <div>
+          <p className="text-[11px] uppercase tracking-[0.22em] text-ink/45 mb-3">
+            Beginner map
+          </p>
+          <h1 className="font-serif text-5xl sm:text-6xl text-ink leading-[1.02] max-w-3xl">
+            Start with the relay, not the textbook
+          </h1>
+          <p className="text-lg text-ink/70 mt-4 max-w-2xl leading-relaxed">
+            This site shows how Christianity was handed down from Jesus to the early
+            Church Fathers. People are dots. Relationships are lines. Every line has
+            an evidence label.
+          </p>
+        </div>
 
-      <section className="mb-10">
-        <h2 className="font-serif text-2xl mb-3 text-ink">Who are the Church Fathers?</h2>
-        <p className="mb-3">
-          The Church Fathers (in Latin, <em>Patres</em> — hence "patristic") are the major Christian
-          theologians, bishops, and writers of roughly the first seven centuries. Catholic tradition
-          requires four things to formally count as a Father: antiquity, holiness of life,
-          orthodoxy of doctrine, and church approval. In practice the term is used more loosely.
-        </p>
-        <p className="mb-3">
-          The patristic age is conventionally said to end with John of Damascus, who died around
-          749. Before him, Christian theology was done by bishops in cities arguing with heretics.
-          After him, it gets done by professors in universities arguing with each other. We end the
-          site there.
-        </p>
-        <p className="mb-3">
-          We also include figures who weren't orthodox — Arius, Nestorius, Marcion — because you
-          can't tell the story of orthodoxy without the figures it defined itself against. We flag
-          them clearly.
-        </p>
-      </section>
+        <section className="rounded-md border border-ink/10 bg-ink/[0.025] p-5">
+          <h2 className="font-serif text-2xl text-ink mb-4">What you are looking at</h2>
+          <div className="grid grid-cols-3 gap-3 text-center">
+            <div>
+              <div className="font-serif text-3xl text-ink">{totalPeople}</div>
+              <div className="text-[10px] uppercase tracking-wider text-ink/45">People</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl text-ink">{totalRelationships}</div>
+              <div className="text-[10px] uppercase tracking-wider text-ink/45">Links</div>
+            </div>
+            <div>
+              <div className="font-serif text-3xl text-ink">720</div>
+              <div className="text-[10px] uppercase tracking-wider text-ink/45">Years</div>
+            </div>
+          </div>
+          <p className="text-sm text-ink/65 mt-4">
+            It is not a list of famous names. It is a transmission graph.
+          </p>
+        </section>
+      </header>
 
-      <section className="mb-10">
-        <h2 className="font-serif text-2xl mb-3 text-ink">The eras at a glance</h2>
-        <dl className="space-y-4">
+      <section className="mb-14">
+        <div className="flex items-end justify-between gap-4 mb-5">
           <div>
-            <dt className="font-medium text-ink">Apostolic age (AD 30 – 100)</dt>
-            <dd className="text-ink/70">Jesus, the Twelve, Paul. The New Testament is written.</dd>
+            <h2 className="font-serif text-3xl text-ink">The story in one line</h2>
+            <p className="text-sm text-ink/60 mt-1">
+              A few anchor figures. The full site has the rest.
+            </p>
           </div>
-          <div>
-            <dt className="font-medium text-ink">Apostolic Fathers (100 – 150)</dt>
-            <dd className="text-ink/70">
-              The generation that personally knew the apostles or their immediate students.
-              Polycarp, Ignatius, Clement of Rome.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Apologists & Ante-Nicene (150 – 325)</dt>
-            <dd className="text-ink/70">
-              Christianity defends itself in writing against pagans and heretics. Justin Martyr,
-              Irenaeus, Tertullian, Origen, Cyprian. Persecutions throughout. Ends when Constantine
-              calls the Council of Nicaea in 325.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Nicene & Post-Nicene (325 – 451)</dt>
-            <dd className="text-ink/70">
-              Christianity is now legal, then official. The great councils settle the Trinity (325,
-              381) and Christology (431, 451). Athanasius, Ambrose, the Cappadocians, Augustine,
-              Jerome, Chrysostom.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Late Patristic & Early Medieval (451 – 750)</dt>
-            <dd className="text-ink/70">
-              The Western Roman Empire collapses. Theology gets carried by monks and bishops.
-              Gregory the Great, Maximus the Confessor, Bede, John of Damascus.
-            </dd>
-          </div>
-        </dl>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="font-serif text-2xl mb-3 text-ink">Words you'll see and what they mean</h2>
-        <dl className="space-y-4">
-          <div>
-            <dt className="font-medium text-ink">Patristic</dt>
-            <dd className="text-ink/70">
-              "Of the Fathers." A patristic theologian is one of these early Fathers. The
-              <em> patristic age</em> is the era of the Fathers.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">See</dt>
-            <dd className="text-ink/70">
-              The city a bishop is bishop of. "Bishop of Carthage" = the bishop whose see is
-              Carthage. "The Roman see" = the bishopric of Rome.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Episcopal succession</dt>
-            <dd className="text-ink/70">
-              The chain of bishops in a single see. "Bishop A, then Bishop B, then Bishop C — each
-              ordained by the previous." Catholic and Orthodox Christianity treat this as a
-              guarantee of doctrinal continuity going back to the apostles.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Apostolic succession</dt>
-            <dd className="text-ink/70">
-              The bigger claim that bishops form an unbroken chain back to one of the apostles.
-              Different from "transmission" in general (see below).
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Transmission (vs succession)</dt>
-            <dd className="text-ink/70">
-              Any way a teaching gets passed down — letters, citation, teacher → student, formal
-              ordination, casual influence. <em>Succession</em> is one specific kind of transmission.
-              On figure pages you can switch the chain to see only one type at a time.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Documented / tradition / disputed</dt>
-            <dd className="text-ink/70">
-              How strong the evidence is for a relationship. <strong>Documented</strong> = a primary
-              source from antiquity attests it directly. <strong>Tradition</strong> = the link is
-              attested only by later writers (Jerome's <em>De Viris</em>, hagiographies). <strong>Disputed</strong>{" "}
-              = modern scholarship contests it. We mark every link with one of these three. Most
-              popular Christian sites don't do this and you should be suspicious of ones that don't.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Primary source</dt>
-            <dd className="text-ink/70">
-              Something written by the person themselves or by a contemporary. Polycarp's letter to
-              the Philippians is a primary source for Polycarp. Jerome writing about Polycarp 250
-              years later is a secondary source.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Heresy / orthodoxy</dt>
-            <dd className="text-ink/70">
-              <em>Orthodoxy</em> is what the church eventually decided was the correct teaching;{" "}
-              <em>heresy</em> is what got rejected. The boundary was usually drawn during a
-              specific controversy: Arianism (the divinity of Christ), Pelagianism (sin and grace),
-              Nestorianism (how Christ is one person), and so on. Most heresies are named after the
-              person whose teaching defined them.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Council</dt>
-            <dd className="text-ink/70">
-              A formal meeting of bishops. <em>Ecumenical</em> means universal — the whole church.
-              Seven ecumenical councils are recognised by Catholic, Orthodox, and most Protestant
-              traditions: Nicaea I (325), Constantinople I (381), Ephesus (431), Chalcedon (451),
-              Constantinople II (553), Constantinople III (680), Nicaea II (787). They set the
-              creeds and rejected the major heresies.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Doctor of the Church</dt>
-            <dd className="text-ink/70">
-              Catholic title for a Father whose teaching is considered especially authoritative.
-              The four original Western Doctors: Ambrose, Augustine, Jerome, Gregory the Great. Four
-              original Eastern Doctors: Athanasius, Basil, Gregory of Nazianzus, John Chrysostom.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Anathema</dt>
-            <dd className="text-ink/70">
-              A formal curse / excommunication. Councils end with lists of anathematised positions —
-              "if anyone says X, let him be anathema." That's how heresies got formally ruled out.
-            </dd>
-          </div>
-          <div>
-            <dt className="font-medium text-ink">Anno Domini (AD)</dt>
-            <dd className="text-ink/70">
-              "In the year of the Lord." We use AD throughout because it's the convention the Fathers
-              themselves used (well — Bede invented it). Same as "CE" if that's what you grew up on.
-            </dd>
-          </div>
-        </dl>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="font-serif text-2xl mb-3 text-ink">How to use this site</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          <li>
-            <strong>Hover</strong> any name on the timeline to highlight their lineage temporarily.
-          </li>
-          <li>
-            <strong>Click</strong> to lock the lineage. The chain to Jesus is then traceable across
-            the centuries; everything else dims.
-          </li>
-          <li>
-            <strong>Double-click</strong> to open the full page for that figure.
-          </li>
-          <li>
-            On a figure page, the <strong>Chain to Jesus</strong> section lets you switch routes:
-            all transmission (default), pedagogical only, episcopal succession only, or documented
-            only. Same person, four different views of how their tradition reached them.
-          </li>
-          <li>
-            On the network graph, hold <strong>⌘ / Ctrl + scroll</strong> to zoom; drag to pan.
-            Buttons top-right do the same thing without the modifier.
-          </li>
-        </ul>
-      </section>
-
-      <section className="mb-10">
-        <h2 className="font-serif text-2xl mb-3 text-ink">Where to start reading</h2>
-        <p className="mb-3">
-          If you're going to read one Father this year, read{" "}
-          <Link href="/fathers/athanasius-of-alexandria" className="underline hover:text-accent">
-            Athanasius
+          <Link href="/" className="hidden sm:inline text-sm text-ink/60 hover:text-accent">
+            Open full timeline →
           </Link>
-          's <em>On the Incarnation</em>. It's about 100 pages. C.S. Lewis wrote the introduction
-          for the standard edition specifically because he thought everyone should read it.
-        </p>
-        <p className="mb-3">
-          If you want autobiography, read{" "}
-          <Link href="/fathers/augustine-of-hippo" className="underline hover:text-accent">
-            Augustine
-          </Link>
-          's <em>Confessions</em> in the Pine-Coffin Penguin translation. It's the founding text of
-          spiritual autobiography in the West.
-        </p>
-        <p className="mb-3">
-          If you want the early generation, read the Apostolic Fathers — Holmes' edition includes{" "}
-          <Link href="/fathers/clement-of-rome" className="underline hover:text-accent">
-            Clement
-          </Link>
-          ,{" "}
-          <Link href="/fathers/ignatius-of-antioch" className="underline hover:text-accent">
-            Ignatius
-          </Link>
-          ,{" "}
-          <Link href="/fathers/polycarp-of-smyrna" className="underline hover:text-accent">
-            Polycarp
-          </Link>
-          , and the Didache. About 300 pages of the second-century church in their own words.
-        </p>
-        <p>
-          Each figure page has a <strong>Works</strong> section with the edition we'd recommend.
-          Buying through those links supports the site.
-        </p>
+        </div>
+
+        <div className="-mx-4 sm:mx-0 overflow-x-auto pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <ol className="flex lg:grid lg:grid-cols-7 min-w-[900px] lg:min-w-0 gap-3 px-4 sm:px-0">
+            {relayPeople.map(({ person, display, label, note }, index) => {
+              if (!person) return null;
+              return (
+                <li key={person.id} className="relative flex-1 min-w-0">
+                  {index > 0 && (
+                    <span
+                      aria-hidden
+                      className="absolute top-12 -left-3 w-3 border-t border-ink/25"
+                    />
+                  )}
+                  <Link
+                    href={`/fathers/${person.id}`}
+                    className="group block h-full rounded-md border border-ink/10 bg-ink/[0.025] p-3 hover:border-accent transition-colors"
+                  >
+                    <span className="flex flex-col items-center text-center gap-2">
+                      <span className="block w-14 h-14 rounded-full overflow-hidden bg-ink/10 border border-ink/15 shrink-0">
+                        {person.image_url ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={person.image_url}
+                            alt=""
+                            className="w-full h-full object-cover"
+                            style={{ objectPosition: "center 8%" }}
+                          />
+                        ) : (
+                          <span className="w-full h-full flex items-center justify-center font-serif text-xl text-ink/40">
+                            {person.name.charAt(0)}
+                          </span>
+                        )}
+                      </span>
+                      <span className="min-w-0">
+                        <span className="block text-[10px] uppercase tracking-wider text-ink/45">
+                          {label}
+                        </span>
+                        <span className="block font-serif text-lg leading-tight text-ink group-hover:text-accent">
+                          {display}
+                        </span>
+                        <span className="block text-[11px] text-ink/50 tabular-nums">
+                          {dateRange(person).text}
+                        </span>
+                      </span>
+                    </span>
+                    <span className="block text-xs text-ink/60 mt-3 leading-snug">{note}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ol>
+        </div>
       </section>
 
-      <section className="mb-10">
-        <h2 className="font-serif text-2xl mb-3 text-ink">A note on honesty</h2>
-        <p className="mb-3">
-          A lot of what people say about the early church is more confident than the evidence
-          supports. We try to mark exactly how confident you should be about each link — and we{" "}
-          <Link href="/about" className="underline hover:text-accent">
-            spell out the methodology
-          </Link>{" "}
-          so you can disagree with our calls. The data is open, every claim is sourced, the JSON is
-          on GitHub.
-        </p>
-        <p className="text-ink/60 italic text-sm">
-          If you spot something wrong, tell us. Better to be corrected than wrong.
-        </p>
+      <section className="mb-14">
+        <h2 className="font-serif text-3xl text-ink mb-5">Pick what you need</h2>
+        <div className="grid md:grid-cols-4 gap-3">
+          {ROUTES.map((route) => (
+            <Link
+              key={route.href}
+              href={route.href}
+              className="group rounded-md border border-ink/10 bg-ink/[0.025] p-4 hover:border-accent transition-colors"
+            >
+              <span className="block text-[10px] uppercase tracking-wider text-ink/45 mb-2">
+                {route.eyebrow}
+              </span>
+              <span className="block font-serif text-2xl leading-tight text-ink group-hover:text-accent">
+                {route.title}
+              </span>
+              <span className="block text-sm text-ink/65 mt-3 leading-snug">{route.body}</span>
+            </Link>
+          ))}
+        </div>
       </section>
 
-      <div className="flex gap-3 mt-12">
+      <section className="mb-14 grid lg:grid-cols-[320px_1fr] gap-8">
+        <div>
+          <h2 className="font-serif text-3xl text-ink">How to trust a line</h2>
+          <p className="text-sm text-ink/65 mt-2">
+            The evidence label is the most important feature. It tells you how hard
+            the site is asking you to believe each relationship.
+          </p>
+          <Link href="/about" className="inline-block text-sm text-ink/60 hover:text-accent mt-4">
+            Read the methodology →
+          </Link>
+        </div>
+        <div className="grid sm:grid-cols-3 gap-3">
+          {EVIDENCE.map((item) => (
+            <div key={item.label} className={`rounded-md border p-4 ${item.className}`}>
+              <div className="text-[10px] uppercase tracking-wider mb-3">{item.label}</div>
+              <p className="text-sm leading-snug">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-14">
+        <h2 className="font-serif text-3xl text-ink mb-5">The eras at a glance</h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {ERAS.map((era) => (
+            <Link
+              key={era.href}
+              href={era.href}
+              className="group rounded-md border border-ink/10 bg-ink/[0.025] p-4 hover:border-accent transition-colors"
+            >
+              <span className="text-[10px] uppercase tracking-wider text-ink/45">{era.years}</span>
+              <h3 className="font-serif text-2xl text-ink group-hover:text-accent mt-1">
+                {era.title}
+              </h3>
+              <p className="text-sm text-ink/65 mt-2 leading-snug">{era.body}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-14 grid lg:grid-cols-[1fr_320px] gap-8">
+        <div>
+          <h2 className="font-serif text-3xl text-ink mb-5">Six words you need</h2>
+          <dl className="grid sm:grid-cols-2 gap-3">
+            {TERMS.map((item) => (
+              <div key={item.term} className="rounded-md border border-ink/10 bg-ink/[0.025] p-4">
+                <dt className="font-serif text-xl text-ink">{item.term}</dt>
+                <dd className="text-sm text-ink/65 mt-1 leading-snug">{item.meaning}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <section className="rounded-md border border-ink/10 bg-ink/[0.025] p-5 self-start">
+          <h2 className="font-serif text-2xl text-ink mb-4">First 10 minutes</h2>
+          <ol className="space-y-3">
+            {FIRST_STEPS.map((step, index) => (
+              <li key={step} className="flex gap-3 text-sm text-ink/70">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-ink text-parchment text-xs">
+                  {index + 1}
+                </span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </section>
+
+      <section className="mb-14">
+        <div className="flex flex-wrap items-end justify-between gap-3 mb-5">
+          <h2 className="font-serif text-3xl text-ink">If you want to read one thing</h2>
+          <Link href="/books" className="text-sm text-ink/60 hover:text-accent">
+            Full reading path →
+          </Link>
+        </div>
+        <div className="grid md:grid-cols-3 gap-3">
+          {READ_FIRST.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="group rounded-md border border-ink/10 bg-ink/[0.025] p-4 hover:border-accent transition-colors"
+            >
+              <h3 className="font-serif text-2xl text-ink group-hover:text-accent">{item.title}</h3>
+              <p className="text-sm text-ink/65 mt-2">{item.body}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-12 border-t border-ink/10 pt-8">
+        <details className="group">
+          <summary className="cursor-pointer list-none font-serif text-2xl text-ink hover:text-accent">
+            Longer explanation, if you want it
+            <span className="text-sm font-sans text-ink/45 ml-2 group-open:hidden">open</span>
+            <span className="hidden text-sm font-sans text-ink/45 ml-2 group-open:inline">close</span>
+          </summary>
+          <div className="mt-5 grid md:grid-cols-2 gap-6 text-sm text-ink/70 leading-relaxed">
+            <div>
+              <h3 className="font-serif text-xl text-ink mb-2">Who are the Fathers?</h3>
+              <p>
+                The Church Fathers are early Christian theologians, bishops, monks,
+                apologists, and writers from roughly the first seven centuries. The
+                site also includes disputed and heterodox figures because the story of
+                orthodoxy only makes sense if you can see the arguments.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-serif text-xl text-ink mb-2">What is the site doing?</h3>
+              <p>
+                It turns names into relationships: who taught whom, who cited whom,
+                who succeeded whom, who argued with whom. The goal is not just a list
+                of saints or scholars, but a visible chain of transmission.
+              </p>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      <div className="flex flex-wrap gap-3">
         <Link
           href="/"
           className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm"
@@ -285,13 +456,19 @@ export default function StartHere() {
           href="/directory"
           className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors text-sm"
         >
-          Browse all 192
+          Browse all {totalPeople}
         </Link>
         <Link
-          href="/about"
+          href="/questions"
           className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors text-sm"
         >
-          Methodology
+          Guided questions
+        </Link>
+        <Link
+          href="/books"
+          className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors text-sm"
+        >
+          Recommended books
         </Link>
       </div>
     </article>

@@ -5,7 +5,7 @@ import Link from "next/link";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patristic.io";
 const SITE_NAME = "Patristic Lineage";
 const SITE_DESC =
-  "From Jesus through the Apostles to the Church Fathers — a sourced visual chain of who knew whom, AD 30 to 750.";
+  "Trace how Christianity was handed down from Jesus to the early Church Fathers through a sourced transmission graph, AD 30 to 750.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -105,6 +105,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
                   <div className="mt-1 px-4 pt-2 pb-1 text-[11px] uppercase tracking-wider text-ink/45">Explore</div>
                   <Link href="/" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Lineage</Link>
+                  <Link href="/questions" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Questions</Link>
+                  <Link href="/books" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Books</Link>
                   <Link href="/map" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Map</Link>
                   <Link href="/calendar" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Calendar</Link>
 
@@ -149,6 +151,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="absolute top-full left-0 pt-1 hidden group-hover:block group-focus-within:block z-30">
                   <div className="bg-parchment border border-ink/15 rounded shadow-lg py-1 min-w-[180px]">
                     <Link href="/" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Lineage</Link>
+                    <Link href="/questions" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Questions</Link>
+                    <Link href="/books" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Books</Link>
                     <Link href="/map" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Map</Link>
                     <Link href="/calendar" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Calendar</Link>
                   </div>
@@ -242,6 +246,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             Sourced from primary patristic texts. Cross-referenced against Quasten, ODCC, and CCEL.
             {" · "}
             <a href="/sent" className="hover:text-accent">Past issues</a>
+            {" · "}
+            <a href="/questions" className="hover:text-accent">Questions</a>
+            {" · "}
+            <a href="/books" className="hover:text-accent">Books</a>
             {" · "}
             <a href="/api/people.json" className="hover:text-accent">people.json</a>
             {" · "}

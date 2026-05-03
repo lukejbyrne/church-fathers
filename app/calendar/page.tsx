@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { pickContent, isoDate, type Content } from "@/lib/picker";
+import { bookDisplayTitle, getBookForContent, type ResolvedBookRecommendation } from "@/lib/books";
 
 export const dynamic = "force-dynamic";
 
@@ -81,15 +82,23 @@ export default async function CalendarPage({
 
   // Build 12 months for the chosen year.
   const months = Array.from({ length: 12 }, (_, m) => {
-    const days: { iso: string; day: number; content: Content; isToday: boolean }[] = [];
+    const days: {
+      iso: string;
+      day: number;
+      content: Content;
+      book: ResolvedBookRecommendation | null;
+      isToday: boolean;
+    }[] = [];
     const lastDay = new Date(Date.UTC(validYear, m + 1, 0)).getUTCDate();
     for (let d = 1; d <= lastDay; d++) {
       const date = new Date(Date.UTC(validYear, m, d));
       const iso = isoDate(date);
+      const content = pickContent(date);
       days.push({
         iso,
         day: d,
-        content: pickContent(date),
+        content,
+        book: getBookForContent(content, date),
         isToday: iso === todayIso,
       });
     }
@@ -175,7 +184,14 @@ export default async function CalendarPage({
                         }`}
                         title={feast ? "Feast day" : style.label}
                       />
-                      <span className="truncate text-ink/80">{titleOf(d.content)}</span>
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate text-ink/80">{titleOf(d.content)}</span>
+                        {d.book ? (
+                          <span className="block truncate text-[11px] text-ink/45">
+                            Book: {bookDisplayTitle(d.book)}
+                          </span>
+                        ) : null}
+                      </span>
                     </Link>
                   </li>
                 );
@@ -192,4 +208,3 @@ export default async function CalendarPage({
     </div>
   );
 }
-
