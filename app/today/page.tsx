@@ -4,8 +4,12 @@ import { pickContent, parseIsoDate, isoDate, addDays } from "@/lib/picker";
 import { dateRange } from "@/lib/dates";
 import SubscribeForm from "@/components/SubscribeForm";
 import ShareBar from "@/components/ShareBar";
+import RecommendedReading from "@/components/RecommendedReading";
 import { eventPath, eventSections, relatedPeople } from "@/lib/events";
-import { firstSentenceSafe, personHighlights } from "@/lib/person-highlights";
+import { personHighlights } from "@/lib/person-highlights";
+import { getEraImage, getEventImage, imageCredit, type ContentImage } from "@/lib/images";
+import { ERAS_DATA, type EraSlug } from "@/lib/eras";
+import { recommendedWorksForEra, recommendedWorksForPerson } from "@/lib/recommendations";
 
 export const dynamic = "force-dynamic";
 
@@ -89,6 +93,35 @@ function formatLongDate(date: Date): string {
   return date.toLocaleDateString("en-GB", {
     weekday: "long", day: "numeric", month: "long", year: "numeric", timeZone: "UTC",
   });
+}
+
+function ContentImageFigure({ image, className = "mb-8" }: { image?: ContentImage; className?: string }) {
+  if (!image) return null;
+  const credit = imageCredit(image);
+  return (
+    <figure className={`${className} overflow-hidden rounded-md border border-ink/10 bg-ink/5`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="w-full max-h-[360px] object-cover"
+        style={{ objectPosition: image.object_position ?? "center" }}
+      />
+      {(image.caption || credit) ? (
+        <figcaption className="px-3 py-2 text-[11px] text-ink/55">
+          {image.caption}
+          {image.caption && credit ? " " : ""}
+          {image.source_url && credit ? (
+            <a href={image.source_url} target="_blank" rel="noopener noreferrer" className="underline decoration-ink/20 underline-offset-2 hover:text-accent">
+              {credit}
+            </a>
+          ) : (
+            credit
+          )}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
 }
 
 export default async function TodayPage({
@@ -302,12 +335,14 @@ function AnniversaryView({
 }) {
   const people = relatedPeople(anniv);
   const sections = eventSections(anniv);
+  const image = getEventImage(anniv.id);
   return (
     <>
       <header className="mb-8">
         <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">{kind === "schism" ? "Schism" : "Council"} · Today in {anniv.year}</p>
         <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{anniv.title}</h1>
       </header>
+      <ContentImageFigure image={image} />
       <p className="text-lg mb-6 leading-relaxed">{anniv.blurb}</p>
       {anniv.key_line ? (
         <p className="font-serif text-2xl text-ink border-l-4 border-accent/50 pl-4 mb-8">
@@ -380,6 +415,7 @@ function HereticView({
   const blurb = anniv?.blurb ?? person.short_bio;
   const year = anniv?.year ?? null;
   const sections = anniv ? eventSections(anniv) : [];
+  const image = getEventImage(anniv?.id);
   return (
     <>
       <header className="mb-8">
@@ -387,7 +423,8 @@ function HereticView({
         <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{anniv?.title ?? person.name}</h1>
         <p className="text-ink/60 italic">{person.born ?? "?"}–{person.died ?? "?"}</p>
       </header>
-      {person.image_url ? (
+      <ContentImageFigure image={image} />
+      {!image && person.image_url ? (
         <div className="mb-8 overflow-hidden rounded-lg border border-ink/10 bg-ink/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={person.image_url} alt={person.name} className="w-full h-[360px] object-cover" style={{ objectPosition: "center 8%" }} />
@@ -429,6 +466,9 @@ function EraView({
   figures: import("@/lib/schema").Person[];
 }) {
   const slug = ERA_SLUG[era] ?? era;
+  const eraDef = ERAS_DATA[slug as EraSlug];
+  const image = getEraImage(era);
+  const works = recommendedWorksForEra(era, 4);
   return (
     <>
       <header className="mb-8">
@@ -436,6 +476,27 @@ function EraView({
         <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{ERA_LABEL[era]}</h1>
         <p className="text-lg text-ink/70 max-w-2xl">{ERA_SUMMARY[era]}</p>
       </header>
+      <ContentImageFigure image={image} />
+      {eraDef ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Why this week matters</h2>
+          <div className="prose-like text-lg">
+            {eraDef.intro.slice(0, 2).map((para, i) => (
+              <p key={i} className="mb-4">{para}</p>
+            ))}
+          </div>
+        </section>
+      ) : null}
+      {eraDef?.decided.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">What this era gives the church</h2>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {eraDef.decided.slice(0, 4).map((item, i) => (
+              <li key={i} className="border-l-2 border-accent/35 pl-3 text-ink/80">{item}</li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
       <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Four people to know</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-10">
         {figures.map((p) => (
@@ -454,6 +515,10 @@ function EraView({
           </Link>
         ))}
       </div>
+      <RecommendedReading
+        works={works}
+        intro="Primary texts and standard starting points tied to this period."
+      />
       <Link href={`/eras/${slug}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
         Open the {ERA_LABEL[era]} page →
       </Link>
@@ -468,7 +533,10 @@ function QuoteView({
   quote: import("@/lib/schema").Quote;
   person: import("@/lib/schema").Person;
 }) {
-  const context = firstSentenceSafe(person.why_matters ?? person.short_bio, 240);
+  const body = person.why_matters ?? person.short_bio;
+  const works = recommendedWorksForPerson(person, 3);
+  const primaries = person.citations?.filter((c) => c.kind === "primary") ?? [];
+  const dr = dateRange(person);
   return (
     <>
       <header className="mb-8">
@@ -479,17 +547,45 @@ function QuoteView({
       </blockquote>
       <p className="mb-2">— <Link href={`/fathers/${person.id}`} className="hover:text-accent">{person.name}</Link></p>
       <p className="text-sm text-ink/60 italic mb-10">{quote.source}{quote.translation ? ` · ${quote.translation}` : ""}</p>
-      {context ? (
+
+      <section className="mb-8 border border-ink/15 rounded-md bg-ink/5 p-4 sm:flex gap-4">
+        {person.image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={person.image_url} alt={person.name} className="w-20 h-20 rounded-full object-cover shrink-0 mb-3 sm:mb-0 border border-ink/10" style={{ objectPosition: "center 8%" }} />
+        ) : null}
+        <div>
+          <h2 className="font-serif text-xl text-ink mb-1">{person.name}</h2>
+          <p className="text-sm text-ink/55 italic mb-2" title={dr.explanation || undefined}>
+            {dr.text}
+            {person.see ? <> · Bishop of {person.see}</> : null}
+          </p>
+          <p className="text-sm text-ink/75">{person.short_bio}</p>
+        </div>
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Why {person.name.split(" of ")[0]} matters</h2>
+        <div className="prose-like text-lg">
+          {body.split(/\n\n+/).map((para, i) => <p key={i} className="mb-4">{para}</p>)}
+        </div>
+      </section>
+
+      <RecommendedReading
+        works={works}
+        intro="Good next stops after today's quote."
+      />
+
+      {primaries.length > 0 ? (
         <section className="mb-8">
-          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Why {person.name.split(" of ")[0]} matters</h2>
-          <p className="text-lg leading-relaxed">{context}</p>
-        </section>
-      ) : null}
-      {person.works?.[0] ? (
-        <section className="mb-8 border-l-2 border-accent/35 pl-4">
-          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-1">Best first read</h2>
-          <p className="font-serif text-xl text-ink">{person.works[0].title}</p>
-          {person.works[0].description ? <p className="text-sm text-ink/70 mt-1">{person.works[0].description}</p> : null}
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Primary sources</h2>
+          <ul className="space-y-1 text-ink/80 text-sm">
+            {primaries.slice(0, 4).map((c, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="text-ink/40">·</span>
+                <span>{c.source}</span>
+              </li>
+            ))}
+          </ul>
         </section>
       ) : null}
       <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">

@@ -5,7 +5,10 @@ import { getPeople } from "@/lib/data";
 import type { Person } from "@/lib/schema";
 import { dateRange } from "@/lib/dates";
 import { ERAS_DATA, type EraSlug, type EraDef, inEra, sortKey } from "@/lib/eras";
+import { getEraImage, imageCredit } from "@/lib/images";
+import { recommendedWorksForPeople } from "@/lib/recommendations";
 import ShareBar from "@/components/ShareBar";
+import RecommendedReading from "@/components/RecommendedReading";
 
 
 export const dynamic = "force-static";
@@ -83,9 +86,11 @@ export default async function EraPage({
       return sortKey(a) - sortKey(b);
     });
 
-  // For grid: top by significance. For "read further": works of top figures.
+  // For grid: top by significance. For reading: primary works from figures in this era.
   const headline = figures.slice(0, 12);
-  const withWorks = figures.filter((p) => (p.works?.length ?? 0) > 0).slice(0, 2);
+  const recommended = recommendedWorksForPeople(figures.filter((p) => (p.works?.length ?? 0) > 0), 6);
+  const image = getEraImage(era.slug);
+  const credit = image ? imageCredit(image) : "";
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
@@ -94,6 +99,31 @@ export default async function EraPage({
       </Link>
       <h1 className="font-serif text-5xl mt-4 mb-1 text-ink">{era.label}</h1>
       <p className="text-ink/55 italic mb-8">{era.yearLabel}</p>
+
+      {image ? (
+        <figure className="mb-10 overflow-hidden rounded-md border border-ink/10 bg-ink/5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="w-full max-h-[430px] object-cover"
+            style={{ objectPosition: image.object_position ?? "center" }}
+          />
+          {(image.caption || credit) ? (
+            <figcaption className="px-3 py-2 text-[11px] text-ink/55">
+              {image.caption}
+              {image.caption && credit ? " " : ""}
+              {image.source_url && credit ? (
+                <a href={image.source_url} target="_blank" rel="noopener noreferrer" className="underline decoration-ink/20 underline-offset-2 hover:text-accent">
+                  {credit}
+                </a>
+              ) : (
+                credit
+              )}
+            </figcaption>
+          ) : null}
+        </figure>
+      ) : null}
 
       <div className="grid lg:grid-cols-[1fr,260px] gap-10 mb-12">
         <section>
@@ -150,28 +180,11 @@ export default async function EraPage({
         </ul>
       </section>
 
-      {withWorks.length > 0 && (
-        <section className="mb-12">
-          <h2 className="font-serif text-2xl text-ink mb-3">Read further</h2>
-          <ul className="space-y-3 text-ink/80">
-            {withWorks.map((p) => {
-              const w = p.works![0];
-              return (
-                <li key={p.id}>
-                  <Link href={`/fathers/${p.id}`} className="font-serif text-lg hover:text-accent">
-                    {p.name}
-                  </Link>
-                  <span className="text-ink/55"> — </span>
-                  <em>{w.title}</em>
-                  {w.description ? (
-                    <span className="text-ink/65">. {w.description}</span>
-                  ) : null}
-                </li>
-              );
-            })}
-          </ul>
-        </section>
-      )}
+      <RecommendedReading
+        works={recommended}
+        title="Read further"
+        intro="Primary texts and durable starting points from figures in this era."
+      />
 
       <div className="flex flex-wrap gap-3 mt-12 pt-8 border-t border-ink/10">
         <Link

@@ -4,7 +4,9 @@
 import { chainTo, getPerson, getPeople } from "./data";
 import { pickContent, isoDate, type Content } from "./picker";
 import { amazonUrl } from "./affiliate";
-import type { EmailExtras, EmailChainStep, RelatedFigure } from "./email-template";
+import { getEraImage, getEventImage, type ContentImage } from "./images";
+import { recommendedWorksForEra, recommendedWorksForPeople, recommendedWorksForPerson } from "./recommendations";
+import type { EmailExtras, EmailChainStep, RelatedFigure, EmailImage } from "./email-template";
 import type { Person } from "./schema";
 
 // Email clients can't resolve site-relative URLs; always emit absolute.
@@ -12,6 +14,19 @@ function absoluteImage(url: string | null | undefined, siteUrl: string): string 
   if (!url) return null;
   if (url.startsWith("/")) return siteUrl.replace(/\/$/, "") + url;
   return url;
+}
+
+function emailImage(image: ContentImage | undefined, siteUrl: string): EmailImage | undefined {
+  if (!image) return undefined;
+  return {
+    src: absoluteImage(image.src, siteUrl) ?? image.src,
+    alt: image.alt,
+    caption: image.caption,
+    credit: image.credit,
+    license: image.license,
+    source_url: image.source_url,
+    object_position: image.object_position,
+  };
 }
 
 export function buildExtras(content: Content, siteUrl: string): EmailExtras {
@@ -24,12 +39,21 @@ export function buildExtras(content: Content, siteUrl: string): EmailExtras {
   if (content.type === "heretic") {
     extras.father = fatherExtras(content.person, siteUrl);
     extras.related = anniversaryRelated(content.anniversary?.related_person_ids, siteUrl, content.person.id);
+    extras.eventImage = emailImage(getEventImage(content.anniversary?.id), siteUrl);
+    extras.recommendedWorks = recommendedWorksForPeople(anniversaryPeople(content.anniversary?.related_person_ids), 4);
   }
   if (content.type === "council" || content.type === "schism") {
     extras.related = anniversaryRelated(content.anniversary.related_person_ids, siteUrl);
+    extras.eventImage = emailImage(getEventImage(content.anniversary.id), siteUrl);
+    extras.recommendedWorks = recommendedWorksForPeople(anniversaryPeople(content.anniversary.related_person_ids), 4);
+  }
+  if (content.type === "era") {
+    extras.eraImage = emailImage(getEraImage(content.era), siteUrl);
+    extras.recommendedWorks = recommendedWorksForEra(content.era, 4);
   }
   if (content.type === "quote") {
     extras.father = fatherExtras(content.person, siteUrl);
+    extras.recommendedWorks = recommendedWorksForPerson(content.person, 3);
   }
   return extras;
 }
@@ -71,11 +95,7 @@ function anniversaryRelated(
   siteUrl: string,
   exclude?: string
 ): RelatedFigure[] {
-  if (!ids) return [];
-  return ids
-    .filter((id) => id !== exclude)
-    .map((id) => getPerson(id))
-    .filter((p): p is Person => !!p)
+  return anniversaryPeople(ids, exclude)
     .slice(0, 4)
     .map((p) => ({
       id: p.id,
@@ -86,6 +106,14 @@ function anniversaryRelated(
       died: p.died ?? null,
       short_bio: p.short_bio,
     }));
+}
+
+function anniversaryPeople(ids: string[] | undefined, exclude?: string): Person[] {
+  if (!ids) return [];
+  return ids
+    .filter((id) => id !== exclude)
+    .map((id) => getPerson(id))
+    .filter((p): p is Person => !!p);
 }
 
 // Convenience for the email-preview page: render whatever type fires today.

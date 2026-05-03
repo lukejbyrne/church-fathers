@@ -4,7 +4,10 @@ import type { Metadata } from "next";
 import { dateRange } from "@/lib/dates";
 import { eventPath, eventSections, eventTitle, EVENT_KIND_DESCRIPTION, EVENT_KIND_LABEL, getEvent, relatedPeople } from "@/lib/events";
 import { getAnniversaries } from "@/lib/data";
+import { getEventImage, imageCredit } from "@/lib/images";
+import { recommendedWorksForPeople } from "@/lib/recommendations";
 import ShareBar from "@/components/ShareBar";
+import RecommendedReading from "@/components/RecommendedReading";
 
 const MONTH = [
   "January", "February", "March", "April", "May", "June",
@@ -45,6 +48,8 @@ export default async function EventPage({
 
   const people = relatedPeople(event);
   const sections = eventSections(event);
+  const image = getEventImage(event.id);
+  const recommended = recommendedWorksForPeople(people, 4);
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
@@ -70,6 +75,31 @@ export default async function EventPage({
           {event.blurb}
         </p>
       </header>
+
+      {image ? (
+        <figure className="mb-10 overflow-hidden rounded-md border border-ink/10 bg-ink/5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="w-full max-h-[420px] object-cover"
+            style={{ objectPosition: image.object_position ?? "center" }}
+          />
+          {(image.caption || image.credit || image.license) ? (
+            <figcaption className="px-3 py-2 text-[11px] text-ink/55">
+              {image.caption}
+              {image.caption && imageCredit(image) ? " " : ""}
+              {image.source_url && imageCredit(image) ? (
+                <a href={image.source_url} target="_blank" rel="noopener noreferrer" className="underline decoration-ink/20 underline-offset-2 hover:text-accent">
+                  {imageCredit(image)}
+                </a>
+              ) : (
+                imageCredit(image)
+              )}
+            </figcaption>
+          ) : null}
+        </figure>
+      ) : null}
 
       <section className="mb-10 border border-ink/10 rounded-md bg-ink/5 px-5 py-4">
         <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">
@@ -161,6 +191,11 @@ export default async function EventPage({
           </div>
         </section>
       ) : null}
+
+      <RecommendedReading
+        works={recommended}
+        intro="Primary texts from figures tied to this event."
+      />
 
       {event.citation ? (
         <section className="mb-10">

@@ -7,6 +7,7 @@
 //   pnpm preview-email basil-of-caesarea              # force a specific figure as Father
 //   pnpm preview-email --date=2026-12-25              # a future date
 //   pnpm preview-email --date=2026-08-28              # a feast day
+//   pnpm preview-email --date=2026-06-19 --out=tmp/nicaea.html --no-open
 
 import fs from "node:fs";
 import path from "node:path";
@@ -44,6 +45,8 @@ function describe(c: Content): string {
 function main() {
   const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
   const dateArg = findArg("date");
+  const outArg = findArg("out");
+  const noOpen = process.argv.includes("--no-open");
   const date = parseIsoDate(dateArg) ?? new Date();
 
   let content: Content;
@@ -64,7 +67,8 @@ function main() {
   const extras = buildExtras(content, SITE_URL);
   const { subject, html } = renderEmail(content, SITE_URL, extras);
 
-  const outPath = path.join(os.tmpdir(), "patristic-email-preview.html");
+  const outPath = outArg ? path.resolve(outArg) : path.join(os.tmpdir(), "patristic-email-preview.html");
+  fs.mkdirSync(path.dirname(outPath), { recursive: true });
   fs.writeFileSync(outPath, html, "utf8");
 
   console.log(`✓ Rendered:  ${describe(content)}`);
@@ -72,6 +76,8 @@ function main() {
   console.log(`  Date:      ${isoDate(date)}`);
   console.log(`  Type:      ${content.type}`);
   console.log(`  Wrote:     ${outPath}`);
+
+  if (noOpen) return;
 
   try {
     const cmd =
