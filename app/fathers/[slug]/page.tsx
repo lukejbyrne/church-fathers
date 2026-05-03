@@ -9,6 +9,7 @@ import { amazonUrl } from "@/lib/affiliate";
 import ChainToJesus, { type ChainStep } from "@/components/ChainToJesus";
 import ShareBar from "@/components/ShareBar";
 import { dateRange, bornDisplay, diedDisplay } from "@/lib/dates";
+import { personHighlights } from "@/lib/person-highlights";
 
 const ALL_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
 
@@ -133,6 +134,7 @@ export default async function FatherPage({
   const chains = buildChainsFor(person.id);
 
   const rels = getRelationshipsFor(person.id);
+  const highlights = personHighlights(person);
   const grouped = {
     documented: rels.filter((r) => r.strength === "documented"),
     tradition: rels.filter((r) => r.strength === "tradition"),
@@ -299,6 +301,30 @@ export default async function FatherPage({
         </dl>
       </section>
 
+      {highlights.length > 0 && (
+        <section className="mb-8">
+          <h2 className="font-serif text-2xl mb-3">Highlights</h2>
+          <dl className="grid sm:grid-cols-2 gap-4">
+            {highlights.map((item) => (
+              <div key={item.label} className="border-l-2 border-accent/35 pl-3">
+                <dt className="text-[10px] uppercase tracking-wider text-ink/45 mb-1">
+                  {item.label}
+                </dt>
+                <dd className="text-ink/85">
+                  {item.href ? (
+                    <Link href={item.href} className="hover:text-accent underline decoration-ink/20 underline-offset-2">
+                      {item.value}
+                    </Link>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+
       <p className="text-lg leading-relaxed mb-8">{person.short_bio}</p>
 
       {person.why_matters && (
@@ -326,7 +352,7 @@ export default async function FatherPage({
       </Suspense>
 
       {faq.length > 1 && (
-        <section className="mb-10">
+        <section id="works" className="mb-10 scroll-mt-20">
           <h2 className="font-serif text-2xl mb-3">Common questions</h2>
           <dl className="space-y-3">
             {faq.map((f, i) => (
@@ -568,4 +594,3 @@ export default async function FatherPage({
     </div>
   );
 }
-

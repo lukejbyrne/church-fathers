@@ -4,6 +4,8 @@ import { pickContent, parseIsoDate, isoDate, addDays } from "@/lib/picker";
 import { dateRange } from "@/lib/dates";
 import SubscribeForm from "@/components/SubscribeForm";
 import ShareBar from "@/components/ShareBar";
+import { eventPath, eventSections, relatedPeople } from "@/lib/events";
+import { firstSentenceSafe, personHighlights } from "@/lib/person-highlights";
 
 export const dynamic = "force-dynamic";
 
@@ -25,6 +27,23 @@ const ERA_SLUG: Record<string, string> = {
   nicene: "nicene",
   "post-nicene": "post-nicene",
   "desert-father": "desert-fathers",
+};
+
+const ERA_SUMMARY: Record<string, string> = {
+  apostle:
+    "This is the generation that touched Jesus and carried the gospel from Jerusalem into the wider Roman world.",
+  "apostolic-father":
+    "This is the generation that received the faith from the apostles and had to hand it on without them.",
+  apologist:
+    "This is when Christians began answering outsiders in public, before emperors, philosophers, Jews, pagans, and heretics.",
+  "ante-nicene":
+    "This is the church before Constantine and Nicaea: growing under persecution and forming its canon, creed, and theological language.",
+  nicene:
+    "This is the age of the great councils, when the church settled durable language for the Trinity and the person of Christ.",
+  "post-nicene":
+    "This is the aftermath of Chalcedon and the collapse of the Western empire, carried by bishops, monasteries, and pastoral institutions.",
+  "desert-father":
+    "This is where monasticism becomes a major Christian vocation: prayer, fasting, silence, and spiritual fatherhood in the wilderness.",
 };
 
 const MONTH = [
@@ -115,7 +134,7 @@ export default async function TodayPage({
         <AnniversaryView kind={content.type} anniv={content.anniversary} />
       ) : null}
       {content.type === "heretic" ? (
-        <HereticView person={content.person} blurb={content.anniversary?.blurb ?? content.person.short_bio} year={content.anniversary?.year ?? null} />
+        <HereticView person={content.person} anniv={content.anniversary} />
       ) : null}
       {content.type === "era" ? <EraView era={content.era} figures={content.figures} /> : null}
       {content.type === "quote" ? <QuoteView quote={content.quote} person={content.person} /> : null}
@@ -169,6 +188,7 @@ function FatherView({
           : null;
 
   void reason;
+  const highlights = personHighlights(person);
 
   return (
     <>
@@ -195,6 +215,28 @@ function FatherView({
 
       {showShortAsLede ? (
         <p className="text-xl text-ink/75 mb-6 leading-snug">{person.short_bio}</p>
+      ) : null}
+
+      {highlights.length > 0 ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Highlights</h2>
+          <dl className="grid sm:grid-cols-2 gap-4">
+            {highlights.map((item) => (
+              <div key={item.label} className="border-l-2 border-accent/35 pl-3">
+                <dt className="text-[10px] uppercase tracking-wider text-ink/45 mb-1">{item.label}</dt>
+                <dd className="text-ink/85">
+                  {item.href ? (
+                    <Link href={item.href} className="hover:text-accent underline decoration-ink/20 underline-offset-2">
+                      {item.value}
+                    </Link>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       ) : null}
 
       <div className="prose-like text-lg mb-8">
@@ -258,23 +300,62 @@ function AnniversaryView({
   kind: "council" | "schism";
   anniv: import("@/lib/schema").Anniversary;
 }) {
+  const people = relatedPeople(anniv);
+  const sections = eventSections(anniv);
   return (
     <>
       <header className="mb-8">
         <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">{kind === "schism" ? "Schism" : "Council"} · Today in {anniv.year}</p>
         <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{anniv.title}</h1>
       </header>
-      <p className="text-lg mb-8 leading-relaxed">{anniv.blurb}</p>
-      {anniv.related_person_ids?.length ? (
-        <div className="mb-8">
-          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Figures involved</h2>
-          <ul className="space-y-1">
-            {anniv.related_person_ids.map((id) => (
-              <li key={id}>
-                <Link href={`/fathers/${id}`} className="hover:text-accent">{id.replace(/-/g, " ")}</Link>
-              </li>
+      <p className="text-lg mb-6 leading-relaxed">{anniv.blurb}</p>
+      {anniv.key_line ? (
+        <p className="font-serif text-2xl text-ink border-l-4 border-accent/50 pl-4 mb-8">
+          {anniv.key_line}
+        </p>
+      ) : null}
+      {anniv.highlights?.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Highlights</h2>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {anniv.highlights.map((item, i) => (
+              <li key={i} className="border-l-2 border-accent/35 pl-3 text-ink/80">{item}</li>
             ))}
           </ul>
+        </section>
+      ) : null}
+      {sections.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">How it happened</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {sections.slice(0, 4).map((section) => (
+              <div key={section.title} className="border-t border-ink/15 pt-3">
+                <h3 className="font-serif text-lg text-ink mb-1">{section.title}</h3>
+                <p className="text-sm text-ink/75">{section.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+      {people.length ? (
+        <div className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">People in the story</h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {people.map((p) => (
+              <Link key={p.id} href={`/fathers/${p.id}`} className="flex gap-3 p-3 border border-ink/15 rounded hover:border-accent transition-colors">
+                {p.image_url ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={p.image_url} alt={p.name} className="w-12 h-12 rounded-full object-cover shrink-0" style={{ objectPosition: "center 8%" }} />
+                ) : (
+                  <span className="w-12 h-12 rounded-full bg-ink/10 shrink-0 flex items-center justify-center font-serif text-ink/50">{p.name.charAt(0)}</span>
+                )}
+                <span>
+                  <span className="block font-serif text-ink">{p.name}</span>
+                  <span className="block text-xs text-ink/60">{p.short_bio}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       ) : null}
       {anniv.citation ? (
@@ -282,8 +363,8 @@ function AnniversaryView({
           {anniv.citation}
         </blockquote>
       ) : null}
-      <Link href={kind === "schism" ? "/schisms" : "/eras"} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
-        Browse the {kind === "schism" ? "schisms" : "eras"} →
+      <Link href={eventPath(anniv)} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
+        Open the full event page →
       </Link>
     </>
   );
@@ -291,18 +372,19 @@ function AnniversaryView({
 
 function HereticView({
   person,
-  blurb,
-  year,
+  anniv,
 }: {
   person: import("@/lib/schema").Person;
-  blurb: string;
-  year: number | null;
+  anniv?: import("@/lib/schema").Anniversary;
 }) {
+  const blurb = anniv?.blurb ?? person.short_bio;
+  const year = anniv?.year ?? null;
+  const sections = anniv ? eventSections(anniv) : [];
   return (
     <>
       <header className="mb-8">
         <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">Heresy Condemnation{year ? ` · ${year}` : ""}</p>
-        <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{person.name}</h1>
+        <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{anniv?.title ?? person.name}</h1>
         <p className="text-ink/60 italic">{person.born ?? "?"}–{person.died ?? "?"}</p>
       </header>
       {person.image_url ? (
@@ -312,9 +394,29 @@ function HereticView({
         </div>
       ) : null}
       <p className="text-lg mb-8 leading-relaxed">{blurb}</p>
-      <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
-        Open {person.name}'s page →
-      </Link>
+      {sections.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">How it happened</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {sections.slice(0, 4).map((section) => (
+              <div key={section.title} className="border-t border-ink/15 pt-3">
+                <h3 className="font-serif text-lg text-ink mb-1">{section.title}</h3>
+                <p className="text-sm text-ink/75">{section.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+      <div className="flex flex-wrap gap-3">
+        {anniv ? (
+          <Link href={eventPath(anniv)} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
+            Open the full event page →
+          </Link>
+        ) : null}
+        <Link href={`/fathers/${person.id}`} className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors text-sm inline-block">
+          Open {person.name}'s page →
+        </Link>
+      </div>
     </>
   );
 }
@@ -332,7 +434,9 @@ function EraView({
       <header className="mb-8">
         <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">This week</p>
         <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{ERA_LABEL[era]}</h1>
+        <p className="text-lg text-ink/70 max-w-2xl">{ERA_SUMMARY[era]}</p>
       </header>
+      <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Four people to know</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-10">
         {figures.map((p) => (
           <Link key={p.id} href={`/fathers/${p.id}`} className="flex gap-4 p-4 border border-ink/15 rounded hover:border-accent transition-colors">
@@ -364,6 +468,7 @@ function QuoteView({
   quote: import("@/lib/schema").Quote;
   person: import("@/lib/schema").Person;
 }) {
+  const context = firstSentenceSafe(person.why_matters ?? person.short_bio, 240);
   return (
     <>
       <header className="mb-8">
@@ -374,6 +479,19 @@ function QuoteView({
       </blockquote>
       <p className="mb-2">— <Link href={`/fathers/${person.id}`} className="hover:text-accent">{person.name}</Link></p>
       <p className="text-sm text-ink/60 italic mb-10">{quote.source}{quote.translation ? ` · ${quote.translation}` : ""}</p>
+      {context ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Why {person.name.split(" of ")[0]} matters</h2>
+          <p className="text-lg leading-relaxed">{context}</p>
+        </section>
+      ) : null}
+      {person.works?.[0] ? (
+        <section className="mb-8 border-l-2 border-accent/35 pl-4">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-1">Best first read</h2>
+          <p className="font-serif text-xl text-ink">{person.works[0].title}</p>
+          {person.works[0].description ? <p className="text-sm text-ink/70 mt-1">{person.works[0].description}</p> : null}
+        </section>
+      ) : null}
       <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
         Read more about {person.name} →
       </Link>
