@@ -69,3 +69,36 @@ Have any cron-style runner hit `GET /api/today` once per morning, then post the 
 - **Plain cron** on any box — `curl` to `/api/today`, pipe to your ESP send script.
 
 Because `featuredOfDay(date)` is pure and deterministic, you can pre-render the next 30 days for review with `featuredQueue(30)`.
+
+## Local traffic stats
+
+The site records first-party, anonymous pageviews to a Netlify Blob store named `analytics-events`.
+It does not store raw IP addresses, raw user agents, cookies, or names. Visitors are counted with a
+salted hash of IP + user-agent so the local report can estimate unique visitors.
+Stats start collecting after this code is deployed; it cannot recover historical traffic from before
+the beacon existed.
+
+Recommended env vars:
+
+```sh
+ANALYTICS_SALT=use-a-long-random-string
+NETLIFY_SITE_ID=your-site-id
+NETLIFY_AUTH_TOKEN=your-netlify-personal-access-token
+```
+
+Set `ANALYTICS_SALT` in Netlify too, so visitor hashes are stable across deploys. Set
+`NEXT_PUBLIC_ANALYTICS_DISABLED=true` if you need to temporarily disable collection.
+
+Pull and summarize the last 30 days locally:
+
+```sh
+pnpm stats
+```
+
+Useful options:
+
+```sh
+pnpm stats -- --days 7
+pnpm stats -- --json
+pnpm stats -- --include-bots
+```
