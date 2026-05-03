@@ -1,6 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AnalyticsBeacon } from "@/components/AnalyticsBeacon";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patristic.io";
 const SITE_NAME = "Patristic Lineage";
@@ -82,6 +83,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
+        <AnalyticsBeacon />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ldGraph) }}

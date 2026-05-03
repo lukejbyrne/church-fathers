@@ -15,6 +15,7 @@
     "cache-portraits": "tsx scripts/cache-portraits.ts",
     "wikidata-edits": "tsx scripts/wikidata-edit-list.ts",
     "preview-email": "tsx scripts/preview-email.ts",
+    "stats": "tsx scripts/analytics.ts",
     "data": "pnpm merge && pnpm validate && pnpm cache-portraits"
   },
   "dependencies": {
