@@ -277,6 +277,20 @@ export const ERA_ORDER: EraSlug[] = [
   "early-medieval",
 ];
 
+export const ERA_SLUG_BY_STATUS: Record<TraditionStatus, EraSlug> = {
+  apostle: "apostolic",
+  "apostolic-father": "apostolic-fathers",
+  apologist: "apologists",
+  "ante-nicene": "ante-nicene",
+  nicene: "nicene",
+  "post-nicene": "post-nicene",
+  "desert-father": "desert-fathers",
+};
+
+export function eraForTraditionStatus(status: TraditionStatus): EraDef {
+  return ERAS[ERA_SLUG_BY_STATUS[status]];
+}
+
 export function inEra(p: Person, era: EraDef): boolean {
   if (era.statuses.includes(p.tradition_status)) return true;
   const y = p.born ?? p.died;

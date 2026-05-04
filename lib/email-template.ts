@@ -6,6 +6,7 @@
 // One shell, six body variants — one per Content type from lib/picker.ts.
 
 import type { Content } from "./picker";
+import { eraForTraditionStatus } from "./eras";
 import type { Person } from "./schema";
 
 export type EmailChainStep = {
@@ -69,16 +70,6 @@ const REGION_LABEL: Record<string, string> = {
   africa: "North Africa",
   east: "Eastern empire",
   other: "Other",
-};
-
-const ERA_LABEL: Record<string, string> = {
-  apostle: "Apostles",
-  "apostolic-father": "Apostolic Fathers",
-  apologist: "Apologists",
-  "ante-nicene": "Ante-Nicene",
-  nicene: "Nicene",
-  "post-nicene": "Post-Nicene",
-  "desert-father": "Desert Fathers",
 };
 
 const MONTH_NAMES = [
@@ -403,8 +394,16 @@ function buildEraBody(
   siteUrl: string,
   book?: EmailBook | null
 ): string {
-  const eraSlug = content.era === "apostle" ? "apostolic" : content.era === "apostolic-father" ? "apostolic-fathers" : content.era;
-  const label = ERA_LABEL[content.era] ?? content.era;
+  const eraDef = eraForTraditionStatus(content.era);
+  const eraSlug = eraDef.slug;
+  const label = eraDef.label;
+  const intro = eraDef.intro[0] ?? eraDef.blurb;
+  const whyRows = eraDef.decided.slice(0, 4).map((item) => `
+    <tr>
+      <td width="18" valign="top" style="padding:4px 8px 4px 0;color:#8b1e2d;font-size:14px;line-height:1.5;">&bull;</td>
+      <td valign="top" style="padding:4px 0;font-size:13px;color:#1f1a13c8;line-height:1.55;">${escapeHtml(item)}</td>
+    </tr>
+  `).join("");
   const tiles = content.figures
     .map((p) => {
       const url = `${siteUrl}/fathers/${p.id}`;
@@ -420,7 +419,15 @@ function buildEraBody(
   return `
     <tr><td style="padding:0 32px;text-align:center;">
       <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8b1e2dcc;">This week</p>
-      <h1 style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;">${escapeHtml(label)}</h1>
+      <h1 style="margin:0 0 4px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;">${escapeHtml(label)}</h1>
+      <p style="margin:0 0 18px;font-size:13px;color:#1f1a13aa;">${escapeHtml(eraDef.yearLabel)} · ${escapeHtml(eraDef.blurb)}</p>
+    </td></tr>
+    <tr><td style="padding:0 32px 4px;">
+      <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#1f1a13e0;">${escapeHtml(intro)}</p>
+      ${whyRows ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 22px;background:#8b1e2d08;border:1px solid #8b1e2d18;border-radius:6px;padding:12px 14px;">
+        <tr><td colspan="2" style="padding:0 0 6px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#8b1e2dcc;">Why it matters</td></tr>
+        ${whyRows}
+      </table>` : ""}
     </td></tr>
     <tr><td style="padding:0 32px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;padding:8px;">${rows.join("")}</table>
@@ -468,7 +475,7 @@ function subjectFor(content: Content): string {
         ? `Today in ${content.anniversary.year}: ${content.anniversary.title}`
         : `${content.person.name} — the line drawn`;
     case "era":
-      return `This week: the ${ERA_LABEL[content.era] ?? content.era}`;
+      return `This week: the ${eraForTraditionStatus(content.era).label}`;
     case "quote":
       return `From ${content.quote.source}`;
   }
@@ -546,11 +553,22 @@ Patristic Lineage · ${siteUrl}
 Unsubscribe: {$unsubscribe}`;
     }
     case "era": {
-      const label = ERA_LABEL[content.era] ?? content.era;
+      const eraDef = eraForTraditionStatus(content.era);
+      const label = eraDef.label;
       const list = content.figures.map((p) => `- ${p.name} (${formatLifeRange(p.born, p.died)})`).join("\n");
+      const why = eraDef.decided.slice(0, 4).map((item) => `- ${item}`).join("\n");
       return `${subject}
 
-This week we focus on the ${label}:
+This week we focus on the ${label} (${eraDef.yearLabel}).
+
+${eraDef.blurb}
+
+${eraDef.intro[0] ?? ""}
+
+Why it matters:
+${why}
+
+Representative figures:
 ${list}
 ${plainBookLine(extras.book)}
 
@@ -643,7 +661,10 @@ export function renderEmail(
       case "council":
       case "schism": return content.anniversary.blurb.slice(0, 140);
       case "heretic": return content.anniversary?.blurb.slice(0, 140) ?? content.person.short_bio.slice(0, 140);
-      case "era": return `${ERA_LABEL[content.era] ?? content.era} — four figures this week.`;
+      case "era": {
+        const eraDef = eraForTraditionStatus(content.era);
+        return `${eraDef.label} — ${eraDef.blurb}`;
+      }
       case "quote": return content.quote.text.slice(0, 140);
     }
   })();

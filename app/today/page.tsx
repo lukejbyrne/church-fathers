@@ -6,28 +6,9 @@ import SubscribeForm from "@/components/SubscribeForm";
 import ShareBar from "@/components/ShareBar";
 import BookFeature from "@/components/BookFeature";
 import { getBookForContent } from "@/lib/books";
+import { eraForTraditionStatus } from "@/lib/eras";
 
 export const dynamic = "force-dynamic";
-
-const ERA_LABEL: Record<string, string> = {
-  apostle: "Apostles",
-  "apostolic-father": "Apostolic Fathers",
-  apologist: "Apologists",
-  "ante-nicene": "Ante-Nicene",
-  nicene: "Nicene",
-  "post-nicene": "Post-Nicene",
-  "desert-father": "Desert Fathers",
-};
-
-const ERA_SLUG: Record<string, string> = {
-  apostle: "apostolic",
-  "apostolic-father": "apostolic-fathers",
-  apologist: "apologists",
-  "ante-nicene": "ante-nicene",
-  nicene: "nicene",
-  "post-nicene": "post-nicene",
-  "desert-father": "desert-fathers",
-};
 
 const MONTH = [
   "January", "February", "March", "April", "May", "June",
@@ -54,7 +35,7 @@ export async function generateMetadata({
       ? c.person.name
       : c.type === "council" || c.type === "schism"
         ? `${c.anniversary.title} (${c.anniversary.year})`
-        : `${ERA_LABEL[c.era]} — this week`;
+        : `${eraForTraditionStatus(c.era).label} — this week`;
   const desc =
     c.type === "father"
       ? c.person.why_matters ?? c.person.short_bio
@@ -64,7 +45,7 @@ export async function generateMetadata({
           ? c.anniversary.blurb
           : c.type === "quote"
             ? `"${c.quote.text}" — ${c.person.name}`
-            : `${ERA_LABEL[c.era]}, four representative figures.`;
+            : eraForTraditionStatus(c.era).blurb;
   return { title: `Today: ${title}`, description: desc };
 }
 
@@ -336,13 +317,37 @@ function EraView({
   era: import("@/lib/schema").TraditionStatus;
   figures: import("@/lib/schema").Person[];
 }) {
-  const slug = ERA_SLUG[era] ?? era;
+  const eraDef = eraForTraditionStatus(era);
+  const slug = eraDef.slug;
+  const label = eraDef.label;
   return (
     <>
       <header className="mb-8">
         <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">This week</p>
-        <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{ERA_LABEL[era]}</h1>
+        <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{label}</h1>
+        <p className="text-ink/60 italic">
+          {eraDef.yearLabel} · {eraDef.blurb}
+        </p>
       </header>
+
+      <div className="prose-like text-lg mb-8">
+        <p className="mb-4">{eraDef.intro[0]}</p>
+      </div>
+
+      {eraDef.decided.length > 0 ? (
+        <section className="mb-10 border border-accent/15 bg-accent/5 rounded p-5">
+          <h2 className="text-sm uppercase tracking-widest text-accent/80 mb-3">Why it matters</h2>
+          <ul className="space-y-2 text-ink/80">
+            {eraDef.decided.slice(0, 4).map((item) => (
+              <li key={item} className="flex gap-2">
+                <span className="text-accent">·</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
       <div className="grid sm:grid-cols-2 gap-4 mb-10">
         {figures.map((p) => (
           <Link key={p.id} href={`/fathers/${p.id}`} className="flex gap-4 p-4 border border-ink/15 rounded hover:border-accent transition-colors">
@@ -361,7 +366,7 @@ function EraView({
         ))}
       </div>
       <Link href={`/eras/${slug}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
-        Open the {ERA_LABEL[era]} page →
+        Open the {label} page →
       </Link>
     </>
   );
