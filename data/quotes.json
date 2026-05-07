@@ -1,152 +1,242 @@
 [
   {
     "person_id": "polycarp-of-smyrna",
+    "title": "Polycarp before the proconsul",
     "text": "Eighty-six years I have served him, and he has done me no wrong. How can I blaspheme my king, who has saved me?",
-    "source": "Martyrdom of Polycarp 9.3"
+    "source": "Martyrdom of Polycarp 9.3",
+    "context": "Polycarp is being pressed to renounce Christ and save his life. His answer frames martyrdom as loyalty to a king who has never betrayed him.",
+    "impact": "This became one of the classic early martyrdom scenes: not a search for death, but a refusal to trade faithfulness for safety."
   },
   {
     "person_id": "ignatius-of-antioch",
+    "title": "Ignatius on becoming Christ's bread",
     "text": "I am the wheat of God, and let me be ground by the teeth of the wild beasts, that I may be found the pure bread of Christ.",
-    "source": "Letter to the Romans 4.1"
+    "source": "Letter to the Romans 4.1",
+    "context": "Ignatius writes while being taken to Rome for execution. He imagines his martyrdom as a final offering that unites him to Christ.",
+    "impact": "The line shows how early Christians could read suffering through the Eucharist and the passion of Christ."
   },
   {
     "person_id": "ignatius-of-antioch",
+    "title": "Ignatius on the bishop and the Church",
     "text": "Where the bishop is present, there let the multitude be, just as where Jesus Christ is, there is the catholic Church.",
-    "source": "Letter to the Smyrnaeans 8.2"
+    "source": "Letter to the Smyrnaeans 8.2",
+    "context": "Ignatius is warning churches against breakaway teachers and unauthorized gatherings. For him, unity around the bishop protects the visible unity of the local church.",
+    "impact": "It is one of the earliest uses of \"catholic Church\" and a major witness to early episcopal order."
   },
   {
     "person_id": "irenaeus-of-lyons",
+    "title": "Irenaeus on the glory of being human",
     "text": "The glory of God is a living man, and the life of man consists in beholding God.",
-    "source": "Against Heresies 4.20.7"
+    "source": "Against Heresies 4.20.7",
+    "context": "Irenaeus is arguing against systems that treat the created world and the human body as spiritual problems. He answers that embodied human life, healed by God, is part of God's glory.",
+    "impact": "The line became a shorthand for Irenaeus's full-bodied vision of creation, incarnation, and salvation."
   },
   {
     "person_id": "irenaeus-of-lyons",
+    "title": "Irenaeus on why the Son became human",
     "text": "He became what we are, that he might make us what he is.",
-    "source": "Against Heresies 5, preface"
+    "source": "Against Heresies 5, preface",
+    "context": "Irenaeus is explaining the logic of the incarnation. The Son enters real human life so human beings can be restored to communion with God.",
+    "impact": "This is the seed of the later patristic theme of deification: salvation is participation in God's life, not merely pardon."
   },
   {
     "person_id": "tertullian",
+    "title": "Tertullian on persecution and growth",
     "text": "The blood of the martyrs is the seed of the Church.",
-    "source": "Apology 50.13"
+    "source": "Apology 50.13",
+    "context": "Tertullian is addressing Roman authorities who think executions will frighten Christians into silence. He argues the opposite: public martyrdom makes Christian courage visible.",
+    "impact": "The line became the classic ancient explanation for why persecution often strengthened the church's witness."
   },
   {
     "person_id": "tertullian",
+    "title": "Tertullian on Athens and Jerusalem",
     "text": "What has Athens to do with Jerusalem? What concord is there between the Academy and the Church?",
-    "source": "On the Prescription of Heretics 7"
+    "source": "On the Prescription of Heretics 7",
+    "context": "Tertullian is not making a geography point. \"Athens\" means speculative Greek philosophy and the academy; \"Jerusalem\" means the apostolic faith received in the Church.",
+    "impact": "The line became a famous warning against letting fashionable intellectual systems rewrite Christian doctrine."
   },
   {
     "person_id": "cyprian-of-carthage",
+    "title": "Cyprian on the Church as mother",
     "text": "He cannot have God for his Father who has not the Church for his Mother.",
-    "source": "On the Unity of the Catholic Church 6"
+    "source": "On the Unity of the Catholic Church 6",
+    "context": "Cyprian is writing during a crisis of schism after persecution. His point is that reconciliation with God cannot be separated from communion with the visible Church.",
+    "impact": "The line became one of the strongest ancient statements of ecclesial unity."
   },
   {
     "person_id": "athanasius-of-alexandria",
+    "title": "Athanasius on God becoming human",
     "text": "He was made man that we might be made God.",
-    "source": "On the Incarnation 54.3"
+    "source": "On the Incarnation 54.3",
+    "context": "Athanasius is summarizing the purpose of the incarnation. The Word becomes human so humanity can share, by grace, in the life of God.",
+    "impact": "This became one of the most compact statements of patristic deification."
   },
   {
     "person_id": "athanasius-of-alexandria",
+    "title": "Athanasius on why Christ must be God and man",
     "text": "Unless he were divine, none would be saved; unless he were truly human, none would be raised.",
-    "source": "On the Incarnation, paraphrase 8–9"
+    "source": "On the Incarnation, paraphrase 8-9",
+    "context": "This paraphrases Athanasius's central argument: only God can save, and only a truly human Christ can heal human nature from inside it.",
+    "impact": "That logic sits behind the fourth-century battles over the full divinity and full humanity of Christ."
   },
   {
     "person_id": "basil-of-caesarea",
+    "title": "Basil on fruit and good works",
     "text": "A tree is known by its fruit; a man by his deeds. A good deed is never lost.",
-    "source": "Letter 92"
+    "source": "Letter 92",
+    "context": "Basil's theology is never far from moral practice. The test of a life is the fruit it bears in concrete deeds.",
+    "impact": "It captures the pastoral side of Basil: doctrine, charity, and discipline belong together."
   },
   {
     "person_id": "gregory-of-nazianzus",
+    "title": "Gregory on what Christ had to assume",
     "text": "What has not been assumed has not been healed; it is what is united to his divinity that is saved.",
-    "source": "Epistle 101 to Cledonius"
+    "source": "Epistle 101 to Cledonius",
+    "context": "Gregory is answering the claim that Christ did not have a full human mind. His reply is simple: anything Christ did not take on, he did not heal.",
+    "impact": "This became a decisive line in later Christology and helped secure the insistence that Christ is fully human."
   },
   {
     "person_id": "gregory-of-nyssa",
+    "title": "Gregory of Nyssa on wonder beyond concepts",
     "text": "Concepts create idols; only wonder grasps anything.",
-    "source": "Life of Moses 2.165, paraphrase"
+    "source": "Life of Moses 2.165, paraphrase",
+    "context": "Gregory is pushing readers beyond the idea that God can be captured by mental definitions. True knowledge of God includes reverence before mystery.",
+    "impact": "The line points toward apophatic theology: knowing God also means knowing the limits of our concepts."
   },
   {
     "person_id": "john-chrysostom",
+    "title": "Chrysostom on Christ at the door",
     "text": "If you cannot find Christ in the beggar at the church door, you will not find him in the chalice.",
-    "source": "Homilies on Matthew 50.3, paraphrase"
+    "source": "Homilies on Matthew 50.3, paraphrase",
+    "context": "Chrysostom is attacking a split between worship and mercy. Reverence for Christ in the Eucharist must show up as care for the poor.",
+    "impact": "It is one of the sharpest patristic links between liturgy and almsgiving."
   },
   {
     "person_id": "john-chrysostom",
+    "title": "Chrysostom's last words in exile",
     "text": "Glory to God for all things.",
-    "source": "Final words, in exile, 14 September 407"
+    "source": "Final words, in exile, 14 September 407",
+    "context": "Chrysostom dies after imperial exile and brutal travel. The tradition remembers his final words as praise rather than bitterness.",
+    "impact": "The phrase became a model of doxology under pressure, especially in Eastern Christian memory."
   },
   {
     "person_id": "augustine-of-hippo",
+    "title": "Augustine on the restless heart",
     "text": "You have made us for yourself, O Lord, and our heart is restless until it rests in you.",
-    "source": "Confessions 1.1.1"
+    "source": "Confessions 1.1.1",
+    "context": "Augustine opens the Confessions by naming the ache that drives his whole story. Human desire keeps moving until it finds its proper rest in God.",
+    "impact": "It is probably Augustine's most famous sentence because it turns autobiography into a diagnosis of the human condition."
   },
   {
     "person_id": "augustine-of-hippo",
+    "title": "Augustine on love found late",
     "text": "Late have I loved you, beauty so old and so new; late have I loved you.",
-    "source": "Confessions 10.27.38"
+    "source": "Confessions 10.27.38",
+    "context": "Augustine is looking back on years of searching in the wrong places. He realizes that God was not absent; Augustine was turned away.",
+    "impact": "The line gives Christian conversion a vocabulary of desire, regret, and discovered beauty."
   },
   {
     "person_id": "augustine-of-hippo",
+    "title": "Augustine on rightly ordered love",
     "text": "Love, and do what you will.",
-    "source": "Homilies on the First Epistle of John 7.8"
+    "source": "Homilies on the First Epistle of John 7.8",
+    "context": "Augustine is not saying desire excuses anything. He means that if love is truly ordered toward God and neighbor, action will follow the right shape.",
+    "impact": "It became a compressed Augustinian account of Christian ethics: the root of action matters."
   },
   {
     "person_id": "jerome-of-stridon",
+    "title": "Jerome on Scripture and Christ",
     "text": "Ignorance of the Scriptures is ignorance of Christ.",
-    "source": "Commentary on Isaiah, prologue"
+    "source": "Commentary on Isaiah, prologue",
+    "context": "Jerome is defending serious study of Scripture. To know Christ, Christians must know the books that bear witness to him.",
+    "impact": "The line still anchors Christian arguments for biblical literacy and careful exegesis."
   },
   {
     "person_id": "ambrose-of-milan",
+    "title": "Ambrose on local custom",
     "text": "When in Rome, do as the Romans do.",
-    "source": "attributed via Augustine, Letter 54.2"
+    "source": "attributed via Augustine, Letter 54.2",
+    "context": "Augustine reports Ambrose's practical advice about differing local church customs. Not every difference in practice needs to become a fight.",
+    "impact": "The maxim became a lasting rule of pastoral flexibility in matters that are not essential doctrine."
   },
   {
     "person_id": "pope-leo-i",
+    "title": "Leo the Great on Christian dignity",
     "text": "Christian, recognize your dignity, and becoming a partner in the divine nature, refuse to return to the old baseness by degenerate conduct.",
-    "source": "Sermon 21 (On the Nativity) 3"
+    "source": "Sermon 21 (On the Nativity) 3",
+    "context": "Leo is preaching at Christmas. Because the Son has taken human nature, Christians must live in a way that fits their restored dignity.",
+    "impact": "The line joins incarnation and ethics: what Christ became changes how Christians live."
   },
   {
     "person_id": "benedict-of-nursia",
+    "title": "Benedict on listening with the heart",
     "text": "Listen, my son, to the master's instructions, and incline the ear of your heart.",
-    "source": "Rule of Benedict, prologue"
+    "source": "Rule of Benedict, prologue",
+    "context": "Benedict opens his Rule with the posture required for monastic life: listening before acting, obedience before self-assertion.",
+    "impact": "The line set the tone for Western monasticism as a school of attentive, ordered discipleship."
   },
   {
     "person_id": "benedict-of-nursia",
+    "title": "Benedict on prayer and work",
     "text": "Ora et labora — pray and work.",
-    "source": "Rule of Benedict, summary maxim"
+    "source": "Rule of Benedict, summary maxim",
+    "context": "This is a later summary of Benedictine life rather than a direct line from the Rule. It captures the rhythm of worship, labor, reading, and community discipline.",
+    "impact": "The phrase became the popular shorthand for Benedictine spirituality."
   },
   {
     "person_id": "maximus-the-confessor",
+    "title": "Maximus on theology that acts",
     "text": "Theology without action is the theology of demons.",
-    "source": "attributed; cf. Centuries on Charity"
+    "source": "attributed; cf. Centuries on Charity",
+    "context": "The saying reflects Maximus's insistence that knowledge of God and purification of life belong together. Correct ideas without love do not make a saint.",
+    "impact": "It is a severe patristic warning against treating theology as detached cleverness."
   },
   {
     "person_id": "john-of-damascus",
+    "title": "John of Damascus on matter and icons",
     "text": "I do not worship matter; I worship the God of matter, who became matter for my sake.",
-    "source": "On the Divine Images 1.16"
+    "source": "On the Divine Images 1.16",
+    "context": "John is defending icons during the iconoclast controversy. Because God the Son truly became visible in matter, painted images can bear witness without becoming idols.",
+    "impact": "The line became a classic defense of Christian icon veneration rooted in the incarnation."
   },
   {
     "person_id": "anthony-the-great",
+    "title": "Anthony on love beyond fear",
     "text": "I no longer fear God; I love him. For love casts out fear.",
-    "source": "Apophthegmata Patrum, Anthony 32"
+    "source": "Apophthegmata Patrum, Anthony 32",
+    "context": "Anthony is describing mature holiness. The goal is not servile terror but a love that has been purified over time.",
+    "impact": "The saying became a desert-father summary of spiritual growth from fear toward love."
   },
   {
     "person_id": "ephrem-the-syrian",
+    "title": "Ephrem on tears and praise",
     "text": "If sinners would only weep for what they have done, they would teach the angels how to praise.",
-    "source": "Hymns on Paradise 7.5, paraphrase"
+    "source": "Hymns on Paradise 7.5, paraphrase",
+    "context": "Ephrem's poetry often turns repentance into worship. Tears are not mere shame; they become a form of praise when they return the sinner to God.",
+    "impact": "The line shows the Syriac tradition's gift for making penitence lyrical rather than merely legal."
   },
   {
     "person_id": "justin-martyr",
+    "title": "Justin Martyr on truth outside the Church",
     "text": "Whatever has been said well by anyone belongs to us Christians.",
-    "source": "Second Apology 13"
+    "source": "Second Apology 13",
+    "context": "Justin is arguing that the divine Logos has left traces of truth even among pagan philosophers. Christians can recognize truth without surrendering the gospel.",
+    "impact": "This became a foundational Christian argument for using philosophy, literature, and learning without treating them as ultimate."
   },
   {
     "person_id": "clement-of-alexandria",
+    "title": "Clement on hope and discovery",
     "text": "If you do not hope, you will not find what is beyond your hopes.",
-    "source": "Stromata 2.4, paraphrase of Heraclitus"
+    "source": "Stromata 2.4, paraphrase of Heraclitus",
+    "context": "Clement borrows and reframes a philosophical saying. The search for truth requires a hope large enough to look beyond what is already familiar.",
+    "impact": "It fits Clement's larger project of using Greek learning as a servant of Christian wisdom."
   },
   {
     "person_id": "gregory-the-great",
+    "title": "Gregory the Great on Scripture growing with us",
     "text": "Scripture grows with its readers.",
-    "source": "Moralia in Job 20.1, paraphrase"
+    "source": "Moralia in Job 20.1, paraphrase",
+    "context": "Gregory is describing the depth of biblical interpretation. Scripture does not change, but the reader's capacity to see its meaning deepens over time.",
+    "impact": "The line became a compact account of spiritual reading: the text keeps opening as the reader matures."
   }
 ]
