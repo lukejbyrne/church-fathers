@@ -5,11 +5,20 @@ import { dateRange } from "@/lib/dates";
 import ShareBar from "@/components/ShareBar";
 import BookShelf from "@/components/BookShelf";
 import { getRecommendedBooks } from "@/lib/books";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Schisms",
   description:
     "The unhealed and healed splits of the patristic age — Judaizers to the Great Schism. The arguments that didn't get resolved hardened into divisions, some still in effect 1,500 years later.",
+  alternates: { canonical: canonicalUrl("/schisms") },
+  openGraph: {
+    title: "Schisms",
+    description:
+      "The unhealed and healed splits of the patristic age — Judaizers to the Great Schism. The arguments that didn't get resolved hardened into divisions, some still in effect 1,500 years later.",
+    url: canonicalUrl("/schisms"),
+    type: "article",
+  },
 };
 
 type OutcomeKind = "resolved" | "persistent" | "ongoing";

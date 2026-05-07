@@ -10,10 +10,17 @@ import { isoDate, parseIsoDate, pickContent } from "@/lib/picker";
 import { renderEmail } from "@/lib/email-template";
 import { buildExtras, fatherContent } from "@/lib/email-helpers";
 import Link from "next/link";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patristic.io";
+import type { Metadata } from "next";
+import { canonicalUrl, SITE_URL } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: "Email preview",
+  description: "Internal Patristic Lineage newsletter preview.",
+  alternates: { canonical: canonicalUrl("/email-preview") },
+  robots: { index: false, follow: false },
+};
 
 export default async function EmailPreview({
   searchParams,

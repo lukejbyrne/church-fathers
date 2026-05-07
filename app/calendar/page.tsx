@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { pickContent, isoDate, type Content } from "@/lib/picker";
 import { bookDisplayTitle, getBookForContent, type ResolvedBookRecommendation } from "@/lib/books";
+import { canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -9,6 +10,14 @@ export const metadata: Metadata = {
   title: "Calendar",
   description:
     "What lands in your inbox each day — feast days, council anniversaries, schism dates, era spotlights, and primary-source quotes across the patristic year.",
+  alternates: { canonical: canonicalUrl("/calendar") },
+  openGraph: {
+    title: "Calendar",
+    description:
+      "What lands in your inbox each day — feast days, council anniversaries, schism dates, era spotlights, and primary-source quotes across the patristic year.",
+    url: canonicalUrl("/calendar"),
+    type: "website",
+  },
 };
 
 const MONTH_NAMES = [

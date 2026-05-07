@@ -8,6 +8,7 @@ import BookFeature from "@/components/BookFeature";
 import { getBookForContent } from "@/lib/books";
 import { eraForTraditionStatus } from "@/lib/eras";
 import { quoteIssueTitle, quotePreviewText } from "@/lib/quote-copy";
+import { canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -46,7 +47,9 @@ export async function generateMetadata({
   searchParams: Promise<{ d?: string }>;
 }): Promise<Metadata> {
   const { d } = await searchParams;
-  const date = parseIsoDate(d) ?? new Date();
+  const requestedDate = parseIsoDate(d);
+  const hasDateParam = Boolean(d);
+  const date = requestedDate ?? new Date();
   const c = pickContent(date);
   const title =
     c.type === "quote"
@@ -66,7 +69,20 @@ export async function generateMetadata({
           : c.type === "quote"
             ? quotePreviewText(c.quote, c.person)
             : eraForTraditionStatus(c.era).blurb;
-  return { title: `Today: ${title}`, description: desc };
+  const pageTitle = `Today: ${title}`;
+  const url = requestedDate ? canonicalUrl(`/today?d=${isoDate(requestedDate)}`) : canonicalUrl("/today");
+  return {
+    title: pageTitle,
+    description: desc,
+    alternates: { canonical: url },
+    robots: hasDateParam ? { index: false, follow: true } : undefined,
+    openGraph: {
+      title: pageTitle,
+      description: desc,
+      url,
+      type: "article",
+    },
+  };
 }
 
 function formatLongDate(date: Date): string {

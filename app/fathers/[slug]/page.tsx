@@ -11,6 +11,7 @@ import ShareBar from "@/components/ShareBar";
 import { dateRange, bornDisplay, diedDisplay } from "@/lib/dates";
 import BookShelf from "@/components/BookShelf";
 import { getBookForPerson } from "@/lib/books";
+import { canonicalUrl } from "@/lib/seo";
 
 const ALL_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
 
@@ -118,9 +119,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const p = getPerson(slug);
   if (!p) return {};
+  const url = canonicalUrl(`/fathers/${p.id}`);
   return {
     title: `${p.name} — Church Fathers`,
     description: p.short_bio,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${p.name} — Church Fathers`,
+      description: p.short_bio,
+      url,
+      type: "article",
+    },
   };
 }
 
@@ -147,7 +156,7 @@ export default async function FatherPage({
   const ldPerson = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": `#${person.id}`,
+    "@id": `${canonicalUrl(`/fathers/${person.id}`)}#person`,
     name: person.name,
     alternateName: person.alt_names?.length ? person.alt_names : undefined,
     description: person.short_bio,
@@ -156,6 +165,7 @@ export default async function FatherPage({
     birthPlace: person.birth_place || undefined,
     deathPlace: person.death_place || undefined,
     jobTitle: person.role,
+    mainEntityOfPage: canonicalUrl(`/fathers/${person.id}`),
     sameAs: sameAs.length ? sameAs : undefined,
     citation: person.citations.map((c) => c.source),
   };

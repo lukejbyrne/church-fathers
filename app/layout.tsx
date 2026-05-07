@@ -2,11 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { AnalyticsBeacon } from "@/components/AnalyticsBeacon";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patristic.io";
-const SITE_NAME = "Patristic Lineage";
-const SITE_DESC =
-  "Trace how Christianity was handed down from Jesus to the early Church Fathers through a sourced transmission graph, AD 30 to 750.";
+import { SITE_DESC, SITE_NAME, SITE_URL } from "@/lib/seo";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -24,7 +20,6 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description: SITE_DESC,
   },
-  alternates: { canonical: SITE_URL },
 };
 
 const ldGraph = {

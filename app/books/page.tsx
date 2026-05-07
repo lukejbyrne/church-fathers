@@ -3,11 +3,20 @@ import type { Metadata } from "next";
 import BookShelf from "@/components/BookShelf";
 import { getRecommendedBooks } from "@/lib/books";
 import { ERAS_DATA, type EraSlug } from "@/lib/eras";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Recommended books",
   description:
     "A practical reading path through the Church Fathers: starter books, era-by-era recommendations, and controversy-focused texts.",
+  alternates: { canonical: canonicalUrl("/books") },
+  openGraph: {
+    title: "Recommended books",
+    description:
+      "A practical reading path through the Church Fathers: starter books, era-by-era recommendations, and controversy-focused texts.",
+    url: canonicalUrl("/books"),
+    type: "article",
+  },
 };
 
 const ERA_ORDER: EraSlug[] = [

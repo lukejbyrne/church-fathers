@@ -8,6 +8,7 @@ import { ERAS_DATA, type EraSlug, type EraDef, inEra, sortKey } from "@/lib/eras
 import ShareBar from "@/components/ShareBar";
 import BookShelf from "@/components/BookShelf";
 import { getRecommendedBooks } from "@/lib/books";
+import { canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -23,9 +24,17 @@ export async function generateMetadata({
   const { era: slug } = await params;
   const era = ERAS_DATA[slug as EraSlug];
   if (!era) return { title: "Era not found" };
+  const url = canonicalUrl(`/eras/${slug}`);
   return {
     title: `${era.label} (${era.yearLabel})`,
     description: era.blurb,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${era.label} (${era.yearLabel})`,
+      description: era.blurb,
+      url,
+      type: "article",
+    },
   };
 }
 
