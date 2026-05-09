@@ -31,6 +31,8 @@ export function GET() {
   lines.push(`- [Schisms](${base}/schisms): every major split of the patristic age (Judaizers through 1054), with the question, what was decided, and who was involved — color-coded by whether the schism was resolved, lingered, or remains in effect.`);
   lines.push(`- [Questions](${base}/questions): guided, sourced answers to common early Church searches, each tied back to figures and relationships in the dataset.`);
   lines.push(`- [Books](${base}/books): recommended reading path through the Fathers, grouped by first reads, era, and controversy.`);
+  lines.push(`- [Resources](${base}/resources): free Church Fathers resources for study and teaching, including beginner routes, bishop lists, question guides, calendar routes, and support links.`);
+  lines.push(`- [Support and sponsorship](${base}/study-packs): support page for maintaining the free Church Fathers graph, source checks, existing pages, and visual explanations.`);
   lines.push(`- [Start here](${base}/start-here): plain-English introduction to the Fathers, the eras, and the terminology.`);
   lines.push(`- [Directory](${base}/directory): searchable index of every figure.`);
   lines.push(`- [Methodology](${base}/about): how relationships are sourced and graded; explains apostolic-succession-vs-transmission distinction.`);

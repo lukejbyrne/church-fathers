@@ -26,7 +26,7 @@ export default function SubscribeForm({
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, attribution: getAttribution() }),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || !data.ok) {
@@ -130,4 +130,19 @@ export default function SubscribeForm({
       )}
     </section>
   );
+}
+
+function getAttribution() {
+  if (typeof window === "undefined") return { source: "web" };
+  const params = new URLSearchParams(window.location.search);
+  return {
+    source: params.get("utm_source") ?? "web",
+    landing_path: `${window.location.pathname}${window.location.search}`,
+    referrer: document.referrer || undefined,
+    utm_source: params.get("utm_source") || undefined,
+    utm_medium: params.get("utm_medium") || undefined,
+    utm_campaign: params.get("utm_campaign") || undefined,
+    utm_term: params.get("utm_term") || undefined,
+    utm_content: params.get("utm_content") || undefined,
+  };
 }

@@ -33,8 +33,19 @@ async function pushToMailerLite(email: string): Promise<void> {
   }
 }
 
+type SubscribeAttribution = {
+  source?: string;
+  landing_path?: string;
+  referrer?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
+};
+
 export async function POST(req: Request) {
-  let payload: { email?: string };
+  let payload: { email?: string; attribution?: SubscribeAttribution };
   try {
     payload = await req.json();
   } catch {
@@ -46,7 +57,8 @@ export async function POST(req: Request) {
     return Response.json({ ok: false, error: "Invalid email" }, { status: 400 });
   }
 
-  const result = await addSubscriber(email, "web");
+  const attribution = payload.attribution ?? { source: "web" };
+  const result = await addSubscriber(email, attribution);
 
   // Always push to MailerLite (idempotent), even if Blobs reported "already".
   await pushToMailerLite(email.toLowerCase());

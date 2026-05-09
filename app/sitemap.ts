@@ -27,6 +27,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/schisms`, priority: 0.8 },
     { url: `${base}/questions`, priority: 0.9 },
     { url: `${base}/books`, priority: 0.85 },
+    { url: `${base}/resources`, priority: 0.85 },
+    { url: `${base}/study-packs`, priority: 0.8 },
     { url: `${base}/directory`, priority: 0.8 },
     { url: `${base}/about`, priority: 0.6 },
     ...eras.map((e) => ({ url: `${base}/eras/${e}`, priority: 0.7 })),

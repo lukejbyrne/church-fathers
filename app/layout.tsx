@@ -109,6 +109,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   <Link href="/" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Lineage</Link>
                   <Link href="/questions" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Questions</Link>
                   <Link href="/books" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Books</Link>
+                  <Link href="/resources" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Resources</Link>
+                  <Link href="/study-packs" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Sponsor</Link>
                   <Link href="/map" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Map</Link>
                   <Link href="/calendar" className="block px-4 py-1.5 text-sm hover:bg-ink/5">Calendar</Link>
 
@@ -155,6 +157,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <Link href="/" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Lineage</Link>
                     <Link href="/questions" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Questions</Link>
                     <Link href="/books" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Books</Link>
+                    <Link href="/resources" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Resources</Link>
+                    <Link href="/study-packs" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Sponsor</Link>
                     <Link href="/map" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Map</Link>
                     <Link href="/calendar" className="block px-3 py-1.5 text-sm hover:bg-ink/5">Calendar</Link>
                   </div>
@@ -253,11 +257,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {" · "}
             <a href="/books" className="hover:text-accent">Books</a>
             {" · "}
+            <a href="/resources" className="hover:text-accent">Resources</a>
+            {" · "}
+            <a href="/study-packs" className="hover:text-accent">Sponsor</a>
+            {" · "}
             <a href="/api/people.json" className="hover:text-accent">people.json</a>
             {" · "}
             <a href="/api/relationships.json" className="hover:text-accent">relationships.json</a>
             {" · "}
             <a href="/llms.txt" className="hover:text-accent">llms.txt</a>
+            {" · "}
+            <a href="https://www.buymeacoffee.com/lukebyrne" className="hover:text-accent">Donate</a>
           </div>
           <div className="mt-2 text-ink/40 italic">
             As an Amazon Associate we earn from qualifying purchases.

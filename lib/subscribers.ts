@@ -9,7 +9,18 @@ import { getStore, type Store } from "@netlify/blobs";
 export type Subscriber = {
   email: string;
   subscribed_at: string; // ISO timestamp
+  source?: string | SubscriberAttribution;
+};
+
+export type SubscriberAttribution = {
   source?: string;
+  landing_path?: string;
+  referrer?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_term?: string;
+  utm_content?: string;
 };
 
 const STORE_NAME = "subscribers";
@@ -37,7 +48,7 @@ function keyFor(email: string): string {
 
 export async function addSubscriber(
   email: string,
-  source?: string
+  source?: string | SubscriberAttribution
 ): Promise<{ ok: boolean; already?: boolean; persisted: boolean }> {
   const s = store();
   const key = keyFor(email);

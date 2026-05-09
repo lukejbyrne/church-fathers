@@ -1,0 +1,265 @@
+openapi: 3.1.0
+info:
+  title: Patristic.io API
+  version: "1.0.0"
+  summary: Public JSON API for the Patristic.io directory of early Christian figures.
+  description: |
+    The **Patristic.io API** powers the daily "Father of the Day" feature and the
+    newsletter signup on [patristic.io](https://patristic.io).
+
+    The API is read-only except for the subscription endpoint, requires no
+    authentication, and returns JSON. All dates are ISO-8601 (`YYYY-MM-DD`),
+    and the daily figure is selected by a deterministic, date-seeded function
+    so the same calendar day always returns the same person.
+  contact:
+    name: Patristic.io
+    url: https://patristic.io
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+servers:
+  - url: https://patristic.io
+    description: Production
+  - url: http://localhost:3000
+    description: Local development
+tags:
+  - name: Daily
+    description: Father of the Day endpoints — deterministic by date.
+  - name: Newsletter
+    description: Email subscription.
+paths:
+  /api/today:
+    get:
+      tags: [Daily]
+      summary: Get the Father of the Day
+      description: |
+        Returns the figure assigned to a given calendar date. If `d` is omitted,
+        today's date (in UTC) is used. The selection is deterministic — the same
+        date always returns the same person — so this endpoint is safe to cache
+        and to pre-render months in advance.
+      operationId: getFatherOfTheDay
+      parameters:
+        - name: d
+          in: query
+          required: false
+          description: ISO-8601 date (`YYYY-MM-DD`). Defaults to today (UTC).
+          schema:
+            type: string
+            format: date
+            example: "2026-05-05"
+      responses:
+        "200":
+          description: The figure for the requested date.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/FatherOfTheDay"
+              examples:
+                today:
+                  summary: Augustine of Hippo
+                  value:
+                    date: "2026-05-05"
+                    person:
+                      id: augustine-of-hippo
+                      name: Augustine of Hippo
+                      born: 354
+                      died: 430
+                      era: nicene
+                      short_bio: "Bishop of Hippo and the most influential Latin Father. Author of Confessions, City of God, On the Trinity, and the anti-Pelagian works."
+                      url: https://patristic.io/people/augustine-of-hippo
+                    next_date: "2026-05-06"
+        "400":
+          description: The `d` parameter could not be parsed as an ISO-8601 date.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                error: invalid_date
+                message: "`d` must be in YYYY-MM-DD format"
+  /api/subscribe:
+    post:
+      tags: [Newsletter]
+      summary: Subscribe to the Father of the Day newsletter
+      description: |
+        Adds an email address to the daily newsletter list. The endpoint is
+        idempotent — submitting an already-subscribed address returns `200` with
+        `{ ok: true, already_subscribed: true }`.
+      operationId: subscribe
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SubscribeRequest"
+            example:
+              email: reader@example.com
+      responses:
+        "200":
+          description: Subscription accepted.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SubscribeResponse"
+              examples:
+                new:
+                  summary: New subscriber
+                  value:
+                    ok: true
+                    already_subscribed: false
+                existing:
+                  summary: Already subscribed
+                  value:
+                    ok: true
+                    already_subscribed: true
+        "400":
+          description: Malformed body or invalid email.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                error: invalid_email
+                message: "`email` is required and must be a valid address"
+        "429":
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                error: rate_limited
+                message: Too many requests. Try again later.
+  /api/people/{id}:
+    get:
+      tags: [Daily]
+      summary: Look up a single figure by slug
+      operationId: getPerson
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: URL slug of the figure (e.g. `augustine-of-hippo`).
+          schema:
+            type: string
+            example: augustine-of-hippo
+      responses:
+        "200":
+          description: The figure.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Person"
+        "404":
+          description: No figure with that slug.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+              example:
+                error: not_found
+                message: No person matches that id.
+components:
+  schemas:
+    Person:
+      type: object
+      required: [id, name, era, short_bio]
+      properties:
+        id:
+          type: string
+          description: URL-safe slug, unique across the directory.
+          example: augustine-of-hippo
+        name:
+          type: string
+          example: Augustine of Hippo
+        alt_names:
+          type: array
+          items:
+            type: string
+          example: ["Aurelius Augustinus"]
+        born:
+          type: integer
+          description: Year of birth. Negative values indicate BC. May be `null` if unknown.
+          nullable: true
+          example: 354
+        died:
+          type: integer
+          nullable: true
+          example: 430
+        era:
+          type: string
+          enum: [apostolic, ante-nicene, nicene, post-nicene, desert-monastics, eastern-fathers, women-figures]
+          example: nicene
+        region:
+          type: string
+          nullable: true
+          example: north-africa
+        role:
+          type: array
+          items:
+            type: string
+            enum: [apostle, bishop, theologian, martyr, monastic, layman]
+          example: [bishop, theologian]
+        tradition_status:
+          type: string
+          nullable: true
+          enum: [apostle, apostolic-father, church-father, doctor, heretic]
+          example: doctor
+        significance:
+          type: integer
+          minimum: 0
+          maximum: 4
+          description: Editorial significance score (0 minor → 4 foundational).
+          example: 4
+        short_bio:
+          type: string
+          example: "Bishop of Hippo and the most influential Latin Father."
+        url:
+          type: string
+          format: uri
+          example: https://patristic.io/people/augustine-of-hippo
+    FatherOfTheDay:
+      type: object
+      required: [date, person, next_date]
+      properties:
+        date:
+          type: string
+          format: date
+          example: "2026-05-05"
+        person:
+          $ref: "#/components/schemas/Person"
+        next_date:
+          type: string
+          format: date
+          description: The date the next figure rotates in.
+          example: "2026-05-06"
+    SubscribeRequest:
+      type: object
+      required: [email]
+      properties:
+        email:
+          type: string
+          format: email
+          example: reader@example.com
+    SubscribeResponse:
+      type: object
+      required: [ok]
+      properties:
+        ok:
+          type: boolean
+          example: true
+        already_subscribed:
+          type: boolean
+          example: false
+    Error:
+      type: object
+      required: [error, message]
+      properties:
+        error:
+          type: string
+          description: Stable, machine-readable error code.
+          example: invalid_email
+        message:
+          type: string
+          description: Human-readable explanation.
+          example: "`email` is required and must be a valid address"

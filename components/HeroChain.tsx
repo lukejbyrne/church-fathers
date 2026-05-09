@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getPeople, getPerson } from "@/lib/data";
+import { getPeople, getPerson, getRelationships } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
 import SubscribeForm from "@/components/SubscribeForm";
 
@@ -16,6 +16,8 @@ const ANCHORS = [
 
 export default function HeroChain() {
   const totalPeople = getPeople().length;
+  const relationships = getRelationships();
+  const documentedCount = relationships.filter((r) => r.strength === "documented").length;
   const figures = ANCHORS.map((a) => ({
     person: getPerson(a.id),
     era: a.era,
@@ -34,6 +36,14 @@ export default function HeroChain() {
           Trace how Christianity was handed down through a sourced graph of
           apostles, bishops, theologians, and martyrs. Every link is tagged
           documented, tradition, or disputed.
+        </p>
+        <p className="text-xs text-ink/50 mt-3">
+          {totalPeople} figures · {relationships.length} relationships · {documentedCount} documented links.
+          {" "}
+          <Link href="/about" className="underline decoration-ink/20 underline-offset-4 hover:text-accent">
+            Read the methodology
+          </Link>
+          .
         </p>
 
         <div className="mt-8 grid sm:grid-cols-3 gap-3 max-w-4xl mx-auto text-left">
@@ -76,6 +86,18 @@ export default function HeroChain() {
           <SubscribeForm variant="compact" />
           <p className="text-[12px] text-ink/55 mt-2">
             Get one early Church quote each morning, with historical context in plain English.
+            {" "}
+            <Link href="/today" className="underline decoration-ink/20 underline-offset-4 hover:text-accent">
+              See today's quote
+            </Link>
+            {" · "}
+            <a
+              href="https://www.buymeacoffee.com/lukebyrne"
+              className="underline decoration-ink/20 underline-offset-4 hover:text-accent"
+            >
+              Support more source work
+            </a>
+            .
           </p>
         </div>
       </div>
