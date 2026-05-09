@@ -6,9 +6,10 @@
 // One shell, six body variants — one per Content type from lib/picker.ts.
 
 import type { Content } from "./picker";
+import type { Person, TraditionStatus } from "./schema";
 import { eraForTraditionStatus } from "./eras";
 import { quoteIssueTitle, quotePreviewText } from "./quote-copy";
-import type { Person } from "./schema";
+import { recommendedWorksForEra, recommendedWorksForPerson, type RecommendedWork } from "./recommendations";
 
 export type EmailChainStep = {
   id: string;
@@ -52,6 +53,16 @@ export type RelatedFigure = {
   short_bio?: string;
 };
 
+export type EmailImage = {
+  src: string;
+  alt: string;
+  caption?: string;
+  credit?: string;
+  license?: string;
+  source_url?: string;
+  object_position?: string;
+};
+
 export type EmailExtras = {
   // For father / heretic / quote slots: optional enrichment for the chosen person.
   father?: FatherExtras;
@@ -59,6 +70,12 @@ export type EmailExtras = {
   book?: EmailBook | null;
   // For council / schism / heretic / era: related figures with portraits.
   related?: RelatedFigure[];
+  // For council / schism / heretic event slots.
+  eventImage?: EmailImage;
+  // For era spotlight slots.
+  eraImage?: EmailImage;
+  // For non-feast context slots: recommended primary works / editions.
+  recommendedWorks?: RecommendedWork[];
 };
 
 const REGION_LABEL: Record<string, string> = {
@@ -71,6 +88,33 @@ const REGION_LABEL: Record<string, string> = {
   africa: "North Africa",
   east: "Eastern empire",
   other: "Other",
+};
+
+const ERA_LABEL: Record<string, string> = {
+  apostle: "Apostles",
+  "apostolic-father": "Apostolic Fathers",
+  apologist: "Apologists",
+  "ante-nicene": "Ante-Nicene",
+  nicene: "Nicene",
+  "post-nicene": "Post-Nicene",
+  "desert-father": "Desert Fathers",
+};
+
+const ERA_EMAIL_SUMMARY: Record<TraditionStatus, string> = {
+  apostle:
+    "This is the generation that touched Jesus and carried the gospel from Jerusalem into the wider Roman world. The central question is whether Gentiles can enter the people of God without first becoming Jews.",
+  "apostolic-father":
+    "This is the generation that received the faith from the apostles and had to hand it on without them. Its letters show the church taking visible shape: bishops, Eucharist, martyrdom, discipline, and a shared rule of faith.",
+  apologist:
+    "This is when Christians began answering outsiders in public. The apologists argued before emperors, philosophers, Jews, pagans, and heretics that Christianity was not superstition, but the true worship of God.",
+  "ante-nicene":
+    "This is the church before Constantine and Nicaea: growing under persecution, forming its canon and creed, and learning the language it would later need for the Trinity. The period ends with the Arian crisis becoming impossible to avoid.",
+  nicene:
+    "This is the age of the great councils. Nicaea, Constantinople, Ephesus, and Chalcedon gave the church durable language for the Trinity and for Christ as one person in two natures.",
+  "post-nicene":
+    "This is the aftermath of Chalcedon and the collapse of the Western empire. The church had to preserve doctrine, reconcile divided Christians, and carry learning through bishops, monasteries, and pastoral institutions.",
+  "desert-father":
+    "This is where monasticism becomes a major Christian vocation. After persecution waned, the desert became the place where Christians fought sin, desire, distraction, and despair with prayer, fasting, silence, and spiritual fatherhood.",
 };
 
 const MONTH_NAMES = [
@@ -140,9 +184,10 @@ function feastLine(p: Person): string {
 function renderQuickFacts(p: Person): string {
   const rows: Array<[string, string]> = [];
   if (p.born != null || p.died != null) rows.push(["Lifespan", formatLifeRange(p.born, p.died)]);
+  if (p.tradition_status) rows.push(["Era", ERA_LABEL[p.tradition_status] ?? p.tradition_status]);
   if (p.birth_place) rows.push(["Born in", p.birth_place]);
   if (p.see) rows.push(["See", p.see]);
-  if (p.region) rows.push(["Region", REGION_LABEL[p.region] ?? p.region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())]);
+  if (p.region) rows.push(["Region", p.region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())]);
   if (rows.length === 0) return "";
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;background:#1f1a1308;border:1px solid #1f1a1318;border-radius:6px;">
     ${rows
@@ -282,11 +327,45 @@ function renderBookRecommendation(
   </table>`;
 }
 
+function renderRecommendedWorks(works: RecommendedWork[] | undefined, title = "Recommended reading"): string {
+  if (!works || works.length === 0) return "";
+  const items = works
+    .slice(0, 4)
+    .map((work) => {
+      const links: string[] = [];
+      if (work.readUrl) {
+        links.push(`<a href="${escapeHtml(work.readUrl)}" style="color:#8b1e2d;text-decoration:none;border-bottom:1px solid #8b1e2d44;">Read online</a>`);
+      }
+      if (work.editionUrl) {
+        links.push(`<a href="${escapeHtml(work.editionUrl)}" style="color:#8b1e2d;text-decoration:none;border-bottom:1px solid #8b1e2d44;">Find an edition</a>`);
+      }
+      return `<tr><td style="padding:12px 0;border-top:1px solid #1f1a1312;">
+        <div style="font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1f1a1370;margin-bottom:4px;">${escapeHtml(work.personName)}</div>
+        <div style="font-family:Georgia,serif;font-size:16px;color:#1f1a13;line-height:1.3;">${escapeHtml(work.title)}${work.year ? ` <span style="font-size:12px;color:#1f1a1370;">· ${work.year}</span>` : ""}</div>
+        ${work.description ? `<div style="font-size:12px;color:#1f1a13a8;line-height:1.5;margin-top:5px;">${escapeHtml(work.description)}</div>` : ""}
+        ${links.length ? `<div style="font-size:12px;margin-top:8px;">${links.join(" &nbsp; ")}</div>` : ""}
+      </td></tr>`;
+    })
+    .join("");
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 0;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;padding:4px 14px;">
+    <tr><td style="padding:10px 0 2px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;">${escapeHtml(title)}</td></tr>
+    ${items}
+  </table>`;
+}
+
 function paragraphsHtml(body: string): string {
   const paras = (() => {
     const fromBlanks = body.split(/\n\n+/).filter((s) => s.trim());
     if (fromBlanks.length > 1) return fromBlanks;
-    const sentences = body.split(/(?<=[.!?])\s+(?=[A-Z])/);
+    const sentences = body.split(/(?<=[.!?])\s+(?=[A-Z])/).reduce<string[]>((acc, sentence) => {
+      const prev = acc[acc.length - 1];
+      if (prev && /\b[A-Z]\.$/.test(prev)) {
+        acc[acc.length - 1] = `${prev} ${sentence}`;
+      } else {
+        acc.push(sentence);
+      }
+      return acc;
+    }, []);
     if (sentences.length <= 2) return [body];
     const chunks: string[] = [];
     for (let i = 0; i < sentences.length; i += 2) chunks.push(sentences.slice(i, i + 2).join(" "));
@@ -301,6 +380,22 @@ function portraitImg(src: string | null | undefined, alt: string, size = 120): s
   return src
     ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" width="${size}" height="${size}" style="border-radius:50%;object-fit:cover;object-position:center 18%;border:1px solid #1f1a1322;display:block;margin:0 auto 18px;" />`
     : `<div style="width:${size}px;height:${size}px;border-radius:50%;background:#1f1a1310;border:1px solid #1f1a1322;margin:0 auto 18px;font-family:Georgia,serif;font-size:${Math.round(size / 3.3)}px;color:#1f1a1340;line-height:${size}px;text-align:center;">${escapeHtml(alt.charAt(0))}</div>`;
+}
+
+function renderContentImage(image: EmailImage | undefined, siteUrl: string): string {
+  if (!image?.src) return "";
+  const src = absoluteUrl(image.src, siteUrl) ?? image.src;
+  const credit = [image.credit, image.license].filter(Boolean).join(" · ");
+  const source = image.source_url
+    ? `<a href="${escapeHtml(image.source_url)}" style="color:#1f1a1370;text-decoration:none;border-bottom:1px solid #1f1a1325;">${escapeHtml(credit || "Source")}</a>`
+    : escapeHtml(credit);
+  const caption = image.caption || credit
+    ? `<div style="padding:7px 2px 0;font-size:11px;line-height:1.4;color:#1f1a1370;">${image.caption ? escapeHtml(image.caption) : ""}${image.caption && credit ? " " : ""}${credit ? source : ""}</div>`
+    : "";
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 22px;"><tr><td>
+    <img src="${escapeHtml(src)}" alt="${escapeHtml(image.alt)}" width="536" style="display:block;width:100%;max-width:536px;max-height:245px;object-fit:cover;object-position:${escapeHtml(image.object_position ?? "center")};border-radius:6px;border:1px solid #1f1a1320;background:#1f1a1308;" />
+    ${caption}
+  </td></tr></table>`;
 }
 
 function relatedGrid(related: RelatedFigure[] | undefined): string {
@@ -362,16 +457,19 @@ function buildFatherBody(content: Extract<Content, { type: "father" }>, siteUrl:
 
 function buildAnniversaryBody(
   kind: "council" | "schism" | "heretic",
-  anniv: { title: string; year: number; blurb: string; citation?: string },
+  anniv: { id?: string; title: string; year: number; blurb: string; citation?: string; key_line?: string; highlights?: string[] },
   related: RelatedFigure[] | undefined,
   siteUrl: string,
   book?: EmailBook | null,
-  heretic?: Person
+  heretic?: Person,
+  eventImage?: EmailImage,
+  recommendedWorks?: RecommendedWork[]
 ): string {
   const accent = kind === "schism" ? "#5a3a3a" : kind === "heretic" ? "#3a3a5a" : "#8b1e2d";
   const eyebrow = kind === "schism" ? "Schism" : kind === "heretic" ? "Condemnation" : "Council";
   const heading = `Today in ${anniv.year}`;
-  const heroImg = heretic ? portraitImg(heretic.image_url, heretic.name, 96) : "";
+  const heroImg = heretic && !eventImage ? portraitImg(heretic.image_url, heretic.name, 96) : "";
+  const eventUrl = anniv.id ? `${siteUrl}/events/${anniv.id}` : `${siteUrl}/schisms`;
   return `
     <tr><td style="padding:0 32px 0;text-align:center;">
       ${heroImg}
@@ -379,32 +477,42 @@ function buildAnniversaryBody(
       <h1 style="margin:0 0 4px;font-family:Georgia,'Times New Roman',serif;font-size:28px;font-weight:normal;color:#1f1a13;line-height:1.2;">${escapeHtml(anniv.title)}</h1>
       <p style="margin:0 0 18px;font-size:13px;color:#1f1a13aa;">${heading}</p>
     </td></tr>
+    <tr><td style="padding:0 32px;">${renderContentImage(eventImage, siteUrl)}</td></tr>
     <tr><td style="padding:0 32px;">
-      <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#1f1a13e0;">${escapeHtml(anniv.blurb)}</p>
+      ${paragraphsHtml(anniv.blurb)}
     </td></tr>
-    <tr><td style="padding:0 32px;">${relatedGrid(related)}</td></tr>
-    <tr><td style="padding:0 32px;">${renderCitation(anniv.citation, "Source")}</td></tr>
+    ${
+      anniv.key_line
+        ? `<tr><td style="padding:0 32px;"><div style="margin:4px 0 22px;border-left:3px solid ${accent}99;padding:8px 14px;background:#1f1a1305;font-family:Georgia,serif;font-size:20px;line-height:1.4;color:#1f1a13;">${escapeHtml(anniv.key_line)}</div></td></tr>`
+        : ""
+    }
+    ${
+      anniv.highlights && anniv.highlights.length > 0
+        ? `<tr><td style="padding:0 32px;"><div style="margin:0 0 22px;"><div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:8px;">Highlights</div>${anniv.highlights
+            .slice(0, 4)
+            .map((item) => `<div style="border-left:2px solid ${accent}66;padding:2px 0 2px 10px;margin:7px 0;font-size:14px;line-height:1.5;color:#1f1a13c8;">${escapeHtml(item)}</div>`)
+            .join("")}</div></td></tr>`
+        : ""
+    }
+    ${
+      related && related.length > 0
+        ? `<tr><td style="padding:0 32px;"><h2 style="margin:8px 0 8px;font-family:Georgia,serif;font-size:18px;font-weight:normal;color:#1f1a13;">People in the story</h2>${relatedGrid(related)}</td></tr>`
+        : ""
+    }
     <tr><td style="padding:0 32px;">${renderBookRecommendation(book)}</td></tr>
+    <tr><td style="padding:0 32px;">${renderRecommendedWorks(recommendedWorks, "Recommended reading")}</td></tr>
+    <tr><td style="padding:0 32px;">${renderCitation(anniv.citation, "Source")}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
-      <a href="${escapeHtml(siteUrl)}/schisms" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Browse the full timeline →</a>
+      <a href="${escapeHtml(eventUrl)}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Open the full event page →</a>
     </td></tr>`;
 }
 
-function buildEraBody(
-  content: Extract<Content, { type: "era" }>,
-  siteUrl: string,
-  book?: EmailBook | null
-): string {
+function buildEraBody(content: Extract<Content, { type: "era" }>, siteUrl: string, extras: EmailExtras): string {
   const eraDef = eraForTraditionStatus(content.era);
   const eraSlug = eraDef.slug;
   const label = eraDef.label;
-  const intro = eraDef.intro[0] ?? eraDef.blurb;
-  const whyRows = eraDef.decided.slice(0, 4).map((item) => `
-    <tr>
-      <td width="18" valign="top" style="padding:4px 8px 4px 0;color:#8b1e2d;font-size:14px;line-height:1.5;">&bull;</td>
-      <td valign="top" style="padding:4px 0;font-size:13px;color:#1f1a13c8;line-height:1.55;">${escapeHtml(item)}</td>
-    </tr>
-  `).join("");
+  const summary = ERA_EMAIL_SUMMARY[content.era];
+  const works = extras.recommendedWorks ?? recommendedWorksForEra(content.era, 4);
   const tiles = content.figures
     .map((p) => {
       const url = `${siteUrl}/fathers/${p.id}`;
@@ -420,36 +528,40 @@ function buildEraBody(
   return `
     <tr><td style="padding:0 32px;text-align:center;">
       <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8b1e2dcc;">This week</p>
-      <h1 style="margin:0 0 4px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;">${escapeHtml(label)}</h1>
-      <p style="margin:0 0 18px;font-size:13px;color:#1f1a13aa;">${escapeHtml(eraDef.yearLabel)} · ${escapeHtml(eraDef.blurb)}</p>
+      <h1 style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;">${escapeHtml(label)}</h1>
+      <p style="margin:0 0 20px;font-size:15px;line-height:1.65;color:#1f1a13c8;text-align:left;">${escapeHtml(summary)}</p>
     </td></tr>
-    <tr><td style="padding:0 32px 4px;">
-      <p style="margin:0 0 16px;font-size:16px;line-height:1.7;color:#1f1a13e0;">${escapeHtml(intro)}</p>
-      ${whyRows ? `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 22px;background:#8b1e2d08;border:1px solid #8b1e2d18;border-radius:6px;padding:12px 14px;">
-        <tr><td colspan="2" style="padding:0 0 6px;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#8b1e2dcc;">Why it matters</td></tr>
-        ${whyRows}
-      </table>` : ""}
-    </td></tr>
+    <tr><td style="padding:0 32px;">${renderContentImage(extras.eraImage, siteUrl)}</td></tr>
+    ${
+      `<tr><td style="padding:0 32px;"><h2 style="margin:4px 0 10px;font-family:Georgia,serif;font-size:18px;font-weight:normal;color:#1f1a13;">Why it matters</h2>${paragraphsHtml(eraDef.intro[0])}</td></tr>`
+    }
+    ${
+      eraDef?.decided.length
+        ? `<tr><td style="padding:0 32px;"><div style="margin:2px 0 22px;"><div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:8px;">What this era gives the church</div>${eraDef.decided
+            .slice(0, 4)
+            .map((item) => `<div style="border-left:2px solid #8b1e2d55;padding:2px 0 2px 10px;margin:7px 0;font-size:14px;line-height:1.5;color:#1f1a13c8;">${escapeHtml(item)}</div>`)
+            .join("")}</div></td></tr>`
+        : ""
+    }
     <tr><td style="padding:0 32px;">
+      <h2 style="margin:0 0 8px;font-family:Georgia,serif;font-size:18px;font-weight:normal;color:#1f1a13;">Four people to know</h2>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;padding:8px;">${rows.join("")}</table>
     </td></tr>
-    <tr><td style="padding:0 32px;">${renderBookRecommendation(book)}</td></tr>
+    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading")}</td></tr>
+    <tr><td style="padding:0 32px;">${renderBookRecommendation(extras.book)}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(siteUrl)}/eras/${eraSlug}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Open the ${escapeHtml(label)} page →</a>
     </td></tr>`;
 }
 
-function buildQuoteBody(
-  content: Extract<Content, { type: "quote" }>,
-  siteUrl: string,
-  book?: EmailBook | null
-): string {
+function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: string, extras: EmailExtras): string {
   const personUrl = `${siteUrl}/fathers/${content.person.id}`;
   const title = quoteIssueTitle(content.quote, content.person);
   const source = `${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}`;
   const context = content.quote.context?.trim();
   const impact = content.quote.impact?.trim();
   const about = firstSentence(content.person.why_matters ?? content.person.short_bio, 300);
+  const works = extras.recommendedWorks ?? recommendedWorksForPerson(content.person, 3);
   const contextBlock = context || impact
     ? `<tr><td style="padding:0 32px 6px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;background:#8b1e2d08;border:1px solid #8b1e2d18;border-radius:6px;">
@@ -481,7 +593,8 @@ function buildQuoteBody(
       </table>
       ${renderQuickFacts(content.person)}
     </td></tr>
-    <tr><td style="padding:0 32px;">${renderBookRecommendation(book)}</td></tr>
+    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading")}</td></tr>
+    <tr><td style="padding:0 32px;">${renderBookRecommendation(extras.book)}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(personUrl)}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Read more about ${escapeHtml(shortName(content.person.name))} →</a>
     </td></tr>`;
@@ -529,6 +642,17 @@ function eyebrowLabel(content: Content): string {
   }
 }
 
+function recommendedWorksText(works: RecommendedWork[] | undefined): string {
+  if (!works || works.length === 0) return "";
+  return `Recommended reading:\n${works
+    .slice(0, 4)
+    .map((work) => {
+      const links = [work.readUrl, work.editionUrl].filter(Boolean).join(" | ");
+      return `- ${work.title} — ${work.personName}${links ? ` (${links})` : ""}`;
+    })
+    .join("\n")}\n\n`;
+}
+
 function plainBookLine(book: EmailBook | null | undefined): string {
   if (!book) return "";
   const links = [
@@ -571,11 +695,14 @@ Unsubscribe: {$unsubscribe}`;
       const a = content.type === "heretic" ? content.anniversary : content.anniversary;
       const title = a ? `${a.title} (${a.year})` : "today's spotlight";
       const blurb = a?.blurb ?? "";
+      const eventUrl = a?.id ? `${siteUrl}/events/${a.id}` : `${siteUrl}/schisms`;
       return `${subject}
 ${title}
 
 ${blurb}
-${plainBookLine(extras.book)}
+
+${a?.key_line ? `${a.key_line}\n\n` : ""}${a?.highlights?.length ? `Highlights:\n${a.highlights.slice(0, 4).map((item) => `- ${item}`).join("\n")}\n\n` : ""}${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
+Open the full event page: ${eventUrl}
 
 —
 Patristic Lineage · ${siteUrl}
@@ -590,6 +717,8 @@ Unsubscribe: {$unsubscribe}`;
 
 This week we focus on the ${label} (${eraDef.yearLabel}).
 
+${ERA_EMAIL_SUMMARY[content.era]}
+
 ${eraDef.blurb}
 
 ${eraDef.intro[0] ?? ""}
@@ -599,13 +728,13 @@ ${why}
 
 Representative figures:
 ${list}
-${plainBookLine(extras.book)}
 
+${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
 —
 Patristic Lineage · ${siteUrl}
 Unsubscribe: {$unsubscribe}`;
     }
-    case "quote":
+    case "quote": {
       return `${subject}
 
 ${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}
@@ -616,12 +745,13 @@ ${content.quote.source}${content.quote.translation ? ` · ${content.quote.transl
 ${content.quote.context ? `Plain English:\n${content.quote.context}\n\n` : ""}${content.quote.impact ? `Why it matters:\n${content.quote.impact}\n\n` : ""}Who said it:
 ${content.person.name} (${formatLifeRange(content.person.born, content.person.died)})
 ${content.person.why_matters ?? content.person.short_bio}
-${plainBookLine(extras.book)}
 
+${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
 Read more about ${shortName(content.person.name)}: ${siteUrl}/fathers/${content.person.id}
 —
 Patristic Lineage · ${siteUrl}
 Unsubscribe: {$unsubscribe}`;
+    }
   }
 }
 
@@ -668,10 +798,10 @@ export function renderEmail(
       body = buildFatherBody(content, siteUrl, extras);
       break;
     case "council":
-      body = buildAnniversaryBody("council", content.anniversary, extras.related, siteUrl, extras.book);
+      body = buildAnniversaryBody("council", content.anniversary, extras.related, siteUrl, extras.book, undefined, extras.eventImage, extras.recommendedWorks);
       break;
     case "schism":
-      body = buildAnniversaryBody("schism", content.anniversary, extras.related, siteUrl, extras.book);
+      body = buildAnniversaryBody("schism", content.anniversary, extras.related, siteUrl, extras.book, undefined, extras.eventImage, extras.recommendedWorks);
       break;
     case "heretic":
       body = buildAnniversaryBody(
@@ -680,14 +810,16 @@ export function renderEmail(
         extras.related,
         siteUrl,
         extras.book,
-        content.person
+        content.person,
+        extras.eventImage,
+        extras.recommendedWorks
       );
       break;
     case "era":
-      body = buildEraBody(content, siteUrl, extras.book);
+      body = buildEraBody(content, siteUrl, extras);
       break;
     case "quote":
-      body = buildQuoteBody(content, siteUrl, extras.book);
+      body = buildQuoteBody(content, siteUrl, extras);
       break;
   }
 

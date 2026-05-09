@@ -63,8 +63,10 @@ export default async function SentArchive() {
             <tbody>
               {records.map((r) => {
                 const link =
-                  (r.type === "father" || r.type === "heretic" || r.type === "quote") && r.primary_id
+                  (r.type === "father" || r.type === "quote") && r.primary_id
                     ? `/fathers/${r.primary_id}`
+                    : (r.type === "council" || r.type === "schism" || r.type === "heretic") && r.primary_id
+                      ? `/events/${r.primary_id}`
                     : `/today?d=${r.date}`;
                 return (
                   <tr key={r.date} className="border-t border-ink/10">

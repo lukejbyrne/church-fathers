@@ -25,6 +25,16 @@ const MONTH_NAMES = [
   "July", "August", "September", "October", "November", "December",
 ];
 
+const ERA_LABEL: Record<string, string> = {
+  apostle: "Apostles",
+  "apostolic-father": "Apostolic Fathers",
+  apologist: "Apologists",
+  "ante-nicene": "Ante-Nicene",
+  nicene: "Nicene",
+  "post-nicene": "Post-Nicene",
+  "desert-father": "Desert Fathers",
+};
+
 const TYPE_STYLE: Record<Content["type"], { label: string; cell: string; dot: string }> = {
   father: {
     label: "Father",
@@ -66,11 +76,11 @@ function titleOf(c: Content): string {
     case "schism":
       return c.anniversary.title;
     case "heretic":
-      return c.person.name;
+      return c.anniversary?.title ?? c.person.name;
     case "era":
-      return `${c.era.replace(/-/g, " ")}`;
+      return ERA_LABEL[c.era] ?? c.era.replace(/-/g, " ");
     case "quote":
-      return `${c.person.name}`;
+      return `Quote: ${c.person.name}`;
   }
 }
 

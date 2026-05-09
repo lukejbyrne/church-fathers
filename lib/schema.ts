@@ -117,6 +117,13 @@ export const Anniversary = z.object({
   year: z.number().int(),
   title: z.string().min(1),
   blurb: z.string().min(1),
+  what_happened: optStr,
+  the_argument: optStr,
+  what_changed: optStr,
+  why_it_matters: optStr,
+  aftermath: optStr,
+  key_line: optStr,
+  highlights: z.array(z.string()).optional(),
   related_person_ids: z.array(z.string()).optional(),
   citation: z.string().optional(),
 });

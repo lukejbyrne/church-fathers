@@ -5,9 +5,14 @@ import { dateRange } from "@/lib/dates";
 import SubscribeForm from "@/components/SubscribeForm";
 import ShareBar from "@/components/ShareBar";
 import BookFeature from "@/components/BookFeature";
+import RecommendedReading from "@/components/RecommendedReading";
 import { getBookForContent } from "@/lib/books";
 import { eraForTraditionStatus } from "@/lib/eras";
+import { eventPath, eventSections, relatedPeople } from "@/lib/events";
+import { personHighlights } from "@/lib/person-highlights";
+import { getEraImage, getEventImage, imageCredit, type ContentImage } from "@/lib/images";
 import { quoteIssueTitle, quotePreviewText } from "@/lib/quote-copy";
+import { recommendedWorksForEra, recommendedWorksForPerson } from "@/lib/recommendations";
 import { canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
@@ -17,28 +22,11 @@ const MONTH = [
   "July", "August", "September", "October", "November", "December",
 ];
 
-const REGION_LABEL: Record<string, string> = {
-  palestine: "Palestine",
-  syria: "Syria",
-  "asia-minor": "Asia Minor",
-  egypt: "Egypt",
-  west: "Roman West",
-  gaul: "Gaul",
-  africa: "North Africa",
-  east: "Eastern empire",
-  other: "Other",
-};
-
 function formatMonthDay(mmdd?: string): string | null {
   if (!mmdd) return null;
   const m = /^(\d{2})-(\d{2})$/.exec(mmdd);
   if (!m) return null;
   return `${Number(m[2])} ${MONTH[Number(m[1]) - 1]}`;
-}
-
-function formatRegion(region?: string): string | null {
-  if (!region) return null;
-  return REGION_LABEL[region] ?? region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export async function generateMetadata({
@@ -91,6 +79,35 @@ function formatLongDate(date: Date): string {
   });
 }
 
+function ContentImageFigure({ image, className = "mb-8" }: { image?: ContentImage; className?: string }) {
+  if (!image) return null;
+  const credit = imageCredit(image);
+  return (
+    <figure className={`${className} overflow-hidden rounded-md border border-ink/10 bg-ink/5`}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="w-full max-h-[360px] object-cover"
+        style={{ objectPosition: image.object_position ?? "center" }}
+      />
+      {(image.caption || credit) ? (
+        <figcaption className="px-3 py-2 text-[11px] text-ink/55">
+          {image.caption}
+          {image.caption && credit ? " " : ""}
+          {image.source_url && credit ? (
+            <a href={image.source_url} target="_blank" rel="noopener noreferrer" className="underline decoration-ink/20 underline-offset-2 hover:text-accent">
+              {credit}
+            </a>
+          ) : (
+            credit
+          )}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
 export default async function TodayPage({
   searchParams,
 }: {
@@ -139,7 +156,7 @@ export default async function TodayPage({
         <AnniversaryView kind={content.type} anniv={content.anniversary} />
       ) : null}
       {content.type === "heretic" ? (
-        <HereticView person={content.person} blurb={content.anniversary?.blurb ?? content.person.short_bio} year={content.anniversary?.year ?? null} />
+        <HereticView person={content.person} anniv={content.anniversary} />
       ) : null}
       {content.type === "era" ? <EraView era={content.era} figures={content.figures} /> : null}
       {content.type === "quote" ? <QuoteView quote={content.quote} person={content.person} /> : null}
@@ -200,6 +217,7 @@ function FatherView({
           : null;
 
   void reason;
+  const highlights = personHighlights(person);
 
   return (
     <>
@@ -226,6 +244,28 @@ function FatherView({
 
       {showShortAsLede ? (
         <p className="text-xl text-ink/75 mb-6 leading-snug">{person.short_bio}</p>
+      ) : null}
+
+      {highlights.length > 0 ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Highlights</h2>
+          <dl className="grid sm:grid-cols-2 gap-4">
+            {highlights.map((item) => (
+              <div key={item.label} className="border-l-2 border-accent/35 pl-3">
+                <dt className="text-[10px] uppercase tracking-wider text-ink/45 mb-1">{item.label}</dt>
+                <dd className="text-ink/85">
+                  {item.href ? (
+                    <Link href={item.href} className="hover:text-accent underline decoration-ink/20 underline-offset-2">
+                      {item.value}
+                    </Link>
+                  ) : (
+                    item.value
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       ) : null}
 
       <div className="prose-like text-lg mb-8">
@@ -289,23 +329,64 @@ function AnniversaryView({
   kind: "council" | "schism";
   anniv: import("@/lib/schema").Anniversary;
 }) {
+  const people = relatedPeople(anniv);
+  const sections = eventSections(anniv);
+  const image = getEventImage(anniv.id);
   return (
     <>
       <header className="mb-8">
         <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">{kind === "schism" ? "Schism" : "Council"} · Today in {anniv.year}</p>
         <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{anniv.title}</h1>
       </header>
-      <p className="text-lg mb-8 leading-relaxed">{anniv.blurb}</p>
-      {anniv.related_person_ids?.length ? (
-        <div className="mb-8">
-          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Figures involved</h2>
-          <ul className="space-y-1">
-            {anniv.related_person_ids.map((id) => (
-              <li key={id}>
-                <Link href={`/fathers/${id}`} className="hover:text-accent">{id.replace(/-/g, " ")}</Link>
-              </li>
+      <ContentImageFigure image={image} />
+      <p className="text-lg mb-6 leading-relaxed">{anniv.blurb}</p>
+      {anniv.key_line ? (
+        <p className="font-serif text-2xl text-ink border-l-4 border-accent/50 pl-4 mb-8">
+          {anniv.key_line}
+        </p>
+      ) : null}
+      {anniv.highlights?.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Highlights</h2>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {anniv.highlights.map((item, i) => (
+              <li key={i} className="border-l-2 border-accent/35 pl-3 text-ink/80">{item}</li>
             ))}
           </ul>
+        </section>
+      ) : null}
+      {sections.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">How it happened</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {sections.slice(0, 4).map((section) => (
+              <div key={section.title} className="border-t border-ink/15 pt-3">
+                <h3 className="font-serif text-lg text-ink mb-1">{section.title}</h3>
+                <p className="text-sm text-ink/75">{section.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+      {people.length ? (
+        <div className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">People in the story</h2>
+          <div className="grid sm:grid-cols-2 gap-3">
+            {people.map((p) => (
+              <Link key={p.id} href={`/fathers/${p.id}`} className="flex gap-3 p-3 border border-ink/15 rounded hover:border-accent transition-colors">
+                {p.image_url ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={p.image_url} alt={p.name} className="w-12 h-12 rounded-full object-cover shrink-0" style={{ objectPosition: "center 8%" }} />
+                ) : (
+                  <span className="w-12 h-12 rounded-full bg-ink/10 shrink-0 flex items-center justify-center font-serif text-ink/50">{p.name.charAt(0)}</span>
+                )}
+                <span>
+                  <span className="block font-serif text-ink">{p.name}</span>
+                  <span className="block text-xs text-ink/60">{p.short_bio}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
       ) : null}
       {anniv.citation ? (
@@ -313,8 +394,8 @@ function AnniversaryView({
           {anniv.citation}
         </blockquote>
       ) : null}
-      <Link href={kind === "schism" ? "/schisms" : "/eras"} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
-        Browse the {kind === "schism" ? "schisms" : "eras"} →
+      <Link href={eventPath(anniv)} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
+        Open the full event page →
       </Link>
     </>
   );
@@ -322,30 +403,53 @@ function AnniversaryView({
 
 function HereticView({
   person,
-  blurb,
-  year,
+  anniv,
 }: {
   person: import("@/lib/schema").Person;
-  blurb: string;
-  year: number | null;
+  anniv?: import("@/lib/schema").Anniversary;
 }) {
+  const blurb = anniv?.blurb ?? person.short_bio;
+  const year = anniv?.year ?? null;
+  const sections = anniv ? eventSections(anniv) : [];
+  const image = getEventImage(anniv?.id);
   return (
     <>
       <header className="mb-8">
         <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">Heresy Condemnation{year ? ` · ${year}` : ""}</p>
-        <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{person.name}</h1>
+        <h1 className="font-serif text-5xl mt-2 mb-2 text-ink">{anniv?.title ?? person.name}</h1>
         <p className="text-ink/60 italic">{person.born ?? "?"}–{person.died ?? "?"}</p>
       </header>
-      {person.image_url ? (
+      <ContentImageFigure image={image} />
+      {!image && person.image_url ? (
         <div className="mb-8 overflow-hidden rounded-lg border border-ink/10 bg-ink/5">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={person.image_url} alt={person.name} className="w-full h-[360px] object-cover" style={{ objectPosition: "center 8%" }} />
         </div>
       ) : null}
       <p className="text-lg mb-8 leading-relaxed">{blurb}</p>
-      <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
-        Open {person.name}'s page →
-      </Link>
+      {sections.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">How it happened</h2>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {sections.slice(0, 4).map((section) => (
+              <div key={section.title} className="border-t border-ink/15 pt-3">
+                <h3 className="font-serif text-lg text-ink mb-1">{section.title}</h3>
+                <p className="text-sm text-ink/75">{section.body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+      <div className="flex flex-wrap gap-3">
+        {anniv ? (
+          <Link href={eventPath(anniv)} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
+            Open the full event page →
+          </Link>
+        ) : null}
+        <Link href={`/fathers/${person.id}`} className="px-4 py-2 border border-ink/30 rounded hover:border-accent hover:text-accent transition-colors text-sm inline-block">
+          Open {person.name}'s page →
+        </Link>
+      </div>
     </>
   );
 }
@@ -360,6 +464,8 @@ function EraView({
   const eraDef = eraForTraditionStatus(era);
   const slug = eraDef.slug;
   const label = eraDef.label;
+  const image = getEraImage(era);
+  const works = recommendedWorksForEra(era, 4);
   return (
     <>
       <header className="mb-8">
@@ -369,25 +475,26 @@ function EraView({
           {eraDef.yearLabel} · {eraDef.blurb}
         </p>
       </header>
-
-      <div className="prose-like text-lg mb-8">
-        <p className="mb-4">{eraDef.intro[0]}</p>
-      </div>
-
-      {eraDef.decided.length > 0 ? (
-        <section className="mb-10 border border-accent/15 bg-accent/5 rounded p-5">
-          <h2 className="text-sm uppercase tracking-widest text-accent/80 mb-3">Why it matters</h2>
-          <ul className="space-y-2 text-ink/80">
-            {eraDef.decided.slice(0, 4).map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="text-accent">·</span>
-                <span>{item}</span>
-              </li>
+      <ContentImageFigure image={image} />
+      <section className="mb-8">
+        <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Why this week matters</h2>
+        <div className="prose-like text-lg">
+          {eraDef.intro.slice(0, 2).map((para, i) => (
+            <p key={i} className="mb-4">{para}</p>
+          ))}
+        </div>
+      </section>
+      {eraDef?.decided.length ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">What this era gives the church</h2>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {eraDef.decided.slice(0, 4).map((item, i) => (
+              <li key={i} className="border-l-2 border-accent/35 pl-3 text-ink/80">{item}</li>
             ))}
           </ul>
         </section>
       ) : null}
-
+      <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Four people to know</h2>
       <div className="grid sm:grid-cols-2 gap-4 mb-10">
         {figures.map((p) => (
           <Link key={p.id} href={`/fathers/${p.id}`} className="flex gap-4 p-4 border border-ink/15 rounded hover:border-accent transition-colors">
@@ -405,6 +512,10 @@ function EraView({
           </Link>
         ))}
       </div>
+      <RecommendedReading
+        works={works}
+        intro="Primary texts and standard starting points tied to this period."
+      />
       <Link href={`/eras/${slug}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
         Open the {label} page →
       </Link>
@@ -420,10 +531,10 @@ function QuoteView({
   person: import("@/lib/schema").Person;
 }) {
   const title = quoteIssueTitle(quote, person);
+  const body = person.why_matters ?? person.short_bio;
+  const works = recommendedWorksForPerson(person, 3);
+  const primaries = person.citations?.filter((c) => c.kind === "primary") ?? [];
   const dr = dateRange(person);
-  const about = person.why_matters ?? person.short_bio;
-  const region = formatRegion(person.region);
-
   return (
     <>
       <header className="mb-8">
@@ -436,7 +547,8 @@ function QuoteView({
       <blockquote className="font-serif text-3xl italic leading-snug text-ink mb-6">
         “{quote.text}”
       </blockquote>
-      <p className="mb-8">— <Link href={`/fathers/${person.id}`} className="hover:text-accent">{person.name}</Link></p>
+      <p className="mb-2">— <Link href={`/fathers/${person.id}`} className="hover:text-accent">{person.name}</Link></p>
+      <p className="text-sm text-ink/60 italic mb-10">{quote.source}{quote.translation ? ` · ${quote.translation}` : ""}</p>
 
       {quote.context || quote.impact ? (
         <section className="mb-10 border border-accent/15 bg-accent/5 rounded p-5">
@@ -455,25 +567,46 @@ function QuoteView({
         </section>
       ) : null}
 
-      <section className="mb-10">
-        <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-4">Who said it</h2>
-        <div className="flex gap-5 items-start">
-          {person.image_url ? (
-            // eslint-disable-next-line @next/next/no-img-element
-            <img src={person.image_url} alt={person.name} className="w-20 h-20 rounded-full object-cover shrink-0 border border-ink/10" style={{ objectPosition: "center 8%" }} />
-          ) : null}
-          <div>
-            <h3 className="font-serif text-2xl text-ink mb-1">{person.name}</h3>
-            <p className="text-sm text-ink/60 mb-3" title={dr.explanation || undefined}>
-              {dr.text}
-              {person.birth_place ? <> · Born in {person.birth_place}</> : null}
-              {region ? <> · {region}</> : null}
-            </p>
-            <p className="leading-relaxed">{about}</p>
-          </div>
+      <section className="mb-8 border border-ink/15 rounded-md bg-ink/5 p-4 sm:flex gap-4">
+        {person.image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={person.image_url} alt={person.name} className="w-20 h-20 rounded-full object-cover shrink-0 mb-3 sm:mb-0 border border-ink/10" style={{ objectPosition: "center 8%" }} />
+        ) : null}
+        <div>
+          <h2 className="font-serif text-xl text-ink mb-1">{person.name}</h2>
+          <p className="text-sm text-ink/55 italic mb-2" title={dr.explanation || undefined}>
+            {dr.text}
+            {person.see ? <> · Bishop of {person.see}</> : null}
+          </p>
+          <p className="text-sm text-ink/75">{person.short_bio}</p>
         </div>
       </section>
 
+      <section className="mb-8">
+        <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Why {person.name.split(" of ")[0]} matters</h2>
+        <div className="prose-like text-lg">
+          {body.split(/\n\n+/).map((para, i) => <p key={i} className="mb-4">{para}</p>)}
+        </div>
+      </section>
+
+      <RecommendedReading
+        works={works}
+        intro="Good next stops after today's quote."
+      />
+
+      {primaries.length > 0 ? (
+        <section className="mb-8">
+          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Primary sources</h2>
+          <ul className="space-y-1 text-ink/80 text-sm">
+            {primaries.slice(0, 4).map((c, i) => (
+              <li key={i} className="flex gap-2">
+                <span className="text-ink/40">·</span>
+                <span>{c.source}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
       <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
         Read more about {person.name} →
       </Link>

@@ -4,6 +4,7 @@ import { getPeople } from "@/lib/data";
 import { ERAS_DATA, ERA_ORDER, inEra } from "@/lib/eras";
 import { dateRange } from "@/lib/dates";
 import { canonicalUrl } from "@/lib/seo";
+import { getEraImage } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Eras of the Patristic Age",
@@ -129,7 +130,7 @@ export default function ErasIndex() {
             .filter((p) => inEra(p, era))
             .sort((a, b) => (b.significance ?? 0) - (a.significance ?? 0))
             .slice(0, 6);
-          const headFigure = figures[0];
+          const eraImage = getEraImage(slug);
 
           return (
             <article
@@ -149,6 +150,19 @@ export default function ErasIndex() {
                 <p className="text-ink/65 text-sm italic mb-4">{era.blurb}</p>
 
                 <p className="text-ink/85 leading-relaxed mb-4 line-clamp-3">{era.intro[0]}</p>
+
+                {eraImage ? (
+                  <div className="mb-4 h-36 overflow-hidden rounded-md border border-ink/10 bg-ink/5">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={eraImage.src}
+                      alt={eraImage.alt}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-[1.01] transition"
+                      style={{ objectPosition: eraImage.object_position ?? "center" }}
+                    />
+                  </div>
+                ) : null}
 
                 {/* Mini-axis showing era span */}
                 <div className="relative h-1.5 bg-ink/8 rounded mb-4 overflow-hidden">

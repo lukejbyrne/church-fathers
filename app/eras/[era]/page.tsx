@@ -4,7 +4,8 @@ import type { Metadata } from "next";
 import { getPeople } from "@/lib/data";
 import type { Person } from "@/lib/schema";
 import { dateRange } from "@/lib/dates";
-import { ERAS_DATA, type EraSlug, type EraDef, inEra, sortKey } from "@/lib/eras";
+import { ERAS_DATA, type EraSlug, inEra, sortKey } from "@/lib/eras";
+import { getEraImage, imageCredit } from "@/lib/images";
 import ShareBar from "@/components/ShareBar";
 import BookShelf from "@/components/BookShelf";
 import { getRecommendedBooks } from "@/lib/books";
@@ -95,6 +96,8 @@ export default async function EraPage({
 
   const headline = figures.slice(0, 12);
   const recommendedBooks = getRecommendedBooks({ eraSlug: era.slug, limit: 3 });
+  const image = getEraImage(era.slug);
+  const credit = image ? imageCredit(image) : "";
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
@@ -103,6 +106,31 @@ export default async function EraPage({
       </Link>
       <h1 className="font-serif text-5xl mt-4 mb-1 text-ink">{era.label}</h1>
       <p className="text-ink/55 italic mb-8">{era.yearLabel}</p>
+
+      {image ? (
+        <figure className="mb-10 overflow-hidden rounded-md border border-ink/10 bg-ink/5">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={image.src}
+            alt={image.alt}
+            className="w-full max-h-[430px] object-cover"
+            style={{ objectPosition: image.object_position ?? "center" }}
+          />
+          {(image.caption || credit) ? (
+            <figcaption className="px-3 py-2 text-[11px] text-ink/55">
+              {image.caption}
+              {image.caption && credit ? " " : ""}
+              {image.source_url && credit ? (
+                <a href={image.source_url} target="_blank" rel="noopener noreferrer" className="underline decoration-ink/20 underline-offset-2 hover:text-accent">
+                  {credit}
+                </a>
+              ) : (
+                credit
+              )}
+            </figcaption>
+          ) : null}
+        </figure>
+      ) : null}
 
       <div className="grid lg:grid-cols-[1fr_260px] gap-10 mb-12">
         <section>

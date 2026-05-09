@@ -1,0 +1,82 @@
+{
+  "ante-nicene": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/aa/Christ_Healing_the_Paralytic_-_Dura-Europos_circa_232.jpg",
+    "alt": "Dura-Europos house church fresco of Christ healing the paralytic.",
+    "caption": "A third-century house church fresco from Dura-Europos, from the world before Constantine and Nicaea.",
+    "credit": "Yale University Art Gallery, via Wikimedia Commons",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Christ_Healing_the_Paralytic_-_Dura-Europos_circa_232.jpg",
+    "object_position": "center 24%"
+  },
+  "apologists": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg",
+    "alt": "Icon of Justin Martyr by Theophanes the Cretan.",
+    "caption": "Justin Martyr represents the Christian turn toward public apology before emperors and philosophers.",
+    "credit": "Theophanes the Cretan, via Wikimedia Commons",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Saint_Justin_Martyr_by_Theophanes_the_Cretan.jpg",
+    "object_position": "center 16%"
+  },
+  "apostolic": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/01/Good_shepherd_01.jpg",
+    "alt": "Good Shepherd fresco from the Catacomb of Priscilla.",
+    "caption": "The Good Shepherd fresco evokes the earliest Christian visual world downstream of the apostles.",
+    "credit": "via Wikimedia Commons",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Good_shepherd_01.jpg",
+    "object_position": "center 20%"
+  },
+  "apostolic-fathers": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/c/c5/Sirach-intro%28Codex_Sinaticus%29.JPG",
+    "alt": "Codex Sinaiticus folio.",
+    "caption": "A fourth-century biblical codex, a fitting visual for the age when apostolic teaching became a handed-on textual inheritance.",
+    "credit": "via Wikimedia Commons",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Sirach-intro(Codex_Sinaticus).JPG",
+    "object_position": "center"
+  },
+  "desert-fathers": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Monastery_of_Saint_Anthony%2C_Egypt_-_Saint_Anthony%27s_Cave%2C_exterior_view%2C_entrance_-_MSBZ004_A48_-_Dumbarton_Oaks.jpg",
+    "alt": "Entrance to Saint Anthony's cave at the Monastery of Saint Anthony in Egypt.",
+    "caption": "The cave of Saint Anthony, a concrete image of the desert as a place of prayer, struggle, and spiritual fatherhood.",
+    "credit": "Kazazian / Dumbarton Oaks, via Wikimedia Commons",
+    "license": "CC0",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Monastery_of_Saint_Anthony,_Egypt_-_Saint_Anthony%27s_Cave,_exterior_view,_entrance_-_MSBZ004_A48_-_Dumbarton_Oaks.jpg",
+    "object_position": "center"
+  },
+  "early-medieval": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/5/55/Meister_des_Book_of_Lindisfarne_002.jpg",
+    "alt": "Carpet page from the Lindisfarne Gospels.",
+    "caption": "Insular manuscript art points to the monastic copying culture that carried patristic learning into the early medieval West.",
+    "credit": "Lindisfarne Gospels, via Wikimedia Commons",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Meister_des_Book_of_Lindisfarne_002.jpg",
+    "object_position": "center"
+  },
+  "nicene": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/e/ec/Rylands_Nicene_Creed_papyrus.jpg",
+    "alt": "Rylands papyrus fragment containing the Nicene Creed.",
+    "caption": "The Rylands Nicene Creed papyrus gives the council age a textual face.",
+    "credit": "via Wikimedia Commons",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rylands_Nicene_Creed_papyrus.jpg",
+    "object_position": "center"
+  },
+  "post-nicene": {
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Apse_mosaic_Hagia_Sophia_Virgin_and_Child.jpg",
+    "alt": "Apse mosaic of the Virgin and Child in Hagia Sophia.",
+    "caption": "Hagia Sophia's apse mosaic belongs to the world of post-Chalcedonian liturgy, empire, and icon theology.",
+    "credit": "Myrabella, via Wikimedia Commons",
+    "license": "Public domain",
+    "source": "Wikimedia Commons",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Apse_mosaic_Hagia_Sophia_Virgin_and_Child.jpg",
+    "object_position": "center 18%"
+  }
+}

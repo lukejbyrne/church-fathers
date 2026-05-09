@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { getPeople } from "@/lib/data";
+import { getAnniversaries, getPeople } from "@/lib/data";
 import { questionPages } from "@/lib/questions";
 import { canonicalUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const people = getPeople();
+  const events = getAnniversaries();
   const eras = [
     "apostolic",
     "apostolic-fathers",
@@ -23,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: canonicalUrl("/sent"), priority: 0.6 },
     { url: canonicalUrl("/map"), priority: 0.9 },
     { url: canonicalUrl("/eras"), priority: 0.9 },
+    { url: canonicalUrl("/events"), priority: 0.85 },
     { url: canonicalUrl("/bishops"), priority: 0.8 },
     { url: canonicalUrl("/schisms"), priority: 0.8 },
     { url: canonicalUrl("/questions"), priority: 0.9 },
@@ -32,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: canonicalUrl("/directory"), priority: 0.8 },
     { url: canonicalUrl("/about"), priority: 0.6 },
     ...eras.map((e) => ({ url: canonicalUrl(`/eras/${e}`), priority: 0.7 })),
+    ...events.map((e) => ({ url: canonicalUrl(`/events/${e.id}`), priority: 0.65 })),
     ...questionPages.map((page) => ({ url: canonicalUrl(`/questions/${page.slug}`), priority: 0.75 })),
     ...people.map((p) => ({ url: canonicalUrl(`/fathers/${p.id}`), priority: 0.5 })),
   ];
