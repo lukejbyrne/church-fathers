@@ -26,7 +26,7 @@ You are producing structured data about early Christian figures (AD 0–750) for
   "birth_place": "Smyrna",
   "death_place": "Smyrna",
   "region": "asia-minor",                      // one of: east | west | syria | egypt | asia-minor | gaul | africa | palestine | other
-  "role": ["bishop", "martyr"],                // array, any of: apostle | bishop | presbyter | deacon | monk | apologist | theologian | martyr | emperor | layman
+  "role": ["bishop", "martyr"],                // array, any of: messiah | god | apostle | bishop | presbyter | deacon | monk | apologist | theologian | martyr | emperor | layman
   "see": "Smyrna",                             // omit if not a bishop
   "tradition_status": "apostolic-father",      // one of: apostle | apostolic-father | apologist | ante-nicene | nicene | post-nicene | desert-father
   "significance": 3,                           // 1 = minor, 2 = notable, 3 = major Father, 4 = apostle/Jesus

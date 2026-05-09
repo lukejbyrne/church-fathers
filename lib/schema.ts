@@ -14,6 +14,8 @@ export const Region = z.enum([
 export type Region = z.infer<typeof Region>;
 
 export const Role = z.enum([
+  "messiah",
+  "god",
   "apostle",
   "bishop",
   "presbyter",

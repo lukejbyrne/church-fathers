@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { OgCard, OG_SIZE, OG_CONTENT_TYPE } from "@/lib/og";
 import { getPeople, getPerson } from "@/lib/data";
+import { formatRoles } from "@/lib/roles";
 
 export const runtime = "nodejs";
 export const alt = "Church Father — Patristic Lineage";
@@ -29,7 +30,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
   }
 
   const dates = `${p.born ?? "?"} – ${p.died ?? "?"}`;
-  const role = p.role ? p.role : null;
+  const role = p.role ? formatRoles(p.role) : null;
   const place = p.see ?? p.death_place ?? p.birth_place ?? null;
   const metaParts = [dates, role, place].filter(Boolean) as string[];
 

@@ -9,6 +9,7 @@ import { amazonUrl } from "@/lib/affiliate";
 import ChainToJesus, { type ChainStep } from "@/components/ChainToJesus";
 import ShareBar from "@/components/ShareBar";
 import { dateRange, bornDisplay, diedDisplay } from "@/lib/dates";
+import { formatRole } from "@/lib/roles";
 import BookShelf from "@/components/BookShelf";
 import { getBookForPerson } from "@/lib/books";
 import { canonicalUrl } from "@/lib/seo";
@@ -164,7 +165,7 @@ export default async function FatherPage({
     deathDate: person.died != null ? String(person.died) : undefined,
     birthPlace: person.birth_place || undefined,
     deathPlace: person.death_place || undefined,
-    jobTitle: person.role,
+    jobTitle: person.role.map(formatRole),
     mainEntityOfPage: canonicalUrl(`/fathers/${person.id}`),
     sameAs: sameAs.length ? sameAs : undefined,
     citation: person.citations.map((c) => c.source),
@@ -240,7 +241,7 @@ export default async function FatherPage({
       <div className="flex flex-wrap gap-1 mb-6">
         {person.role.map((r) => (
           <span key={r} className="text-xs uppercase tracking-wide bg-ink/10 px-2 py-0.5 rounded">
-            {r}
+            {formatRole(r)}
           </span>
         ))}
       </div>

@@ -65,16 +65,17 @@ for (const r of rels) {
 }
 
 // Lifespan overlap for direct-contact edge types
-const contactTypes = new Set(["taught_by", "taught", "met", "baptized_by", "ordained_by", "corresponded", "opposed"]);
+const contactTypes = new Set(["taught_by", "taught", "met", "baptized_by", "ordained_by", "corresponded"]);
 for (const r of rels) {
   if (!contactTypes.has(r.type)) continue;
   const a = people.find((p) => p.id === r.from);
   const b = people.find((p) => p.id === r.to);
   if (!a || !b) continue;
-  const aDied = a.died ?? a.born;
-  const bBorn = b.born ?? b.died;
-  if (aDied != null && bBorn != null && aDied < bBorn) {
+  if (a.died != null && b.born != null && a.died < b.born) {
     warnings.push(`${a.id} (d.${a.died}) and ${b.id} (b.${b.born}): cannot have ${r.type} (no overlap)`);
+  }
+  if (b.died != null && a.born != null && b.died < a.born) {
+    warnings.push(`${a.id} (b.${a.born}) and ${b.id} (d.${b.died}): cannot have ${r.type} (no overlap)`);
   }
 }
 
