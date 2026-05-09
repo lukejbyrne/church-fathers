@@ -1,7 +1,19 @@
 import { getPeople } from "@/lib/data";
 import DirectoryClient from "./DirectoryClient";
+import { canonicalUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export const metadata = { title: "Directory — Church Fathers" };
+export const metadata: Metadata = {
+  title: "Directory — Church Fathers",
+  description: "All figures in the Patristic Lineage dataset, AD 30 to 750, searchable by name, see, or role.",
+  alternates: { canonical: canonicalUrl("/directory") },
+  openGraph: {
+    title: "Directory — Church Fathers",
+    description: "All figures in the Patristic Lineage dataset, AD 30 to 750, searchable by name, see, or role.",
+    url: canonicalUrl("/directory"),
+    type: "website",
+  },
+};
 
 export default function DirectoryPage() {
   return (

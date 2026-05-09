@@ -1,9 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getPeople } from "@/lib/data";
 import { questionPages } from "@/lib/questions";
+import { canonicalUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patristic.io";
   const people = getPeople();
   const eras = [
     "apostolic",
@@ -16,23 +16,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "desert-fathers",
   ];
   return [
-    { url: `${base}/`, priority: 1 },
-    { url: `${base}/start-here`, priority: 0.9 },
-    { url: `${base}/today`, priority: 0.95 },
-    { url: `${base}/calendar`, priority: 0.85 },
-    { url: `${base}/sent`, priority: 0.6 },
-    { url: `${base}/map`, priority: 0.9 },
-    { url: `${base}/eras`, priority: 0.9 },
-    { url: `${base}/bishops`, priority: 0.8 },
-    { url: `${base}/schisms`, priority: 0.8 },
-    { url: `${base}/questions`, priority: 0.9 },
-    { url: `${base}/books`, priority: 0.85 },
-    { url: `${base}/resources`, priority: 0.85 },
-    { url: `${base}/study-packs`, priority: 0.8 },
-    { url: `${base}/directory`, priority: 0.8 },
-    { url: `${base}/about`, priority: 0.6 },
-    ...eras.map((e) => ({ url: `${base}/eras/${e}`, priority: 0.7 })),
-    ...questionPages.map((page) => ({ url: `${base}/questions/${page.slug}`, priority: 0.75 })),
-    ...people.map((p) => ({ url: `${base}/fathers/${p.id}`, priority: 0.5 })),
+    { url: canonicalUrl("/"), priority: 1 },
+    { url: canonicalUrl("/start-here"), priority: 0.9 },
+    { url: canonicalUrl("/today"), priority: 0.95 },
+    { url: canonicalUrl("/calendar"), priority: 0.85 },
+    { url: canonicalUrl("/sent"), priority: 0.6 },
+    { url: canonicalUrl("/map"), priority: 0.9 },
+    { url: canonicalUrl("/eras"), priority: 0.9 },
+    { url: canonicalUrl("/bishops"), priority: 0.8 },
+    { url: canonicalUrl("/schisms"), priority: 0.8 },
+    { url: canonicalUrl("/questions"), priority: 0.9 },
+    { url: canonicalUrl("/books"), priority: 0.85 },
+    { url: canonicalUrl("/resources"), priority: 0.85 },
+    { url: canonicalUrl("/study-packs"), priority: 0.8 },
+    { url: canonicalUrl("/directory"), priority: 0.8 },
+    { url: canonicalUrl("/about"), priority: 0.6 },
+    ...eras.map((e) => ({ url: canonicalUrl(`/eras/${e}`), priority: 0.7 })),
+    ...questionPages.map((page) => ({ url: canonicalUrl(`/questions/${page.slug}`), priority: 0.75 })),
+    ...people.map((p) => ({ url: canonicalUrl(`/fathers/${p.id}`), priority: 0.5 })),
   ];
 }

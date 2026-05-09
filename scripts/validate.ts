@@ -1,19 +1,22 @@
 import fs from "node:fs";
 import path from "node:path";
 import { ERAS_DATA, ERA_SLUG_BY_STATUS, eraForTraditionStatus } from "../lib/eras";
+import { buildExtras } from "../lib/email-helpers";
 import { renderEmail } from "../lib/email-template";
-import type { Content } from "../lib/picker";
-import { Anniversary, Person, Relationship, TraditionStatus } from "../lib/schema";
+import { addDays, isoDate, parseIsoDate, pickContent, type Content } from "../lib/picker";
+import { Anniversary, Person, Quote, Relationship, TraditionStatus } from "../lib/schema";
 
 const DATA = path.join(process.cwd(), "data");
 
 const people: Person[] = JSON.parse(fs.readFileSync(path.join(DATA, "people.json"), "utf8"));
 const rels: Relationship[] = JSON.parse(fs.readFileSync(path.join(DATA, "relationships.json"), "utf8"));
 const anniversaries: Anniversary[] = JSON.parse(fs.readFileSync(path.join(DATA, "anniversaries.json"), "utf8"));
+const quotes: Quote[] = JSON.parse(fs.readFileSync(path.join(DATA, "quotes.json"), "utf8"));
 
 const ids = new Set(people.map((p) => p.id));
 const errors: string[] = [];
 const warnings: string[] = [];
+const SITE_URL = "https://patristic.io";
 
 // Dangling refs
 for (const r of rels) {
@@ -38,6 +41,24 @@ for (const a of anniversaries) {
   }
 }
 
+for (const [i, q] of quotes.entries()) {
+  const parsed = Quote.safeParse(q);
+  if (!parsed.success) {
+    errors.push(`quote ${i}: invalid schema (${parsed.error.issues.map((issue) => issue.message).join(", ")})`);
+    continue;
+  }
+  if (!ids.has(q.person_id)) errors.push(`quote ${i}: unknown person_id ${q.person_id}`);
+  if (!q.title || q.title.trim().length < 10) {
+    errors.push(`quote ${i}: missing useful title`);
+  }
+  if (!q.context || q.context.trim().length < 80) {
+    errors.push(`quote ${i}: context is too thin for a daily email`);
+  }
+  if (!q.impact || q.impact.trim().length < 60) {
+    errors.push(`quote ${i}: impact is too thin for a daily email`);
+  }
+}
+
 // Citation count
 for (const r of rels) {
   if (r.citations.length === 0) errors.push(`${r.from}→${r.to} (${r.type}): no citations`);
@@ -50,10 +71,11 @@ for (const r of rels) {
   const a = people.find((p) => p.id === r.from);
   const b = people.find((p) => p.id === r.to);
   if (!a || !b) continue;
-  const aDiedBeforeBBorn = a.died != null && b.born != null && a.died < b.born;
-  const bDiedBeforeABorn = b.died != null && a.born != null && b.died < a.born;
-  if (aDiedBeforeBBorn || bDiedBeforeABorn) {
+  if (a.died != null && b.born != null && a.died < b.born) {
     warnings.push(`${a.id} (d.${a.died}) and ${b.id} (b.${b.born}): cannot have ${r.type} (no overlap)`);
+  }
+  if (b.died != null && a.born != null && b.died < a.born) {
+    warnings.push(`${a.id} (b.${a.born}) and ${b.id} (d.${b.died}): cannot have ${r.type} (no overlap)`);
   }
 }
 
@@ -103,7 +125,7 @@ for (const status of TraditionStatus.options) {
     era: status,
     figures,
   };
-  const { subject, html, plain } = renderEmail(content, "https://patristic.io", { book: null });
+  const { subject, html, plain } = renderEmail(content, SITE_URL, { book: null });
 
   if (!subject.includes(era.label)) errors.push(`${era.slug}: email subject does not include era label`);
   if (!html.includes(`/eras/${era.slug}`)) errors.push(`${era.slug}: email CTA does not link to the era page`);
@@ -117,6 +139,77 @@ for (const status of TraditionStatus.options) {
     if (!plain.includes(figure.name)) errors.push(`${era.slug}: plain email is missing representative figure ${figure.id}`);
   }
 }
+
+function assertDailyEmailSurface(startIso: string, endIso: string) {
+  let date = parseIsoDate(startIso);
+  const end = parseIsoDate(endIso);
+  if (!date || !end) {
+    errors.push(`daily email audit: invalid range ${startIso}..${endIso}`);
+    return;
+  }
+
+  const counts: Record<string, number> = {};
+  while (date <= end) {
+    const content = pickContent(date);
+    const day = isoDate(date);
+    counts[content.type] = (counts[content.type] ?? 0) + 1;
+    const { subject, html, plain } = renderEmail(content, SITE_URL, buildExtras(content, SITE_URL));
+
+    if (!subject || subject.trim().length < 8) {
+      errors.push(`${day} ${content.type}: email subject is too short`);
+    }
+    if (/^From\s/i.test(subject)) {
+      errors.push(`${day} ${content.type}: email subject uses weak source-first phrasing: ${subject}`);
+    }
+    if (!html.includes("<title>") || !html.includes(subject)) {
+      errors.push(`${day} ${content.type}: email html title does not include subject`);
+    }
+    if (!plain.includes("Patristic Lineage") || !plain.includes("Unsubscribe:")) {
+      errors.push(`${day} ${content.type}: plain email is missing footer/unsubscribe text`);
+    }
+
+    if (content.type === "quote") {
+      for (const marker of ["Quote in context", "Plain English", "Why it matters", "Who said it"]) {
+        if (!html.includes(marker)) errors.push(`${day} quote: html missing ${marker}`);
+      }
+      for (const marker of ["Plain English:", "Why it matters:", "Who said it:"]) {
+        if (!plain.includes(marker)) errors.push(`${day} quote: plain text missing ${marker}`);
+      }
+    }
+
+    if (content.type === "father") {
+      const short = content.person.name.split(" of ")[0];
+      if (!html.includes(`Why ${short} matters`)) {
+        errors.push(`${day} father: html missing why-it-matters heading for ${content.person.id}`);
+      }
+    }
+
+    if (content.type === "era") {
+      if (!html.includes("Why it matters") || !plain.includes("Why it matters:")) {
+        errors.push(`${day} era: missing why-it-matters context`);
+      }
+    }
+
+    if (content.type === "council" || content.type === "schism" || content.type === "heretic") {
+      if (plain.split(/\s+/).length < 55) {
+        errors.push(`${day} ${content.type}: plain email is too thin`);
+      }
+    }
+
+    date = addDays(date, 1);
+  }
+
+  const total = Object.values(counts).reduce((a, b) => a + b, 0);
+  console.log(`\n[validate] rendered ${total} daily emails (${startIso}..${endIso})`);
+  console.log(
+    `[validate] daily email mix: ${Object.entries(counts)
+      .sort(([a], [b]) => a.localeCompare(b))
+      .map(([type, count]) => `${type}=${count}`)
+      .join(", ")}`
+  );
+}
+
+assertDailyEmailSurface("2025-01-01", "2030-12-31");
 
 console.log(`\n[validate] ${people.length} people, ${rels.length} relationships, ${anniversaries.length} anniversaries`);
 if (warnings.length) {

@@ -5,8 +5,22 @@ import HeroChain from "@/components/HeroChain";
 import SubscribeForm from "@/components/SubscribeForm";
 import BookFeature from "@/components/BookFeature";
 import { getBookOfDay } from "@/lib/books";
+import { canonicalUrl, SITE_DESC, SITE_NAME } from "@/lib/seo";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
+
+export const metadata: Metadata = {
+  title: { absolute: SITE_NAME },
+  description: SITE_DESC,
+  alternates: { canonical: canonicalUrl("/") },
+  openGraph: {
+    title: SITE_NAME,
+    description: SITE_DESC,
+    url: canonicalUrl("/"),
+    type: "website",
+  },
+};
 
 export default function Home() {
   const people = getPeople();

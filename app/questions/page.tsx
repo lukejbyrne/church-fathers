@@ -1,10 +1,20 @@
 import Link from "next/link";
 import { questionPages } from "@/lib/questions";
+import { canonicalUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Questions about the early Church",
   description:
     "Guided, sourced answers to common questions about the Church Fathers, apostolic succession, Nicaea, heresies, and early Christian tradition.",
+  alternates: { canonical: canonicalUrl("/questions") },
+  openGraph: {
+    title: "Questions about the early Church",
+    description:
+      "Guided, sourced answers to common questions about the Church Fathers, apostolic succession, Nicaea, heresies, and early Christian tradition.",
+    url: canonicalUrl("/questions"),
+    type: "website",
+  },
 };
 
 export default function QuestionsPage() {

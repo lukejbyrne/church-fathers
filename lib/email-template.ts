@@ -7,6 +7,7 @@
 
 import type { Content } from "./picker";
 import { eraForTraditionStatus } from "./eras";
+import { quoteIssueTitle, quotePreviewText } from "./quote-copy";
 import type { Person } from "./schema";
 
 export type EmailChainStep = {
@@ -141,7 +142,7 @@ function renderQuickFacts(p: Person): string {
   if (p.born != null || p.died != null) rows.push(["Lifespan", formatLifeRange(p.born, p.died)]);
   if (p.birth_place) rows.push(["Born in", p.birth_place]);
   if (p.see) rows.push(["See", p.see]);
-  if (p.region) rows.push(["Region", p.region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())]);
+  if (p.region) rows.push(["Region", REGION_LABEL[p.region] ?? p.region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())]);
   if (rows.length === 0) return "";
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;background:#1f1a1308;border:1px solid #1f1a1318;border-radius:6px;">
     ${rows
@@ -444,14 +445,42 @@ function buildQuoteBody(
   book?: EmailBook | null
 ): string {
   const personUrl = `${siteUrl}/fathers/${content.person.id}`;
+  const title = quoteIssueTitle(content.quote, content.person);
+  const source = `${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}`;
+  const context = content.quote.context?.trim();
+  const impact = content.quote.impact?.trim();
+  const about = firstSentence(content.person.why_matters ?? content.person.short_bio, 300);
+  const contextBlock = context || impact
+    ? `<tr><td style="padding:0 32px 6px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;background:#8b1e2d08;border:1px solid #8b1e2d18;border-radius:6px;">
+        ${context ? `<tr><td style="padding:16px 18px 6px;"><div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#8b1e2dcc;margin-bottom:6px;">Plain English</div><p style="margin:0;font-size:15px;line-height:1.65;color:#1f1a13d8;">${escapeHtml(context)}</p></td></tr>` : ""}
+        ${impact ? `<tr><td style="padding:${context ? "8px" : "16px"} 18px 16px;"><div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#8b1e2dcc;margin-bottom:6px;">Why it matters</div><p style="margin:0;font-size:15px;line-height:1.65;color:#1f1a13d8;">${escapeHtml(impact)}</p></td></tr>` : ""}
+      </table>
+    </td></tr>`
+    : "";
   return `
     <tr><td style="padding:0 32px;text-align:center;">
-      <p style="margin:0 0 18px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8b1e2dcc;">From the Fathers</p>
-      <blockquote style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
-      <p style="margin:0 0 4px;font-size:14px;color:#1f1a13;">— ${escapeHtml(content.person.name)}</p>
-      <p style="margin:0 0 24px;font-size:12px;color:#1f1a1380;font-style:italic;">${escapeHtml(content.quote.source)}${content.quote.translation ? ` · ${escapeHtml(content.quote.translation)}` : ""}</p>
+      <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8b1e2dcc;">Quote in context</p>
+      <h1 style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
+      <p style="margin:0 0 22px;font-size:13px;color:#1f1a13aa;">${escapeHtml(content.person.name)} · ${escapeHtml(source)}</p>
     </td></tr>
-    <tr><td style="padding:0 32px;">${renderQuickFacts(content.person)}</td></tr>
+    <tr><td style="padding:0 32px;text-align:center;">
+      <blockquote style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
+      <p style="margin:0 0 24px;font-size:14px;color:#1f1a13;">— <a href="${escapeHtml(personUrl)}" style="color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a></p>
+    </td></tr>
+    ${contextBlock}
+    <tr><td style="padding:0 32px;">
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;">
+        <tr>
+          <td width="92" style="vertical-align:top;padding-right:18px;">${portraitImg(content.person.image_url, content.person.name, 82).replace("margin:0 auto 18px;", "margin:0;")}</td>
+          <td style="vertical-align:top;">
+            <h2 style="margin:0 0 6px;font-family:Georgia,serif;font-size:20px;font-weight:normal;color:#1f1a13;">Who said it: ${escapeHtml(content.person.name)}</h2>
+            <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#1f1a13c8;">${escapeHtml(about || content.person.short_bio)}</p>
+          </td>
+        </tr>
+      </table>
+      ${renderQuickFacts(content.person)}
+    </td></tr>
     <tr><td style="padding:0 32px;">${renderBookRecommendation(book)}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(personUrl)}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Read more about ${escapeHtml(shortName(content.person.name))} →</a>
@@ -477,7 +506,7 @@ function subjectFor(content: Content): string {
     case "era":
       return `This week: the ${eraForTraditionStatus(content.era).label}`;
     case "quote":
-      return `From ${content.quote.source}`;
+      return quoteIssueTitle(content.quote, content.person);
   }
 }
 
@@ -579,10 +608,17 @@ Unsubscribe: {$unsubscribe}`;
     case "quote":
       return `${subject}
 
+${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}
+
 "${content.quote.text}"
-— ${content.person.name}, ${content.quote.source}
+— ${content.person.name}
+
+${content.quote.context ? `Plain English:\n${content.quote.context}\n\n` : ""}${content.quote.impact ? `Why it matters:\n${content.quote.impact}\n\n` : ""}Who said it:
+${content.person.name} (${formatLifeRange(content.person.born, content.person.died)})
+${content.person.why_matters ?? content.person.short_bio}
 ${plainBookLine(extras.book)}
 
+Read more about ${shortName(content.person.name)}: ${siteUrl}/fathers/${content.person.id}
 —
 Patristic Lineage · ${siteUrl}
 Unsubscribe: {$unsubscribe}`;
@@ -665,7 +701,7 @@ export function renderEmail(
         const eraDef = eraForTraditionStatus(content.era);
         return `${eraDef.label} — ${eraDef.blurb}`;
       }
-      case "quote": return content.quote.text.slice(0, 140);
+      case "quote": return quotePreviewText(content.quote, content.person).slice(0, 140);
     }
   })();
 

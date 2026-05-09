@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { listSends } from "@/lib/send-log";
+import { canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -8,6 +9,14 @@ export const metadata: Metadata = {
   title: "Past issues",
   description:
     "Every Patristic Lineage newsletter we've sent — date, content type, and the figure or council featured.",
+  alternates: { canonical: canonicalUrl("/sent") },
+  openGraph: {
+    title: "Past issues",
+    description:
+      "Every Patristic Lineage newsletter we've sent — date, content type, and the figure or council featured.",
+    url: canonicalUrl("/sent"),
+    type: "article",
+  },
 };
 
 const TYPE_LABEL: Record<string, string> = {

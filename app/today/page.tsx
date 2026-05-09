@@ -7,6 +7,8 @@ import ShareBar from "@/components/ShareBar";
 import BookFeature from "@/components/BookFeature";
 import { getBookForContent } from "@/lib/books";
 import { eraForTraditionStatus } from "@/lib/eras";
+import { quoteIssueTitle, quotePreviewText } from "@/lib/quote-copy";
+import { canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
 
@@ -15,11 +17,28 @@ const MONTH = [
   "July", "August", "September", "October", "November", "December",
 ];
 
+const REGION_LABEL: Record<string, string> = {
+  palestine: "Palestine",
+  syria: "Syria",
+  "asia-minor": "Asia Minor",
+  egypt: "Egypt",
+  west: "Roman West",
+  gaul: "Gaul",
+  africa: "North Africa",
+  east: "Eastern empire",
+  other: "Other",
+};
+
 function formatMonthDay(mmdd?: string): string | null {
   if (!mmdd) return null;
   const m = /^(\d{2})-(\d{2})$/.exec(mmdd);
   if (!m) return null;
   return `${Number(m[2])} ${MONTH[Number(m[1]) - 1]}`;
+}
+
+function formatRegion(region?: string): string | null {
+  if (!region) return null;
+  return REGION_LABEL[region] ?? region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
 export async function generateMetadata({
@@ -28,10 +47,14 @@ export async function generateMetadata({
   searchParams: Promise<{ d?: string }>;
 }): Promise<Metadata> {
   const { d } = await searchParams;
-  const date = parseIsoDate(d) ?? new Date();
+  const requestedDate = parseIsoDate(d);
+  const hasDateParam = Boolean(d);
+  const date = requestedDate ?? new Date();
   const c = pickContent(date);
   const title =
-    c.type === "father" || c.type === "heretic" || c.type === "quote"
+    c.type === "quote"
+      ? quoteIssueTitle(c.quote, c.person)
+      : c.type === "father" || c.type === "heretic"
       ? c.person.name
       : c.type === "council" || c.type === "schism"
         ? `${c.anniversary.title} (${c.anniversary.year})`
@@ -44,9 +67,22 @@ export async function generateMetadata({
         : c.type === "council" || c.type === "schism"
           ? c.anniversary.blurb
           : c.type === "quote"
-            ? `"${c.quote.text}" — ${c.person.name}`
+            ? quotePreviewText(c.quote, c.person)
             : eraForTraditionStatus(c.era).blurb;
-  return { title: `Today: ${title}`, description: desc };
+  const pageTitle = `Today: ${title}`;
+  const url = requestedDate ? canonicalUrl(`/today?d=${isoDate(requestedDate)}`) : canonicalUrl("/today");
+  return {
+    title: pageTitle,
+    description: desc,
+    alternates: { canonical: url },
+    robots: hasDateParam ? { index: false, follow: true } : undefined,
+    openGraph: {
+      title: pageTitle,
+      description: desc,
+      url,
+      type: "article",
+    },
+  };
 }
 
 function formatLongDate(date: Date): string {
@@ -84,6 +120,10 @@ export default async function TodayPage({
             : content.type === "era"
               ? "Era Spotlight"
               : "From the Fathers";
+  const shareTitle =
+    content.type === "quote"
+      ? `${quoteIssueTitle(content.quote, content.person)} — Patristic Lineage`
+      : `${eyebrow} · ${formatLongDate(date)} — Patristic Lineage`;
 
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
@@ -125,7 +165,7 @@ export default async function TodayPage({
 
       <ShareBar
         path={`/today?d=${isoDate(date)}`}
-        title={`${eyebrow} · ${formatLongDate(date)} — Patristic Lineage`}
+        title={shareTitle}
       />
 
       <div className="mt-8">
@@ -379,16 +419,61 @@ function QuoteView({
   quote: import("@/lib/schema").Quote;
   person: import("@/lib/schema").Person;
 }) {
+  const title = quoteIssueTitle(quote, person);
+  const dr = dateRange(person);
+  const about = person.why_matters ?? person.short_bio;
+  const region = formatRegion(person.region);
+
   return (
     <>
       <header className="mb-8">
-        <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">From the Fathers</p>
+        <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">Quote in context</p>
+        <h1 className="font-serif text-5xl mt-2 mb-3 text-ink">{title}</h1>
+        <p className="text-ink/60 italic">
+          {person.name} · {quote.source}{quote.translation ? ` · ${quote.translation}` : ""}
+        </p>
       </header>
       <blockquote className="font-serif text-3xl italic leading-snug text-ink mb-6">
         “{quote.text}”
       </blockquote>
-      <p className="mb-2">— <Link href={`/fathers/${person.id}`} className="hover:text-accent">{person.name}</Link></p>
-      <p className="text-sm text-ink/60 italic mb-10">{quote.source}{quote.translation ? ` · ${quote.translation}` : ""}</p>
+      <p className="mb-8">— <Link href={`/fathers/${person.id}`} className="hover:text-accent">{person.name}</Link></p>
+
+      {quote.context || quote.impact ? (
+        <section className="mb-10 border border-accent/15 bg-accent/5 rounded p-5">
+          {quote.context ? (
+            <>
+              <h2 className="text-sm uppercase tracking-widest text-accent/80 mb-3">Plain English</h2>
+              <p className="text-lg leading-relaxed mb-5">{quote.context}</p>
+            </>
+          ) : null}
+          {quote.impact ? (
+            <>
+              <h2 className="text-sm uppercase tracking-widest text-accent/80 mb-3">Why it matters</h2>
+              <p className="text-lg leading-relaxed">{quote.impact}</p>
+            </>
+          ) : null}
+        </section>
+      ) : null}
+
+      <section className="mb-10">
+        <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-4">Who said it</h2>
+        <div className="flex gap-5 items-start">
+          {person.image_url ? (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img src={person.image_url} alt={person.name} className="w-20 h-20 rounded-full object-cover shrink-0 border border-ink/10" style={{ objectPosition: "center 8%" }} />
+          ) : null}
+          <div>
+            <h3 className="font-serif text-2xl text-ink mb-1">{person.name}</h3>
+            <p className="text-sm text-ink/60 mb-3" title={dr.explanation || undefined}>
+              {dr.text}
+              {person.birth_place ? <> · Born in {person.birth_place}</> : null}
+              {region ? <> · {region}</> : null}
+            </p>
+            <p className="leading-relaxed">{about}</p>
+          </div>
+        </div>
+      </section>
+
       <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
         Read more about {person.name} →
       </Link>

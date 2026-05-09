@@ -1,7 +1,21 @@
 import Link from "next/link";
 import { getPeople, getRelationships } from "@/lib/data";
+import { canonicalUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export const metadata = { title: "Methodology — Church Fathers" };
+export const metadata: Metadata = {
+  title: "Methodology — Church Fathers",
+  description:
+    "How Patristic Lineage sources and labels documented, traditional, and disputed links between the early Church Fathers.",
+  alternates: { canonical: canonicalUrl("/about") },
+  openGraph: {
+    title: "Methodology — Church Fathers",
+    description:
+      "How Patristic Lineage sources and labels documented, traditional, and disputed links between the early Church Fathers.",
+    url: canonicalUrl("/about"),
+    type: "article",
+  },
+};
 
 export default function About() {
   const people = getPeople();

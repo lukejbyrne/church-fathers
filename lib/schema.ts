@@ -14,6 +14,8 @@ export const Region = z.enum([
 export type Region = z.infer<typeof Region>;
 
 export const Role = z.enum([
+  "messiah",
+  "god",
   "apostle",
   "bishop",
   "presbyter",
@@ -122,9 +124,12 @@ export type Anniversary = z.infer<typeof Anniversary>;
 
 export const Quote = z.object({
   person_id: z.string(),
+  title: z.string().optional(),
   text: z.string().min(1),
   source: z.string().min(1),
   translation: z.string().optional(),
+  context: z.string().optional(),
+  impact: z.string().optional(),
 });
 export type Quote = z.infer<typeof Quote>;
 

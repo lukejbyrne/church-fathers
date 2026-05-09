@@ -1,11 +1,20 @@
 import { getPeople } from "@/lib/data";
 import MapView from "@/components/MapView";
 import type { Metadata } from "next";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Map — geographic view across time",
   description:
     "A geographic map of early Christian figures (AD 30–760) with a year scrubber. Watch the centers of gravity shift from Palestine to Asia Minor, Rome, North Africa, and beyond.",
+  alternates: { canonical: canonicalUrl("/map") },
+  openGraph: {
+    title: "Map — geographic view across time",
+    description:
+      "A geographic map of early Christian figures (AD 30–760) with a year scrubber. Watch the centers of gravity shift from Palestine to Asia Minor, Rome, North Africa, and beyond.",
+    url: canonicalUrl("/map"),
+    type: "website",
+  },
 };
 
 export default function MapPage() {

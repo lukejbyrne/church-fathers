@@ -3,11 +3,20 @@ import type { Metadata } from "next";
 import { getPeople } from "@/lib/data";
 import { ERAS_DATA, ERA_ORDER, inEra } from "@/lib/eras";
 import { dateRange } from "@/lib/dates";
+import { canonicalUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Eras of the Patristic Age",
   description:
     "Eight overlapping eras from Jesus to John of Damascus — each with its own controversies, councils, and major figures. Apostolic, Apostolic Fathers, Apologists, Ante-Nicene, Desert Fathers, Nicene, Post-Nicene, Early Medieval.",
+  alternates: { canonical: canonicalUrl("/eras") },
+  openGraph: {
+    title: "Eras of the Patristic Age",
+    description:
+      "Eight overlapping eras from Jesus to John of Damascus — each with its own controversies, councils, and major figures. Apostolic, Apostolic Fathers, Apologists, Ante-Nicene, Desert Fathers, Nicene, Post-Nicene, Early Medieval.",
+    url: canonicalUrl("/eras"),
+    type: "website",
+  },
 };
 
 const TIMELINE_MIN = 0;

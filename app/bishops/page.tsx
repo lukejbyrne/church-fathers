@@ -2,11 +2,21 @@ import Link from "next/link";
 import { getPeople } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
 import type { Person, Region } from "@/lib/schema";
+import { canonicalUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Bishops & their sees — Patristic Lineage",
+export const metadata: Metadata = {
+  title: "Bishops & their sees",
   description:
     "Which bishops served which sees, and when. Apostolic succession proper, grouped by city, ordered by date.",
+  alternates: { canonical: canonicalUrl("/bishops") },
+  openGraph: {
+    title: "Bishops & their sees",
+    description:
+      "Which bishops served which sees, and when. Apostolic succession proper, grouped by city, ordered by date.",
+    url: canonicalUrl("/bishops"),
+    type: "article",
+  },
 };
 
 const REGION_LABEL: Record<Region, string> = {

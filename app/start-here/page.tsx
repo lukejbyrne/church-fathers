@@ -1,11 +1,21 @@
 import Link from "next/link";
 import { getPeople, getPerson, getRelationships } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
+import { canonicalUrl } from "@/lib/seo";
+import type { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Start here",
   description:
     "A visual beginner guide to Patristic Lineage: the relay from Jesus to the Church Fathers, evidence labels, eras, and first routes to click.",
+  alternates: { canonical: canonicalUrl("/start-here") },
+  openGraph: {
+    title: "Start here",
+    description:
+      "A visual beginner guide to Patristic Lineage: the relay from Jesus to the Church Fathers, evidence labels, eras, and first routes to click.",
+    url: canonicalUrl("/start-here"),
+    type: "article",
+  },
 };
 
 const RELAY = [

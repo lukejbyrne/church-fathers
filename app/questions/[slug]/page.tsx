@@ -5,8 +5,7 @@ import { chainTo, getPerson, getRelationships } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
 import { getQuestionPage, questionPages } from "@/lib/questions";
 import type { Person, Relationship } from "@/lib/schema";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://patristic.io";
+import { canonicalUrl } from "@/lib/seo";
 
 const STRENGTH_CLASS: Record<Relationship["strength"], string> = {
   documented: "bg-green-900/10 text-green-900 border-green-900/20",
@@ -45,14 +44,15 @@ export async function generateMetadata({
   const { slug } = await params;
   const page = getQuestionPage(slug);
   if (!page) return {};
+  const url = canonicalUrl(`/questions/${page.slug}`);
   return {
     title: page.title,
     description: page.description,
-    alternates: { canonical: `/questions/${page.slug}` },
+    alternates: { canonical: url },
     openGraph: {
       title: page.title,
       description: page.description,
-      url: `${SITE_URL}/questions/${page.slug}`,
+      url,
       type: "article",
     },
   };
@@ -81,7 +81,7 @@ export default async function QuestionDetailPage({
     "@type": "Article",
     headline: page.title,
     description: page.description,
-    mainEntityOfPage: `${SITE_URL}/questions/${page.slug}`,
+    mainEntityOfPage: canonicalUrl(`/questions/${page.slug}`),
     about: people.map((person) => person.name),
   };
 
