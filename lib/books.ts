@@ -36,7 +36,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverImageUrl: "https://covers.openlibrary.org/b/id/1506776-M.jpg",
     coverAlt: "Cover of The Apostolic Fathers, edited and translated by Michael W. Holmes",
     shelves: ["starter", "primary-sources"],
-    eraSlugs: ["apostolic-fathers"],
+    eraSlugs: ["apostolic", "apostolic-fathers"],
     priority: 1,
   },
   {
@@ -359,6 +359,7 @@ export function getBookForContent(
       const eraBook = pickDeterministic(getRecommendedBooks({ eraSlug }), date);
       if (eraBook) return eraBook;
     }
+    return null;
   }
 
   if (content.type === "schism") {
