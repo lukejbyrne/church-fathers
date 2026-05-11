@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { bookDisplayTitle, eraSlugForTradition, getBookForContent, type ResolvedBookRecommendation } from "../lib/books";
 import { ERAS_DATA, ERA_SLUG_BY_STATUS, eraForTraditionStatus } from "../lib/eras";
 import { buildExtras } from "../lib/email-helpers";
 import { renderEmail } from "../lib/email-template";
@@ -31,6 +32,41 @@ function readJson<T>(name: string): T {
 function publicFileExists(publicPath: string | undefined): boolean {
   if (!publicPath) return false;
   return fs.existsSync(path.join(process.cwd(), "public", publicPath.replace(/^\//, "")));
+}
+
+function contentLabel(content: Content): string {
+  switch (content.type) {
+    case "father":
+    case "quote":
+      return content.person.name;
+    case "heretic":
+      return content.anniversary?.title ?? content.person.name;
+    case "era":
+      return eraForTraditionStatus(content.era).label;
+    case "council":
+    case "schism":
+      return content.anniversary.title;
+  }
+}
+
+function bookFitsContent(content: Content, book: ResolvedBookRecommendation | null): boolean {
+  if (!book) return true;
+
+  if (content.type === "father" || content.type === "quote") {
+    const eraSlug = eraSlugForTradition(content.person.tradition_status);
+    return book.personId === content.person.id || Boolean(eraSlug && book.eraSlugs?.includes(eraSlug));
+  }
+
+  if (content.type === "era") {
+    const eraSlug = eraSlugForTradition(content.era);
+    return Boolean(eraSlug && book.eraSlugs?.includes(eraSlug));
+  }
+
+  if (content.type === "heretic") {
+    return Boolean(content.anniversary?.id && book.eventSlugs?.includes(content.anniversary.id));
+  }
+
+  return book.eventSlugs?.includes(content.anniversary.id) ?? false;
 }
 
 // Dangling refs
@@ -193,6 +229,12 @@ function assertDailyEmailSurface(startIso: string, endIso: string) {
     const content = pickContent(date);
     const day = isoDate(date);
     counts[content.type] = (counts[content.type] ?? 0) + 1;
+    const book = getBookForContent(content, date);
+    if (!bookFitsContent(content, book)) {
+      errors.push(
+        `${day} ${content.type}: book "${bookDisplayTitle(book!)}" (${book!.id}) does not match ${contentLabel(content)}`
+      );
+    }
     const { subject, html, plain } = renderEmail(content, SITE_URL, buildExtras(content, SITE_URL));
 
     if (!subject || subject.trim().length < 8) {

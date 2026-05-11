@@ -50,8 +50,20 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of On the Incarnation by Athanasius",
     shelves: ["starter", "trinity"],
     eraSlugs: ["nicene"],
-    eventSlugs: ["schisms"],
+    eventSlugs: ["council-of-nicaea-i", "condemnation-of-arius", "schisms"],
     priority: 2,
+  },
+  {
+    id: "justin-apologies",
+    personId: "justin-martyr",
+    workTitle: "First and Second Apology",
+    displayTitle: "First and Second Apologies",
+    reason:
+      "The classic first stop for Christians explaining their faith before emperors, philosophers, and pagan Rome.",
+    audience: "Start here for the Apologists and Christianity's public defense.",
+    shelves: ["starter", "primary-sources"],
+    eraSlugs: ["apologists"],
+    priority: 2.5,
   },
   {
     id: "augustine-confessions",
@@ -67,6 +79,30 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     priority: 3,
   },
   {
+    id: "augustine-enchiridion",
+    personId: "augustine-of-hippo",
+    workTitle: "Enchiridion",
+    reason:
+      "A compact Augustinian map of faith, hope, love, grace, and salvation after the Pelagian fight.",
+    audience: "Read this when the question is grace, not Augustine's life story.",
+    shelves: ["western", "doctrine"],
+    eraSlugs: ["post-nicene"],
+    eventSlugs: ["condemnation-of-pelagius", "council-of-orange"],
+    priority: 13.5,
+  },
+  {
+    id: "augustine-city-of-god",
+    personId: "augustine-of-hippo",
+    workTitle: "City of God",
+    reason:
+      "Augustine's answer to Rome's collapse: two cities, providence, empire, worship, and Christian hope.",
+    audience: "Read this when the newsletter is about Rome falling apart.",
+    shelves: ["western", "history"],
+    eraSlugs: ["post-nicene"],
+    eventSlugs: ["fall-of-rome"],
+    priority: 13.6,
+  },
+  {
     id: "irenaeus-against-heresies",
     personId: "irenaeus-of-lyons",
     workTitle: "Against Heresies",
@@ -76,7 +112,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverImageUrl: "https://covers.openlibrary.org/b/id/8486479-M.jpg",
     coverAlt: "Cover of Against the Heresies by Irenaeus",
     shelves: ["tradition", "controversies"],
-    eraSlugs: ["ante-nicene"],
+    eraSlugs: ["apologists", "ante-nicene"],
     eventSlugs: ["schisms"],
     priority: 4,
   },
@@ -91,6 +127,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of Eusebius's Ecclesiastical History",
     shelves: ["history", "reference"],
     eraSlugs: ["nicene"],
+    eventSlugs: ["edict-of-milan", "council-of-nicaea-i"],
     priority: 5,
   },
   {
@@ -104,6 +141,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of On the Holy Spirit by Basil of Caesarea",
     shelves: ["trinity"],
     eraSlugs: ["nicene"],
+    eventSlugs: ["council-of-constantinople-i"],
     priority: 6,
   },
   {
@@ -117,7 +155,20 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of On God and Christ by Gregory of Nazianzus",
     shelves: ["trinity"],
     eraSlugs: ["nicene"],
+    eventSlugs: ["council-of-constantinople-i"],
     priority: 7,
+  },
+  {
+    id: "origen-first-principles",
+    personId: "origen-of-alexandria",
+    workTitle: "On First Principles (De Principiis)",
+    reason:
+      "The bold, influential, and later contested system that explains why Origen became impossible to ignore.",
+    audience: "Read this when the issue is Origen's brilliance and danger.",
+    shelves: ["controversies", "doctrine"],
+    eraSlugs: ["ante-nicene"],
+    eventSlugs: ["council-of-constantinople-ii", "condemnation-of-origen"],
+    priority: 7.5,
   },
   {
     id: "desert-fathers-sayings",
@@ -157,7 +208,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of The Lapsed and The Unity of the Catholic Church by Cyprian",
     shelves: ["bishops", "controversies"],
     eraSlugs: ["ante-nicene"],
-    eventSlugs: ["schisms"],
+    eventSlugs: ["donatist-schism", "novatian-schism", "schisms"],
     priority: 10,
   },
   {
@@ -171,7 +222,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of On the Unity of Christ by Cyril of Alexandria",
     shelves: ["christology", "controversies"],
     eraSlugs: ["post-nicene"],
-    eventSlugs: ["schisms"],
+    eventSlugs: ["council-of-ephesus", "condemnation-of-nestorius", "schisms"],
     priority: 11,
   },
   {
@@ -185,7 +236,13 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of Sermons by Leo the Great",
     shelves: ["christology", "controversies"],
     eraSlugs: ["post-nicene"],
-    eventSlugs: ["schisms"],
+    eventSlugs: [
+      "acacian-schism-onset",
+      "council-of-chalcedon",
+      "condemnation-of-eutyches",
+      "three-chapters-controversy",
+      "schisms",
+    ],
     priority: 12,
   },
   {
@@ -225,6 +282,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of Bede's Ecclesiastical History of the English People",
     shelves: ["history"],
     eraSlugs: ["early-medieval"],
+    eventSlugs: ["synod-of-whitby"],
     priority: 15,
   },
   {
@@ -238,7 +296,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of Three Treatises on the Divine Images by John of Damascus",
     shelves: ["controversies", "late-patristic"],
     eraSlugs: ["early-medieval"],
-    eventSlugs: ["schisms"],
+    eventSlugs: ["council-of-nicaea-ii", "death-of-john-of-damascus", "iconoclasm-onset", "schisms"],
     priority: 16,
   },
   {
@@ -252,6 +310,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverAlt: "Cover of The Ascetic Life and The Four Centuries on Charity by Maximus the Confessor",
     shelves: ["late-patristic", "monastic"],
     eraSlugs: ["early-medieval"],
+    eventSlugs: ["council-of-constantinople-iii"],
     priority: 17,
   },
 ];
@@ -342,15 +401,21 @@ export function getBookForPerson(
     if (eraPick) return eraPick;
   }
 
-  return pickDeterministic(getRecommendedBooks(), date, person.id.length);
+  return null;
 }
 
 export function getBookForContent(
   content: Content,
   date: Date = new Date()
 ): ResolvedBookRecommendation | null {
-  if (content.type === "father" || content.type === "heretic" || content.type === "quote") {
+  if (content.type === "father" || content.type === "quote") {
     return getBookForPerson(content.person, date);
+  }
+
+  if (content.type === "heretic") {
+    return content.anniversary
+      ? pickDeterministic(getRecommendedBooks({ eventSlug: content.anniversary.id }), date)
+      : null;
   }
 
   if (content.type === "era") {
@@ -363,24 +428,14 @@ export function getBookForContent(
   }
 
   if (content.type === "schism") {
-    const relatedPick = content.anniversary.related_person_ids
-      ?.map((id) => getPerson(id))
-      .filter((person): person is Person => Boolean(person))
-      .map((person) => getBookForPerson(person, date))
-      .find((book): book is ResolvedBookRecommendation => Boolean(book));
-    return relatedPick ?? pickDeterministic(getRecommendedBooks({ eventSlug: "schisms" }), date);
+    return pickDeterministic(getRecommendedBooks({ eventSlug: content.anniversary.id }), date);
   }
 
   if (content.type === "council") {
-    const relatedPick = content.anniversary.related_person_ids
-      ?.map((id) => getPerson(id))
-      .filter((person): person is Person => Boolean(person))
-      .map((person) => getBookForPerson(person, date))
-      .find((book): book is ResolvedBookRecommendation => Boolean(book));
-    if (relatedPick) return relatedPick;
+    return pickDeterministic(getRecommendedBooks({ eventSlug: content.anniversary.id }), date);
   }
 
-  return pickDeterministic(getRecommendedBooks(), date);
+  return null;
 }
 
 export function getBookOfDay(date: Date = new Date()): ResolvedBookRecommendation | null {
