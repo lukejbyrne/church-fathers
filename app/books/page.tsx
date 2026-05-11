@@ -20,7 +20,9 @@ export const metadata: Metadata = {
 };
 
 const ERA_ORDER: EraSlug[] = [
+  "apostolic",
   "apostolic-fathers",
+  "apologists",
   "ante-nicene",
   "desert-fathers",
   "nicene",
