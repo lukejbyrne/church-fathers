@@ -357,12 +357,6 @@ function renderQuoteReading(
       `<a href="${escapeHtml(readUrl)}" style="display:inline-block;padding:7px 14px;border:1px solid #1f1a1330;color:#1f1a13;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;">Read online →</a>`
     );
   }
-  if (book?.person_url) {
-    links.push(
-      `<a href="${escapeHtml(book.person_url)}" style="display:inline-block;padding:7px 14px;border:1px solid #1f1a1330;color:#1f1a13;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;">Figure page →</a>`
-    );
-  }
-
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 0;background:#fffaf0;border:1px solid #1f1a1320;border-radius:6px;">
     <tr>
       <td style="padding:16px 18px;vertical-align:top;">
