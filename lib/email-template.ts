@@ -327,6 +327,55 @@ function renderBookRecommendation(
   </table>`;
 }
 
+function renderQuoteReading(
+  book: EmailBook | null | undefined,
+  works: RecommendedWork[] | undefined,
+  currentPersonName: string
+): string {
+  const primaryWork = works?.[0];
+  if (!book && !primaryWork) return "";
+
+  const title = book?.title ?? primaryWork!.title;
+  const author = book?.author ?? primaryWork!.personName;
+  const description = book?.reason ?? primaryWork?.description ?? "";
+  const year = !book && primaryWork?.year ? ` <span style="font-size:12px;color:#1f1a1370;">· ${primaryWork.year}</span>` : "";
+  const authorLine =
+    author && author !== currentPersonName
+      ? `<div style="font-size:12px;color:#1f1a1380;margin-bottom:10px;">${escapeHtml(author)}</div>`
+      : "";
+  const links: string[] = [];
+  const editionUrl = book?.amazon_url ?? primaryWork?.editionUrl;
+  const readUrl = book?.read_url ?? primaryWork?.readUrl;
+
+  if (editionUrl) {
+    links.push(
+      `<a href="${escapeHtml(editionUrl)}" style="display:inline-block;padding:7px 14px;background:#8b1e2d;color:#fffaf0;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;">Find an edition →</a>`
+    );
+  }
+  if (readUrl) {
+    links.push(
+      `<a href="${escapeHtml(readUrl)}" style="display:inline-block;padding:7px 14px;border:1px solid #1f1a1330;color:#1f1a13;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;">Read online →</a>`
+    );
+  }
+  if (book?.person_url) {
+    links.push(
+      `<a href="${escapeHtml(book.person_url)}" style="display:inline-block;padding:7px 14px;border:1px solid #1f1a1330;color:#1f1a13;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;">Figure page →</a>`
+    );
+  }
+
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 0;background:#fffaf0;border:1px solid #1f1a1320;border-radius:6px;">
+    <tr>
+      <td style="padding:16px 18px;vertical-align:top;">
+        <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:6px;">Read next</div>
+        <div style="font-family:Georgia,serif;font-size:19px;line-height:1.2;color:#1f1a13;margin-bottom:3px;">${escapeHtml(title)}${year}</div>
+        ${authorLine}
+        ${description ? `<div style="font-size:13px;color:#1f1a13b0;line-height:1.5;margin-bottom:12px;">${escapeHtml(description)}</div>` : ""}
+        ${links.length ? `<div>${links.join("")}</div>` : ""}
+      </td>
+    </tr>
+  </table>`;
+}
+
 function renderRecommendedWorks(works: RecommendedWork[] | undefined, title = "Recommended reading"): string {
   if (!works || works.length === 0) return "";
   const items = works
@@ -572,29 +621,21 @@ function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: s
     : "";
   return `
     <tr><td style="padding:0 32px;text-align:center;">
-      <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8b1e2dcc;">Quote in context</p>
-      <h1 style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
-      <p style="margin:0 0 22px;font-size:13px;color:#1f1a13aa;">${escapeHtml(content.person.name)} · ${escapeHtml(source)}</p>
+      <h1 style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
+      <p style="margin:0 0 22px;font-size:13px;color:#1f1a13aa;"><a href="${escapeHtml(personUrl)}" style="color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a>, ${escapeHtml(source)}</p>
     </td></tr>
     <tr><td style="padding:0 32px;text-align:center;">
-      <blockquote style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
-      <p style="margin:0 0 24px;font-size:14px;color:#1f1a13;">— <a href="${escapeHtml(personUrl)}" style="color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a></p>
+      <blockquote style="margin:0 0 24px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
     </td></tr>
     ${contextBlock}
     <tr><td style="padding:0 32px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;">
-        <tr>
-          <td width="92" style="vertical-align:top;padding-right:18px;">${portraitImg(content.person.image_url, content.person.name, 82).replace("margin:0 auto 18px;", "margin:0;")}</td>
-          <td style="vertical-align:top;">
-            <h2 style="margin:0 0 6px;font-family:Georgia,serif;font-size:20px;font-weight:normal;color:#1f1a13;">Who said it: ${escapeHtml(content.person.name)}</h2>
-            <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#1f1a13c8;">${escapeHtml(about || content.person.short_bio)}</p>
-          </td>
-        </tr>
-      </table>
-      ${renderQuickFacts(content.person)}
+      <div style="margin:0 0 24px;padding:14px 16px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;">
+        <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:6px;">About ${escapeHtml(shortName(content.person.name))}</div>
+        <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#1f1a13c8;">${escapeHtml(about || content.person.short_bio)}</p>
+        <p style="margin:0;font-size:12px;color:#1f1a1380;">${escapeHtml(formatLifeRange(content.person.born, content.person.died))}${content.person.see ? ` · Bishop of ${escapeHtml(content.person.see)}` : ""}${content.person.tradition_status ? ` · ${escapeHtml(ERA_LABEL[content.person.tradition_status] ?? content.person.tradition_status)}` : ""}</p>
+      </div>
     </td></tr>
-    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading")}</td></tr>
-    <tr><td style="padding:0 32px;">${renderBookRecommendation(extras.book)}</td></tr>
+    <tr><td style="padding:0 32px;">${renderQuoteReading(extras.book, works, content.person.name)}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(personUrl)}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Read more about ${escapeHtml(shortName(content.person.name))} →</a>
     </td></tr>`;
@@ -660,6 +701,26 @@ function plainBookLine(book: EmailBook | null | undefined): string {
     book.read_url ? `Read free: ${book.read_url}` : "",
   ].filter(Boolean);
   return `\nBook of the day: ${book.title} — ${book.author}\n${book.reason}${links.length ? `\n${links.join("\n")}` : ""}\n`;
+}
+
+function quoteReadingText(
+  book: EmailBook | null | undefined,
+  works: RecommendedWork[] | undefined,
+  currentPersonName: string
+): string {
+  const primaryWork = works?.[0];
+  if (!book && !primaryWork) return "";
+
+  const title = book?.title ?? primaryWork!.title;
+  const author = book?.author ?? primaryWork!.personName;
+  const description = book?.reason ?? primaryWork?.description ?? "";
+  const links = [
+    book?.amazon_url ? `Find an edition: ${book.amazon_url}` : primaryWork?.editionUrl ? `Find an edition: ${primaryWork.editionUrl}` : "",
+    book?.read_url ? `Read online: ${book.read_url}` : primaryWork?.readUrl ? `Read online: ${primaryWork.readUrl}` : "",
+  ].filter(Boolean);
+  const authorSuffix = author && author !== currentPersonName ? ` — ${author}` : "";
+
+  return `Read next:\n${title}${authorSuffix}\n${description}${links.length ? `\n${links.join("\n")}` : ""}\n\n`;
 }
 
 function plainTextFor(content: Content, extras: EmailExtras, siteUrl: string): string {
@@ -735,18 +796,17 @@ Patristic Lineage · ${siteUrl}
 Unsubscribe: {$unsubscribe}`;
     }
     case "quote": {
+      const works = extras.recommendedWorks ?? recommendedWorksForPerson(content.person, 3);
       return `${subject}
 
-${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}
-
 "${content.quote.text}"
-— ${content.person.name}
+${content.person.name}, ${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}
 
-${content.quote.context ? `Plain English:\n${content.quote.context}\n\n` : ""}${content.quote.impact ? `Why it matters:\n${content.quote.impact}\n\n` : ""}Who said it:
+${content.quote.context ? `Plain English:\n${content.quote.context}\n\n` : ""}${content.quote.impact ? `Why it matters:\n${content.quote.impact}\n\n` : ""}About ${shortName(content.person.name)}:
 ${content.person.name} (${formatLifeRange(content.person.born, content.person.died)})
 ${content.person.why_matters ?? content.person.short_bio}
 
-${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
+${quoteReadingText(extras.book, works, content.person.name)}
 Read more about ${shortName(content.person.name)}: ${siteUrl}/fathers/${content.person.id}
 —
 Patristic Lineage · ${siteUrl}

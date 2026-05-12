@@ -251,10 +251,10 @@ function assertDailyEmailSurface(startIso: string, endIso: string) {
     }
 
     if (content.type === "quote") {
-      for (const marker of ["Quote in context", "Plain English", "Why it matters", "Who said it"]) {
+      for (const marker of ["Plain English", "Why it matters", "About", "Read next"]) {
         if (!html.includes(marker)) errors.push(`${day} quote: html missing ${marker}`);
       }
-      for (const marker of ["Plain English:", "Why it matters:", "Who said it:"]) {
+      for (const marker of ["Plain English:", "Why it matters:", "About ", "Read next:"]) {
         if (!plain.includes(marker)) errors.push(`${day} quote: plain text missing ${marker}`);
       }
     }
