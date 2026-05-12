@@ -606,6 +606,7 @@ function buildEraBody(content: Extract<Content, { type: "era" }>, siteUrl: strin
 function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: string, extras: EmailExtras): string {
   const personUrl = `${siteUrl}/fathers/${content.person.id}`;
   const title = quoteIssueTitle(content.quote, content.person);
+  const source = `${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}`;
   const context = content.quote.context?.trim();
   const impact = content.quote.impact?.trim();
   const about = firstSentence(content.person.why_matters ?? content.person.short_bio, 300);
@@ -620,13 +621,15 @@ function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: s
     : "";
   return `
     <tr><td style="padding:0 32px;text-align:center;">
-      <h1 style="margin:0 0 24px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
+      <h1 style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
+      <div style="width:42px;height:1px;background:#1f1a1325;margin:0 auto 24px;"></div>
     </td></tr>
     <tr><td style="padding:0 32px;text-align:center;">
       <blockquote style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
       <div style="margin:0 0 24px;text-align:center;">
         ${portraitImg(content.person.image_url, content.person.name, 58).replace("margin:0 auto 18px;", "margin:0 auto 8px;")}
         <a href="${escapeHtml(personUrl)}" style="font-size:13px;line-height:1.4;color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a>
+        <div style="margin-top:4px;font-size:12px;line-height:1.4;color:#1f1a1380;font-style:italic;">${escapeHtml(source)}</div>
       </div>
     </td></tr>
     ${contextBlock}

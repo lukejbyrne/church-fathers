@@ -254,6 +254,12 @@ function assertDailyEmailSurface(startIso: string, endIso: string) {
       for (const marker of ["Plain English", "Why it matters", "About", "Read next"]) {
         if (!html.includes(marker)) errors.push(`${day} quote: html missing ${marker}`);
       }
+      for (const marker of ["Quote in context", "Who said it", "Recommended reading", "Book of the day"]) {
+        if (html.includes(marker)) errors.push(`${day} quote: html still contains old repeated section label ${marker}`);
+      }
+      if (!html.includes(content.quote.source)) {
+        errors.push(`${day} quote: html missing italic source line ${content.quote.source}`);
+      }
       for (const marker of ["Plain English:", "Why it matters:", "About ", "Read next:"]) {
         if (!plain.includes(marker)) errors.push(`${day} quote: plain text missing ${marker}`);
       }
