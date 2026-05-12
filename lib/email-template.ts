@@ -339,6 +339,11 @@ function renderQuoteReading(
   const author = book?.author ?? primaryWork!.personName;
   const description = book?.reason ?? primaryWork?.description ?? "";
   const year = !book && primaryWork?.year ? ` <span style="font-size:12px;color:#1f1a1370;">· ${primaryWork.year}</span>` : "";
+  const cover = book
+    ? book.cover_image_url
+      ? `<img src="${escapeHtml(book.cover_image_url)}" alt="${escapeHtml(book.cover_alt ?? `Cover of ${book.title}`)}" width="78" height="116" style="display:block;width:78px;height:116px;object-fit:cover;border:1px solid #1f1a1328;border-radius:3px;background:#1f1a1308;" />`
+      : `<div style="width:78px;height:116px;border:1px solid #1f1a1328;border-radius:3px;background:#8b1e2d;color:#fffaf0;font-family:Georgia,serif;font-size:13px;line-height:1.15;padding:9px;box-sizing:border-box;display:table-cell;vertical-align:middle;text-align:center;">${escapeHtml(book.title)}</div>`
+    : "";
   const authorLine =
     author && author !== currentPersonName
       ? `<div style="font-size:12px;color:#1f1a1380;margin-bottom:10px;">${escapeHtml(author)}</div>`
@@ -349,16 +354,17 @@ function renderQuoteReading(
 
   if (editionUrl) {
     links.push(
-      `<a href="${escapeHtml(editionUrl)}" style="display:inline-block;padding:7px 14px;background:#8b1e2d;color:#fffaf0;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;">Find an edition →</a>`
+      `<a href="${escapeHtml(editionUrl)}" style="display:inline-block;padding:7px 14px;background:#8b1e2d;color:#fffaf0;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;white-space:nowrap;">Find an edition&nbsp;→</a>`
     );
   }
   if (readUrl) {
     links.push(
-      `<a href="${escapeHtml(readUrl)}" style="display:inline-block;padding:7px 14px;border:1px solid #1f1a1330;color:#1f1a13;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;">Read online →</a>`
+      `<a href="${escapeHtml(readUrl)}" style="display:inline-block;padding:7px 14px;border:1px solid #1f1a1330;color:#1f1a13;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;white-space:nowrap;">Read online&nbsp;→</a>`
     );
   }
   return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 0;background:#fffaf0;border:1px solid #1f1a1320;border-radius:6px;">
     <tr>
+      ${cover ? `<td width="102" style="padding:16px 8px 16px 16px;vertical-align:top;">${cover}</td>` : ""}
       <td style="padding:16px 18px;vertical-align:top;">
         <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:6px;">Read next</div>
         <div style="font-family:Georgia,serif;font-size:19px;line-height:1.2;color:#1f1a13;margin-bottom:3px;">${escapeHtml(title)}${year}</div>
@@ -600,7 +606,6 @@ function buildEraBody(content: Extract<Content, { type: "era" }>, siteUrl: strin
 function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: string, extras: EmailExtras): string {
   const personUrl = `${siteUrl}/fathers/${content.person.id}`;
   const title = quoteIssueTitle(content.quote, content.person);
-  const source = `${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}`;
   const context = content.quote.context?.trim();
   const impact = content.quote.impact?.trim();
   const about = firstSentence(content.person.why_matters ?? content.person.short_bio, 300);
@@ -615,11 +620,14 @@ function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: s
     : "";
   return `
     <tr><td style="padding:0 32px;text-align:center;">
-      <h1 style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
-      <p style="margin:0 0 22px;font-size:13px;color:#1f1a13aa;"><a href="${escapeHtml(personUrl)}" style="color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a>, ${escapeHtml(source)}</p>
+      <h1 style="margin:0 0 24px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
     </td></tr>
     <tr><td style="padding:0 32px;text-align:center;">
-      <blockquote style="margin:0 0 24px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
+      <blockquote style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
+      <div style="margin:0 0 24px;text-align:center;">
+        ${portraitImg(content.person.image_url, content.person.name, 58).replace("margin:0 auto 18px;", "margin:0 auto 8px;")}
+        <a href="${escapeHtml(personUrl)}" style="font-size:13px;line-height:1.4;color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a>
+      </div>
     </td></tr>
     ${contextBlock}
     <tr><td style="padding:0 32px;">
