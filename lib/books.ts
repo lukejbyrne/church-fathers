@@ -380,6 +380,32 @@ export function bookDisplayTitle(book: ResolvedBookRecommendation): string {
   return book.displayTitle ?? book.work.title;
 }
 
+function normalizeWorkTitle(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+export function quoteSourceMatchesBook(source: string, book: ResolvedBookRecommendation): boolean {
+  const normalizedSource = normalizeWorkTitle(source);
+  const candidates = [
+    book.work.title,
+    book.displayTitle,
+    book.workTitle,
+  ]
+    .filter((title): title is string => Boolean(title))
+    .map(normalizeWorkTitle)
+    .filter(Boolean);
+
+  return candidates.some((candidate) => {
+    const firstWords = candidate.split(" ").slice(0, 4).join(" ");
+    return normalizedSource.includes(candidate) || (firstWords.length >= 5 && normalizedSource.includes(firstWords));
+  });
+}
+
 export function eraSlugForTradition(status: TraditionStatus): EraSlug | null {
   return TRADITION_TO_ERA[status] ?? null;
 }
@@ -408,7 +434,12 @@ export function getBookForContent(
   content: Content,
   date: Date = new Date()
 ): ResolvedBookRecommendation | null {
-  if (content.type === "father" || content.type === "quote") {
+  if (content.type === "quote") {
+    const book = getBookForPerson(content.person, date);
+    return book && quoteSourceMatchesBook(content.quote.source, book) ? book : null;
+  }
+
+  if (content.type === "father") {
     return getBookForPerson(content.person, date);
   }
 

@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import { bookDisplayTitle, eraSlugForTradition, getBookForContent, type ResolvedBookRecommendation } from "../lib/books";
+import { bookDisplayTitle, eraSlugForTradition, getBookForContent, quoteSourceMatchesBook, type ResolvedBookRecommendation } from "../lib/books";
 import { ERAS_DATA, ERA_SLUG_BY_STATUS, eraForTraditionStatus } from "../lib/eras";
 import { buildExtras } from "../lib/email-helpers";
 import { renderEmail } from "../lib/email-template";
@@ -235,7 +235,8 @@ function assertDailyEmailSurface(startIso: string, endIso: string) {
         `${day} ${content.type}: book "${bookDisplayTitle(book!)}" (${book!.id}) does not match ${contentLabel(content)}`
       );
     }
-    const { subject, html, plain } = renderEmail(content, SITE_URL, buildExtras(content, SITE_URL));
+    const extras = buildExtras(content, SITE_URL);
+    const { subject, html, plain } = renderEmail(content, SITE_URL, extras);
 
     if (!subject || subject.trim().length < 8) {
       errors.push(`${day} ${content.type}: email subject is too short`);
@@ -251,7 +252,7 @@ function assertDailyEmailSurface(startIso: string, endIso: string) {
     }
 
     if (content.type === "quote") {
-      for (const marker of ["Plain English", "Why it matters", "About", "Read next"]) {
+      for (const marker of ["Plain English", "Why it matters", "About"]) {
         if (!html.includes(marker)) errors.push(`${day} quote: html missing ${marker}`);
       }
       for (const marker of ["Quote in context", "Who said it", "Recommended reading", "Book of the day"]) {
@@ -260,7 +261,19 @@ function assertDailyEmailSurface(startIso: string, endIso: string) {
       if (!html.includes(content.quote.source)) {
         errors.push(`${day} quote: html missing italic source line ${content.quote.source}`);
       }
-      for (const marker of ["Plain English:", "Why it matters:", "About ", "Read next:"]) {
+      if (book && !quoteSourceMatchesBook(content.quote.source, book)) {
+        errors.push(`${day} quote: book "${bookDisplayTitle(book)}" is not the source of ${content.quote.source}`);
+      }
+      if (book && !html.includes("Read next")) {
+        errors.push(`${day} quote: source-matched reading is missing Read next`);
+      }
+      if (!book && (html.includes("Read next") || plain.includes("Read next:"))) {
+        errors.push(`${day} quote: reading card appears without a source-matched book`);
+      }
+      if (/>About [^<]+<\/div>\s*<p[^>]*>\s*["'”’)]\s/.test(html)) {
+        errors.push(`${day} quote: about snippet starts with a dangling quotation mark`);
+      }
+      for (const marker of ["Plain English:", "Why it matters:", "About "]) {
         if (!plain.includes(marker)) errors.push(`${day} quote: plain text missing ${marker}`);
       }
     }

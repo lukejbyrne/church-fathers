@@ -535,6 +535,13 @@ function QuoteView({
   const body = person.why_matters ?? person.short_bio;
   const dr = dateRange(person);
   const source = `${quote.source}${quote.translation ? ` · ${quote.translation}` : ""}`;
+  const facts = [
+    ["Lifespan", dr.text],
+    ["Era", person.tradition_status.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())],
+    person.birth_place ? ["Born in", person.birth_place] : null,
+    person.see ? ["See", person.see] : null,
+    person.region ? ["Region", person.region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())] : null,
+  ].filter((row): row is [string, string] => Boolean(row));
   return (
     <>
       <header className="mb-8 text-center">
@@ -577,10 +584,14 @@ function QuoteView({
         <div className="prose-like text-lg">
           {body.split(/\n\n+/).map((para, i) => <p key={i} className="mb-4 last:mb-0">{para}</p>)}
         </div>
-        <p className="mt-4 text-sm text-ink/55 italic" title={dr.explanation || undefined}>
-          {dr.text}
-          {person.see ? <> · Bishop of {person.see}</> : null}
-        </p>
+        <dl className="mt-5 divide-y divide-ink/10 border-y border-ink/10 text-sm">
+          {facts.map(([label, value]) => (
+            <div key={label} className="grid grid-cols-[8rem_1fr] gap-3 py-2">
+              <dt className="uppercase tracking-widest text-ink/45">{label}</dt>
+              <dd className="text-ink/70" title={label === "Lifespan" ? dr.explanation || undefined : undefined}>{value}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
       <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
         Read more about {person.name} →
