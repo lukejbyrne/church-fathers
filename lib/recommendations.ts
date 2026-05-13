@@ -82,6 +82,7 @@ export function recommendedWorksForEra(era: TraditionStatus, limit = 4): Recomme
   const slug = eraSlugForStatus(era);
   const def = ERAS_DATA[slug];
   if (!def) return [];
+  if (slug === "apostolic") return [];
   if (slug === "desert-fathers") {
     const people = getPeople();
     const picks = [

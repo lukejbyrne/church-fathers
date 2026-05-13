@@ -69,6 +69,23 @@ function bookFitsContent(content: Content, book: ResolvedBookRecommendation | nu
   return book.eventSlugs?.includes(content.anniversary.id) ?? false;
 }
 
+function comparableTitle(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\b([a-z]{4,})ies\b/g, "$1y")
+    .replace(/\b([a-z]{4,})s\b/g, "$1")
+    .trim();
+}
+
+function titlesOverlap(a: string, b: string): boolean {
+  const left = comparableTitle(a);
+  const right = comparableTitle(b);
+  return left === right || left.includes(right) || right.includes(left);
+}
+
 // Dangling refs
 for (const r of rels) {
   if (!ids.has(r.from)) errors.push(`relationship from unknown id: ${r.from} → ${r.to} (${r.type})`);
@@ -237,6 +254,28 @@ function assertDailyEmailSurface(startIso: string, endIso: string) {
     }
     const extras = buildExtras(content, SITE_URL);
     const { subject, html, plain } = renderEmail(content, SITE_URL, extras);
+
+    if (extras.book && !extras.book.cover_image_url) {
+      errors.push(`${day} ${content.type}: book "${extras.book.title}" is missing a cover image`);
+    }
+    if (
+      extras.book &&
+      content.type !== "father" &&
+      content.type !== "quote" &&
+      plain.includes("Recommended reading:") &&
+      plain.includes(`Book of the day: ${extras.book.title}`)
+    ) {
+      const recommendedBlock = plain
+        .split(`Book of the day: ${extras.book.title}`)[0]
+        .split("Recommended reading:")
+        .pop() ?? "";
+      const duplicateWork = extras.recommendedWorks?.find(
+        (work) => titlesOverlap(work.title, extras.book!.title) && recommendedBlock.includes(work.title)
+      );
+      if (duplicateWork) {
+        errors.push(`${day} ${content.type}: book "${extras.book.title}" appears in both recommended reading and book of the day`);
+      }
+    }
 
     if (!subject || subject.trim().length < 8) {
       errors.push(`${day} ${content.type}: email subject is too short`);

@@ -36,7 +36,7 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     coverImageUrl: "https://covers.openlibrary.org/b/id/1506776-M.jpg",
     coverAlt: "Cover of The Apostolic Fathers, edited and translated by Michael W. Holmes",
     shelves: ["starter", "primary-sources"],
-    eraSlugs: ["apostolic", "apostolic-fathers"],
+    eraSlugs: ["apostolic-fathers"],
     priority: 1,
   },
   {
@@ -61,6 +61,8 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     reason:
       "The classic first stop for Christians explaining their faith before emperors, philosophers, and pagan Rome.",
     audience: "Start here for the Apologists and Christianity's public defense.",
+    coverImageUrl: "https://covers.openlibrary.org/b/id/12507358-M.jpg",
+    coverAlt: "Cover of First and Second Apologies by Justin Martyr",
     shelves: ["starter", "primary-sources"],
     eraSlugs: ["apologists"],
     priority: 2.5,
@@ -85,6 +87,8 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     reason:
       "A compact Augustinian map of faith, hope, love, grace, and salvation after the Pelagian fight.",
     audience: "Read this when the question is grace, not Augustine's life story.",
+    coverImageUrl: "https://covers.openlibrary.org/b/id/693830-M.jpg",
+    coverAlt: "Cover of Enchiridion on Faith, Hope, and Love by St. Augustine",
     shelves: ["western", "doctrine"],
     eraSlugs: ["post-nicene"],
     eventSlugs: ["condemnation-of-pelagius", "council-of-orange"],
@@ -97,6 +101,8 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     reason:
       "Augustine's answer to Rome's collapse: two cities, providence, empire, worship, and Christian hope.",
     audience: "Read this when the newsletter is about Rome falling apart.",
+    coverImageUrl: "https://covers.openlibrary.org/b/id/104325-M.jpg",
+    coverAlt: "Cover of City of God by Saint Augustine",
     shelves: ["western", "history"],
     eraSlugs: ["post-nicene"],
     eventSlugs: ["fall-of-rome"],
@@ -165,6 +171,8 @@ export const BOOK_RECOMMENDATIONS: BookRecommendation[] = [
     reason:
       "The bold, influential, and later contested system that explains why Origen became impossible to ignore.",
     audience: "Read this when the issue is Origen's brilliance and danger.",
+    coverImageUrl: "https://covers.openlibrary.org/b/id/9238404-M.jpg",
+    coverAlt: "Cover of Origen: On First Principles and Against Celsus",
     shelves: ["controversies", "doctrine"],
     eraSlugs: ["ante-nicene"],
     eventSlugs: ["council-of-constantinople-ii", "condemnation-of-origen"],

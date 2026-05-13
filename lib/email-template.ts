@@ -405,9 +405,38 @@ function renderQuoteReading(
   </table>`;
 }
 
-function renderRecommendedWorks(works: RecommendedWork[] | undefined, title = "Recommended reading"): string {
-  if (!works || works.length === 0) return "";
-  const items = works
+function comparableWorkTitle(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\b([a-z]{4,})ies\b/g, "$1y")
+    .replace(/\b([a-z]{4,})s\b/g, "$1")
+    .trim();
+}
+
+function recommendedWorksWithoutBook(
+  works: RecommendedWork[] | undefined,
+  book: EmailBook | null | undefined
+): RecommendedWork[] {
+  if (!works || works.length === 0) return [];
+  if (!book?.title) return works;
+  const bookTitle = comparableWorkTitle(book.title);
+  return works.filter((work) => {
+    const workTitle = comparableWorkTitle(work.title);
+    return workTitle !== bookTitle && !workTitle.includes(bookTitle) && !bookTitle.includes(workTitle);
+  });
+}
+
+function renderRecommendedWorks(
+  works: RecommendedWork[] | undefined,
+  title = "Recommended reading",
+  featuredBook?: EmailBook | null
+): string {
+  const visibleWorks = recommendedWorksWithoutBook(works, featuredBook);
+  if (visibleWorks.length === 0) return "";
+  const items = visibleWorks
     .slice(0, 4)
     .map((work) => {
       const links: string[] = [];
@@ -578,7 +607,7 @@ function buildAnniversaryBody(
         : ""
     }
     <tr><td style="padding:0 32px;">${renderBookRecommendation(book)}</td></tr>
-    <tr><td style="padding:0 32px;">${renderRecommendedWorks(recommendedWorks, "Recommended reading")}</td></tr>
+    <tr><td style="padding:0 32px;">${renderRecommendedWorks(recommendedWorks, "Recommended reading", book)}</td></tr>
     <tr><td style="padding:0 32px;">${renderCitation(anniv.citation, "Source")}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(eventUrl)}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Open the full event page →</a>
@@ -625,7 +654,7 @@ function buildEraBody(content: Extract<Content, { type: "era" }>, siteUrl: strin
       <h2 style="margin:0 0 8px;font-family:Georgia,serif;font-size:18px;font-weight:normal;color:#1f1a13;">Four people to know</h2>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;padding:8px;">${rows.join("")}</table>
     </td></tr>
-    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading")}</td></tr>
+    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading", extras.book)}</td></tr>
     <tr><td style="padding:0 32px;">${renderBookRecommendation(extras.book)}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(siteUrl)}/eras/${eraSlug}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Open the ${escapeHtml(label)} page →</a>
@@ -716,9 +745,13 @@ function eyebrowLabel(content: Content): string {
   }
 }
 
-function recommendedWorksText(works: RecommendedWork[] | undefined): string {
-  if (!works || works.length === 0) return "";
-  return `Recommended reading:\n${works
+function recommendedWorksText(
+  works: RecommendedWork[] | undefined,
+  featuredBook?: EmailBook | null
+): string {
+  const visibleWorks = recommendedWorksWithoutBook(works, featuredBook);
+  if (visibleWorks.length === 0) return "";
+  return `Recommended reading:\n${visibleWorks
     .slice(0, 4)
     .map((work) => {
       const links = [work.readUrl, work.editionUrl].filter(Boolean).join(" | ");
@@ -793,7 +826,7 @@ ${title}
 
 ${blurb}
 
-${a?.key_line ? `${a.key_line}\n\n` : ""}${a?.highlights?.length ? `Highlights:\n${a.highlights.slice(0, 4).map((item) => `- ${item}`).join("\n")}\n\n` : ""}${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
+${a?.key_line ? `${a.key_line}\n\n` : ""}${a?.highlights?.length ? `Highlights:\n${a.highlights.slice(0, 4).map((item) => `- ${item}`).join("\n")}\n\n` : ""}${recommendedWorksText(extras.recommendedWorks, extras.book)}${plainBookLine(extras.book)}
 Open the full event page: ${eventUrl}
 
 —
@@ -821,7 +854,7 @@ ${why}
 Representative figures:
 ${list}
 
-${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
+${recommendedWorksText(extras.recommendedWorks, extras.book)}${plainBookLine(extras.book)}
 —
 Patristic Lineage · ${siteUrl}
 Unsubscribe: {$unsubscribe}`;
