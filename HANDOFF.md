@@ -47,9 +47,9 @@ Same date always returns the same figure (deterministic by `dayIndex = floor(Dat
 
 ## Things you need to do tomorrow
 
-### 1. Newsletter is wired on Netlify + MailerLite (free)
+### 1. Newsletter is wired on Netlify, but MailerLite API sending is blocked on the current plan
 
-Stack swapped from Resend to **MailerLite free tier** because Resend's free tier only allows one verified sending domain and Luke is already using it for another site. MailerLite free allows multiple domains, plus 1,000 subscribers and 12,000 emails/month.
+Stack swapped from Resend to **MailerLite** because Resend's free tier only allows one verified sending domain and Luke is already using it for another site. Subscriptions still push into the configured MailerLite group, but the daily generated HTML campaign cannot be sent through the MailerLite API on the current plan: MailerLite returns `422 Content submission is only available on advanced plan.`
 
 Files: `app/api/subscribe/route.ts` (push contact) and `netlify/functions/daily-email.ts` (daily campaign create + send), both using the shared `lib/email-template.ts`.
 
@@ -67,7 +67,7 @@ Files: `app/api/subscribe/route.ts` (push contact) and `netlify/functions/daily-
 
 The daily function checks Netlify Blobs (`sends` store) for today's date before contacting MailerLite. If a `sent` record exists, it returns `{ ok: true, skipped: true }`. On success it writes the record; on failure it writes a `failed` record so the next retry can re-attempt. The public archive at `/sent` reads `listSends(60)`.
 
-`@netlify/blobs` is auto-available inside Netlify Functions via `NETLIFY_SITE_ID` + `NETLIFY_AUTH_TOKEN`. Locally (CLI scripts, dev), the wrapper no-ops.
+`@netlify/blobs` is auto-available inside Netlify Functions via `NETLIFY_BLOBS_CONTEXT`. Locally (CLI scripts, dev), the wrapper no-ops.
 
 #### Adding content
 
@@ -77,23 +77,24 @@ The daily function checks Netlify Blobs (`sends` store) for today's date before 
 - **Add a quote:** edit `data/quotes.json`, schema is `{ person_id, text, source, translation? }`.
 - **Refresh feast days from Wikidata:** `pnpm fetch-feast-days` (uses property P841, polite 120ms delay, idempotent).
 
-To go live:
+To make automated sends live:
 
-1. **Sign up at mailerlite.com** (free). Verify your sending domain — for `patristic.io`:
+1. Either upgrade MailerLite to a plan that allows API HTML content submission, or switch `netlify/functions/daily-email.ts` to a provider that supports HTML sends on the configured plan.
+2. Verify your sending domain — for `patristic.io`:
    - MailerLite → Account → Domains → Add domain → paste `patristic.io`.
    - They give you SPF + DKIM TXT records. Add them via Netlify DNS (Site settings → Domains → DNS panel).
    - Wait for verification (usually <30 min).
-2. **Create a group** in the dashboard for the newsletter audience. Settings → Groups → Create. Copy its ID from the URL or via API.
-3. **Generate an API token**. Integrations → API → Generate new token. Copy it.
-4. **Set Netlify env vars** (Site settings → Environment variables):
+3. **Create a group** in the dashboard for the newsletter audience. Settings → Groups → Create. Copy its ID from the URL or via API.
+4. **Generate an API token**. Integrations → API → Generate new token. Copy it.
+5. **Set Netlify env vars** (Site settings → Environment variables):
    ```
    MAILERLITE_API_TOKEN=eyJ0eXA...           # from MailerLite → Integrations → API
    MAILERLITE_GROUP_ID=12345678              # the group id from step 2
    NEWSLETTER_FROM_EMAIL=newsletter@patristic.io
    NEWSLETTER_FROM_NAME=Patristic Lineage
    ```
-5. **Trigger a redeploy** so the function picks up env vars. Schedule is `0 13 * * *` (13:00 UTC daily) — edit `netlify/functions/daily-email.ts` to change.
-6. **Test the function once** before letting it auto-run. Netlify dashboard → Functions → `daily-email` → Trigger. Watch the logs; success returns `{ ok: true, campaign_id, date, figure }`.
+6. **Trigger a redeploy** so the function picks up env vars. Schedule is `0 6 * * *` (06:00 UTC daily) — edit `netlify/functions/daily-email.ts` to change.
+7. **Test the function once** before letting it auto-run. Netlify dashboard → Functions → `daily-email` → Trigger. Watch the logs; success returns `{ ok: true, campaign_id, date, figure }`.
 
 If env isn't set, the subscribe form still returns success (logs to server console) and the daily function returns 500 — nothing user-facing breaks during setup.
 
