@@ -2,7 +2,7 @@
 //
 // One blob per ISO date keyed under the "sends" store. Atomic per-key writes,
 // so the daily function can use it for idempotency: if a record exists with
-// status "sent" for today, skip the MailerLite call.
+// status "sent" for today, skip the email provider call.
 //
 // Outside Netlify (local script runs, dev), the wrapper detects the missing
 // Blobs context and no-ops gracefully. Local previews don't need a real send log.
@@ -16,6 +16,9 @@ export type SendRecord = {
   title: string;                // human-readable, e.g. "Augustine of Hippo"
   primary_id?: string;          // person_id or anniversary.id
   campaign_id?: string;
+  provider?: "mailerlite" | "resend";
+  recipient_count?: number;
+  message_ids?: string[];
   status: "sent" | "failed";
   attempted_at: string;         // ISO timestamp
   override: boolean;

@@ -41,17 +41,17 @@ Same date always returns the same figure (deterministic by `dayIndex = floor(Dat
 
 ### What I did NOT build (deliberately)
 - **AI Q&A chat widget** — needs an Anthropic API key, costs money per query, would require rate-limiting + abuse protection. I drafted the architecture below but didn't ship code. Decide first whether you want the cost.
-- **Real newsletter integration** — the subscribe endpoint is a stub that logs to console. You pick a provider (Resend / ConvertKit / Buttondown), paste an API key, uncomment the matching block.
+- **Broadcast-style ESP integration** — the site now uses Resend's direct send API instead of MailerLite campaigns. Subscribers are kept in Netlify Blobs as the source of truth.
 - **Reformation scope** — see above.
 - **More figures beyond the 13 added** — diminishing returns; the gaps left are mostly minor figures (later popes, regional bishops). The graph is comprehensive enough that any beginner can find what they need.
 
 ## Things you need to do tomorrow
 
-### 1. Newsletter is wired on Netlify, but MailerLite API sending is blocked on the current plan
+### 1. Newsletter now sends through Resend
 
-Stack swapped from Resend to **MailerLite** because Resend's free tier only allows one verified sending domain and Luke is already using it for another site. Subscriptions still push into the configured MailerLite group, but the daily generated HTML campaign cannot be sent through the MailerLite API on the current plan: MailerLite returns `422 Content submission is only available on advanced plan.`
+MailerLite has been removed from the active send path. The daily Netlify function now reads the Netlify Blobs subscriber list directly and sends one Resend email per subscriber with a signed unsubscribe link.
 
-Files: `app/api/subscribe/route.ts` (push contact) and `netlify/functions/daily-email.ts` (daily campaign create + send), both using the shared `lib/email-template.ts`.
+Files: `app/api/subscribe/route.ts` (stores subscribers), `app/api/unsubscribe/route.ts` (signed unsubscribe), `lib/unsubscribe.ts` (token signing), and `netlify/functions/daily-email.ts` (daily Resend send), all using the shared `lib/email-template.ts`.
 
 #### Picker priority chain (lib/picker.ts)
 
@@ -65,7 +65,7 @@ Files: `app/api/subscribe/route.ts` (push contact) and `netlify/functions/daily-
 
 #### Send log + idempotency (lib/send-log.ts)
 
-The daily function checks Netlify Blobs (`sends` store) for today's date before contacting MailerLite. If a `sent` record exists, it returns `{ ok: true, skipped: true }`. On success it writes the record; on failure it writes a `failed` record so the next retry can re-attempt. The public archive at `/sent` reads `listSends(60)`.
+The daily function checks Netlify Blobs (`sends` store) for today's date before contacting Resend. If a `sent` record exists, it returns `{ ok: true, skipped: true }`. On success it writes the record; on failure it writes a `failed` record so the next retry can re-attempt. The public archive at `/sent` reads `listSends(60)`.
 
 `@netlify/blobs` is auto-available inside Netlify Functions via `NETLIFY_BLOBS_CONTEXT`. Locally (CLI scripts, dev), the wrapper no-ops.
 
@@ -79,24 +79,17 @@ The daily function checks Netlify Blobs (`sends` store) for today's date before 
 
 To make automated sends live:
 
-1. Either upgrade MailerLite to a plan that allows API HTML content submission, or switch `netlify/functions/daily-email.ts` to a provider that supports HTML sends on the configured plan.
-2. Verify your sending domain — for `patristic.io`:
-   - MailerLite → Account → Domains → Add domain → paste `patristic.io`.
-   - They give you SPF + DKIM TXT records. Add them via Netlify DNS (Site settings → Domains → DNS panel).
-   - Wait for verification (usually <30 min).
-3. **Create a group** in the dashboard for the newsletter audience. Settings → Groups → Create. Copy its ID from the URL or via API.
-4. **Generate an API token**. Integrations → API → Generate new token. Copy it.
-5. **Set Netlify env vars** (Site settings → Environment variables):
+1. Set Netlify env vars:
    ```
-   MAILERLITE_API_TOKEN=eyJ0eXA...           # from MailerLite → Integrations → API
-   MAILERLITE_GROUP_ID=12345678              # the group id from step 2
-   NEWSLETTER_FROM_EMAIL=newsletter@patristic.io
+   RESEND_API_KEY=...
+   NEWSLETTER_FROM_EMAIL=verified-sender@example.com
    NEWSLETTER_FROM_NAME=Patristic Lineage
+   NEWSLETTER_REPLY_TO_EMAIL=newsletter@patristic.io
    ```
-6. **Trigger a redeploy** so the function picks up env vars. Schedule is `0 6 * * *` (06:00 UTC daily) — edit `netlify/functions/daily-email.ts` to change.
-7. **Test the function once** before letting it auto-run. Netlify dashboard → Functions → `daily-email` → Trigger. Watch the logs; success returns `{ ok: true, campaign_id, date, figure }`.
+2. Verify `patristic.io` in Resend when possible, then switch `NEWSLETTER_FROM_EMAIL` back to `newsletter@patristic.io`.
+3. Test with `/.netlify/functions/daily-email?dry_run=1` before letting the scheduled send run. Schedule is `0 6 * * *` (06:00 UTC daily).
 
-If env isn't set, the subscribe form still returns success (logs to server console) and the daily function returns 500 — nothing user-facing breaks during setup.
+If env isn't set, the subscribe form still returns success and the daily function returns 500 — nothing user-facing breaks during setup.
 
 ### Preview the email before sending
 

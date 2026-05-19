@@ -787,7 +787,12 @@ function quoteReadingText(
   return `Read next:\n${title}${authorSuffix}\n${description}${links.length ? `\n${links.join("\n")}` : ""}\n\n`;
 }
 
-function plainTextFor(content: Content, extras: EmailExtras, siteUrl: string): string {
+function plainTextFor(
+  content: Content,
+  extras: EmailExtras,
+  siteUrl: string,
+  unsubscribeUrl: string
+): string {
   const subject = subjectFor(content);
   switch (content.type) {
     case "father": {
@@ -812,7 +817,7 @@ ${plainBookLine(extras.book)}
 Open ${shortName(p.name)}'s page: ${url}
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
     case "council":
     case "schism":
@@ -831,7 +836,7 @@ Open the full event page: ${eventUrl}
 
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
     case "era": {
       const eraDef = eraForTraditionStatus(content.era);
@@ -857,7 +862,7 @@ ${list}
 ${recommendedWorksText(extras.recommendedWorks, extras.book)}${plainBookLine(extras.book)}
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
     case "quote": {
       return `${subject}
@@ -873,7 +878,7 @@ ${quoteReadingText(extras.book, content.person.name)}
 Read more about ${shortName(content.person.name)}: ${siteUrl}/fathers/${content.person.id}
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
   }
 }
@@ -909,7 +914,8 @@ function withAbsoluteImages(content: Content, siteUrl: string): Content {
 export function renderEmail(
   rawContent: Content,
   siteUrl = "https://patristic.io",
-  extras: EmailExtras = {}
+  extras: EmailExtras = {},
+  unsubscribeUrl = "https://patristic.io/api/unsubscribe"
 ): { subject: string; html: string; plain: string } {
   const content = withAbsoluteImages(rawContent, siteUrl);
   const subject = subjectFor(content);
@@ -992,7 +998,7 @@ export function renderEmail(
               </p>
               <p style="margin:0;font-size:11px;color:#1f1a1370;">
                 You're getting this because you signed up at ${escapeHtml(siteUrl)}/today.
-                <a href="{$unsubscribe}" style="color:#1f1a1370;text-decoration:underline;">Unsubscribe</a> — your call, no hard feelings.
+                <a href="${escapeHtml(unsubscribeUrl)}" style="color:#1f1a1370;text-decoration:underline;">Unsubscribe</a> — your call, no hard feelings.
               </p>
             </td>
           </tr>
@@ -1006,6 +1012,6 @@ export function renderEmail(
 </body>
 </html>`;
 
-  const plain = plainTextFor(content, extras, siteUrl);
+  const plain = plainTextFor(content, extras, siteUrl, unsubscribeUrl);
   return { subject, html, plain };
 }
