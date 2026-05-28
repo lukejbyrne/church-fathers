@@ -12,7 +12,7 @@ import { eventPath, eventSections, relatedPeople } from "@/lib/events";
 import { personHighlights } from "@/lib/person-highlights";
 import { getEraImage, getEventImage, imageCredit, type ContentImage } from "@/lib/images";
 import { quoteIssueTitle, quotePreviewText } from "@/lib/quote-copy";
-import { recommendedWorksForEra, recommendedWorksForPerson } from "@/lib/recommendations";
+import { recommendedWorksForEra } from "@/lib/recommendations";
 import { canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-dynamic";
@@ -163,8 +163,9 @@ export default async function TodayPage({
 
       <BookFeature
         book={bookOfDay}
-        eyebrow="Daily reading"
-        title="Book of the day"
+        eyebrow={content.type === "quote" ? "Read next" : "Daily reading"}
+        title={content.type === "quote" ? "" : "Book of the day"}
+        blurb={content.type === "quote" ? "" : undefined}
         className="px-0 mt-10"
       />
 
@@ -532,23 +533,34 @@ function QuoteView({
 }) {
   const title = quoteIssueTitle(quote, person);
   const body = person.why_matters ?? person.short_bio;
-  const works = recommendedWorksForPerson(person, 3);
-  const primaries = person.citations?.filter((c) => c.kind === "primary") ?? [];
   const dr = dateRange(person);
+  const source = `${quote.source}${quote.translation ? ` · ${quote.translation}` : ""}`;
+  const facts = [
+    ["Lifespan", dr.text],
+    ["Era", person.tradition_status.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())],
+    person.birth_place ? ["Born in", person.birth_place] : null,
+    person.see ? ["See", person.see] : null,
+    person.region ? ["Region", person.region.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase())] : null,
+  ].filter((row): row is [string, string] => Boolean(row));
   return (
     <>
-      <header className="mb-8">
-        <p className="text-sm uppercase tracking-widest text-accent/80 mb-2">Quote in context</p>
-        <h1 className="font-serif text-5xl mt-2 mb-3 text-ink">{title}</h1>
-        <p className="text-ink/60 italic">
-          {person.name} · {quote.source}{quote.translation ? ` · ${quote.translation}` : ""}
-        </p>
+      <header className="mb-8 text-center">
+        <h1 className="font-serif text-5xl mt-2 mb-6 text-ink">{title}</h1>
+        <div className="mx-auto mb-8 h-px w-12 bg-ink/20" />
       </header>
-      <blockquote className="font-serif text-3xl italic leading-snug text-ink mb-6">
+      <blockquote className="font-serif text-3xl italic leading-snug text-ink mb-6 text-center">
         “{quote.text}”
       </blockquote>
-      <p className="mb-2">— <Link href={`/fathers/${person.id}`} className="hover:text-accent">{person.name}</Link></p>
-      <p className="text-sm text-ink/60 italic mb-10">{quote.source}{quote.translation ? ` · ${quote.translation}` : ""}</p>
+      <div className="mb-10 text-center">
+        {person.image_url ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={person.image_url} alt={person.name} className="mx-auto mb-2 h-16 w-16 rounded-full border border-ink/10 object-cover" style={{ objectPosition: "center 8%" }} />
+        ) : null}
+        <Link href={`/fathers/${person.id}`} className="font-serif text-xl text-ink hover:text-accent">
+          {person.name}
+        </Link>
+        <p className="mt-1 text-sm text-ink/60 italic">{source}</p>
+      </div>
 
       {quote.context || quote.impact ? (
         <section className="mb-10 border border-accent/15 bg-accent/5 rounded p-5">
@@ -567,46 +579,20 @@ function QuoteView({
         </section>
       ) : null}
 
-      <section className="mb-8 border border-ink/15 rounded-md bg-ink/5 p-4 sm:flex gap-4">
-        {person.image_url ? (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img src={person.image_url} alt={person.name} className="w-20 h-20 rounded-full object-cover shrink-0 mb-3 sm:mb-0 border border-ink/10" style={{ objectPosition: "center 8%" }} />
-        ) : null}
-        <div>
-          <h2 className="font-serif text-xl text-ink mb-1">{person.name}</h2>
-          <p className="text-sm text-ink/55 italic mb-2" title={dr.explanation || undefined}>
-            {dr.text}
-            {person.see ? <> · Bishop of {person.see}</> : null}
-          </p>
-          <p className="text-sm text-ink/75">{person.short_bio}</p>
-        </div>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Why {person.name.split(" of ")[0]} matters</h2>
+      <section className="mb-8 rounded-md border border-ink/15 bg-ink/5 p-5">
+        <h2 className="mb-3 text-sm uppercase tracking-widest text-ink/60">About {person.name.split(" of ")[0]}</h2>
         <div className="prose-like text-lg">
-          {body.split(/\n\n+/).map((para, i) => <p key={i} className="mb-4">{para}</p>)}
+          {body.split(/\n\n+/).map((para, i) => <p key={i} className="mb-4 last:mb-0">{para}</p>)}
         </div>
+        <dl className="mt-5 divide-y divide-ink/10 border-y border-ink/10 text-sm">
+          {facts.map(([label, value]) => (
+            <div key={label} className="grid grid-cols-[8rem_1fr] gap-3 py-2">
+              <dt className="uppercase tracking-widest text-ink/45">{label}</dt>
+              <dd className="text-ink/70" title={label === "Lifespan" ? dr.explanation || undefined : undefined}>{value}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
-
-      <RecommendedReading
-        works={works}
-        intro="Good next stops after today's quote."
-      />
-
-      {primaries.length > 0 ? (
-        <section className="mb-8">
-          <h2 className="text-sm uppercase tracking-widest text-ink/60 mb-3">Primary sources</h2>
-          <ul className="space-y-1 text-ink/80 text-sm">
-            {primaries.slice(0, 4).map((c, i) => (
-              <li key={i} className="flex gap-2">
-                <span className="text-ink/40">·</span>
-                <span>{c.source}</span>
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
       <Link href={`/fathers/${person.id}`} className="px-4 py-2 bg-ink text-parchment rounded hover:bg-accent transition-colors text-sm inline-block">
         Read more about {person.name} →
       </Link>

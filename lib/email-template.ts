@@ -9,7 +9,7 @@ import type { Content } from "./picker";
 import type { Person, TraditionStatus } from "./schema";
 import { eraForTraditionStatus } from "./eras";
 import { quoteIssueTitle, quotePreviewText } from "./quote-copy";
-import { recommendedWorksForEra, recommendedWorksForPerson, type RecommendedWork } from "./recommendations";
+import { recommendedWorksForEra, type RecommendedWork } from "./recommendations";
 
 export type EmailChainStep = {
   id: string;
@@ -130,10 +130,22 @@ function escapeHtml(s: string): string {
     .replace(/"/g, "&quot;");
 }
 
+function sentenceMatches(text: string): string[] {
+  return text.match(/[^.!?]+[.!?]+["'”’)]*(?=\s|$)/g)?.map((s) => s.trim()) ?? [];
+}
+
 function firstSentence(text: string | undefined, max = 160): string {
   if (!text) return "";
-  const m = text.match(/^(.+?[.!?])(\s|$)/);
-  let out = m ? m[1] : text;
+  const sentences = sentenceMatches(text);
+  let out = sentences[0] ?? text;
+  if (out.length > max) out = out.slice(0, max - 1).trimEnd() + "…";
+  return out;
+}
+
+function firstSentences(text: string | undefined, count = 2, max = 360): string {
+  if (!text) return "";
+  const sentences = sentenceMatches(text);
+  let out = sentences.length ? sentences.slice(0, count).join(" ") : text;
   if (out.length > max) out = out.slice(0, max - 1).trimEnd() + "…";
   return out;
 }
@@ -195,6 +207,26 @@ function renderQuickFacts(p: Person): string {
         ([k, v], i) => `<tr>
         <td style="padding:8px 16px;${i < rows.length - 1 ? "border-bottom:1px solid #1f1a1310;" : ""}width:35%;font-size:12px;color:#1f1a13aa;letter-spacing:0.05em;text-transform:uppercase;">${escapeHtml(k)}</td>
         <td style="padding:8px 16px;${i < rows.length - 1 ? "border-bottom:1px solid #1f1a1310;" : ""}font-size:14px;color:#1f1a13e0;">${escapeHtml(v)}</td>
+      </tr>`
+      )
+      .join("")}
+  </table>`;
+}
+
+function renderQuoteFacts(p: Person): string {
+  const rows: Array<[string, string]> = [];
+  if (p.born != null || p.died != null) rows.push(["Lifespan", formatLifeRange(p.born, p.died)]);
+  if (p.tradition_status) rows.push(["Era", ERA_LABEL[p.tradition_status] ?? p.tradition_status]);
+  if (p.birth_place) rows.push(["Born in", p.birth_place]);
+  if (p.see) rows.push(["See", p.see]);
+  if (p.region) rows.push(["Region", REGION_LABEL[p.region] ?? p.region.replace(/-/g, " ")]);
+  if (rows.length === 0) return "";
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:12px 0 0;border-top:1px solid #1f1a1312;">
+    ${rows
+      .map(
+        ([k, v]) => `<tr>
+        <td style="padding:7px 0;border-bottom:1px solid #1f1a1312;width:34%;font-size:11px;color:#1f1a1390;letter-spacing:0.08em;text-transform:uppercase;">${escapeHtml(k)}</td>
+        <td style="padding:7px 0 7px 12px;border-bottom:1px solid #1f1a1312;font-size:13px;color:#1f1a13d0;">${escapeHtml(v)}</td>
       </tr>`
       )
       .join("")}
@@ -327,9 +359,84 @@ function renderBookRecommendation(
   </table>`;
 }
 
-function renderRecommendedWorks(works: RecommendedWork[] | undefined, title = "Recommended reading"): string {
-  if (!works || works.length === 0) return "";
-  const items = works
+function renderQuoteReading(
+  book: EmailBook | null | undefined,
+  currentPersonName: string
+): string {
+  if (!book) return "";
+
+  const title = book.title;
+  const author = book.author;
+  const description = book.reason;
+  const cover = book
+    ? book.cover_image_url
+      ? `<img src="${escapeHtml(book.cover_image_url)}" alt="${escapeHtml(book.cover_alt ?? `Cover of ${book.title}`)}" width="78" height="116" style="display:block;width:78px;height:116px;object-fit:cover;border:1px solid #1f1a1328;border-radius:3px;background:#1f1a1308;" />`
+      : `<div style="width:78px;height:116px;border:1px solid #1f1a1328;border-radius:3px;background:#8b1e2d;color:#fffaf0;font-family:Georgia,serif;font-size:13px;line-height:1.15;padding:9px;box-sizing:border-box;display:table-cell;vertical-align:middle;text-align:center;">${escapeHtml(book.title)}</div>`
+    : "";
+  const authorLine =
+    author && author !== currentPersonName
+      ? `<div style="font-size:12px;color:#1f1a1380;margin-bottom:10px;">${escapeHtml(author)}</div>`
+      : "";
+  const links: string[] = [];
+  const editionUrl = book.amazon_url;
+  const readUrl = book.read_url;
+
+  if (editionUrl) {
+    links.push(
+      `<a href="${escapeHtml(editionUrl)}" style="display:inline-block;padding:7px 14px;background:#8b1e2d;color:#fffaf0;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;white-space:nowrap;">Find an edition&nbsp;→</a>`
+    );
+  }
+  if (readUrl) {
+    links.push(
+      `<a href="${escapeHtml(readUrl)}" style="display:inline-block;padding:7px 14px;border:1px solid #1f1a1330;color:#1f1a13;text-decoration:none;border-radius:4px;font-size:13px;font-family:Georgia,serif;margin-right:8px;white-space:nowrap;">Read online&nbsp;→</a>`
+    );
+  }
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:24px 0;background:#fffaf0;border:1px solid #1f1a1320;border-radius:6px;">
+    <tr>
+      ${cover ? `<td width="102" style="padding:16px 8px 16px 16px;vertical-align:top;">${cover}</td>` : ""}
+      <td style="padding:16px 18px;vertical-align:top;">
+        <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:6px;">Read next</div>
+        <div style="font-family:Georgia,serif;font-size:19px;line-height:1.2;color:#1f1a13;margin-bottom:3px;">${escapeHtml(title)}</div>
+        ${authorLine}
+        ${description ? `<div style="font-size:13px;color:#1f1a13b0;line-height:1.5;margin-bottom:12px;">${escapeHtml(description)}</div>` : ""}
+        ${links.length ? `<div>${links.join("")}</div>` : ""}
+      </td>
+    </tr>
+  </table>`;
+}
+
+function comparableWorkTitle(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, " ")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .replace(/\b([a-z]{4,})ies\b/g, "$1y")
+    .replace(/\b([a-z]{4,})s\b/g, "$1")
+    .trim();
+}
+
+function recommendedWorksWithoutBook(
+  works: RecommendedWork[] | undefined,
+  book: EmailBook | null | undefined
+): RecommendedWork[] {
+  if (!works || works.length === 0) return [];
+  if (!book?.title) return works;
+  const bookTitle = comparableWorkTitle(book.title);
+  return works.filter((work) => {
+    const workTitle = comparableWorkTitle(work.title);
+    return workTitle !== bookTitle && !workTitle.includes(bookTitle) && !bookTitle.includes(workTitle);
+  });
+}
+
+function renderRecommendedWorks(
+  works: RecommendedWork[] | undefined,
+  title = "Recommended reading",
+  featuredBook?: EmailBook | null
+): string {
+  const visibleWorks = recommendedWorksWithoutBook(works, featuredBook);
+  if (visibleWorks.length === 0) return "";
+  const items = visibleWorks
     .slice(0, 4)
     .map((work) => {
       const links: string[] = [];
@@ -500,7 +607,7 @@ function buildAnniversaryBody(
         : ""
     }
     <tr><td style="padding:0 32px;">${renderBookRecommendation(book)}</td></tr>
-    <tr><td style="padding:0 32px;">${renderRecommendedWorks(recommendedWorks, "Recommended reading")}</td></tr>
+    <tr><td style="padding:0 32px;">${renderRecommendedWorks(recommendedWorks, "Recommended reading", book)}</td></tr>
     <tr><td style="padding:0 32px;">${renderCitation(anniv.citation, "Source")}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(eventUrl)}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Open the full event page →</a>
@@ -547,7 +654,7 @@ function buildEraBody(content: Extract<Content, { type: "era" }>, siteUrl: strin
       <h2 style="margin:0 0 8px;font-family:Georgia,serif;font-size:18px;font-weight:normal;color:#1f1a13;">Four people to know</h2>
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 18px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;padding:8px;">${rows.join("")}</table>
     </td></tr>
-    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading")}</td></tr>
+    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading", extras.book)}</td></tr>
     <tr><td style="padding:0 32px;">${renderBookRecommendation(extras.book)}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(siteUrl)}/eras/${eraSlug}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Open the ${escapeHtml(label)} page →</a>
@@ -560,8 +667,7 @@ function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: s
   const source = `${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}`;
   const context = content.quote.context?.trim();
   const impact = content.quote.impact?.trim();
-  const about = firstSentence(content.person.why_matters ?? content.person.short_bio, 300);
-  const works = extras.recommendedWorks ?? recommendedWorksForPerson(content.person, 3);
+  const about = firstSentences(content.person.why_matters ?? content.person.short_bio, 2, 380);
   const contextBlock = context || impact
     ? `<tr><td style="padding:0 32px 6px;">
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;background:#8b1e2d08;border:1px solid #8b1e2d18;border-radius:6px;">
@@ -572,29 +678,26 @@ function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: s
     : "";
   return `
     <tr><td style="padding:0 32px;text-align:center;">
-      <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8b1e2dcc;">Quote in context</p>
-      <h1 style="margin:0 0 8px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
-      <p style="margin:0 0 22px;font-size:13px;color:#1f1a13aa;">${escapeHtml(content.person.name)} · ${escapeHtml(source)}</p>
+      <h1 style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;line-height:1.18;">${escapeHtml(title)}</h1>
+      <div style="width:42px;height:1px;background:#1f1a1325;margin:0 auto 24px;"></div>
     </td></tr>
     <tr><td style="padding:0 32px;text-align:center;">
       <blockquote style="margin:0 0 18px;font-family:Georgia,'Times New Roman',serif;font-size:22px;line-height:1.4;color:#1f1a13;font-style:italic;border-left:0;padding:0;">"${escapeHtml(content.quote.text)}"</blockquote>
-      <p style="margin:0 0 24px;font-size:14px;color:#1f1a13;">— <a href="${escapeHtml(personUrl)}" style="color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a></p>
+      <div style="margin:0 0 24px;text-align:center;">
+        ${portraitImg(content.person.image_url, content.person.name, 58).replace("margin:0 auto 18px;", "margin:0 auto 8px;")}
+        <a href="${escapeHtml(personUrl)}" style="font-size:13px;line-height:1.4;color:#1f1a13;text-decoration:none;border-bottom:1px solid #1f1a1328;">${escapeHtml(content.person.name)}</a>
+        <div style="margin-top:4px;font-size:12px;line-height:1.4;color:#1f1a1380;font-style:italic;">${escapeHtml(source)}</div>
+      </div>
     </td></tr>
     ${contextBlock}
     <tr><td style="padding:0 32px;">
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;">
-        <tr>
-          <td width="92" style="vertical-align:top;padding-right:18px;">${portraitImg(content.person.image_url, content.person.name, 82).replace("margin:0 auto 18px;", "margin:0;")}</td>
-          <td style="vertical-align:top;">
-            <h2 style="margin:0 0 6px;font-family:Georgia,serif;font-size:20px;font-weight:normal;color:#1f1a13;">Who said it: ${escapeHtml(content.person.name)}</h2>
-            <p style="margin:0 0 14px;font-size:14px;line-height:1.6;color:#1f1a13c8;">${escapeHtml(about || content.person.short_bio)}</p>
-          </td>
-        </tr>
-      </table>
-      ${renderQuickFacts(content.person)}
+      <div style="margin:0 0 24px;padding:14px 16px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;">
+        <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:6px;">About ${escapeHtml(shortName(content.person.name))}</div>
+        <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#1f1a13c8;">${escapeHtml(about || content.person.short_bio)}</p>
+        ${renderQuoteFacts(content.person)}
+      </div>
     </td></tr>
-    <tr><td style="padding:0 32px;">${renderRecommendedWorks(works, "Recommended reading")}</td></tr>
-    <tr><td style="padding:0 32px;">${renderBookRecommendation(extras.book)}</td></tr>
+    <tr><td style="padding:0 32px;">${renderQuoteReading(extras.book, content.person.name)}</td></tr>
     <tr><td style="padding:8px 32px 24px;text-align:center;">
       <a href="${escapeHtml(personUrl)}" style="display:inline-block;padding:11px 22px;background:#1f1a13;color:#f5efe0;text-decoration:none;border-radius:4px;font-size:14px;font-family:Georgia,serif;">Read more about ${escapeHtml(shortName(content.person.name))} →</a>
     </td></tr>`;
@@ -642,9 +745,13 @@ function eyebrowLabel(content: Content): string {
   }
 }
 
-function recommendedWorksText(works: RecommendedWork[] | undefined): string {
-  if (!works || works.length === 0) return "";
-  return `Recommended reading:\n${works
+function recommendedWorksText(
+  works: RecommendedWork[] | undefined,
+  featuredBook?: EmailBook | null
+): string {
+  const visibleWorks = recommendedWorksWithoutBook(works, featuredBook);
+  if (visibleWorks.length === 0) return "";
+  return `Recommended reading:\n${visibleWorks
     .slice(0, 4)
     .map((work) => {
       const links = [work.readUrl, work.editionUrl].filter(Boolean).join(" | ");
@@ -662,7 +769,30 @@ function plainBookLine(book: EmailBook | null | undefined): string {
   return `\nBook of the day: ${book.title} — ${book.author}\n${book.reason}${links.length ? `\n${links.join("\n")}` : ""}\n`;
 }
 
-function plainTextFor(content: Content, extras: EmailExtras, siteUrl: string): string {
+function quoteReadingText(
+  book: EmailBook | null | undefined,
+  currentPersonName: string
+): string {
+  if (!book) return "";
+
+  const title = book.title;
+  const author = book.author;
+  const description = book.reason;
+  const links = [
+    book.amazon_url ? `Find an edition: ${book.amazon_url}` : "",
+    book.read_url ? `Read online: ${book.read_url}` : "",
+  ].filter(Boolean);
+  const authorSuffix = author && author !== currentPersonName ? ` — ${author}` : "";
+
+  return `Read next:\n${title}${authorSuffix}\n${description}${links.length ? `\n${links.join("\n")}` : ""}\n\n`;
+}
+
+function plainTextFor(
+  content: Content,
+  extras: EmailExtras,
+  siteUrl: string,
+  unsubscribeUrl: string
+): string {
   const subject = subjectFor(content);
   switch (content.type) {
     case "father": {
@@ -687,7 +817,7 @@ ${plainBookLine(extras.book)}
 Open ${shortName(p.name)}'s page: ${url}
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
     case "council":
     case "schism":
@@ -701,12 +831,12 @@ ${title}
 
 ${blurb}
 
-${a?.key_line ? `${a.key_line}\n\n` : ""}${a?.highlights?.length ? `Highlights:\n${a.highlights.slice(0, 4).map((item) => `- ${item}`).join("\n")}\n\n` : ""}${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
+${a?.key_line ? `${a.key_line}\n\n` : ""}${a?.highlights?.length ? `Highlights:\n${a.highlights.slice(0, 4).map((item) => `- ${item}`).join("\n")}\n\n` : ""}${recommendedWorksText(extras.recommendedWorks, extras.book)}${plainBookLine(extras.book)}
 Open the full event page: ${eventUrl}
 
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
     case "era": {
       const eraDef = eraForTraditionStatus(content.era);
@@ -729,28 +859,26 @@ ${why}
 Representative figures:
 ${list}
 
-${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
+${recommendedWorksText(extras.recommendedWorks, extras.book)}${plainBookLine(extras.book)}
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
     case "quote": {
       return `${subject}
 
-${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}
-
 "${content.quote.text}"
-— ${content.person.name}
+${content.person.name}, ${content.quote.source}${content.quote.translation ? ` · ${content.quote.translation}` : ""}
 
-${content.quote.context ? `Plain English:\n${content.quote.context}\n\n` : ""}${content.quote.impact ? `Why it matters:\n${content.quote.impact}\n\n` : ""}Who said it:
+${content.quote.context ? `Plain English:\n${content.quote.context}\n\n` : ""}${content.quote.impact ? `Why it matters:\n${content.quote.impact}\n\n` : ""}About ${shortName(content.person.name)}:
 ${content.person.name} (${formatLifeRange(content.person.born, content.person.died)})
 ${content.person.why_matters ?? content.person.short_bio}
 
-${recommendedWorksText(extras.recommendedWorks)}${plainBookLine(extras.book)}
+${quoteReadingText(extras.book, content.person.name)}
 Read more about ${shortName(content.person.name)}: ${siteUrl}/fathers/${content.person.id}
 —
 Patristic Lineage · ${siteUrl}
-Unsubscribe: {$unsubscribe}`;
+Unsubscribe: ${unsubscribeUrl}`;
     }
   }
 }
@@ -786,7 +914,8 @@ function withAbsoluteImages(content: Content, siteUrl: string): Content {
 export function renderEmail(
   rawContent: Content,
   siteUrl = "https://patristic.io",
-  extras: EmailExtras = {}
+  extras: EmailExtras = {},
+  unsubscribeUrl = "https://patristic.io/api/unsubscribe"
 ): { subject: string; html: string; plain: string } {
   const content = withAbsoluteImages(rawContent, siteUrl);
   const subject = subjectFor(content);
@@ -869,7 +998,7 @@ export function renderEmail(
               </p>
               <p style="margin:0;font-size:11px;color:#1f1a1370;">
                 You're getting this because you signed up at ${escapeHtml(siteUrl)}/today.
-                <a href="{$unsubscribe}" style="color:#1f1a1370;text-decoration:underline;">Unsubscribe</a> — your call, no hard feelings.
+                <a href="${escapeHtml(unsubscribeUrl)}" style="color:#1f1a1370;text-decoration:underline;">Unsubscribe</a> — your call, no hard feelings.
               </p>
             </td>
           </tr>
@@ -883,6 +1012,6 @@ export function renderEmail(
 </body>
 </html>`;
 
-  const plain = plainTextFor(content, extras, siteUrl);
+  const plain = plainTextFor(content, extras, siteUrl, unsubscribeUrl);
   return { subject, html, plain };
 }

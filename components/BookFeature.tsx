@@ -23,6 +23,7 @@ export default function BookFeature({
     asin: book.work.amazon_asin,
     query: book.work.amazon_query ?? `${displayTitle} ${book.person.name}`,
   });
+  const description = [blurb, book.reason].filter(Boolean).join(" ");
 
   return (
     <section className={`max-w-5xl mx-auto px-4 ${className}`}>
@@ -33,10 +34,12 @@ export default function BookFeature({
             <div className="text-[11px] uppercase tracking-[0.2em] text-ink/45 mb-2">
               {eyebrow}
             </div>
-            <h2 className="font-serif text-2xl sm:text-3xl leading-tight text-ink">
-              {title}
-            </h2>
-            <h3 className="font-serif text-xl sm:text-2xl leading-tight text-ink/90 mt-3">
+            {title ? (
+              <h2 className="font-serif text-2xl sm:text-3xl leading-tight text-ink">
+                {title}
+              </h2>
+            ) : null}
+            <h3 className={`font-serif text-xl sm:text-2xl leading-tight text-ink/90 ${title ? "mt-3" : "mt-1"}`}>
               {displayTitle}
             </h3>
             <Link
@@ -45,9 +48,7 @@ export default function BookFeature({
             >
               {book.person.name}
             </Link>
-            <p className="text-sm text-ink/70 mt-3 leading-snug max-w-2xl">
-              {blurb} {book.reason}
-            </p>
+            <p className="text-sm text-ink/70 mt-3 leading-snug max-w-2xl">{description}</p>
             <div className="flex flex-wrap gap-3 text-sm mt-4">
               {buyUrl && (
                 <a

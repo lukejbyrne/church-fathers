@@ -2,10 +2,10 @@
 //
 // One blob per ISO date keyed under the "sends" store. Atomic per-key writes,
 // so the daily function can use it for idempotency: if a record exists with
-// status "sent" for today, skip the MailerLite call.
+// status "sent" for today, skip the email provider call.
 //
 // Outside Netlify (local script runs, dev), the wrapper detects the missing
-// auth env and no-ops gracefully. Local previews don't need a real send log.
+// Blobs context and no-ops gracefully. Local previews don't need a real send log.
 
 import { getStore, type Store } from "@netlify/blobs";
 import type { Content } from "./picker";
@@ -16,6 +16,9 @@ export type SendRecord = {
   title: string;                // human-readable, e.g. "Augustine of Hippo"
   primary_id?: string;          // person_id or anniversary.id
   campaign_id?: string;
+  provider?: "mailerlite" | "resend";
+  recipient_count?: number;
+  message_ids?: string[];
   status: "sent" | "failed";
   attempted_at: string;         // ISO timestamp
   override: boolean;
@@ -25,20 +28,9 @@ export type SendRecord = {
 
 const STORE_NAME = "sends";
 
-function blobsAvailable(): boolean {
-  // Netlify Functions inject NETLIFY_SITE_ID + NETLIFY_AUTH_TOKEN automatically.
-  // In local dev or one-off scripts, those are absent — degrade to no-op.
-  return !!(process.env.NETLIFY_SITE_ID && process.env.NETLIFY_AUTH_TOKEN);
-}
-
 function store(): Store | null {
-  if (!blobsAvailable()) return null;
   try {
-    return getStore({
-      name: STORE_NAME,
-      siteID: process.env.NETLIFY_SITE_ID!,
-      token: process.env.NETLIFY_AUTH_TOKEN!,
-    });
+    return getStore(STORE_NAME);
   } catch {
     return null;
   }
