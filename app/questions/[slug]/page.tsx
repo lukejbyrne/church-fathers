@@ -5,7 +5,7 @@ import { chainTo, getPerson, getRelationships } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
 import { getQuestionPage, questionPages } from "@/lib/questions";
 import type { Person, Relationship } from "@/lib/schema";
-import { canonicalUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 const STRENGTH_CLASS: Record<Relationship["strength"], string> = {
   documented: "bg-green-900/10 text-green-900 border-green-900/20",
@@ -84,12 +84,21 @@ export default async function QuestionDetailPage({
     mainEntityOfPage: canonicalUrl(`/questions/${page.slug}`),
     about: people.map((person) => person.name),
   };
+  const ldBreadcrumb = breadcrumbJsonLd([
+    { name: "Patristic Lineage", path: "/" },
+    { name: "Questions", path: "/questions" },
+    { name: page.title, path: `/questions/${page.slug}` },
+  ]);
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ldArticle) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldBreadcrumb) }}
       />
       <div className="flex items-center justify-between gap-4 flex-wrap">
         <Link href="/questions" className="text-sm text-ink/60 hover:text-accent">

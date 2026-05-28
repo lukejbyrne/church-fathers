@@ -374,15 +374,15 @@
     "date": "05-08",
     "year": 589,
     "title": "Third Council of Toledo",
-    "blurb": "Toledo III brought Visigothic Spain from Arian Christianity into Catholic communion. That mattered politically, because it united the kingdom's ruling elite and Catholic population; it mattered theologically, because the old Arian question still had public consequences in the West. The council is also where the filioque appears in conciliar form, confessing that the Spirit proceeds from the Father and the Son. A local Spanish formula would later become one of the great East-West flashpoints.",
-    "what_happened": "King Reccared and the Visigothic elite renounced Arianism and entered Catholic communion.",
-    "the_argument": "The council resolved the kingdom's Arian-Catholic divide and confessed Nicene faith in a Spanish setting.",
+    "blurb": "The Third Council of Toledo in 589 brought Visigothic Spain from Arian Christianity into Catholic communion. King Reccared publicly renounced Arianism, Leander of Seville helped lead the settlement, and eight Arian bishops are traditionally counted among those brought into the Catholic church. The council also used the filioque in conciliar form, confessing that the Spirit proceeds from the Father and the Son. That local Spanish formula later became one of the great East-West flashpoints.",
+    "what_happened": "King Reccared renounced Arianism at Toledo III, and the Visigothic kingdom entered Catholic communion; eight Arian bishops are traditionally counted among those reconciled.",
+    "the_argument": "The council resolved the kingdom's Arian-Catholic divide and confessed Nicene faith in a Spanish setting, making the old Arian controversy politically visible in the West.",
     "what_changed": "Visigothic Spain became officially Catholic, and the filioque appeared in conciliar form.",
     "why_it_matters": "Toledo shows that Arianism still mattered in the West long after Constantinople I.",
     "aftermath": "The filioque would later become one of the central disputes between East and West.",
     "key_line": "Arian Spain becomes Catholic Spain.",
-    "highlights": ["Reccared converted.", "Arianism was rejected.", "The filioque appeared in conciliar form.", "Spain's church and kingdom were unified."],
-    "related_person_ids": ["isidore-of-seville"]
+    "highlights": ["Reccared converted.", "Eight Arian bishops were reconciled.", "Arianism was rejected.", "The filioque appeared in conciliar form.", "Spain's church and kingdom were unified."],
+    "related_person_ids": ["leander-of-seville", "isidore-of-seville"]
   },
   {
     "id": "synod-of-whitby",

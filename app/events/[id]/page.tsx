@@ -8,6 +8,7 @@ import { getEventImage, imageCredit } from "@/lib/images";
 import { recommendedWorksForPeople } from "@/lib/recommendations";
 import ShareBar from "@/components/ShareBar";
 import RecommendedReading from "@/components/RecommendedReading";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 const MONTH = [
   "January", "February", "March", "April", "May", "June",
@@ -31,9 +32,19 @@ export async function generateMetadata({
   const { id } = await params;
   const event = getEvent(id);
   if (!event) return {};
+  const url = canonicalUrl(eventPath(event));
+  const title = eventTitle(event);
+  const description = event.why_it_matters ?? event.blurb;
   return {
-    title: `${event.title} (${event.year}) — Patristic Lineage`,
-    description: event.why_it_matters ?? event.blurb,
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "article",
+    },
   };
 }
 
@@ -50,9 +61,18 @@ export default async function EventPage({
   const sections = eventSections(event);
   const image = getEventImage(event.id);
   const recommended = recommendedWorksForPeople(people, 4);
+  const ldBreadcrumb = breadcrumbJsonLd([
+    { name: "Patristic Lineage", path: "/" },
+    { name: "Events", path: "/events" },
+    { name: eventTitle(event), path: eventPath(event) },
+  ]);
 
   return (
     <article className="max-w-4xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldBreadcrumb) }}
+      />
       <div className="flex items-center justify-between gap-4 flex-wrap mb-6">
         <Link href="/today" className="text-sm text-ink/60 hover:text-accent">
           ← Today
@@ -237,7 +257,7 @@ export default async function EventPage({
             "@type": "Article",
             headline: eventTitle(event),
             description: event.why_it_matters ?? event.blurb,
-            url: eventPath(event),
+            url: canonicalUrl(eventPath(event)),
             datePublished: `${event.year.toString().padStart(4, "0")}-${event.date}`,
           }),
         }}

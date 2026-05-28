@@ -9,7 +9,7 @@ import { getEraImage, imageCredit } from "@/lib/images";
 import ShareBar from "@/components/ShareBar";
 import BookShelf from "@/components/BookShelf";
 import { getRecommendedBooks } from "@/lib/books";
-import { canonicalUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 
 export const dynamic = "force-static";
 
@@ -98,9 +98,18 @@ export default async function EraPage({
   const recommendedBooks = getRecommendedBooks({ eraSlug: era.slug, limit: 3 });
   const image = getEraImage(era.slug);
   const credit = image ? imageCredit(image) : "";
+  const ldBreadcrumb = breadcrumbJsonLd([
+    { name: "Patristic Lineage", path: "/" },
+    { name: "Eras", path: "/eras" },
+    { name: era.label, path: `/eras/${era.slug}` },
+  ]);
 
   return (
     <article className="max-w-5xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldBreadcrumb) }}
+      />
       <Link href="/" className="text-sm text-ink/60 hover:text-accent">
         ← Lineage
       </Link>

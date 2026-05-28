@@ -2,18 +2,20 @@ import Link from "next/link";
 import { getPeople } from "@/lib/data";
 import { dateRange } from "@/lib/dates";
 import type { Person, Region } from "@/lib/schema";
-import { canonicalUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 import type { Metadata } from "next";
 
+const PAGE_TITLE = "Apostolic succession: early bishops and sees";
+const PAGE_DESCRIPTION =
+  "Early Church bishops grouped by see and city, with dates and caveats for reconstructed apostolic succession lists.";
+
 export const metadata: Metadata = {
-  title: "Bishops & their sees",
-  description:
-    "Which bishops served which sees, and when. Apostolic succession proper, grouped by city, ordered by date.",
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   alternates: { canonical: canonicalUrl("/bishops") },
   openGraph: {
-    title: "Bishops & their sees",
-    description:
-      "Which bishops served which sees, and when. Apostolic succession proper, grouped by city, ordered by date.",
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: canonicalUrl("/bishops"),
     type: "article",
   },
@@ -82,10 +84,21 @@ export default function BishopsPage() {
 
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 text-ink/85 leading-relaxed">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbJsonLd([
+              { name: "Patristic Lineage", path: "/" },
+              { name: PAGE_TITLE, path: "/bishops" },
+            ])
+          ),
+        }}
+      />
       <Link href="/" className="text-sm text-ink/60 hover:text-accent">
         ← Lineage
       </Link>
-      <h1 className="font-serif text-5xl mt-4 mb-3 text-ink">Bishops &amp; their sees</h1>
+      <h1 className="font-serif text-5xl mt-4 mb-3 text-ink">Apostolic succession: early bishops and sees</h1>
       <p className="text-ink/60 italic mb-8">
         Apostolic succession proper. {totalBishops} bishops across {groups.length} cities, ordered
         by the date of their earliest known occupant.

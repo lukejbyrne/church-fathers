@@ -12,7 +12,7 @@ import { dateRange, bornDisplay, diedDisplay } from "@/lib/dates";
 import { formatRole } from "@/lib/roles";
 import BookShelf from "@/components/BookShelf";
 import { getBookForPerson } from "@/lib/books";
-import { canonicalUrl } from "@/lib/seo";
+import { breadcrumbJsonLd, canonicalUrl } from "@/lib/seo";
 import { personHighlights } from "@/lib/person-highlights";
 
 const ALL_KINDS: ChainKind[] = ["all", "pedagogical", "episcopal", "documented_only"];
@@ -172,6 +172,11 @@ export default async function FatherPage({
     sameAs: sameAs.length ? sameAs : undefined,
     citation: person.citations.map((c) => c.source),
   };
+  const ldBreadcrumb = breadcrumbJsonLd([
+    { name: "Patristic Lineage", path: "/" },
+    { name: "Directory", path: "/directory" },
+    { name: person.name, path: `/fathers/${person.id}` },
+  ]);
 
   const faq = buildFaq(person, rels);
   const ldFaq = faq.length > 1 ? {
@@ -189,6 +194,10 @@ export default async function FatherPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(ldPerson) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ldBreadcrumb) }}
       />
       {ldFaq && (
         <script
