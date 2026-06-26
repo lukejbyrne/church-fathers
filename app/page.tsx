@@ -8,7 +8,11 @@ import { getBookOfDay } from "@/lib/books";
 import { canonicalUrl, SITE_DESC, SITE_NAME } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
+// Static page with hourly ISR. The homepage content only changes when the
+// "book of the day" rolls over, so we serve one cached copy to everyone and
+// regenerate at most once an hour — instead of running the server on every
+// request (which was burning the Netlify function quota).
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: { absolute: SITE_NAME },

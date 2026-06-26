@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 import { listSends } from "@/lib/send-log";
 import { canonicalUrl } from "@/lib/seo";
 
-export const dynamic = "force-dynamic";
+// ISR: the send log only changes once a day (after the daily email goes out),
+// so cache the page and revalidate hourly rather than rebuilding it on every
+// request.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: "Past issues",
