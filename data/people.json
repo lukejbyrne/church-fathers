@@ -19,7 +19,7 @@
     ],
     "tradition_status": "apostle",
     "significance": 4,
-    "short_bio": "Central figure of Christianity. Jewish teacher from Nazareth, crucified under Pontius Pilate c. AD 30; confessed by Christians as the Messiah and Son of God. Called and taught the Twelve Apostles.",
+    "short_bio": "The Jewish teacher from Nazareth at the centre of Christianity. Christians confess him as the Messiah and Son of God; he was crucified around AD 30 and called the twelve apostles.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Jesus",
     "wikidata_id": "Q302",
     "citations": [
@@ -60,7 +60,7 @@
     "see": "Rome",
     "tradition_status": "apostle",
     "significance": 4,
-    "short_bio": "Chief of the Twelve Apostles. Fisherman from Bethsaida; preached at Pentecost, traveled widely, and traditionally martyred in Rome under Nero. Counted by Roman tradition as first bishop of Rome.",
+    "short_bio": "A fisherman from Bethsaida and one of Jesus' closest disciples. He preached after Pentecost and, according to Christian tradition, was executed in Rome; the Roman church remembers him as its first bishop.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Saint_Peter",
     "wikidata_id": "Q33923",
     "citations": [
@@ -107,7 +107,7 @@
     "see": "Jerusalem",
     "tradition_status": "apostolic-father",
     "significance": 3,
-    "short_bio": "Called 'brother of the Lord' in the New Testament (Galatians 1:19; Mark 6:3) — Catholic and Orthodox tradition reads this as kinsman or step-brother through Joseph's prior marriage; most Protestants read it as a literal sibling. Either way, leader of the Jerusalem church for some thirty years. Presided at the Apostolic Council (Acts 15); martyred c. 62 by stoning under high priest Ananus per Josephus and Hegesippus.",
+    "short_bio": "Called Jesus' brother in the New Testament—understood as a relative, stepbrother, or literal brother in different Christian traditions. He led the church in Jerusalem for about thirty years and was killed around AD 62.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/James,_brother_of_Jesus",
     "wikidata_id": "Q26925",
     "citations": [
@@ -146,7 +146,7 @@
     ],
     "tradition_status": "apostolic-father",
     "significance": 3,
-    "short_bio": "Physician and companion of Paul, traditional author of the Gospel of Luke and Acts of the Apostles. Identified by Irenaeus as 'a follower of Paul'.",
+    "short_bio": "A physician and companion of Paul. Christian tradition identifies him as the author of the Gospel of Luke and Acts, the two-part story of Jesus and the first Christians.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Luke_the_Evangelist",
     "wikidata_id": "Q128538",
     "citations": [
@@ -227,7 +227,7 @@
     "see": "Alexandria",
     "tradition_status": "apostolic-father",
     "significance": 3,
-    "short_bio": "Companion of Paul and Barnabas, then 'interpreter' of Peter at Rome (per Papias). Traditional author of the Gospel of Mark and founder of the church of Alexandria.",
+    "short_bio": "A companion of Paul, Barnabas, and—according to early tradition—Peter. Christians have long connected him with the Gospel of Mark and the beginnings of the church in Alexandria.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Mark_the_Evangelist",
     "wikidata_id": "Q31966",
     "citations": [
@@ -266,7 +266,7 @@
     "see": "Ephesus",
     "tradition_status": "apostle",
     "significance": 4,
-    "short_bio": "Son of Zebedee, brother of James, one of the Twelve and of the inner three. By tradition resided in Ephesus, taught Polycarp and Papias, and lived to the reign of Trajan.",
+    "short_bio": "James's brother and one of Jesus' twelve closest disciples. Christian tradition connects him with Ephesus, the Gospel of John, and the next generation of church leaders.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/John_the_Apostle",
     "wikidata_id": "Q44015",
     "citations": [
@@ -342,7 +342,7 @@
     "see": "Rome",
     "tradition_status": "apostolic-father",
     "significance": 3,
-    "short_bio": "Bishop of Rome late in the 1st century. Author of 1 Clement to the Corinthian church c. AD 96 — the earliest surviving Christian document outside the New Testament.",
+    "short_bio": "A bishop of Rome near the end of the first century. His letter to the church in Corinth is one of the earliest surviving Christian writings outside the New Testament.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Clement_I",
     "wikidata_id": "Q42887",
     "ccel_url": "https://ccel.org/ccel/schaff/anf01.ii.ii.html",
@@ -380,7 +380,7 @@
     "see": "Antioch",
     "tradition_status": "apostolic-father",
     "significance": 3,
-    "short_bio": "Bishop of Antioch, arrested and sent to Rome under Trajan c. 107-110, writing seven letters en route to the churches and to Polycarp. Martyred in Rome.",
+    "short_bio": "Bishop of Antioch who was arrested and taken to Rome to be executed around 107. On the journey he wrote seven moving letters about courage, unity, and following Jesus.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Ignatius_of_Antioch",
     "wikidata_id": "Q44170",
     "ccel_url": "https://ccel.org/ccel/schaff/anf01.v.html",
@@ -488,7 +488,7 @@
     "see": "Smyrna",
     "tradition_status": "apostolic-father",
     "significance": 3,
-    "short_bio": "Bishop of Smyrna and (per Irenaeus) disciple of John the Apostle. Wrote to the Philippians; martyred by burning c. 155-156. Teacher of Irenaeus of Lyons.",
+    "short_bio": "Bishop of Smyrna who, according to Irenaeus, had learned from the apostle John. He wrote to Christians in Philippi and was burned to death for refusing to renounce Jesus around 155.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Polycarp",
     "wikidata_id": "Q192371",
     "ccel_url": "https://ccel.org/ccel/schaff/anf01.iv.ii.html",
@@ -596,7 +596,7 @@
     ],
     "tradition_status": "apologist",
     "significance": 3,
-    "short_bio": "Greek philosopher converted to Christianity who wrote two Apologies and the Dialogue with Trypho. Taught in Rome and was martyred under Marcus Aurelius c. 165.",
+    "short_bio": "A philosopher who became a Christian and explained the faith to Roman officials and Jewish readers. He was executed in Rome around 165, which is why he is called Justin Martyr.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Justin_Martyr",
     "wikidata_id": "Q185117",
     "ccel_url": "https://ccel.org/ccel/schaff/anf01.viii.html",
@@ -896,7 +896,7 @@
     "see": "Lyons",
     "tradition_status": "ante-nicene",
     "significance": 3,
-    "short_bio": "Bishop of Lyons, disciple of Polycarp, and author of Against Heresies, the foundational anti-Gnostic work. Bridge between apostolic and ante-Nicene eras.",
+    "short_bio": "Bishop in Roman Gaul and a student of Polycarp, who had known the apostle John. His great book Against Heresies defended the goodness of creation and the public faith handed down from the apostles.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Irenaeus",
     "wikidata_id": "Q182123",
     "ccel_url": "https://ccel.org/ccel/schaff/anf01.ix.html",
@@ -1094,7 +1094,7 @@
     ],
     "tradition_status": "ante-nicene",
     "significance": 3,
-    "short_bio": "Successor to Pantaenus at the Catechetical School of Alexandria. Author of Protrepticus, Paedagogus, and Stromateis. Teacher of Origen.",
+    "short_bio": "A Christian teacher in Alexandria who tried to show that the best of Greek learning could serve Christian faith. He taught Origen and wrote books guiding new believers in how to live and think.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Clement_of_Alexandria",
     "wikidata_id": "Q188883",
     "ccel_url": "https://ccel.org/ccel/schaff/anf02.html",
@@ -1296,7 +1296,7 @@
     ],
     "tradition_status": "ante-nicene",
     "significance": 3,
-    "short_bio": "Roman presbyter (and possibly antipope) who wrote the Refutation of All Heresies and the Apostolic Tradition. Exiled to Sardinia under Maximinus Thrax. Some scholars split this figure into two; tradition treats him as one.",
+    "short_bio": "An early Roman church leader and writer, possibly a rival bishop of Rome. Writings linked with him preserve valuable evidence about early Christian worship and debates, though scholars still argue about exactly which works were his.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hippolytus_of_Rome",
     "wikidata_id": "Q207113",
     "citations": [
@@ -1611,7 +1611,7 @@
     "see": "Carthage",
     "tradition_status": "ante-nicene",
     "significance": 3,
-    "short_bio": "Bishop of Carthage from 248/9; led the African church through the Decian and Valerianic persecutions. Wrote De Unitate Ecclesiae and 81 letters. Martyred 14 September 258.",
+    "short_bio": "Bishop of Carthage in North Africa during severe persecution. His letters helped Christians think about forgiveness, unity, and how a church recovers after fear and failure; he was executed for his faith in 258.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cyprian",
     "wikidata_id": "Q190240",
     "ccel_url": "https://ccel.org/ccel/schaff/anf05.html",
@@ -2281,7 +2281,7 @@
     ],
     "tradition_status": "desert-father",
     "significance": 3,
-    "short_bio": "Father of Christian monasticism; Egyptian hermit whose life was written by Athanasius. Withdrew to the desert c. 285 and helped pattern the eremitic life.",
+    "short_bio": "An Egyptian Christian who went into the desert around 285 to live a life of prayer and simplicity. His example helped shape the later life of monks and nuns.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Anthony_the_Great",
     "wikidata_id": "Q170547",
     "citations": [
@@ -2415,7 +2415,7 @@
     "see": "Caesarea",
     "tradition_status": "ante-nicene",
     "significance": 3,
-    "short_bio": "Bishop of Caesarea; the 'Father of Church History,' author of Historia Ecclesiastica, Praeparatio Evangelica, Demonstratio Evangelica, and the Life of Constantine. Pupil of Pamphilus.",
+    "short_bio": "Bishop of Caesarea and the first great historian of the early church. His Church History preserves many stories and documents that would otherwise have been lost.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Eusebius",
     "wikidata_id": "Q142999",
     "citations": [
@@ -2531,7 +2531,7 @@
     ],
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "First Christian Roman emperor. Issued the Edict of Milan (313), convened the Council of Nicaea (325), and was baptized on his deathbed by Eusebius of Nicomedia.",
+    "short_bio": "The first Roman emperor to favour Christianity. He ended its legal persecution, called the Council of Nicaea, and changed the church's relationship with political power.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Constantine_the_Great",
     "wikidata_id": "Q8413",
     "citations": [
@@ -2665,7 +2665,7 @@
     ],
     "tradition_status": "desert-father",
     "significance": 3,
-    "short_bio": "Founder of cenobitic (communal) monasticism in Egypt. Established the monastery at Tabennisi and wrote the first monastic rule.",
+    "short_bio": "An Egyptian founder of shared monastic life. He built a community at Tabennisi and wrote one of the first practical rules for monks living, praying, and working together.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pachomius_the_Great",
     "wikidata_id": "Q298698",
     "citations": [
@@ -2740,7 +2740,7 @@
     "see": "Alexandria",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Bishop of Alexandria and chief defender of Nicene orthodoxy against Arianism. Five times exiled. Wrote On the Incarnation and the Vita Antonii.",
+    "short_bio": "Bishop of Alexandria who defended the belief that Jesus is fully God when many church leaders disagreed. He was sent into exile five times and wrote influential books on Jesus and the desert monk Anthony.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Athanasius_of_Alexandria",
     "wikidata_id": "Q44024",
     "citations": [
@@ -2883,7 +2883,7 @@
     ],
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Syriac deacon, hymnographer and poet-theologian of Nisibis and Edessa. Author of the Hymns on Faith and Hymns on Paradise.",
+    "short_bio": "A deacon, poet, and hymn writer from Syria. His songs taught Christian faith through vivid images of paradise, creation, and the life of Jesus.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Ephrem_the_Syrian",
     "wikidata_id": "Q200608",
     "citations": [
@@ -2921,7 +2921,7 @@
     "see": "Poitiers",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Bishop of Poitiers and 'Athanasius of the West.' Defender of Nicene Trinitarianism in Latin; wrote De Trinitate while exiled in Phrygia.",
+    "short_bio": "A bishop in modern France who defended the belief that Jesus is fully God. Exiled for his position, he wrote a major Latin book explaining the Trinity.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Hilary_of_Poitiers",
     "wikidata_id": "Q44344",
     "citations": [
@@ -3105,7 +3105,7 @@
     "see": "Tours",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Soldier turned monk and bishop of Tours. Pioneer of Western monasticism; subject of Sulpicius Severus's Vita Martini.",
+    "short_bio": "A Roman soldier who became a monk and then bishop of Tours in France. Stories of his generosity and humility made him one of the West's most loved saints.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Martin_of_Tours",
     "wikidata_id": "Q133704",
     "citations": [
@@ -3142,7 +3142,7 @@
     ],
     "tradition_status": "nicene",
     "significance": 2,
-    "short_bio": "Eldest sister of Basil and Gregory of Nyssa. Ascetic teacher who established a monastic community on the family estate at Annisa; subject of Gregory of Nyssa's Vita.",
+    "short_bio": "The older sister of Basil and Gregory of Nyssa, and a spiritual teacher in her own right. She formed a Christian community on her family's estate and deeply shaped her brothers' faith.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Macrina_the_Younger",
     "wikidata_id": "Q239081",
     "citations": [
@@ -3176,7 +3176,7 @@
     "see": "Constantinople",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Cappadocian Father, briefly Archbishop of Constantinople (380-381) and presider over the First Council of Constantinople. Known as 'the Theologian' for his Five Theological Orations.",
+    "short_bio": "A gifted preacher and bishop from what is now central Turkey. His sermons helped Christians speak about the Trinity—Father, Son, and Holy Spirit—and earned him the nickname 'the Theologian.'",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_of_Nazianzus",
     "wikidata_id": "Q44011",
     "citations": [
@@ -3215,7 +3215,7 @@
     "see": "Caesarea Mazaca",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Bishop of Caesarea in Cappadocia, founder of cenobitic monastic rules in the East, author of On the Holy Spirit. One of the three Cappadocian Fathers.",
+    "short_bio": "Bishop in what is now central Turkey, known for defending the Holy Spirit's full divinity and for organising communities of monks. He is one of three close friends and relatives called the Cappadocian Fathers.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Basil_of_Caesarea",
     "wikidata_id": "Q44258",
     "citations": [
@@ -3314,7 +3314,7 @@
     "see": "Nyssa",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Younger brother of Basil and the third Cappadocian Father. Author of the Life of Moses, Catechetical Oration, and Life of Macrina.",
+    "short_bio": "Basil's younger brother and a bishop from what is now central Turkey. He wrote imaginative, searching books about God, the Bible, and his sister Macrina.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Gregory_of_Nyssa",
     "wikidata_id": "Q191734",
     "citations": [
@@ -3352,7 +3352,7 @@
     "see": "Milan",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Bishop of Milan and one of the four Latin Doctors. Confronted emperors Theodosius and Valentinian; baptized Augustine in 387.",
+    "short_bio": "Bishop of Milan and a major teacher in the Latin-speaking church. He stood up to emperors when he thought they had done wrong and baptised Augustine in 387.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Ambrose",
     "wikidata_id": "Q43689",
     "citations": [
@@ -3561,7 +3561,7 @@
     ],
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Translator of the Latin Vulgate Bible; biblical scholar and prolific letter-writer. Settled in Bethlehem from 386.",
+    "short_bio": "A brilliant and famously sharp-tongued Bible scholar who translated the Scriptures into Latin. His translation, the Vulgate, shaped Western Christianity for more than a thousand years.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Jerome",
     "wikidata_id": "Q44248",
     "citations": [
@@ -3680,7 +3680,7 @@
     "see": "Constantinople",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Archbishop of Constantinople, called 'Golden-Mouth' for his preaching. Greatest preacher of the Greek Fathers; deposed and exiled at the Synod of the Oak (403).",
+    "short_bio": "Archbishop of Constantinople, nicknamed 'Golden-Mouth' because of his powerful preaching. He spoke fiercely about wealth and care for the poor, then was removed from office and died in exile.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/John_Chrysostom",
     "wikidata_id": "Q43706",
     "citations": [
@@ -3787,7 +3787,7 @@
     "see": "Hippo Regius",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Bishop of Hippo and the most influential Latin Father. Author of Confessions, City of God, On the Trinity, and the anti-Pelagian works.",
+    "short_bio": "Bishop in North Africa and one of Christianity's most influential writers. His best-known books include Confessions, a spiritual autobiography, and City of God, written after Rome was sacked.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Augustine_of_Hippo",
     "wikidata_id": "Q8018",
     "citations": [
@@ -3895,7 +3895,7 @@
     ],
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Brought Egyptian monastic spirituality to the Latin West. Author of the Institutes and Conferences; founded monasteries at Marseilles.",
+    "short_bio": "A monk who brought the wisdom of Egypt's desert Christians to the Latin-speaking West. His books and monasteries near Marseilles shaped Western Christian prayer and community life.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/John_Cassian",
     "wikidata_id": "Q313795",
     "citations": [
@@ -4204,7 +4204,7 @@
     "see": "Alexandria",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Patriarch of Alexandria. Chief architect of Christological orthodoxy; presided over the Council of Ephesus (431) which condemned Nestorius.",
+    "short_bio": "Bishop of Alexandria and a central figure at the Council of Ephesus. He argued that Jesus is one person—God who truly became human—and opposed language that seemed to split him in two.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Cyril_of_Alexandria",
     "wikidata_id": "Q44079",
     "citations": [
@@ -4408,7 +4408,7 @@
     "see": "Armagh",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "British missionary bishop who evangelized Ireland in the fifth century. Wrote the Confessio and the Letter to Coroticus, the only sure primary documents.",
+    "short_bio": "A British missionary bishop who brought Christianity across Ireland in the fifth century. His own writings tell a moving story of captivity, escape, and returning to serve the people who had once enslaved him.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Saint_Patrick",
     "wikidata_id": "Q165479",
     "citations": [
@@ -4648,7 +4648,7 @@
     "see": "Rome",
     "tradition_status": "nicene",
     "significance": 3,
-    "short_bio": "Bishop of Rome 440-461. His Tome (Epistula 28) was acclaimed at the Council of Chalcedon (451). Negotiated with Attila in 452.",
+    "short_bio": "Bishop of Rome from 440 to 461. His letter helped the Council of Chalcedon explain that Jesus is fully God and fully human; tradition also remembers his meeting with Attila the Hun.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Leo_I",
     "wikidata_id": "Q43954",
     "citations": [
@@ -4911,7 +4911,7 @@
     ],
     "tradition_status": "post-nicene",
     "significance": 3,
-    "short_bio": "Roman Christian senator, philosopher, and theologian. Wrote the Consolation of Philosophy in prison and the theological Opuscula Sacra (Tractates) defending Chalcedonian Christology and Trinitarian doctrine. Executed under Theodoric. Bridges classical philosophy and medieval scholasticism.",
+    "short_bio": "A Roman public servant and philosopher who wrote The Consolation of Philosophy while awaiting execution. His work carried ancient learning into the Christian Middle Ages.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Boethius",
     "wikidata_id": "Q102851",
     "citations": [
@@ -4943,7 +4943,7 @@
     ],
     "tradition_status": "post-nicene",
     "significance": 3,
-    "short_bio": "Founder of Western monasticism. Established Monte Cassino c. 529 and authored the Rule of St Benedict, which became the foundational rule for Western cenobitic life. Known almost entirely through Gregory the Great's Dialogues Book 2.",
+    "short_bio": "A monk who founded Monte Cassino around 529 and wrote a practical rule for life in a monastery. His rhythm of prayer, work, reading, and shared life shaped Western monasticism for centuries.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Benedict_of_Nursia",
     "wikidata_id": "Q44265",
     "citations": [
@@ -5335,7 +5335,7 @@
     "see": "Rome",
     "tradition_status": "post-nicene",
     "significance": 3,
-    "short_bio": "Pope from 590-604 and one of the four traditional Latin Doctors of the Church. Wrote the Moralia in Job, Pastoral Rule, Dialogues, and ~850 letters. Sent the Gregorian mission under Augustine to convert the Anglo-Saxons. Reformed liturgy and chant; deeply indebted to Augustine.",
+    "short_bio": "Pope from 590 to 604, a writer and practical leader during a difficult time in Italy. He sent missionaries to England, wrote on pastoral care, and left hundreds of letters showing how a bishop cared for ordinary people.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pope_Gregory_I",
     "wikidata_id": "Q42827",
     "citations": [
@@ -5439,7 +5439,7 @@
     "see": "Seville",
     "tradition_status": "post-nicene",
     "significance": 3,
-    "short_bio": "Archbishop of Seville and last of the Latin Fathers. Encyclopedist whose Etymologiae preserved classical learning for the Middle Ages. Presided at the Fourth Council of Toledo (633).",
+    "short_bio": "Archbishop of Seville and a great organiser of learning in the early Middle Ages. His enormous encyclopedia preserved knowledge from the ancient world, and he helped lead the church in Spain.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Isidore_of_Seville",
     "wikidata_id": "Q166876",
     "citations": [
@@ -5605,7 +5605,7 @@
     ],
     "tradition_status": "post-nicene",
     "significance": 3,
-    "short_bio": "Greek monk and the principal theological opponent of Monothelitism. Defended two wills (divine and human) in Christ. Tried, mutilated (tongue and right hand cut off), and exiled by Constans II. Major systematizer of Greek patristic theology; deep influence on John of Damascus and later Byzantine theology.",
+    "short_bio": "A Greek monk who defended the belief that Jesus has both a human will and a divine will. He was brutally punished and exiled for refusing a political compromise, then later honoured as a key Christian teacher.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Maximus_the_Confessor",
     "wikidata_id": "Q206842",
     "citations": [
@@ -6150,7 +6150,7 @@
     ],
     "tradition_status": "post-nicene",
     "significance": 3,
-    "short_bio": "Anglo-Saxon Benedictine monk at Jarrow. Author of Historia Ecclesiastica Gentis Anglorum, the principal source for early English Christianity. Wrote extensive biblical commentaries drawing on Augustine, Jerome, Ambrose, and Gregory the Great. Declared Doctor of the Church.",
+    "short_bio": "An English monk and historian. His History of the English Church and People is our main source for the conversion of early England to Christianity, and he also wrote widely on the Bible.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Bede",
     "wikidata_id": "Q154938",
     "citations": [
@@ -6292,7 +6292,7 @@
     ],
     "tradition_status": "apostle",
     "significance": 3,
-    "short_bio": "Mother of Jesus of Nazareth. Present at the crucifixion and entrusted to the disciple John; numbered among the disciples gathered before Pentecost.",
+    "short_bio": "The mother of Jesus. The Gospels place her at his crucifixion, and Acts includes her among the disciples waiting and praying before Pentecost.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Mary,_mother_of_Jesus",
     "wikidata_id": "Q345",
     "citations": [
@@ -6325,7 +6325,7 @@
     ],
     "tradition_status": "apostle",
     "significance": 3,
-    "short_bio": "Disciple of Jesus from Magdala in Galilee; first witness of the resurrection in all four Gospels. Called 'apostle to the apostles' by later tradition.",
+    "short_bio": "A disciple of Jesus from Galilee and, in all four Gospels, the first witness to his resurrection. Later Christians called her 'apostle to the apostles' because she brought that news to them.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Mary_Magdalene",
     "wikidata_id": "Q63070",
     "citations": [
@@ -6357,7 +6357,7 @@
     ],
     "tradition_status": "apostle",
     "significance": 3,
-    "short_bio": "Brother of Peter, fisherman from Bethsaida, one of the Twelve. Traditionally evangelized Scythia and Achaea and was crucified at Patras.",
+    "short_bio": "Peter's brother, a fisherman from Bethsaida, and one of Jesus' twelve closest disciples. Christian tradition says he preached around the Black Sea and Greece before being crucified at Patras.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Andrew_the_Apostle",
     "wikidata_id": "Q43399",
     "citations": [
@@ -6389,7 +6389,7 @@
     ],
     "tradition_status": "apostle",
     "significance": 3,
-    "short_bio": "Brother of John, son of Zebedee, one of the Twelve and of the inner three. Beheaded by Herod Agrippa I c. AD 44 — the first apostle martyred.",
+    "short_bio": "John's brother and one of Jesus' twelve closest disciples. He was executed by King Herod Agrippa around AD 44, making him the first apostle known to have been killed for his faith.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/James,_son_of_Zebedee",
     "wikidata_id": "Q43999",
     "citations": [
@@ -6484,7 +6484,7 @@
     ],
     "tradition_status": "apostle",
     "significance": 3,
-    "short_bio": "Tax collector called by Jesus, one of the Twelve, traditionally the author of the Gospel of Matthew (originally in 'the Hebrew dialect' per Papias).",
+    "short_bio": "A tax collector whom Jesus called to become one of the twelve apostles. Christian tradition has long connected him with the Gospel of Matthew.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Matthew_the_Apostle",
     "wikidata_id": "Q43600",
     "citations": [
@@ -6982,7 +6982,7 @@
     ],
     "tradition_status": "post-nicene",
     "significance": 3,
-    "short_bio": "Anonymous late 5th/early 6th-century Syrian Christian Neoplatonist who wrote under the pseudonym of Dionysius the Areopagite (Acts 17:34). Author of the Corpus Areopagiticum: Divine Names, Mystical Theology, Celestial Hierarchy, Ecclesiastical Hierarchy, and Letters. Hugely influential on later mystical and scholastic theology. NOT Paul's Athenian convert; identity disputed.",
+    "short_bio": "An anonymous Syrian Christian writer from around the fifth or sixth century who wrote under another person's name. His books about God, worship, and the unseen world deeply influenced later Christian thinkers, though he was not the Dionysius mentioned in Acts.",
     "wikipedia_url": "https://en.wikipedia.org/wiki/Pseudo-Dionysius_the_Areopagite",
     "wikidata_id": "Q312816",
     "citations": [

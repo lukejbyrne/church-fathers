@@ -483,6 +483,39 @@ function paragraphsHtml(body: string): string {
     .join("");
 }
 
+// The daily email is often a reader's first encounter with a person or debate.
+// Keep the historical vocabulary, but define it where it appears rather than
+// assuming a theology or church-history background.
+const PLAIN_LANGUAGE_TERMS: Array<{ pattern: RegExp; term: string; meaning: string }> = [
+  { pattern: /\bsemi-Pelagian(?:ism|s)?\b/i, term: "Semi-Pelagianism", meaning: "the idea that people can make the first move toward God before grace helps them" },
+  { pattern: /\bPelagian(?:ism|s)?\b/i, term: "Pelagianism", meaning: "the teaching that human effort can begin salvation without God's grace" },
+  { pattern: /\bArian(?:ism|s)?\b/i, term: "Arianism", meaning: "the teaching that Jesus the Son was created and is less than fully God" },
+  { pattern: /\bNestorian(?:ism|s)?\b/i, term: "Nestorian", meaning: "a label for teaching thought to divide Jesus' humanity and divinity too sharply" },
+  { pattern: /\b(?:Non-)?Chalcedonian\b/i, term: "Chalcedonian", meaning: "connected to the Council of Chalcedon's teaching that Jesus is fully God and fully human" },
+  { pattern: /\bmiaphysite\b/i, term: "Miaphysite", meaning: "a Christian tradition that stresses the united divinity and humanity of Jesus" },
+  { pattern: /\bmonophysite\b/i, term: "Monophysite", meaning: "a label used in debates about whether Jesus has one nature or both divine and human natures" },
+  { pattern: /\bMonothelit(?:ism|e|es)\b/i, term: "Monothelitism", meaning: "the teaching that Jesus had one will rather than both a human and a divine will" },
+  { pattern: /\bChristolog(?:y|ical)\b/i, term: "Christology", meaning: "teaching about who Jesus is: divine, human, and one person" },
+  { pattern: /\bTheotokos\b/i, term: "Theotokos", meaning: "Greek for 'God-bearer,' a title for Mary that protects the claim that Jesus is truly God" },
+  { pattern: /\biconoclas(?:m|t)\b/i, term: "Iconoclasm", meaning: "opposition to religious images, often involving their destruction" },
+  { pattern: /\bascetic(?:ism|al)?\b/i, term: "Ascetic", meaning: "marked by disciplined prayer, fasting, and simplicity" },
+  { pattern: /\bcenobitic\b/i, term: "Cenobitic", meaning: "lived in a shared monastic community rather than alone" },
+  { pattern: /\bmonasticism\b/i, term: "Monasticism", meaning: "the Christian life of prayer and discipline followed by monks and nuns" },
+  { pattern: /\bpresbyter\b/i, term: "Presbyter", meaning: "an elder or priest in the early church" },
+  { pattern: /\bexegesis\b/i, term: "Exegesis", meaning: "careful interpretation of Scripture" },
+  { pattern: /\bapophatic\b/i, term: "Apophatic", meaning: "emphasising that God exceeds every definition we can make" },
+  { pattern: /\bEucharist\b/i, term: "Eucharist", meaning: "Holy Communion" },
+];
+
+function renderTermGuide(text: string): string {
+  const matches = PLAIN_LANGUAGE_TERMS.filter(({ pattern }) => pattern.test(text)).slice(0, 3);
+  if (!matches.length) return "";
+  return `<div style="margin:0 0 16px;padding:11px 14px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;">
+    <div style="margin:0 0 6px;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:#1f1a1380;">Quick key</div>
+    ${matches.map(({ term, meaning }) => `<div style="margin:5px 0;font-size:13px;line-height:1.5;color:#1f1a13c8;"><strong style="color:#1f1a13;">${escapeHtml(term)}:</strong> ${escapeHtml(meaning)}.</div>`).join("")}
+  </div>`;
+}
+
 function portraitImg(src: string | null | undefined, alt: string, size = 120): string {
   return src
     ? `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" width="${size}" height="${size}" style="border-radius:50%;object-fit:cover;object-position:center 18%;border:1px solid #1f1a1322;display:block;margin:0 auto 18px;" />`
@@ -552,6 +585,7 @@ function buildFatherBody(content: Extract<Content, { type: "father" }>, siteUrl:
     <tr><td style="padding:0 32px;">${renderQuickFacts(p)}</td></tr>
     <tr><td style="padding:0 32px;">
       <h2 style="margin:8px 0 12px;font-family:Georgia,serif;font-size:20px;font-weight:normal;color:#1f1a13;border-bottom:1px solid #1f1a1318;padding-bottom:8px;">Why ${escapeHtml(shortName(p.name))} matters</h2>
+      ${renderTermGuide(body)}
       ${paragraphsHtml(body)}
     </td></tr>
     <tr><td style="padding:0 32px;">${renderChain(ex?.chain, siteUrl, p.id)}</td></tr>
@@ -636,6 +670,7 @@ function buildEraBody(content: Extract<Content, { type: "era" }>, siteUrl: strin
     <tr><td style="padding:0 32px;text-align:center;">
       <p style="margin:0 0 6px;font-size:11px;letter-spacing:0.25em;text-transform:uppercase;color:#8b1e2dcc;">This week</p>
       <h1 style="margin:0 0 12px;font-family:Georgia,'Times New Roman',serif;font-size:30px;font-weight:normal;color:#1f1a13;">${escapeHtml(label)}</h1>
+      ${renderTermGuide([summary, eraDef.intro[0], ...eraDef.decided].join(" "))}
       <p style="margin:0 0 20px;font-size:15px;line-height:1.65;color:#1f1a13c8;text-align:left;">${escapeHtml(summary)}</p>
     </td></tr>
     <tr><td style="padding:0 32px;">${renderContentImage(extras.eraImage, siteUrl)}</td></tr>
@@ -673,6 +708,7 @@ function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: s
       <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin:0 0 24px;background:#8b1e2d08;border:1px solid #8b1e2d18;border-radius:6px;">
         ${context ? `<tr><td style="padding:16px 18px 6px;"><div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#8b1e2dcc;margin-bottom:6px;">Plain English</div><p style="margin:0;font-size:15px;line-height:1.65;color:#1f1a13d8;">${escapeHtml(context)}</p></td></tr>` : ""}
         ${impact ? `<tr><td style="padding:${context ? "8px" : "16px"} 18px 16px;"><div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#8b1e2dcc;margin-bottom:6px;">Why it matters</div><p style="margin:0;font-size:15px;line-height:1.65;color:#1f1a13d8;">${escapeHtml(impact)}</p></td></tr>` : ""}
+        ${renderTermGuide(`${context ?? ""} ${impact ?? ""}`) ? `<tr><td style="padding:0 18px 4px;">${renderTermGuide(`${context ?? ""} ${impact ?? ""}`)}</td></tr>` : ""}
       </table>
     </td></tr>`
     : "";
@@ -693,6 +729,7 @@ function buildQuoteBody(content: Extract<Content, { type: "quote" }>, siteUrl: s
     <tr><td style="padding:0 32px;">
       <div style="margin:0 0 24px;padding:14px 16px;background:#1f1a1304;border:1px solid #1f1a1318;border-radius:6px;">
         <div style="font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#1f1a1380;margin-bottom:6px;">About ${escapeHtml(shortName(content.person.name))}</div>
+        ${renderTermGuide(about || content.person.short_bio)}
         <p style="margin:0 0 8px;font-size:14px;line-height:1.6;color:#1f1a13c8;">${escapeHtml(about || content.person.short_bio)}</p>
         ${renderQuoteFacts(content.person)}
       </div>
